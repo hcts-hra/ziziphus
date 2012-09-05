@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://www.vraweb.org/projects/vracore4/vra-4.0-restricted.xsd">
+    <collection id="c_27" source="Core 4 Sample Database (VCat)" refid="27">
+        <agentSet>
+            <display>unknown (Native American)</display>
+            <notes/>
+            <agent>
+                <name vocab="ULAN" refid="500125274" type="personal">unknown</name>
+            </agent>
+        </agentSet>
+        <culturalContextSet>
+            <culturalContext>Native American</culturalContext>
+        </culturalContextSet>
+        <dateSet>
+            <display>ca. 7,500 BCE-400 BCE (creation)</display>
+            <date type="creation">
+                <earliestDate>-7500</earliestDate>
+                <latestDate>-0400</latestDate>
+            </date>
+        </dateSet>
+        <descriptionSet>
+            <description>In the sequence of North American pre-Columbian cultural stages first proposed by Gordon Willey and Philip Phillips in 1958, the Archaic period was the second period of human occupation in the Americas, from around 8000 BCE to 1000 BCE although as its ending is defined by the adoption of sedentary farming, this date can vary significantly across the Americas. The Woodland period of North American pre-Columbian cultures refers to the time period from roughly 1000 BCE to 1000 CE in the eastern part of North America. The term "Woodland" was coined in the 1930s and refers to prehistoric sites between the Archaic period and the Mississippian cultures. Some Woodland peoples continued to use spears and atlatls until the end of the period, when they were replaced by bows and arrows. This collection has 56 items, lengths range 36 mm to 64 mm (1 3/8 to 2 1/2 inches).</description>
+        </descriptionSet>
+        <locationSet>
+            <display>University of Michigan, Museum of Anthropology (Ann Arbor, Michigan, United States)</display>
+            <location type="repository">
+                <name type="geographic" vocab="other" refid="" extent="organization">University of Michigan, Museum of Anthropology</name>
+                <name type="geographic" vocab="TGN" refid="7013304" extent="inhabited place">Ann Arbor</name>
+                <name type="geographic" vocab="TGN" refid="7007520" extent="state">Michigan</name>
+                <name type="geographic" vocab="TGN" refid="7012149" extent="nation">United States</name>
+                <name type="geographic" vocab="TGN" refid="1000001" extent="continent">North and Central America</name>
+            </location>
+            <location type="discovery">
+                <name type="geographic" vocab="other" refid="" extent="organization">Bannerstone Site</name>
+                <name type="geographic" vocab="TGN" refid="1002679" extent="county">Monroe (county)</name>
+                <name type="geographic" vocab="TGN" refid="7007520" extent="state">Michigan</name>
+                <name type="geographic" vocab="TGN" refid="7012149" extent="nation">United States</name>
+                <name type="geographic" vocab="TGN" refid="1000001" extent="continent">North and Central America</name>
+            </location>
+        </locationSet>
+        <materialSet>
+            <display>flint; vitric tuff; rhyolite </display>
+            <notes/>
+            <material/>
+        </materialSet>
+        <measurementsSet>
+            <display>lengths range 36 mm to 64 mm (1 3/8 to 2 1/2 inches)</display>
+            <notes/>
+            <measurements type="length" unit="mm" extent="smallest point">36</measurements>
+            <measurements type="length" unit="mm" extent="largest point">64</measurements>
+        </measurementsSet>
+        <sourceSet>
+            <display>Wikipedia; http://en.wikipedia.org/wiki/Main_Page (accessed 5/31/2009)</display>
+            <notes/>
+            <source/>
+        </sourceSet>
+        <stylePeriodSet>
+            <display>Native North American; Pre-Columbian (American); Woodland Tradition</display>
+            <stylePeriod vocab="AAT" refid="300017442">Native North American</stylePeriod>
+            <stylePeriod vocab="AAT" refid="300016671">Woodland Tradition</stylePeriod>
+            <stylePeriod vocab="AAT" refid="300016619">Pre-Columbian (American)</stylePeriod>
+        </stylePeriodSet>
+        <subjectSet>
+            <display>military;  war; hunting; warfare</display>
+            <notes/>
+            <subject>
+                <term/>
+            </subject>
+        </subjectSet>
+        <techniqueSet>
+            <display>chipping</display>
+            <notes/>
+            <technique vocab="AAT" refid="300053752">chipping</technique>
+        </techniqueSet>
+        <textrefSet>
+            <display>Bannerstone Site: 20 MR 52</display>
+            <notes/>
+            <textref>
+                <name type="other"/>
+                <refid/>
+            </textref>
+        </textrefSet>
+        <titleSet>
+            <display>Collection of points [arrowheads] from Bannerstone site</display>
+            <title type="descriptive" pref="true" xml:lang="en">Collection of points [arrowheads] from Bannerstone site</title>
+            <title type="repository" pref="false" xml:lang="en">Netting and Kirk points from the Bannerstone Site</title>
+        </titleSet>
+        <worktypeSet>
+            <display>weapon components; arrowheads; weapon components; projectile points</display>
+            <worktype vocab="AAT" refid="300024860">projectile point</worktype>
+            <worktype vocab="AAT" refid="300024861">arrowhead</worktype>
+        </worktypeSet>
+    </collection>
+</vra>

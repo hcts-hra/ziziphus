@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://www.vraweb.org/projects/vracore4/vra-4.0-restricted.xsd">
+    <work id="w_31" source="Core 4 Sample Database (VCat)" refid="31">
+        <agentSet>
+            <display>unknown (Greek (ancient) glass workers)</display>
+            <notes/>
+            <agent>
+                <name vocab="ULAN" refid="500125274" type="personal">unknown</name>
+                <role>glass workers</role>
+            </agent>
+        </agentSet>
+        <culturalContextSet>
+            <culturalContext>Greek (ancient)</culturalContext>
+        </culturalContextSet>
+        <dateSet>
+            <display>Late 6th-5th century BCE  (inclusive)</display>
+            <date type="inclusive">
+                <earliestDate>-599</earliestDate>
+                <latestDate>-499</latestDate>
+            </date>
+        </dateSet>
+        <descriptionSet>
+            <description>Four blown or core-formed glass vessels grouped together to illustrate classic Greek vessel shapes: the aryballos, alabastron, amphoriskos, and oinochoe. This grouping, all made of glass and small in scale, denotes the use of all of these to hold scented oils and perfumes for grooming. The small aryballos form is a spherical subtype (plural aryballoi). The alabastron (plural alabastra) was typically carried by a cord, since the bottom is rounded. The form originated in Egypt, where they were frequently made from alabaster, hence the name.  The amphoriskos (plural amphoriskoi) and the oinochoe are miniatures of the larger amphorae and pitcher forms used for wine and olive oil.</description>
+        </descriptionSet>
+        <locationSet>
+            <display>Metropolitan Museum of Art (New York, New York, United States)</display>
+            <notes>Gift of Henry G. Marquand, 1881 (81.10.315); Gift of J. Pierpont Morgan, 1917 (17.194.780); Gift of J. Pierpont Morgan, 1917 (17.194.781); Gift of J. Pierpont Morgan, 1917 (17.194.791); Gift of J. Pierpont Morgan, 1917 (17.194.792) </notes>
+            <location type="repository">
+                <name type="geographic" vocab="GAO" refid="" extent="organization">Metropolitan Museum of Art</name>
+                <name type="geographic" vocab="TGN" refid="7007567" extent="inhabited place">New York</name>
+                <name type="geographic" vocab="TGN" refid="7007568" extent="state">New York</name>
+                <name type="geographic" vocab="TGN" refid="7012149" extent="nation">United States</name>
+                <name type="geographic" vocab="TGN" refid="1000001" extent="continent">North and Central America</name>
+            </location>
+            <location type="creation">
+                <name type="geographic" vocab="TGN" refid="1000074" extent="nation">Greece</name>
+                <name type="geographic" vocab="TGN" refid="1000003" extent="continent">Europe</name>
+            </location>
+        </locationSet>
+        <materialSet>
+            <display>glass</display>
+            <notes/>
+            <material/>
+        </materialSet>
+        <sourceSet>
+            <display>Art and Architecture Thesaurus [scope notes]; http://www.getty.edu/research/conducting_research/vocabularies/aat/ (accessed 6/1/2009)</display>
+            <notes/>
+            <source/>
+        </sourceSet>
+        <stylePeriodSet>
+            <display>Classical</display>
+            <stylePeriod vocab="AAT" refid="300020093">Classical</stylePeriod>
+        </stylePeriodSet>
+        <subjectSet>
+            <display>decorative arts; cultural artifacts; utilitarian objects; perfume; grooming</display>
+            <notes/>
+            <subject>
+                <term type="descriptiveTopic" vocab="AAT" refid="300265421">cultural artifacts</term>
+            </subject>
+        </subjectSet>
+        <techniqueSet>
+            <display>glassblowing</display>
+            <notes/>
+            <technique vocab="AAT" refid="300053932">glassblowing</technique>
+        </techniqueSet>
+        <titleSet>
+            <display>Collection showing Greek vessel forms</display>
+            <title type="descriptive" pref="true" xml:lang="en">Collection showing Greek vessel forms</title>
+            <title type="repository" pref="false" xml:lang="en">Four glass vessels</title>
+        </titleSet>
+        <worktypeSet>
+            <display>furnishings; containers (receptacles); vessels (containers)</display>
+            <worktype vocab="AAT" refid="300193015">vessel (container)</worktype>
+        </worktypeSet>
+    </work>
+    <image id="i_134" href="http://aal.ucsd.edu/vracore4/example30.html" refid="134" source="VRA Data Standards Committee, Core 4 Sample Records">
+        <descriptionSet>
+            <description>Colored glass decoration was applied by combing and trailing; glass of a different color was worked onto the molten core, which was then either blown or molded (core-formed) into shape.</description>
+        </descriptionSet>
+        <measurementsSet>
+            <display>18 MB</display>
+            <notes/>
+            <measurements/>
+        </measurementsSet>
+        <relationSet>
+            <relation type="imageOf" refid="31" source="Core 4 Sample Database (VCat)"/>
+        </relationSet>
+        <rightsSet>
+            <display>© The Metropolitan Museum of Art</display>
+            <rights/>
+        </rightsSet>
+        <sourceSet>
+            <display>Metropolitan Museum of Art [website]; http://www.metmuseum.org</display>
+            <source>
+                <name/>
+                <refid type="URI">http://www.metmuseum.org</refid>
+            </source>
+        </sourceSet>
+        <techniqueSet>
+            <display>digital imaging</display>
+            <notes/>
+            <technique/>
+        </techniqueSet>
+        <titleSet>
+            <display>Left to right; aryballos, alabastron, amphoriskos, oinochoe </display>
+            <title type="generalView">Left to right; aryballos, alabastron, amphoriskos, oinochoe </title>
+        </titleSet>
+        <worktypeSet>
+            <display>digital image</display>
+            <notes/>
+            <worktype/>
+        </worktypeSet>
+    </image>
+</vra>

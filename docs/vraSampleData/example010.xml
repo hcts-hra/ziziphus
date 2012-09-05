@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://www.vraweb.org/projects/vracore4/vra-4.0-restricted.xsd">
+    <work id="w_21" source="Core 4 Sample Database (VCat)" refid="21">
+        <agentSet>
+            <display>unknown (Bohemian goldsmith)</display>
+            <notes/>
+            <agent>
+                <name vocab="ULAN" refid="500125274" type="personal">unknown</name>
+                <role>goldsmith</role>
+            </agent>
+        </agentSet>
+        <culturalContextSet>
+            <culturalContext>Bohemian</culturalContext>
+        </culturalContextSet>
+        <dateSet>
+            <display>early 1600's (creation)</display>
+            <date type="creation">
+                <earliestDate>1600</earliestDate>
+                <latestDate>1630</latestDate>
+            </date>
+        </dateSet>
+        <descriptionSet>
+            <description>Since antiquity, rulers have minted coins and medals to celebrate their power and dominion. On this gold medal from the early 1600s, the Habsburg Emperor Rudolf II wears a laurel wreath, a sign of victory and peace, and the chain and pendant of the Order of the Golden Fleece. The emperor's elegant three-quarter pose and the subtle differentiation of textures on the medal demonstrate the high quality of the casting.</description>
+        </descriptionSet>
+        <inscriptionSet>
+            <display>On obverse: RUDOLPHUS II ROM IMP AUG REX HUNG BOE [Rudolf the Supreme Emperor of the Romans, King of Hungary and Bohemia]. On reverse: ASTRUM FULGET CAES [The Emperor's star shines brightly].</display>
+            <inscription>
+                <author/>
+                <position/>
+                <text/>
+            </inscription>
+        </inscriptionSet>
+        <locationSet>
+            <display>J. Paul Getty Museum (Los Angeles, California, United States) 92.NJ.87</display>
+            <notes>Gift of Cyril Humphris</notes>
+            <location type="repository">
+                <name type="geographic" vocab="other" refid="" extent="organization">J. Paul Getty Museum</name>
+                <name type="geographic" vocab="TGN" refid="7023900" extent="inhabited place">Los Angeles</name>
+                <name type="geographic" vocab="TGN" refid="7007157" extent="state">California</name>
+                <name type="geographic" vocab="TGN" refid="7012149" extent="nation">United States</name>
+                <name type="geographic" vocab="TGN" refid="1000001" extent="continent">North and Central America</name>
+                <refid type="accession">92.NJ.87</refid>
+            </location>
+            <location type="creation">
+                <name type="geographic" vocab="TGN" refid="7006464" extent="inhabited place">Prague</name>
+                <name type="geographic" vocab="TGN" refid="1003530" extent="region">Středočeský </name>
+                <name type="geographic" vocab="TGN" refid="1001780" extent="nation">Czech Republic</name>
+                <name type="geographic" vocab="TGN" refid="1000003" extent="continent">Europe</name>
+            </location>
+        </locationSet>
+        <materialSet>
+            <display>gold</display>
+            <notes/>
+            <material/>
+        </materialSet>
+        <measurementsSet>
+            <display>1 13/16 in (height) x 1 5/16 in (width)</display>
+            <notes/>
+            <measurements type="height" unit="in">1 13/16</measurements>
+            <measurements type="width" unit="in">1 5/16</measurements>
+        </measurementsSet>
+        <sourceSet>
+            <display>J. Paul Getty Museum [website]; http://www.getty.edu/museum/ (accessed 5/28/2009)</display>
+            <notes/>
+            <source/>
+        </sourceSet>
+        <stylePeriodSet>
+            <display>Early Baroque; Seventeenth century</display>
+            <stylePeriod vocab="LCSAF" refid="sh 85120427">Seventeenth century</stylePeriod>
+            <stylePeriod vocab="AAT" refid="300021149">Early Baroque</stylePeriod>
+        </stylePeriodSet>
+        <subjectSet>
+            <display>decorative arts; portraits; rulers and leaders; Habsburg, House of; numismatics; Order of the Golden Fleece; Rudolf II, Holy Roman Emperor, 1552-1612; Zodiac; Bohemia (Kingdom)</display>
+            <notes/>
+            <subject>
+                <term type="descriptiveTopic" vocab="AAT" refid="300054419">numismatics</term>
+            </subject>
+            <subject>
+                <term type="familyName" vocab="LCSAF" refid="sh 85058164 ">Habsburg, House of</term>
+            </subject>
+            <subject>
+                <term type="personalName" vocab="LCNAF" refid="n 81004066 ">Rudolf II, Holy Roman Emperor, 1552-1612</term>
+            </subject>
+            <subject>
+                <term type="iconographicTopic" vocab="LCSAF" refid="sh 85149938">Zodiac</term>
+            </subject>
+            <subject>
+                <term type="descriptiveTopic" vocab="LCSAF" refid="n 82120497">Order of the Golden Fleece</term>
+            </subject>
+        </subjectSet>
+        <techniqueSet>
+            <display>casting (process); metalworking</display>
+            <notes/>
+            <technique vocab="AAT" refid="300053104">casting (process)</technique>
+            <technique vocab="AAT" refid="300053946">metalworking</technique>
+        </techniqueSet>
+        <titleSet>
+            <display>Medal of Emperor Rudolf II</display>
+            <title type="repository" pref="true" xml:lang="en">Medal of Emperor Rudolf II</title>
+        </titleSet>
+        <worktypeSet>
+            <display>medals</display>
+            <worktype vocab="AAT" refid="300046025">medal</worktype>
+        </worktypeSet>
+    </work>
+    <image id="i_124" href="http://aal.ucsd.edu/vracore4/example010multiple.html" refid="124" source="VRA Data Standards Committee, Core 4 Sample Records">
+        <descriptionSet>
+            <description>The Habsburg Emperor Rudolf II wears a laurel wreath, a sign of victory and peace, and the chain and pendant of the Order of the Golden Fleece.</description>
+        </descriptionSet>
+        <measurementsSet>
+            <display>18 MB</display>
+            <notes/>
+            <measurements/>
+        </measurementsSet>
+        <relationSet>
+            <relation type="imageOf" refid="21" source="Core 4 Sample Database (VCat)"/>
+        </relationSet>
+        <rightsSet>
+            <display>undetermined</display>
+            <rights/>
+        </rightsSet>
+        <sourceSet>
+            <display>J. Paul Getty Museum [website]; http://www.getty.edu/museum/</display>
+            <source>
+                <name/>
+                <refid type="URI">http://www.getty.edu/museum/</refid>
+            </source>
+        </sourceSet>
+        <titleSet>
+            <display>Overall view, front (obverse)</display>
+            <title type="generalView">Overall view, front (obverse)</title>
+        </titleSet>
+        <worktypeSet>
+            <display>digital image</display>
+            <notes/>
+            <worktype/>
+        </worktypeSet>
+    </image>
+    <image id="i_125" href="http://aal.ucsd.edu/vracore4/example010_2.html" refid="125" source="VRA Data Standards Committee, Core 4 Sample Records">
+        <descriptionSet>
+            <description>On the reverse, a ram, zodiac sign of the constellation Capricorn, refers to Augustus Caesar, who was conceived under this sign, suggesting an analogy between Rudolf and Caesar. The Latin inscription,  ASTRUM FULGET CAES (The Emperor's Star Shines Brightly), along with the symbols of the twinkling star, the earth, and the Habsburg eagle, suggest Rudolf's supremacy and the prosperous future of the Habsburg dynasty.</description>
+        </descriptionSet>
+        <measurementsSet>
+            <display>18 MB</display>
+            <notes/>
+            <measurements/>
+        </measurementsSet>
+        <relationSet>
+            <relation type="imageOf" refid="21" source="Core 4 Sample Database (VCat)"/>
+        </relationSet>
+        <rightsSet>
+            <display>undetermined</display>
+            <rights/>
+        </rightsSet>
+        <sourceSet>
+            <display>J. Paul Getty Museum [website]; http://www.getty.edu/museum/</display>
+            <source>
+                <name/>
+                <refid type="URI">http://www.getty.edu/museum/</refid>
+            </source>
+        </sourceSet>
+        <titleSet>
+            <display>Overall view, back (reverse)</display>
+            <title type="generalView">Overall view, back (reverse)</title>
+        </titleSet>
+        <worktypeSet>
+            <display>digital image</display>
+            <notes/>
+            <worktype/>
+        </worktypeSet>
+    </image>
+</vra>

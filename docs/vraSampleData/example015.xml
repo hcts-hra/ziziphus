@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://www.vraweb.org/projects/vracore4/vra-4.0-restricted.xsd">
+    <work id="w_16" source="Core 4 Sample Database (VCat)" refid="16">
+        <agentSet>
+            <display>unknown (Roman and Samnite)</display>
+            <notes/>
+            <agent>
+                <name vocab="ULAN" refid="500125274" type="personal">unknown</name>
+            </agent>
+        </agentSet>
+        <culturalContextSet>
+            <culturalContext>Roman</culturalContext>
+            <culturalContext>Samnite</culturalContext>
+        </culturalContextSet>
+        <dateSet>
+            <display>79 CE (destruction); ca. 525 BCE-79 CE (inclusive)</display>
+            <notes>Buried by an eruption of Mt. Vesuvius on August 24,  79 CE.</notes>
+            <date type="inclusive">
+                <earliestDate>-525</earliestDate>
+                <latestDate>79</latestDate>
+            </date>
+            <date type="destruction">
+                <earliestDate>79</earliestDate>
+                <latestDate>79</latestDate>
+            </date>
+        </dateSet>
+        <descriptionSet>
+            <description>Roman site in southern Italy, located 24 km south-east of Naples, destroyed by an eruption of Mt Vesuvius. Vesuvius began to erupt in the late morning of the 24 August 79 CE, and by the end of the day some 2 m of ash had fallen on the town. The first 3 m also contain lava pebbles (lapilli), followed by layers of pumice, the solidified volcanic magma. Pompeii ultimately lay buried under some 4 m of debris. The city was undisturbed for some 1700 years until excavations in the mid-18th century following the discovery of Herculaneum, about 15 km further up the coast. Pompeii’s architectural development can be divided into three phases that also reflect the political evolution of the city: the Pre-Samnite period (525-425 BCE), the Samnite period (425-80 BCE) and the Roman phase (80 BCE-79 CE); the last may be further subdivided by the establishment of the Roman Empire under Augustus in 30 BC and by an earlier earthquake of 62 CE.</description>
+        </descriptionSet>
+        <locationSet>
+            <display>Pompeii, Campania, Italy</display>
+            <notes>24 km south-east of Naples</notes>
+            <location type="site">
+                <name type="geographic" vocab="TGN" refid="7004658" extent="deserted settlement">Pompeii</name>
+                <name type="geographic" vocab="TGN" refid="7003005" extent="region">Campania</name>
+                <name type="geographic" vocab="TGN" refid="1000080" extent="nation">Italy</name>
+                <name type="geographic" vocab="TGN" refid="1000003" extent="continent">Europe</name>
+            </location>
+        </locationSet>
+        <measurementsSet>
+            <display>35 m (width, forum) x 157 m (length, forum)</display>
+            <notes/>
+            <measurements type="length" unit="m" extent="forum">157</measurements>
+            <measurements type="width" unit="m" extent="forum">35</measurements>
+        </measurementsSet>
+        <sourceSet>
+            <display>Grove Art Online; http://www.oxfordartonline.com (accessed 5/25/2009)</display>
+            <notes/>
+            <source/>
+        </sourceSet>
+        <stylePeriodSet>
+            <display>First Style; Imperial (Roman)</display>
+            <stylePeriod vocab="AAT" refid="300020541">Imperial (Roman)</stylePeriod>
+            <stylePeriod vocab="AAT" refid="300020607">First Style</stylePeriod>
+        </stylePeriodSet>
+        <subjectSet>
+            <display>architectural exteriors; architectural interiors; cityscapes; domestic life; genre; archaeology; Roman Empire</display>
+            <notes/>
+            <subject>
+                <term type="geographicPlace" vocab="TGN" refid="7030347">Roman Empire</term>
+            </subject>
+            <subject>
+                <term type="descriptiveTopic" vocab="AAT" refid="300054328">archaeology</term>
+            </subject>
+        </subjectSet>
+        <techniqueSet>
+            <display>construction (assembling)</display>
+            <notes/>
+            <technique vocab="AAT" refid="300054608">construction (assembling)</technique>
+        </techniqueSet>
+        <titleSet>
+            <display>Pompeii</display>
+            <title type="cited" pref="true" xml:lang="la">Pompeii</title>
+            <title type="descriptive" pref="false" xml:lang="en">Pompeii [archaeological site]</title>
+        </titleSet>
+        <worktypeSet>
+            <display>complexes; sites (locations); archaeological sites; excavations (sites); complexes; sites (locations); historic sites</display>
+            <worktype vocab="AAT" refid="300266151">excavation (site)</worktype>
+            <worktype vocab="AAT" refid="300000833">historic site</worktype>
+        </worktypeSet>
+    </work>
+    <work id="w_17" source="Core 4 Sample Database (VCat)" refid="17">
+        <agentSet>
+            <display>unknown (Samnite and Roman)</display>
+            <notes/>
+            <agent>
+                <name vocab="ULAN" refid="500125274" type="personal">unknown</name>
+            </agent>
+        </agentSet>
+        <culturalContextSet>
+            <culturalContext>Roman</culturalContext>
+            <culturalContext>Samnite</culturalContext>
+        </culturalContextSet>
+        <dateSet>
+            <display>ca. 100 BCE-79 CE (inclusive)</display>
+            <date type="inclusive">
+                <earliestDate>-100</earliestDate>
+                <latestDate>79</latestDate>
+            </date>
+        </dateSet>
+        <descriptionSet>
+            <description>During the Samnite period (until 80 BCE) construction was dominated by the use of ashlar blocks of tufa for grandiose gateways and façades, and the use of opus incertum--lava and tufa rubble embedded in mortar to build walls; the walls themselves were decorated with First Style paintings characterized by stuccowork imitating coloured or veined plaques of marble. The House of the Faun is the most grandiose residence of the period; it is here that the famous mosaic depicting Alexander’s defeat of Darius III was found in the tablinum. Its monumental gateway opens on to the Via della Fortuna, and the house occupies an entire city block. It has two atria: an atrium tuscanicum, where excavations unearthed the beautiful statue of a faun, after which the house is named, and a smaller atrium tetrastylum, as well as two broad gardens surrounded by colonnades.</description>
+        </descriptionSet>
+        <locationSet>
+            <display>Pompeii, Campania, Italy</display>
+            <location type="site">
+                <name type="geographic" vocab="TGN" refid="7004658" extent="deserted settlement">Pompeii</name>
+                <name type="geographic" vocab="TGN" refid="7003005" extent="region">Campania</name>
+                <name type="geographic" vocab="TGN" refid="1000080" extent="nation">Italy</name>
+                <name type="geographic" vocab="TGN" refid="1000003" extent="continent">Europe</name>
+            </location>
+        </locationSet>
+        <materialSet>
+            <display>tufa; stucco</display>
+            <notes/>
+            <material/>
+        </materialSet>
+        <relationSet>
+            <display/>
+            <relation type="partOf" refid="17" relids="w_16" source="Core 4 Sample Database (VCat)">Pompeii</relation>
+        </relationSet>
+        <sourceSet>
+            <display>Grove Art Online; http://www.oxfordartonline.com (accessed 5/25/2009)</display>
+            <notes/>
+            <source/>
+        </sourceSet>
+        <stylePeriodSet>
+            <display>First Style; Imperial (Roman)</display>
+            <stylePeriod vocab="AAT" refid="300020541">Imperial (Roman)</stylePeriod>
+            <stylePeriod vocab="AAT" refid="300020607">First Style</stylePeriod>
+        </stylePeriodSet>
+        <subjectSet>
+            <display>architectural exteriors; architectural interiors; domestic life; genre; archaeology; Housing</display>
+            <notes/>
+            <subject>
+                <term type="descriptiveTopic" vocab="AAT" refid="300054328">archaeology</term>
+            </subject>
+            <subject>
+                <term type="descriptiveTopic" vocab="LCSAF" refid="sh 85062603">Housing</term>
+            </subject>
+        </subjectSet>
+        <techniqueSet>
+            <display>construction (assembling)</display>
+            <notes/>
+            <technique vocab="AAT" refid="300054608">construction (assembling)</technique>
+        </techniqueSet>
+        <titleSet>
+            <display>House of the Faun</display>
+            <title type="cited" pref="true" xml:lang="en">House of the Faun</title>
+            <title type="cited" pref="false" xml:lang="it">Casa del Fauno</title>
+        </titleSet>
+        <worktypeSet>
+            <display>buildings; dwellings; houses; complexes; sites (locations); archaeological sites; excavations (sites)</display>
+            <worktype vocab="AAT" refid="300005433">house</worktype>
+            <worktype vocab="AAT" refid="300266151">excavation (site)</worktype>
+        </worktypeSet>
+    </work>
+    <image id="i_120" href="http://aal.ucsd.edu/vracore4/example015.html" refid="120" source="VRA Data Standards Committee, Core 4 Sample Records">
+        <descriptionSet>
+            <description>The atrium was tuscanicum (of Tuscan type) when the impluvium was supported solely by beams, tetrastylum when it was supported by four columns and corinthium when the number of these columns was greater than four. The statue of the dancing faun for which the house is named can be seen in the impluvium in the foreground. (The statue is a copy, the original is in Naples, Museo Archeologico Nazionale).</description>
+        </descriptionSet>
+        <measurementsSet>
+            <display>18 MB</display>
+            <notes/>
+            <measurements/>
+        </measurementsSet>
+        <relationSet>
+            <relation type="imageOf" refid="17" source="Core 4 Sample Database (VCat)"/>
+        </relationSet>
+        <rightsSet>
+            <display>© Alec or Marlene Hartill</display>
+            <rights/>
+        </rightsSet>
+        <sourceSet>
+            <display>Hartill Art Associates ait0898</display>
+            <source>
+                <name type="vendor">Hartill Art Associates</name>
+                <refid type="vendor">ait0898</refid>
+            </source>
+        </sourceSet>
+        <subjectSet>
+            <display>statue; faun; pool</display>
+            <notes/>
+            <subject>
+                <term/>
+            </subject>
+        </subjectSet>
+        <techniqueSet>
+            <display>digital imaging</display>
+            <notes/>
+            <technique/>
+        </techniqueSet>
+        <titleSet>
+            <display>Tuscan atrium, opposite triclinium</display>
+            <title type="generalView">Tuscan atrium, opposite triclinium</title>
+        </titleSet>
+        <worktypeSet>
+            <display>digital image</display>
+            <notes/>
+            <worktype/>
+        </worktypeSet>
+    </image>
+</vra>

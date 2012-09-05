@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://www.vraweb.org/projects/vracore4/vra-4.0-restricted.xsd">
+    <work id="w_5" source="Core 4 Sample Database (VCat)" refid="5">
+        <agentSet>
+            <display>Henry Bacon (American architect, 1866-1924)</display>
+            <notes/>
+            <agent>
+                <name vocab="ULAN" refid="500029359" type="personal">Bacon, Henry</name>
+                <dates type="life">
+                    <earliestDate>1866</earliestDate>
+                    <latestDate>1924</latestDate>
+                </dates>
+                <culture>American</culture>
+                <role>architect</role>
+            </agent>
+        </agentSet>
+        <culturalContextSet>
+            <culturalContext>American</culturalContext>
+        </culturalContextSet>
+        <dateSet>
+            <display>1911-1912 (design); 1914-1922 (creation)</display>
+            <date type="design">
+                <earliestDate>1911</earliestDate>
+                <latestDate>1912</latestDate>
+            </date>
+            <date type="creation">
+                <earliestDate>1914</earliestDate>
+                <latestDate>1922</latestDate>
+            </date>
+        </dateSet>
+        <descriptionSet>
+            <description>Design was chosen by competition. The chosen design was influenced by the Greek Parthenon. Built into the design are symbols of the Union like the 36 exterior Doric columns representing the 36 states in the Union at the time of Lincoln's death.</description>
+        </descriptionSet>
+        <inscriptionSet>
+            <display>Inscribed above the statue: IN THIS TEMPLE / AS IN THE HEARTS OF THE PEOPLE / FOR WHOM HE SAVED THE UNION / THE MEMORY OF ABRAHAM LINCOLN / IS ENSHRINED FOREVER; [the northern wall contains an inscription of Lincoln's second inaugural speech, the southern wall contains an inscription of the Gettysburg address] </display>
+            <inscription>
+                <author/>
+                <position/>
+                <text/>
+            </inscription>
+        </inscriptionSet>
+        <locationSet>
+            <display>Washington, District of Columbia, United States</display>
+            <notes>On the National Mall</notes>
+            <location type="site">
+                <name type="geographic" vocab="TGN" refid="7013962" extent="inhabited place">Washington</name>
+                <name type="geographic" vocab="TGN" refid="7015717" extent="department; district">District of Columbia</name>
+                <name type="geographic" vocab="TGN" refid="7012149" extent="nation">United States</name>
+                <name type="geographic" vocab="TGN" refid="1000001" extent="continent">North and Central America</name>
+            </location>
+        </locationSet>
+        <materialSet>
+            <display>Exterior: Colorado Yule marble; tripods: Pink Tennessee marble; interior walls and columns: Indiana limestone; ceiling: Alabama marble saturated with paraffin for translucency; floor and wall base: Pink Tennessee marble</display>
+            <notes/>
+            <material/>
+        </materialSet>
+        <measurementsSet>
+            <display>30.18 m (height, building)</display>
+            <notes/>
+            <measurements type="height" unit="m" extent="building">30.18</measurements>
+        </measurementsSet>
+        <sourceSet>
+            <display>Longstreth, Richard , ed.; Mall in Washington, 1791-1991, Hanover and London: University Press of New England, 1991  (0894681389)</display>
+            <notes/>
+            <source/>
+        </sourceSet>
+        <stylePeriodSet>
+            <display>Twentieth century</display>
+            <stylePeriod vocab="LCSAF" refid="sh 85139020">Twentieth century</stylePeriod>
+        </stylePeriodSet>
+        <subjectSet>
+            <display>rulers and leaders; Lincoln, Abraham, 1809-1865 ; commemoration; Union (United States); temples; Doric order; columns; states (political divisions); Mall, The (Washington, D.C.)</display>
+            <notes/>
+            <subject>
+                <term type="personalName" vocab="LCSAF" refid="n 79006779">Lincoln, Abraham, 1809-1865 </term>
+            </subject>
+        </subjectSet>
+        <techniqueSet>
+            <display>carving (processes); construction (assembling)</display>
+            <notes/>
+            <technique vocab="AAT" refid="300053149">carving (processes)</technique>
+            <technique vocab="AAT" refid="300054608">construction (assembling)</technique>
+        </techniqueSet>
+        <titleSet>
+            <display> Lincoln Memorial</display>
+            <title type="cited" pref="true" xml:lang="en"> Lincoln Memorial</title>
+        </titleSet>
+        <worktypeSet>
+            <display>buildings; memorials; built works; monuments</display>
+            <worktype vocab="AAT" refid="300006956">memorial</worktype>
+            <worktype vocab="AAT" refid="300006958">monument</worktype>
+        </worktypeSet>
+    </work>
+    <work id="w_8" source="Core 4 Sample Database (VCat)" refid="8">
+        <agentSet>
+            <display>Daniel Chester French (American sculptor, 1850-1931)</display>
+            <notes/>
+            <agent>
+                <name vocab="ULAN" refid="500009434" type="personal">French, Daniel Chester</name>
+                <dates type="life">
+                    <earliestDate>1850</earliestDate>
+                    <latestDate>1931</latestDate>
+                </dates>
+                <culture>American</culture>
+                <role>sculptor</role>
+            </agent>
+        </agentSet>
+        <culturalContextSet>
+            <culturalContext>American</culturalContext>
+        </culturalContextSet>
+        <dateSet>
+            <display>1914-1920 (creation)</display>
+            <date type="creation">
+                <earliestDate>1914</earliestDate>
+                <latestDate>1920</latestDate>
+            </date>
+        </dateSet>
+        <descriptionSet>
+            <description>[The statue was constructed and carved of 28 blocks of marble by the Piccirilli Brothers studio of Brooklyn, New York.. ] The over life-size, seated and meditative Abraham Lincoln (1914-1920) for the Lincoln Memorial (marble, dedicated 1922; Washington, DC), French’s most famous piece, became a national icon and crowned the artist’s long and celebrated career. </description>
+        </descriptionSet>
+        <locationSet>
+            <display>Lincoln Memorial (Washington, District of Columbia, United States)</display>
+            <notes>On the National Mall</notes>
+            <location type="site">
+                <name type="geographic" vocab="GAO" refid="" extent="building">Lincoln Memorial</name>
+                <name type="geographic" vocab="TGN" refid="7013962" extent="inhabited place">Washington</name>
+                <name type="geographic" vocab="TGN" refid="7015717" extent="department; district">District of Columbia</name>
+                <name type="geographic" vocab="TGN" refid="7012149" extent="nation">United States</name>
+                <name type="geographic" vocab="TGN" refid="1000001" extent="continent">North and Central America</name>
+            </location>
+        </locationSet>
+        <materialSet>
+            <display>pedestal and platform for statue: Tennessee marble; statue: white Georgia marble</display>
+            <notes/>
+            <material/>
+        </materialSet>
+        <measurementsSet>
+            <display>5.79 m (height, statue)</display>
+            <notes/>
+            <measurements type="height" unit="m" extent="statue">5.79</measurements>
+        </measurementsSet>
+        <relationSet>
+            <display/>
+            <relation type="partOf" refid="8" relids="w_5" source="Core 4 Sample Database (VCat)"> Lincoln Memorial</relation>
+        </relationSet>
+        <sourceSet>
+            <display>Grove Art Online; http://www.oxfordartonline.com (accessed 5/23/2009)</display>
+            <notes/>
+            <source/>
+        </sourceSet>
+        <stylePeriodSet>
+            <display>Beaux-Arts; Twentieth century</display>
+            <stylePeriod vocab="AAT" refid="300021433">Beaux-Arts</stylePeriod>
+            <stylePeriod vocab="LCSAF" refid="sh 85139020">Twentieth century</stylePeriod>
+        </stylePeriodSet>
+        <subjectSet>
+            <display>rulers and leaders; Lincoln, Abraham, 1809-1865 ; Presidents United States; United States History Civil War, 1861-1865; commemoration; Union (United States); Roman fasces; republic</display>
+            <notes/>
+            <subject>
+                <term type="personalName" vocab="LCSAF" refid="n 79006779">Lincoln, Abraham, 1809-1865 </term>
+            </subject>
+            <subject>
+                <term type="descriptiveTopic" vocab="LCSAF" refid="sh 85106465">Presidents United States</term>
+            </subject>
+            <subject>
+                <term type="descriptiveTopic" vocab="LCSAF" refid="sh 85140205">United States History Civil War, 1861-1865</term>
+            </subject>
+        </subjectSet>
+        <techniqueSet>
+            <display>carving (processes)</display>
+            <notes/>
+            <technique vocab="AAT" refid="300053149">carving (processes)</technique>
+        </techniqueSet>
+        <titleSet>
+            <display>Abraham Lincoln</display>
+            <title type="cited" pref="true" xml:lang="en">Abraham Lincoln</title>
+        </titleSet>
+        <worktypeSet>
+            <display>sculpture (visual work)</display>
+            <worktype vocab="AAT" refid="300047090">sculpture (visual work)</worktype>
+        </worktypeSet>
+    </work>
+    <image id="i_107" href="http://aal.ucsd.edu/vracore4/example016.html" refid="107" source="VRA Data Standards Committee, Core 4 Sample Records">
+        <agentSet>
+            <display>chadh [Flickr account name]</display>
+            <notes/>
+            <agent/>
+        </agentSet>
+        <dateSet>
+            <display>09/24/2008 (creation)</display>
+            <notes/>
+            <date/>
+        </dateSet>
+        <measurementsSet>
+            <display>18 MB</display>
+            <notes/>
+            <measurements/>
+        </measurementsSet>
+        <relationSet>
+            <relation type="imageOf" refid="8" source="Core 4 Sample Database (VCat)"/>
+        </relationSet>
+        <rightsSet>
+            <display>undetermined</display>
+            <rights/>
+        </rightsSet>
+        <sourceSet>
+            <display>Flickr; http://www.flickr.com/</display>
+            <source>
+                <name/>
+                <refid type="URI">http://www.flickr.com/</refid>
+            </source>
+        </sourceSet>
+        <techniqueSet>
+            <display>digital imaging</display>
+            <notes/>
+            <technique/>
+        </techniqueSet>
+        <titleSet>
+            <display>General view of statue and inscription behind it</display>
+            <title type="generalView">General view of statue and inscription behind it</title>
+        </titleSet>
+        <worktypeSet>
+            <display>digital image</display>
+            <notes/>
+            <worktype/>
+        </worktypeSet>
+    </image>
+</vra>

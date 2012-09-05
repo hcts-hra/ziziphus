@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://www.vraweb.org/projects/vracore4/vra-4.0-restricted.xsd">
+    <work id="w_4" source="Core 4 Sample Database (VCat)" refid="4">
+        <agentSet>
+            <display>Thomas Jefferson (American author, 1743-1826)</display>
+            <notes/>
+            <agent>
+                <name vocab="ULAN" refid="500017255" type="personal">Jefferson, Thomas </name>
+                <dates type="life">
+                    <earliestDate>1743</earliestDate>
+                    <latestDate>1826</latestDate>
+                </dates>
+                <culture>American</culture>
+                <role>author</role>
+            </agent>
+        </agentSet>
+        <culturalContextSet>
+            <culturalContext>American</culturalContext>
+        </culturalContextSet>
+        <dateSet>
+            <display>1776 (creation)</display>
+            <notes>Drafted by Thomas Jefferson between June 11 and June 28, 1776</notes>
+            <date type="creation">
+                <earliestDate>1776</earliestDate>
+                <latestDate>1776</latestDate>
+            </date>
+        </dateSet>
+        <descriptionSet>
+            <description>Drafted by Thomas Jefferson between June 11 and June 28, 1776, the Declaration of Independence is at once the nation's most cherished symbol of liberty and Jefferson's most enduring monument. Here, in exalted and unforgettable phrases, Jefferson expressed the convictions in the minds and hearts of the American people. The political philosophy of the Declaration was not new; its ideals of individual liberty had already been expressed by John Locke and the Continental philosophers. What Jefferson did was to summarize this philosophy in "self-evident truths" and set forth a list of grievances against the King in order to justify before the world the breaking of ties between the colonies and the mother country.</description>
+        </descriptionSet>
+        <inscriptionSet>
+            <display>For full transcription, see &lt;http://www.archives.gov/exhibits/charters/declaration_transcript.html&gt; For a list of the 56 signers, see &lt;http://www.archives.gov/exhibits/charters/declaration_signers_factsheet.html&gt;
+
+</display>
+            <inscription>
+                <author/>
+                <position/>
+                <text/>
+            </inscription>
+        </inscriptionSet>
+        <locationSet>
+            <display>National Archives Building (Washington, District of Columbia, United States)</display>
+            <notes>In the Rotunda for the Charters of Freedom
+
+</notes>
+            <location type="repository">
+                <name type="geographic" vocab="other" refid="" extent="building">National Archives Building</name>
+                <name type="geographic" vocab="TGN" refid="7013962" extent="inhabited place">Washington</name>
+                <name type="geographic" vocab="TGN" refid="7015717" extent="department; district">District of Columbia</name>
+                <name type="geographic" vocab="TGN" refid="7012149" extent="nation">United States</name>
+                <name type="geographic" vocab="TGN" refid="1000001" extent="continent">North and Central America</name>
+            </location>
+        </locationSet>
+        <materialSet>
+            <display>ink on parchment</display>
+            <notes/>
+            <material/>
+        </materialSet>
+        <measurementsSet>
+            <display>75.56 cm (height) x 62.23 cm (width)</display>
+            <notes/>
+            <measurements type="height" unit="cm">75.56</measurements>
+            <measurements type="width" unit="cm">62.23</measurements>
+        </measurementsSet>
+        <sourceSet>
+            <display>U.S. National Archives and Records Administration (NARA); http://www.archives.gov/ (accessed 2/23/2009)</display>
+            <notes/>
+            <source/>
+        </sourceSet>
+        <stylePeriodSet>
+            <display>Eighteenth century</display>
+            <stylePeriod vocab="LCSAF" refid="sh 85041401">Eighteenth century</stylePeriod>
+        </stylePeriodSet>
+        <subjectSet>
+            <display>rulers and leaders; typography or calligraphy; United States History Revolution, 1775-1783; United States. Continental Congress; textual work;  independence; social contract; colonies; England; United States; separation; dissolution</display>
+            <notes/>
+            <subject>
+                <term type="descriptiveTopic" vocab="LCSAF" refid="sh 85140139">United States History Revolution, 1775-1783</term>
+            </subject>
+            <subject>
+                <term type="descriptiveTopic" vocab="LCSAF" refid="n 80039712">United States. Continental Congress</term>
+            </subject>
+        </subjectSet>
+        <techniqueSet>
+            <display>calligraphy (process); writing (process)</display>
+            <notes/>
+            <technique vocab="AAT" refid="300053162">calligraphy (process)</technique>
+            <technique vocab="AAT" refid="300054698">writing (process)</technique>
+        </techniqueSet>
+        <titleSet>
+            <display>Declaration of Independence</display>
+            <title type="popular" pref="true" xml:lang="en">Declaration of Independence</title>
+        </titleSet>
+        <worktypeSet>
+            <display>manuscripts (document genre)</display>
+            <worktype vocab="AAT" refid="300028569">manuscript (document genre)</worktype>
+        </worktypeSet>
+    </work>
+    <image id="i_103" href="http://aal.ucsd.edu/vracore4/example017.html" refid="103" source="VRA Data Standards Committee, Core 4 Sample Records">
+        <descriptionSet>
+            <description>The badly faded original was used to create other printed facsimile copies.</description>
+        </descriptionSet>
+        <measurementsSet>
+            <display>18 MB</display>
+            <notes/>
+            <measurements/>
+        </measurementsSet>
+        <relationSet>
+            <relation type="imageOf" refid="4" source="Core 4 Sample Database (VCat)"/>
+        </relationSet>
+        <rightsSet>
+            <display>publicDomain</display>
+            <rights/>
+        </rightsSet>
+        <sourceSet>
+            <display>U.S. National Archives and Records Administration (NARA); http://www.archives.gov/</display>
+            <source>
+                <name/>
+                <refid type="URI">http://www.archives.gov/</refid>
+            </source>
+        </sourceSet>
+        <titleSet>
+            <display>Overall view of front of parchment</display>
+            <title type="generalView">Overall view of front of parchment</title>
+        </titleSet>
+        <worktypeSet>
+            <display>digital image</display>
+            <notes/>
+            <worktype/>
+        </worktypeSet>
+    </image>
+</vra>

@@ -1,0 +1,89 @@
+@gutterColor:#333333;
+@menubarColor:#111111;
+@bodyFontColor:#bdbdbd;
+@sidebarColor:#444444;
+@imageColor:#898989;
+@sectionColor:#666666;
+
+@sidePanelWidth:420px;
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-size: 10px;
+}
+
+.bf{
+    table{
+        width: 100%;
+        height: 100%;
+
+        td{
+            vertical-align: top;
+        }
+        .sidePanel{
+            min-width:@sidePanelWidth;
+            width:@sidePanelWidth;
+        }
+        .imagePanel{
+            padding: 30px 5px;
+            text-align:center;
+
+
+            #vraImage{
+                width: 100%;
+            }
+        }
+    }
+
+    .imageTrigger{
+        border: thin solid #999999;
+        height: 20px;
+        width: 20px;
+    }
+
+    .icon-edit {
+        background-position: -94px -70px;
+        .imageTrigger;
+    }
+
+    .icon-remove {
+        background-position: -310px 2px;
+        .imageTrigger;
+    }
+
+    .icon-zoom-in {
+        margin-top:0px;
+        background-position: -334px 2px;
+        .imageTrigger;
+    }
+
+    .icon-zoom-out {
+        margin-top:0px;
+        background-position: -358px 2px;
+        .imageTrigger;
+    }
+
+    .xfSwitch {
+        display: inline-block !important;
+        width: 100% !important;
+
+        .xfSelectedCase {
+            display: inherit;
+            width: 95%;
+        }
+    }
+
+    .simpleView {
+        .detail {
+            display:none;
+        }
+    }
+
+    .fullView {
+        .detail {
+            display:block;
+        }
+    }
+}

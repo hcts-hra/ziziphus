@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+    <head>
+        <title>Login Ziziphus Prototype</title>
+        <link rel="stylesheet" type="text/css" href="resources/css/reset.css"/>
+        <style type="text/css">
+        .bf {
+            background-color:#333333;
+        }
+        .text {
+            color: #BDBDBD;
+        }
+    </style>
+    </head>
+    <body class="bf">
+        <div id="mainpanel">
+            <h1 class="text">Ziziphus Login</h1>
+            <div class="text">
+                <p>Login with following credentials:</p>
+                <pre>User:     editor</pre>
+                <pre>Password: editor</pre>
+            </div>
+            <form method="POST" class="login">
+                <table class="login" cellpadding="5">
+                    <tbody>
+                        <tr>
+                            <td class="text" align="left">Username:</td>
+                            <td>
+                                <input type="text" name="user" size="20" required="required"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text" align="left">Password:</td>
+                            <td>
+                                <input type="password" name="password" size="20"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="left">
+                                <input type="submit" value="Login"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>

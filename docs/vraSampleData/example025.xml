@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://www.vraweb.org/projects/vracore4/vra-4.0-restricted.xsd">
+    <work id="w_28" source="Core 4 Sample Database (VCat)" refid="28">
+        <agentSet>
+            <display>Théophile Alexandre Steinlen (Swiss artist, 1859-1923)</display>
+            <notes/>
+            <agent>
+                <name vocab="ULAN" refid="500017451" type="personal">Steinlen, Théophile Alexandre</name>
+                <dates type="life">
+                    <earliestDate>1859</earliestDate>
+                    <latestDate>1923</latestDate>
+                </dates>
+                <culture>Swiss</culture>
+                <role>artist</role>
+            </agent>
+        </agentSet>
+        <culturalContextSet>
+            <culturalContext>French</culturalContext>
+        </culturalContextSet>
+        <dateSet>
+            <display>1896 (creation)</display>
+            <date type="creation">
+                <earliestDate>1896</earliestDate>
+                <latestDate>1896</latestDate>
+            </date>
+        </dateSet>
+        <descriptionSet>
+            <description>[This poster is offset lithography, but mass-produced and commercially printed.] Steinlen's poster advertises the reopening of a cabaret, the Chat Noir in Montmartre. Here the artist worked with several actors to present avant-garde shadow theater, which investigated the artistic and dramatic effects of silhouettes, starring R. Salis as the popular, improvisational narrator ("bonimenteur") of each shadow performance.</description>
+        </descriptionSet>
+        <inscriptionSet>
+            <display>Main caption: Prochainement la très illustre Compagnie du Chat Noir avec ses Pièces d'Ombres Célèbres, ses Poëtes ses Compositeurs Avec Rodolphe Salis. Steinlen logo on bottom left. On right side: Imp. Charles Verneau, 114, Rue Oberkampf, Paris</display>
+            <inscription>
+                <author/>
+                <position/>
+                <text/>
+            </inscription>
+        </inscriptionSet>
+        <locationSet>
+            <display>Santa Barbara Museum of Art (Santa Barbara, California, United States) 1991.17</display>
+            <notes>Printer/publisher: Charles Verneau, 114, Rue Oberkampf, Paris</notes>
+            <location type="repository">
+                <name type="geographic" vocab="other" refid="" extent="organization">Santa Barbara Museum of Art</name>
+                <name type="geographic" vocab="TGN" refid="7017752" extent="inhabited place">Santa Barbara</name>
+                <name type="geographic" vocab="TGN" refid="7007157" extent="state">California</name>
+                <name type="geographic" vocab="TGN" refid="7012149" extent="nation">United States</name>
+                <name type="geographic" vocab="TGN" refid="1000001" extent="continent">North and Central America</name>
+                <refid type="accession">1991.17</refid>
+            </location>
+            <location type="creation">
+                <name type="geographic" vocab="TGN" refid="" extent="organization">Montmartre</name>
+                <name type="geographic" vocab="TGN" refid="7008038" extent="inhabited place">Paris</name>
+                <name type="geographic" vocab="TGN" refid="7002883" extent="region">Île-de-France</name>
+                <name type="geographic" vocab="TGN" refid="1000070" extent="nation">France</name>
+                <name type="geographic" vocab="TGN" refid="1000003" extent="continent">Europe</name>
+            </location>
+        </locationSet>
+        <materialSet>
+            <display>ink on paper</display>
+            <notes/>
+            <material/>
+        </materialSet>
+        <measurementsSet>
+            <display>61.6 cm (height) x 39.62 cm (width)</display>
+            <notes/>
+            <measurements type="height" unit="cm">61.6</measurements>
+            <measurements type="width" unit="cm">39.62</measurements>
+        </measurementsSet>
+        <sourceSet>
+            <display>CCO (Cataloging Cultural Objects) Catalog Examples; http://www.vrafoundation.org/ccoweb/cco/examplesindex.html (accessed 5/31/2009)</display>
+            <notes/>
+            <source/>
+        </sourceSet>
+        <stylePeriodSet>
+            <display>Art Nouveau; Nineteenth century</display>
+            <stylePeriod vocab="LCSAF" refid="sh 85091984">Nineteenth century</stylePeriod>
+            <stylePeriod vocab="AAT" refid="300021430">Art Nouveau</stylePeriod>
+        </stylePeriodSet>
+        <subjectSet>
+            <display>animals; commercial and industrial design; typography or calligraphy; Chat noir (Cabaret : Paris, France); Salis, Rodolphe, 1851-1897; graphic design; commercial arts; advertising; cabaret entertainment; avant garde; cats; fin-de-siecle</display>
+            <notes/>
+            <subject>
+                <term type="personalName" vocab="LCNAF" refid="n 82142925 ">Salis, Rodolphe, 1851-1897</term>
+            </subject>
+            <subject>
+                <term type="builtworkPlace" vocab="LCNAF" refid="n 82148021">Chat noir (Cabaret : Paris, France)</term>
+            </subject>
+        </subjectSet>
+        <techniqueSet>
+            <display>offset printing</display>
+            <notes/>
+            <technique vocab="AAT" refid="300053279">offset printing</technique>
+        </techniqueSet>
+        <titleSet>
+            <display>Chat Noir</display>
+            <title type="inscribed" pref="true" xml:lang="fr">Chat Noir</title>
+            <title type="descriptive" pref="false" xml:lang="en">Poster of a Black Cat, for the Reopening of the Chat Noir Cabaret </title>
+        </titleSet>
+        <worktypeSet>
+            <display>information forms; posters</display>
+            <worktype vocab="AAT" refid="300027221">poster</worktype>
+        </worktypeSet>
+    </work>
+    <image id="i_130" href="http://aal.ucsd.edu/vracore4/example25.html" refid="130" source="VRA Data Standards Committee, Core 4 Sample Records">
+        <dateSet>
+            <display>1998 (creation)</display>
+            <notes/>
+            <date/>
+        </dateSet>
+        <measurementsSet>
+            <display>18 MB</display>
+            <notes/>
+            <measurements/>
+        </measurementsSet>
+        <relationSet>
+            <relation type="imageOf" refid="28" source="Core 4 Sample Database (VCat)"/>
+        </relationSet>
+        <rightsSet>
+            <display>©1998 Santa Barbara Museum of Art. </display>
+            <rights/>
+        </rightsSet>
+        <sourceSet>
+            <display>Santa Barbara Museum of Art [website]; http://www.sbmuseart.org/</display>
+            <source>
+                <name/>
+                <refid type="URI">http://www.sbmuseart.org/</refid>
+            </source>
+        </sourceSet>
+        <techniqueSet>
+            <display>digital imaging</display>
+            <notes/>
+            <technique/>
+        </techniqueSet>
+        <titleSet>
+            <display>Overall view</display>
+            <title type="generalView">Overall view</title>
+        </titleSet>
+        <worktypeSet>
+            <display>digital image</display>
+            <notes/>
+            <worktype/>
+        </worktypeSet>
+    </image>
+</vra>

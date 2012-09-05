@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://www.vraweb.org/projects/vracore4/vra-4.0-restricted.xsd">
+    <collection id="c_24" source="Core 4 Sample Database (VCat)" refid="24">
+        <agentSet>
+            <display>unknown (Netherlandish tapestry weaver)</display>
+            <notes/>
+            <agent>
+                <name vocab="ULAN" refid="500125274" type="personal">unknown</name>
+                <role>tapestry weaver</role>
+            </agent>
+        </agentSet>
+        <culturalContextSet>
+            <culturalContext>French</culturalContext>
+            <culturalContext>Flemish</culturalContext>
+            <culturalContext>Netherlandish</culturalContext>
+        </culturalContextSet>
+        <dateSet>
+            <display>ca. 1495-1505 (creation)</display>
+            <date type="creation">
+                <earliestDate>1490</earliestDate>
+                <latestDate>1510</latestDate>
+            </date>
+        </dateSet>
+        <descriptionSet>
+            <description>As early as the seventeenth century, the Unicorn Tapestries were documented as having been displayed as a group. Surely they were collected and exhibited together because together they illustrate the pursuit of the elusive unicorn so completely and in such astonishing detail, despite the likelihood that the seven individual hangings may come from two or more sets of tapestries. Little is known about their early history, though the seven hangings are thought to have been designed in Paris and woven in Brussels (then part of the Netherlands) between 1495-1505. They include the depiction of 101 species of plants, of which over 85 have been identified. The vibrant colors still evident today were produced with three dye plants: weld (yellow), madder (red), and woad (blue). The earliest document listing the seven tapestries is a 1680 inventory that details the possessions in the Paris residence of François VI de La Rochefoucauld. They were purchased from the Rochefoucauld family by John D. Rockefeller.</description>
+        </descriptionSet>
+        <locationSet>
+            <display>Metropolitan Museum of Art; The Cloisters (New York, New York, United States)</display>
+            <notes>Gift of John D. Rockefeller Jr., 1937</notes>
+            <location type="repository">
+                <name type="geographic" vocab="other" refid="" extent="organization">Metropolitan Museum of Art; The Cloisters</name>
+                <name type="geographic" vocab="TGN" refid="7007567" extent="inhabited place">New York</name>
+                <name type="geographic" vocab="TGN" refid="7007568" extent="state">New York</name>
+                <name type="geographic" vocab="TGN" refid="7012149" extent="nation">United States</name>
+                <name type="geographic" vocab="TGN" refid="1000001" extent="continent">North and Central America</name>
+            </location>
+        </locationSet>
+        <materialSet>
+            <display>wool; metallic threads; silk</display>
+            <notes/>
+            <material/>
+        </materialSet>
+        <sourceSet>
+            <display>Metropolitan Museum of Art [website]; http://www.metmuseum.org (accessed 5/29/2009)</display>
+            <notes/>
+            <source/>
+        </sourceSet>
+        <stylePeriodSet>
+            <display>Medieval</display>
+            <stylePeriod vocab="AAT" refid="300020756">Medieval</stylePeriod>
+        </stylePeriodSet>
+        <subjectSet>
+            <display>allegorical; animals; cycles or series; decorative arts; literary or legendary; plants; Animals, Mythical; Hunting in art; Unicorns; botanical studies; flowery mead; flowery mede; Mediaeval gardens; Middle Ages</display>
+            <notes/>
+            <subject>
+                <term type="iconographicTopic" vocab="LCSAF" refid="sh 85005269 ">Animals, Mythical</term>
+            </subject>
+            <subject>
+                <term type="iconographicTopic" vocab="LCSAF" refid="sh 85139671">Unicorns</term>
+            </subject>
+            <subject>
+                <term type="iconographicTopic" vocab="LCSAF" refid="sh 85063138">Hunting in art</term>
+            </subject>
+        </subjectSet>
+        <techniqueSet>
+            <display>tapestry (process)</display>
+            <notes/>
+            <technique vocab="AAT" refid="300061981">tapestry (process)</technique>
+        </techniqueSet>
+        <titleSet>
+            <display>The Hunt of the Unicorn </display>
+            <title type="cited" pref="true" xml:lang="en">The Hunt of the Unicorn </title>
+            <title type="repository" pref="false" xml:lang="en">Unicorn Tapestries</title>
+        </titleSet>
+        <worktypeSet>
+            <display>furnishings; wall hangings; tapestries</display>
+            <worktype vocab="AAT" refid="300205002">tapestry (wall hanging)</worktype>
+        </worktypeSet>
+    </collection>
+    <work id="w_25" source="Core 4 Sample Database (VCat)" refid="25">
+        <agentSet>
+            <display>unknown (Netherlandish tapestry weaver)</display>
+            <notes/>
+            <agent>
+                <name vocab="ULAN" refid="500125274" type="personal">unknown</name>
+                <role>tapestry weaver</role>
+            </agent>
+        </agentSet>
+        <culturalContextSet>
+            <culturalContext>Flemish</culturalContext>
+            <culturalContext>Netherlandish</culturalContext>
+        </culturalContextSet>
+        <dateSet>
+            <display>ca. 1495-1505 (creation)</display>
+            <date type="creation">
+                <earliestDate>1490</earliestDate>
+                <latestDate>1510</latestDate>
+            </date>
+        </dateSet>
+        <descriptionSet>
+            <description>The Unicorn in Captivity may have been created as a single image rather than part of a series. In this instance, the unicorn probably represents the beloved tamed. He is tethered to a tree and constrained by a fence, but the chain is not secure and the fence is low enough to leap over: The unicorn could escape if he wished. Clearly, however, his confinement is a happy one, to which the ripe, seed-laden pomegranates in the tree--a medieval symbol of fertility and marriage--testify.</description>
+        </descriptionSet>
+        <locationSet>
+            <display>Metropolitan Museum of Art; The Cloisters (New York, New York, United States) 37.80.6</display>
+            <notes>Gift of John D. Rockefeller Jr., 1937</notes>
+            <location type="repository">
+                <name type="geographic" vocab="other" refid="" extent="organization">Metropolitan Museum of Art; The Cloisters</name>
+                <name type="geographic" vocab="TGN" refid="7007567" extent="inhabited place">New York</name>
+                <name type="geographic" vocab="TGN" refid="7007568" extent="state">New York</name>
+                <name type="geographic" vocab="TGN" refid="7012149" extent="nation">United States</name>
+                <name type="geographic" vocab="TGN" refid="1000001" extent="continent">North and Central America</name>
+                <refid type="accession">37.80.6</refid>
+            </location>
+        </locationSet>
+        <materialSet>
+            <display>wool warp, wool, silk, silver, and gilt wefts</display>
+            <notes/>
+            <material/>
+        </materialSet>
+        <measurementsSet>
+            <display>368 cm (height) x 251.5 cm (width)</display>
+            <notes/>
+            <measurements type="height" unit="cm">368</measurements>
+            <measurements type="width" unit="cm">251.5</measurements>
+        </measurementsSet>
+        <relationSet>
+            <display/>
+            <relation type="partOf" refid="25" relids="c_24" source="Core 4 Sample Database (VCat)">The Hunt of the Unicorn </relation>
+        </relationSet>
+        <sourceSet>
+            <display>Metropolitan Museum of Art [website]; http://www.metmuseum.org (accessed 5/30/2009)</display>
+            <notes/>
+            <source/>
+        </sourceSet>
+        <stylePeriodSet>
+            <display>Medieval</display>
+            <stylePeriod vocab="AAT" refid="300020756">Medieval</stylePeriod>
+        </stylePeriodSet>
+        <subjectSet>
+            <display>allegorical; animals; cycles or series; decorative arts; literary or legendary; plants; Animals, Mythical; Gardens; Unicorns; botanical studies; flowery mead; flowery mede; Mediaeval gardens; Middle Ages</display>
+            <notes/>
+            <subject>
+                <term type="iconographicTopic" vocab="LCSAF" refid="sh 85005269 ">Animals, Mythical</term>
+            </subject>
+            <subject>
+                <term type="iconographicTopic" vocab="LCSAF" refid="sh 85139671">Unicorns</term>
+            </subject>
+            <subject>
+                <term type="descriptiveTopic" vocab="LCSAF" refid="sh 85053101">Gardens</term>
+            </subject>
+        </subjectSet>
+        <techniqueSet>
+            <display>tapestry (process)</display>
+            <notes/>
+            <technique vocab="AAT" refid="300061981">tapestry (process)</technique>
+        </techniqueSet>
+        <titleSet>
+            <display>Unicorn in Captivity</display>
+            <title type="cited" pref="true" xml:lang="en">Unicorn in Captivity</title>
+        </titleSet>
+        <worktypeSet>
+            <display>furnishings; wall hangings; tapestries</display>
+            <worktype vocab="AAT" refid="300205002">tapestry (wall hanging)</worktype>
+        </worktypeSet>
+    </work>
+    <image id="i_128" href="http://aal.ucsd.edu/vracore4/example12.html" refid="128" source="VRA Data Standards Committee, Core 4 Sample Records">
+        <measurementsSet>
+            <display>18 MB</display>
+            <notes/>
+            <measurements/>
+        </measurementsSet>
+        <relationSet>
+            <relation type="imageOf" refid="25" source="Core 4 Sample Database (VCat)"/>
+        </relationSet>
+        <rightsSet>
+            <display>undetermined</display>
+            <rights/>
+        </rightsSet>
+        <sourceSet>
+            <display>Metropolitan Museum of Art [website]; http://www.metmuseum.org</display>
+            <source>
+                <name/>
+                <refid type="URI">http://www.metmuseum.org</refid>
+            </source>
+        </sourceSet>
+        <techniqueSet>
+            <display>digital imaging</display>
+            <notes/>
+            <technique/>
+        </techniqueSet>
+        <titleSet>
+            <display>Overall view of single tapestry</display>
+            <title type="generalView">Overall view of single tapestry</title>
+        </titleSet>
+        <worktypeSet>
+            <display>digital image</display>
+            <notes/>
+            <worktype/>
+        </worktypeSet>
+    </image>
+</vra>

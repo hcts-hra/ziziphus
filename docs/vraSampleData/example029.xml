@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://www.vraweb.org/projects/vracore4/vra-4.0-restricted.xsd">
+    <collection id="c_22" source="Core 4 Sample Database (VCat)" refid="22">
+        <agentSet>
+            <display>G. [Gaston] Massiot et Compagnie (French photographic firm, ca. 1899-1940)</display>
+            <notes>Abbreviated G. Massiot &amp; Cie; also Radiguet &amp; Massiot (from 1899-1905)</notes>
+            <agent>
+                <name vocab="other" type="corporate">G. [Gaston] Massiot et Compagnie</name>
+                <dates type="activity">
+                    <earliestDate>1899</earliestDate>
+                    <latestDate>1940</latestDate>
+                </dates>
+                <culture>French</culture>
+                <role>photographic firm</role>
+            </agent>
+        </agentSet>
+        <culturalContextSet>
+            <culturalContext>French</culturalContext>
+        </culturalContextSet>
+        <dateSet>
+            <display>distributed ca. 1908-1909 (publication)</display>
+            <notes>1908-1909 is the probable date of the duplication and distribution of this set of lantern slides</notes>
+            <date type="publication">
+                <earliestDate>1900</earliestDate>
+                <latestDate>1912</latestDate>
+            </date>
+        </dateSet>
+        <descriptionSet>
+            <description>[The collection consists of 2,676 lantern slides which are views of buildings and cities in Europe, with some slides from the Middle and Far East as well. These were digitally imaged in 2007.] A. Molteni was an inventor and manufacturer of projection equipment in the late 19th and early 20th century. He styled himself a "Constructeur d'instruments d'Optique, de Physique, de Mathématiques et de Marine." Arthur-Honore Radiguet (1850-1905) was a similarly gifted inventor whose photographic business included working with Molteni and producing lantern slides. He also invented all manner of photographic equipment and especially worked with medical imaging, including the new x-ray techniques, discovered in 1895. He formed a firm with his son-in-law, Gaston Massiot, in 1899. Tragically Radiguet died from the effects of x-ray exposure in 1905. Massiot assumed the firm and was still inventing new apparatus as late as ca. 1936. The firm was still in business as of ca. 1940.</description>
+        </descriptionSet>
+        <inscriptionSet>
+            <display>Original labels: "Projections Molteni Collections et Tirages de Positifs pour Projections
+
+G. Massiot &amp; Cie
+
+37 bis 39 Rue de Belfort Courbevoie Seine"
+
+</display>
+            <inscription>
+                <author/>
+                <position/>
+                <text/>
+            </inscription>
+        </inscriptionSet>
+        <locationSet>
+            <display>University of Notre Dame, Architecture Library (South Bend, Indiana, United States)</display>
+            <notes>Courbevoie is a suburb of Paris in the Hauts-de-Seine department.</notes>
+            <location type="repository">
+                <name type="geographic" vocab="" refid="" extent="">University of Notre Dame, Architecture Library</name>
+                <name type="geographic" vocab="TGN" refid="7014320" extent="inhabited place">South Bend</name>
+                <name type="geographic" vocab="TGN" refid="7007252" extent="state">Indiana</name>
+                <name type="geographic" vocab="TGN" refid="7012149" extent="nation">United States</name>
+                <name type="geographic" vocab="TGN" refid="1000001" extent="continent">North and Central America</name>
+            </location>
+            <location type="publication">
+                <name type="geographic" vocab="" refid="" extent="">Courbevoie</name>
+                <name type="geographic" vocab="TGN" refid="7002883" extent="region">Île-de-France</name>
+                <name type="geographic" vocab="TGN" refid="1000070" extent="nation">France</name>
+                <name type="geographic" vocab="TGN" refid="1000003" extent="continent">Europe</name>
+            </location>
+        </locationSet>
+        <materialSet>
+            <display>black and white film; glass</display>
+            <notes/>
+            <material/>
+        </materialSet>
+        <measurementsSet>
+            <display>4 in (height) x 3.25 in (width, each)</display>
+            <notes/>
+            <measurements type="width" unit="in" extent="each">3.25</measurements>
+            <measurements type="height" unit="in" extent="each">4</measurements>
+        </measurementsSet>
+        <sourceSet>
+            <display>Cinematographes [website]; http://cinematographes.free.fr/ (accessed 5/29/2009)</display>
+            <notes/>
+            <source/>
+        </sourceSet>
+        <stylePeriodSet>
+            <display>Nineteenth century; Twentieth century</display>
+            <stylePeriod vocab="LCSAF" refid="sh 85139020">Twentieth century</stylePeriod>
+            <stylePeriod vocab="LCSAF" refid="sh 85091984">Nineteenth century</stylePeriod>
+        </stylePeriodSet>
+        <subjectSet>
+            <display>architectural exteriors; architectural interiors; Molteni, A.; topographical views; lantern slide projection; magic lantern lectures</display>
+            <notes/>
+            <subject>
+                <term type="descriptiveTopic" vocab="AAT" refid="300015566">topographical views</term>
+            </subject>
+            <subject>
+                <term type="personalName" vocab="LCNAF" refid="n 84216944 ">Molteni, A.</term>
+            </subject>
+        </subjectSet>
+        <techniqueSet>
+            <display>photography</display>
+            <notes/>
+            <technique vocab="AAT" refid="300054225">photography</technique>
+        </techniqueSet>
+        <titleSet>
+            <display>Historic architectural views [lantern slide collection]</display>
+            <title type="descriptive" pref="true" xml:lang="en">Historic architectural views [lantern slide collection]</title>
+        </titleSet>
+        <worktypeSet>
+            <display>photographs; lantern slides; photographs; positives (photographs); black-and-white transparencies ; topographical views</display>
+            <worktype vocab="AAT" refid="300128355">black-and-white transparency</worktype>
+            <worktype vocab="AAT" refid="300134977">lantern slide</worktype>
+            <worktype vocab="AAT" refid="300015566">topographical view</worktype>
+        </worktypeSet>
+    </collection>
+    <work id="w_23" source="Core 4 Sample Database (VCat)" refid="23">
+        <agentSet>
+            <display>G. [Gaston] Massiot et Compagnie (French photographic firm, ca. 1899-1940)</display>
+            <notes>Abbreviated G. Massiot &amp; Cie; also Radiguet &amp; Massiot (from 1899-1905)</notes>
+            <agent>
+                <name vocab="other" type="corporate">G. [Gaston] Massiot et Compagnie</name>
+                <dates type="activity">
+                    <earliestDate>1899</earliestDate>
+                    <latestDate>1940</latestDate>
+                </dates>
+                <culture>French</culture>
+                <role>photographic firm</role>
+            </agent>
+        </agentSet>
+        <culturalContextSet>
+            <culturalContext>French</culturalContext>
+        </culturalContextSet>
+        <dateSet>
+            <display>ca. 1899-before 1909 (creation)</display>
+            <date type="creation">
+                <earliestDate>1899</earliestDate>
+                <latestDate>1909</latestDate>
+            </date>
+        </dateSet>
+        <descriptionSet>
+            <description>An aerial view taken by an unknown photographer before 1909, therefor probably taken from a hot air balloon, not an airplane.</description>
+        </descriptionSet>
+        <inscriptionSet>
+            <display>Title on slide label: Nice, France - Panorama.</display>
+            <inscription>
+                <author/>
+                <position/>
+                <text/>
+            </inscription>
+        </inscriptionSet>
+        <locationSet>
+            <display>University of Notre Dame, Architecture Library (South Bend, Indiana, United States)</display>
+            <location type="repository">
+                <name type="geographic" vocab="" refid="" extent="">University of Notre Dame, Architecture Library</name>
+                <name type="geographic" vocab="TGN" refid="7014320" extent="inhabited place">South Bend</name>
+                <name type="geographic" vocab="TGN" refid="7007252" extent="state">Indiana</name>
+                <name type="geographic" vocab="TGN" refid="7012149" extent="nation">United States</name>
+                <name type="geographic" vocab="TGN" refid="1000001" extent="continent">North and Central America</name>
+            </location>
+            <location type="creation">
+                <name type="geographic" vocab="TGN" refid="7008773" extent="inhabited place">Nice</name>
+                <name type="geographic" vocab="TGN" refid="7002895" extent="region">Provence-Alpes-Côte d'Azur</name>
+                <name type="geographic" vocab="TGN" refid="1000070" extent="nation">France</name>
+                <name type="geographic" vocab="TGN" refid="1000003" extent="continent">Europe</name>
+            </location>
+        </locationSet>
+        <materialSet>
+            <display>black and white film; glass</display>
+            <notes/>
+            <material/>
+        </materialSet>
+        <measurementsSet>
+            <display>4 in (height) x 3.25 in (width)</display>
+            <notes/>
+            <measurements type="height" unit="in">4</measurements>
+            <measurements type="width" unit="in">3.25</measurements>
+        </measurementsSet>
+        <relationSet>
+            <display/>
+            <relation type="partOf" refid="23" relids="c_22" source="Core 4 Sample Database (VCat)">Historic architectural views [lantern slide collection]</relation>
+        </relationSet>
+        <rightsSet>
+            <display>publicDomain</display>
+            <rights/>
+        </rightsSet>
+        <stylePeriodSet>
+            <display>Nineteenth century; Twentieth century</display>
+            <stylePeriod vocab="LCSAF" refid="sh 85139020">Twentieth century</stylePeriod>
+            <stylePeriod vocab="LCSAF" refid="sh 85091984">Nineteenth century</stylePeriod>
+        </stylePeriodSet>
+        <subjectSet>
+            <display>architectural exteriors; cityscapes; Aerial photography in city planning; City planning; Housing; balloons (aircraft)</display>
+            <notes/>
+            <subject>
+                <term type="descriptiveTopic" vocab="LCSAF" refid="sh 85062603">Housing</term>
+            </subject>
+            <subject>
+                <term type="descriptiveTopic" vocab="LCSAF" refid="sh 85001258">Aerial photography in city planning</term>
+            </subject>
+            <subject>
+                <term type="descriptiveTopic" vocab="LCSAF" refid="sh 85026282">City planning</term>
+            </subject>
+        </subjectSet>
+        <techniqueSet>
+            <display>photography</display>
+            <notes/>
+            <technique vocab="AAT" refid="300054225">photography</technique>
+        </techniqueSet>
+        <titleSet>
+            <display>Aerial topographic view of Nice, France [lantern slide]</display>
+            <title type="descriptive" pref="true" xml:lang="en">Aerial topographic view of Nice, France [lantern slide]</title>
+            <title type="repository" pref="false" xml:lang="en">Nice, France - Panorama</title>
+        </titleSet>
+        <worktypeSet>
+            <display>photographs; lantern slides; photographs; positives (photographs); black-and-white transparencies ; topographical views</display>
+            <worktype vocab="AAT" refid="300128355">black-and-white transparency</worktype>
+            <worktype vocab="AAT" refid="300134977">lantern slide</worktype>
+            <worktype vocab="AAT" refid="300015566">topographical view</worktype>
+        </worktypeSet>
+    </work>
+    <image id="i_126" href="http://aal.ucsd.edu/vracore4/example029.html" refid="126" source="VRA Data Standards Committee, Core 4 Sample Records">
+        <dateSet>
+            <display>2007 (creation)</display>
+            <notes/>
+            <date/>
+        </dateSet>
+        <descriptionSet>
+            <description>The University of Notre Dame Architecture Library scanned the lantern slides and created a Flickr site in 2007; the material is public domain but Notre Dame is retaining some rights under a Creative Commons license.</description>
+        </descriptionSet>
+        <measurementsSet>
+            <display>18 MB</display>
+            <notes/>
+            <measurements/>
+        </measurementsSet>
+        <relationSet>
+            <relation type="imageOf" refid="23" source="Core 4 Sample Database (VCat)"/>
+        </relationSet>
+        <rightsSet>
+            <display>publicDomain</display>
+            <rights/>
+        </rightsSet>
+        <sourceSet>
+            <display>University of Notre Dame Architecture Library Lantern Slide Collection [posted on Flickr]; http://www.flickr.com/photos/ndalls/</display>
+            <source>
+                <name/>
+                <refid type="URI">http://www.flickr.com/photos/ndalls/</refid>
+            </source>
+        </sourceSet>
+        <subjectSet>
+            <display>bell towers; campanile; cathedral; dome; mountains</display>
+            <notes/>
+            <subject>
+                <term/>
+            </subject>
+        </subjectSet>
+        <techniqueSet>
+            <display>digital imaging</display>
+            <notes/>
+            <technique/>
+        </techniqueSet>
+        <titleSet>
+            <display>Overall view, imaged from lantern slide</display>
+            <title type="generalView">Overall view, imaged from lantern slide</title>
+        </titleSet>
+        <worktypeSet>
+            <display>digital image</display>
+            <notes/>
+            <worktype/>
+        </worktypeSet>
+    </image>
+</vra>

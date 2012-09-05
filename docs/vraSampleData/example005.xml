@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://www.vraweb.org/projects/vracore4/vra-4.0-restricted.xsd">
+    <work id="w_7" source="Core 4 Sample Database (VCat)" refid="7">
+        <agentSet>
+            <display>attributed to Filippo Brunelleschi (Italian architect, 1377-1446); Michelozzo di Bartolomeo (Italian architect, 1396-1472)</display>
+            <notes/>
+            <agent>
+                <name vocab="ULAN" refid="500018169" type="personal">Brunelleschi, Filippo</name>
+                <dates type="life">
+                    <earliestDate>1377</earliestDate>
+                    <latestDate>1446</latestDate>
+                </dates>
+                <culture>Italian</culture>
+                <role>architect</role>
+                <attribution>attributed to</attribution>
+            </agent>
+            <agent>
+                <name vocab="ULAN" refid="500032603" type="personal">Michelozzo di Bartolomeo</name>
+                <dates type="life">
+                    <earliestDate>1396</earliestDate>
+                    <latestDate>1472</latestDate>
+                </dates>
+                <culture>Italian</culture>
+                <role>architect</role>
+            </agent>
+        </agentSet>
+        <culturalContextSet>
+            <culturalContext>Italian</culturalContext>
+        </culturalContextSet>
+        <dateSet>
+            <display>begun 1418- ca. 1700 (inclusive)</display>
+            <date type="inclusive">
+                <earliestDate>1418</earliestDate>
+                <latestDate>1750</latestDate>
+            </date>
+        </dateSet>
+        <descriptionSet>
+            <description>The titular church of the Medici family, San Lorenzo is regarded by many as the quintessential Renaissance church. The rebuilding of the old Romanesque church of San Lorenzo, originally consecrated by St Ambrose in the 4th century, was largely carried out in the 15th century, with additions in the 16th and 17th.</description>
+        </descriptionSet>
+        <locationSet>
+            <display>San Lorenzo (Florence, Tuscany, Italy)</display>
+            <location type="site">
+                <name type="geographic" vocab="DOA" refid="" extent="building">San Lorenzo</name>
+                <name type="geographic" vocab="TGN" refid="7000457" extent="inhabited place">Florence</name>
+                <name type="geographic" vocab="TGN" refid="7009760" extent="region">Tuscany</name>
+                <name type="geographic" vocab="TGN" refid="1000080" extent="nation">Italy</name>
+                <name type="geographic" vocab="TGN" refid="1000003" extent="continent">Europe</name>
+            </location>
+        </locationSet>
+        <materialSet>
+            <display>stone; marble; pietra serena</display>
+            <notes/>
+            <material/>
+        </materialSet>
+        <sourceSet>
+            <display>Grove Art Online; http://www.oxfordartonline.com (accessed 3/3/2009)</display>
+            <notes/>
+            <source/>
+        </sourceSet>
+        <stylePeriodSet>
+            <display>Renaissance</display>
+            <stylePeriod vocab="AAT" refid="300021140">Renaissance</stylePeriod>
+        </stylePeriodSet>
+        <subjectSet>
+            <display>architectural exteriors; architectural interiors; rulers and leaders; Medici family</display>
+            <notes/>
+            <subject>
+                <term type="familyName" vocab="ULAN" refid="500114961">Medici family</term>
+            </subject>
+        </subjectSet>
+        <techniqueSet>
+            <display>construction (assembling)</display>
+            <notes/>
+            <technique vocab="AAT" refid="300054608">construction (assembling)</technique>
+        </techniqueSet>
+        <titleSet>
+            <display>San Lorenzo, Florence</display>
+            <title type="cited" pref="true" xml:lang="en">San Lorenzo, Florence</title>
+            <title type="cited" pref="false" xml:lang="it">Basilica di San Lorenzo</title>
+        </titleSet>
+        <worktypeSet>
+            <display>buildings; basilicas; buildings; religious buildings; churches</display>
+            <worktype vocab="AAT" refid="300007466">church</worktype>
+            <worktype vocab="AAT" refid="300170443">basilica</worktype>
+        </worktypeSet>
+    </work>
+    <image id="i_106" href="http://aal.ucsd.edu/vracore4/example005.html" refid="106" source="VRA Data Standards Committee, Core 4 Sample Records">
+        <descriptionSet>
+            <description>Facade was planned (ca. 1516-1521) by Michelangelo under the patronage of Pope Leo X but never completed.</description>
+        </descriptionSet>
+        <measurementsSet>
+            <display>18 MB</display>
+            <notes/>
+            <measurements/>
+        </measurementsSet>
+        <relationSet>
+            <relation type="imageOf" refid="7" source="Core 4 Sample Database (VCat)"/>
+        </relationSet>
+        <rightsSet>
+            <display>© Davis Art Images</display>
+            <rights/>
+        </rightsSet>
+        <sourceSet>
+            <display>Davis Art Images 5520 [Scholars Resource Dva-2759]</display>
+            <source>
+                <name type="vendor">Davis Art Images</name>
+                <refid type="vendor">5520 [Scholars Resource Dva-2759]</refid>
+            </source>
+        </sourceSet>
+        <subjectSet>
+            <display>Michelangelo Buonarroti, 1475-1564; facades</display>
+            <notes/>
+            <subject>
+                <term type="personalName" vocab="LCNAF" refid="n 80152368">Michelangelo Buonarroti, 1475-1564</term>
+            </subject>
+        </subjectSet>
+        <techniqueSet>
+            <display>digital imaging</display>
+            <notes/>
+            <technique/>
+        </techniqueSet>
+        <titleSet>
+            <display>Detail, unfinished facade</display>
+            <title type="partialView">Detail, unfinished facade</title>
+        </titleSet>
+        <worktypeSet>
+            <display>digital image</display>
+            <notes/>
+            <worktype/>
+        </worktypeSet>
+    </image>
+</vra>

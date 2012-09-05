@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Ziziphus Image DB XAR Packager" id="ziziphusXAR" default="xar" basedir=".">
+    <xmlproperty file="build.properties.xml" semanticAttributes="true" keepRoot="false"/>
+    <property name="target.dir" value="${basedir}/${build.dir}"/>
+    <property name="target.ziziphus.dir" value="${target.dir}/ziziphus"/>
+    <property name="resource.dir" value="${basedir}/resources"/>
+    <property name="schema.dir" value="${resource.dir}/xsd"/>
+    <property name="xsl.dir" value="${basedir}/generator/xsl"/>
+
+    <!-- **************************************** HOUSEKEEPING **************************************** -->
+    <!-- **************************************** HOUSEKEEPING **************************************** -->
+    <!-- **************************************** HOUSEKEEPING **************************************** -->
+    <target name="clean">
+        <delete dir="${target.dir}"/>
+    </target>
+
+    <!-- **************************************** GENERATE XAR **************************************** -->
+    <!-- **************************************** GENERATE XAR **************************************** -->
+    <!-- **************************************** GENERATE XAR **************************************** -->
+    <target name="xar">
+        <delete dir="${target.dir}"/>
+        <mkdir dir="${target.dir}"/>
+        <copy todir="${target.ziziphus.dir}/modules">
+            <fileset dir="${basedir}/modules"/>
+        </copy>
+        <copy todir="${target.ziziphus.dir}/resources">
+            <fileset dir="${basedir}/resources"/>
+        </copy>
+        <copy todir="${target.ziziphus.dir}/data">
+            <fileset dir="${basedir}/data"/>
+        </copy>
+        <copy todir="${target.ziziphus.dir}/records">
+            <fileset dir="${basedir}/records"/>
+        </copy>
+        <copy todir="${target.ziziphus.dir}/forms">
+            <fileset dir="${basedir}/forms"/>
+        </copy>
+        <copy todir="${target.ziziphus.dir}">
+            <fileset dir="${basedir}" includes="*.xconf *.xml *.xhtml *.html *.xql"/>
+        </copy>
+        <zip basedir="${target.ziziphus.dir}" destfile="${target.dir}/${app.name}-${app.version}.xar" excludes="${build.excludes}"/>
+    </target>
+</project>

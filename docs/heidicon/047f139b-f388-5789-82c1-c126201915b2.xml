@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://www.vraweb.org/projects/vracore4/vra-4.0-restricted.xsd">
+    <work id="w_108232" source="http://heidicon.ub.uni-heidelberg.de/EZDB-BildSuche?easydb=7d7e5lk796oiv7bq1r65f5pje1" refid="108232">
+	<titleSet>
+		<display/>
+		<title type="descriptive" pref="true" lang="en" script="latn">Western Hill, Chakrota, India</title>
+	</titleSet><originInfo>
+		<place type="text">
+			<PlaceTerm>Delhi / The Priya Paul Collection of Popular Art</PlaceTerm>
+		</place>
+	</originInfo>
+<physicalDescription>
+		<form authority="local">chromolithograph</form>
+		<form authority="local">card paper</form>
+		<extent>15 cm x 10 cm, portrait</extent>
+	</physicalDescription>
+	<note type="scanOrigin">The Priya Paul Collection. Reproduced with kind permission of the collector.</note>
+	<accessCondition type="use and reproduction">Copyrighted. Copyright with the original artists and publishers.</accessCondition>
+	<genre type="local">postcard</genre>
+	<identifier>108232</identifier>
+	<location>
+		<url access="preview">http://heidicon.ub.uni-heidelberg.de/eas/partitions/2/0/105000/105179/4333d7221210c4c6a65eaca5334dba51409e4b7b/image/jpeg/Bilder-108232-105179-100.jpg</url>
+	</location>
+</work>
+</xml>

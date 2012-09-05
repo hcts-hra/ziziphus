@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:vra="http://www.vraweb.org/vracore4.htm" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>Ziziphus_Image_DB</title>
+    </head>
+    <body>
+        <div id="xforms">
+            <div style="display:none">
+                <xf:model id="m-child-model" schema="resources/xsd/vra-types.xsd">
+                    <xf:instance id="i-locationSet">
+                        <locationSet xmlns="http://www.vraweb.org/vracore4.htm">
+                            <display dataDate="" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                            <notes dataDate="" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                            <location dataDate="" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="" type="">
+                                <refid type="" dataDate="" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                                <name type="" dataDate="" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                            </location>
+                        </locationSet>
+                    </xf:instance>
+                    <xf:bind nodeset="instance()">
+                        <xf:bind nodeset="vra:display">
+                            <xf:bind nodeset="@dataDate" type="vra:dateValueType"/>
+                            <xf:bind nodeset="@extent"/>
+                            <xf:bind nodeset="@href" type="xsd:anyURI"/>
+                            <xf:bind nodeset="@xml:lang"/>
+                            <xf:bind nodeset="@pref" type="xsd:boolean"/>
+                            <xf:bind nodeset="@refid"/>
+                            <xf:bind nodeset="@rules"/>
+                            <xf:bind nodeset="@source"/>
+                            <xf:bind nodeset="@vocab"/>
+                        </xf:bind>
+                        <xf:bind nodeset="vra:notes">
+                            <xf:bind nodeset="@dataDate" type="vra:dateValueType"/>
+                            <xf:bind nodeset="@extent"/>
+                            <xf:bind nodeset="@href" type="xsd:anyURI"/>
+                            <xf:bind nodeset="@xml:lang"/>
+                            <xf:bind nodeset="@pref" type="xsd:boolean"/>
+                            <xf:bind nodeset="@refid"/>
+                            <xf:bind nodeset="@rules"/>
+                            <xf:bind nodeset="@source"/>
+                            <xf:bind nodeset="@vocab"/>
+                        </xf:bind>
+                        <xf:bind nodeset="vra:location">
+                            <xf:bind nodeset="@dataDate" type="vra:dateValueType"/>
+                            <xf:bind nodeset="@extent"/>
+                            <xf:bind nodeset="@href" type="xsd:anyURI"/>
+                            <xf:bind nodeset="@xml:lang"/>
+                            <xf:bind nodeset="@pref" type="xsd:boolean"/>
+                            <xf:bind nodeset="@refid"/>
+                            <xf:bind nodeset="@rules"/>
+                            <xf:bind nodeset="@source"/>
+                            <xf:bind nodeset="@vocab"/>
+                            <xf:bind nodeset="@type" type="vra:locationTypeType"/>
+                            <xf:bind nodeset="vra:refid">
+                                <xf:bind nodeset="@type" type="vra:locationRefidTypeType"/>
+                                <xf:bind nodeset="@dataDate" type="vra:dateValueType"/>
+                                <xf:bind nodeset="@extent"/>
+                                <xf:bind nodeset="@href" type="xsd:anyURI"/>
+                                <xf:bind nodeset="@xml:lang"/>
+                                <xf:bind nodeset="@pref" type="xsd:boolean"/>
+                                <xf:bind nodeset="@refid"/>
+                                <xf:bind nodeset="@rules"/>
+                                <xf:bind nodeset="@source"/>
+                                <xf:bind nodeset="@vocab"/>
+                            </xf:bind>
+                            <xf:bind nodeset="vra:name">
+                                <xf:bind nodeset="@type" type="vra:locationNameTypeType"/>
+                                <xf:bind nodeset="@dataDate" type="vra:dateValueType"/>
+                                <xf:bind nodeset="@extent"/>
+                                <xf:bind nodeset="@href" type="xsd:anyURI"/>
+                                <xf:bind nodeset="@xml:lang"/>
+                                <xf:bind nodeset="@pref" type="xsd:boolean"/>
+                                <xf:bind nodeset="@refid"/>
+                                <xf:bind nodeset="@rules"/>
+                                <xf:bind nodeset="@source"/>
+                                <xf:bind nodeset="@vocab"/>
+                            </xf:bind>
+                        </xf:bind>
+                    </xf:bind>
+                    <xf:instance id="i-templates">
+                        <templates xmlns="http://www.vraweb.org/vracore4.htm">
+                            <location dataDate="" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="" type="">
+                                <refid type="" dataDate="" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                                <name type="" dataDate="" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                            </location>
+                        </templates>
+                    </xf:instance>
+                    <xf:submission id="s-load-data" resource="records?_query=//*[@id='{$recordId}']/*:locationSet&amp;_wrap=no" replace="instance" instance="i-locationSet" method="get" serialize="false" validate="false">
+                        <xf:message ev:event="xforms-submit-error">Could not load LocationSet data</xf:message>
+                    </xf:submission>
+                    <xf:submission id="s-save-data" resource="modules/save2section.xql?id={bf:appContext('recordId')}&amp;section=locationSet" replace="none" ref="instance('i-locationSet')" method="post" validate="false">
+                        <xf:message ev:event="xforms-submit-error">Could not save LocationSet data</xf:message>
+                        <xf:send ev:event="xforms-submit-done" submission="s-embed-w-html" if="bf:appContext('record') = 'work'"/>
+                        <xf:send ev:event="xforms-submit-done" submission="s-embed-i-html" if="bf:appContext('record') = 'image'"/>
+                    </xf:submission>
+                    <xf:submission id="s-embed-w-html" ref="instance('i-locationSet')" replace="embedHTML" targetid="w_Location_HtmlContent" resource="xslt:resources/xsl/vraSets/LocationSet.xsl?parseString=false" method="get" validate="false">
+                        <xf:message ev:event="xforms-submit-error">Could not embed LocationSet data</xf:message>
+                        <xf:action ev:event="xforms-submit-done">
+                            <xf:toggle case="c-w_Location-view" model="model-1"/>
+                            <xf:setvalue ref="instance('i-control-center')/currentform" value="''" model="model-1"/>
+                        </xf:action>
+                    </xf:submission>
+                    <xf:submission id="s-embed-i-html" ref="instance('i-locationSet')" replace="embedHTML" targetid="i_Location_HtmlContent" resource="xslt:resources/xsl/vraSets/LocationSet.xsl?parseString=false" method="get" validate="false">
+                        <xf:message ev:event="xforms-submit-error">Could not embed LocationSet data</xf:message>
+                        <xf:action ev:event="xforms-submit-done">
+                            <xf:toggle case="c-i_Location-view" model="model-1"/>
+                            <xf:setvalue ref="instance('i-control-center')/currentform" value="''" model="model-1"/>
+                        </xf:action>
+                    </xf:submission>
+                    <xf:action ev:event="xforms-ready">
+                        <xf:send submission="s-load-data"/>
+                    </xf:action>
+                </xf:model>
+            </div>
+            <xf:group appearance="bf:VerticalTable" ref="instance()" model="m-child-model">
+                <xf:label/>
+                <xf:trigger class="t-save" model="m-child-model" title="Save">
+                    <xf:label/>
+                    <xf:send submission="s-save-data"/>
+                </xf:trigger>
+                <div>
+                    <xf:trigger class="t-plus" model="m-child-model" title="Add Location">
+                        <xf:label/>
+                        <xf:insert nodeset="instance()/vra:location[last()]" origin="instance('i-templates')/vra:location" model="m-child-model"/>
+                    </xf:trigger>
+                    <xf:trigger class="t-minus" model="m-child-model" title="Remove Location">
+                        <xf:label/>
+                        <xf:delete nodeset="instance()/vra:location" at="index('r-location')" model="m-child-model"/>
+                    </xf:trigger>
+                </div>
+                <xf:repeat id="r-location" nodeset="vra:location" appearance="full" class="vraComplex" model="m-child-model">
+<!--
+                    <div class="locationSet-refid-attributes hiddenAttributes" style="display:none;">
+                        <xf:input ref="@dataDate" type="attributeValue" model="m-child-model">
+                            <xf:label>dataDate</xf:label>
+                        </xf:input>
+                        <xf:input ref="@extent" type="attributeValue" model="m-child-model">
+                            <xf:label>extent</xf:label>
+                        </xf:input>
+                        <xf:input ref="@href" type="attributeValue" model="m-child-model">
+                            <xf:label>href</xf:label>
+                        </xf:input>
+                        <xf:input ref="@xml:lang" type="attributeValue" model="m-child-model">
+                            <xf:label>xml:lang</xf:label>
+                        </xf:input>
+                        <xf:input ref="@pref" type="attributeValue" model="m-child-model">
+                            <xf:label>pref</xf:label>
+                        </xf:input>
+                        <xf:input ref="@refid" type="attributeValue" model="m-child-model">
+                            <xf:label>refid</xf:label>
+                        </xf:input>
+                        <xf:input ref="@rules" type="attributeValue" model="m-child-model">
+                            <xf:label>rules</xf:label>
+                        </xf:input>
+                        <xf:input ref="@source" type="attributeValue" model="m-child-model">
+                            <xf:label>source</xf:label>
+                        </xf:input>
+                        <xf:input ref="@vocab" type="attributeValue" model="m-child-model">
+                            <xf:label>vocab</xf:label>
+                        </xf:input>
+                    </div>
+-->
+                    <xf:select1 ref="@type" type="attributeValue" model="m-child-model">
+                        <xf:label>Type</xf:label>
+                        <xf:item>
+                            <xf:label>Creation</xf:label>
+                            <xf:value>creation</xf:value>
+                        </xf:item>
+                        <xf:item>
+                            <xf:label>Discovery</xf:label>
+                            <xf:value>discovery</xf:value>
+                        </xf:item>
+                        <xf:item>
+                            <xf:label>Exhibition</xf:label>
+                            <xf:value>exhibition</xf:value>
+                        </xf:item>
+                        <xf:item>
+                            <xf:label>FormerOwner</xf:label>
+                            <xf:value>formerOwner</xf:value>
+                        </xf:item>
+                        <xf:item>
+                            <xf:label>FormerRepository</xf:label>
+                            <xf:value>formerRepository</xf:value>
+                        </xf:item>
+                        <xf:item>
+                            <xf:label>FormerSite</xf:label>
+                            <xf:value>formerSite</xf:value>
+                        </xf:item>
+                        <xf:item>
+                            <xf:label>Installation</xf:label>
+                            <xf:value>installation</xf:value>
+                        </xf:item>
+                        <xf:item>
+                            <xf:label>Intended</xf:label>
+                            <xf:value>intended</xf:value>
+                        </xf:item>
+                        <xf:item>
+                            <xf:label>Owner</xf:label>
+                            <xf:value>owner</xf:value>
+                        </xf:item>
+                        <xf:item>
+                            <xf:label>Performance</xf:label>
+                            <xf:value>performance</xf:value>
+                        </xf:item>
+                        <xf:item>
+                            <xf:label>Publication</xf:label>
+                            <xf:value>publication</xf:value>
+                        </xf:item>
+                        <xf:item>
+                            <xf:label>Repository</xf:label>
+                            <xf:value>repository</xf:value>
+                        </xf:item>
+                        <xf:item>
+                            <xf:label>Site</xf:label>
+                            <xf:value>site</xf:value>
+                        </xf:item>
+                        <xf:item>
+                            <xf:label>Other</xf:label>
+                            <xf:value>other</xf:value>
+                        </xf:item>
+                    </xf:select1>
+                    <xf:repeat nodeset="vra:name" model="m-child-model">
+                        <xf:select1 ref="@type" type="attributeValue" model="m-child-model">
+                            <xf:label>type</xf:label>
+                            <xf:item>
+                                <xf:label>Corporate</xf:label>
+                                <xf:value>corporate</xf:value>
+                            </xf:item>
+                            <xf:item>
+                                <xf:label>Geographic</xf:label>
+                                <xf:value>geographic</xf:value>
+                            </xf:item>
+                            <xf:item>
+                                <xf:label>Personal</xf:label>
+                                <xf:value>personal</xf:value>
+                            </xf:item>
+                            <xf:item>
+                                <xf:label>Other</xf:label>
+                                <xf:value>other</xf:value>
+                            </xf:item>
+                        </xf:select1>
+                        <xf:input ref="." type="nodeValue" model="m-child-model">
+                            <xf:label/>
+                        </xf:input>
+                        <!--
+                                            <div class="locationSet-name-attributes hiddenAttributes" style="display:none;">
+                                                <xf:input ref="vra:name/@dataDate" type="attributeValue" model="m-child-model">
+                                                    <xf:label>dataDate</xf:label>
+                                                </xf:input>
+                                                <xf:input ref="vra:name/@extent" type="attributeValue" model="m-child-model">
+                                                    <xf:label>extent</xf:label>
+                                                </xf:input>
+                                                <xf:input ref="vra:name/@href" type="attributeValue" model="m-child-model">
+                                                    <xf:label>href</xf:label>
+                                                </xf:input>
+                                                <xf:input ref="vra:name/@xml:lang" type="attributeValue" model="m-child-model">
+                                                    <xf:label>xml:lang</xf:label>
+                                                </xf:input>
+                                                <xf:input ref="vra:name/@pref" type="attributeValue" model="m-child-model">
+                                                    <xf:label>pref</xf:label>
+                                                </xf:input>
+                                                <xf:input ref="vra:name/@refid" type="attributeValue" model="m-child-model">
+                                                    <xf:label>refid</xf:label>
+                                                </xf:input>
+                                                <xf:input ref="vra:name/@rules" type="attributeValue" model="m-child-model">
+                                                    <xf:label>rules</xf:label>
+                                                </xf:input>
+                                                <xf:input ref="vra:name/@source" type="attributeValue" model="m-child-model">
+                                                    <xf:label>source</xf:label>
+                                                </xf:input>
+                                                <xf:input ref="vra:name/@vocab" type="attributeValue" model="m-child-model">
+                                                    <xf:label>vocab</xf:label>
+                                                </xf:input>
+                                            </div>
+                        -->
+                    </xf:repeat>
+                    <xf:repeat nodeset="vra:refid" model="m-child-model">
+                        <xf:select1 ref="@type" type="attributeValue" model="m-child-model">
+                            <xf:label>RefID Type</xf:label>
+                            <xf:item>
+                                <xf:label>accession</xf:label>
+                                <xf:value>accession</xf:value>
+                            </xf:item>
+                            <xf:item>
+                                <xf:label>barcode</xf:label>
+                                <xf:value>barcode</xf:value>
+                            </xf:item>
+                            <xf:item>
+                                <xf:label>shelfList</xf:label>
+                                <xf:value>shelfList</xf:value>
+                            </xf:item>
+                            <xf:item>
+                                <xf:label>Other</xf:label>
+                                <xf:value>other</xf:value>
+                            </xf:item>
+                        </xf:select1>
+                        <xf:input ref="." type="nodeValue" model="m-child-model">
+                            <xf:label/>
+                        </xf:input>
+    <!--
+                        <div class="locationSet-refid-attributes hiddenAttributes" style="display:none;">
+                            <xf:input ref="vra:refid/@dateDate" type="attributeValue" model="m-child-model">
+                                <xf:label>dateDate</xf:label>
+                            </xf:input>
+                            <xf:input ref="vra:refid/@type" type="attributeValue" model="m-child-model">
+                                <xf:label>type</xf:label>
+                            </xf:input>
+                            <xf:input ref="vra:refid/@extent" type="attributeValue" model="m-child-model">
+                                <xf:label>extent</xf:label>
+                            </xf:input>
+                            <xf:input ref="vra:refid/@href" type="attributeValue" model="m-child-model">
+                                <xf:label>href</xf:label>
+                            </xf:input>
+                            <xf:input ref="vra:refid/@xml:lang" type="attributeValue" model="m-child-model">
+                                <xf:label>xml:lang</xf:label>
+                            </xf:input>
+                            <xf:input ref="vra:refid/@pref" type="attributeValue" model="m-child-model">
+                                <xf:label>pref</xf:label>
+                            </xf:input>
+                            <xf:input ref="vra:refid/@refid" type="attributeValue" model="m-child-model">
+                                <xf:label>refid</xf:label>
+                            </xf:input>
+                            <xf:input ref="vra:refid/@rules" type="attributeValue" model="m-child-model">
+                                <xf:label>rules</xf:label>
+                            </xf:input>
+                            <xf:input ref="vra:refid/@source" type="attributeValue" model="m-child-model">
+                                <xf:label>source</xf:label>
+                            </xf:input>
+                            <xf:input ref="vra:refid/@vocab" type="attributeValue" model="m-child-model">
+                                <xf:label>vocab</xf:label>
+                            </xf:input>
+                        </div>
+    -->
+                    </xf:repeat>
+                </xf:repeat>
+
+
+                <!--
+                                <xf:input ref="vra:display" type="nodeValue" model="m-child-model">
+                                    <xf:label>Display</xf:label>
+                                </xf:input>
+                                <div class="locationSet-display-attributes hiddenAttributes" style="display:none;">
+                                    <xf:input ref="vra:display/@dataDate" type="attributeValue" model="m-child-model">
+                                        <xf:label>dataDate</xf:label>
+                                    </xf:input>
+                                    <xf:input ref="vra:display/@extent" type="attributeValue" model="m-child-model">
+                                        <xf:label>extent</xf:label>
+                                    </xf:input>
+                                    <xf:input ref="vra:display/@href" type="attributeValue" model="m-child-model">
+                                        <xf:label>href</xf:label>
+                                    </xf:input>
+                                    <xf:input ref="vra:display/@xml:lang" type="attributeValue" model="m-child-model">
+                                        <xf:label>xml:lang</xf:label>
+                                    </xf:input>
+                                    <xf:input ref="vra:display/@pref" type="attributeValue" model="m-child-model">
+                                        <xf:label>pref</xf:label>
+                                    </xf:input>
+                                    <xf:input ref="vra:display/@refid" type="attributeValue" model="m-child-model">
+                                        <xf:label>refid</xf:label>
+                                    </xf:input>
+                                    <xf:input ref="vra:display/@rules" type="attributeValue" model="m-child-model">
+                                        <xf:label>rules</xf:label>
+                                    </xf:input>
+                                    <xf:input ref="vra:display/@source" type="attributeValue" model="m-child-model">
+                                        <xf:label>source</xf:label>
+                                    </xf:input>
+                                    <xf:input ref="vra:display/@vocab" type="attributeValue" model="m-child-model">
+                                        <xf:label>vocab</xf:label>
+                                    </xf:input>
+                                </div>
+                -->
+                <xf:input ref="vra:notes" type="nodeValue" model="m-child-model">
+                    <xf:label>Notes</xf:label>
+                </xf:input>
+<!--
+                <div class="locationSet-notes-attributes hiddenAttributes" style="display:none;">
+                    <xf:input ref="vra:notes/@dataDate" type="attributeValue" model="m-child-model">
+                        <xf:label>dataDate</xf:label>
+                    </xf:input>
+                    <xf:input ref="vra:notes/@extent" type="attributeValue" model="m-child-model">
+                        <xf:label>extent</xf:label>
+                    </xf:input>
+                    <xf:input ref="vra:notes/@href" type="attributeValue" model="m-child-model">
+                        <xf:label>href</xf:label>
+                    </xf:input>
+                    <xf:input ref="vra:notes/@xml:lang" type="attributeValue" model="m-child-model">
+                        <xf:label>xml:lang</xf:label>
+                    </xf:input>
+                    <xf:input ref="vra:notes/@pref" type="attributeValue" model="m-child-model">
+                        <xf:label>pref</xf:label>
+                    </xf:input>
+                    <xf:input ref="vra:notes/@refid" type="attributeValue" model="m-child-model">
+                        <xf:label>refid</xf:label>
+                    </xf:input>
+                    <xf:input ref="vra:notes/@rules" type="attributeValue" model="m-child-model">
+                        <xf:label>rules</xf:label>
+                    </xf:input>
+                    <xf:input ref="vra:notes/@source" type="attributeValue" model="m-child-model">
+                        <xf:label>source</xf:label>
+                    </xf:input>
+                    <xf:input ref="vra:notes/@vocab" type="attributeValue" model="m-child-model">
+                        <xf:label>vocab</xf:label>
+                    </xf:input>
+                </div>
+-->
+            </xf:group>
+        </div>
+    </body>
+</html>

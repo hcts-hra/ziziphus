@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://www.vraweb.org/projects/vracore4/vra-4.0-restricted.xsd">
+    <work id="w_30" source="Core 4 Sample Database (VCat)" refid="30">
+        <agentSet>
+            <display>Robert Remsen Vickrey (American illustrator, born 1926)</display>
+            <notes/>
+            <agent>
+                <name vocab="ULAN" refid="500021398" type="personal">Vickrey, Robert Remsen</name>
+                <dates type="life">
+                    <earliestDate>1926</earliestDate>
+                    <latestDate>9999</latestDate>
+                </dates>
+                <culture>American</culture>
+                <role>illustrator</role>
+            </agent>
+        </agentSet>
+        <culturalContextSet>
+            <culturalContext>American</culturalContext>
+        </culturalContextSet>
+        <dateSet>
+            <display>1966 (creation)</display>
+            <notes>Used on the cover of Time magazine (with additional graphics), October 14, 1966</notes>
+            <date type="creation">
+                <earliestDate>1966</earliestDate>
+                <latestDate>1966</latestDate>
+            </date>
+        </dateSet>
+        <descriptionSet>
+            <description>Full color portrait of Walter Cronkite, (head and shoulders dressed in a suit and tie) against a monochromatic blue background portraying the television industry. Walter Leland Cronkite, Jr. (born November 4, 1916) is a retired American broadcast journalist, best known as anchorman for the CBS Evening News for 19 years (1962-1981). During the heyday of CBS News in the 1970s and 1980s he was often cited in viewer opinion polls as "the most trusted man in America" because of his professional experience and kindly demeanor. The famous CBS "eye" logo (unveiled on Oct. 17, 1951) by William Goldman is visible on the camera.</description>
+        </descriptionSet>
+        <locationSet>
+            <display>National Portrait Gallery [Smithsonian Institution] (Washington, District of Columbia, United States) NPG.78.TC319 </display>
+            <notes>Gift of Time Magazine, acquired 1978</notes>
+            <location type="repository">
+                <name type="geographic" vocab="GAO" refid="" extent="organization">National Portrait Gallery [Smithsonian Institution]</name>
+                <name type="geographic" vocab="TGN" refid="7013962" extent="inhabited place">Washington</name>
+                <name type="geographic" vocab="TGN" refid="7015717" extent="department; district">District of Columbia</name>
+                <name type="geographic" vocab="TGN" refid="7012149" extent="nation">United States</name>
+                <name type="geographic" vocab="TGN" refid="1000001" extent="continent">North and Central America</name>
+                <refid type="accession">NPG.78.TC319 </refid>
+            </location>
+        </locationSet>
+        <materialSet>
+            <display>watercolor and pencil on board    </display>
+            <notes/>
+            <material/>
+        </materialSet>
+        <measurementsSet>
+            <display>21 in (height) x 14.5 in (width, without frame)</display>
+            <notes/>
+            <measurements type="height" unit="in" extent="without frame">21</measurements>
+            <measurements type="width" unit="in" extent="without frame">14.5</measurements>
+        </measurementsSet>
+        <rightsSet>
+            <display>© Robert Vickery/Licensed by VAGA, New York, NY           </display>
+            <rights/>
+        </rightsSet>
+        <sourceSet>
+            <display>Wikipedia; http://en.wikipedia.org/ (accessed 6/1/2009)</display>
+            <notes/>
+            <source/>
+        </sourceSet>
+        <stylePeriodSet>
+            <display>Twentieth century</display>
+            <stylePeriod vocab="LCSAF" refid="sh 85139020">Twentieth century</stylePeriod>
+        </stylePeriodSet>
+        <subjectSet>
+            <display>commercial and industrial design; contemporary (1960 to present); figure, male; portraits; Cronkite, Walter; Television broadcasting of news; Television news anchors; television camera; television screen; television broadcast antenna</display>
+            <notes/>
+            <subject>
+                <term type="personalName" vocab="LCNAF" refid="n 79109028">Cronkite, Walter</term>
+            </subject>
+            <subject>
+                <term type="descriptiveTopic" vocab="LCSAF" refid="sh 90003247">Television news anchors</term>
+            </subject>
+            <subject>
+                <term type="descriptiveTopic" vocab="LCSAF" refid="sh 85133518">Television broadcasting of news</term>
+            </subject>
+        </subjectSet>
+        <techniqueSet>
+            <display>drawing (image-making); painting and painting techniques</display>
+            <notes/>
+            <technique vocab="AAT" refid="300149157">painting and painting techniques</technique>
+            <technique vocab="AAT" refid="300054196">drawing (image-making)</technique>
+        </techniqueSet>
+        <titleSet>
+            <display>Walter Cronkite</display>
+            <title type="cited" pref="true" xml:lang="en">Walter Cronkite</title>
+            <title type="descriptive" pref="false" xml:lang="en">Portrait of Walter Cronkite</title>
+        </titleSet>
+        <worktypeSet>
+            <display>illustrations (layout features); paintings (visual works); watercolors (paintings)</display>
+            <worktype vocab="AAT" refid="300078925">watercolor (painting)</worktype>
+            <worktype vocab="AAT" refid="300015578">illustration (layout feature)</worktype>
+        </worktypeSet>
+    </work>
+    <image id="i_133" href="http://aal.ucsd.edu/vracore4/example31.html" refid="133" source="VRA Data Standards Committee, Core 4 Sample Records">
+        <descriptionSet>
+            <description>A comparison of the illustration to the finished, printed magazine cover. Note difference in scale, contrast and intensity of colors.</description>
+        </descriptionSet>
+        <measurementsSet>
+            <display>18 MB</display>
+            <notes/>
+            <measurements/>
+        </measurementsSet>
+        <relationSet>
+            <relation type="imageOf" refid="30" source="Core 4 Sample Database (VCat)"/>
+        </relationSet>
+        <rightsSet>
+            <display>undetermined</display>
+            <rights/>
+        </rightsSet>
+        <sourceSet>
+            <display>Department of Visual &amp; Performing Arts, Fairfield University</display>
+            <source>
+                <name/>
+                <refid type="other"/>
+            </source>
+        </sourceSet>
+        <subjectSet>
+            <display>Time, the weekly news-magazine; typography; graphic design</display>
+            <notes/>
+            <subject>
+                <term type="corporateName" vocab="LCNAF" refid="n 94056291">Time, the weekly news-magazine</term>
+            </subject>
+        </subjectSet>
+        <techniqueSet>
+            <display>digital imaging</display>
+            <notes/>
+            <technique/>
+        </techniqueSet>
+        <titleSet>
+            <display>Overall view of portrait and its use as a Time magazine cover illustration (October 14, 1966 issue)</display>
+            <title type="generalView">Overall view of portrait and its use as a Time magazine cover illustration (October 14, 1966 issue)</title>
+        </titleSet>
+        <worktypeSet>
+            <display>digital image</display>
+            <notes/>
+            <worktype/>
+        </worktypeSet>
+    </image>
+</vra>

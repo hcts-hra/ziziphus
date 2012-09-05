@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:vra="http://www.vraweb.org/vracore4.htm" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>Ziziphus_Image_DB</title>
+    </head>
+    <body>
+        <div id="xforms">
+            <div style="display:none">
+                <xf:model id="m-child-model" schema="resources/xsd/vra-types.xsd">
+                    <xf:instance id="i-stylePeriodSet">
+                        <stylePeriodSet xmlns="http://www.vraweb.org/vracore4.htm">
+                            <display dataDate="" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                            <notes dataDate="" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                            <stylePeriod dataDate="" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                        </stylePeriodSet>
+                    </xf:instance>
+                    <xf:bind nodeset="instance()">
+                        <!--
+                        <xf:bind nodeset="vra:display">
+                            <xf:bind nodeset="@dataDate" type="vra:dateValueType"/>
+                            <xf:bind nodeset="@extent"/>
+                            <xf:bind nodeset="@href" type="xsd:anyURI"/>
+                            <xf:bind nodeset="@xml:lang"/>
+                            <xf:bind nodeset="@pref" type="xsd:boolean"/>
+                            <xf:bind nodeset="@refid"/>
+                            <xf:bind nodeset="@rules"/>
+                            <xf:bind nodeset="@source"/>
+                            <xf:bind nodeset="@vocab"/>
+                        </xf:bind>
+                        -->
+                        <xf:bind nodeset="vra:notes">
+                            <!--
+                            <xf:bind nodeset="@dataDate" type="vra:dateValueType"/>
+                            <xf:bind nodeset="@extent"/>
+                            <xf:bind nodeset="@href" type="xsd:anyURI"/>
+                            <xf:bind nodeset="@xml:lang"/>
+                            <xf:bind nodeset="@pref" type="xsd:boolean"/>
+                            <xf:bind nodeset="@refid"/>
+                            <xf:bind nodeset="@rules"/>
+                            <xf:bind nodeset="@source"/>
+                            <xf:bind nodeset="@vocab"/>
+                            -->
+                        </xf:bind>
+                        <xf:bind nodeset="vra:stylePeriod">
+                            <xf:bind nodeset="@dataDate" type="vra:dateValueType"/>
+                            <xf:bind nodeset="@extent"/>
+                            <xf:bind nodeset="@href" type="xsd:anyURI"/>
+                            <xf:bind nodeset="@xml:lang"/>
+                            <xf:bind nodeset="@pref" type="xsd:boolean"/>
+                            <xf:bind nodeset="@refid"/>
+                            <xf:bind nodeset="@rules"/>
+                            <xf:bind nodeset="@source"/>
+                            <xf:bind nodeset="@vocab"/>
+                        </xf:bind>
+                    </xf:bind>
+                    <xf:instance id="i-templates">
+                        <templates xmlns="http://www.vraweb.org/vracore4.htm">
+                            <stylePeriod dataDate="" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                        </templates>
+                    </xf:instance>
+                    <xf:instance id="i-vocab">
+                        <vocabularies xmlns="" selected="">
+                            <vocab>
+                                <name>Local</name>
+                                <value>local</value>
+                            </vocab>
+                            <vocab>
+                                <name>AAT</name>
+                                <value>AAT</value>
+                            </vocab>
+                        </vocabularies>
+                    </xf:instance>
+                    <xf:submission id="s-load-data" resource="records?_query=//*[@id='{$recordId}']/*:stylePeriodSet&amp;_wrap=no" replace="instance" instance="i-stylePeriodSet" method="get" serialize="false" validate="false">
+                        <xf:message ev:event="xforms-submit-error">Could not load StylePeriodSet data</xf:message>
+                    </xf:submission>
+                    <xf:submission id="s-save-data" resource="modules/save2section.xql?id={bf:appContext('recordId')}&amp;section=stylePeriodSet" replace="none" ref="instance('i-stylePeriodSet')" method="post" validate="false">
+                        <xf:message ev:event="xforms-submit-error">Could not save StylePeriodSet data</xf:message>
+                        <xf:send ev:event="xforms-submit-done" submission="s-embed-w-html" if="bf:appContext('record') = 'work'"/>
+                        <xf:send ev:event="xforms-submit-done" submission="s-embed-i-html" if="bf:appContext('record') = 'image'"/>
+                    </xf:submission>
+                    <xf:submission id="s-embed-w-html" ref="instance('i-stylePeriodSet')" replace="embedHTML" targetid="w_StylePeriod_HtmlContent" resource="xslt:resources/xsl/vraSets/StylePeriodSet.xsl?parseString=false" method="get" validate="false">
+                        <xf:message ev:event="xforms-submit-error">Could not embed StylePeriodSet data</xf:message>
+                        <xf:action ev:event="xforms-submit-done">
+                            <xf:toggle case="c-w_StylePeriod-view" model="model-1"/>
+                            <xf:setvalue ref="instance('i-control-center')/currentform" value="''" model="model-1"/>
+                        </xf:action>
+                    </xf:submission>
+                    <xf:submission id="s-embed-i-html" ref="instance('i-stylePeriodSet')" replace="embedHTML" targetid="i_StylePeriod_HtmlContent" resource="xslt:resources/xsl/vraSets/StylePeriodSet.xsl?parseString=false" method="get" validate="false">
+                        <xf:message ev:event="xforms-submit-error">Could not embed StylePeriodSet data</xf:message>
+                        <xf:action ev:event="xforms-submit-done">
+                            <xf:toggle case="c-i_StylePeriod-view" model="model-1"/>
+                            <xf:setvalue ref="instance('i-control-center')/currentform" value="''" model="model-1"/>
+                        </xf:action>
+                    </xf:submission>
+                    <xf:action ev:event="xforms-ready">
+                        <xf:send submission="s-load-data"/>
+                    </xf:action>
+                </xf:model>
+            </div>
+            <xf:group ref="instance()" appearance="minimal" class="vraRecord" model="m-child-model">
+                <xf:label/>
+                <xf:trigger class="t-save" model="m-child-model" title="Save">
+                    <xf:label/>
+                    <xf:send submission="s-save-data"/>
+                </xf:trigger>
+                <div>
+                    <xf:trigger class="t-plus" model="m-child-model" title="Add StylePeriod">
+                        <xf:label/>
+                        <xf:insert nodeset="instance()/vra:stylePeriod[last()]" origin="instance('i-templates')/vra:stylePeriod" model="m-child-model"/>
+                    </xf:trigger>
+                    <xf:trigger class="t-plus" model="m-child-model" title="Remove StylePeriod">
+                        <xf:label/>
+                        <xf:delete nodeset="instance()/vra:stylePeriod" at="index('r-stylePeriod')" model="m-child-model"/>
+                    </xf:trigger>
+                </div>
+                <!--
+                <xf:input ref="vra:display" type="nodeValue" model="m-child-model">
+                    <xf:label>Display</xf:label>
+                </xf:input>
+                <div class="stylePeriod-display-attributes hiddenAttributes" style="display:none;">
+                    <xf:input ref="vra:display/@dataDate" type="attributeValue" model="m-child-model">
+                        <xf:label>dataDate</xf:label>
+                    </xf:input>
+                    <xf:input ref="vra:display/@extent" type="attributeValue" model="m-child-model">
+                        <xf:label>extent</xf:label>
+                    </xf:input>
+                    <xf:input ref="vra:display/@href" type="attributeValue" model="m-child-model">
+                        <xf:label>href</xf:label>
+                    </xf:input>
+                    <xf:input ref="vra:display/@xml:lang" type="attributeValue" model="m-child-model">
+                        <xf:label>xml:lang</xf:label>
+                    </xf:input>
+                    <xf:input ref="vra:display/@pref" type="attributeValue" model="m-child-model">
+                        <xf:label>pref</xf:label>
+                    </xf:input>
+                    <xf:input ref="vra:display/@refid" type="attributeValue" model="m-child-model">
+                        <xf:label>refid</xf:label>
+                    </xf:input>
+                    <xf:input ref="vra:display/@rules" type="attributeValue" model="m-child-model">
+                        <xf:label>rules</xf:label>
+                    </xf:input>
+                    <xf:input ref="vra:display/@source" type="attributeValue" model="m-child-model">
+                        <xf:label>source</xf:label>
+                    </xf:input>
+                    <xf:input ref="vra:display/@vocab" type="attributeValue" model="m-child-model">
+                        <xf:label>vocab</xf:label>
+                    </xf:input>
+                </div>
+                -->
+                <xf:repeat id="r-stylePeriod" nodeset="vra:stylePeriod" appearance="full" class="vraComplex">
+                    <xf:input ref="." type="nodeValue" model="m-child-model">
+                        <xf:label>StylePeriod</xf:label>
+                    </xf:input>
+                    <xf:select1 ref="@vocab" type="attributeValue" model="m-child-model">
+                        <xf:label>vocab</xf:label>
+                        <xf:itemset nodeset="instance('i-vocab')/vocab">
+                            <xf:label ref="name"/>
+                            <xf:value ref="value"/>
+                        </xf:itemset>
+                    </xf:select1>
+                    <xf:input ref="@refid" type="attributeValue" model="m-child-model">
+                        <xf:label>refid</xf:label>
+                    </xf:input>
+                    <xf:input ref="@pref" type="attributeValue" model="m-child-model">
+                        <xf:label>pref</xf:label>
+                    </xf:input>
+                    <xf:input ref="@source" type="attributeValue" model="m-child-model">
+                        <xf:label>source</xf:label>
+                    </xf:input>
+                    <div class="stylePeriod-stylePeriod-attributes hiddenAttributes" style="display:none;">
+                        <xf:input ref="@dataDate" type="attributeValue" model="m-child-model">
+                            <xf:label>dataDate</xf:label>
+                        </xf:input>
+                        <xf:input ref="@extent" type="attributeValue" model="m-child-model">
+                            <xf:label>extent</xf:label>
+                        </xf:input>
+                        <xf:input ref="@href" type="attributeValue" model="m-child-model">
+                            <xf:label>href</xf:label>
+                        </xf:input>
+                        <xf:input ref="@xml:lang" type="attributeValue" model="m-child-model">
+                            <xf:label>xml:lang</xf:label>
+                        </xf:input>
+                        <xf:input ref="@rules" type="attributeValue" model="m-child-model">
+                            <xf:label>rules</xf:label>
+                        </xf:input>
+                    </div>
+                </xf:repeat>
+                <xf:input ref="vra:notes" type="nodeValue" model="m-child-model">
+                    <xf:label>Notes</xf:label>
+                </xf:input>
+                <!--
+                    <div class="stylePeriod-notes-attributes hiddenAttributes" style="display:none;">
+                    <xf:input ref="vra:notes/@dataDate" type="attributeValue" model="m-child-model">
+                    <xf:label>dataDate</xf:label>
+                    </xf:input>
+                    <xf:input ref="vra:notes/@extent" type="attributeValue" model="m-child-model">
+                    <xf:label>extent</xf:label>
+                    </xf:input>
+                    <xf:input ref="vra:notes/@href" type="attributeValue" model="m-child-model">
+                    <xf:label>href</xf:label>
+                    </xf:input>
+                    <xf:input ref="vra:notes/@xml:lang" type="attributeValue" model="m-child-model">
+                    <xf:label>xml:lang</xf:label>
+                    </xf:input>
+                    <xf:input ref="vra:notes/@pref" type="attributeValue" model="m-child-model">
+                    <xf:label>pref</xf:label>
+                    </xf:input>
+                    <xf:input ref="vra:notes/@refid" type="attributeValue" model="m-child-model">
+                    <xf:label>refid</xf:label>
+                    </xf:input>
+                    <xf:input ref="vra:notes/@rules" type="attributeValue" model="m-child-model">
+                    <xf:label>rules</xf:label>
+                    </xf:input>
+                    <xf:input ref="vra:notes/@source" type="attributeValue" model="m-child-model">
+                    <xf:label>source</xf:label>
+                    </xf:input>
+                    <xf:input ref="vra:notes/@vocab" type="attributeValue" model="m-child-model">
+                    <xf:label>vocab</xf:label>
+                    </xf:input>
+                    </div>
+                -->
+            </xf:group>
+        </div>
+    </body>
+</html>

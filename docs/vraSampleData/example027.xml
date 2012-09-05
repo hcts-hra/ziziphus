@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://www.vraweb.org/projects/vracore4/vra-4.0-restricted.xsd">
+    <work id="w_29" source="Core 4 Sample Database (VCat)" refid="29">
+        <agentSet>
+            <display>Enrico Scrovegni (Italian patron, died ca. 1336); Giotto  (Italian painter, ca. 1266-1337)</display>
+            <notes/>
+            <agent>
+                <name vocab="ULAN" refid="500010766" type="personal">Giotto </name>
+                <dates type="life">
+                    <earliestDate>1266</earliestDate>
+                    <latestDate>1337</latestDate>
+                </dates>
+                <culture>Italian</culture>
+                <role>painter</role>
+            </agent>
+            <agent>
+                <name vocab="ULAN" refid="500106827" type="personal">Scrovegni, Enrico</name>
+                <dates type="life">
+                    <earliestDate>1270</earliestDate>
+                    <latestDate>1336</latestDate>
+                </dates>
+                <culture>Italian</culture>
+                <role>patron</role>
+            </agent>
+        </agentSet>
+        <culturalContextSet>
+            <culturalContext>Italian</culturalContext>
+        </culturalContextSet>
+        <dateSet>
+            <display>ca. 1303-1306 (creation)</display>
+            <notes>Dated no earlier than 1303, when the building was evidently under construction.</notes>
+            <date type="creation">
+                <earliestDate>1303</earliestDate>
+                <latestDate>1306</latestDate>
+            </date>
+        </dateSet>
+        <descriptionSet>
+            <description>The frescoes include the Last Judgement on the entrance wall and three tiers of fresco panels on the two lateral walls that contain scenes from the Life of Joachim and Anna, the Life of the Virgin, and the Life of Christ. The choir arch contains the Annunciation. Between the main scenes Giotto used a faux architectural scheme of painted marble decorations and small recesses. There are allegorical figures of the Virtues and Vices painted in grisaille (as though they were monochrome relief sculptures) on the dado level of the walls.</description>
+        </descriptionSet>
+        <locationSet>
+            <display>Arena Chapel (Padua, Veneto, Italy)</display>
+            <notes>The chapel is also known as the Arena Chapel because it was built on land purchased by Enrico Scrovegni that abutted the site of a Roman arena.</notes>
+            <location type="site">
+                <name type="geographic" vocab="GAO" refid="" extent="building">Arena Chapel</name>
+                <name type="geographic" vocab="TGN" refid="7003085" extent="inhabited place">Padua</name>
+                <name type="geographic" vocab="TGN" refid="7002997" extent="region">Veneto</name>
+                <name type="geographic" vocab="TGN" refid="1000080" extent="nation">Italy</name>
+                <name type="geographic" vocab="TGN" refid="1000003" extent="continent">Europe</name>
+            </location>
+        </locationSet>
+        <materialSet>
+            <display>pigment on plaster (fresco)</display>
+            <notes/>
+            <material/>
+        </materialSet>
+        <sourceSet>
+            <display>Grove Art Online; http://www.oxfordartonline.com (accessed 6/1/2009)</display>
+            <notes/>
+            <source/>
+        </sourceSet>
+        <stylePeriodSet>
+            <display>Medieval</display>
+            <stylePeriod vocab="AAT" refid="300020756">Medieval</stylePeriod>
+        </stylePeriodSet>
+        <subjectSet>
+            <display>allegorical; architectural interiors; cycles or series; New Testament; Old Testament and Apocrypha; saints; Jesus Christ; Mary, Blessed Virgin, Saint; Christian iconography; the Passion</display>
+            <notes/>
+            <subject>
+                <term type="iconographicTopic" vocab="LCSAF" refid="n 81018544">Mary, Blessed Virgin, Saint</term>
+            </subject>
+            <subject>
+                <term type="iconographicTopic" vocab="LCSAF" refid="n 79084784">Jesus Christ</term>
+            </subject>
+        </subjectSet>
+        <techniqueSet>
+            <display>fresco painting (technique)</display>
+            <notes/>
+            <technique vocab="AAT" refid="300053357">fresco painting (technique)</technique>
+        </techniqueSet>
+        <titleSet>
+            <display>Arena Chapel frescoes</display>
+            <title type="cited" pref="true" xml:lang="en">Arena Chapel frescoes</title>
+            <title type="descriptive" pref="false" xml:lang="en">Frescoes in the Capella degli Scrovegni</title>
+        </titleSet>
+        <worktypeSet>
+            <display>paintings (visual works); frescoes (paintings)</display>
+            <worktype vocab="AAT" refid="300177433">fresco (painting)</worktype>
+        </worktypeSet>
+    </work>
+    <image id="i_131" href="http://aal.ucsd.edu/vracore4/example27.html" refid="131" source="VRA Data Standards Committee, Core 4 Sample Records">
+        <dateSet>
+            <display>2005 (creation)</display>
+            <notes/>
+            <date/>
+        </dateSet>
+        <descriptionSet>
+            <description>While Judas kisses Jesus, the apostle Simon Peter cuts off the ear of Malchus (according to the Gospel of John).</description>
+        </descriptionSet>
+        <measurementsSet>
+            <display>223 kb</display>
+            <notes/>
+            <measurements/>
+        </measurementsSet>
+        <relationSet>
+            <relation type="imageOf" refid="29" source="Core 4 Sample Database (VCat)"/>
+        </relationSet>
+        <rightsSet>
+            <display>publicDomain</display>
+            <rights/>
+        </rightsSet>
+        <sourceSet>
+            <display>Wikipedia; http://en.wikipedia.org/</display>
+            <source>
+                <name/>
+                <refid type="URI">http://en.wikipedia.org/</refid>
+            </source>
+        </sourceSet>
+        <subjectSet>
+            <display>Jesus Christ; betrayal; the Passion; Judas Iscariot; disciples</display>
+            <notes/>
+            <subject>
+                <term type="iconographicTopic" vocab="LCSAF" refid="n 79084784">Jesus Christ</term>
+            </subject>
+        </subjectSet>
+        <titleSet>
+            <display>Kiss of Judas, one of the panels of the Life of Christ cycle</display>
+            <title type="partialView">Kiss of Judas, one of the panels of the Life of Christ cycle</title>
+        </titleSet>
+        <worktypeSet>
+            <display>digital image</display>
+            <notes/>
+            <worktype/>
+        </worktypeSet>
+    </image>
+    <image id="i_132" href="http://aal.ucsd.edu/vracore4/example27.html" refid="132" source="VRA Data Standards Committee, Core 4 Sample Records">
+        <dateSet>
+            <display>2005 (creation)</display>
+            <notes/>
+            <date/>
+        </dateSet>
+        <measurementsSet>
+            <display>186 kb</display>
+            <notes/>
+            <measurements/>
+        </measurementsSet>
+        <relationSet>
+            <relation type="imageOf" refid="29" source="Core 4 Sample Database (VCat)"/>
+        </relationSet>
+        <rightsSet>
+            <display>publicDomain</display>
+            <rights/>
+        </rightsSet>
+        <sourceSet>
+            <display>Wikipedia; http://en.wikipedia.org/</display>
+            <source>
+                <name/>
+                <refid type="URI">http://en.wikipedia.org/</refid>
+            </source>
+        </sourceSet>
+        <subjectSet>
+            <display>Mary, Blessed Virgin, Saint; swaddling cloth; midwife; birth; Saint Anne; Anna</display>
+            <notes/>
+            <subject>
+                <term type="iconographicTopic" vocab="LCSAF" refid="n 81018544">Mary, Blessed Virgin, Saint</term>
+            </subject>
+        </subjectSet>
+        <titleSet>
+            <display>Nativity of Mary, one of the panels of the Life of the Virgin cycle</display>
+            <title type="partialView">Nativity of Mary, one of the panels of the Life of the Virgin cycle</title>
+        </titleSet>
+        <worktypeSet>
+            <display>digital image</display>
+            <notes/>
+            <worktype/>
+        </worktypeSet>
+    </image>
+</vra>

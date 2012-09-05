@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head>
+        <title>Ziziphus Prototype</title>
+        <!--
+        ~ Copyright (c) 2012. betterFORM Project - http://www.betterform.de
+        ~ Licensed under the terms of BSD License
+        -->
+        <style type="text/css">
+           html, body {
+               width: 100%;
+               height: 100%;
+               margin: 0;
+               overflow:hidden;
+               font-size: 10px;
+               color:#bdbdbd;
+           }
+           .bf *{
+               font-size: 10px !important;
+           }
+
+           #mainpanel {
+               width: 100%;
+               height: 100%;
+               background: #333333;
+           }
+           #workrecord,#imagerecord{
+               overflow: auto;
+               background: #444444;
+           }
+           .dijitTextBox{
+               width: 100%;
+           }
+           #imagepane{
+               background: url('/betterform/bfResources/images/file-view.png') no-repeat center center #898989;
+           }
+           #top{
+               height: 20px;
+               width: 100% !important;
+               left: 0 !important;
+               top: 0 !important;
+           }
+           .bf .dijitTitlePaneTitle{
+               background: transparent;
+               border: none;
+               border-bottom: 1px #111111 solid;
+           }
+           .bf .dijitTitlePaneContentOuter{
+               border: none;
+           }
+           .bf .dijitTextBox{
+               background: none;
+           }
+
+           #debug-pane,#openclose,#evtLogContainer{
+               display: none;
+           }
+           .editbutton{
+               float: right;
+           }
+           .bf .dijitTitlePane .dijitDropDownButton{
+               margin-left: 145px;
+               margin-top:-45px;
+           }
+           .columntitle {
+               background: none repeat scroll 0 0;
+               border-bottom: thin solid #DDDDDD;
+               font-weight: bold;
+               margin-bottom: 5px;
+               padding: 5px;
+           }
+           #imageupper{
+               background: #898989;
+           }
+           #imagelower{
+               background: #cccccc;
+           }
+           #imagerecordcontainer{
+               margin: 0;
+               padding: 0;
+           }
+           .tundra .dijitGutterH,.tundra .dijitGutterV,.tundra .dijitSplitterH,.tundra .dijitSplitterV{
+               background: #333333;
+           }
+           .tundra .dijitMenu, .tundra .dijitMenuBar{
+               background: #111111;
+           }
+       </style>
+    </head>
+    <body>
+        <div dojoType="dijit.MenuBar" id="mainMenu">
+            <div dojoType="dijit.PopupMenuBarItem" label="View">
+                <div dojoType="dijit.Menu" id="View">
+                    <div data-dojo-type="dijit.CheckedMenuItem" data-dojo-props="onClick:function(){toggleView(this,'imagerecord')},checked:true">Image Record</div>
+                    <div data-dojo-type="dijit.CheckedMenuItem" data-dojo-props="onClick:function(){toggleView(this,'workrecord')},checked:true">Work Record</div>
+                    <div data-dojo-type="dijit.CheckedMenuItem" data-dojo-props="onClick:function(){toggleView(this,'imagepane')},checked:true">Image Area</div>
+                </div>
+            </div>
+        </div>
+        <div id="mainpanel" data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="design:'sidebars', gutters:true">
+            <!--<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="splitter:true, region:'leading', layoutPriority:1" style="width: 100px;">Left #1</div>-->
+<!--
+            <div id="top" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'top'" style="width: 100px;">
+
+
+
+            </div>
+-->
+            <!--<div id="workrecord" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="splitter:true, region:'leading', layoutPriority:2" style="width: 200px;">-->
+            <div id="workrecord" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'leading',splitter:true" style="width: 200px;">
+                <div class="columntitle">Work Record</div>
+                <div id="title" data-dojo-type="dijit.TitlePane" data-dojo-props="title: 'Title'">
+                    <label for="brandName">brandName:</label>
+                    <input type="text" name="firstname" value="testing testing" data-dojo-type="dijit.form.TextBox" data-dojo-props="trim:true, propercase:true" id="brandName"/>
+                </div>
+                <div data-dojo-type="dijit.TitlePane" data-dojo-props="title: 'Agent',open:false">
+                    <div class="editbutton" data-dojo-type="dijit.form.DropDownButton">
+                        <span>Edit</span>
+                        <div data-dojo-type="dijit.TooltipDialog">
+                            <label for="name2">Name:</label>
+                            <input data-dojo-type="dijit.form.TextBox" id="name2" name="name2"/>
+                            <br/>
+                            <label for="hobby2">Hobby:</label>
+                            <input data-dojo-type="dijit.form.TextBox" id="hobby2" name="hobby2"/>
+                            <br/>
+                            <button data-dojo-type="dijit.form.Button" type="submit">Save</button>
+                        </div>
+                    </div>
+                    Already collected data displayed here
+                    Already collected data displayed here
+                    Already collected data displayed here
+                </div>
+                <div data-dojo-type="dijit.TitlePane" data-dojo-props="title: 'Date',open:false">
+                    Click arrow to close me.
+                </div>
+                <div data-dojo-type="dijit.TitlePane" data-dojo-props="title: 'Style Period',open:false">
+                    Click arrow to close me.
+                </div>
+                <div data-dojo-type="dijit.TitlePane" data-dojo-props="title: 'Inscription',open:false">
+                    Click arrow to close me.
+                </div>
+                <div data-dojo-type="dijit.TitlePane" data-dojo-props="title: 'Description',open:false">
+                    Click arrow to close me.
+                </div>
+                <div data-dojo-type="dijit.TitlePane" data-dojo-props="title: 'Subject',open:false">
+                    Click arrow to close me.
+                </div>
+                <div data-dojo-type="dijit.TitlePane" data-dojo-props="title: 'Location',open:false">
+                    Click arrow to close me.
+                </div>
+                <div data-dojo-type="dijit.TitlePane" data-dojo-props="title: 'Measurements',open:false">
+                    Click arrow to close me.
+                </div>
+                <div data-dojo-type="dijit.TitlePane" data-dojo-props="title: 'Material',open:false">
+                    Click arrow to close me.
+                </div>
+                <div data-dojo-type="dijit.TitlePane" data-dojo-props="title: 'Technique',open:false">
+                    Click arrow to close me.
+                </div>
+                <div data-dojo-type="dijit.TitlePane" data-dojo-props="title: 'Worktype',open:false">
+                    Click arrow to close me.
+                </div>
+                <div data-dojo-type="dijit.TitlePane" data-dojo-props="title: 'Relation',open:false">
+                    Click arrow to close me.
+                </div>
+                <div data-dojo-type="dijit.TitlePane" data-dojo-props="title: 'Source',open:false">
+                    Click arrow to close me.
+                </div>
+            </div>
+            <div id="imagepane" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'center'">
+                Image
+            </div>
+            <div id="imagerecord" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'trailing',splitter:true" style="width: 200px;">
+                <div class="columntitle">Image Record</div>
+                <div id="imagerecordcontainer" data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="design:'headline', gutters:true" style="width:100%;height:100%;">
+                    <div id="imageupper" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'top'">
+                        <img src="/betterform/bfResources/images/file-view.png"/>
+                    </div>
+                    <div id="imagelower" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'center'">
+                        Image
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-dojo-type="dijit.Tooltip" data-dojo-props="connectId:'brandName'">
+            Titles that are product names
+        </div>
+        <div style="display:none">
+            <xf:model id="model-1">
+                <xf:instance id="i-default">
+                    <data xmlns="">
+                    </data>
+                </xf:instance>
+            </xf:model>
+            <xf:group>
+		</xf:group>
+        </div>
+        <script type="text/javascript" defer="defer">
+            dojo.require("dijit.layout.ContentPane");
+            dojo.require("dijit.layout.BorderContainer");
+            dojo.require("dijit.TitlePane");
+            dojo.require("dijit.Tooltip");
+            dojo.require("dijit.form.TextBox");
+            dojo.require("dijit.Menu");
+            dojo.require("dijit.MenuBar");
+            dojo.require("dijit.PopupMenuBarItem");
+            dojo.require("dijit.CheckedMenuItem");
+            dojo.require("dijit.form.DropDownButton");
+            dojo.require("dijit.TooltipDialog");
+            dojo.require("dijit.form.Button");
+        </script>
+        <script type="text/javascript">
+            function toggleView(control,target){
+                console.debug(control,target);
+                if(control.checked){
+                    dijit.byId("mainpanel").addChild(dijit.byId(target));
+                }else{
+                    dijit.byId("mainpanel").removeChild(dijit.byId(target));
+                }
+            }
+        </script>
+    </body>
+</html>

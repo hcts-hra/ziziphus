@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?><html xmlns:vra="http://www.vraweb.org/vracore4.htm"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xf="http://www.w3.org/2002/xforms">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Ziziphus_Image_DB</title>
+   </head>
+   <body>
+      <div id="xforms">
+         <div style="display:none">
+            <xf:model id="child-model" schema="../resources/xsd/vra-types.xsd">
+               <xf:instance id="i-agentSet">
+                  <agentSet xmlns="http://www.vraweb.org/vracore4.htm">
+                     <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid=""
+                              rules=""
+                              source=""
+                              vocab=""></display>
+                     <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid=""
+                            rules=""
+                            source=""
+                            vocab=""></notes>
+                     <agent dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid=""
+                            rules=""
+                            source=""
+                            vocab="">
+                        <attribution dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid=""
+                                     rules=""
+                                     source=""
+                                     vocab=""></attribution>
+                        <culture dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid=""
+                                 rules=""
+                                 source=""
+                                 vocab=""></culture>
+                        <dates type="">
+                           <earliestDate circa="false"></earliestDate>
+                           <latestDate circa="false"></latestDate>
+                        </dates>
+                        <name type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false"
+                              refid=""
+                              rules=""
+                              source=""
+                              vocab=""></name>
+                        <role dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid=""
+                              rules=""
+                              source=""
+                              vocab=""></role>
+                     </agent>
+                  </agentSet>
+               </xf:instance>
+               <xf:bind nodeset="instance()">
+                  <xf:bind nodeset="vra:display">
+                     <xf:bind nodeset="@dataDate" type="vra:dateValueType"></xf:bind>
+                     <xf:bind nodeset="@extent"></xf:bind>
+                     <xf:bind nodeset="@href" type="xsd:anyURI"></xf:bind>
+                     <xf:bind nodeset="@xml:lang"></xf:bind>
+                     <xf:bind nodeset="@pref" type="xsd:boolean"></xf:bind>
+                     <xf:bind nodeset="@refid"></xf:bind>
+                     <xf:bind nodeset="@rules"></xf:bind>
+                     <xf:bind nodeset="@source"></xf:bind>
+                     <xf:bind nodeset="@vocab"></xf:bind>
+                  </xf:bind>
+                  <xf:bind nodeset="vra:notes">
+                     <xf:bind nodeset="@dataDate" type="vra:dateValueType"></xf:bind>
+                     <xf:bind nodeset="@extent"></xf:bind>
+                     <xf:bind nodeset="@href" type="xsd:anyURI"></xf:bind>
+                     <xf:bind nodeset="@xml:lang"></xf:bind>
+                     <xf:bind nodeset="@pref" type="xsd:boolean"></xf:bind>
+                     <xf:bind nodeset="@refid"></xf:bind>
+                     <xf:bind nodeset="@rules"></xf:bind>
+                     <xf:bind nodeset="@source"></xf:bind>
+                     <xf:bind nodeset="@vocab"></xf:bind>
+                  </xf:bind>
+                  <xf:bind nodeset="vra:agent">
+                     <xf:bind nodeset="@dataDate" type="vra:dateValueType"></xf:bind>
+                     <xf:bind nodeset="@extent"></xf:bind>
+                     <xf:bind nodeset="@href" type="xsd:anyURI"></xf:bind>
+                     <xf:bind nodeset="@xml:lang"></xf:bind>
+                     <xf:bind nodeset="@pref" type="xsd:boolean"></xf:bind>
+                     <xf:bind nodeset="@refid"></xf:bind>
+                     <xf:bind nodeset="@rules"></xf:bind>
+                     <xf:bind nodeset="@source"></xf:bind>
+                     <xf:bind nodeset="@vocab"></xf:bind>
+                     <xf:bind nodeset="vra:attribution">
+                        <xf:bind nodeset="@dataDate" type="vra:dateValueType"></xf:bind>
+                        <xf:bind nodeset="@extent"></xf:bind>
+                        <xf:bind nodeset="@href" type="xsd:anyURI"></xf:bind>
+                        <xf:bind nodeset="@xml:lang"></xf:bind>
+                        <xf:bind nodeset="@pref" type="xsd:boolean"></xf:bind>
+                        <xf:bind nodeset="@refid"></xf:bind>
+                        <xf:bind nodeset="@rules"></xf:bind>
+                        <xf:bind nodeset="@source"></xf:bind>
+                        <xf:bind nodeset="@vocab"></xf:bind>
+                     </xf:bind>
+                     <xf:bind nodeset="vra:culture">
+                        <xf:bind nodeset="@dataDate" type="vra:dateValueType"></xf:bind>
+                        <xf:bind nodeset="@extent"></xf:bind>
+                        <xf:bind nodeset="@href" type="xsd:anyURI"></xf:bind>
+                        <xf:bind nodeset="@xml:lang"></xf:bind>
+                        <xf:bind nodeset="@pref" type="xsd:boolean"></xf:bind>
+                        <xf:bind nodeset="@refid"></xf:bind>
+                        <xf:bind nodeset="@rules"></xf:bind>
+                        <xf:bind nodeset="@source"></xf:bind>
+                        <xf:bind nodeset="@vocab"></xf:bind>
+                     </xf:bind>
+                     <xf:bind nodeset="vra:dates">
+                        <xf:bind nodeset="@type" type="vra:agentDateTypeType"></xf:bind>
+                        <xf:bind nodeset="vra:earliestDate">
+                           <xf:bind nodeset="@circa" type="xsd:boolean"></xf:bind>
+                        </xf:bind>
+                        <xf:bind nodeset="vra:latestDate">
+                           <xf:bind nodeset="@circa" type="xsd:boolean"></xf:bind>
+                        </xf:bind>
+                     </xf:bind>
+                     <xf:bind nodeset="vra:name">
+                        <xf:bind nodeset="@type" type="vra:agentNameTypeType"></xf:bind>
+                        <xf:bind nodeset="@dataDate" type="vra:dateValueType"></xf:bind>
+                        <xf:bind nodeset="@extent"></xf:bind>
+                        <xf:bind nodeset="@href" type="xsd:anyURI"></xf:bind>
+                        <xf:bind nodeset="@xml:lang"></xf:bind>
+                        <xf:bind nodeset="@pref" type="xsd:boolean"></xf:bind>
+                        <xf:bind nodeset="@refid"></xf:bind>
+                        <xf:bind nodeset="@rules"></xf:bind>
+                        <xf:bind nodeset="@source"></xf:bind>
+                        <xf:bind nodeset="@vocab"></xf:bind>
+                     </xf:bind>
+                     <xf:bind nodeset="vra:role">
+                        <xf:bind nodeset="@dataDate" type="vra:dateValueType"></xf:bind>
+                        <xf:bind nodeset="@extent"></xf:bind>
+                        <xf:bind nodeset="@href" type="xsd:anyURI"></xf:bind>
+                        <xf:bind nodeset="@xml:lang"></xf:bind>
+                        <xf:bind nodeset="@pref" type="xsd:boolean"></xf:bind>
+                        <xf:bind nodeset="@refid"></xf:bind>
+                        <xf:bind nodeset="@rules"></xf:bind>
+                        <xf:bind nodeset="@source"></xf:bind>
+                        <xf:bind nodeset="@vocab"></xf:bind>
+                     </xf:bind>
+                  </xf:bind>
+               </xf:bind>
+            </xf:model>
+         </div>
+         <xf:group ref="instance()" appearance="minimal" class="vraRecord" model="child-model">
+            <xf:label>AgentSet</xf:label>
+            <xf:input ref="vra:display" type="nodeValue" model="child-model">
+               <xf:label>Display</xf:label>
+            </xf:input>
+            <div class="agentSet-display-attributes hiddenAttributes" style="display:none;">
+               <xf:input ref="vra:display/@dataDate" type="attributeValue" model="child-model">
+                  <xf:label>dataDate</xf:label>
+               </xf:input>
+               <xf:input ref="vra:display/@extent" type="attributeValue" model="child-model">
+                  <xf:label>extent</xf:label>
+               </xf:input>
+               <xf:input ref="vra:display/@href" type="attributeValue" model="child-model">
+                  <xf:label>href</xf:label>
+               </xf:input>
+               <xf:input ref="vra:display/@xml:lang" type="attributeValue" model="child-model">
+                  <xf:label>xml:lang</xf:label>
+               </xf:input>
+               <xf:input ref="vra:display/@pref" type="attributeValue" model="child-model">
+                  <xf:label>pref</xf:label>
+               </xf:input>
+               <xf:input ref="vra:display/@refid" type="attributeValue" model="child-model">
+                  <xf:label>refid</xf:label>
+               </xf:input>
+               <xf:input ref="vra:display/@rules" type="attributeValue" model="child-model">
+                  <xf:label>rules</xf:label>
+               </xf:input>
+               <xf:input ref="vra:display/@source" type="attributeValue" model="child-model">
+                  <xf:label>source</xf:label>
+               </xf:input>
+               <xf:input ref="vra:display/@vocab" type="attributeValue" model="child-model">
+                  <xf:label>vocab</xf:label>
+               </xf:input>
+            </div>
+            <xf:input ref="vra:notes" type="nodeValue" model="child-model">
+               <xf:label>Notes</xf:label>
+            </xf:input>
+            <div class="agentSet-notes-attributes hiddenAttributes" style="display:none;">
+               <xf:input ref="vra:notes/@dataDate" type="attributeValue" model="child-model">
+                  <xf:label>dataDate</xf:label>
+               </xf:input>
+               <xf:input ref="vra:notes/@extent" type="attributeValue" model="child-model">
+                  <xf:label>extent</xf:label>
+               </xf:input>
+               <xf:input ref="vra:notes/@href" type="attributeValue" model="child-model">
+                  <xf:label>href</xf:label>
+               </xf:input>
+               <xf:input ref="vra:notes/@xml:lang" type="attributeValue" model="child-model">
+                  <xf:label>xml:lang</xf:label>
+               </xf:input>
+               <xf:input ref="vra:notes/@pref" type="attributeValue" model="child-model">
+                  <xf:label>pref</xf:label>
+               </xf:input>
+               <xf:input ref="vra:notes/@refid" type="attributeValue" model="child-model">
+                  <xf:label>refid</xf:label>
+               </xf:input>
+               <xf:input ref="vra:notes/@rules" type="attributeValue" model="child-model">
+                  <xf:label>rules</xf:label>
+               </xf:input>
+               <xf:input ref="vra:notes/@source" type="attributeValue" model="child-model">
+                  <xf:label>source</xf:label>
+               </xf:input>
+               <xf:input ref="vra:notes/@vocab" type="attributeValue" model="child-model">
+                  <xf:label>vocab</xf:label>
+               </xf:input>
+            </div>
+            <xf:group ref="vra:agent" appearance="minimal" class="vraComplex" model="child-model">
+               <xf:label>Agent</xf:label>
+               <xf:input ref="vra:agent/@dataDate" type="attributeValue" model="child-model">
+                  <xf:label>dataDate</xf:label>
+               </xf:input>
+               <xf:input ref="vra:agent/@extent" type="attributeValue" model="child-model">
+                  <xf:label>extent</xf:label>
+               </xf:input>
+               <xf:input ref="vra:agent/@href" type="attributeValue" model="child-model">
+                  <xf:label>href</xf:label>
+               </xf:input>
+               <xf:input ref="vra:agent/@xml:lang" type="attributeValue" model="child-model">
+                  <xf:label>xml:lang</xf:label>
+               </xf:input>
+               <xf:input ref="vra:agent/@pref" type="attributeValue" model="child-model">
+                  <xf:label>pref</xf:label>
+               </xf:input>
+               <xf:input ref="vra:agent/@refid" type="attributeValue" model="child-model">
+                  <xf:label>refid</xf:label>
+               </xf:input>
+               <xf:input ref="vra:agent/@rules" type="attributeValue" model="child-model">
+                  <xf:label>rules</xf:label>
+               </xf:input>
+               <xf:input ref="vra:agent/@source" type="attributeValue" model="child-model">
+                  <xf:label>source</xf:label>
+               </xf:input>
+               <xf:input ref="vra:agent/@vocab" type="attributeValue" model="child-model">
+                  <xf:label>vocab</xf:label>
+               </xf:input>
+               <xf:input ref="vra:attribution" type="nodeValue" model="child-model">
+                  <xf:label>Attribution</xf:label>
+               </xf:input>
+               <div class="agentSet-attribution-attributes hiddenAttributes" style="display:none;">
+                  <xf:input ref="vra:attribution/@dataDate" type="attributeValue" model="child-model">
+                     <xf:label>dataDate</xf:label>
+                  </xf:input>
+                  <xf:input ref="vra:attribution/@extent" type="attributeValue" model="child-model">
+                     <xf:label>extent</xf:label>
+                  </xf:input>
+                  <xf:input ref="vra:attribution/@href" type="attributeValue" model="child-model">
+                     <xf:label>href</xf:label>
+                  </xf:input>
+                  <xf:input ref="vra:attribution/@xml:lang" type="attributeValue" model="child-model">
+                     <xf:label>xml:lang</xf:label>
+                  </xf:input>
+                  <xf:input ref="vra:attribution/@pref" type="attributeValue" model="child-model">
+                     <xf:label>pref</xf:label>
+                  </xf:input>
+                  <xf:input ref="vra:attribution/@refid" type="attributeValue" model="child-model">
+                     <xf:label>refid</xf:label>
+                  </xf:input>
+                  <xf:input ref="vra:attribution/@rules" type="attributeValue" model="child-model">
+                     <xf:label>rules</xf:label>
+                  </xf:input>
+                  <xf:input ref="vra:attribution/@source" type="attributeValue" model="child-model">
+                     <xf:label>source</xf:label>
+                  </xf:input>
+                  <xf:input ref="vra:attribution/@vocab" type="attributeValue" model="child-model">
+                     <xf:label>vocab</xf:label>
+                  </xf:input>
+               </div>
+               <xf:input ref="vra:culture" type="nodeValue" model="child-model">
+                  <xf:label>Culture</xf:label>
+               </xf:input>
+               <div class="agentSet-culture-attributes hiddenAttributes" style="display:none;">
+                  <xf:input ref="vra:culture/@dataDate" type="attributeValue" model="child-model">
+                     <xf:label>dataDate</xf:label>
+                  </xf:input>
+                  <xf:input ref="vra:culture/@extent" type="attributeValue" model="child-model">
+                     <xf:label>extent</xf:label>
+                  </xf:input>
+                  <xf:input ref="vra:culture/@href" type="attributeValue" model="child-model">
+                     <xf:label>href</xf:label>
+                  </xf:input>
+                  <xf:input ref="vra:culture/@xml:lang" type="attributeValue" model="child-model">
+                     <xf:label>xml:lang</xf:label>
+                  </xf:input>
+                  <xf:input ref="vra:culture/@pref" type="attributeValue" model="child-model">
+                     <xf:label>pref</xf:label>
+                  </xf:input>
+                  <xf:input ref="vra:culture/@refid" type="attributeValue" model="child-model">
+                     <xf:label>refid</xf:label>
+                  </xf:input>
+                  <xf:input ref="vra:culture/@rules" type="attributeValue" model="child-model">
+                     <xf:label>rules</xf:label>
+                  </xf:input>
+                  <xf:input ref="vra:culture/@source" type="attributeValue" model="child-model">
+                     <xf:label>source</xf:label>
+                  </xf:input>
+                  <xf:input ref="vra:culture/@vocab" type="attributeValue" model="child-model">
+                     <xf:label>vocab</xf:label>
+                  </xf:input>
+               </div>
+               <xf:group ref="vra:dates" appearance="minimal" class="vraComplex" model="child-model">
+                  <xf:label>Dates</xf:label>
+                  <xf:input ref="vra:dates/@type" type="attributeValue" model="child-model">
+                     <xf:label>type</xf:label>
+                  </xf:input>
+                  <xf:input ref="vra:earliestDate" type="nodeValue" model="child-model">
+                     <xf:label>EarliestDate</xf:label>
+                  </xf:input>
+                  <div class="agentSet-earliestDate-attributes hiddenAttributes" style="display:none;">
+                     <xf:input ref="vra:earliestDate/@circa" type="attributeValue" model="child-model">
+                        <xf:label>circa</xf:label>
+                     </xf:input>
+                  </div>
+                  <xf:input ref="vra:latestDate" type="nodeValue" model="child-model">
+                     <xf:label>LatestDate</xf:label>
+                  </xf:input>
+                  <div class="agentSet-latestDate-attributes hiddenAttributes" style="display:none;">
+                     <xf:input ref="vra:latestDate/@circa" type="attributeValue" model="child-model">
+                        <xf:label>circa</xf:label>
+                     </xf:input>
+                  </div>
+               </xf:group>
+               <xf:input ref="vra:name" type="nodeValue" model="child-model">
+                  <xf:label>Name</xf:label>
+               </xf:input>
+               <div class="agentSet-name-attributes hiddenAttributes" style="display:none;">
+                  <xf:input ref="vra:name/@type" type="attributeValue" model="child-model">
+                     <xf:label>type</xf:label>
+                  </xf:input>
+                  <xf:input ref="vra:name/@dataDate" type="attributeValue" model="child-model">
+                     <xf:label>dataDate</xf:label>
+                  </xf:input>
+                  <xf:input ref="vra:name/@extent" type="attributeValue" model="child-model">
+                     <xf:label>extent</xf:label>
+                  </xf:input>
+                  <xf:input ref="vra:name/@href" type="attributeValue" model="child-model">
+                     <xf:label>href</xf:label>
+                  </xf:input>
+                  <xf:input ref="vra:name/@xml:lang" type="attributeValue" model="child-model">
+                     <xf:label>xml:lang</xf:label>
+                  </xf:input>
+                  <xf:input ref="vra:name/@pref" type="attributeValue" model="child-model">
+                     <xf:label>pref</xf:label>
+                  </xf:input>
+                  <xf:input ref="vra:name/@refid" type="attributeValue" model="child-model">
+                     <xf:label>refid</xf:label>
+                  </xf:input>
+                  <xf:input ref="vra:name/@rules" type="attributeValue" model="child-model">
+                     <xf:label>rules</xf:label>
+                  </xf:input>
+                  <xf:input ref="vra:name/@source" type="attributeValue" model="child-model">
+                     <xf:label>source</xf:label>
+                  </xf:input>
+                  <xf:input ref="vra:name/@vocab" type="attributeValue" model="child-model">
+                     <xf:label>vocab</xf:label>
+                  </xf:input>
+               </div>
+               <xf:input ref="vra:role" type="nodeValue" model="child-model">
+                  <xf:label>Role</xf:label>
+               </xf:input>
+               <div class="agentSet-role-attributes hiddenAttributes" style="display:none;">
+                  <xf:input ref="vra:role/@dataDate" type="attributeValue" model="child-model">
+                     <xf:label>dataDate</xf:label>
+                  </xf:input>
+                  <xf:input ref="vra:role/@extent" type="attributeValue" model="child-model">
+                     <xf:label>extent</xf:label>
+                  </xf:input>
+                  <xf:input ref="vra:role/@href" type="attributeValue" model="child-model">
+                     <xf:label>href</xf:label>
+                  </xf:input>
+                  <xf:input ref="vra:role/@xml:lang" type="attributeValue" model="child-model">
+                     <xf:label>xml:lang</xf:label>
+                  </xf:input>
+                  <xf:input ref="vra:role/@pref" type="attributeValue" model="child-model">
+                     <xf:label>pref</xf:label>
+                  </xf:input>
+                  <xf:input ref="vra:role/@refid" type="attributeValue" model="child-model">
+                     <xf:label>refid</xf:label>
+                  </xf:input>
+                  <xf:input ref="vra:role/@rules" type="attributeValue" model="child-model">
+                     <xf:label>rules</xf:label>
+                  </xf:input>
+                  <xf:input ref="vra:role/@source" type="attributeValue" model="child-model">
+                     <xf:label>source</xf:label>
+                  </xf:input>
+                  <xf:input ref="vra:role/@vocab" type="attributeValue" model="child-model">
+                     <xf:label>vocab</xf:label>
+                  </xf:input>
+               </div>
+            </xf:group>
+         </xf:group>
+      </div>
+   </body>
+</html>

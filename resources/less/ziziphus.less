@@ -1,0 +1,165 @@
+//lightbox look-alike colors
+@gutterColor:#333333;
+@menubarColor:#111111;
+@bodyFontColor:#bdbdbd;
+@sidebarColor:#444444;
+@imageColor:#898989;
+@sectionColor:#666666;
+
+html, body {
+   width: 100%;
+   height: 100%;
+   margin: 0;
+   overflow:hidden;
+   font-size: 10px;
+   color:@bodyFontColor;
+}
+
+
+.bf {
+    * {
+        font-size: 10px !important;
+    }
+
+    .dijitTitlePaneTitle{
+        background: transparent;
+        border: none;
+        border-bottom: 1px @menubarColor solid;
+    }
+    .dijitTitlePaneContentOuter{
+        border: none;
+    }
+    .dijitTextBox{
+        background: none;
+        width: 100%;
+    }
+    .dijitTitlePane .dijitDropDownButton{
+       margin-left: 145px;
+       margin-top:-45px;
+    }
+
+    .complexLabel {
+        font-weight: bold;
+    }
+
+    .nodeEntry {
+        /*border:thin solid #990000;*/
+        color:#FFED3D;
+        padding-top:5px;
+
+        .simpleLabel {
+            padding-right: 5px;
+        }
+
+        .simpleValue {
+
+        }
+    }
+
+    .attrEntry {
+        padding-top:5px;
+
+        .attrLabel {
+            padding-right:5px;
+            color: white;
+
+        }
+
+        .attrValue {
+            padding-right:10px;
+            /*color: #990000;*/
+        }
+    }
+
+
+    /* SUBFORMS */
+    .vraRecord {
+        /*border:1px solid red;*/
+        font-size: 14px;
+        font-weight: bold;
+        padding:10px;
+
+    }
+    .vraComplex {
+        /*border:1px solid yellow;*/
+        font-size: 12px;
+        font-weight: bold;
+        padding:10px;
+
+    }
+    .vraControl{
+        /*border:1px solid blue;*/
+        font-size: 10px;
+        font-weight: normal;
+        padding:10px;
+    }
+
+    .vraAttribute {
+        /*border:1px solid green ;*/
+        font-size: 10px;
+        font-weight: normal;
+        padding:10px;
+    }
+}
+
+#mainpanel {
+   width: 100%;
+   height: 100%;
+   background: @gutterColor;
+}
+
+#workrecord,#imagerecord{
+   overflow: auto;
+   background: @sidebarColor;
+}
+
+
+#top{
+   height: 20px;
+   width: 100% !important;
+   left: 0 !important;
+   top: 0 !important;
+}
+
+
+#debug-pane,#openclose,#evtLogContainer{
+   display: none;
+}
+
+#debug-pane, #openclosez, #evtLogContainer  {
+    z-index: 9999;
+}
+
+.editbutton{
+   float: right;
+}
+.columntitle {
+   background: none repeat scroll 0 0;
+   border-bottom: thin solid @menubarColor;
+   font-weight: bold;
+   margin-bottom: 5px;
+   padding: 5px;
+}
+#imageupper{
+   background: @imageColor;
+}
+#imagelower{
+   background: @sidebarColor;
+}
+#imagerecordcontainer{
+   margin: 0;
+   padding: 0;
+}
+.tundra{
+    .dijitGutterH,.dijitGutterV,.dijitSplitterH,.dijitSplitterV{
+        background: @gutterColor;
+    }
+    .dijitMenu,.dijitMenuBar{
+        background: @menubarColor;
+    }
+    .dijitTitlePaneContentInner{
+        background: @sectionColor;
+    }
+}
+
+

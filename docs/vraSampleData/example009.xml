@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://www.vraweb.org/projects/vracore4/vra-4.0-restricted.xsd">
+    <collection id="c_19" source="Core 4 Sample Database (VCat)" refid="19">
+        <agentSet>
+            <display>Heinrich Schliemann (German archaeologist, 1822-1890)</display>
+            <notes/>
+            <agent>
+                <name vocab="ULAN" refid="500065958" type="personal">Schliemann, Heinrich</name>
+                <dates type="life">
+                    <earliestDate>1822</earliestDate>
+                    <latestDate>1890</latestDate>
+                </dates>
+                <culture>German</culture>
+                <role>archaeologist</role>
+            </agent>
+        </agentSet>
+        <culturalContextSet>
+            <culturalContext>Anatolian</culturalContext>
+        </culturalContextSet>
+        <dateSet>
+            <display>1873 (discovery)</display>
+            <notes>Nearly all Schliemann’s material, which was in Berlin at the end of World War II, disappeared in 1945.</notes>
+            <date type="discovery">
+                <earliestDate>1873</earliestDate>
+                <latestDate>1873</latestDate>
+            </date>
+        </dateSet>
+        <descriptionSet>
+            <description>The so-called "Priam's Treasure" is a collection of 8830 objects made of gold, electrum, silver, and bronze excavated from the mound of Hisarlik, Turkey. Original finds cataloged after Schliemann's death by the German scholar Hubert Schmidt in 1902, who classified them into 19 sub-groups identified by the Roman letters A through S.</description>
+        </descriptionSet>
+        <locationSet>
+            <display>Hisarlik, Marmara, Turkey</display>
+            <notes>Probably found within or just outside the walls of Troy II.</notes>
+            <location type="discovery">
+                <name type="geographic" vocab="TGN" refid="7002329" extent="deserted settlement">Hisarlik</name>
+                <name type="geographic" vocab="TGN" refid="7018450" extent="region">Marmara</name>
+                <name type="geographic" vocab="TGN" refid="1000144" extent="nation">Turkey</name>
+                <name type="geographic" vocab="TGN" refid="1000004" extent="continent">Asia</name>
+            </location>
+        </locationSet>
+        <materialSet>
+            <display>gold, electrum, silver, and bronze</display>
+            <notes/>
+            <material/>
+        </materialSet>
+        <sourceSet>
+            <display>Tostikov, Vladimir P.; The Gold of Troy. Searching for Homer's Fabled City, New York: H. N. Abrams, 1996</display>
+            <notes/>
+            <source/>
+        </sourceSet>
+        <stylePeriodSet>
+            <display>Early Bronze Age</display>
+            <stylePeriod vocab="AAT" refid="300019276">Early Bronze Age</stylePeriod>
+        </stylePeriodSet>
+        <subjectSet>
+            <display>death or burial; decorative arts; historical; Troy (Extinct city); cultural artifacts; goldwork; jewelry</display>
+            <notes/>
+            <subject>
+                <term type="geographicPlace" vocab="LCSAF" refid="sh 85138100">Troy (Extinct city)</term>
+            </subject>
+        </subjectSet>
+        <techniqueSet>
+            <display>metalworking</display>
+            <notes/>
+            <technique vocab="AAT" refid="300053946">metalworking</technique>
+        </techniqueSet>
+        <titleSet>
+            <display>Priam’s Treasure</display>
+            <title type="popular" pref="true" xml:lang="en">Priam’s Treasure</title>
+            <title type="descriptive" pref="false" xml:lang="en">Gold of Troy</title>
+        </titleSet>
+        <worktypeSet>
+            <display>associated concepts; property (legal concept); treasure-trove; objects; grave goods</display>
+            <worktype vocab="AAT" refid="300253921">treasure-trove</worktype>
+            <worktype vocab="AAT" refid="300180706">grave goods</worktype>
+        </worktypeSet>
+    </collection>
+    <work id="w_20" source="Core 4 Sample Database (VCat)" refid="20">
+        <agentSet>
+            <display>unknown (Anatolian)</display>
+            <notes/>
+            <agent>
+                <name vocab="ULAN" refid="500125274" type="personal">unknown</name>
+            </agent>
+        </agentSet>
+        <culturalContextSet>
+            <culturalContext>Anatolian</culturalContext>
+        </culturalContextSet>
+        <dateSet>
+            <display>1873 (discovery); ca. 2500-2000 BCE (creation)</display>
+            <date type="creation">
+                <earliestDate>-2500</earliestDate>
+                <latestDate>-2000</latestDate>
+            </date>
+            <date type="discovery">
+                <earliestDate>1873</earliestDate>
+                <latestDate>1873</latestDate>
+            </date>
+        </dateSet>
+        <descriptionSet>
+            <description>Sixty-four vertical chains made of double links are suspended from a long narrow band with three perforations at each rounded triangular end. Fifty short chains constitute the central part, and seven long chains frame it at each side. Rhomboid plaques with a raised, perforated central rib are hung on the chains at equal intervals every four links. All the chains have idol-shaped pendants. There are eleven of the rhomboid plaques threaded on to each of the long chains, and just four on each of the short chains. The vertical chains are linked together in the middle by a horizontal chain; the long chains on the side have two additional horizontal plates, one after the second and another after the third row of plaques of the longer parts of the chains. The idol-shaped pendants are decorated with hammered and embossed decoration.</description>
+        </descriptionSet>
+        <locationSet>
+            <display>Pushkin Museum of Fine Arts (Muzey Izobrazitelnykh Iskusstv Imeni A.S. Pushkina) (Moscow, Rossiya, Russia) A 5876</display>
+            <location type="repository">
+                <name type="geographic" vocab="GAO" refid="" extent="organization">Pushkin Museum of Fine Arts (Muzey Izobrazitelnykh Iskusstv Imeni A.S. Pushkina)</name>
+                <name type="geographic" vocab="TGN" refid="7012974" extent="inhabited place">Moscow</name>
+                <name type="geographic" vocab="TGN" refid="7018214" extent="country">Rossiya</name>
+                <name type="geographic" vocab="TGN" refid="7002435" extent="nation">Russia</name>
+                <name type="geographic" vocab="TGN" refid="1000004" extent="continent">Asia</name>
+                <refid type="accession">A 5876</refid>
+            </location>
+            <location type="discovery">
+                <name type="geographic" vocab="TGN" refid="7002329" extent="deserted settlement">Hisarlik</name>
+                <name type="geographic" vocab="TGN" refid="7018450" extent="region">Marmara</name>
+                <name type="geographic" vocab="TGN" refid="1000144" extent="nation">Turkey</name>
+                <name type="geographic" vocab="TGN" refid="1000004" extent="continent">Asia</name>
+            </location>
+        </locationSet>
+        <materialSet>
+            <display>gold</display>
+            <notes/>
+            <material/>
+        </materialSet>
+        <measurementsSet>
+            <display>85.52  gm (weight)</display>
+            <notes/>
+            <measurements type="weight" unit="gm">85.52 </measurements>
+        </measurementsSet>
+        <relationSet>
+            <display/>
+            <relation type="formerlyPartOf" refid="20" relids="c_19" source="Core 4 Sample Database (VCat)">Priam’s Treasure</relation>
+        </relationSet>
+        <sourceSet>
+            <display>Tostikov, Vladimir P.; The Gold of Troy. Searching for Homer's Fabled City, New York: H. N. Abrams, 1996</display>
+            <notes/>
+            <source/>
+        </sourceSet>
+        <stylePeriodSet>
+            <display>Early Bronze Age</display>
+            <stylePeriod vocab="AAT" refid="300019276">Early Bronze Age</stylePeriod>
+        </stylePeriodSet>
+        <subjectSet>
+            <display>death or burial; decorative arts; grave goods; jewelry; goldwork</display>
+            <notes/>
+            <subject>
+                <term/>
+            </subject>
+        </subjectSet>
+        <techniqueSet>
+            <display>hammering; metalworking</display>
+            <notes/>
+            <technique vocab="AAT" refid="300053946">metalworking</technique>
+            <technique vocab="AAT" refid="300054098">hammering</technique>
+        </techniqueSet>
+        <titleSet>
+            <display>Small diadem with pendants</display>
+            <title type="descriptive" pref="true" xml:lang="en">Small diadem with pendants</title>
+        </titleSet>
+        <worktypeSet>
+            <display>costume (mode of fashion); headgear; headbands (headgear); diadems; costume (mode of fashion); jewelry</display>
+            <worktype vocab="AAT" refid="300046021">diadem</worktype>
+            <worktype vocab="AAT" refid="300209286">jewelry</worktype>
+        </worktypeSet>
+    </work>
+    <image id="i_123" href="http://aal.ucsd.edu/vracore4/example009.html" refid="123" source="VRA Data Standards Committee, Core 4 Sample Records">
+        <measurementsSet>
+            <display>18 MB</display>
+            <notes/>
+            <measurements/>
+        </measurementsSet>
+        <relationSet>
+            <relation type="imageOf" refid="20" source="Core 4 Sample Database (VCat)"/>
+        </relationSet>
+        <sourceSet>
+            <display>Tostikov, Vladimir P.; The Gold of Troy. Searching for Homer's Fabled City, New York: H. N. Abrams, 1996</display>
+            <source>
+                <name type="book">The Gold of Troy. Searching for Homer's Fabled City</name>
+                <refid type="citation"/>
+            </source>
+        </sourceSet>
+        <techniqueSet>
+            <display>digital imaging</display>
+            <notes/>
+            <technique/>
+        </techniqueSet>
+        <titleSet>
+            <display>Detail showing pendant ends of long side chains</display>
+            <title type="partialView">Detail showing pendant ends of long side chains</title>
+        </titleSet>
+        <worktypeSet>
+            <display>digital image</display>
+            <notes/>
+            <worktype/>
+        </worktypeSet>
+    </image>
+</vra>

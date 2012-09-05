@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://www.vraweb.org/projects/vracore4/vra-4.0-restricted.xsd">
+    <work id="w_33" source="Core 4 Sample Database (VCat)" refid="33">
+        <agentSet>
+            <display>D. Karaftakis (Greek (modern) musical instrument maker, active 20th century)</display>
+            <notes/>
+            <agent>
+                <name vocab="other" type="personal">Karaftakis, D.</name>
+                <dates type="activity">
+                    <earliestDate>1900</earliestDate>
+                    <latestDate>2000</latestDate>
+                </dates>
+                <culture>Greek (modern)</culture>
+                <role>musical instrument maker</role>
+            </agent>
+        </agentSet>
+        <dateSet>
+            <display>ca. 20th century (creation)</display>
+            <date type="creation">
+                <earliestDate>1900</earliestDate>
+                <latestDate>2000</latestDate>
+            </date>
+        </dateSet>
+        <descriptionSet>
+            <description>This instrument is a cylindrical tube which is open at both the ends. The top end is closed with a horizontal cap piece, which leaves a thin cleft. It has 6 holes and bears lacing wire at the top end. It is mainly a pastoral instrument. In order to play the pipe one needs to keep it straight, perpendicular to the mouth (a "transverse flute"). The air passes through the slot in the cap and creates sound. This musical instrument is decorated with a fish, birds, geometric designs and rings.</description>
+        </descriptionSet>
+        <inscriptionSet>
+            <display>engraved: ΔΗ.ΚΑΡΑΥΤΑΚΗΣ</display>
+            <inscription>
+                <author/>
+                <position/>
+                <text/>
+            </inscription>
+        </inscriptionSet>
+        <locationSet>
+            <display>Museum of Greek Folk Instruments; Fivos Anoyanakis Center for Ethnomusicology  (Athens, Periféreia Protevoúsis, Greece) 92.3.190</display>
+            <notes>created in village of Doumpia</notes>
+            <location type="repository">
+                <name type="geographic" vocab="other" refid="" extent="organization">Museum of Greek Folk Instruments; Fivos Anoyanakis Center for Ethnomusicology </name>
+                <name type="geographic" vocab="TGN" refid="7001393" extent="inhabited place">Athens</name>
+                <name type="geographic" vocab="TGN" refid="7001387" extent="region">Periféreia Protevoúsis</name>
+                <name type="geographic" vocab="TGN" refid="1000074" extent="nation">Greece</name>
+                <name type="geographic" vocab="TGN" refid="1000003" extent="continent">Europe</name>
+                <refid type="accession">92.3.190</refid>
+            </location>
+            <location type="creation">
+                <name type="geographic" vocab="TGN" refid="7231283" extent="inhabited place">Chalkidikí, Chersónisos [peninsula]</name>
+                <name type="geographic" vocab="TGN" refid="7002715" extent="region">Macedonia</name>
+                <name type="geographic" vocab="TGN" refid="1000074" extent="nation">Greece</name>
+                <name type="geographic" vocab="TGN" refid="1000003" extent="continent">Europe</name>
+            </location>
+        </locationSet>
+        <materialSet>
+            <display>wood; wire</display>
+            <notes/>
+            <material/>
+        </materialSet>
+        <measurementsSet>
+            <display>34.4 cm (length) x 2 cm (diameter, mouth end); 1 cm (diameter, bottom end)</display>
+            <notes/>
+            <measurements type="length" unit="cm">34.4</measurements>
+            <measurements type="diameter" unit="cm" extent="mouth end">2</measurements>
+            <measurements type="diameter" unit="cm" extent="bottom end">1</measurements>
+        </measurementsSet>
+        <sourceSet>
+            <display>Museum of Greek Folk Musical Instruments, Fivos Anoyanakis’ Collection-Centre of Ethnomusicology [website]; www.instruments-museum.gr (accessed 11/1/2011)</display>
+            <notes/>
+            <source/>
+        </sourceSet>
+        <stylePeriodSet>
+            <display>Twentieth century</display>
+            <stylePeriod vocab="LCSAF" refid="sh 85139020">Twentieth century</stylePeriod>
+        </stylePeriodSet>
+        <subjectSet>
+            <display>animals; decorative arts; music; folk music; ethnomusicology </display>
+            <notes/>
+            <subject>
+                <term/>
+            </subject>
+        </subjectSet>
+        <techniqueSet>
+            <display>carving (processes)</display>
+            <notes/>
+            <technique vocab="AAT" refid="300053149">carving (processes)</technique>
+        </techniqueSet>
+        <titleSet>
+            <display>Σουραύλι [Sourafli]</display>
+            <title type="cited" pref="true" xml:lang="grc">Σουραύλι [Sourafli]</title>
+            <title type="descriptive" pref="false" xml:lang="en">Wooden fife</title>
+        </titleSet>
+        <worktypeSet>
+            <display>sound devices; aerophones; flutes (aerophones); transverse flutes; fifes</display>
+            <worktype vocab="AAT" refid="300042508">fife</worktype>
+        </worktypeSet>
+    </work>
+    <image id="i_137" refid="137" source="VRA Data Standards Committee, Core 4 Sample Records">
+        <agentSet>
+            <display>Safaris, Akis</display>
+            <notes/>
+            <agent/>
+        </agentSet>
+        <dateSet>
+            <display>21/06/2007 (creation)</display>
+            <notes/>
+            <date/>
+        </dateSet>
+        <measurementsSet>
+            <display>129 KB</display>
+            <notes/>
+            <measurements/>
+        </measurementsSet>
+        <relationSet>
+            <relation type="imageOf" refid="33" source="Core 4 Sample Database (VCat)"/>
+        </relationSet>
+        <rightsSet>
+            <display>Museum of Greek Folk Musical Instruments Fivos Anoyanakis’ Collection-Centre of Ethnomusicology</display>
+            <rights/>
+        </rightsSet>
+        <sourceSet>
+            <display>Museum of Greek Folk Musical Instruments, Fivos Anoyanakis’ Collection-Centre of Ethnomusicology [website]; www.instruments-museum.gr</display>
+            <source>
+                <name/>
+                <refid type="URI">www.instruments-museum.gr</refid>
+            </source>
+        </sourceSet>
+        <techniqueSet>
+            <display>digital imaging</display>
+            <notes/>
+            <technique/>
+        </techniqueSet>
+        <titleSet>
+            <display>Overall view of front of flute with finger holes</display>
+            <title type="generalView">Overall view of front of flute with finger holes</title>
+        </titleSet>
+    </image>
+</vra>

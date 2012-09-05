@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<repo:meta xmlns="http://exist-db.org/xquery/repo" xmlns:repo="http://exist-db.org/xquery/repo">
+    <repo:description>Ziziphus Image DB</repo:description>
+    <repo:author>betterFORM</repo:author>
+    <repo:website>http://www.betterform.de</repo:website>
+    <repo:status>alpha</repo:status>
+    <repo:license>GNU-LGPL</repo:license>
+    <repo:copyright>true</repo:copyright>
+    <repo:type>application</repo:type>
+    <repo:target>/db/ziziphus</repo:target>
+    <repo:prepare>pre-install.xql</repo:prepare>
+    <repo:finish>post-install.xql</repo:finish>
+    <repo:permissions user="editor" password="editor" group="biblio.users" mode="0444"/>
+    <deployed>2012-03-27T17:20:16.525+02:00</deployed>
+</repo:meta>

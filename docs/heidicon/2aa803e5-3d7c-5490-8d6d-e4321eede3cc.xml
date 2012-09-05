@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://www.vraweb.org/projects/vracore4/vra-4.0-restricted.xsd">
+    <work id="w_108234" source="http://heidicon.ub.uni-heidelberg.de/EZDB-BildSuche?easydb=7d7e5lk796oiv7bq1r65f5pje1" refid="108234">
+	<titleSet>
+		<display/>
+		<title type="descriptive" pref="true" lang="en" script="latn">The Town, Quetta, India (now in Pakistan)</title>
+	</titleSet><originInfo>
+		<place type="text">
+			<PlaceTerm>Delhi / The Priya Paul Collection of Popular Art</PlaceTerm>
+		</place>
+	</originInfo>
+<physicalDescription>
+		<form authority="local">chromolithograph</form>
+		<form authority="local">card paper</form>
+		<extent>15 cm x 10 cm, portrait</extent>
+	</physicalDescription>
+	<note type="scanOrigin">The Priya Paul Collection. Reproduced with kind permission of the collector.</note>
+	<accessCondition type="use and reproduction">Copyrighted. Copyright with the original artists and publishers.</accessCondition>
+	<genre type="local">postcard</genre>
+	<identifier>108234</identifier>
+	<location>
+		<url access="preview">http://heidicon.ub.uni-heidelberg.de/eas/partitions/2/0/105000/105181/0183d7ce0315afdb37faff86168ee45e414ecf83/image/jpeg/Bilder-108234-105181-100.jpg</url>
+	</location>
+</work>
+</xml>

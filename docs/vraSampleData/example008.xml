@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://www.vraweb.org/projects/vracore4/vra-4.0-restricted.xsd">
+    <collection id="c_19" source="Core 4 Sample Database (VCat)" refid="19">
+        <agentSet>
+            <display>Heinrich Schliemann (German archaeologist, 1822-1890)</display>
+            <notes/>
+            <agent>
+                <name vocab="ULAN" refid="500065958" type="personal">Schliemann, Heinrich</name>
+                <dates type="life">
+                    <earliestDate>1822</earliestDate>
+                    <latestDate>1890</latestDate>
+                </dates>
+                <culture>German</culture>
+                <role>archaeologist</role>
+            </agent>
+        </agentSet>
+        <culturalContextSet>
+            <culturalContext>Anatolian</culturalContext>
+        </culturalContextSet>
+        <dateSet>
+            <display>1873 (discovery)</display>
+            <notes>Nearly all Schliemann’s material, which was in Berlin at the end of World War II, disappeared in 1945.</notes>
+            <date type="discovery">
+                <earliestDate>1873</earliestDate>
+                <latestDate>1873</latestDate>
+            </date>
+        </dateSet>
+        <descriptionSet>
+            <description>The so-called "Priam's Treasure" is a collection of 8830 objects made of gold, electrum, silver, and bronze excavated from the mound of Hisarlik, Turkey. Original finds cataloged after Schliemann's death by the German scholar Hubert Schmidt in 1902, who classified them into 19 sub-groups identified by the Roman letters A through S.</description>
+        </descriptionSet>
+        <locationSet>
+            <display>Hisarlik, Marmara, Turkey</display>
+            <notes>Probably found within or just outside the walls of Troy II.</notes>
+            <location type="discovery">
+                <name type="geographic" vocab="TGN" refid="7002329" extent="deserted settlement">Hisarlik</name>
+                <name type="geographic" vocab="TGN" refid="7018450" extent="region">Marmara</name>
+                <name type="geographic" vocab="TGN" refid="1000144" extent="nation">Turkey</name>
+                <name type="geographic" vocab="TGN" refid="1000004" extent="continent">Asia</name>
+            </location>
+        </locationSet>
+        <materialSet>
+            <display>gold, electrum, silver, and bronze</display>
+            <notes/>
+            <material/>
+        </materialSet>
+        <sourceSet>
+            <display>Tostikov, Vladimir P.; The Gold of Troy. Searching for Homer's Fabled City, New York: H. N. Abrams, 1996</display>
+            <notes/>
+            <source/>
+        </sourceSet>
+        <stylePeriodSet>
+            <display>Early Bronze Age</display>
+            <stylePeriod vocab="AAT" refid="300019276">Early Bronze Age</stylePeriod>
+        </stylePeriodSet>
+        <subjectSet>
+            <display>death or burial; decorative arts; historical; Troy (Extinct city); cultural artifacts; goldwork; jewelry</display>
+            <notes/>
+            <subject>
+                <term type="geographicPlace" vocab="LCSAF" refid="sh 85138100">Troy (Extinct city)</term>
+            </subject>
+        </subjectSet>
+        <techniqueSet>
+            <display>metalworking</display>
+            <notes/>
+            <technique vocab="AAT" refid="300053946">metalworking</technique>
+        </techniqueSet>
+        <titleSet>
+            <display>Priam’s Treasure</display>
+            <title type="popular" pref="true" xml:lang="en">Priam’s Treasure</title>
+            <title type="descriptive" pref="false" xml:lang="en">Gold of Troy</title>
+        </titleSet>
+        <worktypeSet>
+            <display>associated concepts; property (legal concept); treasure-trove; objects; grave goods</display>
+            <worktype vocab="AAT" refid="300253921">treasure-trove</worktype>
+            <worktype vocab="AAT" refid="300180706">grave goods</worktype>
+        </worktypeSet>
+    </collection>
+</vra>

@@ -1,0 +1,344 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  font-size: 10px;
+  color: #bdbdbd;
+}
+.bf .currentImage {
+    width:100%;
+    height:100%;
+    text-align:center;
+}
+.bf .currentImage #vraImage {
+    width:300px;
+}
+
+.bf * {
+  font-size: 10px !important;
+}
+.bf .dijitTitlePaneTitle {
+  background: transparent;
+  border: none;
+  border-bottom: 1px #111111 solid;
+}
+.bf .dijitTitlePaneContentOuter {
+  border: none;
+}
+.bf .dijitTextBox {
+  background: none;
+  width: 120px;
+}
+.bf .dijitTitlePane .dijitDropDownButton {
+  margin-left: 145px;
+  margin-top: -45px;
+}
+.bf .xfTextarea {
+    padding-left:5px;
+}
+.bf .xfTextarea .xfLabel {
+    display: block;
+    float: none;    
+}
+.bf .xfTextarea .xfValue{
+    width: 250px;
+    color: #bdbdbd;
+}
+
+
+.bf .xfControl .xfLabel {
+    /*padding-top:6px;*/
+    padding-bottom:4px;
+}
+
+.bf .xfRequired .xfLabel:after {
+    color: inherit;
+    content: "";
+}
+
+.bf .xfRequired .dijitTextBox {
+    border: 1px solid #3559AC;
+}
+
+.bf .xfFullRepeat .xfLabel {
+    min-width: 70px;
+    width: auto;
+    padding-right: 3px;
+}
+
+.bf .xfControl .xfValue {
+    color:SeaShell;
+}
+.bf .attributeTrigger {
+    padding: 5px 0 0 0;
+    display: block !important;
+}
+
+.bf #attrDialog .dijitButtonNode,
+.bf .styledTrigger .xfValue .dijitButtonNode,
+.bf .attributeTrigger .xfValue .dijitButtonNode,
+.bf .notesDisplayTrigger .xfValue .dijitButtonNode {
+    background: none !important;
+}
+
+.bf #attrDialog .dijitButtonHover .dijitButtonNode,
+.bf .styledTrigger .dijitButtonHover .dijitButtonNode,
+.bf .attributeTrigger .dijitButtonHover .dijitButtonNode,
+.bf .notesDisplayTrigger .dijitButtonHover .dijitButtonNode {
+    background-color: #3559AC !important;
+    background: #FFFFFF;
+    border-color: #FFFFFF;
+    color: #FFFFFF;
+}
+
+.bf .elementGroup {
+    border: 1px dotted #DFDFDF;
+    margin: 2px 0;
+    padding: 8px 0;
+}
+
+.bf .elementGroup .prefGroup,
+.bf .elementGroup .attributeGroup {
+    display: inline-block;
+}
+.bf .elementGroup .prefGroup .xfControl,
+.bf .elementGroup .prefGroup .xfControl .xfLabel {
+    min-width: 25px;
+    width: auto;
+    padding: 2px 0;
+}
+
+.bf .elementGroup .attributeGroup .xfControl {
+    /*min-width: 199px;*/
+    min-width: 120px;
+    width: auto;
+    padding: 2px;
+}
+
+.bf .elementGroup .attributeGroup .xfTextarea {
+    min-width: 240px !important;
+}
+
+
+.bf .attributeGroup .xfSelect1 {
+    top: 6px;
+}
+
+.bf .attributeGroup .xfSelect1 .xfLabel{
+    padding-top: 2px;
+}
+
+.bf .xfInput .dijitInputField{
+    height:15px;
+}
+
+.bf .xfInput .xfValue {
+    height: 15px;
+}
+
+.bf .notesDisplayTrigger {
+    display:block;
+    clear: both;
+    text-align: right;
+}
+
+.bf .xfSelect1 .bfValueWrapper .select1wrapper {
+    background-color: transparent;
+    border: 1px solid lightGray;
+    height: 15px;
+}
+.tundra .dijitPopup .dijitMenu, .tundra .dijitPopup .dijitMenuBar {
+    background: none repeat scroll 0 0 #666666;
+    border: 1px solid lightGray;
+}
+.tundra .dijitMenu .dijitMenuItem {
+    color:SeaShell;
+}
+
+.bf .xfSelect1 .bfValueWrapper .select1wrapper select {
+    color:SeaShell;
+    font-size: 10px !important;
+    font-family:sans-serif
+}
+
+.bf .xfSelect1 .bfValueWrapper .dijitComboBox {
+    height:15px;
+    width: 120px;
+}
+.bf .xfSelect1 .bfValueWrapper .dijitComboBox .dijitInputInner {
+    padding-top: 2px;
+}
+
+.tundra .dijitComboBox .dijitButtonNode {
+    height: 15px;
+}
+
+.bf .t-save {
+    display: block;
+    position: absolute;
+    right: 40px;
+    width: 20px;
+}
+
+.bf .t-save .xfValue .dijitButtonNode{
+    background: url(../images/icon_save.png) no-repeat center;
+    width: 16px;
+    height: 16px;
+    border: 0;
+}
+
+.bf .t-cancel {
+    height:30px;
+}
+.bf .t-cancel {
+    display: block;
+    position: absolute;
+    right:0;
+    width:40px;
+}
+
+.bf .t-cancel .xfValue  .dijitButtonNode{
+    background: url(../images/icon_cancel.png) no-repeat center;
+    width: 16px;
+    height: 16px;
+    border: 0;
+}
+
+.bf .t-edit{
+    height: 15px;
+}
+.bf .t-edit {
+    display: block;
+    position: absolute;
+    right:0;
+    width:40px;
+}
+.bf .t-edit .xfValue  .dijitButtonNode{
+    background: url(../images/icon_edit.png) no-repeat center;
+    width: 16px;
+    height: 16px;
+    border: 0;
+}
+.bf .t-plus .xfValue  .dijitButtonNode{
+    background: url(../images/icon_plus.png) no-repeat center;
+    width: 16px;
+    height: 16px;
+    border: 0;
+}
+.bf .t-minus .xfValue  .dijitButtonNode{
+    background: url(../images/icon_minus.png) no-repeat center;
+    width: 16px;
+    height: 16px;
+    border: 0;
+}
+
+.bf .xfRepeatIndex {
+    background-color: transparent;
+    border: 1px solid #DFDFDF;
+}
+
+#mainpanel {
+  width: 100%;
+  height: 100%;
+  background: #333333;
+}
+#workrecord, #imagerecord {
+  overflow: auto;
+  background: #444444;
+}
+#imagepane {
+    background: none repeat scroll 0 0 #CCCCCC;
+}
+#top {
+  height: 20px;
+  width: 100% !important;
+  left: 0 !important;
+  top: 0 !important;
+}
+/*
+#debug-pane, #openclose, #evtLogContainer {
+  display: none;
+}
+*/
+#debug-pane, #openclose, #evtLogContainer {
+  z-index: 9999;
+}
+
+.editbutton {
+  float: right;
+}
+.columntitle {
+  background: none repeat scroll 0 0;
+  border-bottom: thin solid #111111;
+  font-weight: bold;
+  margin-bottom: 5px;
+  padding: 5px;
+}
+#imageupper {
+  background: #898989;
+}
+#imagelower {
+  background: #444444;
+}
+#imagerecordcontainer {
+  margin: 0;
+  padding: 0;
+}
+.tundra .dijitGutterH,
+.tundra .dijitGutterV,
+.tundra .dijitSplitterH,
+.tundra .dijitSplitterV {
+  background: #333333;
+}
+.tundra .dijitMenu, .tundra .dijitMenuBar {
+  background: #111111;
+}
+.tundra .dijitTitlePaneContentInner {
+  background: #666666;
+}
+
+.bf .vraSection {
+    font-size: 10px !important;
+    font-family:sans-serif;
+    padding-top:5px;
+}
+.bf .vraType {
+    display:block;
+    width: 50px;
+    padding-bottom: 4px;
+}
+
+/*
+.bf .vraName {
+    display: inline-block;
+    width: 100px;
+}
+*/
+
+.bf .vraNode {
+    padding-left:4px;
+    padding-right:4px;
+}
+.bf .vraRepeated {
+    padding-top:5px;
+}
+.bf .vraNotes {
+    display: inline-block;
+    padding-top: 10px;
+}
+.bf .vraRepeated {
+    padding-top:4px;
+    padding-bottom:4px;
+    border-bottom: thin solid #444444;
+}
+
+.bf #attrDialog,
+.bf #attrDialog .dijitDialogTitleBar,
+.bf #attrDialog .dijitDialogPaneContent {
+    /*background: none repeat scroll 0 0 #111111;*/
+    background: none repeat scroll 0 0 #666666;
+}
+.bf #attrDialog .dijitDialogTitleBar {
+    background: none repeat scroll 0 0 #444444;
+}

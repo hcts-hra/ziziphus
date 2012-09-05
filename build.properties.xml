@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <build>
+        <dir>build</dir>
+        <excludes>build/*, generator, .svn, .git, ziziphus.xpr</excludes>
+    </build>
+    <app>
+        <name>ziziphus</name>
+        <version>0.1</version>
+    </app>
+    <transform>
+        <classpath pathid="transform.class.path" description="classpath for saxon XPath and XSLT engine">
+            <pathelement location="${generator.dir}/lib/saxon-9.2.1.5.jar"/>
+        </classpath>
+    </transform>
+    <generator>
+        <debug>true</debug>
+    </generator>
+    <betterform>
+        <!-- directory folder of the local betterFORM installation -->
+        <installation>/Users/windauer/dev/betterFORM-github</installation>
+        <!-- forms dir within betterFORM to deploy resources to -->
+        <forms>resource/src/main/xforms/ziziphus</forms>
+    </betterform>
+</root>

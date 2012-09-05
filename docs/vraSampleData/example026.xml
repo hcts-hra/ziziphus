@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://www.vraweb.org/projects/vracore4/vra-4.0-restricted.xsd">
+    <work id="w_26" source="Core 4 Sample Database (VCat)" refid="26">
+        <agentSet>
+            <display>Jasper Francis Cropsey (American painter, 1823-1900)</display>
+            <notes/>
+            <agent>
+                <name vocab="ULAN" refid="500012491" type="personal">Cropsey, Jasper Francis</name>
+                <dates type="life">
+                    <earliestDate>1823</earliestDate>
+                    <latestDate>1900</latestDate>
+                </dates>
+                <culture>American</culture>
+                <role>painter</role>
+            </agent>
+        </agentSet>
+        <culturalContextSet>
+            <culturalContext>American</culturalContext>
+        </culturalContextSet>
+        <dateSet>
+            <display>1860 (creation)</display>
+            <date type="creation">
+                <earliestDate>1860</earliestDate>
+                <latestDate>1860</latestDate>
+            </date>
+        </dateSet>
+        <descriptionSet>
+            <description>This monumental view of the Hudson River Valley was painted from memory in the artist's London studio. Cropsey adopted a high vantage point, looking southeast toward the distant Hudson River and the flank of Storm King Mountain. A small stream leads from the foreground, where three hunters and their dogs gaze into the sunlight. All along the meandering tributary there are signs of man's peaceful coexistence with nature: a small log cabin, grazing sheep, children playing on a bridge, and cows standing placidly in the water. Here, man neither conquers nor is subservient to nature; both coexist harmoniously. In fact, the landscape is depicted as a ready arena for further agricultural expansion. Cropsey's painting is a celebration of American nationalism.</description>
+        </descriptionSet>
+        <inscriptionSet>
+            <display>lower center: Autumn, -on the Hudson River / J. F Cropsey / London 1860</display>
+            <inscription>
+                <author/>
+                <position/>
+                <text/>
+            </inscription>
+        </inscriptionSet>
+        <locationSet>
+            <display>National Gallery of Art (Washington, District of Columbia, United States) 1963.9.1</display>
+            <notes>Gift of the Avalon Foundation</notes>
+            <location type="repository">
+                <name type="geographic" vocab="other" refid="" extent="organization">National Gallery of Art</name>
+                <name type="geographic" vocab="TGN" refid="7013962" extent="inhabited place">Washington</name>
+                <name type="geographic" vocab="TGN" refid="7015717" extent="department; district">District of Columbia</name>
+                <name type="geographic" vocab="TGN" refid="7012149" extent="nation">United States</name>
+                <name type="geographic" vocab="TGN" refid="1000001" extent="continent">North and Central America</name>
+                <refid type="accession">1963.9.1</refid>
+            </location>
+        </locationSet>
+        <materialSet>
+            <display>oil paint on canvas</display>
+            <notes/>
+            <material/>
+        </materialSet>
+        <measurementsSet>
+            <display>151.8 cm (height) x 274.9 cm (width, without frame)</display>
+            <notes/>
+            <measurements type="height" unit="cm" extent="without frame">151.8</measurements>
+            <measurements type="width" unit="cm" extent="without frame">274.9</measurements>
+        </measurementsSet>
+        <sourceSet>
+            <display>National Gallery of Art, Washington [website]; http://www.nga.gov/home.htm (accessed 5/30/2009)</display>
+            <notes/>
+            <source/>
+        </sourceSet>
+        <stylePeriodSet>
+            <display>Hudson River school; Nineteenth century</display>
+            <stylePeriod vocab="LCSAF" refid="sh 85091984">Nineteenth century</stylePeriod>
+            <stylePeriod vocab="GAO">Hudson River school</stylePeriod>
+        </stylePeriodSet>
+        <subjectSet>
+            <display>agriculture; animals; domestic life; genre; landscapes; Hunting in art; Rivers; Hudson River; autumn foliage; trees; leaves; Fall</display>
+            <notes/>
+            <subject>
+                <term type="iconographicTopic" vocab="LCSAF" refid="sh 85063138">Hunting in art</term>
+            </subject>
+            <subject>
+                <term type="descriptiveTopic" vocab="LCSAF" refid="sh 85114250">Rivers</term>
+            </subject>
+        </subjectSet>
+        <techniqueSet>
+            <display>oil painting (technique)</display>
+            <notes/>
+            <technique vocab="AAT" refid="300178684">oil painting (technique)</technique>
+        </techniqueSet>
+        <titleSet>
+            <display>Autumn - On the Hudson River</display>
+            <title type="repository" pref="true" xml:lang="en">Autumn - On the Hudson River</title>
+        </titleSet>
+        <worktypeSet>
+            <display>paintings (visual works); oil paintings (visual works)</display>
+            <worktype vocab="AAT" refid="300033799">oil painting (visual work)</worktype>
+        </worktypeSet>
+    </work>
+    <image id="i_129" href="http://aal.ucsd.edu/vracore4/example26.html" refid="129" source="VRA Data Standards Committee, Core 4 Sample Records">
+        <measurementsSet>
+            <display>18 MB</display>
+            <notes/>
+            <measurements/>
+        </measurementsSet>
+        <relationSet>
+            <relation type="imageOf" refid="26" source="Core 4 Sample Database (VCat)"/>
+        </relationSet>
+        <rightsSet>
+            <display>publicDomain</display>
+            <rights/>
+        </rightsSet>
+        <sourceSet>
+            <display>National Gallery of Art, Washington [website]; http://www.nga.gov/home.htm</display>
+            <source>
+                <name/>
+                <refid type="URI">http://www.nga.gov/home.htm</refid>
+            </source>
+        </sourceSet>
+        <techniqueSet>
+            <display>digital imaging</display>
+            <notes/>
+            <technique/>
+        </techniqueSet>
+        <titleSet>
+            <display>Overall view without frame</display>
+            <title type="generalView">Overall view without frame</title>
+        </titleSet>
+        <worktypeSet>
+            <display>digital image</display>
+            <notes/>
+            <worktype/>
+        </worktypeSet>
+    </image>
+</vra>
