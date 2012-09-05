@@ -124,6 +124,7 @@ return
         </script>
 
         <script type="text/javascript" defer="defer" src="resources/script/ziziphus.js"/>
+        <script type="text/javascript" defer="defer" src="resources/script/jquery-1.8.0.min.js"/>
         <script type="text/javascript">
                         dojo.addOnLoad(function(){{
                         dojo.addOnLoad(function(){{
@@ -134,6 +135,15 @@ return
                             animation.play();
                         }});
                     }});
+                    
+                    function toggleDetail(n, m){{
+                        console.debug("this: ", n, " " , m);
+                        $(n).toggleClass("icon-zoom-out");
+                        $(n).toggleClass("icon-zoom-in");
+                        $("#"+m).toggleClass("simpleView");
+                        $("#"+m).toggleClass("fullView");
+                        
+                    }}
         </script>
 </body>
 </html>

@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:vra="http://www.vraweb.org/vracore4.htm" xmlns:xf="http://www.w3.org/2002/xforms" xmlns:bfn="http://www.betterform.de/XSL/Functions" version="2.0" xpath-default-namespace="http://www.w3.org/2002/xforms" exclude-result-prefixes="bfn">
     <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"/>
     <xsl:strip-space elements="*"/>
@@ -131,6 +130,7 @@
         <div id="{$id}" data-dojo-type="dijit.TitlePane" data-dojo-props="title: '{$title}',open:true">
             <xsl:variable name="mountPoint" select="concat($id,'_MountPoint')"/>
             <xsl:variable name="caseId" select="concat('c-',$id)"/>
+            <xsl:variable name="tableId" select="concat('table-',$id)"/>
             <xf:switch>
                 <!-- VIEW CASE -->
                 <xf:case id="{$caseId}-view" selected="true">
@@ -150,10 +150,13 @@
                                 <xf:setvalue model="model-1" ref="instance('i-control-center')/currentform" value="'{$id}'"/>
                             </xf:action>
                         </xf:trigger>
+                        <button type="button" onclick="toggleDetail(this, '{$tableId}');" class="icon-zoom-in"/>
                     </div>
                     <div id="{concat($id,'_HtmlContent')}">
                         <!-- drill down into single stylesheets (the ones include at top of this file.-->
-                        <xsl:apply-templates select="$vraSetNode"/>
+                        <xsl:apply-templates select="$vraSetNode">
+                            <xsl:with-param name="tableId" select="$tableId"/>
+                        </xsl:apply-templates>
                     </div>
                 </xf:case>
                 <!-- EDIT CASE -->
