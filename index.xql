@@ -54,7 +54,9 @@ return
       xmlns:vra="http://www.vraweb.org/vracore4.htm" 
       xmlns:exist="http://exist.sourceforge.net/NS/exist"
       xmlns:ev="http://www.w3.org/2001/xml-events"
-      xmlns:xf="http://www.w3.org/2002/xforms">
+      xmlns:xf="http://www.w3.org/2002/xforms"
+      xmlns:bf="http://betterform.sourceforge.net/xforms"
+      bf:transform="/apps/ziziphus/resources/xsl/ziziphus.xsl">
     <head>
         <title>Ziziphus Image DB</title>
         <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css"/>
