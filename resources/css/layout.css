@@ -65,6 +65,18 @@ body {
 .bf .simpleView .detail {
   display: none;
 }
+.bf .simpleView .detail-inline {
+  display: none;
+}
+.bf .simpleView .simple-inline:after {
+  content: '...';
+}
 .bf .fullView .detail {
   display: block;
+}
+.bf .fullView .detail-inline {
+  display: inline;
+}
+.bf .fullView .simple-inline:after {
+  content: none;
 }
