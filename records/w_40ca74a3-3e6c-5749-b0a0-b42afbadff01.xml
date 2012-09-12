@@ -34,8 +34,12 @@
         </culturalContextSet>
         <dateSet>
             <date type="creation">
-                <earliestDate>2010</earliestDate>
-                <latestDate>2010</latestDate>
+                <earliestDate type="after">2009</earliestDate>
+                <latestDate type="probably">2010</latestDate>
+            </date>
+            <date type="publication">
+                <earliestDate>2011</earliestDate>
+                <latestDate type="ca.">2012</latestDate>
             </date>
         </dateSet>
         <image id="226566" href="" refid="" source=""/>
