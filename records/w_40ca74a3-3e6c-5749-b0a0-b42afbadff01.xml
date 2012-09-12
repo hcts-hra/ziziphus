@@ -11,22 +11,22 @@
                 <role>artist</role>
             </agent>
             <agent>
-                <name vocab="local" type="personal" refid="" lang="" script="">Testrecord_Artist(characters) 董其昌</name>
+                <name vocab="local" type="corporate" refid="" lang="" script="">Testrecord_Artist(characters) 董其昌</name>
                 <birth><year>1798</year></birth>
                 <death></death>
                 <role>artist</role>
             </agent>
             <agent>
-                <name vocab="local" type="personal" refid="" lang="" script="">Testrecord_Artist(characters) 董其昌</name>
+                <name vocab="local" type="family" refid="" lang="" script="">Testrecord_Artist(characters) 董其昌</name>
                 <birth></birth>
                 <death><year>1902</year></death>
-                <role>artist</role>
+                <role>collector</role>
             </agent>
             <agent>
-                <name vocab="local" type="personal" refid="" lang="" script="">Testrecord_Artist(characters) 董其昌</name>
+                <name vocab="local" type="other" refid="" lang="" script="">Testrecord_Artist(characters) 董其昌</name>
                 <birth></birth>
                 <death></death>
-                <role>artist</role>
+                <role>publisher</role>
             </agent>
         </agentSet>
         <culturalContextSet>
