@@ -30,7 +30,7 @@
             </agent>
         </agentSet>
         <culturalContextSet>
-            <culturalContext/>
+            <culturalContext>Japanese</culturalContext>
         </culturalContextSet>
         <dateSet>
             <date type="creation">
