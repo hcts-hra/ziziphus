@@ -15,10 +15,17 @@
                     <xsl:for-each select="vra:agent">
                         <tr>
                             <td>
-                                <xsl:value-of select="concat(upper-case(substring(vra:role,1,1)),substring(vra:role,2))"/>
+                                <xsl:value-of select="bfn:upperCase(vra:role)"/>
                             </td>
                             <td>
-                                <xsl:value-of select="concat(upper-case(substring(vra:name,1,1)),substring(vra:name,2))"/>
+                                <xsl:value-of select="bfn:upperCase(vra:name)"/>
+				<xsl:if test="(vra:birth/vra:year) or (vra:death/vra:year)">
+				  <xsl:text> (</xsl:text>
+				  <xsl:value-of select="vra:birth/vra:year"/>
+				  <xsl:text>-</xsl:text>
+				  <xsl:value-of select="vra:death/vra:year"/>
+				  <xsl:text>)</xsl:text>
+				</xsl:if>
                                 <div class="detail">
                                     <xsl:value-of select="concat('(', vra:name/@type , ')', ' ' , vra:culture)"/>
                                 </div>

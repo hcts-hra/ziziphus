@@ -6,10 +6,26 @@
             <agent>
                 <culture/>
                 <name vocab="local" type="personal" refid="118551469" lang="" script="" pref="true">Andō, Hiroshige</name>
+                <birth><year>1797</year></birth>
+                <death><year>1858</year></death>
                 <role>artist</role>
             </agent>
             <agent>
                 <name vocab="local" type="personal" refid="" lang="" script="">Testrecord_Artist(characters) 董其昌</name>
+                <birth><year>1798</year></birth>
+                <death></death>
+                <role>artist</role>
+            </agent>
+            <agent>
+                <name vocab="local" type="personal" refid="" lang="" script="">Testrecord_Artist(characters) 董其昌</name>
+                <birth></birth>
+                <death><year>1902</year></death>
+                <role>artist</role>
+            </agent>
+            <agent>
+                <name vocab="local" type="personal" refid="" lang="" script="">Testrecord_Artist(characters) 董其昌</name>
+                <birth></birth>
+                <death></death>
                 <role>artist</role>
             </agent>
         </agentSet>
