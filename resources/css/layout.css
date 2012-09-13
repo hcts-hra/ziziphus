@@ -80,3 +80,8 @@ body {
 .bf .fullView .simple-inline:after {
   content: none;
 }
+
+.bf .vraSection .locationGroupTitle {
+    font-weight: bold;
+    display: block;
+}

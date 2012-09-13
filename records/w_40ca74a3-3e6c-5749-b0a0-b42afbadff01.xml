@@ -78,7 +78,24 @@
         </inscriptionSet>
         <locationSet>
             <location type="repository">
+                <name type="corporate" xml:lang="fr">Musée du Louvre</name>
+                <refid type="accession">Inv. MR 299</refid>
+                <name type="geographic" vocab="TGN" refid="7008038" extent="inhabited place">Paris</name>
+                <name type="geographic" vocab="TGN" refid="1000070" extent="nation">France</name>
+            </location>
+            <location type="discovery">
+                <name type="geographic" vocab="TGN" refid="7010922">Milos, Nisos</name>
+                <name type="geographic" vocab="TGN" refid="1000074">Greece</name>
+            </location>
+            <location type="repository">
+                <name type="corporate">History of Art Visual Resources Collection, University of California at Berkeley</name>
+                <refid type="accession">555145</refid>
+                <name type="geographic" vocab="TGN" refid="7013386 " extent="inhabited place">Berkeley</name>
+                <name type="geographic" vocab="TGN" refid="7007147" extent="state">California</name>
+            </location>
+            <location type="repository">
                 <name type="corporate" vocab="local" refid="93d52424-a024-55d2-92b4-ca14275caeb9">Delhi / The Priya Paul Collection of Popular Art"</name>
+                <name type="geographic" vocab="" refid="">Capranica Prenestina / Santuario di Santa Maria della Vulturella (repo)</name>
                 <refid/>
             </location>
             <location type="site">
@@ -94,6 +111,7 @@
                 <name type="geographic" vocab="" refid="">Taipeh / Nationales Palastmuseum</name>
             </location>
             <location type="discovery">
+                <name type="geographic" vocab="" refid="">Capranica Prenestina / Santuario di Santa Maria della Vulturella (disc)</name>
                 <name type="geographic" vocab="" refid="">Zhengding &amp;lt;Diözese&amp;gt;</name>
             </location>
             <location type="formerOwner">
