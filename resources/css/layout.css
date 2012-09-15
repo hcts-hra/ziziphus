@@ -81,7 +81,21 @@ body {
   content: none;
 }
 
-.bf .vraSection .locationGroupTitle {
+.bf .vraSection .simpleView .notes {
+    display: none;
+}
+.bf .vraSection .fullView .notes {
+    font-size: smaller;
+    display: block;
+}
+.bf .vraSection .fullView .notes:before {
+    content: 'Notes';
+    font-weight: bold;
+    font-size: smaller;
+    display: block;
+}
+
+.bf .vraSection .subTitle {
     font-weight: bold;
     display: block;
 }

@@ -42,22 +42,22 @@
                 publication, repository, site (use for current locations for architecture and archaeology) -->
 
                 <xsl:if test="vra:location[(@type='exhibition') or (@type='installation') or (@type='intended') or (@type='owner') or (@type='performance') or (@type='publication') or (@type='repository') or (@type='site')]">
-                    <span class="locationGroupTitle">Current</span>
+                    <span class="subTitle">Current</span>
                     <xsl:apply-templates select="vra:location[(@type='exhibition') or (@type='installation') or (@type='intended') or (@type='owner') or (@type='performance') or (@type='publication') or (@type='repository') or (@type='site')]"/>
                 </xsl:if>
 
                 <xsl:if test="vra:location[(@type='formerOwner') or (@type='formerRepository') or (@type='formerSite') or (@type='') or (@type='')]">
-                    <span class="locationGroupTitle">Formerly</span>
+                    <span class="subTitle">Formerly</span>
                     <xsl:apply-templates select="vra:location[(@type='formerOwner') or (@type='formerRepository') or (@type='formerSite') or (@type='') or (@type='')]"/>
                 </xsl:if>
 
                 <xsl:if test="vra:location[(@type='creation') or (@type='discovery')]">
-                    <span class="locationGroupTitle">Origin</span>
+                    <span class="subTitle">Origin</span>
                     <xsl:apply-templates select="vra:location[(@type='creation') or (@type='discovery')]"/>
                 </xsl:if>
 
                 <xsl:if test="vra:location[(@type='other')]">
-                    <span class="locationGroupTitle">Other</span>
+                    <span class="subTitle">Other</span>
                     <xsl:apply-templates select="vra:location[(@type='other')]"/>
                 </xsl:if>
 
