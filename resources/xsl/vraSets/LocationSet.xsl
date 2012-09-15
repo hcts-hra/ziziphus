@@ -41,6 +41,8 @@
                 formerRepository, formerSite, installation, intended (for unrealized projects), other, owner, performance,
                 publication, repository, site (use for current locations for architecture and archaeology) -->
 
+                <!-- TODO: make this more concise (like MeasurementsSet.xsl) -->
+
                 <xsl:if test="vra:location[(@type='exhibition') or (@type='installation') or (@type='intended') or (@type='owner') or (@type='performance') or (@type='publication') or (@type='repository') or (@type='site')]">
                     <span class="subTitle">Current</span>
                     <xsl:apply-templates select="vra:location[(@type='exhibition') or (@type='installation') or (@type='intended') or (@type='owner') or (@type='performance') or (@type='publication') or (@type='repository') or (@type='site')]"/>
