@@ -99,3 +99,10 @@ body {
     font-weight: bold;
     display: block;
 }
+
+.bf .vraSection .measureType:after {
+    content: ': ';
+}
+.bf .vraSection .measurementsRecord:not(:last-child):after {
+    content: '; ';
+}

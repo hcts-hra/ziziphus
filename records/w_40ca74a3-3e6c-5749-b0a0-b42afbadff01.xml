@@ -130,8 +130,33 @@
             <material type="other">bronze oil canvas</material>
         </materialSet>
         <measurementsSet>
-            <display/>
+            <display>Base 3 cm (H) x 36 cm (W) x 24 cm (D)</display>
+            <measurements type="height" unit="cm" extent="base">3</measurements>
+            <measurements type="width" unit="cm" extent="base">36</measurements>
+            <measurements type="depth" unit="cm" extent="base">24</measurements>
             <notes>5 x 3 inch, oval</notes>
+
+            <measurements type="diameter" unit="m">29.7</measurements>
+            <measurements type="circumference" unit="m">15</measurements>
+            <measurements type="circumferance" unit="m">16</measurements>
+            <measurements type="circumfrence" unit="m">17</measurements>
+            <measurements type="height" unit="m" extent="tallest stone">6.7</measurements>
+            <measurements type="weight" unit="ton" extent="largest stone">45.2</measurements>
+            
+            <measurements type="height" unit="m">34</measurements>
+            <measurements type="length" unit="m">130</measurements>
+            
+            <measurements type="length" unit="m" extent="forum">157</measurements>
+            <measurements type="width" unit="m" extent="forum">35</measurements>
+            <measurements type="duration" unit="ms" extent="forum">15900</measurements>
+            <measurements type="runningTime" unit="s" extent="video">35</measurements>
+
+            <measurements type="width" unit="m">3.13</measurements>
+            <measurements type="length" unit="m">5.82</measurements>
+            
+            <measurements type="length" unit="cm">34.4</measurements>
+            <measurements type="diameter" unit="cm" extent="mouth end">2</measurements>
+            <measurements type="diameter" unit="cm" extent="bottom end">1</measurements>
         </measurementsSet>
         <relationSet>
             <relation type="imageIs" relids="i_93d52424-a024-55d2-92b4-ca14275caeb9" refid="226566" source="EXC Priya Paul Collection">Overall view</relation>
