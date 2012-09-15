@@ -123,7 +123,11 @@
         </locationSet>
         <materialSet>
             <display/>
-            <material vocab="" refid="" type="medium">wood (plant material)</material>
+            <!-- <material vocab="" refid="" type="medium">wood (plant material)</material> -->
+            <notes source="Art Bulletin, v.87, no. 1 (March 2005)">Medium originally thought to be tempera. Oil medium discovered in tests at Uffizi in 2003</notes>
+            <material type="medium" vocab="AAT" refid="300015050">oil paint</material>
+            <material type="support" vocab="AAT" refid="300014078">canvas</material>
+            <material type="other">bronze oil canvas</material>
         </materialSet>
         <measurementsSet>
             <display/>

@@ -2,23 +2,32 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:vra="http://www.vraweb.org/vracore4.htm" version="2.0" exclude-result-prefixes="vra">
     <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"/>
     <xsl:template match="vra:materialSet" priority="40">
+        <xsl:param name="tableId"/>
         <div xmlns="http://www.w3.org/1999/xhtml" class="vraSection">
-            <xsl:for-each select="vra:material">
-                <div>
-                    <span class="vraAttribute">
-                        <xsl:value-of select="@type"/>
-                    </span>
-                    <span class="vraNode">
-                        <xsl:value-of select="."/>
-                    </span>
-                    <span class="vraAttribute">
-                        <xsl:value-of select="@pref"/>
-                    </span>
-                </div>
-            </xsl:for-each>
-            <span class="vraNode">
-                <xsl:value-of select="vra:notes"/>
-            </span>
+            <div id="{$tableId}" class="simpleView">
+                <xsl:variable name="c_med" select="count(vra:material[@type='medium'])"/>
+                <xsl:variable name="c_sup" select="count(vra:material[@type='support'])"/>
+                <xsl:variable name="c_oth" select="count(vra:material[@type='other'])"/>
+
+                <xsl:value-of select="vra:material[@type='medium']"/>
+
+                <!-- type=support -->
+                <xsl:if test="(0 &lt; $c_med) and (0 &lt; $c_sup)">
+                    <xsl:text> (</xsl:text>
+                </xsl:if>
+                <xsl:value-of select="vra:material[@type='support']"/>
+                <xsl:if test="(0 &lt; $c_med) and (0 &lt; $c_sup)">
+                    <xsl:text>)</xsl:text>
+                </xsl:if>
+
+                <!-- type=other -->
+                <xsl:if test="(0 &lt; ($c_med + $c_sup)) and (0 &lt; $c_oth)">
+                    <xsl:text>; </xsl:text>
+                    <xsl:value-of select="vra:material[@type='other']"/>
+                </xsl:if>
+
+                <span class="notes detail"><xsl:value-of select="vra:notes"/></span>
+            </div>
         </div>
     </xsl:template>
 </xsl:stylesheet>
