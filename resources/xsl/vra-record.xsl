@@ -228,4 +228,11 @@
         <xsl:param name="arg" as="xsd:string?"/>
         <xsl:sequence select="concat(upper-case(substring($arg,1,1)),substring($arg,2))"/>
     </xsl:function>
+
+    <xsl:template name="renderVraAttr">
+        <xsl:param name="attrName"/>
+        <xsl:if test="@*[name()=$attrName]">
+            <span class="vraAttr"><span class="vraAttrName"><xsl:value-of select="$attrName"/></span><span class="vraAttrValue"><xsl:value-of select="@*[name()=$attrName]"/></span></span>
+        </xsl:if>
+    </xsl:template>
 </xsl:stylesheet>

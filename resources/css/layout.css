@@ -100,9 +100,57 @@ body {
     display: block;
 }
 
+.bf .vraSection .vraAttr {
+    white-space: nowrap;
+    display: inline-block;
+}
+.bf .vraSection .vraAttrName {
+    font-weight: bold;
+}
+.bf .vraSection .vraAttrName:after {
+    content: ": ";
+}
+
+/* work record: Measurements */
 .bf .vraSection .measureType:after {
     content: ': ';
 }
 .bf .vraSection .measurementsRecord:not(:last-child):after {
     content: '; ';
+}
+
+/* work record: Relation */
+.bf .vraSection .relationRecord {
+    clear: both;
+}
+/* .bf .vraSection .relationRecord:not(:last-child) {
+    border-bottom: thin solid gray;
+} */
+.bf .vraSection .relationRecord .relationRecordTitle {
+    font-weight: bold;
+    display: block;
+}
+.bf .vraSection .relationRecord .relationRecordType {
+    display: block;
+}
+.bf .vraSection .relationRecord .relationRecordItem span {
+    display: block;
+}
+.bf .vraSection .relationRecord .relationRecordItem {
+    margin: 1ex 1em;
+    border: thin solid gray;
+    float: left;
+    display: table-row;
+}
+.bf .vraSection .relationRecord .relationRecordItem-img {
+    vertical-align: top;
+    display: table-cell;
+}
+.bf .vraSection .relationRecord .relationRecordItem-desc {
+    vertical-align: top;
+    display: table-cell;
+}
+.bf .vraSection .relationRecord .relationRecordItem-desc > div {
+    vertical-align: top;
+    padding: 1ex 1em;
 }
