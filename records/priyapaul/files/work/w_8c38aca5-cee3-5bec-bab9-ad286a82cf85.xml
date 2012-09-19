@@ -1,0 +1,158 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_8c38aca5-cee3-5bec-bab9-ad286a82cf85" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+			<date type="creation">
+				<earliestDate>1968</earliestDate>
+				<latestDate>1968</latestDate>
+			</date>
+		</dateSet>
+		<descriptionSet>
+			<description source="Gerhard Schoenhofer" lang="en" script="latn">On this lobby card for the 1960s movie "Dil aur Mohabbat", one of the main actresses, probably Sharmila Tagore, can be seen dancing, wearing a red salacious dress and a red flower in her hair. In the background, four men can be seen standing ready to dance as well.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Shilpkar Productions presents
+Dil aur Mohabbat
+in Eastmancolor
+produced by Vinod Shah - Harish Shah
+Directed by Anand Datta
+Music O.P. Nayyar</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">दिल और मुहब्बत</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="2cc9713c-7648-54c7-9294-150b6812e2e4">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+		</materialSet>
+		<measurementsSet>
+			<notes>H 50 cm, W 38 cm, portrait</notes>
+			<measurements type="height" unit="cm">50</measurements>
+			<measurements type="width" unit="cm">38</measurements>
+			<measurements type="shape"> portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_2cc9713c-7648-54c7-9294-150b6812e2e4" refid="123063" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Shilpkar Productions</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Vinod Shah</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Sharmila Tagore</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Ashok Kumar</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>flower</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>dress</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Bollywood</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Joy Mukherjee</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Gerhard</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>dancing</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Hindi Film</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Anand Dutta</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>lobby card</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Dil aur Mohabbat</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="ea935392-d4c7-5801-968f-9da25f4a6780">gelatin silver prints</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">"Dil aur Mohabbat"</title>
+			<title type="descriptive" pref="false" lang="" script="">दिल और मुहब्बत</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">lobby cards</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.imdb.com/title/tt0062892/</hra:value>
+				<hra:value>2011-12-07</hra:value>
+				<hra:value>story line, leading actors, director.</hra:value>
+				<hra:value>6</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/123063</hra:value>
+				<hra:value>123063</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:09:13">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

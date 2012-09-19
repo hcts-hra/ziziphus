@@ -1,0 +1,165 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_825e19e5-8602-56fc-a39b-1b0bfe07d480" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-4d6cc12e-3714-568b-aeb7-853b3d0b2fd1">Dutt, Nargis</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-18a320a2-fe55-5d55-ab4e-e1e796fd2d6b">Kapoor, Raj</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+			<date type="creation">
+				<earliestDate>1953</earliestDate>
+				<latestDate>1953</latestDate>
+			</date>
+		</dateSet>
+		<descriptionSet>
+			<description source="Gerhard Schoenhofer" lang="en" script="latn">A color-tinted movie poster of the 1953 released Hindi film Dhoon shows a scene from a song in the movie. The song/scene is shot on a beach. It shows a man holding the lead female actress, Nargis' hand while the extras take dance and various other poses. All artists wear western attire. The ladies in addition wear garlands round their necks. The male protagonist of this song however wears a Gandhian cap with the Hawaiin style shirt and shorts. The lobby card also shows spectators/onlookers. The umbrellas shown carry advertisements of the cigarette brand, "Cavanders".</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Silver films presents
+Nargis - Raj Kapoor - Motilal - E. Billimoria - Kamal Mehra - Leela Misra
+Chandralekha - Krishna Kumar
+Dhoon
+Produced by Pramlila
+Directed by M. Kumar
+Music Madan Mohan
+Stills N. Bashir
+Vincent Studios</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">धुन</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="ur">دھن</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="78084cd9-1300-5a40-b081-8a7092f9b8fb">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="3bb2d971-9842-5ae4-9df0-14afecf70bb1" type="medium">photographic paper</material>
+		</materialSet>
+		<measurementsSet>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_78084cd9-1300-5a40-b081-8a7092f9b8fb" refid="120855" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="4d6cc12e-3714-568b-aeb7-853b3d0b2fd1">
+				<term>Nargis</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>umbrella</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Kamal Mehra</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>M. Kumar</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Dhoon</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>flower garland</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Gerhard</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>beach</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-original-language</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="18a320a2-fe55-5d55-ab4e-e1e796fd2d6b">
+				<term>Kapoor, Raj</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>lobby card</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>cottage</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>woman</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="6688815e-8d89-55fb-91ca-14c288014a8c">color prints (photographs)</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">"Dhoon"</title>
+			<title type="descriptive" pref="false" lang="" script="">धुन; دھن</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">lobby cards</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.imdb.com/title/tt0379254/</hra:value>
+				<hra:value>2011-12-06</hra:value>
+				<hra:value></hra:value>
+				<hra:value>6</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/120855</hra:value>
+				<hra:value>120855</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:10:04">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

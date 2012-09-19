@@ -1,0 +1,112 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_67b62bda-944f-5032-b892-730d5393e5ad" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+		</dateSet>
+		<descriptionSet>
+			<description source="Gerhard Schoenhofer" lang="en" script="latn">On this lobby card for the 1949 released Hindi film "Sakshi Gopal", we see one of the leading actresses wearing sari and bindi.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">ADD TEXT HERE</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="30ae1548-f328-553f-b767-520949a93102">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_30ae1548-f328-553f-b767-520949a93102" refid="120371" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>bindi</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Bollywood</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Hindi Film</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>sari</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-original-language</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-new</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Indian woman</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>lobby card</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>movie still</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">still from the film "Sakshi Gopal"</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">lobby cards</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/120371</hra:value>
+				<hra:value>120371</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:05:17">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

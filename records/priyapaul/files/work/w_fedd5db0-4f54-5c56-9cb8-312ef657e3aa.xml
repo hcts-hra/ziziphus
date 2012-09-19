@@ -1,0 +1,140 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_fedd5db0-4f54-5c56-9cb8-312ef657e3aa" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-8d8eb37e-cada-5686-a464-faa9aba0f1e4">Anand, Vijay</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+			<date type="creation">
+				<earliestDate>1970</earliestDate>
+				<latestDate>1970</latestDate>
+			</date>
+		</dateSet>
+		<descriptionSet>
+			<description source="Gerhard Schoenhofer" lang="en" script="latn">On this lobby card for the 1970 releases Hindi movie "Johny  Mera Naam", two of the main actors, probably Hema Malini and Dev Anand, can be seen standing in front of a forested mountain. She is standing behind him and holding his right hand from the back, looking towards him, whereas he smiles towards the camera. The image is slightly damaged at the right section.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Trimurti Films'
+Johny Mera Naam
+Eastmancolor
+Directed by Vijay Anand
+Music Kalyanji Anandji
+Produced by Gulshan Rai</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="52010164-948a-5676-9a3b-16613b579fd8">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_52010164-948a-5676-9a3b-16613b579fd8" refid="119287" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Hema Malini</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Trimurti Films</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Dev Anand</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Bollywood</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>couple</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Gerhard</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Hindi Film</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>lobby card</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>mountain</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Johny Mera Naam</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="8d8eb37e-cada-5686-a464-faa9aba0f1e4">
+				<term>Vijay Anand</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">"Johny Mera Naam"</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">lobby cards</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.imdb.com/title/tt0154685/</hra:value>
+				<hra:value>2011-12-24</hra:value>
+				<hra:value>story line, leading actors, director.</hra:value>
+				<hra:value>6</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/119287</hra:value>
+				<hra:value>119287</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:02:00">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

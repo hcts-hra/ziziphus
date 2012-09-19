@@ -1,0 +1,140 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_416f1552-8f1e-589a-9b90-6035ac2d41b9" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+			<date type="creation">
+				<earliestDate>1972</earliestDate>
+				<latestDate>1972</latestDate>
+			</date>
+		</dateSet>
+		<descriptionSet>
+			<description source="Gerhard Schoenhofer" lang="en" script="latn">On this color-tinted movie poster for the 1970s Hindi film "Chori Chori", two of the main actors, probably Keval P. Kashyap and Guishan Bawra, are pictured. She is wearing a sari and several pieces of jewellery and smiles towards the camera whereas he makes a grimace.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">AVM's Chori Chori</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">चोरी चोरी</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="ur">چوری چوری</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="05977f45-fae3-5aa1-9c7f-a1ab61c136c9">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="3bb2d971-9842-5ae4-9df0-14afecf70bb1" type="medium">photographic paper</material>
+		</materialSet>
+		<measurementsSet>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_05977f45-fae3-5aa1-9c7f-a1ab61c136c9" refid="120873" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Chori Chori</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Keval P. Kashyap</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>jewellery</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>AVM Productions</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Bollywood</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Gulshan Bawra</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Gerhard</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>sari</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-original-language</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>lobby card</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Hindi Film</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="6688815e-8d89-55fb-91ca-14c288014a8c">color prints (photographs)</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">"Chori Chori"</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">lobby cards</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.imdb.com/title/tt1996213/</hra:value>
+				<hra:value>2011-12-04</hra:value>
+				<hra:value></hra:value>
+				<hra:value>6</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/120873</hra:value>
+				<hra:value>120873</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 15:56:11">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

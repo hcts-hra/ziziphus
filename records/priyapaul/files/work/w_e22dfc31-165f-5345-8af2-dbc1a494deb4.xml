@@ -1,0 +1,124 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_e22dfc31-165f-5345-8af2-dbc1a494deb4" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+		</dateSet>
+		<descriptionSet>
+			<description source="Sridevi Padmanabhan," lang="en" script="latn">In this image a woman is pictured wearing a white sari as well as jewellery. She holds a peacock feather in her right hand while she touches her necklace with the left hand. Peacock feathers grouped together form the background of the image.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">B. T. No. 493</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Copyright</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="6e6c8628-1c39-524f-bd40-5c733f2e3423">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_6e6c8628-1c39-524f-bd40-5c733f2e3423" refid="118072" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Bharatiya Nari</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>textile label</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>jewellery</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>peacock's feather</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Medialab</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Gerhard</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>sari</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Hindu woman</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="e48c5bff-0049-5508-9a54-5381254e21b2">lithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">Woman with peacock feathers</title>
+		</titleSet>
+		<worktypeSet>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.peacocksolutions.co.uk/fascinatingfacts.html</hra:value>
+				<hra:value>2011-08-01</hra:value>
+				<hra:value>historical background of the use/depiction of preacock feathers in India.</hra:value>
+				<hra:value>6</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/118072</hra:value>
+				<hra:value>118072</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:11:00">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

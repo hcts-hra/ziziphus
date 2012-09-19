@@ -1,0 +1,155 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_8d93cf8d-752f-5b0f-bffa-783f45dda30c" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-ff0e4783-e786-515e-acaf-12f7aa8b1d68">Guru Dutt</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+			<date type="creation">
+				<earliestDate>1962</earliestDate>
+				<latestDate>1962</latestDate>
+			</date>
+		</dateSet>
+		<descriptionSet>
+			<description source="Gerhard Schoenhofer" lang="en" script="latn">On this poster for the 1962 released movie "Aarti", two of the leading actors can be seen standing close to each other behind a meager bush. She is wearing some jewellery as well as a bindi on her forehead. He is looking towards her in a slightly prurient way.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Rajshri Productions'
+Aarti
+Produced by Dwij
+Directed by Phani Majumdar</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">आरती</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="4fa42f28-a8ed-5073-bc9b-7bd7bf2771c4">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+		</materialSet>
+		<measurementsSet>
+			<notes>H 20 cm, W 30 cm, landscape</notes>
+			<measurements type="height" unit="cm">20</measurements>
+			<measurements type="width" unit="cm">30</measurements>
+			<measurements type="shape"> landscape</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_4fa42f28-a8ed-5073-bc9b-7bd7bf2771c4" refid="120219" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Rajshri Productions</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>jewellery</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>bindi</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>couple</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Gerhard</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>aarti</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Hindi Film</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Bollywood</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Ashok Kumar</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Phani Majumdar</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="ff0e4783-e786-515e-acaf-12f7aa8b1d68">
+				<term>Guru Dutt</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Poster</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="ea935392-d4c7-5801-968f-9da25f4a6780">gelatin silver prints</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">"Aarti"</title>
+			<title type="descriptive" pref="false" lang="" script="">आरती</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">lobby cards</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.imdb.com/title/tt0056806/</hra:value>
+				<hra:value>2012-01-30</hra:value>
+				<hra:value>story line, leading actors.</hra:value>
+				<hra:value>6</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>torn</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/120219</hra:value>
+				<hra:value>120219</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 15:59:40">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

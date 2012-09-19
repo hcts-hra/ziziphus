@@ -1,0 +1,156 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_ca3a8c62-65e5-5fe1-9064-f9eb9c3b1f71" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-0f86c459-d414-531d-8a05-2b73aa8f9f6e">Dharmendra</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+			<date type="creation">
+				<earliestDate>1976</earliestDate>
+				<latestDate>1976</latestDate>
+			</date>
+		</dateSet>
+		<descriptionSet>
+			<description source=" " lang="en" script="latn">On this image from a lobby card for the Hindi movie "Dillagi" released in 1978, Dharmendra and Hema Malini, can be seen walking together in a forest. On their right, is a tree with graffiti on it. On the lower left section of the image, a painting of a rose placed inside a book can be seen.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Bikramjeet Films
+presents
+Basu Chatterjs's
+Dillagi
+Produced by Bikram Singh - Ajit Singh
+Music Rajesh Roshan
+Lyrics Yogesh</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="3945b94f-ea1a-58a6-a738-37c1df41f6ae">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_3945b94f-ea1a-58a6-a738-37c1df41f6ae" refid="119328" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Basu Chatterjee</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="0f86c459-d414-531d-8a05-2b73aa8f9f6e">
+				<term>Dharmendra</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Hema Malini</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Dillagi</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Bollywood</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Bikram Singh</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>tree</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Ajit Singh</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Gerhard</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>sari</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>couple</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>rose</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>lobby card</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>forest</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Hindi Film</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">"Dillagi"</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">lobby cards</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.imdb.com/title/tt0157540/</hra:value>
+				<hra:value>2011-12-18</hra:value>
+				<hra:value>story line, leading actors, director.</hra:value>
+				<hra:value>6</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/119328</hra:value>
+				<hra:value>119328</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:03:08">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

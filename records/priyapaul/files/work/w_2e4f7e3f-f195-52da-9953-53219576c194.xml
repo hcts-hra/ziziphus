@@ -1,0 +1,254 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_2e4f7e3f-f195-52da-9953-53219576c194" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+			<date type="creation">
+				<earliestDate>1972</earliestDate>
+				<latestDate>1972</latestDate>
+			</date>
+		</dateSet>
+		<descriptionSet>
+			<description source=" " lang="en" script="latn">In this poster calender from Hari Krishna Karyalaya (office), Bareilly Rajasthan (1972), a couple can be seen smiling at each other. In the background, a field full of crops, a water pump, poultry and farm animals can be seen. The man is carrying a plough and the woman is carrying a sickle.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Phone: Resi.: 6541
+Office: 6661</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">नकली मालो से सावधान 
+हरी कृष्ण कार्यालय (रजि.)  बरेली
+उच्च कोटी के चूर्ण एवं मसालो के निर्माता 
+शिवाजी मार्ग, बरेली</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">मसाले: दाल मसाला, चाट मसाला, रायता मसाला, जीरा वटी असली हींग वटी, हर वटी, जल जीरा, सँत दन्त मजंन
+चाय मसाला
+चूर्ण: लुकमानि चूर्ण, छुआरा चूर्ण, भूका चूर्ण, नारंगी चूर्ण, पशु चूर्ण</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="translation" lang="hi">Hari Krishna Karyalaya (office) 
+Bareilly Rajasthan</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Studio 
+Jothis</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">1972</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="signature">Studio Jothis</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="7da704cf-da70-5658-ad1e-5d10e4655e95">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 48 cm, W 30 cm, portrait</notes>
+			<measurements type="height" unit="cm">48</measurements>
+			<measurements type="width" unit="cm">30</measurements>
+			<measurements type="shape"> portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_7da704cf-da70-5658-ad1e-5d10e4655e95" refid="118874" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+			<stylePeriod vocab="" refid="">1970s</stylePeriod>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>industrialization</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>field</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Gerhard</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>sari</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>couple</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>hoe</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>water</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Studio Jothis</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>water pump</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>agricultural development</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>plough</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>calendar</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>red sari</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>smiling</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>poultry</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>sickle</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>cattle</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>peasant</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>agriculture</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>political posters</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>crop</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>red</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>cow</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Poster</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Kalender</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Sari</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Rot</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">Calendar Showing a Couple</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">calendars</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="f_autor_zeichen" status="0" display="Artist (characters)">
+				<hra:value>Studio Jothis</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Patricia Uberoi. 2009. Freedom and Destiny. Delhi: OUP</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Braudel, Fernand 1981. "The Structures of Everyday Life". London: Collins.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Sunil Khilnani. 1997. The Idea of India. Delhi: OUP</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>de Certeau, Michel 1984. "The Practices of Everyday Life" . Berkeley: University of California Press.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Freitag, Sandria B. 2010. "Consumption and identity: Imagining ‘Everyday Life’ Through Popular Visual Culture"</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Storey, John 1999. "Cultural Consumption and Everyday Life". New York: Oxford University Press.</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.tasveergharindia.net/cmsdesk/essay/96/index.html</hra:value>
+				<hra:value>2011-03-17</hra:value>
+				<hra:value></hra:value>
+				<hra:value>6</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>torn</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/118874</hra:value>
+				<hra:value>118874</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:04:51">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

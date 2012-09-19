@@ -1,0 +1,209 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_d8dfaf59-6f86-5419-88f4-45978316e080" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-c19f9da6-753a-5e79-aa6d-3e0e2b5692a2">Parvati</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-088240fa-d01e-587a-bee4-7bf0ac401445">Shiva</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-8e16171f-0078-51af-9b11-16f6b6ec064a">Mulgaoker <artist></name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="corporate" refid="uuid-e56887bc-fb57-5307-b9d3-42a6d4cb78d2">Empire Calendar Manufacturing Co.</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+		</dateSet>
+		<descriptionSet>
+			<description source=" " lang="en" script="latn">In this image Shiva looks at Parvati his wife while she is immersed in meditation in front of a lingam. She is sitting on an animal hide and wears flower garlands around her neck and wrists and in her hair. Shiva is holding a trident (trishul) and a dumroo (drum).</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">BHARAT KALA NIKETAN
+CALCUTTA</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Blocks-POONAWALA</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Mulgaoker</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">PARBATI PUJAN
+No. 650</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="signature">Mulgaoker</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="94342067-8f25-5dce-8bf9-d02abe811209">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 25 cm, W 20 cm, portrait</notes>
+			<measurements type="height" unit="cm">25</measurements>
+			<measurements type="width" unit="cm">20</measurements>
+			<measurements type="shape"> portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_94342067-8f25-5dce-8bf9-d02abe811209" refid="119439" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+			<stylePeriod vocab="" refid="">mid 20th century</stylePeriod>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>drum</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>meditation</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="088240fa-d01e-587a-bee4-7bf0ac401445">
+				<term>Shiva</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>trade catalogs</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>halo</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>couple</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>flower garland</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="e56887bc-fb57-5307-b9d3-42a6d4cb78d2">
+				<term>Empire Calendar Manufacturing Co.</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>trishul</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>snake</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>devotional pictures</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Hinduism</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="8e16171f-0078-51af-9b11-16f6b6ec064a">
+				<term>Mulgaoker &amp;lt;artist&amp;gt;</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>lingam</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>trident</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="c19f9da6-753a-5e79-aa6d-3e0e2b5692a2">
+				<term>Parvati</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Poster</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">"Parbati Pujan"</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">pages</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="f_autor_zeichen" status="0" display="Artist (characters)">
+				<hra:value>Mulgaoker</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Davis, Richard H. 2010. "Temple in a Frame. God Posters For and Of Worship"</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.tasveergharindia.net/cmsdesk/essay/97/index_3.html</hra:value>
+				<hra:value>2011-01-11</hra:value>
+				<hra:value>Tasveer Ghar essay</hra:value>
+				<hra:value>6</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/119439</hra:value>
+				<hra:value>119439</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:06:35">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

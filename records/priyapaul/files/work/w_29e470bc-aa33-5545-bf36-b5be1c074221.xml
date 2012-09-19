@@ -1,0 +1,203 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_29e470bc-aa33-5545-bf36-b5be1c074221" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-30a002d0-b894-5702-8603-5121c5a28b92">Wadia, Homi</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-80a09fa6-5fa3-57f2-aa36-bb3f62417d32">Chitra</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-91961988-ab8f-5da2-8521-9f2a36cd3f4c">Irani, Azaad</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+			<date type="creation">
+				<earliestDate>1958</earliestDate>
+				<latestDate>1958</latestDate>
+			</date>
+		</dateSet>
+		<descriptionSet>
+			<description source=" " lang="en" script="latn">The movie poster shows two different scenes of the movie "Zimbo", released in 1958, and directed by Homi Wadia. On the right side Azaad Irani, playing the role of Zimbo, carries his chimpanzee-friend on his shoulders. On the left side, Chitra, playing the role of Leela Devi, can be seen applying lipstick.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Basant's
+ZIMBO
+Full Gevacolor
+Produced &amp; directed
+by
+Homi Wadia
+- Music -
+Chitragupta
+Wadia Brothers Prod.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">ज़िम्बो</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="38e5b77a-d3bb-517c-b533-672f1220792d">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_38e5b77a-d3bb-517c-b533-672f1220792d" refid="120346" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+			<stylePeriod vocab="" refid="">1950s</stylePeriod>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>lipstick</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>film</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Zimbo</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="91961988-ab8f-5da2-8521-9f2a36cd3f4c">
+				<term>Irani, Azaad</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Bollywood</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Medialab</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>monkey</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>flower</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Gerhard</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Chitragupta</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Hindi Film</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="80a09fa6-5fa3-57f2-aa36-bb3f62417d32">
+				<term>Chitra</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="30a002d0-b894-5702-8603-5121c5a28b92">
+				<term>Wadia, Homi</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>film poster</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Poster</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Filmplakat</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Collage</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">Zimbo</title>
+			<title type="descriptive" pref="false" lang="" script="">ज़िम्बो</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">posters</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Thomas, Rosie 2005. ‘Zimbo and Son Meet the Girl with a Gun’ in Living Pictures: Perspectives on the Film Poster in India, eds. David Blamey and Robert D’Souza, London: Open Editions, pp 27-44.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Said, Edward 1995. "Orientalism". London: Penguin Books.</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.tasveergharindia.net/cmsdesk/essay/103/index.html</hra:value>
+				<hra:value>2010-11-26</hra:value>
+				<hra:value></hra:value>
+				<hra:value>6</hra:value>
+			</hra:item>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.imdb.com/title/tt0390653/</hra:value>
+				<hra:value>2012-01-18</hra:value>
+				<hra:value>story line, main actors, director</hra:value>
+				<hra:value>6</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_personen" vocab="" refid="" status="0" display="personen">
+				<hra:value>Chitra</hra:value>
+			</hra:item>
+			<hra:item type="f_personen" vocab="" refid="" status="0" display="personen">
+				<hra:value>Azaad Irani</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/120346</hra:value>
+				<hra:value>120346</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:04:19">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

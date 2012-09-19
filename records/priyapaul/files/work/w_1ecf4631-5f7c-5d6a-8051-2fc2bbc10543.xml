@@ -1,0 +1,161 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_1ecf4631-5f7c-5d6a-8051-2fc2bbc10543" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="corporate" refid="uuid-7b799212-bc20-50d5-8b39-785e2df7c160">H.A. Mirza and Sons.</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+			<date type="creation">
+				<earliestDate>1613</earliestDate>
+				<latestDate>1613</latestDate>
+			</date>
+		</dateSet>
+		<descriptionSet>
+			<description source="Gerhard Schoenhofer" lang="en" script="latn">A five-storied mausoleum of the Mughal emperor Akbar, a pathway leads to the main gate, and the pathway is flanked by rows of trees which are part of a beautiful garden laid out around the tomb. There is an artificial pond on the pathway. Though the whole building is built of red sandstone, its top is made of white marble.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">The tomb of Akber the Great Alias Sikandara, Agra.
+Built by the Emperor Jahangir in 1605 A.D.</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="136f972e-c5d9-5ab3-ae52-d4d869aa7e62">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location type="site">
+				<name type="geographic" vocab="" refid="">Agra</name>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="15f999c3-5f12-570c-a3c7-15678f571734" type="medium">cardboard</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 10 cm, L 15 cm, landscape</notes>
+			<measurements type="height" unit="cm">10</measurements>
+			<measurements type="width" unit="cm">15</measurements>
+			<measurements type="shape"> landscape</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_136f972e-c5d9-5ab3-ae52-d4d869aa7e62" refid="107978" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+			<stylePeriod vocab="" refid="">Mughal Empire</stylePeriod>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Mughal architecture</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>picture postcards</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Mughal Emperors</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>emperor</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Mughal</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Uttar Pradesh</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>tomb</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>checked</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Agra</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="7b799212-bc20-50d5-8b39-785e2df7c160">
+				<term>H. A. Mirza and Sons</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>India</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Mughal period tomb</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Postkarte</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Indien</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Agra</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Uttar Pradesh</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">"The Tomb of Akber the Great Alias Sikandra, Agra"</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">postcards</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Asher, Catherine B. 2010. Fantasizing the Mughals and Popular Perceptions of the Taj Mahal. Tasveer Ghar. http://www.tasveergharindia.net/cmsdesk/essay/114/index.html, last accessed 2010-10-29,</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>Good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/107978</hra:value>
+				<hra:value>107978</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:07:45">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

@@ -1,0 +1,191 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_cc3e1e68-2730-5261-bb32-fcad3604e284" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+			<date type="creation">
+				<earliestDate>1936</earliestDate>
+				<latestDate>1936</latestDate>
+			</date>
+		</dateSet>
+		<descriptionSet>
+			<description source=" " lang="en" script="latn">Two western women can be seen in a shop that is selling vegetables, fruit, cheese, tinned products, milk, and so on. A third woman sits at a desk and makes a phone call while the shop keeper in a white jacket packs a box for one of the women customers dressed in a western dress and cap. The second woman customer, wearing a red dress and a hat smiles as she as she points her right hand towards a baby sitting on the floor. She is standing next to the fresh produce section. The baby is sitting next to a basket filled with groceries and holding on to an apple. A dog is balancing on its hind legs and looking towards the apple that the baby holds. Both women hold purses in their left hands.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">GUPTA &amp; CO., 
+Manufacturing Perfumers
+Wholesale dealers in all perfumery raw material.
+SADAR BAZAR (Below post office)
+DELHI.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Ask our quotations for: -
+Bencyl Acetate
+Diphenyl Oxide
+Citronellas
+Terpinol Extra
+All other
+Aromatic
+Chemicals
+and 
+Essential Oils
+Colours &amp; Labels</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Try our: -
+Leilla perfumes
+For
+Hair olis etc.
+Royal perfumes
+For
+Highclass requirments.
+Jasmine G. L.
+For 
+Aggarbattis.
+Our Specialities: -
+Bouquet Vera
+Voilet Flower
+Otto Mogra
+Kashmir Flower</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">BRANCH:-
+168, Abdul Rahman
+Street, (3rd, Flour,)
+Bombay.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Printed at the Block Printing Press Delhi.</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="225eb473-49b9-5adf-9322-ce3c9291a71c">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 38 cm, W 25 cm, portrait</notes>
+			<measurements type="height" unit="cm">38</measurements>
+			<measurements type="width" unit="cm">25</measurements>
+			<measurements type="shape"> portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_225eb473-49b9-5adf-9322-ce3c9291a71c" refid="119867" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>shopping</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>fair skin</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>dress</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>western woman</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>calendar</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Medialab</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>child</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>dog</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>scales (weighing devices)</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>grocer</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>vegetables</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>woman</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>fruit</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">Shop With Customers And Dog</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">calendars</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>damaged (stains)</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/119867</hra:value>
+				<hra:value>119867</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:03:37">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

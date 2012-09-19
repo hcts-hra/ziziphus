@@ -1,0 +1,178 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_f65cab0d-93d8-5f17-bc03-0c03845d322f" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="corporate" refid="uuid-5121d50c-dcc3-58af-b010-ba7cf51270b2">Khimji Morarji</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+		</dateSet>
+		<descriptionSet>
+			<description source=" " lang="en" script="latn">A textile label from Khimji Morarji, Bombay showing a woman wearing a traditional long skirt (ghagra) and blouse with a dupatta draped over her head. She holds a flower garland in her hands in a beautiful garden with rose bushes. In the background, a fountain, parts of a building with a marble lion and stairs can be seen.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Vasant Devi</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">KM</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">TH: Khimji Moraji</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">M. J. Market Bombay.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Trade Mark</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="b763450e-450d-5616-8482-e627534e2f75">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 17 cm, W 12 cm, portrait</notes>
+			<measurements type="height" unit="cm">17</measurements>
+			<measurements type="width" unit="cm">12</measurements>
+			<measurements type="shape"> portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_b763450e-450d-5616-8482-e627534e2f75" refid="108760" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Bharatiya Nari</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>temple</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Hindu woman</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>garden</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Medialab</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>flower</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>sari</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>rose</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>temple architecture</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="5121d50c-dcc3-58af-b010-ba7cf51270b2">
+				<term>Khimji Morarji</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>fountain</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>red rose</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>architecture</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>red</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">Textile label by Khimji Morarji</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">textile label</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.esamskriti.com/essay-chapters/Worship-of-god-as-Mother-in-the-Indian-Tradition-1.aspx</hra:value>
+				<hra:value>2011-11-28</hra:value>
+				<hra:value></hra:value>
+				<hra:value>19</hra:value>
+			</hra:item>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://articles.timesofindia.indiatimes.com/2011-10-04/edit-page/30242071_1_rampaging-demons-durga-puja-markandeya-purana</hra:value>
+				<hra:value>2011-11-28</hra:value>
+				<hra:value>Invoking the Universal Mother.</hra:value>
+				<hra:value>19</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/108760</hra:value>
+				<hra:value>108760</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:07:55">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

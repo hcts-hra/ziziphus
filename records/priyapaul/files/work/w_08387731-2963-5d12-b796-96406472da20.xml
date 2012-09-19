@@ -1,0 +1,191 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_08387731-2963-5d12-b796-96406472da20" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="11928295X" pref="true">Ravi Varma, Raja</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-ba7fa408-a6cf-589b-8765-ad477a2e2a31">Vishnu</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+			<date type="creation">
+				<earliestDate>1935</earliestDate>
+				<latestDate>1935</latestDate>
+			</date>
+		</dateSet>
+		<descriptionSet>
+			<description source=" " lang="en" script="latn">Lord Vishnu with two goddesses sitting on the Anant Shaiya (snake-throne) in a calender poster from 1935 that advertises Sunlight soap.</description>
+			<description vocab="" refid="" lang="en" script="latn">framing (processes)</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Sunlight</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Sunlight Soap</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">1935</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="27e8e32d-b00c-5c0d-840c-de4a57e3cddc">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_27e8e32d-b00c-5c0d-840c-de4a57e3cddc" refid="118445" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>advertisement</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>soap advertising</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Sunlight</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Anant Shaiya</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Medialab</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Sunlight Soap</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>soap</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="ba7fa408-a6cf-589b-8765-ad477a2e2a31">
+				<term>Vishnu</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Kalender</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">Sunlight</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">calendars</worktype>
+			<worktype vocab="" refid="">posters</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="f_autor_zeichen" status="0" display="Artist (characters)">
+				<hra:value>Ravi Varma, Raja</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Ravi Varma, Raja and I.M.E. Veniyoor 2007. "Ravi Varma Raji. the most celebrated painter of India, 1848 - 1906" Bangalore: Parsram Mangharam.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Gadihoke, Sabika 2010. "Selling Soap and Stardom: The Story of Lux"</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>McClintock, Anne 2001. “Soft Soaping Empire: Commodity Racism and Imperial Advertising” in Double Crossings: Madness, Sexuality and Imperialism. Vancouver, Canada: Ronsdale.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Sivulka, Julianne 1998. "Soap, Sex and Cigarettes: A Cultural History of Advertising". Belmont, California: Wadsworth Publishing Co.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Jain, Kajri 2007. "Gods in the Bazaar: The Economies of Indian Calendar Art". Durham NC: Duke University Press.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Dyer, Richard and Christine Gledhill 2009. "Wanted: Cultured ladies Only! Female Stardom and Cinema in India 1930s-1950s". Urbana and Chicago: University of Illinois Press.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Davis, Richard H. 2010. "Temple in a Frame. God Posters For and Of Worship"</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Neumayer, Erwin and Christine Schellberger 2003. "Popular Indian Art. Raja Ravi Varma and the printed gods of India." New Delhi: Oxford University Press.</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.tasveergharindia.net/cmsdesk/essay/104/index.html</hra:value>
+				<hra:value>2011-01-08</hra:value>
+				<hra:value>Tasveer Ghar essay</hra:value>
+				<hra:value>6</hra:value>
+			</hra:item>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.tasveergharindia.net/cmsdesk/essay/97/index.html</hra:value>
+				<hra:value>2011-01-08</hra:value>
+				<hra:value>Tasveer Ghar essay</hra:value>
+				<hra:value>6</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>torn</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/118445</hra:value>
+				<hra:value>118445</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:07:06">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

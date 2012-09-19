@@ -1,0 +1,116 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_2d4b280e-e2e5-54f5-92d1-d835ba6f9539" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+		</dateSet>
+		<descriptionSet>
+			<description source="Gerhard Schoenhofer" lang="en" script="latn">On the back of this postcard, we see a message for J.D.Gardner as well as his address and a stamp from India Postage.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">This side may have a message written upon it for Inland Postage, but the right hand side must be reserved for address and stamp only.
+Series No. 2097 B.B. London
+Printed in Saxony
+AMBALA.
+[...][Indecipherable] - these are too snatchy for anything - must be careful it keeps off the firing point - or else go on the steady + play Tennis with "Kelly's own." " 
+Must be in Ambala on 16. without fail. Our  Hop.
+[...][Indecipherable]
+Post Card
+The Address to be written on this side.
+Serg. J.D. Gardner
+3rd (Lahore) Division
+Lahore Cantonment</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="fe72b32c-d694-5dbd-b476-22aa5226faf2">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="15f999c3-5f12-570c-a3c7-15678f571734" type="medium">cardboard</material>
+		</materialSet>
+		<measurementsSet>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_fe72b32c-d694-5dbd-b476-22aa5226faf2" refid="118011" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="2aa27e64-0748-5eed-bd91-099fc1edf47f">
+				<term>postcards</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>stamp</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-new</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Postkarte</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Briefmarke</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">Back of postcard with address</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">picture postcards</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/118011</hra:value>
+				<hra:value>118011</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:08:47">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

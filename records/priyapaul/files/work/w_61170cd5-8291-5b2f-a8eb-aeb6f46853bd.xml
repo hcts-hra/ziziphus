@@ -1,0 +1,156 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_61170cd5-8291-5b2f-a8eb-aeb6f46853bd" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-269525e8-8ec1-59e0-ab7b-f83f93d5623e">Mickey Mouse</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+			<date type="creation">
+				<earliestDate>1937</earliestDate>
+				<latestDate>1937</latestDate>
+			</date>
+		</dateSet>
+		<descriptionSet>
+			<description source="Gerhard Schoenhofer" lang="en" script="latn">On this advertisement for productions of Hollywood and Elstree, the maps of North America, Great Britain and India can be seen tied together with a film reel. On top of the three maps, mickey and mini mouse are pictured. The whole content is framed by images from different western filmstars such as Charly Chaplin.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Hollywood and Estree through United Artists
+have combined to bring to India 
+the greatest productions of both countries</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">from the studios of
+British &amp; Dominions Film Corporation, Ltd.
+20th Century Pictures Incorporated.
+London Film Productions, Ltd.
+United Artists Corporation 
+&amp;
+Disney Mickey Mouse &amp; Silly Synphonies.</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="bbc758a9-ea54-577b-b24b-fa9cc421f6f4">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 30 cm, W 20 cm, portrait</notes>
+			<measurements type="height" unit="cm">30</measurements>
+			<measurements type="width" unit="cm">20</measurements>
+			<measurements type="shape"> portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_bbc758a9-ea54-577b-b24b-fa9cc421f6f4" refid="119830" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Elstree</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>advertisement</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="269525e8-8ec1-59e0-ab7b-f83f93d5623e">
+				<term>Mickey Mouse</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>movie star</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>map of England</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Times of India Yearbook</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Gerhard</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>map of North America</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>map of India</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>British &amp;amp; Dominions Film Corporation, Ltd.</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>map</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Hollywood</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Werbung</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="9f5fddf6-ee5f-5aa5-8d7a-a13ad68b41b8">prints (visual works)</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">An advertisement of the productions of Hollywood and Elstree, map of India</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">pages</worktype>
+			<worktype vocab="" refid="">advertisements</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/119830</hra:value>
+				<hra:value>119830</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:02:26">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

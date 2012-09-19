@@ -1,0 +1,311 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_8ce51a5f-c328-5fa4-8e60-0aec4ca010e2" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+			<date type="creation">
+				<earliestDate>1942</earliestDate>
+				<latestDate>1942</latestDate>
+			</date>
+		</dateSet>
+		<descriptionSet>
+			<description source=" " lang="en" script="latn">This calendar poster of Thakur Savadekar Company shows a king together with a  fisherman's daughter. He's sitting on the edge of a red boat while laying his left hand on the woman's shoulder. He is holding a bow in his right hand and carrying a quiver of arrows on his back. The woman is standing next to him, holding an oar and wearing transparent garments. There is a red anchor visible not only as a symbol on the paddle, but also leaning against the boat. In the background one can see mountains, a lake and various vegetation.</description>
+			<description vocab="" refid="" lang="en" script="latn">framing (processes)</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">तारका पता, "धूम्रपान" पूना</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Telegrams, "Dhumrapan" Poona</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">ॐ</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">ठाकुर सावेद्कर कंपनी, पूना.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">लंगर छाप बीड़ी</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Registered
+Trade Mark
+Anchor
+Brand
+BIDI
+No. 1
+No. 976
+Thakur Savadekar &amp; Co.
+Poona.
+[bidi advertisement top left]</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">ठाकूर सावेद्कर कंपनी पूना
+नं. १
+लंगर
+छाप
+[bidi advertisement top left]</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Registered
+Trade Mark
+Anchor
+Brand
+BIDI
+No. 1
+No. 978
+Thakur Savadekar &amp; Co.
+Poona.
+[bidi advertisement top right]</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">ठाकूर सावेद्कर कंपनी पूना
+नं. १
+लंगर
+छाप
+[bidi advertisement top right]</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">हमारा नाम
+लेबलपर पढकर
+लंगर छाप बीड़ी
+खरीदे
+[lower left of center image]</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">लंगर छाप
+बीडी 
+पीनेमे मीठी और
+लज्जतदार है.
+[lower right of center image]</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">बॉम्बे बिडी
+लंगर छाप-
+रजिस्टर नं. २६८४ 
+ठाकूर सावेद्कर कंपनी, पुणें नं. २
+[box below center image]</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">नकलोंसे सावधान</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Thakur Savadekar &amp; Co.
+Bidi Manufacturers
+377 Vetal Peth
+Poona 2.
+Smoke Anchor Brand Bidis</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">1942</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">ठाकूर सावेद्कर कंपनी
+पुणें.
+यांची
+लंगर छाप बिडी ओढा</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">ठाकूर सावेद्कर कं पूना
+लंगर बिडी
+[manufacturer's signet on center image]</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="b512cf05-1e25-5f33-903c-0fe9b161db7a">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 50 cm, W 38 cm, portrait</notes>
+			<measurements type="height" unit="cm">50</measurements>
+			<measurements type="width" unit="cm">38</measurements>
+			<measurements type="shape"> portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_b512cf05-1e25-5f33-903c-0fe9b161db7a" refid="118639" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>bow</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>coast</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>poster</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Anchor Brand Bidi</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>oar</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Matthias</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-original-language</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>turban</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>arrow</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>mountain</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>bidi</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>calendar</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Medialab</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Thakur Savadekar Company</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-problem</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>boat</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>advertisement</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>anchor</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Gerhard</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>product advertisement</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>forest</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Poster</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Werbung</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Kalender</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">1942 Advertisement calendar for Thakur Savadekar &amp; Co.</title>
+			<title type="descriptive" pref="false" lang="" script="">Thakur Savedakar Kampani, pure langar Chap Bidi</title>
+			<title type="descriptive" pref="false" lang="" script="">ठाकुर सावेद्कर कंपनी, पूना  लंगर छाप बीड़ी</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">calendars</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.thakursavadekar.com/</hra:value>
+				<hra:value>2012-02-26</hra:value>
+				<hra:value>basic information as quoted above.</hra:value>
+				<hra:value>6</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/118639</hra:value>
+				<hra:value>118639</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 15:58:00">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

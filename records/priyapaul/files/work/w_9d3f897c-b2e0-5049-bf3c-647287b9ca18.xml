@@ -1,0 +1,159 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_9d3f897c-b2e0-5049-bf3c-647287b9ca18" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+			<date type="creation">
+				<earliestDate>1937</earliestDate>
+				<latestDate>1937</latestDate>
+			</date>
+		</dateSet>
+		<descriptionSet>
+			<description source="Gerhard Schoenhofer" lang="en" script="latn">On this advertisement for Lion Oinment, a man can be seen smoking a pipe in the upper left section. A detailed description of the advertised product as well as the drawing of a lion are pictured as well. The lower section of the advertisement hosts names of the distributors of the product in India.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Even in the Hottest Climate - Boils Go! without danger of further septic infection</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Lion is a very soothing and healing Ointment, used and approved in the home country for more than 90 years. But it's more than that. It's a safeguard - against spread of septic infection, especially in hot climates where germ infections spread so rapidly. The first application isolates the poison. Then, surely, it brings the poison out, and forms a clean, new healthy skin in the natural way.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">In a few days, Boils go, inflammation goes, danger of blood poisoning ended! Perfectly safe, even for infants. No medicine cupboard should be without it.
+Boils Carbuncles, Septic Wounds, Abscesses, Eczema, Cuts, Burns, Bites, Stings.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">From Chemists and Druggists in most parts of the world, at popular prices. English prices 1/3, 3/- &amp; 5/- per box. In case of difficulty send M.O. to - 
+Edwin Burgess Ltd., 59, Gray's Inn Road, London, England.
+Burgess' Lion Ointment.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Distributors for India:
+Bombay: P.M. Zaveri &amp; Co. 
+Madon, Sons &amp; Co., Ltd.
+Calcutta: Paul, Butto
+Kristo &amp; Co., Ltd.
+Frank Ross &amp; Co., Ltd.
+Madras: Spencer &amp; Co. Ltd.
+Rangoon: E.M. de Souza &amp; Co.</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="ec7e8f4d-e554-5765-9dea-a15a7c1a4608">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 15 cm, W 10 cm, portrait</notes>
+			<measurements type="height" unit="cm">15</measurements>
+			<measurements type="width" unit="cm">10</measurements>
+			<measurements type="shape"> portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_ec7e8f4d-e554-5765-9dea-a15a7c1a4608" refid="119772" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Times of India Yearbook</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>advertisement</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Lion Oinment</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>smoking</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Gerhard</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>product advertisement</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>lion</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>man</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>pipe</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Werbung</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="9f5fddf6-ee5f-5aa5-8d7a-a13ad68b41b8">prints (visual works)</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">An advertisement of Lion Oinment</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">pages</worktype>
+			<worktype vocab="" refid="">advertisements</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/119772</hra:value>
+				<hra:value>119772</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:00:35">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

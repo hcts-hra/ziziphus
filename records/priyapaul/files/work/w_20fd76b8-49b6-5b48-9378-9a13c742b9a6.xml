@@ -1,0 +1,201 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_20fd76b8-49b6-5b48-9378-9a13c742b9a6" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+			<date type="creation">
+				<earliestDate>1905</earliestDate>
+				<latestDate>1905</latestDate>
+			</date>
+		</dateSet>
+		<descriptionSet>
+			<description source=" " lang="en" script="latn">On this advertisement for Robert Barbour &amp; Brother, a young Caucasian woman with exposed shoulders and soft looking skin is sniffing yellow roses. The image is titled "My Queen".</description>
+			<description vocab="" refid="" lang="en" script="latn">framing (processes)</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Robert Barbour &amp; Brother
+Merchants &amp; Shippers, Manchester.
+1905</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">"My Queen."</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">MacLure, MacDonald &amp; Co., Ornamental Printers to the late Queen, Glasgow.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">With Best Wishes for a Prosperous New Year
+...From...
+Robert Barbour &amp; Brother, 
+Manchester. 
+Shippers to
+All Markets of the World.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Virtute Tutus [on emblem]
+Established 1815.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Silcar (unclear)
+Pintro (unclear) 56750</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Virtute Tutus [on emblem]
+Established 1815.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Specialities:
+Hand &amp; Key White Shirtings,
+Prints, Woollens,
+Printed and Cotton Domettes,
+Velvets, Trouserings,
+And all kinds of Fancies.
+Grey and white Shirtings, Nainsooks,
+Dhooties, &amp;c. Printed Sarries.</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="2accb950-6346-577b-ab12-8e2576ff4f30">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 50 cm, W 38 cm, portrait</notes>
+			<measurements type="height" unit="cm">50</measurements>
+			<measurements type="width" unit="cm">38</measurements>
+			<measurements type="shape"> portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_2accb950-6346-577b-ab12-8e2576ff4f30" refid="118945" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>advertisement</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Caucasian type</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Matthias</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>flower</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Gerhard</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>rose</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>product advertisement</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>black hair</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Robert Barbour &amp;amp; Brother</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>woman</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Werbung</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">Robert Barbour &amp; Brother</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">posters</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.ainslie.org.uk/genealogy/barbour/dat12.htm#16</hra:value>
+				<hra:value>2012-01-18</hra:value>
+				<hra:value>genealogy data record</hra:value>
+				<hra:value>3</hra:value>
+			</hra:item>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.nationalarchives.gov.uk/A2A/records.aspx?cat=127-m294&amp;cid=4-5-3-3#4-5-3-3</hra:value>
+				<hra:value>2012-01-18</hra:value>
+				<hra:value>document of 1 Ja. 1909, held at Manchester Archives and Local Studies which identifies the Blair brothers George Beatson and James Thomas with "Robt. Barbour and Brother"</hra:value>
+				<hra:value>3</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>The poster is torn but the frame is good.</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/118945</hra:value>
+				<hra:value>118945</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:07:25">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

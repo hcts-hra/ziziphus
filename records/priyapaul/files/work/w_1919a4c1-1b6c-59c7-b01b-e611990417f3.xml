@@ -1,0 +1,149 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_1919a4c1-1b6c-59c7-b01b-e611990417f3" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-185eaa8d-7fbe-5c6e-b026-6dbfb5a56ccd">Bachchan, Amitabh</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+			<date type="creation">
+				<earliestDate>1979</earliestDate>
+				<latestDate>1979</latestDate>
+			</date>
+		</dateSet>
+		<descriptionSet>
+			<description source=" " lang="en" script="latn">On this image from a lobby card for the Hindi movie "Jurmana", released in 1979, two of the main actors, Amitabh Bachchan and Rakhee Gulzar, stand under a tree, talking to each other. Amitabh Bachchan wears a pair of sunglasses while Rakhee is dressed in a sari. In the lower left section of the image, Amitabh Bachchan can again be seen, dressed in a suit, and smoking.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Sri Lokenath Chitramandir present
+Jurmana
+Director Hrishikesh Mukherjee
+Music R.D. Burman
+Lyrics Anand Bakshi
+Producer Debesh Ghosh</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="e2e2de15-e861-51f1-ae00-983cbde66433">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_e2e2de15-e861-51f1-ae00-983cbde66433" refid="119329" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Rakhee Gulzar</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Mukherjee, Hrishikesh</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>lobby card</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>tree</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>smoking</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Gerhard</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>sari</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Jurmana</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>glasses</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Debesh Ghosh</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="185eaa8d-7fbe-5c6e-b026-6dbfb5a56ccd">
+				<term>Bachchan, Amitabh</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">"Jurmana"</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">lobby cards</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.imdb.com/title/tt0079382/</hra:value>
+				<hra:value>2011-12-25</hra:value>
+				<hra:value></hra:value>
+				<hra:value>6</hra:value>
+			</hra:item>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.naachgaana.com/2011/06/08/underratedforgotten-jurmana-1979/</hra:value>
+				<hra:value>2012-04-06</hra:value>
+				<hra:value>plot of the movie</hra:value>
+				<hra:value>19</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/119329</hra:value>
+				<hra:value>119329</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:03:10">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

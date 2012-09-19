@@ -1,0 +1,160 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_3e4a04be-f14c-51b0-96a2-530d7d64469f" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="corporate" refid="uuid-49b3b1e4-9ae3-5cfb-9fc7-f01989188e21">Dunlop</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+		</dateSet>
+		<descriptionSet>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">DUNLOP
+THE STANDARD BY WHICH ALL TYRES ARE JUDGED</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Y.2796 [car plate]</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="baa2a8a4-76ef-5c9f-9bb2-d60137c773c1">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>30 cm x 20 cm, portrait</notes>
+			<measurements type="height" unit="cm">30</measurements>
+			<measurements type="width" unit="cm">20</measurements>
+			<measurements type="shape"> portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_baa2a8a4-76ef-5c9f-9bb2-d60137c773c1" refid="120722" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>exoticism</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>car industry</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Rolls-Royce</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="49b3b1e4-9ae3-5cfb-9fc7-f01989188e21">
+				<term>Dunlop</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Convertible</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>car</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>city</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Indian woman</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>coconut</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Indian man</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Kabriolett</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Reifen &amp;lt;Motiv&amp;gt;</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Rolls Royce</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Reifenmarkt</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Auto &amp;lt;Motiv&amp;gt;</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Kraftwagen</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Personenkraftwagen</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">Dunlop Tyres Advertisement</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">advertisements</worktype>
+			<worktype vocab="" refid="">posters</worktype>
+			<worktype vocab="" refid="">watercolor paintings</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/120722</hra:value>
+				<hra:value>120722</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:02:50">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

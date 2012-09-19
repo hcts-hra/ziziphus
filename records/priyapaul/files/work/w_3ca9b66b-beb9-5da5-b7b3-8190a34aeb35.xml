@@ -1,0 +1,202 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_3ca9b66b-beb9-5da5-b7b3-8190a34aeb35" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-6a2e3bc2-f7f2-534f-bcac-5870a237313e">Ravi Varma, Raja</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="corporate" refid="uuid-46ab475d-6467-58f7-83df-ecdac56fb468">The Bombay Company Ltd.</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="corporate" refid="uuid-debc21eb-564b-52f1-97d2-f48a73c3b6b9">Oriental Calendar Manufacturing Company</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+		</dateSet>
+		<descriptionSet>
+			<description source=" " lang="en" script="latn">This textile label from the Bombay Company Ltd. shows a woman in a red sari climbing up the steps to a  temple.  A sculpture of a cow can be seen near the entrance of the temple. "Delhi Karachi Amritsar" and "The Bombay Company Ltd." is written along the edges of the image in English as well as Devanagari. This image is a replica of a Ravi Varma painting.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">The Bombay Company Limited</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Delhi Karachi Amritsar.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">देहली-अमृतसर- क्राची</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">धी  बाम्बे कंपनी लीमीटेड</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="edebc20a-6643-5766-b1d3-b1479f1f1108">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_edebc20a-6643-5766-b1d3-b1479f1f1108" refid="106168" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+			<stylePeriod vocab="" refid="">late 19th century</stylePeriod>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Bharatiya Nari</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>textile label</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>temple</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="46ab475d-6467-58f7-83df-ecdac56fb468">
+				<term>The Bombay Company Ltd.</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>worship</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Medialab</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>sari</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Devanagari-Script</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="6a2e3bc2-f7f2-534f-bcac-5870a237313e">
+				<term>Ravi Varma, Raja</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>script</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>cow</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="debc21eb-564b-52f1-97d2-f48a73c3b6b9">
+				<term>Oriental Calendar Manufacturing Company</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>red sari</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-problem</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Hindu woman</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>perception of women</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>red</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-original-language</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Sari</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Rot</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">Textile label by The Bombay Company Limited</title>
+			<title type="descriptive" pref="false" lang="" script="">देहली-अमृतसर- क्राची</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">Textile label</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Thanvi, Asraf Ali 1990. "Perfecting Women". Berkley: University of California Press.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Freitag, Sandria B. 2010. "Consumption and identity: Imagining ‘Everyday Life’ Through Popular Visual Culture"</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>de Certeau, Michel 1984. "The Practices of Everyday Life" . Berkeley: University of California Press.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Braudel, Fernand 1981. "The Structures of Everyday Life". London: Collins.</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.tasveergharindia.net/cmsdesk/essay/96/index.html</hra:value>
+				<hra:value>2011-04-13</hra:value>
+				<hra:value>Tasveer Ghar essay</hra:value>
+				<hra:value>6</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/106168</hra:value>
+				<hra:value>106168</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:03:07">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

@@ -1,0 +1,224 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_3d782cbc-f2d1-5338-ac45-6f8a0519abc6" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+		</dateSet>
+		<descriptionSet>
+			<description source="Gerhard Schoenhofer" lang="en" script="latn">On this advertisement poster, we see a deity riding on a bird holding a snake in its claws. An encounter between the deity and a devotee folding his hanfds takes place on the shores of a river. In the background, a forest is depicted. On the left upper section of the image, the logo of the company "Lalluchand Amibhai" is visible. The image is framed with contact details of branches and product offers. The name of the factory is not readable due to the framing of the poster.</description>
+			<description vocab="" refid="" lang="en" script="latn">framing (processes)</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">The (...) Factory (Not readable due to framing)</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Indian Capital
+Indian Labour &amp; Indian Management</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Our sole agents for German Silver Wares</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Dycle Brand Lallubhai Amichand
+Bombay No. 2
+Trade Mark</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Our sole agents for Brass and Copper Wares</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Lallubhai &amp; Co
+128
+Kansara Chawl
+Bombay.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Vilhaldas Nakamchand
+153
+Kansara Chawl
+Bombay.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Branch:
+Rangoon Aluminium Works, 
+494 Dalhousie St
+Rangoon
+Trade Mark
+"Cycle" &amp; "Elephant"</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Branch:
+L. Ballsingh
+Bhagwansingh
+Kassera
+Bazaar
+Amritsar
+Trade Mark
+"Rose Flower"</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Dhruva Narayana</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="c4c84291-5b2b-5791-8d03-84bec5fee0ea">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 50 cm, W 38 cm, portrait</notes>
+			<measurements type="height" unit="cm">50</measurements>
+			<measurements type="width" unit="cm">38</measurements>
+			<measurements type="shape"> portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_c4c84291-5b2b-5791-8d03-84bec5fee0ea" refid="118695" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>advertisement</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>jewellery</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>bicycle</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>flower</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>deity</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>bird</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>halo</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>plate (dishes)</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>tree</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>flower garland</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Dhruva Narayana</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>snake</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>logo</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>devotee</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>forest</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Hinduism</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>nature</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>river</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Gerhard</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Werbung</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Poster</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">Dhruva Narayana, in a poster advertisement of Lalluchand Amibhai, Bombay</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">posters</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>damaged</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/118695</hra:value>
+				<hra:value>118695</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 15:59:17">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

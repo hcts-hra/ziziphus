@@ -1,0 +1,166 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_b849b029-5b23-551a-869d-81052ad1428b" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-b8c59db6-2fd4-552b-8e6a-b3575fca3b76">Rishi Kapoor</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-5819b056-2b9a-5032-9561-6cf6b246ae9f">Jackomant <artist></name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-7fbefb44-4c70-5782-99b7-3fb35648adad">Chopra, Yash</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+			<date type="creation">
+				<earliestDate>1989</earliestDate>
+				<latestDate>1989</latestDate>
+			</date>
+		</dateSet>
+		<descriptionSet>
+			<description source="Gerhard Schoenhofer" lang="en" script="latn">A poster from the 1989 released Hindi film "Chandni" shows the female protagonist, Sridevi strike two poses, the lower one being somewhat dance like with raised hands and body stretched and bending a little backwards, and the top with hair flying on her face. The middle background shows an enlarged red rose, signifying love.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Yash Chapora's
+Chandni
+Produced and Directed by Yash Chapora
+Associate Producer T. Subbarami Reddy
+Music Shiv Hari
+Lyrics Anand Bakshi
+Photography Manmohan Singh</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="signature">Jackomant</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="3283f093-27bc-53e9-b2fa-c9b4a839e0a0">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_3283f093-27bc-53e9-b2fa-c9b4a839e0a0" refid="120473" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Sridevi</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Vinod Khanna</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="5819b056-2b9a-5032-9561-6cf6b246ae9f">
+				<term>Jackomant &amp;lt;artist&amp;gt;</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="b8c59db6-2fd4-552b-8e6a-b3575fca3b76">
+				<term>Rishi Kapoor</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>dancing</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Chandni</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Gerhard</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Hindi Film</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>rose</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Bollywood</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="7fbefb44-4c70-5782-99b7-3fb35648adad">
+				<term>Chopra, Yash</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">"Chandni"</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">posters</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="f_autor_zeichen" status="0" display="Artist (characters)">
+				<hra:value>Jackomant</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.imdb.com/title/tt0097045/</hra:value>
+				<hra:value>2011-12-12</hra:value>
+				<hra:value>story line, leading actors, directors. Chandni was one of the biggest hits of the year 1989.</hra:value>
+				<hra:value>6</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>Good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/120473</hra:value>
+				<hra:value>120473</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:09:06">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

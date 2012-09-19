@@ -1,0 +1,138 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_603430a9-61b3-5719-bb95-91402af7e23c" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-ddaa9cf1-f534-56a7-8e66-7534b767bfce">Nehru, Jawaharlal</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+		</dateSet>
+		<descriptionSet>
+			<description source="Sridevi Padmanabhan," lang="en" script="latn">A portrait of Jawahar Lal Nehru, the first Prime Minister of India wearing his trademark cap and Nehru jacket. The portrait/poster is by H.S. Sorindro &amp; Bros, Sadar bazar, Delhi, India.</description>
+			<description vocab="" refid="" lang="en" script="latn">framing (processes)</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">No. 1813
+Pt. Jawahar Lal Nehru</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Copy Right Reserved
+H.S.Sorindro &amp; Bros.
+Sadar Bazar, Delhi.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">पं जवाहरलाल नेहरु
+एच . एस. सुरेन्द्रो एन्ड ब्रादर्स
+चित्र  प्रकाशक -
+सदर बाज़ार देहली</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="other" lang="hi">Pt. Jawaharlal Nehru</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="eacd241a-220c-5ac8-a1da-45776b89af01">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 50 cm, W 38 cm, portrait</notes>
+			<measurements type="height" unit="cm">50</measurements>
+			<measurements type="width" unit="cm">38</measurements>
+			<measurements type="shape"> portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_eacd241a-220c-5ac8-a1da-45776b89af01" refid="119399" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>jacket</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="ddaa9cf1-f534-56a7-8e66-7534b767bfce">
+				<term>Nehru, Jawaharlal</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>cap</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>national leader</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">"Pt. Jawahar Lal Nehru"</title>
+			<title type="descriptive" pref="false" lang="" script="">Pt. Jawaharlal Nehru</title>
+			<title type="descriptive" pref="false" lang="" script="">पं जवाहरलाल नेहरु</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">posters</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/119399</hra:value>
+				<hra:value>119399</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:05:21">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

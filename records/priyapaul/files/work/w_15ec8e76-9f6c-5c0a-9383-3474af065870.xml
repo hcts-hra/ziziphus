@@ -1,0 +1,194 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_15ec8e76-9f6c-5c0a-9383-3474af065870" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-737e6ca4-f0a7-5a9a-88f1-7c609b3bbcc6">Hanuman</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-f16038a5-7630-5bb9-8d9e-a3d5f7faa3a2">Sita</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-048694c0-93ed-5b54-8923-fb9017e4b9ae">Rama</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-1492ff1c-4c12-5ddb-851a-22420405b9df">Lakshman</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-92738bf8-9745-52a0-a3ed-b5be424fc86a">Sharma, M. L.</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="corporate" refid="uuid-e56887bc-fb57-5307-b9d3-42a6d4cb78d2">Empire Calendar Manufacturing Co.</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+		</dateSet>
+		<descriptionSet>
+			<description source="Sridevi Padmanabhan," lang="en" script="latn">In this sample image with the title "Hanuman Seva" in the catalogue of Empire Calender Manufacturing Co., Lord Hanuman can be seen kneeling in front of Rama, Lakshmana and Sita with his hands folded in prayer. Rama and Lakshmana are depicted carrying bows and a quiver of arrows on their backs and wearing flower garlands, jewellery and crowns. Sita and Rama are seen blessing Hanuman. There is a throne in the background and pillars with a landscape behind the throne.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">M. L. Sharma</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">HANUMAN SEVA
+No. 674</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="signature">M. L. Sharma</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="c13d5a00-3da9-57f7-a6de-a89c03071e94">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 25 cm, W 20 cm, portrait</notes>
+			<measurements type="height" unit="cm">25</measurements>
+			<measurements type="width" unit="cm">20</measurements>
+			<measurements type="shape"> portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_c13d5a00-3da9-57f7-a6de-a89c03071e94" refid="119450" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="048694c0-93ed-5b54-8923-fb9017e4b9ae">
+				<term>Rama</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>throne</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="f16038a5-7630-5bb9-8d9e-a3d5f7faa3a2">
+				<term>Sita</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="92738bf8-9745-52a0-a3ed-b5be424fc86a">
+				<term>Sharma, M. L.</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>garland</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>trade catalogs</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>crown</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>deity</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>bow</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="e56887bc-fb57-5307-b9d3-42a6d4cb78d2">
+				<term>Empire Calendar Manufacturing Co.</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>checked</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="737e6ca4-f0a7-5a9a-88f1-7c609b3bbcc6">
+				<term>Hanuman</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-problem</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Hinduism</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="1492ff1c-4c12-5ddb-851a-22420405b9df">
+				<term>Lakshman</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>arrow</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Pfeil</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Bogen &amp;lt;Waffe&amp;gt;</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">"Hanuman Seva"</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">pages</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="f_autor_zeichen" status="0" display="Artist (characters)">
+				<hra:value>Sharma, M. L.</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/119450</hra:value>
+				<hra:value>119450</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:07:02">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

@@ -1,0 +1,183 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_a7cb133f-e13b-58be-b48a-b3535883ada6" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-6721b586-f208-561e-ab81-1e8af004dfc9">Rehman, Waheeda</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-185eaa8d-7fbe-5c6e-b026-6dbfb5a56ccd">Bachchan, Amitabh</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+			<date type="creation">
+				<earliestDate>1983</earliestDate>
+				<latestDate>1983</latestDate>
+			</date>
+		</dateSet>
+		<descriptionSet>
+			<description source=" " lang="en" script="latn">A page from the film brochure of the Hindi movie "Mahaan" shows important scenes from the film. This movie was released in the year 1983 and had the male protagonist, Amitabh Bachhan in a triple role. The poster shows Amitabh in his three roles. In one image, the older character he plays is in a cage with his wife surrounded by flames. His wife Waheeda Rehman cries while Amitabh looks towards the flames. To the bottom left, Amitabh fights the villain, Amjad Khan, who holds a revolver in his hand. To the bottom right of the image, Amitabh figths with the second villain, Shakti Kapoor. To the top left are the female protagonists, Parveen Babi (left) and Zeenat Aman (right).</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Satya Chitra International presents
+Mahaan
+CinemaScope
+Produced by Satyanarayana - Suryanarayana
+Directed by S. Ramanathan
+Music B.D. Burman</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">महान</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="74732d5e-1944-530e-887f-97d2faa8353b">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_74732d5e-1944-530e-887f-97d2faa8353b" refid="120469" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Mahaan</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>fight</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Amjad Khan</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Ashok Kumar</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>fire</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>weapon</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="6721b586-f208-561e-ab81-1e8af004dfc9">
+				<term>Rehman, Waheeda</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Bollywood</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-original-language</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>cage</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Gerhard</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>brochure</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Hindi Film</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Satya Chitra International</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Parveen Babi</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Shakti Kapoor</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Zeenat Aman</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>S. Ramanathan</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="185eaa8d-7fbe-5c6e-b026-6dbfb5a56ccd">
+				<term>Bachchan, Amitabh</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">"Mahaan"</title>
+			<title type="descriptive" pref="false" lang="" script="">महान</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">pages</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.imdb.com/title/tt0085886/</hra:value>
+				<hra:value>2011-12-14</hra:value>
+				<hra:value>story line, leading actors, director.</hra:value>
+				<hra:value>6</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>Good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/120469</hra:value>
+				<hra:value>120469</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:09:02">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

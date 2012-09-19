@@ -1,0 +1,198 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_917eabf5-ab1d-5593-83ed-f5eb5435caf6" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-acecd1bf-fe1a-57cb-aa58-aa04371194ed">Chawda, H.</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-ddaa9cf1-f534-56a7-8e66-7534b767bfce">Nehru, Jawaharlal</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+			<date type="creation">
+				<earliestDate>ca. 1960 - 1964</earliestDate>
+				<latestDate>ca. 1960 - 1964</latestDate>
+			</date>
+		</dateSet>
+		<descriptionSet>
+			<description source="Sridevi Padmanabhan," lang="en" script="latn">A poster of Pandit Jawaharlal Nehru, the first Prime Minister of independent India, dressed in his trademark Nehru jacket with a rose in his lapel and a white topi (cap).</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">P. P. C: 
+D. D. Neroy</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">H. Chawda</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">P P. C: 122, Zaveri Bazar Bombay 2.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">JAWAHARLAL</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">No. 143</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">MEHRA PRINTERS</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="signature">H. Chawda</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="7fc99c62-ca99-577a-9a01-d7a60ed9af96">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location type="creation">
+				<name type="geographic" vocab="" refid="">Bombay</name>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 33 cm, W 22 cm, portrait</notes>
+			<measurements type="height" unit="cm">33</measurements>
+			<measurements type="width" unit="cm">22</measurements>
+			<measurements type="shape"> portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_7fc99c62-ca99-577a-9a01-d7a60ed9af96" refid="109721" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+			<stylePeriod vocab="" refid="">postcolonial India, early 1960s</stylePeriod>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>white cap</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>national leader</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>jacket</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="ddaa9cf1-f534-56a7-8e66-7534b767bfce">
+				<term>Nehru, Jawaharlal</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="acecd1bf-fe1a-57cb-aa58-aa04371194ed">
+				<term>Chawda, H.</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>checked</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>cap</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>rose</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>red rose</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>red</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>white</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Poster</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">"Jawaharlal"</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">posters</worktype>
+			<worktype vocab="" refid="">paintings (visual works)</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="f_autor_zeichen" status="0" display="Artist (characters)">
+				<hra:value>Chawda, H.</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.encyclopedia.com/doc/1G2-3425500603.html</hra:value>
+				<hra:value>2011-08-06</hra:value>
+				<hra:value>History of the Nehru jacket</hra:value>
+				<hra:value>19</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_personen" vocab="" refid="" status="0" display="personen">
+				<hra:value>Jawaharlal Nehru</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/109721</hra:value>
+				<hra:value>109721</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 15:57:57">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

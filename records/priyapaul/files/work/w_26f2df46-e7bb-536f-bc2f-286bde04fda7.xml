@@ -1,0 +1,156 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_26f2df46-e7bb-536f-bc2f-286bde04fda7" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+		</dateSet>
+		<descriptionSet>
+			<description source=" " lang="en" script="latn">This image, an advertisement for Kaminia Products, has an illustration of an Indian woman with a translucent veil covering her head, earrings and a bindi on her forehead. To the left of the image is a packet labelled Kaminia oil and a small bottle labelled Kaminia snow. To the right of the image is a small bottle with the label Otto Dilbahar and a packet labelled Kaminia sandal soap. The packet has the image of a woman holding a basket on it.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Open Secrets of charm and attraction
+Kaminia Oil
+Kaminia snow
+Kaminia Soaps 
+Otto Dilbahar
+Kaminia Products</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Kaminia Oil
+Delicately perfumed oil for beautifying and increasing the growth of hair. 
+To be rubbed well into the roots of the hair daily. 
+Kaminia Perfumery Co Bombay
+Kaminia Snow
+an ideal day cream
+Otto Dilbahar
+Kaminia Perfumery Co Bombay
+Kaminia Sandal Soap
+Kaminia Perfumery Co Bombay</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="2eca734e-aca0-5cc7-adbb-af9b94f105a9">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 15 cm, L 10 cm, portrait</notes>
+			<measurements type="height" unit="cm">15</measurements>
+			<measurements type="width" unit="cm">10</measurements>
+			<measurements type="shape"> portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_2eca734e-aca0-5cc7-adbb-af9b94f105a9" refid="119775" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>veil</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>hair oil</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>jewellery</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>soap advertising</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Kaminia Products</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>bindi</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Indian woman</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>cosmetic product</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>advertisement</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Times of India Yearbook</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>soap</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Gerhard</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>product advertisement</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="9f5fddf6-ee5f-5aa5-8d7a-a13ad68b41b8">prints (visual works)</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">An advertisement of Kaminia Beauty Products</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">pages</worktype>
+			<worktype vocab="" refid="">advertisements</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/119775</hra:value>
+				<hra:value>119775</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:00:40">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

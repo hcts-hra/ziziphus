@@ -1,0 +1,185 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_c9063607-dde7-5caf-97e5-62731a324059" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-732116f0-bd3e-5c22-b005-5e1c9b666a3d">Mahipal</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-30a002d0-b894-5702-8603-5121c5a28b92">Wadia, Homi</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-2ca870d1-591c-5d27-9c22-ef426432f658">Pahalwan, Vasantrao</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+			<date type="creation">
+				<earliestDate>1952</earliestDate>
+				<latestDate>1952</latestDate>
+			</date>
+		</dateSet>
+		<descriptionSet>
+			<description source="Gerhard Schoenhofer" lang="en" script="latn">The movie "Aladdin and the Wonderful Lamp" (directed by Homi Wadia) got released in 1952. Aladdin (Mahipal) is depicted during a sword duel with the wicked courtier close to a palace like surrounding, with the djinni above holding Aladdins' palace in his hands.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Basant Pictures presents Aladdin And The Wonderful Lamp</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Wadia Brothers Production</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Produced and Directed by HOMI WADIA</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="bc2265d3-eded-5457-a86f-4d6c9e261ddd">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 30cm, W 20 cm, portrait</notes>
+			<measurements type="height" unit="cm">30</measurements>
+			<measurements type="width" unit="cm">20</measurements>
+			<measurements type="shape"> portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_bc2265d3-eded-5457-a86f-4d6c9e261ddd" refid="117918" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+			<stylePeriod vocab="" refid="">1950s</stylePeriod>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>film</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Aladdin and the Wonderful Lamp</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="2ca870d1-591c-5d27-9c22-ef426432f658">
+				<term>Pahalwan, Vasantrao</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>lobby card</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>checked</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Hindi Film</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Bollywood</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="30a002d0-b894-5702-8603-5121c5a28b92">
+				<term>Wadia, Homi</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="732116f0-bd3e-5c22-b005-5e1c9b666a3d">
+				<term>Mahipal</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>adaptation</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Poster</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Filmplakat</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">"Aladdin And The Wonderful Lamp"</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">lobby cards</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Thomas, Rosie 2010. "Still Magic. An Aladdin's Cave of 1950s B-Movie Fantasy" http://www.tasveergharindia.net/cmsdesk/essay/103/index.html (23.11.2010)</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Said, Edward 1995. "Orientalism". London: Penguin Books.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Marzolph, Ulrich 2006. "Arabian Nights Reader". Detroit: Wayne State University Press.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Irwin, Robert 1994. "The Arabian Nights: A Companion". London: Allen Lane.</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.tasveergharindia.net/cmsdesk/essay/103/index.html</hra:value>
+				<hra:value>2010-11-23</hra:value>
+				<hra:value>essay "Still Magic. An Aladdin's Cave of 1950s B-Movie Fantasy" by Rosie Thomas</hra:value>
+				<hra:value>6</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_personen" vocab="" refid="" status="0" display="personen">
+				<hra:value>Mahipal</hra:value>
+			</hra:item>
+			<hra:item type="f_personen" vocab="" refid="" status="0" display="personen">
+				<hra:value>Vasantrao Pahalwan</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/117918</hra:value>
+				<hra:value>117918</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:05:57">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

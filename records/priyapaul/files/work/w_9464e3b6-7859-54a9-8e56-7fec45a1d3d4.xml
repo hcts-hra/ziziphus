@@ -1,0 +1,150 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_9464e3b6-7859-54a9-8e56-7fec45a1d3d4" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+		</dateSet>
+		<descriptionSet>
+			<description source=" " lang="en" script="latn">This textile label of Finlay Muir &amp; Co. shows a musician playing a tumbi, a traditional North Indian instrument from Punjab, and wearing a topi. In the background a range of mountains can be seen. In the corners of the image, four animals - cow, bird, lion, elephant are depicted.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Calcutta.
+Finlay, Muir &amp; Co.  
+Karachi &amp; Bombay.</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="cb8c0d63-8ac1-5792-bfde-f1d0ff696166">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 7 cm, W 12 cm, landscape</notes>
+			<measurements type="height" unit="cm">7</measurements>
+			<measurements type="width" unit="cm">12</measurements>
+			<measurements type="shape"> landscape</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_cb8c0d63-8ac1-5792-bfde-f1d0ff696166" refid="120133" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>musician</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>elephant</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>tumbi</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Medialab</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>zebu</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Matthias</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>bird</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>topi</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>egg</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>musical instrument</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Gerhard</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>cow</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Finlay Muir &amp;amp; Co.</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>bird-nest</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>lion</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>mountain</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Vögel</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">Textile label of Finlay Muir &amp; Co.</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">textile label</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/120133</hra:value>
+				<hra:value>120133</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 15:57:20">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

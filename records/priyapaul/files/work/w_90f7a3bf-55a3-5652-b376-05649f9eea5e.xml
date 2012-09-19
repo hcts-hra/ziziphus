@@ -1,0 +1,193 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_90f7a3bf-55a3-5652-b376-05649f9eea5e" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-f16038a5-7630-5bb9-8d9e-a3d5f7faa3a2">Sita</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-048694c0-93ed-5b54-8923-fb9017e4b9ae">Rama</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-92738bf8-9745-52a0-a3ed-b5be424fc86a">Sharma, M. L.</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="corporate" refid="uuid-e56887bc-fb57-5307-b9d3-42a6d4cb78d2">Empire Calendar Manufacturing Co.</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+		</dateSet>
+		<descriptionSet>
+			<description source=" " lang="en" script="latn">This sample image in the catalogue of Empire Calendar Manufacturing Co., Sita is wearing a yellow sari with a purple blouse and flowers in her hair worships a statue of Rama, which rests in an altar-like space. She holds a tray with offerings which include incense sticks, flowers and a lit lamp. Next to her on the floor lie more flowers and a vessel. Rama and Sita's two sons Lava (Luv) and Kusha stand nearby assisting her. They carry bows and arrows.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Banadevi with Love Kush</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">M. L. Sharma</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="signature">M. L. Sharma</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="eb3e4052-3772-5665-a786-563329a4c542">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 25 cm, W 20 cm, portrait</notes>
+			<measurements type="height" unit="cm">25</measurements>
+			<measurements type="width" unit="cm">20</measurements>
+			<measurements type="shape"> portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_eb3e4052-3772-5665-a786-563329a4c542" refid="119452" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+			<stylePeriod vocab="" refid="">mid 20th century</stylePeriod>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="048694c0-93ed-5b54-8923-fb9017e4b9ae">
+				<term>Rama</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="f16038a5-7630-5bb9-8d9e-a3d5f7faa3a2">
+				<term>Sita</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="92738bf8-9745-52a0-a3ed-b5be424fc86a">
+				<term>Sharma, M. L.</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>statue</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>flower</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>incense stick</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>incense</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Luv-Kush</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="e56887bc-fb57-5307-b9d3-42a6d4cb78d2">
+				<term>Empire Calendar Manufacturing Co.</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>checked</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>devotional pictures</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>altars (religious building fixtures)</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Poster</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">"Banadevi with Love Kush"</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">religious art</worktype>
+			<worktype vocab="" refid="">calendars</worktype>
+			<worktype vocab="" refid="">prints (visual works)</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="f_autor_zeichen" status="0" display="Artist (characters)">
+				<hra:value>Sharma, M. L.</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Pinney, Christopher. 2004. Photos of the Gods. Delhi: Oxford University Press</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Davis, Richard H. 2010. "Temple in a Frame. God Posters For and Of Worship", http://www.tasveergharindia.net/cmsdesk/essay/97/index.html, last accessed 2011-01-11</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://tasveergharindia.net/cmsdesk/viewgallery.aspx?id=81&amp;EId=97&amp;ImageId=12</hra:value>
+				<hra:value>2011-08-02</hra:value>
+				<hra:value></hra:value>
+				<hra:value>21</hra:value>
+			</hra:item>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.tasveergharindia.net/cmsdesk/essay/97/index.html</hra:value>
+				<hra:value>2011-01-11</hra:value>
+				<hra:value></hra:value>
+				<hra:value>6</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/119452</hra:value>
+				<hra:value>119452</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:07:05">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

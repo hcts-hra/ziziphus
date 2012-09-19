@@ -1,0 +1,175 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_50a98e35-8f1b-509f-8885-0b1b064e60bd" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+		</dateSet>
+		<descriptionSet>
+			<description source="Gerhard Schoenhofer" lang="en" script="latn">A snow-covered landscape with several houses, trees, snow and a full moon, in an Eid greeting card. The Urdu text reads: "Assalamo alaikum, Eid Mubarak!"</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="ur">السلام علیکُم عید مبارک</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="other" lang="ur">Assalamo alaikum, Eid mubarak</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="ur">برادر مکرم و معظّم جناب شفیق الدین صاحب السلام علیکم عید مبارک - آپ تو بالکل خاموش رہتے ہیں . کبھی کبھار  اپنی اور گھر کی خیریت سے اطلاع   دیدیا کریں - میری طرف سے بھابھی صاحبہ اور شفیع الدین کو سلام دیں - قبلہ والدہ صاحبہ اور والد صاحب کو سلام . سمیع الدین کو دعا . فقط رفیق الدین</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="other" lang="ur">Biradar-e-mokarram wa mo'azzam janab Shafiquddin sahib, Assalamo alaikum, Eid Mubarak! Aap to bilkul khamosh rahte hain, kabhi kabhar apni aur ghar ki khairiyat se ittila de diya karen. Meri taraf se bhabhi sahiba aur Shafiuddin ko salam den. Qibla walida saheba aur walid saheb ko salam. Samiuddin ko dua. Faqat, Rafiquddin.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="translation" lang="ur">My dear elder and exalted brother Mr.Shafiquddin, May peace be upon you, and greetings of Eid. You remain so quiet! Please keep us updated occasionally with the situation of the family. Please give my regards to the sister-in-law and Shafiuddin. Also my regards to the exalted mother and father, and prayers for Samiuddin. Yours Rafiquddin. (ys)</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="54dd6bf4-f470-54fc-a29d-3f963a0eb55c">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="15f999c3-5f12-570c-a3c7-15678f571734" type="medium">cardboard</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 10 cm, W 15 cm, landscape</notes>
+			<measurements type="height" unit="cm">10</measurements>
+			<measurements type="width" unit="cm">15</measurements>
+			<measurements type="shape"> landscape</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_54dd6bf4-f470-54fc-a29d-3f963a0eb55c" refid="108128" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+			<stylePeriod vocab="" refid="">1930s</stylePeriod>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>house</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Eid Mubarak</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>snow</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Urdu</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>tree</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>moon</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>greeting cards</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>checked</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>festival</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>card</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>eid card</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Postkarte</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">"Assalamo alaikum, Eid Mubarak"</title>
+			<title type="descriptive" pref="false" lang="" script="">Assalamo alaikum, Eid Mubarak</title>
+			<title type="descriptive" pref="false" lang="" script="">السلام علیکُم عید مبارک</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">greeting cards</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Patterson, Steven, Postcards from the Raj, Patterns of Prejudice, Volume 40, Number 2, Routledge, May 2006, 142-158; also see Saloni Mathur, 1999.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Wehbe, Rana, Seeing Beirut through Colonial Postcards: A Charged Reality, (undated) American University of Beirut, Lebanon, http://webfea.fea.aub.edu.lb/proceedings/2004/SRC-ArD-01.pdf</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Mathur, Saloni, "Wanted Native Views: Collecting colonial postcards of India," in Antionette Burton (ed.) Gender, Sexuality and Colonial Modernities, New York: Routledge, 1999, 95-115.</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.tasveergharindia.net/cmsdesk/essay/117/index_1.html</hra:value>
+				<hra:value>2011-04-04</hra:value>
+				<hra:value>online essay "Eid Mubarak: Cross-cultural Image Exchange in Muslim South Asia." by Yousuf  Saeed</hra:value>
+				<hra:value>6</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>Torn</hra:value>
+			</hra:item>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>yellowish due to ageing</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/108128</hra:value>
+				<hra:value>108128</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 15:56:37">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

@@ -1,0 +1,163 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_00fcb0f1-25c2-5fcd-acce-12c156db7c22" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-664f87db-93fc-53c2-bcc1-94d6a30fe186">Krishna</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="corporate" refid="uuid-8565ac3d-6aa5-53ca-9a69-3046d9e3aad1">I.G. Farbenindustrie Aktiengesellschaft</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+			<date type="creation">
+				<earliestDate>1939</earliestDate>
+				<latestDate>1939</latestDate>
+			</date>
+		</dateSet>
+		<descriptionSet>
+			<description source=" " lang="en" script="latn">In this image, Krishna is seen filling a pichkari (water cannon) with liquid colour in preparation for playing with colours to celebrate Holi. Four women, dressed in saris can be seen sitting around him with two of them sitting on a raised platform and also preparing for the festival. One woman is aiming her pichkari at Krishna while another woman kneels down to fill her pichkari. Krishna is also surrounded by pots of various colours. In the background plants and flowers are depicted as well as a colourful sky with the logo of I.G. Farbenindustrie Aktiengesellschaft in its centre.</description>
+			<description vocab="" refid="" lang="en" script="latn">framing (processes)</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">I.G. Farbenindustrie Aktiengesellschaft
+Frankfurt A/M (Germany)
+Sole Importers
+Havero Trading Co. Ltd. Bombay
+Indanthren-Dyes
+Resist the Indian sun and strong Dhobi-wash</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="0264df8e-88a7-5347-904c-d567a1ea8efb">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_0264df8e-88a7-5347-904c-d567a1ea8efb" refid="118279" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="8565ac3d-6aa5-53ca-9a69-3046d9e3aad1">
+				<term>I. G. Farbenindustrie Aktiengesellschaft</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>gopi</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>peacock's feather</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Holi</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>flower garland</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>flower</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Gerhard</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>sari</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Made in Germany</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>pot</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>plant</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="664f87db-93fc-53c2-bcc1-94d6a30fe186">
+				<term>Krishna</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Werbung</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Kalender</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">1939 Advertisement calendar for I. G. Farbenindustrie AG</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">calendars</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.indiaexpress.com/rangoli/holi.html</hra:value>
+				<hra:value>2011-11-15</hra:value>
+				<hra:value></hra:value>
+				<hra:value>19</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/118279</hra:value>
+				<hra:value>118279</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:01:42">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

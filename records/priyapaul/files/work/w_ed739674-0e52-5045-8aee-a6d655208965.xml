@@ -1,0 +1,246 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_ed739674-0e52-5045-8aee-a6d655208965" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="corporate" refid="uuid-64f16108-a0c2-5d1f-80db-e3d921e0dcca">Madurai Mills Co. Ltd.</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="corporate" refid="uuid-b3ad4894-fb33-52b9-ae64-e87471c9aec7">A & F Harvey</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+			<date type="creation">
+				<earliestDate>1950</earliestDate>
+				<latestDate>1950</latestDate>
+			</date>
+		</dateSet>
+		<descriptionSet>
+			<description source="Gerhard Schoenhofer" lang="en" script="latn">On this advertisement calendar for A&amp;F Harvey Ltd., a group of people, deities, demons with heads of animals can be seen gathered around a big deity sitting on a throne in the center of the image. In front of the god, a lion is pictured as well as two plates with food, probably offered as prasad to the god. At the left and right section of the image, elements of a calendar for the year 1950 can be seen. The lower section hosts contact details for resellers and the company advertising.</description>
+			<description vocab="" refid="" lang="en" script="latn">framing (processes)</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">A&amp;F HARVEY LTD.
+Merchants and Cotton Spinners</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Cone Yarn
+Counts up to 80s
+Single Yarns 
+Double Yarns</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Cheese Yarn
+Cone Yarns
+Cheese Yarns
+Cord &amp; Fancy Yarns</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Selling Agents: -
+K.M.S. Lakshmanier &amp; Sons Ltd.,</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Sri Rajarajeswari</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Sharma Art Studio 
+Mathurai</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="??">ADD TEXT HERE</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">ADD TEXT HERE</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="bn">ADD TEXT HERE</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">London Correspondents
+Harvey Brothers Agency Ltd.
+34 Queen Anne's Gate
+Westminster
+London
+S.W. 1</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Madura Mills Co. Ltd.
+Madurai Tuticorin &amp; Ambasamudram
+Madras Presidency
+South India</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Selling Agents: -
+K.M.S. Lakshmanier &amp; Sons Ltd.,
+Yarn Merchants &amp; Agents
+Mathurai, Tindivandam,. Madras, Nagari, Vijayawada, Kakisada, Vizianagaram City &amp; Raipur (C.P.)</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="??">ADD TEXT HERE</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="677eafde-cf55-5e00-b2a1-c49b16388bc2">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 50 cm, W 38 cm,  portrait</notes>
+			<measurements type="height" unit="cm">50</measurements>
+			<measurements type="width" unit="cm">38</measurements>
+			<measurements type="shape">  portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_677eafde-cf55-5e00-b2a1-c49b16388bc2" refid="118314" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>throne</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>pillar</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>advertisement</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>calendar</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>deity</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>animal</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>musical instrument</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Gerhard</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>devotee</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="b3ad4894-fb33-52b9-ae64-e87471c9aec7">
+				<term>A &amp;amp; F Harvey</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>ox</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Hinduism</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>food</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="64f16108-a0c2-5d1f-80db-e3d921e0dcca">
+				<term>Madurai Mills Co. Ltd.</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Werbung</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Tiere</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Kalender</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Hinduismus</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Löwe</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">Sri Raja Rajeswari, in an advertisement calendar of A&amp;F Harvey Ltd. (1950)</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">calendars</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/118314</hra:value>
+				<hra:value>118314</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:02:35">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

@@ -1,0 +1,175 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_52d13197-c218-55c9-b54f-954e1bfbb8ed" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-36e35e64-d26a-5337-bff6-8e4d51f6f36f">Ram, Gobind</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-61da23f2-0dd4-5943-b6d6-e443f67e6969">Ram, Oodey</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+		</dateSet>
+		<descriptionSet>
+			<description source=" " lang="en" script="latn">An image showing an Indian woman lounging on a carpet resting her head on one hand and wearing a sari and traditional jewellery - bangles, arm-bands, anklets and hair accessories.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">13519</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">No. 78 - Sleeping Hindoo woman.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Gobind Ram &amp; Ooday Ram, Jaipur.</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="333c9db9-711f-5deb-8d77-9fca7c25b934">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 10 cm, W 15 cm, landscape</notes>
+			<measurements type="height" unit="cm">10</measurements>
+			<measurements type="width" unit="cm">15</measurements>
+			<measurements type="shape"> landscape</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_333c9db9-711f-5deb-8d77-9fca7c25b934" refid="107969" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Bharatiya Nari</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="36e35e64-d26a-5337-bff6-8e4d51f6f36f">
+				<term>Ram, Gobind</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>picture postcards</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>jewellery</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Medialab</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Traditional Indian clothes</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Gobind Ram &amp;amp; Ooday Ram</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>sari</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="61da23f2-0dd4-5943-b6d6-e443f67e6969">
+				<term>Ram, Oodey</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Hindu woman</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Postkarte</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="e48c5bff-0049-5508-9a54-5381254e21b2">lithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">Sleeping Hindoo Woman</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">postcards</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Kenny, Judith 1995. "Climate, Race, and Imperial Authority: The Symbolic Landscape of the British Hill Station in India." In Annals of the Association of American Geographers 85, no. 4 (1995): 694-714.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Pinney, Christpher 1995. “Moral Topophilia: The Significations of Landscape in Indian Oleographs" in The Anthropology of Landscape, ed. Erie Hirsch and Michael O'Hanlon. Oxford: Oxford University Press.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Mitchell, W. J. T. 2002 "Imperial Landscape." In Landscape and Power, W. J. T Mitchell, 5-34. Chicago and London: The University of Chicago Press.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Mathur S. 2007. "India by Design: Colonial History and Cultural Display". Berkeley, Los Angeles, London: University of California Press; pp. 230.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Talukdar, Shashwati 2010. "Picturing Mountains As Hills. Hill Station Postcards and the Tales They Tell"</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.tasveergharindia.net/cmsdesk/essay/102/index.html</hra:value>
+				<hra:value>2011-01-08</hra:value>
+				<hra:value>Tasveer Ghar essay</hra:value>
+				<hra:value>6</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/107969</hra:value>
+				<hra:value>107969</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:07:33">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

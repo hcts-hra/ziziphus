@@ -1,0 +1,165 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_ded01f8b-4c18-5fcf-8c7e-8efc63078d8d" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+		</dateSet>
+		<descriptionSet>
+			<description source="Gerhard Schoenhofer" lang="en" script="latn">On this advertisement for Anand Singh &amp; Co. Harmoniums, we see two fair skinned girl children feeding a family of swans on a pond close to a spacious park with a luxurious house in the centre of it. The upper section of the image hosts several logos and emblems.</description>
+			<description vocab="" refid="" lang="en" script="latn">framing (processes)</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Anand Singh &amp; Co.,
+(Gold Medalists)
+Manufacturers of all kinds of HIGH CLASS HARMONIUMS.
+Nai Sarak, New Delhi</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">ADD TEXT HERE</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Always Buy ANAND FLUTE.</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="dc1050ba-7411-5d0e-9873-891ebfcef60e">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 50 cm, W 38 cm, portrait</notes>
+			<measurements type="height" unit="cm">50</measurements>
+			<measurements type="width" unit="cm">38</measurements>
+			<measurements type="shape"> portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_dc1050ba-7411-5d0e-9873-891ebfcef60e" refid="119056" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>park</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>house</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>girl</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>fair skin</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>flower</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>harmonium</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>swan</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>tree</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>animal</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>musical instrument</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>child</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Anand Singh &amp;amp; Co.</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-new</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-original-language</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Werbung</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Blume</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Harmonium</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Schwan</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Kind</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">Two kids play, in an advertisement of Anand Singh &amp; Co., Delhi.</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">advertisements</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>torn</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/119056</hra:value>
+				<hra:value>119056</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:10:50">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

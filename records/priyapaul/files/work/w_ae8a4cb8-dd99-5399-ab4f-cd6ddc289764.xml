@@ -1,0 +1,199 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_ae8a4cb8-dd99-5399-ab4f-cd6ddc289764" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-f16038a5-7630-5bb9-8d9e-a3d5f7faa3a2">Sita</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-048694c0-93ed-5b54-8923-fb9017e4b9ae">Rama</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-92738bf8-9745-52a0-a3ed-b5be424fc86a">Sharma, M. L.</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="corporate" refid="uuid-e56887bc-fb57-5307-b9d3-42a6d4cb78d2">Empire Calendar Manufacturing Co.</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+		</dateSet>
+		<descriptionSet>
+			<description source="Sridevi Padmanabhan," lang="en" script="latn">A sample image from a catalogue of Empire Calender Manufacturing Co. with the title "Sabri Ke Ber" which translates to "Sabri's Berries". It is a reference to the story of Rama, seen here with bow and arrow while he was in exile in the forest, and that of his ardent devotee Sabri (was from a lower caste-Bhil). Here she is seen kneeling at his feet offering him the berries she had picked. Behind Rama Sita stands and looks toward Sabri while holding on to a branch with flowers. Rama, Sita and Sabri are dressed in simple clothes. Sita is wearing a flower garland and bracelet. Rama is wearing flowers in his hair and holy bead (Rudraksh) necklace. A waterfall, a lake and mountains can be seen in the background.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Sabri-Ke-Ber
+No. 653</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">M. L. Sharma</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="signature">M. L. Sharma</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="97224133-05a8-5139-b1e6-360e8213bbf0">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 25 cm, W 20 cm, portrait</notes>
+			<measurements type="height" unit="cm">25</measurements>
+			<measurements type="width" unit="cm">20</measurements>
+			<measurements type="shape"> portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_97224133-05a8-5139-b1e6-360e8213bbf0" refid="119454" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>garland</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>sacrifice</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="92738bf8-9745-52a0-a3ed-b5be424fc86a">
+				<term>Sharma, M. L.</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>flower garland</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>bow</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>lake</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="f16038a5-7630-5bb9-8d9e-a3d5f7faa3a2">
+				<term>Sita</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Sabri</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>tree</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Hinduism</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>arrow</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>mountain</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>trade catalogs</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>waterfall</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>quiver</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="e56887bc-fb57-5307-b9d3-42a6d4cb78d2">
+				<term>Empire Calendar Manufacturing Co.</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Ramayana</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>bracelet</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>meadow</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>deity</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="048694c0-93ed-5b54-8923-fb9017e4b9ae">
+				<term>Rama</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>flower</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">"Sabri-Ke-Ber"</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">pages</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="f_autor_zeichen" status="0" display="Artist (characters)">
+				<hra:value>Sharma, M. L.</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/119454</hra:value>
+				<hra:value>119454</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:07:09">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

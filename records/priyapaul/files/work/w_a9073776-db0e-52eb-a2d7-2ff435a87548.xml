@@ -1,0 +1,216 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_a9073776-db0e-52eb-a2d7-2ff435a87548" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+			<date type="creation">
+				<earliestDate>1937</earliestDate>
+				<latestDate>1937</latestDate>
+			</date>
+		</dateSet>
+		<descriptionSet>
+			<description source=" " lang="en" script="latn">A white woman with short red hair is depicted wearing a fur coat baring her left shoulder. She is wearing a glittering bracelet, a ring and earrings.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">PEARS
+The Jewel of Soaps</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="44e51dad-aee3-55ab-8765-1f883c943264">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 30 cm, W 20 cm, portrait</notes>
+			<measurements type="height" unit="cm">30</measurements>
+			<measurements type="width" unit="cm">20</measurements>
+			<measurements type="shape"> portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_44e51dad-aee3-55ab-8765-1f883c943264" refid="119784" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+			<stylePeriod vocab="" refid="">1930s</stylePeriod>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>lipstick</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>advertisement</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>fair skin</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Caucasian type</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>soap advertising</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>bracelet</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>fur</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>ring</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>whiteness</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Times of India Yearbook</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>soap</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>checked</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Pears</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>coat</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>magazines</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>red lipstick</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>jewellery</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Ring &amp;lt;Schmuck&amp;gt;</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Armring</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Seife</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Schmuck</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Werbung</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Lippenstift</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Pelz</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="9f5fddf6-ee5f-5aa5-8d7a-a13ad68b41b8">prints (visual works)</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">Advertisement for "Pears" soap</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">pages</worktype>
+			<worktype vocab="" refid="">advertisements</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Dyer, Richard and Christine Gledhill 2009. "Wanted: Cultured ladies Only! Female Stardom and Cinema in India 1930s-1950s". Urbana and Chicago: University of Illinois Press.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Sivulka, Julianne 1998. "Soap, Sex and Cigarettes: A Cultural History of Advertising". Belmont, California: Wadsworth Publishing Co.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>McClintock, Anne 2001. “Soft Soaping Empire: Commodity Racism and Imperial Advertising” in Double Crossings: Madness, Sexuality and Imperialism. Vancouver, Canada: Ronsdale.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Gadihoke, Sabika 2010. "Selling Soap and Stardom: The Story of Lux"</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>McClintock, Anne 1995. "Imperial Leather. Race, Gender and Sexuality in the colonial contest." New York: Routlegde.</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://science.jrank.org/pages/8820/Consumerism-SOAP.html</hra:value>
+				<hra:value>2011-08-21</hra:value>
+				<hra:value></hra:value>
+				<hra:value>26</hra:value>
+			</hra:item>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.beauty-soap-and-bubbles.com/pears-soap.html</hra:value>
+				<hra:value>2011-08-21</hra:value>
+				<hra:value></hra:value>
+				<hra:value>26</hra:value>
+			</hra:item>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://mywretchedconsciousness.wordpress.com/2008/10/10/a-brief-history-of-soap/</hra:value>
+				<hra:value>2011-08-21</hra:value>
+				<hra:value></hra:value>
+				<hra:value>26</hra:value>
+			</hra:item>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.tasveergharindia.net/cmsdesk/essay/104/index.html</hra:value>
+				<hra:value>2010-12-13</hra:value>
+				<hra:value>Tasveer Ghar essay</hra:value>
+				<hra:value>6</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/119784</hra:value>
+				<hra:value>119784</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:00:59">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

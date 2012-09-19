@@ -1,0 +1,191 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_c8252da3-59ce-5d9f-9513-70223df5fc94" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-0813ec19-f470-5797-b003-eb5b34c0cc7d">Dayal, Prabhu</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-2705b1d3-243a-52a2-8828-9d69786c16cb">Tyabji, Abbas</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+		</dateSet>
+		<descriptionSet>
+			<description source="Sridevi Padmanabhan," lang="en" script="latn">The poster shows the Indian freedom fighter AbbasTayyabji (1853 - 1936). He is seen with a beard and moustache and wearing a jacket and cap.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">P. Dayal [artist's signature]</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">SRKD [signature]</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Copyright.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Sriman Abbas Tyabji</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Published by
+Shyam Sundar Lal,
+Picture Merchant,
+Chowk, Cawnpore.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">श्रीमान अब्बास तैयब जी</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">प्रकाशक-
+श्यामसुंदरलाल, 
+पिक्चर मर्चन्ट, चौक, कानपुर</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="signature">P. Dayal</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="signature">SRKD</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="f0fd36db-6ebc-58c3-a98b-8ef3b6260762">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 25 cm, W 20 cm,  portrait</notes>
+			<measurements type="height" unit="cm">25</measurements>
+			<measurements type="width" unit="cm">20</measurements>
+			<measurements type="shape">  portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_f0fd36db-6ebc-58c3-a98b-8ef3b6260762" refid="109895" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>elderly</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="2705b1d3-243a-52a2-8828-9d69786c16cb">
+				<term>Tyabji, Abbas</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Medialab</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="0813ec19-f470-5797-b003-eb5b34c0cc7d">
+				<term>Dayal, Prabhu</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>old man</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>struggle for freedom</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>man</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="e48c5bff-0049-5508-9a54-5381254e21b2">lithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">"Sriman Abbas Tyabji"</title>
+			<title type="descriptive" pref="false" lang="" script="">Sriman Abbas Tyab ji</title>
+			<title type="descriptive" pref="false" lang="" script="">श्रीमान अब्बास तैयब जी</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">posters</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="f_autor_zeichen" status="0" display="Artist (characters)">
+				<hra:value>Dayal, P.</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.indianexpress.com/oldStory/968/</hra:value>
+				<hra:value>2011-08-22</hra:value>
+				<hra:value>Abbas Tyabji's biography</hra:value>
+				<hra:value>19</hra:value>
+			</hra:item>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://epaper.namoleague.com/EpaperArticle.aspx?title=The%20Grand%20Old%20man%20of%20Gujarat_189</hra:value>
+				<hra:value>2011-08-22</hra:value>
+				<hra:value>Abbas Tyabji's legacy</hra:value>
+				<hra:value>19</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/109895</hra:value>
+				<hra:value>109895</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:02:46">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

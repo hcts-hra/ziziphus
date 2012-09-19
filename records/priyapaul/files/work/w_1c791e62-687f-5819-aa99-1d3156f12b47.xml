@@ -1,0 +1,210 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_1c791e62-687f-5819-aa99-1d3156f12b47" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-65d331c8-aea5-564e-a372-b0b6cd6f30df">Gandhi, Mohandas Karamchand</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+		</dateSet>
+		<descriptionSet>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">TO WHOM WILL YOU GIVE?</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">आप किसको देना चाहते हैं?</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">60 CRORE'S</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">६० करोड
+विदेशी मिलों को
+या 
+अपने गरीब किसानों को</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">To Foreign
+Mills</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">ADD ORIGINAL TEXT HERE</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">or</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">ADD ORIGINAL TEXT HERE</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">To our poor
+Cultivators?</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">ADD ORIGINAL TEXT HERE</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Copy Right
+K</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="faa12deb-a779-5925-92ba-684bc4de09b1">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_faa12deb-a779-5925-92ba-684bc4de09b1" refid="139309" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+			<stylePeriod vocab="" refid="">1920s - 1930s</stylePeriod>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>peasant</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>plough</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>national leader</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>map of India</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="65d331c8-aea5-564e-a372-b0b6cd6f30df">
+				<term>Gandhi, Mohandas Karamchand</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>political posters</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>halo</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>factory</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>spinning wheel</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>checked</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-original-language</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>industry</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>ox</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>money</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>map</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Poster</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">"To whom will you give?"</title>
+			<title type="descriptive" pref="false" lang="" script="">Aap Kisko Dena Chahte Hain?</title>
+			<title type="descriptive" pref="false" lang="" script="">आप किसको देना चाहते हैं?</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">posters</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Pinney, Christopher. 2004. Photos of the Gods. Delhi: Oxford University Press</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Trivedi, Lisa. 2003. Visually Mapping the Nation: Swadeshi Politics in Nationalist India, 1920-1930. Journal of Asian Studies 62 (1): Figure 2.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Guha, Ramachandra, 2008. India after Gandhi (New York: HarperCollins), pp. 51-96.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Ramaswamy, Sumathi 2011. "Artful Mapping in Bazaar India. Cartographic Reflections on the Priya Paul Collection", http://www.tasveergharindia.net/cmsdesk/essay/116/index_1.html, last accessed 2011-03-28</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/139309</hra:value>
+				<hra:value>139309</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:11:34">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

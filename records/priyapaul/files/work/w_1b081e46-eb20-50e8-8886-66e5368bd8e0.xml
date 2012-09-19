@@ -1,0 +1,191 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_1b081e46-eb20-50e8-8886-66e5368bd8e0" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+			<date type="creation">
+				<earliestDate>1979</earliestDate>
+				<latestDate>1979</latestDate>
+			</date>
+		</dateSet>
+		<descriptionSet>
+			<description source="Gerhard Schoenhofer" lang="en" script="latn">A poster/advertisement of 1979 released Hindi film, "Do Ladke Dono Kadke" showing the main actors, Amol Palekar and Asrani carrying liquor bottles and passing mischievous looks. The upper section of the advertisement shows a close up of the female protagonist, Moushumi Chatterjee. The title translates to "Two Boys and both are poppers"</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Romu N. Sippy presents 
+Basu Chatterjee's 
+Do Ladke Dono Kadke
+starring</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Moushumi, Amol Palekar, Asrani, Ranjeet, Iftikhar, Prema Narayan, Dina Pathak, Viju Khote, Mona, Nirmal Kumar, Vinay Sibbal, Niloo Phile, Sawan Varma, Manik Chowdhury, Rajat Kumar, Amal Sen, Pardesi, Harish Chandra, Master Ravi, R.S. Chopra, Ritu Kamal &amp; Keshto Mukherje, Coca Cola
+Special Appearance: Navin Nischol, Mithu Mukherjee</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Produced by Jayanta Mukherjee
+Screenplay, Dialogue, Direction
+Basu Chatterjee
+Cinematography K.K. Mahajan
+Audiography Narinder Singh
+Music Hemant Kumar
+Editing V.N. Mayekar
+Story Robi Ghosh
+Lyrics Yogesh
+Costumes M.R. Bhutkar
+Make Up Shyam Khandekar
+Publicity Officers V.P. SAthe &amp; Colin Pal
+Processed at Ramnord Research Lab. Ltd.
+Production Manager B.K.Singh, Narender
+Colour Consultant Rao &amp; Patwardhan
+Stills &amp; Publicity Kiran Arts
+Publicity Printers Nensey Printers, Oriental Litho Works
+Song Recording Robin Chatterjee
+Blocks Nensey Blocks
+Pub. DesignerArtview &amp; Art Home
+Chief Assist. Director Laxmi Pandey
+Special Effects Dayabhai
+Associate Screenplay Writer
+(Mrs.) Keke Chatterjee
+Playback Singers Asha Bhonsle, Yesudas
+Chief Asst. Cinematography Ajay Prabhakar
+Re-Recording Mangesh Desai
+Financial Advisers N.V. Vale &amp; Co
+Outdoor Equipment Suppliers Rupam Chitra, Nagra Sound Service, T.N. Industries, H. Karmali
+Chief Electrician Abdul Aziz Syed
+Prod. Controller Jay R. Samtani
+Disc H.M.V.
+Costume Designers Leena Daru,
+Art Kachins &amp; New Stylo
+Main Tiltles S. Ghalib
+Ajit Bannerjee Assistants
+Direction Aroop Kumar Ganguly &amp; Dinesh Shailander
+Musix Ashish, Babloo
+Make-up Pramod V. Kawiekar, V.G. Deshmukh
+Editing Sakaram Borse
+Photography Manish Sarkar, V.S. Srivastav
+Audiography Arun Chakraborty, Katrik Dutt
+Production Narayan Poojari, Charan, James, Heera, Abdul, Aboo, Muniraj
+Costumes Mohan Pardesi, H. Babu</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Eastmancolor</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="6ba91d5d-01ed-5a21-b9d0-3e17ad735d87">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_6ba91d5d-01ed-5a21-b9d0-3e17ad735d87" refid="120465" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Moushumi Chatterjee</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Basu Chatterjee</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Gerhard</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Hindi Film</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Do ladke dono kadke</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Bollywood</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Amol Palekar</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>liquor</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Navin Nischol</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">"Do Ladke Dono Kadke"</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">brochures</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.imdb.com/title/tt0157545/</hra:value>
+				<hra:value>2011-12-12</hra:value>
+				<hra:value>story line, leading actors, director.</hra:value>
+				<hra:value>6</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>Good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/120465</hra:value>
+				<hra:value>120465</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:08:52">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

@@ -1,0 +1,249 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_3bc00500-96a4-5c16-8ded-44a1f8e3a5ca" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="corporate" refid="uuid-debc21eb-564b-52f1-97d2-f48a73c3b6b9">Oriental Calendar Manufacturing Company</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="corporate" refid="uuid-dc577755-768d-595a-8b13-91cda988cb6c">Sohan Lal & Sons</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="corporate" refid="uuid-210e5584-dfbf-5a1b-93a0-504460d8e795">Sapan Bros.</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+		</dateSet>
+		<descriptionSet>
+			<description source=" " lang="en" script="latn">On this advertisement from the company Sohan Lal &amp; Sons, we see an Indian woman, wearing a blue sari and carrying a basket of vegetables on her head. She also has a stack of grain under her arm. In the background, fields, a water pump, a tractor as well as four other farmers can be seen.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">सोहन लाल एन्ड सन्स
+मुख्य विक्रेता:
+जी - आई काले तथा स्टीम पाईप, पाईप फिटिंग, टियूबवैल  फिटिंग
+जाली तथा फिल्टर</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">कार्यालय 268036
+निवास 212837</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">शाखा यू. पी. बाडर
+213510</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">मुख्य कार्यालय:
+5055, सिरकी वालान, हौज काजी,
+दिल्ली-6
+शाखा:
+ऐ 121 रावलपिंडी गार्डन,
+दिल्ली यू. पी. बाडर</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="other" lang="hi">Sohan Lal &amp; Sons</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Sapan Bros.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="signature">Sapan Bros.</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="bccdd0d5-5155-5c3d-8b4c-5f7694843efd">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 50 cm, W 38 cm, portrait</notes>
+			<measurements type="height" unit="cm">50</measurements>
+			<measurements type="width" unit="cm">38</measurements>
+			<measurements type="shape"> portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_bccdd0d5-5155-5c3d-8b4c-5f7694843efd" refid="118855" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+			<stylePeriod vocab="" refid="">ca. 1960s</stylePeriod>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>water pump</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="dc577755-768d-595a-8b13-91cda988cb6c">
+				<term>Sohan Lal &amp;amp; Sons</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>sugarcane</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>sari</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="debc21eb-564b-52f1-97d2-f48a73c3b6b9">
+				<term>Oriental Calendar Manufacturing Company</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>basket</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>water</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="210e5584-dfbf-5a1b-93a0-504460d8e795">
+				<term>Sapan Bros.</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>blue</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>tractor</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>industrialization</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>agricultural development</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>checked</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>crop</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Bharatiya Nari</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>sickle</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>blue sari</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>peasant</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>agriculture</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>vegetables</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>nation</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Hindu woman</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>woman</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Werbung</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Sari</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Blau</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">Advertisement for Sohan Lal &amp; Sons showing farmer girls</title>
+			<title type="descriptive" pref="false" lang="" script="">"Sohan Lal &amp; Sons"</title>
+			<title type="descriptive" pref="false" lang="" script="">सोहन लाल एन्ड सन्स</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">advertisements</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="f_autor_zeichen" status="0" display="Artist (characters)">
+				<hra:value>Sapan Bros.</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Storey, John 1999. "Cultural Consumption and Everyday Life". New York: Oxford University Press.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>de Certeau, Michel 1984. "The Practices of Everyday Life" . Berkeley: University of California Press.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Braudel, Fernand 1981. "The Structures of Everyday Life". London: Collins.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Freitag, Sandria B. 2010. "Consumption and identity: Imagining ‘Everyday Life’ Through Popular Visual Culture", http://www.tasveergharindia.net/cmsdesk/essay/96/index.html,  2011-03-17</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/118855</hra:value>
+				<hra:value>118855</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:04:15">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

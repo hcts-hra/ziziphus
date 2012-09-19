@@ -1,0 +1,181 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_38b9d02e-1984-599e-a408-6b1e594f37b2" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+		</dateSet>
+		<descriptionSet>
+			<description source=" " lang="en" script="latn">On this advertisement for Scandale underwear, a woman is jumping high up in the air next to her black silhouette wearing the advertised product. An elaborate advertising text is printed on the right side of the image.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">So light! So comfortable and
+Supple -</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">assuring every Woman and Girl of the
+greatest ease and perfect control. To
+wear a SCANDALE, all elastic net belt or
+corselet means easy living, happy care-
+free days. Any discomfort or difficulty
+which you may ever have had with your
+foundations will be done away with for
+good when you S C A N D A L E - ISE.
+Neither repeated washings nor the most
+tropical conditions, can in any
+way affect SCANDALE foundations. You
+can even wear a SCANDALE model
+without suspenders and yet it will never
+ride up - it fits snugly and comfortably and with just
+that right amount of "give".</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Hints on buying your foundation:
+1. Always be fitted if you can, and in no case choose an under-
+size.
+2. Remember that a good foundation is important for your
+general well-being. 
+3. It is to your advantage to buy two similar models and wear
+each on alternative weeks, they will last longer.
+4. Remember that there are over 40 different SCANDALE
+models, made in 5 strengths, so as to suit every type of figure.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">SCANDALE
+There are no substitutes.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">At all leading stores and corsetieres throughout the World. Write for Free
+Illustrated Brochure No. I. B. 30, and if any difficulty in obtaining, for name of
+nearest stockist to: Petit &amp; Co., Ltd., (Wholesale only) 81, Great Portland
+Street, London, W. 1.</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="850ec861-7805-5654-8603-2957b6accbf2">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 15 cm, W 20 cm, landscape</notes>
+			<measurements type="height" unit="cm">15</measurements>
+			<measurements type="width" unit="cm">20</measurements>
+			<measurements type="shape"> landscape</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_850ec861-7805-5654-8603-2957b6accbf2" refid="119857" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>underwear</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>advertisement</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Caucasian type</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Scandale</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>dress</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>western woman</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>whiteness</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Times of India Yearbook</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Gerhard</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>blonde hair</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>product advertisement</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Werbung</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="9f5fddf6-ee5f-5aa5-8d7a-a13ad68b41b8">prints (visual works)</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">An advertisement for Scandale undergarments</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">pages</worktype>
+			<worktype vocab="" refid="">advertisements</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/119857</hra:value>
+				<hra:value>119857</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:03:15">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

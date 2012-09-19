@@ -1,0 +1,147 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_09d5d53e-468f-5179-bae9-fc114c1521ac" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+		</dateSet>
+		<descriptionSet>
+			<description source="Gerhard Schoenhofer" lang="en" script="latn">On this advertisement for Chesterfield cigarettes, a young Ronald Reagan can be seen writing season greetings on Chesterfield cartons in order to send them off to friends and relatives while smoking a cigarette himself.</description>
+			<description vocab="" refid="" lang="en" script="latn">framing (processes)</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">I'm sending Chesterfields to all my friends. That's the merriest Christmas any smoker can have - Chesterfield mildness plus no unpleasant after-taste. 
+Ronald Reagan
+see Ronald Reagan starring in "Hong Kong" a Pine-Thomas Paramount Production
+Color by Technicolor
+Chesterfield
+Buy the beautiful "Christmas-card" carton</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="fd958813-af0d-5919-b0db-49eae39d14f4">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 30 cm, W 20 cm, portrait</notes>
+			<measurements type="height" unit="cm">30</measurements>
+			<measurements type="width" unit="cm">20</measurements>
+			<measurements type="shape"> portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_fd958813-af0d-5919-b0db-49eae39d14f4" refid="108391" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Christmas</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>cigarette advertising</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>smoking</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Gerhard</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Reagan, Ronald</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>season greetings</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Chesterfield Cigarettes</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">Portrait of Ronald Reagan, in an advertisement of Chesterfields Cigarettes</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">posters</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://otal.umd.edu/~vg/amst205.S97/vj05/cigad.html</hra:value>
+				<hra:value>2011-08-21</hra:value>
+				<hra:value>Tom Coyle's "Cigarettes" Project #5</hra:value>
+				<hra:value>26</hra:value>
+			</hra:item>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.life.com/gallery/43871/breathtaking-classic-cigarette-ads#index/0</hra:value>
+				<hra:value>2011-08-21</hra:value>
+				<hra:value></hra:value>
+				<hra:value>26</hra:value>
+			</hra:item>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.time.com/time/magazine/article/0,9171,1905530,00.html</hra:value>
+				<hra:value>2011-08-21</hra:value>
+				<hra:value>"Breathtaking Classic Cigarette Ads"</hra:value>
+				<hra:value>26</hra:value>
+			</hra:item>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.tvparty.com/vaultcomcig.html</hra:value>
+				<hra:value>2011-08-21</hra:value>
+				<hra:value>"Cigarette Commercials: Cigarette Advertising on TV" by Billy Ingram.</hra:value>
+				<hra:value>26</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/108391</hra:value>
+				<hra:value>108391</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:02:18">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

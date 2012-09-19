@@ -1,0 +1,210 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_65c2cd3d-d9ec-5e4f-9b7e-b4504b214d7a" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-0e3a4b0b-b175-510b-bd48-242e5fa2a018">Singha, M.</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+		</dateSet>
+		<descriptionSet>
+			<description source=" " lang="en" script="latn">A smiling child sits on a cushion, holding the Indian national flag in its left hand. A toy rifle is in his right hand, resting on his thigh and other toys - a tank, a plane and a drum can be seem around him.  A partially visible map of India is inscribed on the cushion on which the child sits.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">झंडा ऊँचा रहे हमारा</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="other" lang="hi">Jhanda uncha rahe hamara</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="other" lang="hi">Let our flag fly high</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">M. Singha</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="signature">M. Singha</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="f423c12a-5088-5a58-bc35-01b228560d9a">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 20 cm, W 27 cm,  landscape</notes>
+			<measurements type="height" unit="cm">20</measurements>
+			<measurements type="width" unit="cm">27</measurements>
+			<measurements type="shape">  landscape</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_f423c12a-5088-5a58-bc35-01b228560d9a" refid="109884" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+			<stylePeriod vocab="" refid="">late 20th century</stylePeriod>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>rifle</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>drum</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Indian flag</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>weapon</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>toy</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>child</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>flag</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>cushion</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>checked</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>tank</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>map of India</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>political posters</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="0e3a4b0b-b175-510b-bd48-242e5fa2a018">
+				<term>Singha, M.</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>map</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>sun</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>airplane</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Poster</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">Let our flag fly high</title>
+			<title type="descriptive" pref="false" lang="" script="">Jhanda uncha rahe hamara</title>
+			<title type="descriptive" pref="false" lang="" script="">झंडा ऊँचा रहे हमारा</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">posters</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="f_autor_zeichen" status="0" display="Artist (characters)">
+				<hra:value>Singha, M.</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Ramaswamy, Sumathi 2011. "Artful Mapping in Bazaar India. Cartographic Reflections on the Priya Paul Collection". http://www.tasveergharindia.net/cmsdesk/essay/116/index_1.html, last accessed 2011-26-03</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Ramusack, Barbara, 2003. The Indian Princes and their States. Cambridge: Cambridge University Press, pp. 245-274.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Coplan, Ian, 1997. The Princes of India in the Endgame of Empire, 1917-1947. Cambridge: Cambridge University Press, pp. 229-287.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Roy, Srirupa. 2006. A Symbol of Freedom: The Indian Flag and the Transformations of Nationalism, 1906-2002. Journal of Asian Studies 65 (3):495-527.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Neumayer, Erwin, and Christine Schelberger. 2008."Bharat mata: India's freedom movement in popular art". Delhi: Oxford University Press.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Nair, P. Thankappan. 1987. Indian National Songs and Symbols. Calcutta: Firma KLM Pvt. Ltd, pp. 74-97.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Menon, V.P. 1956. The Story of the Integration of the Indian States. New York: Macmillan.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Thongchai Winichakul. 1996. Maps and the Formation of the Geo-Body of Siam. In Asian Forms of the Nation, edited by H. Antlov and S. Tonnesson. London: Curzon Press, p. 70.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Guha, Ramachandra, 2008. India after Gandhi (New York: HarperCollins), pp. 51-96.</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>torn</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/109884</hra:value>
+				<hra:value>109884</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:02:27">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

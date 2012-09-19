@@ -1,0 +1,184 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_9f1dc5ae-65a8-5929-b98f-e28d88e64def" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="136979084" pref="true">Raja, H. R.</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-bcd14a5a-77c3-5099-84fe-05167d4d3503">Raja, H. R.</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-33dec962-c338-5e45-82bd-35a1334509a4">Pratap, Maharana</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-a43f0f77-cc82-548f-a37a-1edd1e98d07a">Bose, Subhas Chandra</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-ba21cc6d-11fd-599f-b1c5-54e234034504">Bhagat Singh</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-46739f49-9aaf-5965-93cc-a613adb1b19e">Azad, Chandra Shekhar</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+		</dateSet>
+		<descriptionSet>
+			<description source="Gerhard Schoenhofer" lang="en" script="latn">Portraits of Chandra Shekhar Azad, Bhagat Singh, Subhas Chandra Bose, Shivaji and Maharana Pratap in an advertisement of Saloni pure mustard oil. The oil is manufactured by Mahesh Oil Industries, Agra Road, Shamshabad, Agra. Jai Hind and Inquilab Zindabad, two very popular slogans of the freedom struggle of India are also part of the image.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">सलोनी ब्रान्ड विशुद्ध सरसों खल व तेल
+निर्माता:-
+महेश ऑयल इण्डस्ट्रीज
+आगरा रोड, शमशाबाद (आगरा)</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">इऩ्कलाब जिन्दाबाद</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">जय हिन्द</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="signature">H. R. Raja.</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="eae31ae1-787c-58b6-afbd-d9812b7d97f3">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 50 cm, W 38 cm, portrait</notes>
+			<measurements type="height" unit="cm">50</measurements>
+			<measurements type="width" unit="cm">38</measurements>
+			<measurements type="shape"> portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_eae31ae1-787c-58b6-afbd-d9812b7d97f3" refid="118139" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>advertisement</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="ba21cc6d-11fd-599f-b1c5-54e234034504">
+				<term>Bhagat Singh</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="46739f49-9aaf-5965-93cc-a613adb1b19e">
+				<term>Azad, Chandra Shekhar</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="a43f0f77-cc82-548f-a37a-1edd1e98d07a">
+				<term>Bose, Subhash Chandra</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="bcd14a5a-77c3-5099-84fe-05167d4d3503">
+				<term>Raja, H. R.</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="33dec962-c338-5e45-82bd-35a1334509a4">
+				<term>Pratap, Maharana</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Gerhard</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-original-language</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Saloni pure mustard oil</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Raja</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term></term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">Five national heroes in an advertisement of Saloni pure mustard oil.</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">advertisements</worktype>
+			<worktype vocab="" refid="">posters</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="f_autor_zeichen" status="0" display="Artist (characters)">
+				<hra:value>Raja, H. R.</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>Good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/118139</hra:value>
+				<hra:value>118139</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 15:57:47">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

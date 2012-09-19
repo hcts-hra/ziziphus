@@ -1,0 +1,147 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_6c3e61d4-369c-558b-ab05-7505544f048b" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+		</dateSet>
+		<descriptionSet>
+			<description source=" " lang="en" script="latn">Page no. 17 from an old magazine, "Risala Kok Shastar, Lahore" with sketches of four models showcasing fashion trends (upmarket apparels, hairstyles, jewellery etc) of the time, early 1900s. The page is printed in red ink and it is divided into four equal rectangular boxes and each box contains a sketch. 
+In clock-wise order- "Miss Gauhar Jahan", who wears a saree and poses crossed hands. Next to her is the "Gentleman Lady" (who wears a western outfit and carries an umbrella and flower basket); Bottom right is "Shauqeen Aurat" (the woman who lives her life to the fullest) poses crosslegged on a chair. She wears Mughal style dress. Also seen a flower vase kept on the side table). Bottom left is the Dana aurat</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Risala "Kok Shastar" Lahore.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="ur">مس گوہر جان . جنٹلمین لیڈی . شوقین عورت. دانا عورت
+ملکھی رام مصور، لاہور</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="other" lang="ur">Gentleman lady, Miss Goharjan, Shauqeen aurat, Dana aurat
+Malkhi Ram Musavvir, Lahore</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="9782c25e-aa69-5a7d-911b-17035319940d">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 20 cm, W 12 cm, portrait</notes>
+			<measurements type="height" unit="cm">20</measurements>
+			<measurements type="width" unit="cm">12</measurements>
+			<measurements type="shape"> portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_9782c25e-aa69-5a7d-911b-17035319940d" refid="108085" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>fashion</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>magazines</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Medialab</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-original-language</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="e48c5bff-0049-5508-9a54-5381254e21b2">lithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">Page no. 17 from the magazine "Risala Kok Shastar, Lahore"</title>
+			<title type="descriptive" pref="false" lang="" script="">Miss Goharjan, Gentleman lady, Shauqeen aurat, Dana aurat</title>
+			<title type="descriptive" pref="false" lang="" script="">مس گوہر جان . جنٹلمین لیڈی . شوقین عورت . دانا عورت</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">pages</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="f_autor_zeichen" status="0" display="Artist (characters)">
+				<hra:value>ملکھی رام</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_autor_zeichen" status="0" display="Artist (characters)">
+				<hra:value>Ram, Malkhi</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_ksignatur_zeichen" status="0" display="artist_signature_characters">
+				<hra:value>ملکھی رام مصور، لاہو</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_ksignatur_umschrift" status="0" display="artist_signature_transcription">
+				<hra:value>Malkhi Ram Musavvir, Lahore</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>Torn</hra:value>
+			</hra:item>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>yellowish due to ageing</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/108085</hra:value>
+				<hra:value>108085</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:10:47">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

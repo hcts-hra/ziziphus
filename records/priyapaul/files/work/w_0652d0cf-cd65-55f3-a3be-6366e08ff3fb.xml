@@ -1,0 +1,155 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_0652d0cf-cd65-55f3-a3be-6366e08ff3fb" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-d5a3acfc-595a-5357-9ff2-753b599da969">Viscomi, Francesco</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="corporate" refid="uuid-6f6e930e-eaba-55c8-8810-e767ec54d11b">Hafiz Qamruddin & Sons</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+		</dateSet>
+		<descriptionSet>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="ur">عيد مبارك - سب لوگ تو دیکھتے ہیں کھڑے چاند عید کا، مشتاق ہوں میں رشک قمر تیری دید کا</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="other" lang="ur">Eid mubarak, Sab log to dekhte hain khade chand Eid ka; Mushtaq hun main rashq-e-qamar teri deed ka.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="translation" lang="en">Eid greetings. Everyone stands looking out for a glimpse of the Eid crescent. But I am desirous of only you, O envy of the moon. (ys)</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="it">20156 3303 a Ed. Francesco Viscomi – Crotone</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="it">STAB. DALLE NOGARE &amp; ARMETTI – MILANO</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="it">FOTOTIPIA AD UNA TIR.
+CART. EYTRA
+[stamped over Urdu text]</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="ba0e99ca-1c09-5a05-a8db-3bf1ca9fe3bc">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="15f999c3-5f12-570c-a3c7-15678f571734" type="medium">cardboard</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>14 cm x 15 cm, landscape</notes>
+			<measurements type="height" unit="cm">14</measurements>
+			<measurements type="width" unit="cm">15</measurements>
+			<measurements type="shape"> landscape</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_ba0e99ca-1c09-5a05-a8db-3bf1ca9fe3bc" refid="108139" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+			<stylePeriod vocab="" refid="">ca. 1930</stylePeriod>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Eid Mubarak</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="d5a3acfc-595a-5357-9ff2-753b599da969">
+				<term>Viscomi, Francesco</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>greeting cards</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="6f6e930e-eaba-55c8-8810-e767ec54d11b">
+				<term>Hafiz Qamruddin &amp;amp; Sons</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="2aa27e64-0748-5eed-bd91-099fc1edf47f">
+				<term>postcards</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>eid card</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Grußkarte</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Postkarte</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">Back of Eid card</title>
+			<title type="descriptive" pref="false" lang="" script="">Eid mubarak</title>
+			<title type="descriptive" pref="false" lang="" script="">عيد مبارك</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">greeting cards</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/108139</hra:value>
+				<hra:value>108139</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 15:57:00">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

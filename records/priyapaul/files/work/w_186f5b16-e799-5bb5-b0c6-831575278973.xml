@@ -1,0 +1,325 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_186f5b16-e799-5bb5-b0c6-831575278973" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="corporate" refid="uuid-f268d38e-ef59-57bb-8b22-4bc5b413216b">Jacob & Co.'s Biscuits</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+			<date type="creation">
+				<earliestDate>1936</earliestDate>
+				<latestDate>1936</latestDate>
+			</date>
+		</dateSet>
+		<descriptionSet>
+			<description source="Christiane Brosius" lang="en" script="latn">On this calendar from Jacob &amp; Co.'s Biscuits a fair-skinned lady wearing a pink sari sits on a chair and pours tea from a tea pot into a cup. The cup is placed on a tray together with a plate of biscuits, one of which reads 'Jacob Biscuit', a sugar bowl and a milk jug/creamer. The tray is set on a table. (sp)
+Like a frame around this image several brands from Jacob &amp; Co.'s Biscuits are depicted in their packaging.</description>
+			<description vocab="" refid="" lang="en" script="latn">framing (processes)</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">2 [handwritten mark, upper left corner]</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">JACOB &amp; Co's BISCUITS</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">COPYRIGHT
+CALENDAR MFG CO
+BOMBAY [publisher's signet]</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">WITH COMPLIMENTS FROM
+W. &amp; R. JACOB &amp; Co. Ltd.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">BISCUIT MANUFACTURERS,
+DUBLIN, IRELAND.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">CALENDAR 1936</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">573 [damaged number, bottom left]</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="064f1a83-f18c-5d1e-af8a-d43cb5c7e737">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 50 cm, W 38 cm, portrait</notes>
+			<measurements type="height" unit="cm">50</measurements>
+			<measurements type="width" unit="cm">38</measurements>
+			<measurements type="shape"> portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_064f1a83-f18c-5d1e-af8a-d43cb5c7e737" refid="119179" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+			<stylePeriod vocab="" refid="">1930s</stylePeriod>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>milk jug</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Dublin</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>necklace</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>tea pot</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>tray</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>tea</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>sari</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>pink sari</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>jewellery</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>signet</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="f268d38e-ef59-57bb-8b22-4bc5b413216b">
+				<term>Jacob &amp;amp; Co.'s Biscuits</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>sugar bowl</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>fair skin</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>pearls</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>calendar</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>advertisement</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>gold</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>checked</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>pearl necklace</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>perception of women</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>pink</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>biscuits</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Ireland</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>chair &amp;lt;furniture&amp;gt;</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>woman</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>watch</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>table</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Kalender</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Keks</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Schmuck</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Stuhl</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Frauenbild</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Dublin</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Irland</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Frau</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Werbung</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Teekanne</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">1936 Advertisement calendar of Jacob &amp; Co.</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">calendars</worktype>
+			<worktype vocab="" refid="">posters</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Lutgendorf, Philip. "Chai why? The Triumph of Tea in India as Documented in the Priya Paul Collection"</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Bhadra, Gautam. 2005. From an Imperial Product to a National Drink. Kolkata: Centre for Studies in Social Sciences, Calcutta</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Braudel, Fernand 1981. "The Structures of Everyday Life". London: Collins.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Sivulka, Julianne 1998. "Soap, Sex and Cigarettes: A Cultural History of Advertising". Belmont, California: Wadsworth Publishing Co.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>McClintock, Anne 1995. "Imperial Leather: Race, Gender, and Sexuality in the Colonial Conquest" New York: Routledge, 216-217.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>McClintock, Anne 2001. “Soft Soaping Empire: Commodity Racism and Imperial Advertising” in Double Crossings: Madness, Sexuality and Imperialism. Vancouver, Canada: Ronsdale.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Dyer, Richard and Christine Gledhill 2009. "Wanted: Cultured ladies Only! Female Stardom and Cinema in India 1930s-1950s". Urbana and Chicago: University of Illinois Press.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Freitag, Sandria B. 2010. "Consumption and identity: Imagining ‘Everyday Life’ Through Popular Visual Culture"</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>de Certeau, Michel 1984. "The Practices of Everyday Life" . Berkeley: University of California Press.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>McGowan, Abigail 2010. "Modernity at Home: Leisure, Autonomy and the New Woman in India"</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Jain, Kajri 2007. "Gods in the Bazaar: The Economies of Indian Calendar Art". Durham NC: Duke University Press.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Gadihoke, Sabika 2010. "Selling Soap and Stardom: The Story of Lux"</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Uberoi, Patricia 2003. “Chicks, Kids and Couples: The Nation in Calendar Art,” in India, a National Culture?, ed. Geeti Sen. New Delhi: Sage Publications.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Storey, John 1999. "Cultural Consumption and Everyday Life". New York: Oxford University Press.</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.tasveergharindia.net/cmsdesk/essay/104/index.html</hra:value>
+				<hra:value>2010-12-14</hra:value>
+				<hra:value>essay "Selling Soap and Stardom: The Story of Lux" by Gadihoke, Sabika</hra:value>
+				<hra:value>6</hra:value>
+			</hra:item>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.tasveergharindia.net/cmsdesk/essay/96/index.html</hra:value>
+				<hra:value>2011-04-13</hra:value>
+				<hra:value>essay "Consumption and identity: Imagining ‘Everyday Life’ Through Popular Visual Culture" by Freitag, Sandria B.</hra:value>
+				<hra:value>6</hra:value>
+			</hra:item>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.tasveergharindia.net/cmsdesk/essay/89/index.html</hra:value>
+				<hra:value>2011-08-08</hra:value>
+				<hra:value>essay "Chai why? The Triumph of Tea in India as Documented in the Priya Paul Collection" by Lutgendorf, Philip</hra:value>
+				<hra:value>21</hra:value>
+			</hra:item>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.tasveergharindia.net/cmsdesk/essay/95/index.html</hra:value>
+				<hra:value>2011-04-13</hra:value>
+				<hra:value>essay "Modernity at Home: Leisure, Autonomy and the New Woman in India" by McGowan, Abigail</hra:value>
+				<hra:value>6</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>good</hra:value>
+			</hra:item>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>torn on the edges</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/119179</hra:value>
+				<hra:value>119179</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 15:58:39">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

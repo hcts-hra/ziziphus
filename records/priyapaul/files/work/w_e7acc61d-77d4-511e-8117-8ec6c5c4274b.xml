@@ -1,0 +1,159 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_e7acc61d-77d4-511e-8117-8ec6c5c4274b" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-089d71eb-d101-54e9-97e9-c79c779c8455">Lal, S. S.</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+		</dateSet>
+		<descriptionSet>
+			<description source="Sridevi Padmanabhan," lang="en" script="latn">A poster shows Vithalbhai Patel (1873 - 1933), Indian legislator, political leader and co-founder of the Swaraj party. He was elder brother of Indian freedom fighter, Sardar Vallabhbhai Patel.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">COPYRIGHT
+S. S. LAL.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Copyright.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">PRESIDENT PATEL</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Published by
+Shyam Sundar Lal,
+Picture Merchant,
+Chowk, Cawnpore.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">त्यागमूर्ति  श्रीविट्ठलभाई पटेल</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">Tyagamurti Srivithalbhai Patel</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="f84b26d9-e94d-5499-899f-a337867e69ff">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 30 cm, W 20 cm, portrait</notes>
+			<measurements type="height" unit="cm">30</measurements>
+			<measurements type="width" unit="cm">20</measurements>
+			<measurements type="shape"> portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_f84b26d9-e94d-5499-899f-a337867e69ff" refid="109936" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>portrait</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="089d71eb-d101-54e9-97e9-c79c779c8455">
+				<term>Lal, S.S.</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>struggle for freedom</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>spectacles</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Bildnis</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Photographie</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="e48c5bff-0049-5508-9a54-5381254e21b2">lithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">"President Patel"</title>
+			<title type="descriptive" pref="false" lang="" script="">Tyagamurti Srivithalbhai Patel</title>
+			<title type="descriptive" pref="false" lang="" script="">त्यागमूर्ति  श्रीविट्ठलभाई पटेल</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">portraits</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.whereincity.com/india/great-indians/freedom-fighters/vithalbhai-patel.php</hra:value>
+				<hra:value>2011-08-12</hra:value>
+				<hra:value>Vithalbhai Patel's biography</hra:value>
+				<hra:value>19</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/109936</hra:value>
+				<hra:value>109936</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:03:56">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

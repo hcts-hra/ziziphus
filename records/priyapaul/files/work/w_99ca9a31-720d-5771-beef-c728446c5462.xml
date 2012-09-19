@@ -1,0 +1,234 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_99ca9a31-720d-5771-beef-c728446c5462" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-6984e2ff-b897-587e-958c-12f1d674c63b">Madras, A. P.</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-664f87db-93fc-53c2-bcc1-94d6a30fe186">Krishna</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-8c341a75-5c2a-5b39-a545-20ab1032b2b2">Kaliya</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="corporate" refid="uuid-bcf2184f-d306-5914-8eb9-84e984155cbc">Burmah-Shell</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+			<date type="creation">
+				<earliestDate>1939</earliestDate>
+				<latestDate>1939</latestDate>
+			</date>
+		</dateSet>
+		<descriptionSet>
+			<description source="Gerhard Schoenhofer" lang="en" script="latn">On this advertisement for Burmah-Shell from 1939 we see Lord Krishna dancing on the head of demon snake Kaliya. On the river shores in the background some large trees and other plants with grazing cattle are depicted, as well as a vast body of water.</description>
+			<description vocab="" refid="" lang="en" script="latn">framing (processes)</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Burmah-Shell
+Oil Storage &amp; Distributing Co. of India Ltd</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Agents:
+Moolchand Bahetti
+Station Road, Jodhpur.
+(Incorporated in England)</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">1939</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Kerosene - Motor Spirit
+Fuel &amp; Diesel Oils
+Shelltox
+Mineral Turpentine
+Mexphalte - Spramex</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">BOC</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Industrial Lubricants
+Motor Oils &amp; Greases
+Malariol
+Wax &amp; Candles
+Colas - Stearine</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Burmah-Shell</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">A. P. Madras</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="signature">A. P. Madras</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="25c109b0-b342-5179-bec2-af2b1a5b7c37">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 45 cm, W 38 cm,  portrait</notes>
+			<measurements type="height" unit="cm">45</measurements>
+			<measurements type="width" unit="cm">38</measurements>
+			<measurements type="shape">  portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_25c109b0-b342-5179-bec2-af2b1a5b7c37" refid="118230" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+			<stylePeriod vocab="" refid="">early 20th century</stylePeriod>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>advertisement</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-iconography</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Imperial Chemical Industries (India) Ltd.</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="6984e2ff-b897-587e-958c-12f1d674c63b">
+				<term>Madras, A. P.</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="bcf2184f-d306-5914-8eb9-84e984155cbc">
+				<term>Burmah-Shell</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Kaliya mardan</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>white bull</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="8c341a75-5c2a-5b39-a545-20ab1032b2b2">
+				<term>Kaliya</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>snake</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>cow</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>dancing</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>product advertisement</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>river</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="664f87db-93fc-53c2-bcc1-94d6a30fe186">
+				<term>Krishna</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Poster</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Krischna</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">Advertisement calendar for Oil Storage &amp; Distributing Co. of India Ltd.</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">posters</worktype>
+			<worktype vocab="" refid="">calendars</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="f_autor_zeichen" status="0" display="Artist (characters)">
+				<hra:value>Madras, A. P.</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Rajagopal, Arvind 2010. "The Commodity Image in the (Post) Colony" http://www.tasveergharindia.net/cmsdesk/essay/100/index_1.html, last accessed 2011-01-18</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>torn</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/118230</hra:value>
+				<hra:value>118230</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 15:59:59">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

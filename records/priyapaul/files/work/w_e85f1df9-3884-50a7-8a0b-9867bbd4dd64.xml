@@ -1,0 +1,193 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_e85f1df9-3884-50a7-8a0b-9867bbd4dd64" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-1dd3c376-eb81-5854-b4c0-c23902c423ec">Akkoo</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+			<date type="creation">
+				<earliestDate>1955</earliestDate>
+				<latestDate>1955</latestDate>
+			</date>
+		</dateSet>
+		<descriptionSet>
+			<description source=" " lang="en" script="latn">The main actors Baburao and Shaikh are depicted in a photo montage. Baburao is shown on the right in a close-up of the man-eater, wearing fake teeth and beard. Shaikh is shown in a scene where his character is being captivated in a dungeon with torture instruments. He seems to be low-spirited and considering his situation.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Jungle Mighty Thriller! 
+Pradhan Productions' 
+Adam Khor
+Produced by G. M. Pradhan
+Directed by Akkoo
+Music by Nisar
+Baburao, Lalita Kumari, Shaikh, Kesari, Maqbool, Shanta Patel, Neera, Munshi Munaka, Neeta Roy and Habib</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="d4bdc41c-84c8-5f93-9c0c-0dcdb59b825b">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+		</materialSet>
+		<measurementsSet>
+			<notes>H 20 cm, W 30 cm, landscape</notes>
+			<measurements type="height" unit="cm">20</measurements>
+			<measurements type="width" unit="cm">30</measurements>
+			<measurements type="shape"> landscape</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_d4bdc41c-84c8-5f93-9c0c-0dcdb59b825b" refid="120161" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+			<stylePeriod vocab="" refid="">postcolonial India</stylePeriod>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>film</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="1dd3c376-eb81-5854-b4c0-c23902c423ec">
+				<term>Akkoo</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>lobby card</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Adam Khor</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>checked</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>cannibalism</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Bollywood</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Poster</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Filmplakat</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="ea935392-d4c7-5801-968f-9da25f4a6780">gelatin silver prints</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">"Adam Khor"</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">lobby cards</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Thomas, Rosie 2010. "Still Magic. An Aladdin's Cave of 1950s B-Movie Fantasy" http://www.tasveergharindia.net/cmsdesk/essay/103/index.html last accessed 2010-11-10</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.tasveergharindia.net/cmsdesk/essay/103/index.html</hra:value>
+				<hra:value>2010-11-23</hra:value>
+				<hra:value>essay "Still Magic. An Aladdin's Cave of 1950s B-Movie Fantasy" by Rosie Thomas</hra:value>
+				<hra:value>6</hra:value>
+			</hra:item>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.gomolo.in/Movie/Movie.aspx?mid=2516</hra:value>
+				<hra:value>2011-06-21</hra:value>
+				<hra:value>movie info on gomolo.in</hra:value>
+				<hra:value>3</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>damaged</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_personen" vocab="" refid="" status="0" display="personen">
+				<hra:value>Akkoo</hra:value>
+			</hra:item>
+			<hra:item type="f_personen" vocab="" refid="" status="0" display="personen">
+				<hra:value>Nisar</hra:value>
+			</hra:item>
+			<hra:item type="f_personen" vocab="" refid="" status="0" display="personen">
+				<hra:value>Baburao</hra:value>
+			</hra:item>
+			<hra:item type="f_personen" vocab="" refid="" status="0" display="personen">
+				<hra:value>Lalita Kumari</hra:value>
+			</hra:item>
+			<hra:item type="f_personen" vocab="" refid="" status="0" display="personen">
+				<hra:value>Shaikh</hra:value>
+			</hra:item>
+			<hra:item type="f_personen" vocab="" refid="" status="0" display="personen">
+				<hra:value>Kesari</hra:value>
+			</hra:item>
+			<hra:item type="f_personen" vocab="" refid="" status="0" display="personen">
+				<hra:value>Maqbool</hra:value>
+			</hra:item>
+			<hra:item type="f_personen" vocab="" refid="" status="0" display="personen">
+				<hra:value>Shanta Patel</hra:value>
+			</hra:item>
+			<hra:item type="f_personen" vocab="" refid="" status="0" display="personen">
+				<hra:value>Neera</hra:value>
+			</hra:item>
+			<hra:item type="f_personen" vocab="" refid="" status="0" display="personen">
+				<hra:value>Munshi Munaka</hra:value>
+			</hra:item>
+			<hra:item type="f_personen" vocab="" refid="" status="0" display="personen">
+				<hra:value>Neeta Roy</hra:value>
+			</hra:item>
+			<hra:item type="f_personen" vocab="" refid="" status="0" display="personen">
+				<hra:value>Habib</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/120161</hra:value>
+				<hra:value>120161</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 15:58:10">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

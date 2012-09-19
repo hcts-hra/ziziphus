@@ -1,0 +1,236 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_cc43b367-6d5f-5545-bfb8-4e1985441cfe" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-2998d526-9be9-5518-936b-ba70fa17b774">Bharat Mata</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-a43f0f77-cc82-548f-a37a-1edd1e98d07a">Bose, Subhas Chandra</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-ea7ce3d4-5192-5bbe-beb8-8265bb29a36c">Tilak, Bal Gangadhar</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-ba21cc6d-11fd-599f-b1c5-54e234034504">Bhagat Singh</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+		</dateSet>
+		<descriptionSet>
+			<description source="Christiane Brosius" lang="en" script="latn">Subhash Chandra Bose offering his head in a plate to Mother India. The goddess is accompanied by her avatar, the lion, and a dragon, wearing the British flag. In the background of the lake at which both Bose and Bharat Mata stand, is Red Fort. In the middle, in the skies, like a cloud, a bust of Bose in white topi and kurta, who is riding on a lion, Red Fort in view.</description>
+			<description vocab="" refid="" lang="en" script="latn">framing (processes)</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">सुभाष बलिदान</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="other" lang="hi">Subhash Balidan</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="translation" lang="hi">Sacrifice of Subhash</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">चलो दिल्ली</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="other" lang="hi">Chalo Dilli</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="translation" lang="hi">March to Delhi</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="85fb1cc7-52f7-54dc-b3fb-bc006f84d499">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 45 cm, W 30 cm, portrait</notes>
+			<measurements type="height" unit="cm">45</measurements>
+			<measurements type="width" unit="cm">30</measurements>
+			<measurements type="shape"> portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_85fb1cc7-52f7-54dc-b3fb-bc006f84d499" refid="118976" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+			<stylePeriod vocab="" refid="">1930s-1940s</stylePeriod>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>uniform</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="ba21cc6d-11fd-599f-b1c5-54e234034504">
+				<term>Bhagat Singh</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>kurta</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>lake</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>cutout</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>British flag</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="ea7ce3d4-5192-5bbe-beb8-8265bb29a36c">
+				<term>Tilak, Bal Gangadhar</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>poster</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>blood</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>dragon</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>landscape</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Nathdwara School</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="2998d526-9be9-5518-936b-ba70fa17b774">
+				<term>Bharat Mata</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="a43f0f77-cc82-548f-a37a-1edd1e98d07a">
+				<term>Bose, Subhash Chandra</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>checked</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="5acbf595-8fb3-59b2-ade2-be46b9fa81f7">
+				<term>collage (technique)</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>lion</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Old Delhi / Red Fort</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>head</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>topi</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>flag</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>beheaded</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>political art</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="5acbf595-8fb3-59b2-ade2-be46b9fa81f7">collage (technique)</technique>
+			<technique vocab="LOCAL" refid="94acfcac-0bbf-5bc1-bbaf-887d8a7ad873">paintings (visual works)</technique>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">"To Delhi! - Subhash's sacrifice"</title>
+			<title type="descriptive" pref="false" lang="" script="">"Chalo Dilli - Subhash Balidan"</title>
+			<title type="descriptive" pref="false" lang="" script="">चलो दिल्ली - सुभाष बलिदान</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">collages</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Pinney, Christopher. 2004. Photos of the Gods. Delhi: Oxford University Press, especially pp. 126-138.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Jain, Jyotindra. 2004. Indian Popular Culture. New Delhi: National Gallery of Modern Art.</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>Good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_personen" vocab="" refid="" status="0" display="personen">
+				<hra:value>Bal Gangadhar Tilak</hra:value>
+			</hra:item>
+			<hra:item type="f_personen" vocab="" refid="" status="0" display="personen">
+				<hra:value>Bhagat Singh</hra:value>
+			</hra:item>
+			<hra:item type="f_personen" vocab="" refid="" status="0" display="personen">
+				<hra:value>Chandrashekar Azad</hra:value>
+			</hra:item>
+			<hra:item type="f_personen" vocab="" refid="" status="0" display="personen">
+				<hra:value>Rana Pratap</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/118976</hra:value>
+				<hra:value>118976</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:08:17">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

@@ -1,0 +1,221 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_a6fe3c3a-12cf-56a4-bafa-94d2a97db71f" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="136978991" pref="true">Santra, B.</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-42162bd6-309b-56c5-b44c-62c4171eb0ee">Santra, B.</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-2998d526-9be9-5518-936b-ba70fa17b774">Bharat Mata</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-a43f0f77-cc82-548f-a37a-1edd1e98d07a">Bose, Subhas Chandra</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+		</dateSet>
+		<descriptionSet>
+			<description source="Sridevi Padmanabhan," lang="en" script="latn">The image shows Subhash Chandra Bose standing with the Indian tricolour planted in the foreground in Kohima. He stands next to a gravestone in front of which lies a dead soldier. Both Bose and the dead solider are wearing uniforms. Mother India in handcuffs is depiced in the upper left corner against the sky. In the background, a lake and the sun setting behind a mountain range can be seen.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Kohima</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">ARE YOU 
+AN INDIAN? 
+Then stand before
+this monument
+a minute!
+
+Here was planted
+on British Indian Soil
+the first flag of independent India
+
+18 March, 1944
+[written on a tombstone]</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Kohima!
+[written on the meadow]</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">HAP [publisher's signet]</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">B. Santra</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="signature">B. Santra</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="c046504e-7865-5c26-b1d0-26deb206714b">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 27 cm, W 20 cm, portrait</notes>
+			<measurements type="height" unit="cm">27</measurements>
+			<measurements type="width" unit="cm">20</measurements>
+			<measurements type="shape"> portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_c046504e-7865-5c26-b1d0-26deb206714b" refid="109714" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>uniform</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="2998d526-9be9-5518-936b-ba70fa17b774">
+				<term>Bharat Mata</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>sunrise</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>memorial</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="a43f0f77-cc82-548f-a37a-1edd1e98d07a">
+				<term>Bose, Subhash Chandra</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>handcuffs</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>signet</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Battle of Kohima</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>flag</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>checked</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Indian flag</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>lake</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="42162bd6-309b-56c5-b44c-62c4171eb0ee">
+				<term>Santra, B.</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>soldier</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>mountain</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Kohima</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>gravestone</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Poster</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Santra, B.</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">"Kohima"</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">posters</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.vho.org/GB/Journals/JHR/3/4/Borra407-439.html</hra:value>
+				<hra:value>2011-08-09</hra:value>
+				<hra:value>Description of the Battle of Kohima.</hra:value>
+				<hra:value>19</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_personen" vocab="" refid="" status="0" display="personen">
+				<hra:value>Subhash Chandra Bose</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/109714</hra:value>
+				<hra:value>109714</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 15:57:42">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

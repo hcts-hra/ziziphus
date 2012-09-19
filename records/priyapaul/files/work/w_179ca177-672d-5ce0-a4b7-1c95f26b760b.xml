@@ -1,0 +1,195 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_179ca177-672d-5ce0-a4b7-1c95f26b760b" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="corporate" refid="uuid-e56887bc-fb57-5307-b9d3-42a6d4cb78d2">Empire Calendar Manufacturing Co.</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+		</dateSet>
+		<descriptionSet>
+			<description source="Gerhard Schoenhofer" lang="en" script="latn">A sample image in the catalogue of Empire Calender Manufacturing Co. showing scenes of village life like farming: A man cultivating rice with an oxplough, women using a water pump to secure their water supply etc. In the background, the sea and a ship can be seen. On the left lower corner of the image, the manufacturer's signet ECM co is depicted.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">ECM Co [manufacturer's signet]</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Village Life
+No. 634</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="ee25eaf2-e031-5147-853b-ec1a325ea7f9">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 25 cm, W 20 cm, portrait</notes>
+			<measurements type="height" unit="cm">25</measurements>
+			<measurements type="width" unit="cm">20</measurements>
+			<measurements type="shape"> portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_ee25eaf2-e031-5147-853b-ec1a325ea7f9" refid="119473" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+			<stylePeriod vocab="" refid="">ca. 1970s</stylePeriod>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>village</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>daily life</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>water pump</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>field</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>lake</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>hand pump</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>rooster</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>village life</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>ox</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>palm tree</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>plough</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>ship</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>trade catalogs</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>dog</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="e56887bc-fb57-5307-b9d3-42a6d4cb78d2">
+				<term>Empire Calendar Manufacturing Co.</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>checked</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>paddy field</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>cattle</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>hut</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>peasant</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>pond</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>bullock cart</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>agriculture</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Katalog</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">"Village Life"</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">pages</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Freitag, Sandria B. 2010. "Consumption and identity: Imagining ‘Everyday Life’ Through Popular Visual Culture" http://www.tasveergharindia.net/cmsdesk/essay/96/index.html (24.1.2011)</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>de Certeau, Michel 1984. "The Practices of Everyday Life" . Berkeley: University of California Press.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Storey, John 1999. "Cultural Consumption and Everyday Life". New York: Oxford University Press.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Braudel, Fernand 1981. "The Structures of Everyday Life". London: Collins.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Ramaswamy, Sumathi 2002. "Visualising India's geo-body: Globes, maps, bodyscapes". In: Contributions to Indian Sociology 36 (2002): 151 - 189.</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/119473</hra:value>
+				<hra:value>119473</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:07:45">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

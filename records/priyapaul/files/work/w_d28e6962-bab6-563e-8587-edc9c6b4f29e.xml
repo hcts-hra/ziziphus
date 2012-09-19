@@ -1,0 +1,140 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_d28e6962-bab6-563e-8587-edc9c6b4f29e" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+		</dateSet>
+		<descriptionSet>
+			<description source="Gerhard Schoenhofer" lang="en" script="latn">A collage of match-boxes with eleven different matchcovers.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">1 Speed 
+2 New Sun Lites Patang Matches
+3 Extra long extra strong extra safe matches
+50's Price 50 Ps.
+Sri Balaji Match Works, Sillangulam
+4 Globe Lamba
+5 100 % safe water proof
+by charcoalized method
+Only flame eminates left with charcoal
+No droppings on dresses
+Safety Matches
+Avg. 50 sticks price 50 Ps.
+Can back stroke
+The Yes Tee Gee Match Works
+Kalkurichi.
+6 Twenty Seven 
+Super Deluxe
+Safety Match
+Quality
+Trade mark prop.- Sundaravel Match Industries,(P) Ltd.
+50's - 50 Ps.
+7 Long strong safe
+Chemically treated sticks
+8 Mahal R Super
+Karborised
+9 50's 50 Ps.
+New Jothi Match Industries
+Pazhancottai - 627752
+10 Wimco
+Home Lites
+Extra long. Extra strong. Karborised. 
+For extra safety
+11 No more burnt fingers 
+No more danger
+No more wasted matches
+Karborised
+Shield of Safety
+50 Match Sticks
+Wimco
+Max. Ret. Price 60p
+Incl. of all taxes</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="59729dbe-b326-5053-98e9-399177249a87">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="15f999c3-5f12-570c-a3c7-15678f571734" type="medium">cardboard</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 17 cm, W 27 cm, landscape</notes>
+			<measurements type="height" unit="cm">17</measurements>
+			<measurements type="width" unit="cm">27</measurements>
+			<measurements type="shape"> landscape</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_59729dbe-b326-5053-98e9-399177249a87" refid="108108" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Medialab</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>matchbook</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">11 Matchbox covers</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">scrapbooks</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>Good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/108108</hra:value>
+				<hra:value>108108</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 15:56:01">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

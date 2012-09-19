@@ -1,0 +1,225 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_62a30d8a-8477-54c0-b616-17c70ea7e808" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-ba7fa408-a6cf-589b-8765-ad477a2e2a31">Vishnu</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="corporate" refid="uuid-e220d6e4-a7f6-5b1f-b5e1-3ae04fbf95a1">Kaloojee Valajee Tobacco</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+		</dateSet>
+		<descriptionSet>
+			<description source=" " lang="en" script="latn">Lord Vishnu is depicted with the cosmic serpant Anantha-Shesha, holding the Sudarshana chakra, a conch, a lotus flower and the kaumodaki (mace). He is wearing a crown with a peacock feather on it. The sides of the image are painted with golden decorations imitating carved wood. There are two stamps in the upper corners of the image showing the trade mark (tobacco plant next to a resting lion) and the company name in many different languages, like Hindi, Urdu, Tamil, Bengali.</description>
+			<description vocab="" refid="" lang="en" script="latn">framing (processes)</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">"Smoke for Superfine Enjoyment"
+Made of the Finest and
+Purest Tobacco
+Available Everywhere
+"Beware of Imitation"</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Smoke Kaloojee Beedi</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Kaloojee Nakhia Beedi
+known for Quality
+and unserpassed.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Printed in Germany</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">The Oriental Printing Works Calendar Manufacturers 160. Darr St. Rangoon</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Kaloojee Valajee
+249, Fraser Street,
+Rangoon.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">66206</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="bbc93d4b-440e-5b03-b5db-7f228eec39ad">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 38 cm, W 25 cm, portrait</notes>
+			<measurements type="height" unit="cm">38</measurements>
+			<measurements type="width" unit="cm">25</measurements>
+			<measurements type="shape"> portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_bbc93d4b-440e-5b03-b5db-7f228eec39ad" refid="120007" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Kaloojee Nakhia Beedi</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>advertisement</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>lotus</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>peacock's feather</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Medialab</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>flower</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>cartouche</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>trompe-l'oeil</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Kaumodaki</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>The Oriental Printing Works Calendar Manufacturers</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>bidi</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="e220d6e4-a7f6-5b1f-b5e1-3ae04fbf95a1">
+				<term>Kaloojee Valajee Tobacco</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Gerhard</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>product advertisement</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="ba7fa408-a6cf-589b-8765-ad477a2e2a31">
+				<term>Vishnu</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Anantha-Shesha</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>snake</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>crown</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>mace</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Poster</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Werbung</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">Tobacco advertisement with Lord Vishnu</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">advertisements</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Masselos, Jim 2006. “A goddess for everyone: the mass production of divine images,” in Jackie Menzies, ed. Goddess Divine Energy. Sydney: Art Gallery of New South Wales and Thames and Hudson.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Rajagopal, Arvind 2010. "The Commodity Image in the (Post) Colony" http://www.tasveergharindia.net/cmsdesk/essay/100/index_1.html, last accessed 2011-01-15.</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.tasveergharindia.net/cmsdesk/essay/100/index_1.html</hra:value>
+				<hra:value>2011-01-15</hra:value>
+				<hra:value>Essay "The Commodity Image in the (Post) Colony" by Rajagopal, Arvind, 2010.</hra:value>
+				<hra:value>6</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/120007</hra:value>
+				<hra:value>120007</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:08:29">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

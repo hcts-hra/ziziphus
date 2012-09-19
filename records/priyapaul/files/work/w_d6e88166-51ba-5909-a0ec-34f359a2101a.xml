@@ -1,0 +1,198 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_d6e88166-51ba-5909-a0ec-34f359a2101a" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-664f87db-93fc-53c2-bcc1-94d6a30fe186">Krishna</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+			<date type="creation">
+				<earliestDate>1976</earliestDate>
+				<latestDate>1976</latestDate>
+			</date>
+		</dateSet>
+		<descriptionSet>
+			<description source="Gerhard Schoenhofer" lang="en" script="latn">A list of the names being part of the film crew is pictured. In the back, a boy dressed as Lord Krishna can be seen with his right hand raised and a halo around his head.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Mohan Bhatiya presents
+Meera Shyam</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Produced by K.C. Sharma, Kamal Bhatia
+Directed by Satish Kumar
+Music Govind-Naresh
+Photography Sadanand W.I.C.A.
+Story &amp; Lyrics Pt. Narendra Sharma
+Screenplay &amp; Dialogue Pr. R. Priyadarschi
+Editing Kamlakar A.F.E.
+Sound Recordist Z. Haque
+Song Recordist Kaushik, B.N. Sharma, Mimu Kartik
+Re-Recording Bansali
+Art Director Hirabhai Patel
+Dance Pt. Madan Shyamlata
+Fight Nanak Chand
+Production Executives Saroj Sharma, V. Bhatia</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Production Controller Brij Mohan
+Make-Up Mohan Kapoor
+Costumes Ram Hate
+Chief Asstt. Director
+Chandra Sharma
+Stills Kolortone
+Publicity Printers Colourindia, Thompson Press, Printwell
+Publicity Designers Ram Kumar, Achal Arts
+play Back Singers Lata Maneshkar, Asha Bhonsale, Krishna Kalle
+Lagoratory Famous Cine Lab.
+Gramaphone H.M.V.
+Costumes Supplier Maganlal Dresswala
+Junior Artist Supply Mrs. Sheela D. Kumar, Pathok</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Assistants
+Direction Brij Mohan, Ashok Kumar Dube, M. Kishore
+Sound Sushil Malik, A. Kadar
+Production Pradeep Kumar
+Editing Babubhai N. Shah, Tulsi Ghimera
+Costumes G.R. Laxman
+Camera Kamal, Mathew Fernandes
+Fight Galib
+World Right Controllers
+Mohan Bhatiya Associate
+Paper Box House, Mahakali Caved Road, Andberi, Bombay 400 058</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="af949ca8-9079-57f9-9308-663bccb0d799">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 22 cm, W 10 cm, portrait</notes>
+			<measurements type="height" unit="cm">22</measurements>
+			<measurements type="width" unit="cm">10</measurements>
+			<measurements type="shape"> portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_af949ca8-9079-57f9-9308-663bccb0d799" refid="117959" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>halo</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Meera Shyam</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>movie star</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>bag</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Gerhard</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Hindi Film</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Bollywood</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Mohan Bhatiya</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="664f87db-93fc-53c2-bcc1-94d6a30fe186">
+				<term>Krishna</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">"Meera Shyam"</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">brochures</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.kamat.com/indica/faiths/bhakti/mirabai.htm</hra:value>
+				<hra:value>2011-11-15</hra:value>
+				<hra:value>Saint Meera</hra:value>
+				<hra:value>19</hra:value>
+			</hra:item>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.imdb.com/title/tt0378344/</hra:value>
+				<hra:value>2011-12-15</hra:value>
+				<hra:value></hra:value>
+				<hra:value>6</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>Good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/117959</hra:value>
+				<hra:value>117959</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:07:25">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

@@ -1,0 +1,249 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_51aedac5-1034-53b8-93c8-d54c4e8bd4aa" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-4e80c54f-d35c-5b5c-903b-58f3ebbaabbe">Banshi</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-93b49709-83eb-503b-b1d4-08427c9f4414">Christ</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-459b4de8-c2f9-55ec-9929-3b045a4941e3">Buddha</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-65d331c8-aea5-564e-a372-b0b6cd6f30df">Gandhi, Mohandas Karamchand</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-ddaa9cf1-f534-56a7-8e66-7534b767bfce">Nehru, Jawaharlal</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-dc78c966-8c82-5611-9e03-7e44c0449108">Prasad, Rajendra</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-f865632d-6e04-5113-aa2e-1438496ae4ee">Shastri, Lal Bahadur</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="corporate" refid="uuid-e56887bc-fb57-5307-b9d3-42a6d4cb78d2">Empire Calendar Manufacturing Co.</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+		</dateSet>
+		<descriptionSet>
+			<description source=" " lang="en" script="latn">On this sample calendar poster of Empire Calendar Manufacturing Co., Calcutta, we can see several oval frames with different motives. One, right at the centre of the calendar, shows a tractor and a farmer ploughing his field with two oxen, and a village with palm trees in the background. Three framed portraits below show Lal Bahadur Shastri (left), Pandit Nehru (middle), Sardar Patel (right). On top of the central frame are Jesus Christ on the cross (left), Mohandas K. Gandhi with a halo (centre) and Buddha on a lotus flower</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">HAP [publisher's signet]</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">No. 406
+AGRICULTURE</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="signature">Banshi</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="a0ec4404-72c7-578d-ad52-b5048981025f">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 50 cm, W 38 cm, portrait</notes>
+			<measurements type="height" unit="cm">50</measurements>
+			<measurements type="width" unit="cm">38</measurements>
+			<measurements type="shape"> portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_a0ec4404-72c7-578d-ad52-b5048981025f" refid="122993" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+			<stylePeriod vocab="" refid="">1960s</stylePeriod>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="f865632d-6e04-5113-aa2e-1438496ae4ee">
+				<term>Shastri, Lal Bahadur</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>agricultural development</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>halo</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>nation</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>cap</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>white cap</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="65d331c8-aea5-564e-a372-b0b6cd6f30df">
+				<term>Gandhi, Mohandas Karamchand</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>tractor</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>national leader</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>ox</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>ocean</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>plough</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>cross</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>ship</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="ddaa9cf1-f534-56a7-8e66-7534b767bfce">
+				<term>Nehru, Jawaharlal</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="4e80c54f-d35c-5b5c-903b-58f3ebbaabbe">
+				<term>Banshi</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>village</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="459b4de8-c2f9-55ec-9929-3b045a4941e3">
+				<term>Buddha</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-problem</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>harrow</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>spectacles</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="e56887bc-fb57-5307-b9d3-42a6d4cb78d2">
+				<term>Empire Calendar Manufacturing Co.</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>lotus</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="dc78c966-8c82-5611-9e03-7e44c0449108">
+				<term>Prasad, Rajendra</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>checked</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>agriculture</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>crucifixion</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="93b49709-83eb-503b-b1d4-08427c9f4414">
+				<term>Christ</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Poster</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">"Agriculture"</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">posters</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="f_autor_zeichen" status="0" display="Artist (characters)">
+				<hra:value>Banshi</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Rajagopal, Arvind 2010. "The Commodity Image in the (Post) Colony", http://www.tasveergharindia.net/cmsdesk/essay/100/index_1.html, last accessed 2011-01-19</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Pinney, Christopher. 2004. Photos of the Gods. Delhi: Oxford University Press.</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>good</hra:value>
+			</hra:item>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>cut at the sides</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/122993</hra:value>
+				<hra:value>122993</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 15:56:49">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

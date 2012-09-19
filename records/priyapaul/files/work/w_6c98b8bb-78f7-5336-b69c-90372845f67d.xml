@@ -1,0 +1,214 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_6c98b8bb-78f7-5336-b69c-90372845f67d" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-77a0e4f6-8b00-54c1-ade1-0ccd85eadd9f">Walli, Dina Nath</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-65d331c8-aea5-564e-a372-b0b6cd6f30df">Gandhi, Mohandas Karamchand</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="corporate" refid="uuid-76ab6343-2db0-5168-a23e-f22aa92110dd">Kanhyalal Lachoomal</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+		</dateSet>
+		<descriptionSet>
+			<description source="Sridevi Padmanabhan," lang="en" script="latn">An image with the title "Evolution of Gandhiji" has Gandhi standing on the part of the globe that depicts India as he bleeds, with a gun lying by his feet and his hands folded, in a poster published by Kanhyalal Lachoomal, Delhi. The poster shows the stages in Gandhi's life from his birth to his death. As a baby he is depicted on a lotus flower, and then as  student. The stages that follow are that of him as a barrister, as the first revolutionary in South Africa, as the leader of the non-cooperation movement and then the Dandi march. Next comes his imprisonment, the Quit India movement, and the declaration of independence. The last image is that of Gandhi laid to rest. The image on the right hand corner is that of two Indian flags crossed, with a lit lamp in front and a banner that says 'amar jyoti' or eternal flame.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="translation" lang="en">Birth 2-10-1869
+Student 1887
+Barrister 1907
+South Africa's first revolutionary 1914
+Non-cooperation activist 1920 
+Dandi March 1930
+Activities while in jail- 183? (missing numeral)
+Go away 1942
+Complete independence 15 August 1947
+Death 30-1-1948
+eternal flame</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">QUIT</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">DINANATH WALLI [?] (sg)</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Stockists: KANAHYALAL LACHOOMAL
+741, Chandni Chowk Delhi</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">No. 109</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">EVOLUTION OF GANDHIJI</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Copyright Reserved,
+Published By: C. C. Co.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">BOLTON FINE ART OFFSET LITHO WORKS. BOMBAY. 7</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="signature">Dinanath Walli</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="e80f294e-f91e-577c-a4f3-78c563d4f7fa">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 33 cm, W 22 cm, portrait</notes>
+			<measurements type="height" unit="cm">33</measurements>
+			<measurements type="width" unit="cm">22</measurements>
+			<measurements type="shape"> portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_e80f294e-f91e-577c-a4f3-78c563d4f7fa" refid="109730" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>march</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="76ab6343-2db0-5168-a23e-f22aa92110dd">
+				<term>Kanhyalal Lachoomal</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>lotus</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="65d331c8-aea5-564e-a372-b0b6cd6f30df">
+				<term>Gandhi, Mohandas Karamchand</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>map of India</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>flag</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>lamp</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="77a0e4f6-8b00-54c1-ade1-0ccd85eadd9f">
+				<term>Walli, Dina Nath</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>checked</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Indian flag</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Dandi march</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>national leader</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>gun</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>globe</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>map</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>blood</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">"Evolution of Gandhiji"</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">posters</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="f_autor_zeichen" status="0" display="Artist (characters)">
+				<hra:value>Walli, Dinanath</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/109730</hra:value>
+				<hra:value>109730</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 15:58:07">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

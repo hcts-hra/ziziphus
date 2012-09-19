@@ -1,0 +1,169 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_9b91f506-e173-5c7f-aaef-bf2e2e305655" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-41664ec4-c2dd-5b80-a17c-0cf5bc48858b">Patil, Smita</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-31736cb0-11d7-581c-894d-ff7441340ef4">Variava, Freni M.</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+			<date type="creation">
+				<earliestDate>1983</earliestDate>
+				<latestDate>1983</latestDate>
+			</date>
+		</dateSet>
+		<descriptionSet>
+			<description source=" " lang="en" script="latn">On this image from a lobby card for the Hindi movie "Mandi", released in 1983, a group of women dressed in saris are standing at the entrance of a room. Naseeruddin Shah is sitting in the foreground next to a sitar and a harmonium. The floor level seating has mattresses and bolsters, on which two women sit.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Blaze Film Enterprises Private Limited Presents
+Mandi (Market Place)
+Eastmancolor
+Produced by Freni M. Variava
+Lalit M. Biljani
+Direction Shyam Benegal
+Photography Ashok Mehta
+Editor Bhanudas Divkar
+Music Vanraj Bhatia</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">मंडी</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="e0ba59e0-c96c-5517-97ee-480c84dcd11a">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_e0ba59e0-c96c-5517-97ee-480c84dcd11a" refid="119306" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Naseeruddin Shah</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>sitar</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Shabana Azmi</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Lalit M. Biljani</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>harmonium</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>furniture</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Soni Razdan</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Mandi</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>musical instrument</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Gerhard</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>sari</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>lobby card</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="41664ec4-c2dd-5b80-a17c-0cf5bc48858b">
+				<term>Patil, Smita</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="31736cb0-11d7-581c-894d-ff7441340ef4">
+				<term>Variava, Freni M.</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Shyam Benegal</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">"Mandi"</title>
+			<title type="descriptive" pref="false" lang="" script="">मंडी</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">lobby cards</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="t_rh" status="0" display="comment:related_hyperlinks">
+				<hra:value>http://www.imdb.com/title/tt0085896/</hra:value>
+				<hra:value>2011-12-25</hra:value>
+				<hra:value>story line, leading actors, director.</hra:value>
+				<hra:value>6</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/119306</hra:value>
+				<hra:value>119306</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:02:28">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

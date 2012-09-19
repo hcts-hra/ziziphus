@@ -1,0 +1,166 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_0ec647f9-2d46-5085-a00e-81f89944c6ab" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-b4d3f146-724b-56ac-b391-a8bce169086f">Krishnan <artist></name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-89680d5a-b44c-514e-b7c4-590326809ca7">Ganesha</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="corporate" refid="uuid-e56887bc-fb57-5307-b9d3-42a6d4cb78d2">Empire Calendar Manufacturing Co.</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+		</dateSet>
+		<descriptionSet>
+			<description source="Gerhard Schoenhofer" lang="en" script="latn">In this sample image in a catalogue of the Empire Calender Manufacturing Co. Lord Ganesha, the elephant god is depicted, sitting on an altar with colourful deco-elements in the background. He is reading from a book holder which has a book and there is a mouse (his vehicle) sitting next to him. To the left side of the image is a broken coconut.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">KRISHNAN</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">GANESHJI
+No. 694</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="signature">Krishnan</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="79ea4c19-df19-5036-a470-3832bca0b28f">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="15f999c3-5f12-570c-a3c7-15678f571734" type="medium">cardboard</material>
+		</materialSet>
+		<measurementsSet>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_79ea4c19-df19-5036-a470-3832bca0b28f" refid="109996" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>bookstand</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>mahabharata</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="89680d5a-b44c-514e-b7c4-590326809ca7">
+				<term>Ganesha</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="b4d3f146-724b-56ac-b391-a8bce169086f">
+				<term>Krishnan &amp;lt;artist&amp;gt;</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>halo</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="e56887bc-fb57-5307-b9d3-42a6d4cb78d2">
+				<term>Empire Calendar Manufacturing Co.</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>checked</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>mouse</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>book</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Hinduism</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>coconut</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>rainbow</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Regenbogen &amp;lt;Motiv&amp;gt;</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Hinduismus</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Ganesha</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Maus &amp;lt;Motiv&amp;gt;</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Heiligenschein</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">"Ganeshji"</title>
+		</titleSet>
+		<worktypeSet>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="f_autor_zeichen" status="0" display="Artist (characters)">
+				<hra:value>Krishnan</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/109996</hra:value>
+				<hra:value>109996</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:04:49">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

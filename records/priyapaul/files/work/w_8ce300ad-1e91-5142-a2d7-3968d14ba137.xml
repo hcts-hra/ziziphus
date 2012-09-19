@@ -1,0 +1,103 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_8ce300ad-1e91-5142-a2d7-3968d14ba137" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+		</dateSet>
+		<descriptionSet>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">(From left top) 1.Hum 2. Back of no.1.* 3.Sun Flower Strikes 4.King  5.Philips Battery 6.Malyali text 7.Gold Flower 8. Back of no six. Jagan Match Factory.Kovilpatti  9. New Ship 10. Gift 11. Kanyasmico. Back of some matchbox 12. Ship  Karborised 13. Shri Dhurga Matchworks, Sivakasi. 14. Viman Safety Matches 15. Maheshwari Match Factory, Kovilpatti. 16. Deluxe Quality Matches @artist=Collector: Abhishek Khandelwal</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="30f1c24a-8540-5439-a05f-0fe590afeac9">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="15f999c3-5f12-570c-a3c7-15678f571734" type="medium">cardboard</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>17 cm x 27 cm, landscape</notes>
+			<measurements type="height" unit="cm">17</measurements>
+			<measurements type="width" unit="cm">27</measurements>
+			<measurements type="shape"> landscape</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_30f1c24a-8540-5439-a05f-0fe590afeac9" refid="108103" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Klebezettel</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>collections (object groupings)</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>matchbox</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">16 Matchbox covers</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">scrapbooks</worktype>
+			<worktype vocab="" refid="">matchboxes</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>Good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/108103</hra:value>
+				<hra:value>108103</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:11:31">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

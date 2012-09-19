@@ -1,0 +1,179 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_a8f25dee-abe8-505c-846f-1ce0b5206471" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+			<date type="creation">
+				<earliestDate>1937</earliestDate>
+				<latestDate>1937</latestDate>
+			</date>
+		</dateSet>
+		<descriptionSet>
+			<description source="Gerhard Schoenhofer" lang="en" script="latn">This advertisement is divided in two parts: The upper one advertises a Veet hair remover, showing a white, blonde, western woman applying some of the advertised product on her right armpit. A detailed text highlights the strengthes of the product. This section can not be read properly due to unsuffuicient scanning. The lower section hosts an advertisement for foreign stamp packages, depicting one sample with a mother and her child as well as a rough price overview.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">To remove Hair
+Without Razors, Elctri [...]
+Needles or Smelly 
+Depilatories</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Amazing new discovery! A dainty, white fragmant cream. Apply straight from  [...] tube.  Wash off with plain water Every trace of hair is gone! Skin is left soft and smooth and velvet. No stubble like the razorleaves. No coarse regrowth. Sold everywhere under Trade mark "Veet." Razors only make hair grow faster and courser. The quick, easy and pleasent way to end your superflou [...] hair troubles for ever is with New "Veet". Successful results guaranteed or money refunded. Obtainable at all dealers.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Make this 3 Minute test</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Stamps
+If you collect stamps, write to our Fortnightly Lists which will be regularely sent to you free of charge.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Note these bargains:
+All different. Genuine. 
+500 Whole World Rs. 1 - 4
+1000   "            "       "    3 - 0 
+3000   "            "       "    15 - 0
+  100 British India   "     1 - 6
+50 Indian States Rs. 0 - 8
+100   "           "         "    1 - 8
+400   "           "         "     17 - 8
+600   "           "         "     40 - 0</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Each of these foreign country packets 2 As.
+25 Austria,  15 Brazil, 25 Czechoslovakia, 25 Denmark, 10 Morocco, 25 Spain, 25 Poland, 25 Roumania, 25 Switzerland. Order by V.P.P.
+"Mother &amp; Child" complete sets of 
+Belgium - Rs- 1 -12
+Queen Astrif  " 1 - 12
+other sets in our list.
+Philatelie Orient Kodak House, Hornby Road, Bombay</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="ccd846b4-d671-5611-832a-5e3fe7e11d2f">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 15 cm, W 10 cm, portrait</notes>
+			<measurements type="height" unit="cm">15</measurements>
+			<measurements type="width" unit="cm">10</measurements>
+			<measurements type="shape"> portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_ccd846b4-d671-5611-832a-5e3fe7e11d2f" refid="119773" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>mother</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>advertisement</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>western woman</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>blonde</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>cosmetic product</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>whiteness</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>child</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Times of India Yearbook</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Gerhard</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>product advertisement</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>stamp</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Veet</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="9f5fddf6-ee5f-5aa5-8d7a-a13ad68b41b8">prints (visual works)</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">An advertisement of Veet Hair Remover &amp; Stamps</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">pages</worktype>
+			<worktype vocab="" refid="">advertisements</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/119773</hra:value>
+				<hra:value>119773</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:00:37">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

@@ -1,0 +1,160 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_eb6ed378-0d14-522e-b203-d5182e482917" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-6a2e3bc2-f7f2-534f-bcac-5870a237313e">Ravi Varma, Raja</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+			<date type="creation">
+				<earliestDate>1937</earliestDate>
+				<latestDate>1937</latestDate>
+			</date>
+		</dateSet>
+		<descriptionSet>
+			<description source="Gerhard Schoenhofer" lang="en" script="latn">On this advertisement for M.A. Joshi &amp; Co. fine art colour printing a letter with a comic of an Indian king dominates the upper section. The image of a princess and a fair skinned couple can be seen in the  the lower section. A detailed explanation about the advertised services as well as contact details are pictured as well. The right side was not scanned completeyl so some parts of the text can't be read.</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">When rajas write letters, you'll find they are fond of using exclusively Basildon Bond
+Available in all popular forms &amp; sizes
+Stockists
+Thacker &amp; Co. Ltd Bombay
+Spencer &amp; Co. Ltd Madras
+W. Newman &amp; Co. Ltd. Calcutta
+Manufacturers 
+John Dickinson &amp; Co. Ltd. (Incorporated in England)
+Where comfort and convenience combine
+Fine Art Colour Printing 
+By the new process specially studied in Europe by Mr. M.A. Joshi
+and employed by him at his press, the Ravi Udaya-Vijaya Fine Art Offset Works of Ghatkopar, (near Bombay)
+Mr. M.A. Joshi
+At the Ravin Udaya-Vijaya Fine Art Offset Works, long famed for its excellent Lithographic productions, has been introduced, for the first time in India, the new process of coloured Photo-lithography, which our Mr. Joshi studied in Europe and which has considerably raised the standard of our work; the press, now equipped with modern machinery, is the best litho-press in India.
+Mr. Joshi trained under the famous Indian artist, Raja Ravi Varma and completed his studies in Europe. His works have won numerous awards - Gold, Silver and Bronze medals, Certificates of Merit and Cash Prizes - and were very highly commended at Wembley Exhibition.
+Offset printing a speciality; also the printing of pictures, Calendars, Posters Mill labels and all other commercial colour productions.
+(By appointment to H.E. The Rt. Hon'ble Lord Brabourne, Governor of Bombay.)
+M.A. Joshi &amp; Co., Frame Makers. Prop., The Ravi Udaya Vijaya Fine Art Offset Works. 147-149, Shastri Bldg., Opp. Water Tank, Princess St. Bombay
+The Ritz
+Centrally located amid eyquisite surroundings, the is to-day Calcutta's leading hotel.
+For terms, apply to the manager,
+3, Harrington St., Calcutta.
+Telephone: P.K. 1373. Telegrams: "Ritzie"
+Discerning tourists, people of distinction visit Calcutta, stay at Ritze which caters [...] for the comfort and [...] satisfaction of its guests.</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="b1403938-0631-5e6b-a47f-4f22ce339ba5">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 30 cm, W 20 cm, portrait</notes>
+			<measurements type="height" unit="cm">30</measurements>
+			<measurements type="width" unit="cm">20</measurements>
+			<measurements type="shape"> portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_b1403938-0631-5e6b-a47f-4f22ce339ba5" refid="119762" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="6a2e3bc2-f7f2-534f-bcac-5870a237313e">
+				<term>Ravi Varma, Raja</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>advertisement</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>fair skin</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>M.A. Joshi &amp;amp; Co.</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>hat</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>couple</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>Times of India Yearbook</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-Gerhard</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>princess</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>product advertisement</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>king</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="9f5fddf6-ee5f-5aa5-8d7a-a13ad68b41b8">prints (visual works)</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">An advertisement of M.A. Joshi &amp; Co.</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">pages</worktype>
+			<worktype vocab="" refid="">advertisements</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>good</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/119762</hra:value>
+				<hra:value>119762</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:00:14">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>

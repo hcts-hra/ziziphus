@@ -1,0 +1,256 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+	<work id="w_517711d6-8428-5631-b59a-a9bc8f606377" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
+		<agentSet>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-8e7b749e-228b-5762-b0ed-56ca0360f648">Shivaji</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-33dec962-c338-5e45-82bd-35a1334509a4">Pratap, Maharana</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-1bc05839-b014-53d9-8927-16d0809845dc">Vir Banda Baragi</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-9440efb2-8c83-5941-a16f-6c647b4175bb">Aryan <artist></name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-c01f900c-fae5-515c-8c68-ca52cb1b3cb1">Guru Gobind Singh</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="personal" refid="uuid-e9d5148c-09ac-5b49-be3f-f8d6c44978da">Maharaja Chhatar Sal</name>
+				<role/>
+  			</agent>
+			<agent>
+				<culture/>
+				<name vocab="local" type="corporate" refid="uuid-75afbb3a-4d60-5851-a183-b993fcb046da">Kedar Nath Arya</name>
+				<role/>
+  			</agent>
+		</agentSet>
+		<culturalContextSet>
+			<culturalContext/>
+		</culturalContextSet>
+		<dateSet>
+		</dateSet>
+		<descriptionSet>
+			<description source="Sridevi Padmanabhan," lang="en" script="latn">In this poster, published by Kedar Nath Arya five famous Hindu warriors can be seen- Shivaji, Guru Gobind, Maharana Pratap, Maharaja Chhatar Sal and Vir Banda Baragi. In the centre Maharana Pratap, the ruler of Mewar (Northwest India) can be seen on a horse whose rear feet are planted on a map of India. In the background, a Hindu temple can be seen.</description>
+			<description vocab="" refid="" lang="en" script="latn">framing (processes)</description>
+		</descriptionSet>
+		<inscriptionSet>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Chhatar Pati Shiva Ji
+Guru Gobind Singh Ji</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Maharaja Chhatar Sal
+Maharana Partap on Horse.
+Vir Banda Baragi</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Published by :-
+Kedar Nath Arya,
+Throh Distt Sialkot.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Copy Right Strictly Reserved.
+By the Publisher :-
+Sole Agents :-
+Ganesh Dass Dwarka Nath,
+Machhi Hatta, Lahore.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="en">Approved by All India Hindu Leaders.</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">।। अखंड भारत अमर रहे ।।
+राष्ट्र के पांच रत्न</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">जय जननी</text>
+			</inscription>
+			<inscription>
+				<author/>
+				<position/>
+				<text type="text" lang="hi">[आर्य्यन] [not clear]</text>
+			</inscription>
+		</inscriptionSet>
+		<locationSet>
+			<location type="repository">
+				<name type="corporate" vocab="local" refid="e4a5b31a-0400-54f4-ad99-830c2e0294cc">Delhi / The Priya Paul Collection of Popular Art"</name>
+				<refid/>
+			</location>
+			<location source="EXC" type="repository">
+				<name type="geographic" vocab="" refid="">511###Delhi / The Priya Paul Collection of Popular Art</name>
+			</location>
+		</locationSet>
+		<materialSet>
+
+			<material vocab="LOCAL" refid="ce497196-b1b5-52ee-9f08-bb6627e56ef2" type="medium">paper (fiber product)</material>
+		</materialSet>
+		<measurementsSet>
+			<notes>H 51 cm, W 38 cm, portrait</notes>
+			<measurements type="height" unit="cm">51</measurements>
+			<measurements type="width" unit="cm">38</measurements>
+			<measurements type="shape"> portrait</measurements>
+		</measurementsSet>
+		<relationSet>
+			<relation type="imageIs" relids="i_e4a5b31a-0400-54f4-ad99-830c2e0294cc" refid="119414" source="EXC Priya Paul Collection">Overall view</relation>
+		</relationSet>
+		<rightsSet>
+			<rights type="copyrighted">
+				<rightsHolder/>
+				<text>Copyrighted. Copyright with the original artists and publishers.</text>
+			</rights>
+		</rightsSet>
+		<sourceSet>
+			<source>
+				<name type=""/>
+				<refid type=""/>
+			</source>
+		</sourceSet>
+		<stateEditionSet>
+			<notes/>
+			<stateEdition/>
+		</stateEditionSet>
+		<stylePeriodSet>
+			<stylePeriod vocab="" refid="">1930s - 1940s</stylePeriod>
+		</stylePeriodSet>
+		<subjectSet>
+<!-- ToDo: RefIDs für alle -->
+			<subject source="EXC" vocab="LOCAL" refid="8e7b749e-228b-5762-b0ed-56ca0360f648">
+				<term>Chhatrapati Shivaji Maharaj</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="e9d5148c-09ac-5b49-be3f-f8d6c44978da">
+				<term>Maharaja Chhatar Sal</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>temple</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="1bc05839-b014-53d9-8927-16d0809845dc">
+				<term>Vir Banda Baragi</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>map of India</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="33dec962-c338-5e45-82bd-35a1334509a4">
+				<term>Pratap, Maharana</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="9440efb2-8c83-5941-a16f-6c647b4175bb">
+				<term>Aryan &amp;lt;artist&amp;gt;</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="c01f900c-fae5-515c-8c68-ca52cb1b3cb1">
+				<term>Guru Gobind Singh</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="75afbb3a-4d60-5851-a183-b993fcb046da">
+				<term>Kedar Nath Arya</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>globe</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>recheck-original-language</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>temple architecture</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>horse</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>map</term>
+			</subject>
+			<subject source="EXC" vocab="LOCAL" refid="">
+				<term>architecture</term>
+			</subject>
+			<subject source="SWD" vocab="" refid="">
+				<term>Poster</term>
+			</subject>
+		</subjectSet>
+		<textrefSet>
+			<textref>
+				<name/>
+				<refid source=""/>
+			</textref>
+		</textrefSet>
+		<techniqueSet>
+			<technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+		</techniqueSet>
+		<titleSet>
+			<title type="descriptive" pref="true" lang="en" script="latn">"Maharana Pratap on Horse"</title>
+		</titleSet>
+		<worktypeSet>
+			<worktype vocab="" refid="">posters</worktype>
+		</worktypeSet>
+		<hra:heidicon>
+			<hra:item type="f_autor_zeichen" status="0" display="Artist (characters)">
+				<hra:value>आर्यन [Aryan]</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_ksignatur_zeichen" status="0" display="artist_signature_characters">
+				<hra:value>आर्यन</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_ksignatur_umschrift" status="0" display="artist_signature_transcription">
+				<hra:value>Aryan</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Thongchai Winichakul. 1996. Maps and the Formation of the Geo-Body of Siam. In Asian Forms of the Nation, edited by H. Antlov and S. Tonnesson. London: Curzon Press, p. 70.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Ramusack, Barbara, 2003. The Indian Princes and their States. Cambridge: Cambridge University Press, pp. 245-274.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Coplan, Ian, 1997. The Princes of India in the Endgame of Empire, 1917-1947. Cambridge: Cambridge University Press, pp. 229-287.</hra:value>
+			</hra:item>
+			<hra:item type="t_rl" status="0" display="comment:related_literature">
+				<hra:value>Ramaswamy, Sumathi 2011. "Artful Mapping in Bazaar India. Cartographic Reflections on the Priya Paul Collection". http://www.tasveergharindia.net/cmsdesk/essay/116/index_1.html last accessed 2011-04-06</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_zusammenhang" status="0" display="zusammenhang">
+				<hra:value>damaged</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:item type="f_id_heidicon" status="0" display="Heidicon image_id">
+				<hra:value>http://heidicon.ub.uni-heidelberg.de/id/119414</hra:value>
+				<hra:value>119414</hra:value>
+			</hra:item>
+		</hra:heidicon>
+		<hra:heidicon>
+			<hra:administrative type="heidicon2vra" date="2012-09-04 16:05:55">
+			</hra:administrative>
+		</hra:heidicon>
+	</work>
+</vra>
