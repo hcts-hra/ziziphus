@@ -165,7 +165,12 @@
             <relation type="imageIs" relids="i_859348576" href="http://~seurat.berkeley.edu/images/554678.jpg"></relation>
         </relationSet>
         <rightsSet>
-            <display/>
+            <display>© Faith Ringgold. All rights reserved.</display>
+            <notes>Contact information: PO Box 429, Englewood, NJ 07631 858-576-0397</notes>
+            <rights type="copyrighted">
+                <rightsHolder>Faith Ringgold</rightsHolder>
+                <text>© Faith Ringgold. All Rights reserved.</text>
+            </rights>
             <rights type="copyrighted">
                 <rightsHolder/>
                 <text>Copyrighted. Copyright with the original artists and publishers.</text>
