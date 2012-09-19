@@ -8,7 +8,6 @@
         <xsl:value-of select="@unit"/>
     </xsl:template>
 
-
     <!-- single <measurements> element -->
     <xsl:template match="vra:measurementsSet/vra:measurements" priority="40">
         <xsl:call-template name="handleMeasure"/>
@@ -201,7 +200,7 @@
                         </xsl:when>
                         <xsl:otherwise>
                             <span class="measurementsExtent detail">
-                            <span class="subTitle"><xsl:value-of select="substring(current-grouping-key(),2)"/></span>
+                            <span class="measurementsExtent-name"><xsl:value-of select="substring(current-grouping-key(),2)"/></span>
                             <xsl:call-template name="handleMeasurementsGroup"/>
                             </span>
                         </xsl:otherwise>

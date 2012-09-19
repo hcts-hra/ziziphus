@@ -44,22 +44,22 @@
                 <!-- TODO: make this more concise (like MeasurementsSet.xsl) -->
 
                 <xsl:if test="vra:location[(@type='exhibition') or (@type='installation') or (@type='intended') or (@type='owner') or (@type='performance') or (@type='publication') or (@type='repository') or (@type='site')]">
-                    <span class="subTitle">Current</span>
+                    <span class="location-subTitle">Current</span>
                     <xsl:apply-templates select="vra:location[(@type='exhibition') or (@type='installation') or (@type='intended') or (@type='owner') or (@type='performance') or (@type='publication') or (@type='repository') or (@type='site')]"/>
                 </xsl:if>
 
                 <xsl:if test="vra:location[(@type='formerOwner') or (@type='formerRepository') or (@type='formerSite') or (@type='') or (@type='')]">
-                    <span class="subTitle">Formerly</span>
+                    <span class="location-subTitle">Formerly</span>
                     <xsl:apply-templates select="vra:location[(@type='formerOwner') or (@type='formerRepository') or (@type='formerSite') or (@type='') or (@type='')]"/>
                 </xsl:if>
 
                 <xsl:if test="vra:location[(@type='creation') or (@type='discovery')]">
-                    <span class="subTitle">Origin</span>
+                    <span class="location-subTitle">Origin</span>
                     <xsl:apply-templates select="vra:location[(@type='creation') or (@type='discovery')]"/>
                 </xsl:if>
 
                 <xsl:if test="vra:location[(@type='other')]">
-                    <span class="subTitle">Other</span>
+                    <span class="location-subTitle">Other</span>
                     <xsl:apply-templates select="vra:location[(@type='other')]"/>
                 </xsl:if>
 
