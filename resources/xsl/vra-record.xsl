@@ -240,9 +240,24 @@
 
     <xsl:template name="renderVraAttr">
         <xsl:param name="attrName"/>
-        <xsl:if test="@*[name()=$attrName]">
-            <span class="vraAttr"><span class="vraAttrName"><xsl:value-of select="$attrName"/></span><span class="vraAttrValue"><xsl:value-of select="@*[name()=$attrName]"/></span></span>
-        </xsl:if>
+        <xsl:param name="mode">inline</xsl:param>
+        <xsl:param name="ifAbsent"/>
+
+        <xsl:choose>
+            <xsl:when test="@*[name()=$attrName]">
+                <xsl:choose>
+                    <xsl:when test="'inline'=$mode">
+                        <span class="vraAttr"><span class="vraAttrName"><xsl:value-of select="$attrName"/></span><span class="vraAttrValue"><xsl:value-of select="@*[name()=$attrName]"/></span></span>
+                    </xsl:when>
+                    <xsl:when test="'simple'=$mode">
+                        <xsl:value-of select="@*[name()=$attrName]"/>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="$ifAbsent"/>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
 
     <xsl:template match="vra:display" priority="40">

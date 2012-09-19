@@ -187,8 +187,17 @@
             </source>
         </sourceSet>
         <stateEditionSet>
-            <notes/>
-            <stateEdition/>
+            <stateEdition type="state" count="5" source=" Hollstein, F.W.H., German Engravings Etchings and Woodcuts ca. 1400-1700, Vol. VII, p. 5">
+                <name>1st state</name>
+                <description> Both figures in outline only, except Adam's right leg</description>
+            </stateEdition>
+            <stateEdition type="edition" source="Hollstein, F.W.H., German Engravings Etchings and Woodcuts ca. 1400-1700, Vol. VII, p. 152">
+                <name>Edition of 1511</name>
+                <description> With title and Latin text by Chelidonius</description>
+            </stateEdition>
+            <stateEdition type="impression" num="1" count="20" source=" Hollstein, F.W.H., German Engravings Etchings and Woodcuts ca. 1400-1700, Vol. VII, p. 152">
+                <name>Title page</name>
+            </stateEdition>
         </stateEditionSet>
         <stylePeriodSet>
             <stylePeriod vocab="" refid="">Testrecord_Epoch 21st century</stylePeriod>
