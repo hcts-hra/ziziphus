@@ -30,7 +30,7 @@
             <fileset dir="${basedir}/data"/>
         </copy>
         <copy todir="${target.ziziphus.dir}/records">
-            <fileset dir="${basedir}/records"/>
+            <fileset dir="${basedir}/records" excludes="priyapaul/**"/>
         </copy>
         <copy todir="${target.ziziphus.dir}/forms">
             <fileset dir="${basedir}/forms"/>
