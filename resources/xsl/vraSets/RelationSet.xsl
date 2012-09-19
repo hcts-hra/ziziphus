@@ -2,9 +2,6 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:vra="http://www.vraweb.org/vracore4.htm" version="2.0" exclude-result-prefixes="vra">
     <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"/>
     <xsl:template match="vra:relationSet" priority="40">
-        <xsl:param name="tableId"/>
-
-            <div id="{$tableId}" class="simpleView">
                 <xsl:for-each-group select="vra:relation" group-by="concat('#', @type)">
                     <xsl:sort select="current-grouping-key()"/>
                     <xsl:variable name="relType" select="substring(current-grouping-key(),2)"/>
@@ -54,7 +51,6 @@
                         </xsl:for-each>
                     </div>
                 </xsl:for-each-group>
-            </div>
 
 <!--
         <div xmlns="http://www.w3.org/1999/xhtml" class="vraSection">

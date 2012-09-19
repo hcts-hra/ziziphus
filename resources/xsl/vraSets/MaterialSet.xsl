@@ -2,8 +2,6 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:vra="http://www.vraweb.org/vracore4.htm" version="2.0" exclude-result-prefixes="vra">
     <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"/>
     <xsl:template match="vra:materialSet" priority="40">
-        <xsl:param name="tableId"/>
-            <div id="{$tableId}" class="simpleView">
                 <xsl:variable name="c_med" select="count(vra:material[@type='medium'])"/>
                 <xsl:variable name="c_sup" select="count(vra:material[@type='support'])"/>
                 <xsl:variable name="c_oth" select="count(vra:material[@type='other'])"/>
@@ -26,6 +24,5 @@
                 </xsl:if>
 
                 <span class="notes detail"><xsl:value-of select="vra:notes"/></span>
-            </div>
     </xsl:template>
 </xsl:stylesheet>

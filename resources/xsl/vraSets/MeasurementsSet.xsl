@@ -182,8 +182,6 @@
     </xsl:template>
 
     <xsl:template match="vra:measurementsSet" priority="40">
-        <xsl:param name="tableId"/>
-            <div id="{$tableId}" class="simpleView">
                 <!-- type: area, base, bit-depth (for born-digital work), circumferance, count, depth, diameter, distanceBetween, duration, fileSize (for born-digital work), height, length, resolution (for born-digital work), runningTime, scale (for maps), size, target (for use with scale), weight, width, other. -->
 
                 <!-- concat with '#' is used here to handle measurements with missing 'extent' attributes (i.e.: global) -->
@@ -205,6 +203,5 @@
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:for-each-group>
-            </div>
     </xsl:template>
 </xsl:stylesheet>

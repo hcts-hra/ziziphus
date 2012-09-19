@@ -34,8 +34,6 @@
     </xsl:template>
 
     <xsl:template match="vra:locationSet" priority="40">
-        <xsl:param name="tableId"/>
-            <div id="{$tableId}" class="simpleView">
                 <!-- Restricted schema data values for location type attribute: creation, discovery, exhibition, formerOwner,
                 formerRepository, formerSite, installation, intended (for unrealized projects), other, owner, performance,
                 publication, repository, site (use for current locations for architecture and archaeology) -->
@@ -65,6 +63,5 @@
                 <!-- <span class="vraNode">
                     <xsl:value-of select="vra:notes"/>
                 </span> -->
-            </div>
     </xsl:template>
 </xsl:stylesheet>

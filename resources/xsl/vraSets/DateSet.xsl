@@ -2,8 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:vra="http://www.vraweb.org/vracore4.htm" version="2.0" exclude-result-prefixes="vra">
     <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"/>
     <xsl:template match="vra:dateSet" priority="40">
-        <xsl:param name="tableId"/>
-            <table id="{$tableId}" class="table table-condensed simpleView">
+            <table class="table table-condensed">
                 <thead>
                     <tr>
                         <th>Event</th>

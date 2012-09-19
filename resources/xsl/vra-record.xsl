@@ -153,10 +153,10 @@
                         <button type="button" onclick="toggleDetail(this, '{$tableId}');" class="icon-zoom-in"/>
                     </div>
                     <div class="vraSection" id="{concat($id,'_HtmlContent')}">
-                        <!-- drill down into single stylesheets (the ones include at top of this file.-->
-                        <xsl:apply-templates select="$vraSetNode">
-                            <xsl:with-param name="tableId" select="$tableId"/>
-                        </xsl:apply-templates>
+                        <div class="simpleView" id="{$tableId}">
+                            <!-- drill down into single stylesheets (the ones include at top of this file.-->
+                            <xsl:apply-templates select="$vraSetNode"/>
+                        </div>
                     </div>
                 </xf:case>
                 <!-- EDIT CASE -->
