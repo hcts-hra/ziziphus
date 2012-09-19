@@ -178,8 +178,12 @@
         </rightsSet>
         <sourceSet>
             <source>
-                <name type=""/>
-                <refid type=""/>
+                <name type="book">Gascoigne, Bamber, The Great Moghuls, New York: Harper &amp; Row, 1971</name>
+                <refid type="ISBN">060114673</refid>
+            </source>
+            <source>
+                <name type="book">Gascoigne, Bamber, The Great Moghuls, New York: Harper &amp; Row, 1972</name>
+                <refid type="ISBN">060114674</refid>
             </source>
         </sourceSet>
         <stateEditionSet>
