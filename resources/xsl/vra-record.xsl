@@ -152,7 +152,7 @@
                         </xf:trigger>
                         <button type="button" onclick="toggleDetail(this, '{$tableId}');" class="icon-zoom-in"/>
                     </div>
-                    <div id="{concat($id,'_HtmlContent')}">
+                    <div class="vraSection" id="{concat($id,'_HtmlContent')}">
                         <!-- drill down into single stylesheets (the ones include at top of this file.-->
                         <xsl:apply-templates select="$vraSetNode">
                             <xsl:with-param name="tableId" select="$tableId"/>
@@ -233,6 +233,18 @@
         <xsl:param name="attrName"/>
         <xsl:if test="@*[name()=$attrName]">
             <span class="vraAttr"><span class="vraAttrName"><xsl:value-of select="$attrName"/></span><span class="vraAttrValue"><xsl:value-of select="@*[name()=$attrName]"/></span></span>
+        </xsl:if>
+    </xsl:template>
+
+    <xsl:template name="renderVraDisplay">
+        <xsl:if test="vra:display">
+            <span class="display"><xsl:value-of select="vra:display"/></span>
+        </xsl:if>
+    </xsl:template>
+
+    <xsl:template name="renderVraNotes">
+        <xsl:if test="vra:notes">
+            <span class="notes"><xsl:value-of select="vra:notes"/></span>
         </xsl:if>
     </xsl:template>
 </xsl:stylesheet>

@@ -3,7 +3,6 @@
     <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"/>
     <xsl:template match="vra:descriptionSet" priority="40">
         <xsl:param name="tableId"/>
-        <div id="{$tableId}" xmlns="http://www.w3.org/1999/xhtml" class="vraSection">
             <xsl:for-each select="vra:description">
                 <div class="simpleView">
                     <xsl:variable name="descr" select="."/>
@@ -21,6 +20,5 @@
             <span class="vraNode">
                 <xsl:value-of select="vra:notes"/>
             </span>
-        </div>
     </xsl:template>
 </xsl:stylesheet>

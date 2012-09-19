@@ -2,7 +2,6 @@
     <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"/>
     <xsl:template match="vra:agentSet" priority="40">
         <xsl:param name="tableId"/>
-        <div class="vraSection">
             <table id="{$tableId}" class="table table-condensed simpleView">
                 <thead>
                     <tr>
@@ -39,6 +38,9 @@
                     </xsl:for-each>
                 </tbody>
             </table>
+
+            <xsl:call-template name="renderVraNotes"/>
+
             <!--
             <span class="vraNode vraDisplay">
                 <xsl:value-of select="vra:display"/>
@@ -47,6 +49,5 @@
                 <xsl:value-of select="vra:notes"/>
             </span>
             -->
-        </div>
     </xsl:template>
 </xsl:stylesheet>

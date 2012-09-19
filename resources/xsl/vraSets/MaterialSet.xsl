@@ -3,7 +3,6 @@
     <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"/>
     <xsl:template match="vra:materialSet" priority="40">
         <xsl:param name="tableId"/>
-        <div xmlns="http://www.w3.org/1999/xhtml" class="vraSection">
             <div id="{$tableId}" class="simpleView">
                 <xsl:variable name="c_med" select="count(vra:material[@type='medium'])"/>
                 <xsl:variable name="c_sup" select="count(vra:material[@type='support'])"/>
@@ -28,6 +27,5 @@
 
                 <span class="notes detail"><xsl:value-of select="vra:notes"/></span>
             </div>
-        </div>
     </xsl:template>
 </xsl:stylesheet>

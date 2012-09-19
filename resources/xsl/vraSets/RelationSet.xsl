@@ -4,7 +4,6 @@
     <xsl:template match="vra:relationSet" priority="40">
         <xsl:param name="tableId"/>
 
-        <div xmlns="http://www.w3.org/1999/xhtml" class="vraSection">
             <div id="{$tableId}" class="simpleView">
                 <xsl:for-each-group select="vra:relation" group-by="concat('#', @type)">
                     <xsl:sort select="current-grouping-key()"/>
@@ -56,7 +55,6 @@
                     </div>
                 </xsl:for-each-group>
             </div>
-        </div>
 
 <!--
         <div xmlns="http://www.w3.org/1999/xhtml" class="vraSection">
