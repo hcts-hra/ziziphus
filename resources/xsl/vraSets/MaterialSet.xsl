@@ -22,7 +22,5 @@
                     <xsl:text>; </xsl:text>
                     <xsl:value-of select="vra:material[@type='other']"/>
                 </xsl:if>
-
-        <xsl:call-template name="renderVraNotes"/>
     </xsl:template>
 </xsl:stylesheet>

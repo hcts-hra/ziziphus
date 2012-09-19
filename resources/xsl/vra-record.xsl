@@ -154,8 +154,17 @@
                     </div>
                     <div class="vraSection" id="{concat($id,'_HtmlContent')}">
                         <div class="simpleView" id="{$tableId}">
-                            <!-- drill down into single stylesheets (the ones include at top of this file.-->
-                            <xsl:apply-templates select="$vraSetNode"/>
+                            <xsl:choose>
+                                <xsl:when test="$vraSetNode/vra:display">
+                                    <xsl:apply-templates select="$vraSetNode/vra:display"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <!-- drill down into single stylesheets (the ones include at top of this file.-->
+                                    <xsl:apply-templates select="$vraSetNode"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
+
+                            <xsl:apply-templates select="$vraSetNode/vra:notes"/>
                         </div>
                     </div>
                 </xf:case>
@@ -236,15 +245,15 @@
         </xsl:if>
     </xsl:template>
 
-    <xsl:template name="renderVraDisplay">
-        <xsl:if test="vra:display">
-            <span class="display"><xsl:value-of select="vra:display"/></span>
+    <xsl:template match="vra:display" priority="40">
+        <xsl:if test="text()">
+            <div class="display-container"><xsl:value-of select="text()"/></div>
         </xsl:if>
     </xsl:template>
 
-    <xsl:template name="renderVraNotes">
-        <xsl:if test="vra:notes/text()">
-            <div class="notes-container"><span class="notes"><xsl:value-of select="vra:notes/text()"/></span></div>
+    <xsl:template match="vra:notes" priority="40">
+        <xsl:if test="text()">
+            <div class="notes-container"><span class="notes"><xsl:value-of select="text()"/></span></div>
         </xsl:if>
     </xsl:template>
 </xsl:stylesheet>

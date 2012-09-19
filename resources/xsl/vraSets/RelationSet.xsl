@@ -69,6 +69,5 @@
             </xsl:for-each>
         </div>
 -->
-        <xsl:call-template name="renderVraNotes"/>
     </xsl:template>
 </xsl:stylesheet>

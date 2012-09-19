@@ -18,7 +18,5 @@
                     </span>
                 </div>
             </xsl:for-each>
-
-        <xsl:call-template name="renderVraNotes"/>
     </xsl:template>
 </xsl:stylesheet>

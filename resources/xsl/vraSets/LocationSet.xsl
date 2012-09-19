@@ -59,7 +59,5 @@
                     <span class="location-subTitle">Other</span>
                     <xsl:apply-templates select="vra:location[(@type='other')]"/>
                 </xsl:if>
-
-        <xsl:call-template name="renderVraNotes"/>
     </xsl:template>
 </xsl:stylesheet>

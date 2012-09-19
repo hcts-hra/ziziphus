@@ -2,7 +2,6 @@
 <vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:hra="http://www.example.com/hra" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
     <work id="w_40ca74a3-3e6c-5749-b0a0-b42afbadff01" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
         <agentSet>
-            <display>agent display</display>
             <notes>agent notes</notes>
             <agent>
                 <culture/>
@@ -31,12 +30,10 @@
             </agent>
         </agentSet>
         <culturalContextSet>
-            <display>cultural context display</display>
             <notes>cultural context notes</notes>
             <culturalContext>Japanese</culturalContext>
         </culturalContextSet>
         <dateSet>
-            <display>date display</display>
             <notes>date notes</notes>
             <date type="creation">
                 <earliestDate type="after">2009</earliestDate>
@@ -49,13 +46,11 @@
         </dateSet>
         <image id="226566" href="" refid="" source=""/>
         <descriptionSet>
-            <display>description display</display>
             <notes>description notes</notes>
             <description vocab="" refid="" lang="en" script="latn">Test entry description.</description>
             <description vocab="" refid="" lang="en" script="latn">The present cathedral was constructed on the foundations of the earlier church; the oldest parts of the cathedral are the crypt and Royal Portal (West Portal), remnants of a Romanesque church destroyed by fire in 1194. The present cathedral was constructed on the foundations of the earlier church; the oldest parts of the cathedral are the crypt and Royal Portal (West Portal), remnants of a Romanesque church destroyed by fire in 1194. The present cathedral was constructed on the foundations of the earlier church; the oldest parts of the cathedral are the crypt and Royal Portal (West Portal), remnants of a Romanesque church destroyed by fire in 1194.</description>
         </descriptionSet>
         <inscriptionSet>
-            <display>inscription display</display>
             <notes>inscription notes</notes>
             <inscription>
                 <author/>
@@ -84,7 +79,6 @@
             </inscription>
         </inscriptionSet>
         <locationSet>
-            <display>location display</display>
             <notes>location notes</notes>
             <location type="repository">
                 <name type="corporate" xml:lang="fr">Musée du Louvre</name>
@@ -131,7 +125,6 @@
             </location>
         </locationSet>
         <materialSet>
-            <display>material display</display>
             <!-- <material vocab="" refid="" type="medium">wood (plant material)</material> -->
             <notes source="Art Bulletin, v.87, no. 1 (March 2005)">Medium originally thought to be tempera. Oil medium discovered in tests at Uffizi in 2003</notes>
             <material type="medium" vocab="AAT" refid="300015050">oil paint</material>
@@ -139,7 +132,6 @@
             <material type="other">bronze oil canvas</material>
         </materialSet>
         <measurementsSet>
-            <display>measurements display: Base 3 cm (H) x 36 cm (W) x 24 cm (D)</display>
             <measurements type="height" unit="cm" extent="base">3</measurements>
             <measurements type="width" unit="cm" extent="base">36</measurements>
             <measurements type="depth" unit="cm" extent="base">24</measurements>
@@ -170,12 +162,10 @@
         <relationSet>
             <notes>relation notes</notes>
             <relation type="imageIs" relids="i_93d52424-a024-55d2-92b4-ca14275caeb9" refid="226566" source="EXC Priya Paul Collection">Overall view</relation>
-            <display>relation display: From the Altar of Zeus, Pergamon</display>
             <relation type="partOf" relids="w_000987653" href="http://~seurat.berkeley.edu/worksmetadata/13255.html">Altar of Zeus</relation>
             <relation type="imageIs" relids="i_859348576" href="http://~seurat.berkeley.edu/images/554678.jpg"></relation>
         </relationSet>
         <rightsSet>
-            <display>© Faith Ringgold. All rights reserved.</display>
             <notes>Contact information: PO Box 429, Englewood, NJ 07631 858-576-0397</notes>
             <rights type="copyrighted">
                 <rightsHolder>Faith Ringgold</rightsHolder>
@@ -187,19 +177,16 @@
             </rights>
         </rightsSet>
         <sourceSet>
-            <display/>
             <source>
                 <name type=""/>
                 <refid type=""/>
             </source>
         </sourceSet>
         <stateEditionSet>
-            <display/>
             <notes/>
             <stateEdition/>
         </stateEditionSet>
         <stylePeriodSet>
-            <display/>
             <stylePeriod vocab="" refid="">Testrecord_Epoch 21st century</stylePeriod>
         </stylePeriodSet>
         <subjectSet>
@@ -223,24 +210,20 @@
             </subject>
         </subjectSet>
         <textrefSet>
-            <display/>
             <textref>
                 <name/>
                 <refid source=""/>
             </textref>
         </textrefSet>
         <techniqueSet>
-            <display/>
             <technique vocab="" refid="">postcards</technique>
         </techniqueSet>
         <titleSet>
-            <display/>
             <title type="descriptive" pref="true" lang="en" script="latn">Testrecord_20120316_title</title>
             <title type="descriptive" pref="false" lang="" script="">Testrecord_Titel-Umschrift Assalamo alaikum</title>
             <title type="descriptive" pref="false" lang="" script="">Testrecord_Titel-Zeichen 中文السلام علیکُم عید مبارک</title>
         </titleSet>
         <worktypeSet>
-            <display/>
             <worktype vocab="" refid="">Testrecord_Form/Genre Photography</worktype>
         </worktypeSet>
 <!--

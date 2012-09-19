@@ -81,6 +81,9 @@ body {
   content: none;
 }
 
+.bf .vraSection div.display-container {
+    clear: both;
+}
 .bf .vraSection .simpleView .notes-container {
     display: none;
 }

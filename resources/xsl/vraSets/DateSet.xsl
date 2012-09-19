@@ -20,7 +20,5 @@
                     </xsl:for-each>
                 </tbody>
             </table>
-
-        <xsl:call-template name="renderVraNotes"/>
     </xsl:template>
 </xsl:stylesheet>
