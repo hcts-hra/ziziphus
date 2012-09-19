@@ -2,7 +2,8 @@
 <vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:hra="http://www.example.com/hra" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
     <work id="w_40ca74a3-3e6c-5749-b0a0-b42afbadff01" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
         <agentSet>
-            <display/>
+            <display>agent display</display>
+            <notes>agent notes</notes>
             <agent>
                 <culture/>
                 <name vocab="local" type="personal" refid="118551469" lang="" script="" pref="true">Andō, Hiroshige</name>
@@ -30,9 +31,13 @@
             </agent>
         </agentSet>
         <culturalContextSet>
+            <display>cultural context display</display>
+            <notes>cultural context notes</notes>
             <culturalContext>Japanese</culturalContext>
         </culturalContextSet>
         <dateSet>
+            <display>date display</display>
+            <notes>date notes</notes>
             <date type="creation">
                 <earliestDate type="after">2009</earliestDate>
                 <latestDate type="probably">2010</latestDate>
@@ -44,12 +49,14 @@
         </dateSet>
         <image id="226566" href="" refid="" source=""/>
         <descriptionSet>
-            <display/>
+            <display>description display</display>
+            <notes>description notes</notes>
             <description vocab="" refid="" lang="en" script="latn">Test entry description.</description>
             <description vocab="" refid="" lang="en" script="latn">The present cathedral was constructed on the foundations of the earlier church; the oldest parts of the cathedral are the crypt and Royal Portal (West Portal), remnants of a Romanesque church destroyed by fire in 1194. The present cathedral was constructed on the foundations of the earlier church; the oldest parts of the cathedral are the crypt and Royal Portal (West Portal), remnants of a Romanesque church destroyed by fire in 1194. The present cathedral was constructed on the foundations of the earlier church; the oldest parts of the cathedral are the crypt and Royal Portal (West Portal), remnants of a Romanesque church destroyed by fire in 1194.</description>
         </descriptionSet>
         <inscriptionSet>
-            <display/>
+            <display>inscription display</display>
+            <notes>inscription notes</notes>
             <inscription>
                 <author/>
                 <position/>
@@ -77,6 +84,8 @@
             </inscription>
         </inscriptionSet>
         <locationSet>
+            <display>location display</display>
+            <notes>location notes</notes>
             <location type="repository">
                 <name type="corporate" xml:lang="fr">Musée du Louvre</name>
                 <refid type="accession">Inv. MR 299</refid>
@@ -122,7 +131,7 @@
             </location>
         </locationSet>
         <materialSet>
-            <display/>
+            <display>material display</display>
             <!-- <material vocab="" refid="" type="medium">wood (plant material)</material> -->
             <notes source="Art Bulletin, v.87, no. 1 (March 2005)">Medium originally thought to be tempera. Oil medium discovered in tests at Uffizi in 2003</notes>
             <material type="medium" vocab="AAT" refid="300015050">oil paint</material>
@@ -130,11 +139,11 @@
             <material type="other">bronze oil canvas</material>
         </materialSet>
         <measurementsSet>
-            <display>Base 3 cm (H) x 36 cm (W) x 24 cm (D)</display>
+            <display>measurements display: Base 3 cm (H) x 36 cm (W) x 24 cm (D)</display>
             <measurements type="height" unit="cm" extent="base">3</measurements>
             <measurements type="width" unit="cm" extent="base">36</measurements>
             <measurements type="depth" unit="cm" extent="base">24</measurements>
-            <notes>5 x 3 inch, oval</notes>
+            <notes>measurements notes: 5 x 3 inch, oval</notes>
 
             <measurements type="diameter" unit="m">29.7</measurements>
             <measurements type="circumference" unit="m">15</measurements>
@@ -159,8 +168,9 @@
             <measurements type="diameter" unit="cm" extent="bottom end">1</measurements>
         </measurementsSet>
         <relationSet>
+            <notes>relation notes</notes>
             <relation type="imageIs" relids="i_93d52424-a024-55d2-92b4-ca14275caeb9" refid="226566" source="EXC Priya Paul Collection">Overall view</relation>
-            <display>From the Altar of Zeus, Pergamon</display>
+            <display>relation display: From the Altar of Zeus, Pergamon</display>
             <relation type="partOf" relids="w_000987653" href="http://~seurat.berkeley.edu/worksmetadata/13255.html">Altar of Zeus</relation>
             <relation type="imageIs" relids="i_859348576" href="http://~seurat.berkeley.edu/images/554678.jpg"></relation>
         </relationSet>
