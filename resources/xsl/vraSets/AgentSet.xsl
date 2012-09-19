@@ -39,14 +39,5 @@
             </table>
 
             <xsl:call-template name="renderVraNotes"/>
-
-            <!--
-            <span class="vraNode vraDisplay">
-                <xsl:value-of select="vra:display"/>
-            </span>
-            <span class="vraNode vraNotes">
-                <xsl:value-of select="vra:notes"/>
-            </span>
-            -->
     </xsl:template>
 </xsl:stylesheet>

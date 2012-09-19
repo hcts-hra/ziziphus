@@ -5,9 +5,6 @@
             <span class="vraNode">
                 <xsl:value-of select="vra:display"/>
             </span>
-            <span class="vraNode">
-                <xsl:value-of select="vra:notes"/>
-            </span>
             <xsl:for-each select="vra:stylePeriod">
                 <div>
                     <span class="vraNode">
@@ -15,5 +12,7 @@
                     </span>
                 </div>
             </xsl:for-each>
+
+        <xsl:call-template name="renderVraNotes"/>
     </xsl:template>
 </xsl:stylesheet>

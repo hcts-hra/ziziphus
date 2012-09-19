@@ -23,6 +23,6 @@
                     <xsl:value-of select="vra:material[@type='other']"/>
                 </xsl:if>
 
-                <span class="notes detail"><xsl:value-of select="vra:notes"/></span>
+        <xsl:call-template name="renderVraNotes"/>
     </xsl:template>
 </xsl:stylesheet>

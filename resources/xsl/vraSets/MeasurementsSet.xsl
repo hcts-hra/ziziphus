@@ -203,5 +203,7 @@
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:for-each-group>
+
+        <xsl:call-template name="renderVraNotes"/>
     </xsl:template>
 </xsl:stylesheet>

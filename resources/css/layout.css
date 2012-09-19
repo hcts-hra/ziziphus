@@ -81,17 +81,19 @@ body {
   content: none;
 }
 
-.bf .vraSection .simpleView .notes {
+.bf .vraSection .simpleView .notes-container {
     display: none;
 }
-.bf .vraSection .fullView .notes {
-    font-size: smaller;
+.bf .vraSection .fullView .notes-container {
     display: block;
+    clear: both;
 }
-.bf .vraSection .fullView .notes:before {
+.bf .vraSection .fullView .notes-container .notes {
+    font-size: smaller;
+}
+.bf .vraSection .fullView .notes-container .notes:before {
     content: 'Notes';
     font-weight: bold;
-    font-size: smaller;
     display: block;
 }
 

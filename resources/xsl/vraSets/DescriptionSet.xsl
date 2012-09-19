@@ -16,8 +16,7 @@
                     </xsl:choose>
                 </div>
             </xsl:for-each>
-            <span class="vraNode">
-                <xsl:value-of select="vra:notes"/>
-            </span>
+
+        <xsl:call-template name="renderVraNotes"/>
     </xsl:template>
 </xsl:stylesheet>

@@ -243,8 +243,8 @@
     </xsl:template>
 
     <xsl:template name="renderVraNotes">
-        <xsl:if test="vra:notes">
-            <span class="notes"><xsl:value-of select="vra:notes"/></span>
+        <xsl:if test="vra:notes/text()">
+            <div class="notes-container"><span class="notes"><xsl:value-of select="vra:notes/text()"/></span></div>
         </xsl:if>
     </xsl:template>
 </xsl:stylesheet>
