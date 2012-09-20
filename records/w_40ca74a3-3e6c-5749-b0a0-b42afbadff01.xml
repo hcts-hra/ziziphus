@@ -201,6 +201,8 @@
         </stateEditionSet>
         <stylePeriodSet>
             <stylePeriod vocab="" refid="">Testrecord_Epoch 21st century</stylePeriod>
+            <stylePeriod vocab="AAT" refid="300111198">Italian</stylePeriod>
+            <stylePeriod vocab="AAT" refid="300021147">Baroque</stylePeriod>
         </stylePeriodSet>
         <subjectSet>
             <subject source="EXC" vocab="" refid="">
