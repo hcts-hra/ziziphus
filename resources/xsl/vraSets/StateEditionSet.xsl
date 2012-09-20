@@ -12,7 +12,6 @@
             <xsl:with-param name="ifAbsent">-</xsl:with-param>
         </xsl:call-template>
 
-        <!-- <xsl:value-of select="@num or '&mdash;'"/> -->
         <xsl:text> of </xsl:text>
         <xsl:call-template name="renderVraAttr">
             <xsl:with-param name="attrName">count</xsl:with-param>
