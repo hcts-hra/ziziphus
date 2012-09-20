@@ -257,6 +257,9 @@
         </titleSet>
         <worktypeSet>
             <worktype vocab="" refid="">Testrecord_Form/Genre Photography</worktype>
+            <worktype vocab="AAT" refid="300170443 ">basilica</worktype>
+            <worktype vocab="AAT" refid="300189759">fonds</worktype>
+            <worktype vocab="AAT" refid="300215302">digital image</worktype>
         </worktypeSet>
 <!--
 NOT ALLOWED DUE TO SCHEMA!!! 
