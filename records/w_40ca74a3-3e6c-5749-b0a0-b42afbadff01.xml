@@ -205,6 +205,11 @@
             <stylePeriod vocab="AAT" refid="300021147">Baroque</stylePeriod>
         </stylePeriodSet>
         <subjectSet>
+            <subject>
+                <term type="geographicPlace" vocab="TGN" refid="7013596">Chicago</term>
+                <term type="personalName" vocab="LCNAF" refid="n79126907">Chaplin, Charlie, 1889-1977</term>
+                <term type="descriptiveTopic" vocab="AAT" refid="300025658">actors</term>
+            </subject>
             <subject source="EXC" vocab="" refid="">
                 <term>tea pot</term>
             </subject>
