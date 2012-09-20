@@ -231,6 +231,14 @@
         </subjectSet>
         <textrefSet>
             <textref>
+                <name type="corpus">Beazley, J.D., Attic Red-figure Vase Painters (2nd edition), New York: Hacker Art Books, 1984</name>
+                <refid type="citation" >p. 5, no. 6</refid>
+            </textref>
+            <textref type="electronic">
+                <name>The Beazley Archive</name>
+                <refid type="other" href="http://www.beazley.ox.ac.uk" dataDate="2005-06-08">Vase number 200020</refid>
+            </textref>
+            <textref>
                 <name/>
                 <refid source=""/>
             </textref>
