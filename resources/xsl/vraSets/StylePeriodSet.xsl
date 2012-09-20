@@ -4,7 +4,7 @@
     <xsl:template match="vra:stylePeriodSet" priority="40">
         <xsl:for-each select="vra:stylePeriod">
             <xsl:if test="1 &lt; position()">
-                <xsl:text> </xsl:text>
+                <xsl:text>; </xsl:text>
             </xsl:if>
             <xsl:value-of select="."/>
         </xsl:for-each>
