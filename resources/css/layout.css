@@ -71,6 +71,9 @@ body {
 .bf .simpleView .simple-inline:after {
   content: '...';
 }
+.bf .simpleView .detail-li {
+  display: none;
+}
 .bf .fullView .detail {
   display: block;
 }
@@ -79,6 +82,9 @@ body {
 }
 .bf .fullView .simple-inline:after {
   content: none;
+}
+.bf .fullView .detail-li {
+  display: list-item;
 }
 
 .bf .vraSection div.display-container {

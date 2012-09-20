@@ -249,6 +249,8 @@
             <technique vocab="" refid="">postcards</technique>
         </techniqueSet>
         <titleSet>
+            <title type="cited" pref="true" source="Grove Dictionary of Art Online">Arnolfini Marriage</title>
+            <title type="repository" pref="false" source="National Gallery of Art (London, GB)">Portrait of Giovanni (?) Arnolfini and his Wife ("The Arnolfini Portrait")</title>
             <title type="descriptive" pref="true" lang="en" script="latn">Testrecord_20120316_title</title>
             <title type="descriptive" pref="false" lang="" script="">Testrecord_Titel-Umschrift Assalamo alaikum</title>
             <title type="descriptive" pref="false" lang="" script="">Testrecord_Titel-Zeichen 中文السلام علیکُم عید مبارک</title>
