@@ -1,5 +1,6 @@
 <tracklog>
     <workrecord id="" status="" user="" date="">
+        <!-- status = "untouched | inprogress | done" -->
         <agentSet status="" user="" date="">
             <entry status="" user="" date=""/>
             <entry status="" user="" date=""/>

@@ -3,7 +3,7 @@
     <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"/>
     <xsl:template match="vra:descriptionSet" priority="40">
             <xsl:for-each select="vra:description">
-                <div class="simpleView">
+                <div class="simple">
                     <xsl:variable name="descr" select="."/>
                     <xsl:choose>
                         <xsl:when test="string-length($descr) &lt;= 60">

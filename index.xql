@@ -61,7 +61,6 @@ return
         <title>Ziziphus Image DB</title>
         <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css"/>
         <link rel="stylesheet" type="text/css" href="resources/css/layout.css"/>
-        <link rel="stylesheet" type="text/css" href="resources/css/record.css"/>
     </head>
     <body id="ziziphusImageDB">
         <div id="overlay" style="position:absolute;z-index:9999;width:100%;height:100%;background:#444444;">
@@ -112,18 +111,15 @@ return
 
 
         <script type="text/javascript" defer="defer">
-                dojo.require("dijit.layout.ContentPane");
-            dojo.require("dijit.layout.BorderContainer");
-            dojo.require("dijit.TitlePane");
-            dojo.require("dijit.Tooltip");
-            dojo.require("dijit.form.TextBox");
-            dojo.require("dijit.Menu");
-            dojo.require("dijit.MenuBar");
-            dojo.require("dijit.PopupMenuBarItem");
-            dojo.require("dijit.CheckedMenuItem");
-            dojo.require("dijit.form.DropDownButton");
-            dojo.require("dijit.TooltipDialog");
-            dojo.require("dijit.form.Button");
+           require(["dojo/parser",
+                    "dijit/Menu",
+                    "dijit/MenuBar",
+                    "dijit/MenuBarItem",
+                    "dijit/PopupMenuBarItem",
+                    "dijit/DropDownMenu",
+                    "dijit/MenuItem",
+                    "dijit/CheckedMenuItem",
+                    "dijit/TitlePane"]);
         </script>
 
         <script type="text/javascript" defer="defer" src="resources/script/ziziphus.js"/>
@@ -138,14 +134,14 @@ return
                             animation.play();
                         }});
                     }});
-                    
+
                     function toggleDetail(n, m){{
                         console.debug("this: ", n, " " , m);
                         $(n).toggleClass("icon-zoom-out");
                         $(n).toggleClass("icon-zoom-in");
-                        $("#"+m).toggleClass("simpleView");
-                        $("#"+m).toggleClass("fullView");
-                        
+                        $("#"+m).toggleClass("simple");
+                        $("#"+m).toggleClass("full");
+
                     }}
         </script>
 </body>

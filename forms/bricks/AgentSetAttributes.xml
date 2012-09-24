@@ -1,0 +1,30 @@
+<xf:group appearance="minimal" xmlns:xf="http://www.w3.org/2002/xforms">
+    <xf:label/>
+    <xf:input ref="@dataDate" model="m-child-model">
+        <xf:label>dataDate</xf:label>
+    </xf:input>
+    <xf:input ref="@extent" model="m-child-model">
+        <xf:label>extent</xf:label>
+    </xf:input>
+    <xf:input ref="@href" model="m-child-model">
+        <xf:label>href</xf:label>
+    </xf:input>
+    <xf:input ref="@pref" model="m-child-model">
+        <xf:label>pref</xf:label>
+    </xf:input>
+    <xf:input ref="@rules" model="m-child-model">
+        <xf:label>rules</xf:label>
+    </xf:input>
+    <xf:input ref="@source" model="m-child-model">
+        <xf:label>source</xf:label>
+    </xf:input>
+    <xf:input ref="@xml:lang" model="m-child-model">
+        <xf:label>lang</xf:label>
+    </xf:input>
+    <xf:input ref="@script" model="m-child-model">
+        <xf:label>script</xf:label>
+    </xf:input>
+    <xf:input ref="@transliteration" model="m-child-model">
+        <xf:label>transliteration</xf:label>
+    </xf:input>
+</xf:group>

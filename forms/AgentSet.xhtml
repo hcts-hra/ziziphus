@@ -1,10 +1,20 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:bf="http://betterform.sourceforge.net/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:vra="http://www.vraweb.org/vracore4.htm" xmlns:bfc="http://betterform.sourceforge.net/xforms/controls" xmlns:exist="http://exist.sourceforge.net/NS/exist" xmlns:xf="http://www.w3.org/2002/xforms">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ev="http://www.w3.org/2001/xml-events"
+      xmlns:bf="http://betterform.sourceforge.net/xforms"
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:vra="http://www.vraweb.org/vracore4.htm"
+      xmlns:bfc="http://betterform.sourceforge.net/xforms/controls"
+      xmlns:xf="http://www.w3.org/2002/xforms"
+      xmlns:xi="http://www.w3.org/2001/XInclude">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <title>Ziziphus_Image_DB</title>
     </head>
     <body>
         <div id="xforms">
+            <!-- ###################### MODEL ################################## -->
+            <!-- ###################### MODEL ################################## -->
+            <!-- ###################### MODEL ################################## -->
             <div style="display:none">
                 <xf:model id="m-child-model" schema="resources/xsd/vra-types.xsd">
                     <xf:instance id="i-agentSet">
@@ -152,6 +162,7 @@
                     </xf:bind>
                     <xf:instance id="i-templates">
                         <templates xmlns="http://www.vraweb.org/vracore4.htm">
+                            <!-- todo: clarify: are agent attributes required? They are present in the schema but are they use for ziziphus? -->
                             <agent dataDate="" extent="" href="" xml:lang="" pref="" refid="" rules="" source="" vocab="" script=""
                                    transliteration="">
                                 <attribution dataDate="" extent="" href="" xml:lang="" pref="" refid="" rules="" source="" vocab=""
@@ -316,15 +327,18 @@
                 </xf:model>
             </div>
 
+            <!-- todo: clarify - what do these elements do ????????????? -->
             <div style="display:none">
+                <!-- close attribute dialog -->
                 <xf:output ref="instance('i-agentSetController')/attribute">
                     <xf:label>Attribute</xf:label>
                     <xf:action ev:event="xforms-value-changed">
                         <xf:insert context="instance('i-agentSet')/vra:agent[index('r-vraAgent')]/*[local-name() eq instance('i-agentSetController')/elementName]" origin="instance('i-templates')/vra:agent/*[local-name() eq instance('i-agentSetController')/elementName]/@*[local-name() eq instance('i-agentSetController')/attribute]" />
-                        <xf:setvalue ref="instance('i-agentSetController')/elementName" value="''"/>
+                        <xf:setvalue ref="instance('i-agentSetController')/elementName" />
                     </xf:action>
                 </xf:output>
 
+                <!-- open attribute dialog -->
                 <xf:output ref="instance('i-agentSetController')/elementName">
                     <xf:label>ElementName</xf:label>
 
@@ -340,7 +354,10 @@
                 </xf:trigger>
             </div>
 
-            <xf:group appearance="bf:VerticalTable" ref="instance()" model="m-child-model">
+            <!-- ####################################### VISIBLE UI ####################################### -->
+            <!-- ####################################### VISIBLE UI ####################################### -->
+            <!-- ####################################### VISIBLE UI ####################################### -->
+            <xf:group appearance="minimal" ref="instance('i-agentSet')" model="m-child-model">
                 <xf:label/>
                 <xf:trigger class="t-save" model="m-child-model" title="Save">
                     <xf:label/>
@@ -359,149 +376,6 @@
                 </div>
 
 
-                <!-- Dialog for adding/removing attributes subelements name/role/culture/... -->
-                <bfc:dialog id="attrDialog">
-                    <xf:label>Remove/Add Attribute</xf:label>
-                    <xf:group ref="instance('i-agentSet')/vra:agent[index('r-vraAgent')]/*[local-name() eq instance('i-agentSetController')/elementName]">
-                        <xf:label>Remove Attribute</xf:label>
-
-                        <xf:trigger ref="@dataDate">
-                            <xf:label>dataDate</xf:label>
-                            <xf:delete nodeset="."/>
-                            <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
-                        </xf:trigger>
-
-                        <xf:trigger ref="@extent">
-                            <xf:label>extent</xf:label>
-                            <xf:delete nodeset="."/>
-                            <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
-                        </xf:trigger>
-
-                        <xf:trigger ref="@href">
-                            <xf:label>href</xf:label>
-                            <xf:delete nodeset="."/>
-                            <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
-                        </xf:trigger>
-
-                        <xf:trigger ref="@xml:lang">
-                            <xf:label>lang</xf:label>
-                            <xf:delete nodeset="."/>
-                            <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
-                        </xf:trigger>
-
-                        <xf:trigger ref="@pref">
-                            <xf:label>pref</xf:label>
-                            <xf:delete nodeset="."/>
-                            <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
-                        </xf:trigger>
-
-                        <xf:trigger ref="@refid">
-                            <xf:label>refid</xf:label>
-                            <xf:delete nodeset="."/>
-                            <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
-                        </xf:trigger>
-
-                        <xf:trigger ref="@rules">
-                            <xf:label>rules</xf:label>
-                            <xf:delete nodeset="."/>
-                            <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
-                        </xf:trigger>
-
-                        <xf:trigger ref="@source">
-                            <xf:label>source</xf:label>
-                            <xf:delete nodeset="."/>
-                            <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
-                        </xf:trigger>
-
-                        <xf:trigger ref="@vocab">
-                            <xf:label>vocab</xf:label>
-                            <xf:delete nodeset="."/>
-                            <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
-                        </xf:trigger>
-
-                        <xf:trigger ref="@script">
-                            <xf:label>script</xf:label>
-                            <xf:delete nodeset="."/>
-                            <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
-                        </xf:trigger>
-
-                        <xf:trigger ref="@transliteration">
-                            <xf:label>transliteration</xf:label>
-                            <xf:delete nodeset="."/>
-                            <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
-                        </xf:trigger>
-                    </xf:group>
-
-                    <xf:group ref="instance('i-agentSetController')/attributes">
-                        <xf:label>Add Attribute</xf:label>
-
-                        <xf:trigger ref="@dataDate">
-                            <xf:label>dataDate</xf:label>
-                            <xf:setvalue ref="instance('i-agentSetController')/attribute" value="'dataDate'"/>
-                            <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
-                        </xf:trigger>
-
-                        <xf:trigger ref="@extent">
-                            <xf:label>extent</xf:label>
-                            <xf:setvalue ref="instance('i-agentSetController')/attribute" value="'extent'"/>
-                            <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
-                        </xf:trigger>
-
-                        <xf:trigger ref="@href">
-                            <xf:label>href</xf:label>
-                            <xf:setvalue ref="instance('i-agentSetController')/attribute" value="'href'"/>
-                            <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
-                        </xf:trigger>
-
-                        <xf:trigger ref="@xml:lang">
-                            <xf:label>lang</xf:label>
-                            <xf:setvalue ref="instance('i-agentSetController')/attribute" value="'lang'"/>
-                            <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
-                        </xf:trigger>
-
-                        <xf:trigger ref="@pref">
-                            <xf:label>pref</xf:label>
-                            <xf:setvalue ref="instance('i-agentSetController')/attribute" value="'pref'"/>
-                            <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
-                        </xf:trigger>
-
-                        <xf:trigger ref="@refid">
-                            <xf:label>refid</xf:label>
-                            <xf:setvalue ref="instance('i-agentSetController')/attribute" value="'refid'"/>
-                            <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
-                        </xf:trigger>
-
-                        <xf:trigger ref="@rules">
-                            <xf:label>rules</xf:label>
-                            <xf:setvalue ref="instance('i-agentSetController')/attribute" value="'rules'"/>
-                            <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
-                        </xf:trigger>
-
-                        <xf:trigger ref="@source">
-                            <xf:label>source</xf:label>
-                            <xf:setvalue ref="instance('i-agentSetController')/attribute" value="'source'"/>
-                            <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
-                        </xf:trigger>
-
-                        <xf:trigger ref="@vocab">
-                            <xf:label>vocab</xf:label>
-                            <xf:setvalue ref="instance('i-agentSetController')/attribute" value="'vocab'"/>
-                            <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
-                        </xf:trigger>
-
-                        <xf:trigger ref="@script">
-                            <xf:label>script</xf:label>
-                            <xf:setvalue ref="instance('i-agentSetController')/attribute" value="'script'"/>
-                            <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
-                        </xf:trigger>
-
-                        <xf:trigger ref="@transliteration">
-                            <xf:label>transliteration</xf:label>
-                            <xf:setvalue ref="instance('i-agentSetController')/attribute" value="'transliteration'"/>
-                            <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
-                        </xf:trigger>
-                    </xf:group>
-                </bfc:dialog>
 
                 <!-- display and notes -->
                 <!-- TBD
@@ -521,506 +395,114 @@
                     </xf:select1>
                 </bfc:dialog>
                 -->
-
-                <xf:repeat id="r-vraAgent" nodeset="vra:agent" appearance="full" class="vraComplex"
-                           model="m-child-model">
-                <!--
-                    <div class="agentSet-agent-attributes hiddenAttributes" style="display:none;">
-                        <xf:input ref="./@dataDate" model="m-child-model">
-                            <xf:label>dataDate</xf:label>
-                        </xf:input>
-                        <xf:input ref="./@extent" model="m-child-model">
-                            <xf:label>extent</xf:label>
-                        </xf:input>
-                        <xf:input ref="./@href" model="m-child-model">
-                            <xf:label>href</xf:label>
-                        </xf:input>
-                        <xf:input ref="./@xml:lang" model="m-child-model">
-                            <xf:label>lang</xf:label>
-                        </xf:input>
-                        <xf:input ref="./@pref" model="m-child-model">
-                            <xf:label>pref</xf:label>
-                        </xf:input>
-                        <xf:input ref="./@refid" model="m-child-model">
-                            <xf:label>refid</xf:label>
-                        </xf:input>
-                        <xf:input ref="./@rules" model="m-child-model">
-                            <xf:label>rules</xf:label>
-                        </xf:input>
-                        <xf:input ref="./@source" model="m-child-model">
-                            <xf:label>source</xf:label>
-                        </xf:input>
-                        <xf:input ref="./@vocab" model="m-child-model">
-                            <xf:label>vocab</xf:label>
-                        </xf:input>
-                    </div>
-                -->
-
-
-
-                    <xf:group appearance="minimal" class="elementGroup">
-                    <xf:label/>
-                        <xf:group class="prefGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:name/@pref" model="m-child-model">
-                                <xf:label>pref</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-
-                            <!-- TODO: connect service -->
-                            <xf:select1 ref="vra:name/@type" model="m-child-model">
-                                <xf:label>Type</xf:label>
-                                <xf:item>
-                                    <xf:label>Personal</xf:label>
-                                    <xf:value>personal</xf:value>
-                                </xf:item>
-                                <xf:item>
-                                    <xf:label>Corporate</xf:label>
-                                    <xf:value>corporate</xf:value>
-                                </xf:item>
-                                <xf:item>
-                                    <xf:label>Family</xf:label>
-                                    <xf:value>family</xf:value>
-                                </xf:item>
-                                <xf:item>
-                                    <xf:label>Other</xf:label>
-                                    <xf:value>other</xf:value>
-                                </xf:item>
-                            </xf:select1>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:name" type="nodeValue" model="m-child-model" class="elementName">
-                                <xf:label>Name</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-
-                            <!-- TODO: connect service -->
-                            <xf:select1 ref="vra:name/@vocab" model="m-child-model">
-                                <xf:label>vocab</xf:label>
-                                <xf:item>
-                                    <xf:label>ULAN</xf:label>
-                                    <xf:value>ULAN</xf:value>
-                                </xf:item>
-                                <xf:item>
-                                    <xf:label>GND</xf:label>
-                                    <xf:value>GND</xf:value>
-                                </xf:item>
-                                <xf:item>
-                                    <xf:label>(AKL)</xf:label>
-                                    <xf:value>(AKL)</xf:value>
-                                </xf:item>
-                            </xf:select1>
-
-                            <!--
-                                <xf:input ref="vra:name/@vocab" model="m-child-model">
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Pref</th>
+                            <th>Role</th>
+                            <th>Name</th>
+                            <th class="detail">Vocab</th>
+                            <td/>
+                        </tr>
+                    </thead>
+                    <tbody  id="r-vraAgent" xf:repeat-nodeset="vra:agent" model="m-child-model">
+                        <!-- todo: does the agent shall not have attributes??? -->
+                        <!-- todo: clarify: do we need agent attributes ??? -->
+                        <!--
+                            <div class="agentSet-agent-attributes hiddenAttributes" style="display:none;">
+                                <xf:input ref="./@dataDate" model="m-child-model">
+                                    <xf:label>dataDate</xf:label>
+                                </xf:input>
+                                <xf:input ref="./@extent" model="m-child-model">
+                                    <xf:label>extent</xf:label>
+                                </xf:input>
+                                <xf:input ref="./@href" model="m-child-model">
+                                    <xf:label>href</xf:label>
+                                </xf:input>
+                                <xf:input ref="./@xml:lang" model="m-child-model">
+                                    <xf:label>lang</xf:label>
+                                </xf:input>
+                                <xf:input ref="./@pref" model="m-child-model">
+                                    <xf:label>pref</xf:label>
+                                </xf:input>
+                                <xf:input ref="./@refid" model="m-child-model">
+                                    <xf:label>refid</xf:label>
+                                </xf:input>
+                                <xf:input ref="./@rules" model="m-child-model">
+                                    <xf:label>rules</xf:label>
+                                </xf:input>
+                                <xf:input ref="./@source" model="m-child-model">
+                                    <xf:label>source</xf:label>
+                                </xf:input>
+                                <xf:input ref="./@vocab" model="m-child-model">
                                     <xf:label>vocab</xf:label>
                                 </xf:input>
-                            -->
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:name/@xml:lang" model="m-child-model">
-                                <xf:label>lang</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:name/@script" model="m-child-model">
-                                <xf:label>script</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:name/@dataDate" model="m-child-model">
-                                <xf:label>dataDate</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:name/@extent" model="m-child-model">
-                                <xf:label>extent</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:name/@href" model="m-child-model">
-                                <xf:label>href</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-
-                            <xf:select1 ref="vra:name/@refid" model="m-child-model" selection="open" incremental="true"
-                                        type="nodeValue">
-                                <xf:label>Name</xf:label>
-                                <xf:itemset nodeset="instance('i-artists-service')/artist">
-                                    <xf:label ref="name"/>
-                                    <xf:value ref="id"/>
-                                    <xf:setvalue ev:event="xforms-select"
-                                                 ref="instance()/vra:agent[index('r-vraAgent')]/vra:name"
-                                                 value="context()/name" model="m-child-model"/>
-                                    <!-- <xf:setvalue ev:event="xforms-select"
-                                  ref="instance()/vra:agent[index('r-vraAgent')]/vra:name"
-                                  value="IF(string-length(context()/name) > 0, context()/name, '')"
-                                  model="m-child-model"/>  -->
-                                </xf:itemset>
-                                <!-- <xf:action ev:event="xforms-value-changed">
-                                    <xf:setvalue ref=".." value="instance('i-artists-service')/artist[id=@refid]/name" model="m-child-model"/>
-                                </xf:action>
-                                -->
-                            </xf:select1>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:name/@rules" model="m-child-model">
-                                <xf:label>rules</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:name/@source" model="m-child-model">
-                                <xf:label>source</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:name/@transliteration" model="m-child-model">
-                                <xf:label>transliteration</xf:label>
-                            </xf:input>
-                        </xf:group>
-
-                        <xf:trigger class="attributeTrigger">
-                            <xf:label>Remove/Add Attribute</xf:label>
-                            <xf:setvalue ref="instance('i-agentSetController')/elementName" value="''"/>
-                            <xf:delete nodeset="instance('i-agentSetController')/attributes/@*"/>
-                            <xf:setvalue ref="instance('i-agentSetController')/elementName" value="'name'"/>
-                        </xf:trigger>
-
-                        <!-- KEEP ME FOR REFERENCE
-                        <xf:select1 ref="instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:name">
-                            <xf:label>Add Attribute</xf:label>
-                            <xf:itemset nodeset="instance('i-templates')/vra:agent/vra:name/@*[not(some $item in instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:name/@* satisfies ($item/local-name()) eq local-name(.))]">
-                                <xf:label>
-                                    <xf:output value="local-name(.)"/>
-                                </xf:label>
-                                <xf:copy ref="."/>
-                            </xf:itemset>
-                        </xf:select1>
+                            </div>
                         -->
-                    </xf:group>
-                    <xf:group appearance="minimal" class="elementGroup">
-                        <xf:label/>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:culture" type="nodeValue" model="m-child-model">
-                                <xf:label>Culture:</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:culture/@href" model="m-child-model">
-                                <xf:label>href</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:culture/@source" model="m-child-model">
-                                <xf:label>source</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:culture/@xml:lang" model="m-child-model">
-                                <xf:label>lang</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:culture/@script" model="m-child-model">
-                                <xf:label>script</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:culture/@dataDate" model="m-child-model">
-                                <xf:label>dataDate</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:culture/@extent" model="m-child-model">
-                                <xf:label>extent</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:culture/@pref" model="m-child-model">
-                                <xf:label>pref</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:culture/@refid" model="m-child-model">
-                                <xf:label>refid</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:culture/@rules" model="m-child-model">
-                                <xf:label>rules</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
 
-                            <!-- TODO: connect service -->
-                            <xf:select1 ref="vra:culture/@vocab" model="m-child-model">
-                                <!--  <xf:label/> -->
-                                <xf:label>vocab</xf:label>
-                                <xf:item>
-                                    <xf:label>Gimme</xf:label>
-                                    <xf:value>Gimme</xf:value>
-                                </xf:item>
-                                <xf:item>
-                                    <xf:label>,gimme</xf:label>
-                                    <xf:value>,gimme</xf:value>
-                                </xf:item>
-                                <xf:item>
-                                    <xf:label>data</xf:label>
-                                    <xf:value>data</xf:value>
-                                </xf:item>
-                            </xf:select1>
+                        <tr>
+                                <td>
+                                    <xf:input ref="vra:name/@pref">
+                                        <xf:label>pref</xf:label>
+                                    </xf:input>
+                                </td>
+                                <td>
+                                    <xf:select1 ref="vra:name/@type">
+                                        <xf:label>Type</xf:label>
+                                        <xf:item>
+                                            <xf:label>Personal</xf:label>
+                                            <xf:value>personal</xf:value>
+                                        </xf:item>
+                                        <xf:item>
+                                            <xf:label>Corporate</xf:label>
+                                            <xf:value>corporate</xf:value>
+                                        </xf:item>
+                                        <xf:item>
+                                            <xf:label>Family</xf:label>
+                                            <xf:value>family</xf:value>
+                                        </xf:item>
+                                        <xf:item>
+                                            <xf:label>Other</xf:label>
+                                            <xf:value>other</xf:value>
+                                        </xf:item>
+                                    </xf:select1>
+                                </td>
+                                <td>
+                                    <xf:input ref="vra:name" type="nodeValue" class="elementName">
+                                        <xf:label>Name</xf:label>
+                                    </xf:input>
+                                </td>
+                                <td>
+                                    <xf:select1 ref="vra:name/@vocab">
+                                        <xf:label>vocab</xf:label>
+                                        <xf:item>
+                                            <xf:label>ULAN</xf:label>
+                                            <xf:value>ULAN</xf:value>
+                                        </xf:item>
+                                        <xf:item>
+                                            <xf:label>GND</xf:label>
+                                            <xf:value>GND</xf:value>
+                                        </xf:item>
+                                        <xf:item>
+                                            <xf:label>(AKL)</xf:label>
+                                            <xf:value>(AKL)</xf:value>
+                                        </xf:item>
+                                    </xf:select1>
+                                </td>
+                                <td>
+                                    <xf:trigger>
+                                        <xf:label>x</xf:label>
+                                        <xf:delete nodeset="."/>
+                                    </xf:trigger>
+                                </td>
+                            </tr>
+                    </tbody>
+                </table>
 
-                            <!--
-                                <xf:input ref="vra:culture/@vocab" model="m-child-model">
-                                    <xf:label>vocab</xf:label>
-                                </xf:input>
-                            -->
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:culture/@transliteration" model="m-child-model">
-                                <xf:label>transliteration</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:trigger class="attributeTrigger">
-                            <xf:label>Remove/Add Attribute</xf:label>
-                            <xf:setvalue ref="instance('i-agentSetController')/elementName" value="''"/>
-                            <xf:delete nodeset="instance('i-agentSetController')/attributes/@*"/>
-                            <xf:setvalue ref="instance('i-agentSetController')/elementName" value="'culture'"/>
-                        </xf:trigger>
-                    </xf:group>
-                    <xf:group appearance="minimal" class="elementGroup">
-                        <xf:label/>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:role" type="nodeValue" model="m-child-model">
-                                <xf:label>Role:</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:role/@refid" model="m-child-model">
-                                <xf:label>refid</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
 
-                            <!-- TODO: connect service -->
-                            <xf:select1 ref="vra:role/@vocab" model="m-child-model">
-                                <!--  <xf:label/> -->
-                                <xf:label>vocab</xf:label>
-                                <xf:item>
-                                    <xf:label>Gimme</xf:label>
-                                    <xf:value>Gimme</xf:value>
-                                </xf:item>
-                                <xf:item>
-                                    <xf:label>,gimme</xf:label>
-                                    <xf:value>,gimme</xf:value>
-                                </xf:item>
-                                <xf:item>
-                                    <xf:label>data</xf:label>
-                                    <xf:value>data</xf:value>
-                                </xf:item>
-                            </xf:select1>
-
-                            <!--
-                                <xf:input ref="vra:role/@vocab" model="m-child-model">
-                                    <xf:label>vocab</xf:label>
-                                </xf:input>
-                            -->
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:role/@dataDate" model="m-child-model">
-                                <xf:label>dataDate</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:role/@extent" model="m-child-model">
-                                <xf:label>extent</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:role/@href" model="m-child-model">
-                                <xf:label>href</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:role/@pref" model="m-child-model">
-                                <xf:label>pref</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:role/@rules" model="m-child-model">
-                                <xf:label>rules</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:role/@source" model="m-child-model">
-                                <xf:label>source</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:role/@xml:lang" model="m-child-model">
-                                <xf:label>lang</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:role/@script" model="m-child-model">
-                                <xf:label>script</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:role/@transliteration" model="m-child-model">
-                                <xf:label>transliteration</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:trigger class="attributeTrigger">
-                            <xf:label>Remove/Add Attribute</xf:label>
-                            <xf:setvalue ref="instance('i-agentSetController')/elementName" value="''"/>
-                            <xf:delete nodeset="instance('i-agentSetController')/attributes/@*"/>
-                            <xf:setvalue ref="instance('i-agentSetController')/elementName" value="'role'"/>
-                        </xf:trigger>
-                    </xf:group>
-                    <xf:group appearance="minimal" class="elementGroup">
-                        <xf:label/>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:attribution" type="nodeValue" model="m-child-model">
-                                <xf:label>Attribution:</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:attribution/@xml:lang" model="m-child-model">
-                                <xf:label>lang</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:attribution/@script" model="m-child-model">
-                                <xf:label>script</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:attribution/@dataDate" model="m-child-model">
-                                <xf:label>dataDate</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:attribution/@extent" model="m-child-model">
-                                <xf:label>extent</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:attribution/@href" model="m-child-model">
-                                <xf:label>href</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:attribution/@pref" model="m-child-model">
-                                <xf:label>pref</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:attribution/@refid" model="m-child-model">
-                                <xf:label>refid</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:attribution/@rules" model="m-child-model">
-                                <xf:label>rules</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:attribution/@source" model="m-child-model">
-                                <xf:label>source</xf:label>
-                            </xf:input>
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-
-                            <!-- TODO: connect service -->
-                            <xf:select1 ref="vra:attribution/@vocab" model="m-child-model">
-                                <!--  <xf:label/> -->
-                                <xf:label>vocab</xf:label>
-                                <xf:item>
-                                    <xf:label>Gimme</xf:label>
-                                    <xf:value>Gimme</xf:value>
-                                </xf:item>
-                                <xf:item>
-                                    <xf:label>,gimme</xf:label>
-                                    <xf:value>,gimme</xf:value>
-                                </xf:item>
-                                <xf:item>
-                                    <xf:label>data</xf:label>
-                                    <xf:value>data</xf:value>
-                                </xf:item>
-                            </xf:select1>
-
-                            <!--
-                                <xf:input ref="vra:attribution/@vocab" model="m-child-model">
-                                    <xf:label>vocab</xf:label>
-                                </xf:input>
-                            -->
-                        </xf:group>
-                        <xf:group class="attributeGroup" appearance="minimal">
-                            <xf:label/>
-                            <xf:input ref="vra:attribution/@transliteration" model="m-child-model">
-                                <xf:label>transliteration</xf:label>
-                            </xf:input>
-                        </xf:group>
-
-                        <xf:trigger class="attributeTrigger">
-                            <xf:label>Remove/Add Attribute</xf:label>
-                            <xf:setvalue ref="instance('i-agentSetController')/elementName" value="''"/>
-                            <xf:delete nodeset="instance('i-agentSetController')/attributes/@*"/>
-                            <xf:setvalue ref="instance('i-agentSetController')/elementName" value="'attribution'"/>
-                        </xf:trigger>
-                    </xf:group>
-                </xf:repeat>
+                <!-- ############################## NOTES ####################################### -->
+                <!-- ############################## NOTES ####################################### -->
+                <!-- ############################## NOTES ####################################### -->
                 <xf:group class="showNotesDisplay">
                     <xf:trigger class="notesDisplayTrigger">
                         <xf:label>Show/Hide Notes and Display</xf:label>
@@ -1030,8 +512,8 @@
                     <xf:group ref="instance('i-agentSetController')/showNotesDisplay">
                         <xf:group appearance="minimal" class="elementGroup" ref="instance('i-agentSet')">
                             <xf:label/>
-                            <xf:group class="attributeGroup" appearance="minimal">
-                                <xf:label/>
+                                <xf:group class="attributeGroup" appearance="minimal">
+                                    <xf:label/>
                                 <xf:textarea ref="vra:display" type="nodeValue" model="m-child-model">
                                     <xf:label>Display:</xf:label>
                                 </xf:textarea>
@@ -1239,44 +721,153 @@
                     </xf:group>
                 </xf:group>
             </xf:group>
+
+            <!-- todo: does not add/remove elements right? -->
+            <!-- ################### Dialog for adding/removing attributes subelements name/role/culture/... -->
+            <bfc:dialog id="attrDialog">
+                <xf:label>Remove/Add Attribute</xf:label>
+                <xf:group ref="instance('i-agentSet')/vra:agent[index('r-vraAgent')]/*[local-name() eq instance('i-agentSetController')/elementName]">
+                    <xf:label>Remove Attribute</xf:label>
+
+                    <xf:trigger ref="@dataDate">
+                        <xf:label>dataDate</xf:label>
+                        <xf:delete nodeset="."/>
+                        <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
+                    </xf:trigger>
+
+                    <xf:trigger ref="@extent">
+                        <xf:label>extent</xf:label>
+                        <xf:delete nodeset="."/>
+                        <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
+                    </xf:trigger>
+
+                    <xf:trigger ref="@href">
+                        <xf:label>href</xf:label>
+                        <xf:delete nodeset="."/>
+                        <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
+                    </xf:trigger>
+
+                    <xf:trigger ref="@xml:lang">
+                        <xf:label>lang</xf:label>
+                        <xf:delete nodeset="."/>
+                        <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
+                    </xf:trigger>
+
+                    <xf:trigger ref="@pref">
+                        <xf:label>pref</xf:label>
+                        <xf:delete nodeset="."/>
+                        <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
+                    </xf:trigger>
+
+                    <xf:trigger ref="@refid">
+                        <xf:label>refid</xf:label>
+                        <xf:delete nodeset="."/>
+                        <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
+                    </xf:trigger>
+
+                    <xf:trigger ref="@rules">
+                        <xf:label>rules</xf:label>
+                        <xf:delete nodeset="."/>
+                        <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
+                    </xf:trigger>
+
+                    <xf:trigger ref="@source">
+                        <xf:label>source</xf:label>
+                        <xf:delete nodeset="."/>
+                        <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
+                    </xf:trigger>
+
+                    <xf:trigger ref="@vocab">
+                        <xf:label>vocab</xf:label>
+                        <xf:delete nodeset="."/>
+                        <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
+                    </xf:trigger>
+
+                    <xf:trigger ref="@script">
+                        <xf:label>script</xf:label>
+                        <xf:delete nodeset="."/>
+                        <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
+                    </xf:trigger>
+
+                    <xf:trigger ref="@transliteration">
+                        <xf:label>transliteration</xf:label>
+                        <xf:delete nodeset="."/>
+                        <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
+                    </xf:trigger>
+                </xf:group>
+
+                <xf:group ref="instance('i-agentSetController')/attributes">
+                    <xf:label>Add Attribute</xf:label>
+
+                    <xf:trigger ref="@dataDate">
+                        <xf:label>dataDate</xf:label>
+                        <xf:setvalue ref="instance('i-agentSetController')/attribute" value="'dataDate'"/>
+                        <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
+                    </xf:trigger>
+
+                    <xf:trigger ref="@extent">
+                        <xf:label>extent</xf:label>
+                        <xf:setvalue ref="instance('i-agentSetController')/attribute" value="'extent'"/>
+                        <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
+                    </xf:trigger>
+
+                    <xf:trigger ref="@href">
+                        <xf:label>href</xf:label>
+                        <xf:setvalue ref="instance('i-agentSetController')/attribute" value="'href'"/>
+                        <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
+                    </xf:trigger>
+
+                    <xf:trigger ref="@xml:lang">
+                        <xf:label>lang</xf:label>
+                        <xf:setvalue ref="instance('i-agentSetController')/attribute" value="'lang'"/>
+                        <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
+                    </xf:trigger>
+
+                    <xf:trigger ref="@pref">
+                        <xf:label>pref</xf:label>
+                        <xf:setvalue ref="instance('i-agentSetController')/attribute" value="'pref'"/>
+                        <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
+                    </xf:trigger>
+
+                    <xf:trigger ref="@refid">
+                        <xf:label>refid</xf:label>
+                        <xf:setvalue ref="instance('i-agentSetController')/attribute" value="'refid'"/>
+                        <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
+                    </xf:trigger>
+
+                    <xf:trigger ref="@rules">
+                        <xf:label>rules</xf:label>
+                        <xf:setvalue ref="instance('i-agentSetController')/attribute" value="'rules'"/>
+                        <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
+                    </xf:trigger>
+
+                    <xf:trigger ref="@source">
+                        <xf:label>source</xf:label>
+                        <xf:setvalue ref="instance('i-agentSetController')/attribute" value="'source'"/>
+                        <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
+                    </xf:trigger>
+
+                    <xf:trigger ref="@vocab">
+                        <xf:label>vocab</xf:label>
+                        <xf:setvalue ref="instance('i-agentSetController')/attribute" value="'vocab'"/>
+                        <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
+                    </xf:trigger>
+
+                    <xf:trigger ref="@script">
+                        <xf:label>script</xf:label>
+                        <xf:setvalue ref="instance('i-agentSetController')/attribute" value="'script'"/>
+                        <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
+                    </xf:trigger>
+
+                    <xf:trigger ref="@transliteration">
+                        <xf:label>transliteration</xf:label>
+                        <xf:setvalue ref="instance('i-agentSetController')/attribute" value="'transliteration'"/>
+                        <bfc:hide dialog="attrDialog" ev:event="DOMActivate"/>
+                    </xf:trigger>
+                </xf:group>
+            </bfc:dialog>
+
         </div>
     </body>
 </html>
 
-<!--
-    <br/>
-    <div class="editbutton" data-dojo-type="dijit.form.DropDownButton">
-    <span>@</span>
-    <div data-dojo-type="dijit.TooltipDialog">
--->
-<!--
-    <div class="agentSet-agent-culture hiddenAttributes" style="display:none;">
-        <xf:input ref="vra:notes/@dataDate" model="m-child-model">
-            <xf:label>dataDate</xf:label>
-        </xf:input>
-        <xf:input ref="vra:notes/@extent" model="m-child-model">
-            <xf:label>extent</xf:label>
-        </xf:input>
-        <xf:input ref="vra:notes/@href" model="m-child-model">
-            <xf:label>href</xf:label>
-        </xf:input>
-        <xf:input ref="vra:notes/@xml:lang" model="m-child-model">
-            <xf:label>lang</xf:label>
-        </xf:input>
-        <xf:input ref="vra:notes/@pref" model="m-child-model">
-            <xf:label>pref</xf:label>
-        </xf:input>
-        <xf:input ref="vra:notes/@refid" model="m-child-model">
-            <xf:label>refid</xf:label>
-        </xf:input>
-        <xf:input ref="vra:notes/@rules" model="m-child-model">
-            <xf:label>rules</xf:label>
-        </xf:input>
-        <xf:input ref="vra:notes/@source" model="m-child-model">
-            <xf:label>source</xf:label>
-        </xf:input>
-        <xf:input ref="vra:notes/@vocab" model="m-child-model">
-            <xf:label>vocab</xf:label>
-        </xf:input>
-    </div>
--->

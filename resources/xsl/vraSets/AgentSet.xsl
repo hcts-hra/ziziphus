@@ -6,7 +6,7 @@
                     <tr>
                         <th>Role</th>
                         <th>Name</th>
-                        <th/>
+                        <th class="detail">Vocab</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -16,6 +16,10 @@
                                 <xsl:value-of select="bfn:upperCase(vra:role)"/>
                             </td>
                             <td>
+                                <!-- todo: all to all sets -->
+                                <xsl:if test="vra:name/@pref='true'">
+                                    <xsl:attribute name="class">pref</xsl:attribute>
+                                </xsl:if>
                                 <xsl:value-of select="bfn:upperCase(vra:name)"/>
                                 <xsl:if test="(vra:birth/vra:year) or (vra:death/vra:year)">
                                     <xsl:text> (</xsl:text>

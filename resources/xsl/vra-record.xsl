@@ -132,7 +132,9 @@
             <xsl:variable name="caseId" select="concat('c-',$id)"/>
             <xsl:variable name="tableId" select="concat('table-',$id)"/>
             <xf:switch>
-                <!-- VIEW CASE -->
+                <!-- ############ VIEW CASE ######### -->
+                <!-- ############ VIEW CASE ######### -->
+                <!-- ############ VIEW CASE ######### -->
                 <xf:case id="{$caseId}-view" selected="true">
                     <div class="t-edit">
                         <xf:trigger class="-icon-edit">
@@ -153,7 +155,7 @@
                         <button type="button" onclick="toggleDetail(this, '{$tableId}');" class="icon-zoom-in"/>
                     </div>
                     <div class="vraSection" id="{concat($id,'_HtmlContent')}">
-                        <div class="simpleView" id="{$tableId}">
+                        <div class="simple" id="{$tableId}">
                             <xsl:choose>
                                 <xsl:when test="$vraSetNode/vra:display">
                                     <xsl:apply-templates select="$vraSetNode/vra:display"/>
@@ -168,7 +170,9 @@
                         </div>
                     </div>
                 </xf:case>
-                <!-- EDIT CASE -->
+                <!-- ############ EDIT CASE ############### -->
+                <!-- ############ EDIT CASE ############### -->
+                <!-- ############ EDIT CASE ############### -->
                 <xf:case id="{$caseId}-edit">
                     <xf:trigger class="-icon-remove">
                         <xf:label/>
@@ -268,7 +272,7 @@
 
     <xsl:template match="vra:notes" priority="40">
         <xsl:if test="text()">
-            <div class="notes-container"><span class="notes"><xsl:value-of select="text()"/></span></div>
+            <div class="notes-container detail"><span class="notes"><xsl:value-of select="text()"/></span></div>
         </xsl:if>
     </xsl:template>
 </xsl:stylesheet>
