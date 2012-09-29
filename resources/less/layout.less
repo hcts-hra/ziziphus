@@ -91,15 +91,72 @@ html, body {
         }
     }
 
+    .vraSection {
+        div.display-container {
+            clear: both;
+        }
+
+        .simple {
+            .notes-container {
+                display: none;
+            }
+        }
+
+        .full {
+            .notes-container {
+                display: block;
+                clear: both;
+
+                .notes {
+                    font-size: smaller;
+                }
+                .notes:before {
+                    content: 'Notes';
+                    font-weight: bold;
+                    display: block;
+                }
+            }
+        }
+
+        .vraAttr {
+            white-space: nowrap;
+            display: inline-block;
+        }
+        .vraAttrName {
+            font-weight: bold;
+        }
+        .vraAttrName:after {
+            content: ": ";
+        }
+    }
+
     .simple {
         .detail {
             display:none;
+        }
+        .detail-inline {
+            display: none;
+        }
+        .simple-inline:after {
+            content: '...';
+        }
+        .detail-li {
+            display: none;
         }
     }
 
     .full {
         .detail {
             display:block;
+        }
+        .detail-inline {
+            display: inline;
+        }
+        .simple-inline:after {
+            content: none;
+        }
+        .detail-li {
+            display: list-item;
         }
     }
 

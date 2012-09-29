@@ -74,11 +74,57 @@ body {
   display: inherit;
   width: 95%;
 }
+.bf .vraSection div.display-container {
+  clear: both;
+}
+.bf .vraSection .simple .notes-container {
+  display: none;
+}
+.bf .vraSection .full .notes-container {
+  display: block;
+  clear: both;
+}
+.bf .vraSection .full .notes-container .notes {
+  font-size: smaller;
+}
+.bf .vraSection .full .notes-container .notes:before {
+  content: 'Notes';
+  font-weight: bold;
+  display: block;
+}
+.bf .vraSection .vraAttr {
+  white-space: nowrap;
+  display: inline-block;
+}
+.bf .vraSection .vraAttrName {
+  font-weight: bold;
+}
+.bf .vraSection .vraAttrName:after {
+  content: ": ";
+}
 .bf .simple .detail {
+  display: none;
+}
+.bf .simple .detail-inline {
+  display: none;
+}
+.bf .simple .simple-inline:after {
+  content: '...';
+}
+.bf .simple .detail-li {
   display: none;
 }
 .bf .full .detail {
   display: block;
+}
+.bf .full .detail-inline {
+  display: inline;
+}
+.bf .full .simple-inline:after {
+  content: none;
+}
+.bf .full .detail-li {
+  display: list-item;
 }
 .bf .pref {
   font-weight: bold;
