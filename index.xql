@@ -61,6 +61,7 @@ return
         <title>Ziziphus Image DB</title>
         <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css"/>
         <link rel="stylesheet" type="text/css" href="resources/css/layout.css"/>
+        <link rel="stylesheet" type="text/css" href="resources/css/record.css"/>
     </head>
     <body id="ziziphusImageDB">
         <div id="overlay" style="position:absolute;z-index:9999;width:100%;height:100%;background:#444444;">
