@@ -4,9 +4,11 @@
     <property name="target.dir" value="${basedir}/${build.dir}"/>
     <property name="target.ziziphus.dir" value="${target.dir}/ziziphus"/>
     <property name="resource.dir" value="${basedir}/resources"/>
+    <property name="resource.css.dir" value="${resource.dir}/css/"/>
+    <property name="resource.less.dir" value="${resource.dir}/less/"/>
     <property name="schema.dir" value="${resource.dir}/xsd"/>
     <property name="xsl.dir" value="${basedir}/generator/xsl"/>
-
+    
     <!-- **************************************** HOUSEKEEPING **************************************** -->
     <!-- **************************************** HOUSEKEEPING **************************************** -->
     <!-- **************************************** HOUSEKEEPING **************************************** -->
@@ -14,10 +16,23 @@
         <delete dir="${target.dir}"/>
     </target>
 
+    <target name="-lesscss-check" unless="lesscss.needs.update">
+        <uptodate property="lesscss.needs.update" srcfile="${resource.css.dir}/layout.css" targetfile="${resource.less.dir}/layout.less"/>
+    </target>
+
+    <target name="lesscss" depends="-lesscss-check" if="${lesscss.needs.update}">
+        <echo message="Executing lessc..."/>
+        <exec executable="lessc" logError="true" failonerror="true">
+            <arg value="--verbose"/>
+            <arg value="${resource.less.dir}/layout.less"/>
+            <arg value="${resource.css.dir}/layout.css"/>
+        </exec>
+    </target>
+
     <!-- **************************************** GENERATE XAR **************************************** -->
     <!-- **************************************** GENERATE XAR **************************************** -->
     <!-- **************************************** GENERATE XAR **************************************** -->
-    <target name="xar">
+    <target name="xar" depends="lesscss">
         <delete dir="${target.dir}"/>
         <mkdir dir="${target.dir}"/>
         <copy todir="${target.ziziphus.dir}/modules">
