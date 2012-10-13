@@ -16,18 +16,32 @@
         <delete dir="${target.dir}"/>
     </target>
 
-    <target name="-lesscss-check" unless="lesscss.needs.update">
-        <uptodate property="lesscss.needs.update" srcfile="${resource.css.dir}/layout.css" targetfile="${resource.less.dir}/layout.less"/>
+    <target name="-lesscss-check-layout" unless="lesscss.needs.update.layout">
+        <uptodate property="lesscss.needs.update.layout" srcfile="${resource.css.dir}/layout.css" targetfile="${resource.less.dir}/layout.less"/>
+    </target>
+    <target name="-lesscss-check-record" unless="lesscss.needs.update.record">
+        <uptodate property="lesscss.needs.update.record" srcfile="${resource.css.dir}/record.css" targetfile="${resource.less.dir}/record.less"/>
     </target>
 
-    <target name="lesscss" depends="-lesscss-check" if="${lesscss.needs.update}">
-        <echo message="Executing lessc..."/>
+    <target name="lesscss-layout" depends="-lesscss-check-layout" if="${lesscss.needs.update.layout}">
+        <echo message="Executing lessc (layout.css)..."/>
         <exec executable="lessc" logError="true" failonerror="true">
             <arg value="--verbose"/>
             <arg value="${resource.less.dir}/layout.less"/>
             <arg value="${resource.css.dir}/layout.css"/>
         </exec>
     </target>
+    
+    <target name="lesscss-record" depends="-lesscss-check-record" if="${lesscss.needs.update.record}">
+        <echo message="Executing lessc (record.css)..."/>
+        <exec executable="lessc" logError="true" failonerror="true">
+            <arg value="--verbose"/>
+            <arg value="${resource.less.dir}/record.less"/>
+            <arg value="${resource.css.dir}/record.css"/>
+        </exec>
+    </target>
+
+    <target name="lesscss" depends="lesscss-layout, lesscss-record"/>
 
     <!-- **************************************** GENERATE XAR **************************************** -->
     <!-- **************************************** GENERATE XAR **************************************** -->

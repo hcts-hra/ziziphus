@@ -1,53 +1,45 @@
-/* work record: Location */
 .bf .vraSection .location-subTitle {
-    font-weight: bold;
-    display: block;
+  font-weight: bold;
+  display: block;
 }
-
-/* work record: Measurements */
 .bf .vraSection .measureType:after {
-    content: ': ';
+  content: ': ';
 }
 .bf .vraSection .measurementsRecord:not(:last-child):after {
-    content: '; ';
+  content: '; ';
 }
 .bf .vraSection .measurementsExtent-name {
-    font-weight: bold;
-    display: block;
+  font-weight: bold;
+  display: block;
 }
-
-/* work record: Relation */
 .bf .vraSection .relationRecord {
-    clear: both;
+  clear: both;
 }
-/* .bf .vraSection .relationRecord:not(:last-child) {
-    border-bottom: thin solid gray;
-} */
 .bf .vraSection .relationRecord .relationRecordTitle {
-    font-weight: bold;
-    display: block;
+  font-weight: bold;
+  display: block;
 }
 .bf .vraSection .relationRecord .relationRecordType {
-    display: block;
-}
-.bf .vraSection .relationRecord .relationRecordItem span {
-    display: block;
+  display: block;
 }
 .bf .vraSection .relationRecord .relationRecordItem {
-    margin: 1ex 1em;
-    border: thin solid gray;
-    float: left;
-    display: table-row;
+  margin: 1ex 1em;
+  border: thin solid gray;
+  float: left;
+  display: table-row;
+}
+.bf .vraSection .relationRecord .relationRecordItem span {
+  display: block;
 }
 .bf .vraSection .relationRecord .relationRecordItem-img {
-    vertical-align: top;
-    display: table-cell;
+  vertical-align: top;
+  display: table-cell;
 }
 .bf .vraSection .relationRecord .relationRecordItem-desc {
-    vertical-align: top;
-    display: table-cell;
+  vertical-align: top;
+  display: table-cell;
 }
-.bf .vraSection .relationRecord .relationRecordItem-desc > div {
-    vertical-align: top;
-    padding: 1ex 1em;
+.bf .vraSection .relationRecord .relationRecordItem-desc div {
+  vertical-align: top;
+  padding: 1ex 1em;
 }
