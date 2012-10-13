@@ -14,13 +14,3 @@
   margin-top: 1ex;
   margin-bottom: 1ex;
 }
-.bf .vraSection .measureType:after {
-  content: ': ';
-}
-.bf .vraSection .measurementsRecord:not(:last-child):after {
-  content: '; ';
-}
-.bf .vraSection .measurementsExtent-name {
-  font-weight: bold;
-  display: block;
-}
