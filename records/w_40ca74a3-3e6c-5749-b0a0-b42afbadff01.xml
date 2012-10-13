@@ -6,29 +6,54 @@
             <agent>
                 <culture/>
                 <name vocab="local" type="personal" refid="118551469" lang="" script="" pref="true">Andō, Hiroshige</name>
-                <birth><year>1797</year></birth>
-                <death><year>1858</year></death>
                 <role>artist</role>
             </agent>
             <agent>
                 <name vocab="local" type="corporate" refid="" lang="" script="" pref="false">Testrecord_Artist(characters) 董其昌</name>
-                <birth><year>1798</year></birth>
-                <death></death>
                 <role>artist</role>
             </agent>
             <agent>
                 <name vocab="local" type="family" refid="" lang="" script="" pref="false">Testrecord_Artist(characters) 董其昌</name>
-                <birth></birth>
-                <death><year>1902</year></death>
                 <role>collector</role>
             </agent>
             <agent>
                 <name vocab="local" type="other" refid="" lang="" script="" pref="false">Testrecord_Artist(characters) 董其昌</name>
-                <birth></birth>
-                <death></death>
                 <role>publisher</role>
             </agent>
+            <agent>
+                <name type="personal" vocab="ULAN" refid="500002921" dataDate="2006-09-22">Rubens, Peter Paul</name>
+                <culture>Flemish</culture>
+                <dates type="life">
+                        <earliestDate>1577</earliestDate>
+                        <latestDate>1640</latestDate>
+                </dates>
+                <role vocab="AAT" refid="300025136">painter (artist)</role>
+            </agent>
+            <agent>
+                <name type="personal" vocab="ULAN" refid="500115396" dataDate="2006-09-22" pref="true">Snyders, Frans</name>
+                <culture>Flemish</culture>
+                <dates type="life">
+                    <earliestDate>1579</earliestDate>
+                    <latestDate>1657</latestDate>
+                </dates>
+                <role vocab="AAT" refid="300025136" dataDate="2006-09-22" extent="animals">painter (artist)</role>
+            </agent>
+            <agent>
+                <name type="personal" vocab="ULAN" refid="500002921" dataDate="2006-09-22">Rubens, Peter Paul</name>
+                <culture>Flemish</culture>
+                <dates type="life">
+                    <earliestDate>1577</earliestDate>
+                    <latestDate>1640</latestDate>
+                </dates>
+                <dates type="activity">
+                    <earliestDate>1590</earliestDate>
+                    <latestDate>1640</latestDate>
+                </dates>
+                <role vocab="AAT" refid="300025136">painter (artist)</role>
+                <attribution>School of</attribution>
+            </agent>
         </agentSet>
+
         <culturalContextSet>
             <notes>cultural context notes</notes>
             <culturalContext>Japanese</culturalContext>

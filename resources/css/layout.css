@@ -108,6 +108,9 @@ body {
 .bf .simple .detail-inline {
   display: none;
 }
+.bf .simple .detail-cell {
+  display: none;
+}
 .bf .simple .simple-inline:after {
   content: '...';
 }
@@ -119,6 +122,9 @@ body {
 }
 .bf .full .detail-inline {
   display: inline;
+}
+.bf .full .detail-cell {
+  display: table-cell;
 }
 .bf .full .simple-inline:after {
   content: none;
