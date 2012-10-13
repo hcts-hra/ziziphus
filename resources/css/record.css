@@ -1,3 +1,9 @@
+.bf .vraSection .description {
+  border: thin dashed black;
+  padding: 1ex 1em;
+  margin-top: 2ex;
+  margin-bottom: 2ex;
+}
 .bf .vraSection .location-subTitle {
   font-weight: bold;
   display: block;
