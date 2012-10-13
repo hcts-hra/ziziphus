@@ -79,6 +79,12 @@
         <inscriptionSet>
             <notes>inscription notes</notes>
             <inscription>
+                    <author vocab="ULAN" refid="500030596 ">Andokides Painter</author>
+                    <position>On the foot, incised</position>
+                    <text type="text" xml:lang="gr" >ANDOKIDES EPOESEN</text>
+                    <text type ="translation" xml:lang="en">Andokides made this</text>
+            </inscription>
+            <inscription>
                 <author/>
                 <position/>
                 <text type="text" lang="en">some more English text. (ja)</text>
