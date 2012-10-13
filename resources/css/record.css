@@ -4,9 +4,15 @@
   margin-top: 2ex;
   margin-bottom: 2ex;
 }
-.bf .vraSection .location-subTitle {
+.bf .vraSection .locationSet .location-subTitle {
   font-weight: bold;
   display: block;
+  margin-top: 1ex;
+}
+.bf .vraSection .locationSet ol,
+.bf .vraSection .locationSet ul {
+  margin-top: 1ex;
+  margin-bottom: 1ex;
 }
 .bf .vraSection .measureType:after {
   content: ': ';

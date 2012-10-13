@@ -129,9 +129,8 @@
                 <name type="geographic" vocab="TGN" refid="7007147" extent="state">California</name>
             </location>
             <location type="repository">
-                <name type="corporate" vocab="local" refid="93d52424-a024-55d2-92b4-ca14275caeb9">Delhi / The Priya Paul Collection of Popular Art"</name>
-                <name type="geographic" vocab="" refid="">Capranica Prenestina / Santuario di Santa Maria della Vulturella (repo)</name>
-                <refid/>
+                <name type="corporate" vocab="local" refid="93d52424-a024-55d2-92b4-ca14275caeb9">Delhi / The Priya Paul Collection of Popular Art</name>
+                <name type="geographic" vocab="" refid="">Capranica Prenestina / Santuario di Santa Maria della Vulturella</name>
             </location>
             <location type="site">
                 <name type="geographic" vocab="" refid="">Vijayawada / Ganapriya</name>
