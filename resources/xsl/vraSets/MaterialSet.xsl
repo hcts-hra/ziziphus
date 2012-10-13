@@ -2,25 +2,33 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:vra="http://www.vraweb.org/vracore4.htm" version="2.0" exclude-result-prefixes="vra">
     <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"/>
     <xsl:template match="vra:materialSet" priority="40">
-                <xsl:variable name="c_med" select="count(vra:material[@type='medium'])"/>
-                <xsl:variable name="c_sup" select="count(vra:material[@type='support'])"/>
-                <xsl:variable name="c_oth" select="count(vra:material[@type='other'])"/>
-
-                <xsl:value-of select="vra:material[@type='medium']"/>
-
-                <!-- type=support -->
-                <xsl:if test="(0 &lt; $c_med) and (0 &lt; $c_sup)">
-                    <xsl:text> (</xsl:text>
-                </xsl:if>
-                <xsl:value-of select="vra:material[@type='support']"/>
-                <xsl:if test="(0 &lt; $c_med) and (0 &lt; $c_sup)">
-                    <xsl:text>)</xsl:text>
-                </xsl:if>
-
-                <!-- type=other -->
-                <xsl:if test="(0 &lt; ($c_med + $c_sup)) and (0 &lt; $c_oth)">
-                    <xsl:text>; </xsl:text>
-                    <xsl:value-of select="vra:material[@type='other']"/>
-                </xsl:if>
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="detail-cell">vocab</th>
+                    <th class="detail-cell">refid</th>
+                </tr>
+            </thead>
+            <tbody>
+                <xsl:for-each select="vra:material">
+                    <tr>
+                        <td>
+                            <xsl:value-of select="text()"/>
+                        </td>
+                        <td>
+                            <xsl:value-of select="@type"/>
+                        </td>
+                        <td class="detail-cell">
+                            <xsl:value-of select="@vocab"/>
+                        </td>
+                        <td class="detail-cell">
+                            <xsl:value-of select="@refid"/>
+                        </td>
+                    </tr>
+                </xsl:for-each>
+            </tbody>
+        </table>
     </xsl:template>
 </xsl:stylesheet>
