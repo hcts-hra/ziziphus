@@ -24,34 +24,3 @@
   font-weight: bold;
   display: block;
 }
-.bf .vraSection .relationRecord {
-  clear: both;
-}
-.bf .vraSection .relationRecord .relationRecordTitle {
-  font-weight: bold;
-  display: block;
-}
-.bf .vraSection .relationRecord .relationRecordType {
-  display: block;
-}
-.bf .vraSection .relationRecord .relationRecordItem {
-  margin: 1ex 1em;
-  border: thin solid gray;
-  float: left;
-  display: table-row;
-}
-.bf .vraSection .relationRecord .relationRecordItem span {
-  display: block;
-}
-.bf .vraSection .relationRecord .relationRecordItem-img {
-  vertical-align: top;
-  display: table-cell;
-}
-.bf .vraSection .relationRecord .relationRecordItem-desc {
-  vertical-align: top;
-  display: table-cell;
-}
-.bf .vraSection .relationRecord .relationRecordItem-desc div {
-  vertical-align: top;
-  padding: 1ex 1em;
-}

@@ -1,0 +1,72 @@
+.bf {
+    .vraSection {
+
+        .description {
+            border: thin dashed black;
+            padding: 1ex 1em;
+            margin-top: 2ex;
+            margin-bottom: 2ex;
+        }
+
+        .locationSet {
+            .location-subTitle {
+                font-weight: bold;
+                display: block;
+                margin-top: 1ex;
+            }
+
+            ol, ul {
+                margin-top: 1ex;
+                margin-bottom: 1ex;
+            }
+        }
+
+        .measureType:after {
+            content: ': ';
+        }
+
+        .measurementsRecord:not(:last-child):after {
+            content: '; ';
+        }
+
+        .measurementsExtent-name {
+            font-weight: bold;
+            display: block;
+        }
+
+        .relationRecord {
+            clear: both;
+
+            .relationRecordTitle {
+                font-weight: bold;
+                display: block;
+            }
+            .relationRecordType {
+                display: block;
+            }
+            .relationRecordItem {
+                margin: 1ex 1em;
+                border: thin solid gray;
+                float: left;
+                display: table-row;
+
+                span {
+                    display: block;
+                }
+            }
+            .relationRecordItem-img {
+                vertical-align: top;
+                display: table-cell;
+            }
+            .relationRecordItem-desc {
+                vertical-align: top;
+                display: table-cell;
+
+                div {
+                    vertical-align: top;
+                    padding: 1ex 1em;
+                }
+            }
+        }
+    }
+}

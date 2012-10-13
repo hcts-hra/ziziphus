@@ -2,72 +2,51 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:vra="http://www.vraweb.org/vracore4.htm" version="2.0" exclude-result-prefixes="vra">
     <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"/>
     <xsl:template match="vra:relationSet" priority="40">
-                <xsl:for-each-group select="vra:relation" group-by="concat('#', @type)">
-                    <xsl:sort select="current-grouping-key()"/>
-                    <xsl:variable name="relType" select="substring(current-grouping-key(),2)"/>
-
-                    <div class="relationRecord">
-                        <span class="relationRecordTitle">
-                        <xsl:choose>
-                            <xsl:when test="('imageIs' = $relType) or ('imageOf' = $relType)">
-                                <xsl:text>Related image records (views of this work)</xsl:text>
-                            </xsl:when>
-                            <xsl:when test="('partOf' = $relType) or ('largerContextFor' = $relType)">
-                                <xsl:text>Works that contain this one</xsl:text>
-                            </xsl:when>
-                            <xsl:when test="('relatedTo' = $relType)">
-                                <xsl:text>Related work records (other works)</xsl:text>
-                            </xsl:when>
-
-                            <!-- TODO ... ?? -->
-                        </xsl:choose>
-                        </span>
-
-                        <span class="relationRecordType"><xsl:text>Relation type: </xsl:text>
-                        <xsl:value-of select="$relType"/></span>
-
-                        <xsl:for-each select="current-group()">
-                            <div class="relationRecordItem">
-                                <div class="relationRecordItem-img">
-                                    <!-- TODO -->
-                                    <img src="resources/images/360/t_metadata.f_preview.43435-36085-100.jpg" alt="preview"/>
-                                </div>
-
-                                <div class="relationRecordItem-desc">
-                                    <div class="detail">
-                                        <span><xsl:value-of select="."/></span>
-                                        <xsl:call-template name="renderVraAttr">
-                                            <xsl:with-param name="attrName">source</xsl:with-param>
-                                        </xsl:call-template>
-                                        <xsl:call-template name="renderVraAttr">
-                                            <xsl:with-param name="attrName">refid</xsl:with-param>
-                                        </xsl:call-template>
-                                        <xsl:call-template name="renderVraAttr">
-                                            <xsl:with-param name="attrName">relids</xsl:with-param>
-                                        </xsl:call-template>
-                                    </div>
-                                </div>
-                            </div>
-                        </xsl:for-each>
-                    </div>
-                </xsl:for-each-group>
-
-<!--
-        <div xmlns="http://www.w3.org/1999/xhtml" class="vraSection">
-            <xsl:for-each select="vra:relation">
-                <div>
-                    <span class="vraAttribute">
-                        <xsl:value-of select="@type"/>
-                    </span>
-                    <span class="vraNode">
-                        <xsl:value-of select="."/>
-                    </span>
-                    <span class="vraAttribute">
-                        <xsl:value-of select="@relids"/>
-                    </span>
-                </div>
-            </xsl:for-each>
-        </div>
--->
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>What</th>
+                    <th>Image</th>
+                    <th>Type</th>
+                    <th class="detail-cell">source</th>
+                    <th class="detail-cell">refid</th>
+                    <th class="detail-cell">relids</th>
+                    <th class="detail-cell">URL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <xsl:for-each select="vra:relation">
+                    <tr>
+                        <td>
+                            <xsl:value-of select="text()"/>
+                        </td>
+                        <td>
+                            <!-- TODO -->
+                            <img src="resources/images/360/t_metadata.f_preview.43435-36085-100.jpg" alt="preview"/>
+                        </td>
+                        <td>
+                            <xsl:value-of select="@type"/>
+                        </td>
+                        <td class="detail-cell">
+                            <xsl:value-of select="@source"/>
+                        </td>
+                        <td class="detail-cell">
+                            <xsl:value-of select="@refid"/>
+                        </td>
+                        <td class="detail-cell">
+                            <xsl:value-of select="@relids"/>
+                        </td>
+                        <td class="detail-cell">
+                            <xsl:if test="@href">
+                                <a>
+                                    <xsl:attribute name="href"><xsl:value-of select="@href"/></xsl:attribute>
+                                    <xsl:value-of select="@href"/>
+                                </a>
+                            </xsl:if>
+                        </td>
+                    </tr>
+                </xsl:for-each>
+            </tbody>
+        </table>
     </xsl:template>
 </xsl:stylesheet>

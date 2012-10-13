@@ -192,8 +192,8 @@
         </measurementsSet>
         <relationSet>
             <notes>relation notes</notes>
-            <relation type="imageIs" relids="i_93d52424-a024-55d2-92b4-ca14275caeb9" refid="226566" source="EXC Priya Paul Collection">Overall view</relation>
             <relation type="partOf" relids="w_000987653" href="http://~seurat.berkeley.edu/worksmetadata/13255.html">Altar of Zeus</relation>
+            <relation type="imageIs" relids="i_93d52424-a024-55d2-92b4-ca14275caeb9" refid="226566" source="EXC Priya Paul Collection">Overall view</relation>
             <relation type="imageIs" relids="i_859348576" href="http://~seurat.berkeley.edu/images/554678.jpg"></relation>
         </relationSet>
         <rightsSet>
