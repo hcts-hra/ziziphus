@@ -91,6 +91,7 @@ body {
   content: 'Notes';
   font-weight: bold;
   display: block;
+  text-decoration: underline;
 }
 .bf .vraSection .vraAttr {
   white-space: nowrap;
