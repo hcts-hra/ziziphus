@@ -7,10 +7,10 @@
       xmlns:bfc="http://betterform.sourceforge.net/xforms/controls">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <title>Ziziphus_Image_DB</title>
-        <link rel="stylesheet" type="text/css" href="../resources/css/bootstrap.min.css"/>
+        <title>Prototype - tables with inline attributes</title>
+        <!--<link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.min.css"/>-->
 
-        <script type="text/javascript" src="../resources/script/jquery-1.8.0.min.js"/>
+        <script type="text/javascript" src="../../resources/script/jquery-1.8.0.min.js"/>
         <style type="text/css">
             #xforms .vraSet, #xforms .vraSetElement, #xforms .vraComplex {
                 margin: 10px;
@@ -31,6 +31,7 @@
                 border-radius: 5px;
                 padding: 5px;
                 width: 380px;
+                clear:both;
             }
             #attrDialog .xfControl .xfValue, #attrDialog .xfControl .xfLabel {
                 padding: 0;
@@ -56,7 +57,7 @@
     <body>
         <div id="xforms">
             <div style="display:none">
-                <xf:model id="child-model" schema="../resources/xsd/vra-types.xsd">
+                <xf:model id="child-model" schema="../../resources/xsd/vra-types.xsd">
                     <xf:instance id="i-agentSet">
                         <agentSet xmlns="http://www.vraweb.org/vracore4.htm">
                             <agent>

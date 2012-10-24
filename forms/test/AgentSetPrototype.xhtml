@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns:vra="http://www.vraweb.org/vracore4.htm"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xf="http://www.w3.org/2002/xforms"
+      xmlns:ev="http://www.w3.org/2001/xml-events"
+      xmlns:bfc="http://betterform.sourceforge.net/xforms/controls">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>Prototype for AgentSet</title>
+        <script type="text/javascript" src="../../resources/script/jquery-1.8.0.min.js"/>
+
+        <style type="text/css">
+            #xforms {
+                width: 400px;
+                font-size: 0.9em;
+                background-color: #f5f5f5;
+            }
+
+            .vraSet {
+                border: thin dotted;
+                background: #eeeeee;
+                padding: 3px;
+            }
+
+            .vraSetElement, .vraComplex {
+                background: #dddddd;
+                border-bottom: thin solid;
+            }
+
+            .elementInSet {
+                border-bottom: thin solid;
+            }
+
+            #attrDialog {
+                background: #bbbbbb;
+                margin: 5px;
+            }
+        </style>
+        <script type="text/javascript">
+            function moveAttrs(targetElem) {
+//                var newClone = $('#attrDialog').clone();
+                var attrForm = $('#attrDialog');
+                var mount = $('#' + targetElem);
+//                newClone.appendTo(mount);
+                attrForm.appendTo(mount);
+            }
+
+            $(function () {
+                $('input')
+            });
+        </script>
+
+    </head>
+    <body>
+        <div id="xforms">
+            <div style="display:none">
+                <xf:model id="child-model" schema="../../resources/xsd/vra-types.xsd">
+                    <xf:instance id="i-agentSet">
+                        <agentSet xmlns="http://www.vraweb.org/vracore4.htm">
+                            <agent pref="false">
+                                <attribution pref="true"></attribution>
+                                <culture></culture>
+                                <dates type="" pref="true" refid="bubu">
+                                    <earliestDate circa="false"></earliestDate>
+                                    <latestDate circa="false"></latestDate>
+                                </dates>
+                                <name type="" pref="false"></name>
+                                <role></role>
+                            </agent>
+                        </agentSet>
+                    </xf:instance>
+                    <xf:bind nodeset="instance()">
+                        <xf:bind nodeset="vra:agent">
+                            <xf:bind nodeset="@pref" type="xf:boolean"/>
+                            <xf:bind nodeset="vra:attribution"></xf:bind>
+                            <xf:bind nodeset="vra:culture"></xf:bind>
+                            <xf:bind nodeset="vra:dates">
+                                <xf:bind nodeset="@type" type="vra:agentDateTypeType"></xf:bind>
+                                <xf:bind nodeset="vra:earliestDate">
+                                    <xf:bind nodeset="@circa" type="xsd:boolean"></xf:bind>
+                                </xf:bind>
+                                <xf:bind nodeset="vra:latestDate">
+                                    <xf:bind nodeset="@circa" type="xsd:boolean"></xf:bind>
+                                </xf:bind>
+                            </xf:bind>
+                            <xf:bind nodeset="vra:name">
+                                <xf:bind nodeset="@type" type="vra:agentNameTypeType"></xf:bind>
+                            </xf:bind>
+                            <xf:bind nodeset="vra:role"></xf:bind>
+                        </xf:bind>
+                    </xf:bind>
+
+                    <xf:instance id="i-attributes">
+                        <data xmlns="http://www.vraweb.org/vracore4.htm">
+                            <vraElement
+                                    dataDate=""
+                                    extent=""
+                                    href=""
+                                    pref="false"
+                                    refid=""
+                                    rules=""
+                                    source=""
+                                    vocab=""/>
+                        </data>
+                    </xf:instance>
+                    <xf:bind nodeset="instance('i-attributes')/*[1]">
+                        <xf:bind nodeset="@dataDate" type="vra:dateValueType"/>
+                        <xf:bind nodeset="@href" type="xsd:anyURI"/>
+                        <xf:bind nodeset="@pref" type="xsd:boolean"/>
+                    </xf:bind>
+
+                    <xf:instance id="i-util">
+                        <data xmlns="">
+                            <currentElement/>
+                        </data>
+                    </xf:instance>
+                </xf:model>
+            </div>
+            <h1>Set Elements with Attribute Dialog</h1>
+            <xf:group ref="instance()" appearance="minimal" class="vraSet" model="child-model">
+                <xf:label>AgentSet</xf:label>
+
+                <xf:trigger>
+                    <xf:label>+</xf:label>
+                    <xf:insert nodeset="vra:agent[last()]"/>
+                </xf:trigger>
+
+                <xf:repeat id="r-agentSet" class="vraSetElement" nodeset="vra:agent" appearance="full">
+
+                    <xf:input ref="./@pref" class="prefAttr">
+                        <xf:label/>
+                    </xf:input>
+
+                    <xf:group id="attributionGroup" appearance="minimal" class="vraSetElementChild">
+                        <xf:input ref="vra:attribution">
+                            <xf:label>Attribution</xf:label>
+                        </xf:input>
+                        <xf:trigger class="attrTrigger">
+                            <xf:label/>
+                            <xf:action>
+                                <!-- todo: handle @value during generation -->
+                                <xf:setvalue ref="instance('i-util')/currentElement" value="'attribution'"/>
+                                <script type="text/javascript">
+                                    moveAttrs('attribution-mount');
+                                </script>
+                            </xf:action>
+                        </xf:trigger>
+                        <div id="attribution-mount"/>
+                    </xf:group>
+
+
+                    <xf:group appearance="minimal" class="vraSetElementChild">
+                        <xf:input ref="vra:culture">
+                            <xf:label>Culture</xf:label>
+                        </xf:input>
+                        <xf:trigger class="attrTrigger">
+                            <xf:label/>
+                            <xf:action>
+                                <!-- todo: handle @value during generation -->
+                                <xf:setvalue ref="instance('i-util')/currentElement" value="'culture'"/>
+                                <script type="text/javascript">
+                                    moveAttrs('culture-mount');
+                                </script>
+                            </xf:action>
+                        </xf:trigger>
+                        <div id="culture-mount"/>
+                    </xf:group>
+
+                    <!--
+                                        <xf:group ref="vra:dates" appearance="minimal" class="vraComplex">
+                                            <xf:label>Dates</xf:label>
+
+                                            <xf:input ref="@type">
+                                                <xf:label>type</xf:label>
+                                            </xf:input>
+                                            <xf:input ref="vra:earliestDate">
+                                                <xf:label>EarliestDate</xf:label>
+                                            </xf:input>
+                                            <xf:input ref="vra:latestDate">
+                                                <xf:label>LatestDate</xf:label>
+                                            </xf:input>
+
+                                        </xf:group>
+                    -->
+                    <!--
+                                        <xf:group appearance="minimal" class="vraComplex">
+                                            <xf:action ev:event="DOMFocusIn">
+                                                <xf:setvalue ref="instance('i-util')/currentElement" value="'name'"/>
+                                                <script type="text/javascript">
+                                                    moveAttrs('name-mount');
+                                                </script>
+                                            </xf:action>
+                                            <xf:input ref="vra:name/@type">
+                                                <xf:label>Type</xf:label>
+                                            </xf:input>
+                                            <xf:input ref="vra:name">
+                                                <xf:label>Name</xf:label>
+                                            </xf:input>
+                                            <div id="name-mount"/>
+                                        </xf:group>
+                    -->
+
+
+                    <!--
+                                        <xf:input class="elementInSet" ref="vra:role">
+                                            <xf:label>Role</xf:label>
+                                            <xf:action ev:event="DOMFocusIn">
+                                                <xf:setvalue ref="instance('i-util')/currentElement" value="'role'"/>
+                                            </xf:action>
+                                        </xf:input>
+                    -->
+
+                </xf:repeat>
+            </xf:group>
+
+            <div style="display:none;" id="attrBucket">
+                <div id="attrDialog" class="vraAttributes">
+                    <xf:label>Attributes</xf:label>
+                    <xf:group appearance="minimal" ref="instance('i-attributes')/vra:vraElement">
+                        <xf:label/>
+<!--
+                        <xf:input ref="@pref">
+                            <xf:label>pref</xf:label>
+                        </xf:input>
+-->
+                        <xf:input ref="@dataDate">
+                            <xf:label>dataDate</xf:label>
+                        </xf:input>
+                        <xf:input ref="@extent">
+                            <xf:label>extent</xf:label>
+                        </xf:input>
+                        <xf:input ref="@href">
+                            <xf:label>href</xf:label>
+                        </xf:input>
+                        <xf:input ref="@refid">
+                            <xf:label>refid</xf:label>
+                        </xf:input>
+                        <xf:input ref="@rules">
+                            <xf:label>rules</xf:label>
+                        </xf:input>
+                        <xf:input ref="@source">
+                            <xf:label>source</xf:label>
+                        </xf:input>
+                        <xf:select1 ref="@vocab">
+                            <xf:label>vocab</xf:label>
+                            <xf:item>
+                                <xf:label>Gimme</xf:label>
+                                <xf:value>Gimme</xf:value>
+                            </xf:item>
+                            <xf:item>
+                                <xf:label>,gimme</xf:label>
+                                <xf:value>,gimme</xf:value>
+                            </xf:item>
+                            <xf:item>
+                                <xf:label>data</xf:label>
+                                <xf:value>data</xf:value>
+                            </xf:item>
+                        </xf:select1>
+                    </xf:group>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>

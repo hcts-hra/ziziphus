@@ -1,0 +1,3 @@
+- there seems to be a bug in bf xhtml.xsl with regard to the classes starting with '-'. These should end up on
+the xfValue elements but at least when there's an additional class they will stay on the surrounding element along
+with the prefix.

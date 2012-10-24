@@ -1,0 +1,4 @@
+- wenn Elemente innerhalb eines *Set Elements (e.g. Agent) nicht repeated sind, macht das @pref auf diesen
+Elementen wenig Sinn. Sollte @pref nur auf dem jeweiligen Element vorkommen? (e.g. <agent pref=""> aber nicht
+agent/attribution/@pref?
+
