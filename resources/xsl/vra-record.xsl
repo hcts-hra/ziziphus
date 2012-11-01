@@ -147,6 +147,18 @@
                                     <xf:resource value="'forms/{$vraSetName}.xhtml#xforms'"/>
                                     <xf:extension includeCSS="false" includeScript="false"/>
                                 </xf:load>
+                                <!--
+                                This is not used for the time being. It was a test to use xquery to generate the
+                                forms which might get interesting later again when it comes to optimization e.g.
+                                the data instances can probably be inlined within the forms when requesting the form
+                                thus avoiding additional submissions to load the data. This *might* improve overall
+                                performance.
+
+                                 <xf:load show="embed" targetid="{$mountPoint}">
+                                    <xf:resource value="'modules/forms/{$vraSetName}.xql#xforms?recordId={$recordId}'"/>
+                                    <xf:extension includeCSS="false" includeScript="false"/>
+                                </xf:load>
+                                -->
                                 <xf:toggle case="{$caseId}-edit"/>
                                 <xf:dispatch name="unload-subform" targetid="controlCenter"/>
                                 <xf:setvalue model="model-1" ref="instance('i-control-center')/currentform" value="'{$id}'"/>

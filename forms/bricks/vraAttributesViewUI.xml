@@ -1,0 +1,51 @@
+<!--
+This brick is used as include in all *Set Forms for the display of vraAttributes within the edit forms.
+Please note that not all common vra attributes (as defined by VRA Schema) are handled here as e.g. @pref is
+handled by the *Set forms themselves. Same is true for xml:lang which is not used for the Ziziphus project.
+-->
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:xf="http://www.w3.org/2002/xforms">
+    <xf:output ref="@dataDate">
+        <xf:label>dataDate</xf:label>
+    </xf:output>
+    <xf:output ref="@extent">
+        <xf:label>extent</xf:label>
+    </xf:output>
+    <xf:output ref="@href">
+        <xf:label>href</xf:label>
+    </xf:output>
+    <!--
+    not used?
+                    <xf:output ref="@xml:lang">
+                        <xf:label>lang</xf:label>
+                    </xf:output>
+    -->
+    <!--
+    handled outside
+                    <xf:output ref="@pref">
+                        <xf:label>pref</xf:label>
+                    </xf:output>
+    -->
+    <xf:output ref="@refid">
+        <xf:label>refid</xf:label>
+    </xf:output>
+    <xf:output ref="@rules">
+        <xf:label>rules</xf:label>
+    </xf:output>
+    <xf:output ref="@source">
+        <xf:label>source</xf:label>
+    </xf:output>
+    <xf:output ref="@vocab">
+        <xf:label>vocab</xf:label>
+    </xf:output>
+    <!-- todo: must probably be a select1 ? where do we get the list? -->
+    <xf:output ref="@lang">
+        <xf:label>Language Code</xf:label>
+    </xf:output>
+    <xf:output ref="@transliteration">
+        <xf:label>transliteration</xf:label>
+    </xf:output>
+    <xf:output ref="@script">
+        <xf:label>Script</xf:label>
+    </xf:output>
+</div>

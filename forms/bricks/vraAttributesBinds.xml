@@ -1,0 +1,4 @@
+<xf:bind id="b-vraAttributes" nodeset="instance('i-attributes')/*[1]"  xmlns:xf="http://www.w3.org/2002/xforms">
+    <xf:bind nodeset="@dataDate" type="vra:dateValueType"/>
+    <xf:bind nodeset="@href" type="xsd:anyURI"/>
+</xf:bind>

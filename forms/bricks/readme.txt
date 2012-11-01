@@ -1,0 +1,1 @@
+This directory contains 'bricks' meaning pieces of markup that are included within the vra forms via xi:include.

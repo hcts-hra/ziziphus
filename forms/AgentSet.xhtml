@@ -308,8 +308,10 @@
                                    resource="xslt:resources/xsl/vraSets/AgentSet.xsl?parseString=false" method="get" validate="false">
                         <xf:message ev:event="xforms-submit-error">Could not embed AgentSet data</xf:message>
                         <xf:action ev:event="xforms-submit-done">
+<!--
                             <xf:toggle case="c-w_Agent-view" model="model-1"/>
                             <xf:setvalue ref="instance('i-control-center')/currentform" value="''" model="model-1"/>
+-->
                         </xf:action>
                     </xf:submission>
 
@@ -317,8 +319,10 @@
                                    resource="xslt:resources/xsl/vraSets/AgentSet.xsl?parseString=false" method="get" validate="false">
                         <xf:message ev:event="xforms-submit-error">Could not embed AgentSet data</xf:message>
                         <xf:action ev:event="xforms-submit-done">
+<!--
                             <xf:toggle case="c-i_Agent-view" model="model-1"/>
                             <xf:setvalue ref="instance('i-control-center')/currentform" value="''" model="model-1"/>
+-->
                         </xf:action>
                     </xf:submission>
                     <xf:action ev:event="xforms-ready">

@@ -1,0 +1,376 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:vra="http://www.vraweb.org/vracore4.htm"
+      xmlns:xf="http://www.w3.org/2002/xforms"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:bf="http://betterform.sourceforge.net/xforms"
+      bf:transform="/apps/ziziphus/resources/xsl/ziziphus.xsl">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>Ziziphus_Image_DB</title>
+        <!--<link rel="stylesheet" type="text/css" href="../resources/css/prototype.css"/>-->
+
+        <!-- todo: enforce that only one pref flag can be set within the repeat -->
+        <!-- todo: group earliest/latestDate together with their 'circa' control so that they don't loose connection when resizing -->
+        <style type="text/css">
+            <!-- this matcher does only exist due to an error in thea generic xforms.css-->
+            .xfRequired .xfLabel:after{
+                content:'';
+            }
+            .xfRequired > .xfLabel:after{
+                content:'*';
+            }
+
+            table, td {
+                border: thin solid #999999;
+                border-collapse: collapse;
+                padding: 3px;
+            }
+
+            tbody {
+                font-size: 0.85em;
+            }
+            tbody .xfGroup > .xfControl .xfLabel {
+                float: left;
+                padding: 0;
+                margin: 3px 3px 0 7px;
+                min-width: 80px;
+                text-align: right;
+            }
+            tbody tr td > .xfGroup {
+                background: #fafafa;
+                border-top: thin solid;
+                border-bottom: thin solid #cdcdcd;
+                padding: 5px 0;
+            }
+            tbody tr td .xfGroup:last-child {
+                border-bottom: none;
+            }
+            .xfRepeatItem {
+                background: whitesmoke;
+            }
+
+            .xfRepeatIndex .contentCol {
+                background-color: whitesmoke;
+            }
+            .bf .xfRepeatIndex {
+                background: #dddddd !important;
+            }
+            td{
+                vertical-align: top;
+            }
+            .vraAttributes .xfControl{
+                float:left;
+            }
+
+            .prefCol, .triggerCol {
+                width: 10px;
+            }
+            .prefCol .xfLabel{
+                display: none;
+            }
+            .contentCol > .xfGroup {
+                width: 100%;
+                display: inline-block;
+                padding-bottom: 5px;
+                border-top: none !important;
+            }
+            .vraAttributes .xfControl {
+                border: thin solid #aaaaaa;
+                border-radius: 3px;
+                margin: 5px 5px 5px 0;
+                padding: 3px;
+                background: #eeeeee;
+                text-align: center;
+            }
+            .vraAttributes .xfLabel, .vraAttributes .xfValue{
+                font-size: 0.85em;
+            }
+            .vraAttributes .xfLabel {
+                margin: 0 !important;
+                padding: 0 !important;
+                border-bottom: thin solid #aaaaaa;
+            }
+
+            .prefCol .xfLabel {
+                display: none !important;
+            }
+            .vraAttributeTrigger {
+                float: right;
+            }
+
+        </style>
+        <script type="text/javascript" defer="defer">
+            require(["dojo/ready", "dijit/TooltipDialog", "dijit/popup", "dojo/on", "dojo/dom"], function(ready, TooltipDialog, popup, on, dom){
+                ready(function(){
+                    var myTooltipDialog = new TooltipDialog({
+                        id: 'attrDialog',
+                        style: "width: 300px;",
+                        content: "<p>I have a mouse leave event handler that will close the dialog.</p>",
+                        onMouseLeave: function(){
+                            popup.close(myTooltipDialog);
+                        }
+                    });
+
+                    on(dojo.byId('C176-value'), 'click', function(){
+                        popup.open({
+                            popup: myTooltipDialog,
+                            around: dom.byId('C176-value')
+                        });
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="xforms">
+            <!-- ###################### MODEL ################################## -->
+            <!-- ###################### MODEL ################################## -->
+            <!-- ###################### MODEL ################################## -->
+            <div style="display:none">
+                <xf:model id="m-child-model" schema="../resources/xsd/vra-types.xsd">
+                    <xf:instance id="i-agentSet">
+                        <agentSet xmlns="http://www.vraweb.org/vracore4.htm">
+                            <display/>
+                            <notes/>
+                            <agent pref="false">
+                                <attribution></attribution>
+                                <culture vocab="ULAN" script="latn" refid="i_ac173206-a8c8-59a2-b9fb-201faf055357" source="EXC Priya Paul Collection"></culture>
+                                <dates type="">
+                                    <earliestDate circa="false"></earliestDate>
+                                    <latestDate circa="false"></latestDate>
+                                </dates>
+                                <name type="" vocab="LOCAL" script="latn" transliteration="aljksdlk" refid="i_ac173206-a8c8-59a2-b9fb-201faf055357" source="EXC Priya Paul Collection"></name>
+                                <role></role>
+                            </agent>
+                        </agentSet>
+                    </xf:instance>
+                    <xf:bind nodeset="instance()">
+                        <xf:bind nodeset="vra:agent">
+                            <xf:bind nodeset="@pref" type="boolean"/>
+
+                            <xf:bind nodeset="vra:name" required="true()">
+                                <xf:bind nodeset="@type" type="vra:agentNameTypeType"/>
+                            </xf:bind>
+
+                            <xf:bind nodeset="vra:dates/*/@circa" type="boolean"/>
+                        </xf:bind>
+                    </xf:bind>
+                    <xf:instance id="i-templates">
+                        <templates xmlns="http://www.vraweb.org/vracore4.htm">
+                            <!-- todo: clarify: are agent attributes required? They are present in the schema but are they use for ziziphus? -->
+                            <agent pref="false">
+                                <attribution></attribution>
+                                <culture></culture>
+                                <dates type="">
+                                    <earliestDate circa="false"></earliestDate>
+                                    <latestDate circa="false"></latestDate>
+                                </dates>
+                                <name type=""></name>
+                                <role></role>
+                            </agent>
+                            <notes/>
+                            <display/>
+                        </templates>
+                    </xf:instance>
+
+                    <xi:include href="bricks/vraAttributesInstance.xml"/>
+                </xf:model>
+            </div>
+
+            <!-- ####################################### VISIBLE UI ####################################### -->
+            <!-- ####################################### VISIBLE UI ####################################### -->
+            <!-- ####################################### VISIBLE UI ####################################### -->
+            <div class="toolbar">
+                <xf:trigger class="t-save" model="m-child-model" title="Save">
+                    <xf:label>save</xf:label>
+                    <!--<xf:send submission="s-save-data"/>-->
+                </xf:trigger>
+                <xf:trigger class="t-plus" model="m-child-model" title="Add Agent">
+                    <xf:label>+</xf:label>
+                    <xf:insert nodeset="instance()/vra:agent[last()]" origin="instance('i-templates')/vra:agent"
+                               model="m-child-model"/>
+                </xf:trigger>
+            </div>
+
+            <xf:group appearance="minimal" ref="instance('i-agentSet')" model="m-child-model">
+                <xf:label/>
+
+                <table>
+<!--
+                    <thead>
+                        <tr>
+                            <th rowspan="2"></th>
+                            <th>Type</th>
+                            <th>Name</th>
+                            <td rowspan="2"/>
+                        </tr>
+                    </thead>
+-->
+                    <tbody  id="r-vraAgent" xf:repeat-nodeset="vra:agent" model="m-child-model">
+                        <!-- ### the name element ### -->
+                        <tr>
+                            <td class="prefCol">
+                                    <xf:input ref="@pref">
+                                        <xf:label>pref</xf:label>
+                                        <xf:hint>preferred</xf:hint>
+                                    </xf:input>
+
+                            </td>
+
+                            <td class="contentCol">
+                                <xf:group appearance="minimal">
+                                    <xf:trigger id="test" class="vraAttributeTrigger">
+                                        <xf:label>...</xf:label>
+                                    </xf:trigger>
+                                    <xf:input ref="vra:name" type="nodeValue" class="elementName">
+                                        <xf:label>Name</xf:label>
+                                    </xf:input>
+                                    <xf:select1 ref="vra:name/@type">
+                                        <xf:label>Type</xf:label>
+                                        <xf:item>
+                                            <xf:label>Personal</xf:label>
+                                            <xf:value>personal</xf:value>
+                                        </xf:item>
+                                        <xf:item>
+                                            <xf:label>Corporate</xf:label>
+                                            <xf:value>corporate</xf:value>
+                                        </xf:item>
+                                        <xf:item>
+                                            <xf:label>Family</xf:label>
+                                            <xf:value>family</xf:value>
+                                        </xf:item>
+                                        <xf:item>
+                                            <xf:label>Other</xf:label>
+                                            <xf:value>other</xf:value>
+                                        </xf:item>
+                                    </xf:select1>
+                                    <xf:group class="vraAttributes" appearance="minimal" ref="vra:name">
+                                        <xi:include href="bricks/vraAttributesViewUI.xml"/>
+                                    </xf:group>
+                                </xf:group>
+
+                                <!-- ### the role element #### -->
+                                <xf:group appearance="minimal">
+                                    <xf:trigger class="vraAttributeTrigger">
+                                        <xf:label>...</xf:label>
+                                    </xf:trigger>
+                                    <xf:input ref="vra:role">
+                                        <xf:label>Role</xf:label>
+                                    </xf:input>
+                                    <xf:group class="vraAttributes" appearance="minimal" ref="vra:role">
+                                        <xi:include href="bricks/vraAttributesViewUI.xml"/>
+                                    </xf:group>
+                                </xf:group>
+
+                                <xf:group appearance="minimal">
+                                    <xf:trigger class="vraAttributeTrigger">
+                                        <xf:label>...</xf:label>
+                                    </xf:trigger>
+                                    <xf:input ref="vra:attribution">
+                                        <xf:label>Attribution</xf:label>
+                                    </xf:input>
+                                    <xf:group class="vraAttributes" appearance="minimal" ref="vra:attribution">
+                                        <xi:include href="bricks/vraAttributesViewUI.xml"/>
+                                    </xf:group>
+                                </xf:group>
+
+                                <xf:group appearance="minimal">
+                                    <xf:trigger class="vraAttributeTrigger">
+                                        <xf:label>...</xf:label>
+                                    </xf:trigger>
+                                    <xf:input ref="vra:culture">
+                                        <xf:label>Culture</xf:label>
+                                    </xf:input>
+                                    <xf:group class="vraAttributes" appearance="minimal" ref="vra:culture">
+                                        <xi:include href="bricks/vraAttributesViewUI.xml"/>
+                                    </xf:group>
+                                </xf:group>
+
+                                <xf:group appearance="minimal">
+                                    <xf:trigger class="vraAttributeTrigger">
+                                        <xf:label>...</xf:label>
+                                    </xf:trigger>
+                                    <xf:input ref="vra:dates/@type">
+                                        <xf:label>Dates</xf:label>
+                                    </xf:input>
+                                    <xf:input ref="vra:dates/vra:earliestDate">
+                                        <xf:label>earliest Date</xf:label>
+                                    </xf:input>
+                                    <xf:input ref="vra:dates/vra:earliestDate/@circa">
+                                        <xf:label>circa</xf:label>
+                                    </xf:input>
+                                    <xf:input ref="vra:dates/vra:latestDate">
+                                        <xf:label>latest Date</xf:label>
+                                    </xf:input>
+                                    <xf:input ref="vra:dates/vra:latestDate/@circa">
+                                        <xf:label>circa</xf:label>
+                                    </xf:input>
+                                    <xf:group class="vraAttributes" appearance="minimal" ref="vra:dates">
+                                        <xi:include href="bricks/vraAttributesViewUI.xml"/>
+                                    </xf:group>
+                                </xf:group>
+                            </td>
+                            <td class="triggerCol">
+                                <xf:trigger>
+                                    <xf:label>x</xf:label>
+                                    <xf:delete nodeset="instance('i-agentSet')/vra:agent[index('r-vraAgent')]"/>
+                                </xf:trigger>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <!-- ############################## NOTES ####################################### -->
+                <!-- ############################## NOTES ####################################### -->
+                <!-- ############################## NOTES ####################################### -->
+                <xf:group class="showNotesDisplay">
+                    <xf:trigger class="notesDisplayTrigger">
+                        <xf:label>Show/Hide Notes and Display</xf:label>
+                        <xf:setvalue ref="instance('i-agentSetController')/showNotesDisplay"
+                                     value="not(boolean-from-string(instance('i-agentSetController')/showNotesDisplay))"/>
+                    </xf:trigger>
+                    <xf:group ref="instance('i-agentSetController')/showNotesDisplay">
+                        <xf:group appearance="minimal" class="elementGroup" ref="instance('i-agentSet')">
+                            <xf:label/>
+                            <xf:textarea ref="vra:display" type="nodeValue" model="m-child-model">
+                                <xf:label>Display:</xf:label>
+                            </xf:textarea>
+                        </xf:group>
+                        <xf:group appearance="minimal" class="elementGroup" ref="instance('i-agentSet')">
+                            <xf:label/>
+                            <xf:textarea ref="vra:notes" type="nodeValue" model="m-child-model">
+                                <xf:label>Notes</xf:label>
+                            </xf:textarea>
+                        </xf:group>
+                    </xf:group>
+                </xf:group>
+            </xf:group>
+
+            <xi:include href="bricks/vraAttributesEditUI.xml"/>
+
+        </div>
+        <script type="text/javascript" defer="defer">
+            require(["dojo/ready", "dijit/TooltipDialog", "dijit/popup", "dojo/on", "dojo/dom"], function(ready, TooltipDialog, popup, on, dom){
+                ready(function(){
+                    var myTooltipDialog = new TooltipDialog({
+                        id: 'attrDialog',
+                        style: "width: 300px;",
+                        content: "<p>I have a mouse leave event handler that will close the dialog.</p>",
+                        onMouseLeave: function(){
+                            popup.close(myTooltipDialog);
+                        }
+                    });
+
+                    on(dojo.byId('C176-value'), 'click', function(){
+                        popup.open({
+                            popup: myTooltipDialog,
+                            around: dom.byId('C176-value')
+                        });
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
+

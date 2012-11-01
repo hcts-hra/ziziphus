@@ -1,5 +1,6 @@
 <xsl:stylesheet version="2.0"
                 xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:xhtml="http://www.w3.org/1999/xhtml"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:xf="http://www.w3.org/2002/xforms"
                 xmlns:bf="http://betterform.sourceforge.net/xforms"
@@ -8,6 +9,9 @@
                 exclude-result-prefixes="xf bf"
                 xpath-default-namespace="http://www.w3.org/1999/xhtml">
     <xsl:import href="bfResources/xslt/xhtml.xsl"/>
+
+
+    <!-- todo: fix namespace of td elements -->
 
     <xsl:template name="addDojoImport">
         <!--
@@ -63,5 +67,62 @@
         </xsl:if>
 
     </xsl:template>
+
+
+    <xsl:template match="*[@xf:repeat-bind|@xf:repeat-nodeset|@repeat-bind|@repeat-nodeset]">
+        <xsl:variable name="repeat-id" select="@id"/>
+        <xsl:variable name="repeat-index" select="bf:data/@bf:index"/>
+        <xsl:variable name="repeat-classes">
+            <xsl:call-template name="assemble-compound-classes"/>
+        </xsl:variable>
+
+        <xsl:element name="{local-name(.)}" namespace="namespace-uri(.)">
+            <xsl:attribute name="id"><xsl:value-of select="$repeat-id"/></xsl:attribute>
+            <xsl:attribute name="jsId"><xsl:value-of select="@id"/></xsl:attribute>
+            <xsl:attribute name="class">xfRepeat <xsl:value-of select="$repeat-classes"/></xsl:attribute>
+            <xsl:copy-of select="@*"/>
+
+            <xsl:if test="not(ancestor::xf:repeat)">
+                <!-- generate prototype(s) for scripted environment -->
+                <xsl:for-each select="bf:data/xf:group[@appearance='repeated'][1]">
+                    <xsl:for-each select="*">
+                        <xsl:element name="{local-name(.)}" namespace="namespace-uri(.)">
+                            <xsl:attribute name="id"><xsl:value-of select="$repeat-id"/>-prototype</xsl:attribute>
+                            <xsl:attribute name="class">xfRepeatPrototype xfDisabled xfReadWrite xfOptional xfValid</xsl:attribute>
+                            <xsl:apply-templates select="*" />
+                        </xsl:element>
+                    </xsl:for-each>
+                </xsl:for-each>
+                <xsl:for-each select="bf:data/xf:group[@appearance='repeated']//xf:repeat">
+                    <xsl:call-template name="processRepeatPrototype"/>
+                </xsl:for-each>
+                <xsl:for-each select="bf:data/xf:group[@appearance='repeated']//xf:itemset">
+                    <xsl:call-template name="processItemsetPrototype"/>
+                </xsl:for-each>
+            </xsl:if>
+
+            <xsl:for-each select="xf:group[@appearance='repeated']">
+                <xsl:variable name="id" select="@id"/>
+
+                <xsl:variable name="repeat-item-classes">
+                    <xsl:call-template name="assemble-repeat-item-classes">
+                        <xsl:with-param name="selected" select="$repeat-index=position()"/>
+                    </xsl:call-template>
+                </xsl:variable>
+
+                <xsl:for-each select="xhtml:*">
+
+                    <xsl:element name="{local-name(.)}" namespace="namespace-uri(.)">
+                        <!--<xsl:attribute name="id"><xsl:value-of select="generate-id()"/></xsl:attribute>-->
+                        <xsl:attribute name="class" select="$repeat-item-classes"/>
+                        <xsl:apply-templates select="*" mode="compact-repeat"/>
+
+                    </xsl:element>
+                </xsl:for-each>
+
+            </xsl:for-each>
+        </xsl:element>
+    </xsl:template>
+
 
 </xsl:stylesheet>

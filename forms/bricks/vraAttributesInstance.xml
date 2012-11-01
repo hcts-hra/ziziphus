@@ -1,0 +1,15 @@
+<xf:instance id="i-vraAttributes" xmlns:xf="http://www.w3.org/2002/xforms">
+    <data xmlns="http://www.vraweb.org/vracore4.htm">
+        <vraElement
+                dataDate=""
+                extent=""
+                href=""
+                refid=""
+                rules=""
+                source=""
+                vocab=""
+                lang=""
+                transliteration=""
+                script=""/>
+    </data>
+</xf:instance>
