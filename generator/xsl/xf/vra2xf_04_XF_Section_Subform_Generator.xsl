@@ -8,8 +8,15 @@
                 xmlns:xf="http://www.w3.org/2002/xforms"
                 xpath-default-namespace="http://www.w3.org/2002/xforms" exclude-result-prefixes="functx">
 
+    <!--
+    This transform is used to tailor the subforms to the needs of the Ziziphus project. For efficiency
+    reasons the subforms are kept as small as possible meaning that redundant parts as the attribute handling
+    are put into their own subforms.
+    -->
+    <xsl:include href="ignores.xsl" />
     <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"/>
     <xsl:strip-space elements="*"/>
+
 
     <!--
         ########################################################################################
@@ -96,19 +103,18 @@
             MODE: INSTANCE - CREATION OF XFORMS BINDS
         ########################################################################################
     -->
-    <xsl:template match="*" mode="instance">
+    <xsl:template match="vra:*" mode="instance">
         <xsl:param name="path" select="''"/>
         <xsl:variable name="vraNodeName" select="local-name(.)"/>
         <xsl:variable name="currentPath" select="concat($path,'/vra:',$vraNodeName)"/>
 
         <xsl:copy>
-            <xsl:copy-of select="@*"/>
+            <xsl:apply-templates select="@*|text()" mode="instanceAttrs"/>
             <xsl:apply-templates mode="instance">
                 <xsl:with-param name="path" select="$currentPath"/>
             </xsl:apply-templates>
         </xsl:copy>
     </xsl:template>
-
 
 
     <!--
@@ -167,7 +173,6 @@
 
 
 
-
     <!--
         ########################################################################################
             MODE: UI - CREATION OF XFORMS UI CONTROLS
@@ -220,11 +225,13 @@
             </xf:label>
         </xf:input>
 
+<!--
         <div class="agentSet-{substring-after($vraNodeName,'vra:')}-attributes hiddenAttributes" style="display:none;">
             <xsl:apply-templates mode="ui">
                 <xsl:with-param name="path" select="$vraNodeName"/>
             </xsl:apply-templates>
         </div>
+-->
     </xsl:template>
 
     <xsl:template match="xf:bind[starts-with(@nodeset,'@')]" mode="ui" priority="10">
@@ -253,20 +260,21 @@
 
 
 
-
-<!--
-    ########################################################################################
-        HELPER TEMPLATE RULES (simply copying nodes and comments)
-    ########################################################################################
--->
+    <!--
+        ########################################################################################
+            HELPER TEMPLATE RULES (simply copying nodes and comments)
+        ########################################################################################
+    -->
 
     <xsl:template match="*">
         <xsl:apply-templates/>
     </xsl:template>
 
-    <xsl:template match="@*|text()">
+<!--
+    <xsl:template match="text()">
         <xsl:copy/>
     </xsl:template>
+-->
 
     <xsl:template match="comment()" priority="20">
         <xsl:copy/>

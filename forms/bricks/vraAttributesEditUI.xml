@@ -1,9 +1,9 @@
-<div style="display:none;" id="attrBucket" xmlns="http://www.w3.org/1999/xhtml">
-    <div id="attrDialog" class="vraAttributes" xmlns:xf="http://www.w3.org/2002/xforms">
+<!--<div style="display:none;" id="attrBucket" xmlns="http://www.w3.org/1999/xhtml">-->
+    <div id="attrDialog" xmlns:xf="http://www.w3.org/2002/xforms">
         <xf:label>Attributes</xf:label>
-        <xf:group appearance="minimal" ref="instance('i-attributes')/vra:vraElement">
+        <xf:group appearance="compact" ref="instance('i-vraAttributes')/vra:vraElement">
             <xf:label/>
-            <xf:input ref="@dataDate">
+            <xf:input ref="@dataDate" id="first">
                 <xf:label>dataDate</xf:label>
             </xf:input>
             <xf:input ref="@extent">
@@ -47,4 +47,4 @@
             </xf:input>
         </xf:group>
     </div>
-</div>
+<!--</div>-->

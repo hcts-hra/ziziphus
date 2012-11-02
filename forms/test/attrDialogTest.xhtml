@@ -257,11 +257,6 @@
                     <xf:trigger>
                         <xf:label>Ok</xf:label>
                         <xf:action>
-                            <!--
-                                                        <xf:insert context="instance('i-attributes')/vra:vraElement[1]"
-                                                                   origin="instance('i-agentSet')/vra:agent/vra:dates/@*"/>
-                            -->
-
                             <xf:insert
                                     context="instance('i-agentSet')/vra:agent/*[local-name()=instance('i-util')/currentElement]"
                                     origin="instance('i-attributes')/vra:vraElement[1]/@*[string-length(.) != 0]"/>
