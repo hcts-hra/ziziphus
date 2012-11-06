@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Ziziphus xsd2xforms Generator" id="ziziphus" default="inlineSchemaPipeline" basedir=".">
+
+
+    <property name="generator.dir" value="${basedir}"/>
+
+    <xmlproperty file="../build.properties.xml" semanticAttributes="true" keepRoot="false"/>
+    <property name="target.dir" value="${basedir}/${build.dir}"/>
+    <property name="target.schema.dir" value="${target.dir}/xsd"/>
+    <property name="target.forms.dir" value="${target.dir}/forms"/>
+
+    <property name="resource.dir" value="${basedir}/resources"/>
+    <property name="schema.dir" value="${basedir}/xsd"/>
+    <property name="deploy.schema.dir" value="${basedir}/../resources/xsd"/>
+    <property name="form.dir" value="${basedir}/forms"/>
+
+    <property name="xsl.dir" value="${basedir}/xsl"/>
+    <property name="xsl.xsd.dir" value="${xsl.dir}/inlineXSD"/>
+    
+    
+    <property name="vra.bf.schema.name" value="vra-bf.xsd"/>
+    <property name="vra.types.schema.name" value="vra-types.xsd"/>
+
+    <!-- **************************************** HOUSEKEEPING **************************************** -->
+    <!-- **************************************** HOUSEKEEPING **************************************** -->
+    <!-- **************************************** HOUSEKEEPING **************************************** -->
+    <target name="clean">
+        <delete dir="${target.dir}"/>
+    </target>
+
+
+    <target name="inlineSchemaPipeline" description="Inline XSD Schema">
+        <delete file="${target.schema.dir}"/>
+
+            <!-- inline xsd:extension for compmlexTypes -->
+        <xslt style="${xsl.xsd.dir}/01_XSD_Inline_Extension.xsl"
+              in="${schema.dir}/vra.xsd"
+              out="${target.schema.dir}/01_Inlined_Extension.xsd"
+              extension=".xsd">
+            <classpath refid="transform.class.path"/>
+            <param name="debug" expression="false"/>
+        </xslt>
+
+            <!-- inline Schema -->
+         <xslt style="${xsl.xsd.dir}/02_InlineXSD.xsl"
+              in="${target.schema.dir}/01_Inlined_Extension.xsd"
+              out="${target.schema.dir}/02_Inlined_Schema.xsd"
+              extension=".xsd">
+            <classpath refid="transform.class.path"/>
+            <param name="debug" expression="false"/>
+        </xslt>
+
+
+        <!-- include redifintions from vra-strict.xsd -->
+       <xslt style="${xsl.xsd.dir}/03_Apply_Schema_Redefintion.xsl"
+              in="${target.schema.dir}/02_Inlined_Schema.xsd"
+              out="${target.schema.dir}/03_Redefined_Schema.xsd"
+              extension=".xsd">
+            <classpath refid="transform.class.path"/>
+            <param name="debug" expression="false"/>
+            <param name="path2schemaRedefinition" expression="${schema.dir}/vra-strict.xsd"/>
+        </xslt>
+
+        <!-- split generated XSD into vra element (vra-bf.xsd) and types (vra-types.xsd) -->
+        <xslt style="${xsl.xsd.dir}/04_Split_Schema.xsl"
+              in="${target.schema.dir}/03_Redefined_Schema.xsd"
+              out="${target.schema.dir}/04_01_VRA-BF.xsd">
+            <classpath refid="transform.class.path"/>
+            <param name="debug" expression="false"/>
+            <param name="path2schemaDir" expression="${target.schema.dir}"/>
+            <param name="vraTypeSchemaName" expression="04_02_VRA-Types.xsd"/>
+            <param name="vraTypeSchemaRef" expression="${vra.types.schema.name}"/>
+        </xslt>
+
+        <!-- deploy needed schemas into project structure -->
+        <copy file="${target.schema.dir}/04_01_VRA-BF.xsd" tofile="${deploy.schema.dir}/${vra.bf.schema.name}"/>
+        <copy file="${target.schema.dir}/04_02_VRA-Types.xsd" tofile="${deploy.schema.dir}/${vra.types.schema.name}"/>
+
+    </target>
+
+    <target name="xsd2xforms-prepare" description="generate XForms resources needed for subform generation">
+        <delete dir="${target.forms.dir}"/>
+
+        <!-- generate an XML instance of vra-bf.xsd -->
+        <xslt style="${xsl.dir}/xf/vra2xf_01_Instance_Generator.xsl"
+              in="${deploy.schema.dir}/${vra.bf.schema.name}"
+              out="${target.forms.dir}/01_VRA_Instance.xml">
+            <classpath refid="transform.class.path"/>
+            <param name="debug" expression="false"/>
+        </xslt>
+
+        <!-- generate XForms Bindings of vra-bf.xsd -->
+        <xslt style="${xsl.dir}/xf/vra2xf_02_Bind_Generator.xsl"
+              in="${deploy.schema.dir}/${vra.bf.schema.name}"
+              out="${target.forms.dir}/02_XF_Binds.xml"
+              force="true">
+            <classpath refid="transform.class.path"/>
+            <param name="debug" expression="false"/>
+        </xslt>
+
+        <!-- generate XForms Subform Bindings of 02_XF_Binds.xml -->
+<!--
+        <delete dir="${target.dir}/binds"/>
+        <mkdir dir="${target.dir}/binds"/>
+        <xslt style="${xsl.dir}/xf/vra2xf_02_Subforms_Binds_Generator.xsl"
+              in="${target.forms.dir}/02_XF_Binds.xml"
+              out="${target.forms.dir}/02_XF_Empty.xml"
+              force="true">
+            <classpath refid="transform.class.path"/>
+            <param name="debug" expression="false"/>
+            <param name="path2result" expression="${target.dir}/binds"/>
+        </xslt>
+
+        <copy todir="${basedir}/binds">
+            <fileset dir="${target.dir}/binds"/>
+        </copy>
+-->
+
+        <!-- generate XForms Model of bind.xml and vra-types.xsd -->
+<!--
+        <xslt style="${xsl.dir}/xf/vra2xf_03_XF_Subform_Generator.xsl"
+              in="${target.forms.dir}/02_XF_Binds.xml"
+              out="${target.forms.dir}/03_XF_Image_Subform.xml"
+              force="true">
+            <classpath refid="transform.class.path"/>
+            <param name="debug" expression="false"/>
+            <param name="path_2_vra_types_schema" expression="${target.schema.dir}/${vra.types.schema.name}"/>
+            <param name="path_2_xf_instance" expression="${target.forms.dir}/01_VRA_Instance.xml"/>
+            <param name="mainInstancePath" expression="data/vra-image.xml"/>
+            <param name="mainInstanceName" expression="i-vra-image"/>
+            <param name="vraSubformType" expression="vra:image"/>
+        </xslt>
+        <copy file="${target.forms.dir}/data/vra-image.xml" tofile="${form.dir}/data/vra-image.xml"/>
+        <copy file="${target.forms.dir}/03_XF_Image_Subform.xml" tofile="${form.dir}/Subform_Image.xhtml"/>
+
+        <xslt style="${xsl.dir}/xf/vra2xf_03_XF_Subform_Generator.xsl"
+              in="${target.forms.dir}/02_XF_Binds.xml"
+              out="${target.forms.dir}/03_XF_Work_Subform.xml"
+              force="true">
+            <classpath refid="transform.class.path"/>
+            <param name="debug" expression="false"/>
+            <param name="path_2_vra_types_schema" expression="${target.schema.dir}/${vra.types.schema.name}"/>
+            <param name="path_2_xf_instance" expression="${target.forms.dir}/01_VRA_Instance.xml"/>
+            <param name="mainInstancePath" expression="data/vra-work.xml"/>
+            <param name="mainInstanceName" expression="i-vra-work"/>
+            <param name="vraSubformType" expression="vra:work"/>
+            <param name="exclude" expression="vra:image"/>
+        </xslt>
+        <copy file="${target.forms.dir}/data/vra-work.xml" tofile="${form.dir}/data/vra-work.xml"/>
+        <copy file="${target.forms.dir}/03_XF_Work_Subform.xml" tofile="${form.dir}/Subform_Work.xhtml"/>
+-->
+
+
+
+    </target>
+
+    <target name="xsd2xforms-subforms-1" description="generate XForms">
+        <!-- VRA Section agentSection -->
+        <antcall target="generate-subform">
+            <param name="subformName" value="AgentSet"/>
+        </antcall>
+
+        <!-- VRA Section culturalContextSet -->
+        <antcall target="generate-subform">
+            <param name="subformName" value="CulturalContextSet"/>
+        </antcall>
+
+        <!-- VRA Section dateSet -->
+        <antcall target="generate-subform">
+            <param name="subformName" value="DateSet"/>
+        </antcall>
+
+        <!-- VRA Section descriptionSet -->
+        <antcall target="generate-subform">
+            <param name="subformName" value="DescriptionSet"/>
+        </antcall>
+
+        <!-- VRA Section descriptionSet -->
+        <antcall target="generate-subform">
+            <param name="subformName" value="InscriptionSet"/>
+        </antcall>
+
+        <!-- VRA Section inscriptionSet -->
+        <antcall target="generate-subform">
+            <param name="subformName" value="InscriptionSet"/>
+        </antcall>
+
+        <!-- VRA Section locationSet -->
+        <antcall target="generate-subform">
+            <param name="subformName" value="LocationSet"/>
+        </antcall>
+
+        <!-- VRA Section materialSet -->
+        <antcall target="generate-subform">
+            <param name="subformName" value="MaterialSet"/>
+        </antcall>
+
+        <!-- VRA Section measurementsSet -->
+        <antcall target="generate-subform">
+            <param name="subformName" value="MeasurementsSet"/>
+        </antcall>
+
+
+    </target>
+    <target name="xsd2xforms-subforms-2" description="generate XForms">
+
+        <!-- VRA Section relationSet -->
+        <antcall target="generate-subform">
+            <param name="subformName" value="RelationSet"/>
+        </antcall>
+
+        <!-- VRA Section rightsSet -->
+        <antcall target="generate-subform">
+            <param name="subformName" value="RightsSet"/>
+        </antcall>
+        <!-- VRA Section sourceSet -->
+        <antcall target="generate-subform">
+            <param name="subformName" value="SourceSet"/>
+        </antcall>
+
+        <!-- VRA Section sourceSet -->
+        <antcall target="generate-subform">
+            <param name="subformName" value="StateEditionSet"/>
+        </antcall>
+
+        <!-- VRA Section stylePeriodSet -->
+        <antcall target="generate-subform">
+            <param name="subformName" value="StylePeriodSet"/>
+        </antcall>
+
+        <!-- VRA Section stylePeriodSet -->
+        <antcall target="generate-subform">
+            <param name="subformName" value="SubjectSet"/>
+        </antcall>
+
+        <!-- VRA Section techniqueSet -->
+        <antcall target="generate-subform">
+            <param name="subformName" value="TechniqueSet"/>
+        </antcall>
+
+        <!-- VRA Section textrefSet -->
+        <antcall target="generate-subform">
+            <param name="subformName" value="TextrefSet"/>
+        </antcall>
+
+        <!-- VRA Section titleSet -->
+        <antcall target="generate-subform">
+            <param name="subformName" value="TitleSet"/>
+        </antcall>
+
+        <!-- VRA Section worktypeSet -->
+        <antcall target="generate-subform">
+            <param name="subformName" value="WorktypeSet"/>
+        </antcall>
+    </target>
+
+
+    <target name="generate-subform">
+        <echo>generate-subform ${subformName}</echo>
+        <xslt style="${xsl.dir}/xf/vra2xf_04_XF_Section_Subform_Generator.xsl"
+              in="${target.forms.dir}/02_XF_Binds.xml"
+              out="${target.forms.dir}/04_XF_${subformName}_Subform.xml"
+              force="true">
+            <classpath refid="transform.class.path"/>
+            <param name="debug" expression="true"/>
+            <param name="path_2_vra_types_schema" expression="${target.schema.dir}/${vra.types.schema.name}"/>
+            <param name="path_2_xf_instance" expression="${target.forms.dir}/01_VRA_Instance.xml"/>
+            <param name="vraSection" expression="${subformName}"/>
+        </xslt>
+
+        <!--<copy file="${target.forms.dir}/data/${instanceName}.xml" tofile="${form.dir}/data/${instanceName}.xml"/>-->
+        <copy file="${target.forms.dir}/04_XF_${subformName}_Subform.xml" tofile="${form.dir}/${subformName}.xhtml"/>
+
+    </target>
+
+    <target name="generate-stylesheets" description="generates xsl:stylesheets to convert vra:sets to html">
+        <echo>generate-stylesheets that transform vra:sets to html</echo>
+        <xslt basedir="${basedir}/../forms"
+              destdir="${basedir}/build/xsl"
+              style="${xsl.dir}/xsl/Data2html.xsl"
+              force="true"
+              includes="*.xhtml"
+              extension=".xsl">
+            <classpath refid="transform.class.path"/>
+        </xslt>
+
+        <copy todir="${basedir}/../resources/xsl/vraSets">
+            <fileset dir="${basedir}/build/xsl"/>
+        </copy>
+    </target>
+    <target name="enumeration-to-items" description="generated xf:select1 of xsd:enumeration">
+
+        <xslt in="${schema.dir}/vra-strict.xsd"
+              out="${target.dir}/xfSelect1s.xml"
+              style="${xsl.dir}/xf/vra2xf_05_Enumeration_2_Items_Generator.xsl"
+              force="true">
+            <classpath refid="transform.class.path"/>
+        </xslt>
+
+        <copy todir="${basedir}/../resources/xsl/vraSets">
+            <fileset dir="${basedir}/build/xsl"/>
+        </copy>
+    </target>
+
+    <!-- not functional any more -->
+<!--
+    <target name="copy-to-local-dir" description="copies all result files to deploy.dir configure in build.properties.xml">
+        <copy todir="${betterform.installation}/${betterform.forms}">
+            <fileset dir="${form.dir}"/>
+        </copy>
+        <copy todir="${betterform.installation}/${betterform.forms}">
+            <fileset dir="${schema.dir}"/>
+        </copy>
+
+    </target>
+-->
+
+</project>

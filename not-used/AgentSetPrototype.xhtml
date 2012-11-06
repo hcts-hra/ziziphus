@@ -8,7 +8,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <title>Prototype for AgentSet</title>
-        <script type="text/javascript" src="../../resources/script/jquery-1.8.0.min.js"/>
+        <script type="text/javascript" src="../resources/script/jquery-1.8.0.min.js"/>
 
         <style type="text/css">
             #xforms {
@@ -38,17 +38,34 @@
             }
         </style>
         <script type="text/javascript">
+            $(document).ready(function(){
+                $(document).on("click",".attrTrigger", function(event){
+//                    console.log("target",event.target);
+                    var attrForm = $('#attrDialog');
+                    var mountP = $(this).next();
+//                    console.log("next: ",mountP);
+                    attrForm.appendTo(mountP);
+                });
+
+
+                $(document).on("blur",".vraSetElementChild", function(event){
+                      console.log("focusout ", $(this));
+                      console.log("eventtarget ", event.target);
+                });
+
+            });
+
+            function moveToOrigin(){
+                var attrForm = $('#attrDialog');
+                var origin = $('#attrBucket');
+                attrForm.appendTo(origin);
+            }
             function moveAttrs(targetElem) {
-//                var newClone = $('#attrDialog').clone();
                 var attrForm = $('#attrDialog');
                 var mount = $('#' + targetElem);
-//                newClone.appendTo(mount);
                 attrForm.appendTo(mount);
             }
 
-            $(function () {
-                $('input')
-            });
         </script>
 
     </head>
@@ -124,10 +141,15 @@
                 <xf:trigger>
                     <xf:label>+</xf:label>
                     <xf:insert nodeset="vra:agent[last()]"/>
+                    <script type="text/javascript">
+                        $('.vraSetElementChild').focuslost(function(){
+                            console.log("lost: ", this);
+                            moveToOrigin();
+                        })
+                    </script>
                 </xf:trigger>
 
                 <xf:repeat id="r-agentSet" class="vraSetElement" nodeset="vra:agent" appearance="full">
-
                     <xf:input ref="./@pref" class="prefAttr">
                         <xf:label/>
                     </xf:input>
@@ -141,12 +163,14 @@
                             <xf:action>
                                 <!-- todo: handle @value during generation -->
                                 <xf:setvalue ref="instance('i-util')/currentElement" value="'attribution'"/>
+<!--
                                 <script type="text/javascript">
-                                    moveAttrs('attribution-mount');
+                                    moveAttrs(this);
                                 </script>
+-->
                             </xf:action>
                         </xf:trigger>
-                        <div id="attribution-mount"/>
+                        <div class="mount"/>
                     </xf:group>
 
 
@@ -159,12 +183,14 @@
                             <xf:action>
                                 <!-- todo: handle @value during generation -->
                                 <xf:setvalue ref="instance('i-util')/currentElement" value="'culture'"/>
+<!--
                                 <script type="text/javascript">
                                     moveAttrs('culture-mount');
                                 </script>
+-->
                             </xf:action>
                         </xf:trigger>
-                        <div id="culture-mount"/>
+                        <div class="mount"/>
                     </xf:group>
 
                     <!--
@@ -214,6 +240,7 @@
                 </xf:repeat>
             </xf:group>
 
+            <input id="currentGroup" type="text" value=""/>
             <div style="display:none;" id="attrBucket">
                 <div id="attrDialog" class="vraAttributes">
                     <xf:label>Attributes</xf:label>
@@ -260,6 +287,7 @@
                     </xf:group>
                 </div>
             </div>
+
 
         </div>
     </body>

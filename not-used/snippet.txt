@@ -1,0 +1,7 @@
+                require(["dojo/_base/fx", "dojo/_base/connect","dojo/dom-style", "dojo/domReady!"], function(baseFx,connect, domStyle) {
+                    var animation = baseFx.fadeOut({{node: "overlay",duration: 1000}});
+                            dojo.connect(animation, "onEnd", function(){{
+                                domStyle.style("overlay", "display","none");
+                            }});
+                            animation.play();
+                });

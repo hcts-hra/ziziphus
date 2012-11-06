@@ -100,7 +100,7 @@
 
     <!--
         ########################################################################################
-            MODE: INSTANCE - CREATION OF XFORMS BINDS
+            MODE: INSTANCE - CREATION OF XFORMS INSTANCES
         ########################################################################################
     -->
     <xsl:template match="vra:*" mode="instance">
