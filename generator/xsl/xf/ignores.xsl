@@ -17,10 +17,12 @@
     and are therefore ignored for the generation of subforms for the *Set subforms.
     ##############################################################################################
     -->
+
+    <!-- TODO: we do not need separate notes/display handling in Agent, but how about others? Delete if not needed. -->
     <!-- ###### ignore display element as handled by its own subform -->
-    <xsl:template match="vra:display" mode="instance" priority="10"/>
+    <!-- <xsl:template match="vra:display" mode="instance" priority="10"/> -->
     <!-- ###### ignore notes element as handled by its own subform -->
-    <xsl:template match="vra:notes" mode="instance" priority="10"/>
+    <!-- <xsl:template match="vra:notes" mode="instance" priority="10"/> -->
 
     <xsl:template match="@*" mode="instanceAttrs" priority="30">
         <xsl:choose>

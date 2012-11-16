@@ -185,6 +185,9 @@
                                     <xsl:apply-templates select="$vraInstance/vra:vra/vra:work/*[local-name()=$vraSectionNode]/*[local-name()=$vraArtifactNode]" mode="instance">
                                         <xsl:with-param name="path" select="'instance()'"/>
                                     </xsl:apply-templates>
+
+                                    <notes/>
+                                    <display/>
                                 </templates>
                             </xf:instance>
 
@@ -227,7 +230,7 @@
                  goes the special case for top-level @pref
                  (agentSet/agent/@pref etc.)
             -->
-            <xsl:if test="..[local-name()=$vraSectionNode]">
+            <xsl:if test="(local-name()=$vraArtifactNode) and (..[local-name()=$vraSectionNode])">
                 <xsl:copy-of select="@pref"/>
             </xsl:if>
 
