@@ -6,6 +6,7 @@
                 xmlns:xsd="http://www.w3.org/2001/XMLSchema"
                 xmlns:functx="http://www.functx.com"
                 xmlns:xf="http://www.w3.org/2002/xforms"
+                xmlns:xi="http://www.w3.org/2001/XInclude"
                 xpath-default-namespace="http://www.w3.org/2002/xforms" exclude-result-prefixes="functx">
 
     <!--
@@ -36,6 +37,9 @@
             GLOBAL VARIABLES
         ########################################################################################
     -->
+
+    <!-- Here we assume the naming convention in VRA that agentSet core item is called agent, etc. -->
+    <xsl:variable name="vraArtifactNode" select="substring($vraSectionNode, 1, (string-length($vraSectionNode)-3))"/>
 
     <xsl:variable name="debugEnabled" as="xsd:boolean">
         <xsl:choose>
@@ -163,7 +167,7 @@
             <body>
                 <div id="xforms">
                     <div style="display:none">
-                        <xf:model id="child-model" schema="../resources/xsd/vra-types.xsd">
+                        <xf:model id="m-child-model" schema="../resources/xsd/vra-types.xsd">
                             <xf:instance id="i-{$vraSectionNode}">
                                     <xsl:apply-templates select="$vraInstance/vra:vra/vra:work/*[local-name(.)=$vraSectionNode]" mode="instance">
                                         <xsl:with-param name="path" select="'instance()'"/>
@@ -175,6 +179,22 @@
                                     <xsl:with-param name="path" select="'instance()'"/>
                                 </xsl:apply-templates>
                             </xf:bind>
+
+                            <xf:instance id="i-templates">
+                                <templates xmlns="http://www.vraweb.org/vracore4.htm">
+                                    <xsl:apply-templates select="$vraInstance/vra:vra/vra:work/*[local-name()=$vraSectionNode]/*[local-name()=$vraArtifactNode]" mode="instance">
+                                        <xsl:with-param name="path" select="'instance()'"/>
+                                    </xsl:apply-templates>
+                                </templates>
+                            </xf:instance>
+
+                            <xi:include href="../bricks/vraAttributesInstance.xml"/>
+
+                            <xf:instance id="i-util">
+                                <data xmlns="">
+                                    <currentElement/>
+                                </data>
+                            </xf:instance>
                         </xf:model>
                     </div>
 
@@ -203,6 +223,14 @@
         <xsl:variable name="currentPath" select="concat($path,'/vra:',$vraNodeName)"/>
 
         <xsl:copy>
+            <!-- Common VRA attributes get ignored in ignores.xsl, so here
+                 goes the special case for top-level @pref
+                 (agentSet/agent/@pref etc.)
+            -->
+            <xsl:if test="..[local-name()=$vraSectionNode]">
+                <xsl:copy-of select="@pref"/>
+            </xsl:if>
+
             <xsl:apply-templates select="@*|text()" mode="instanceAttrs"/>
             <xsl:apply-templates mode="instance">
                 <xsl:with-param name="path" select="$currentPath"/>

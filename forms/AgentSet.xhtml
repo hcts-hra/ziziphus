@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><html xmlns:vra="http://www.vraweb.org/vracore4.htm"
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-      xmlns:xf="http://www.w3.org/2002/xforms">
+      xmlns:xf="http://www.w3.org/2002/xforms"
+      xmlns:xi="http://www.w3.org/2001/XInclude">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
       <title>Ziziphus_Image_DB</title><style type="text/css">
@@ -101,10 +102,10 @@
    <body>
       <div id="xforms">
          <div style="display:none">
-            <xf:model id="child-model" schema="../resources/xsd/vra-types.xsd">
+            <xf:model id="m-child-model" schema="../resources/xsd/vra-types.xsd">
                <xf:instance id="i-agentSet">
                   <agentSet xmlns="http://www.vraweb.org/vracore4.htm">
-                     <agent>
+                     <agent pref="false">
                         <attribution></attribution>
                         <culture></culture>
                         <dates type="">
@@ -136,6 +137,26 @@
                      <xf:bind nodeset="vra:role"></xf:bind>
                   </xf:bind>
                </xf:bind>
+               <xf:instance id="i-templates">
+                  <templates xmlns="http://www.vraweb.org/vracore4.htm">
+                     <agent pref="false">
+                        <attribution></attribution>
+                        <culture></culture>
+                        <dates type="">
+                           <earliestDate circa="false"></earliestDate>
+                           <latestDate circa="false"></latestDate>
+                        </dates>
+                        <name type=""></name>
+                        <role></role>
+                     </agent>
+                  </templates>
+               </xf:instance>
+               <xi:include href="../bricks/vraAttributesInstance.xml"></xi:include>
+               <xf:instance id="i-util">
+                  <data xmlns="">
+                     <currentElement></currentElement>
+                  </data>
+               </xf:instance>
             </xf:model>
          </div>
          <xf:group ref="instance()" appearance="minimal" class="vraRecord" model="child-model">
