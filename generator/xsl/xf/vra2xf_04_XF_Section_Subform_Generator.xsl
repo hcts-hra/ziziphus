@@ -242,6 +242,18 @@
             <xsl:if test="exists(@type) and not(@type = 'xsd:string')">
                 <xsl:attribute name="type" select="@type"/>
             </xsl:if>
+
+            <!-- Common VRA attributes get ignored in ignores.xsl, so here
+                 goes the special case for top-level @pref
+                 (agentSet/agent/@pref etc.)
+            -->
+            <xsl:if test="..[(local-name()='bind') and (@nodeset=concat('vra:',$vraSectionNode))]">
+                <xf:bind>
+                    <xsl:attribute name="nodeset">@pref</xsl:attribute>
+                    <xsl:attribute name="type">boolean</xsl:attribute>
+                </xf:bind>
+            </xsl:if>
+
             <xsl:apply-templates mode="bind">
                 <xsl:with-param name="path" select="$currentPath"/>
             </xsl:apply-templates>
