@@ -158,7 +158,7 @@
                      <display></display>
                   </templates>
                </xf:instance>
-               <xi:include href="../bricks/vraAttributesInstance.xml"></xi:include>
+               <xi:include href="bricks/vraAttributesInstance.xml"></xi:include>
                <xf:instance id="i-util">
                   <data xmlns="">
                      <currentElement></currentElement>
@@ -179,35 +179,56 @@
                           origin="instance('i-templates')/vra:agent"></xf:insert>
             </xf:trigger>
          </div>
-         <xf:group ref="instance()" appearance="minimal" class="vraRecord" model="child-model">
+         <xf:group appearance="minimal" class="vraRecord" model="m-child-model"
+                   ref="instance('i-agentSet')">
             <xf:label>AgentSet</xf:label>
-            <xf:group ref="vra:agent" appearance="minimal" class="vraComplex" model="child-model">
-               <xf:label>Agent</xf:label>
-               <xf:input ref="vra:attribution" type="nodeValue" model="child-model">
-                  <xf:label>Attribution</xf:label>
-               </xf:input>
-               <xf:input ref="vra:culture" type="nodeValue" model="child-model">
-                  <xf:label>Culture</xf:label>
-               </xf:input>
-               <xf:group ref="vra:dates" appearance="minimal" class="vraComplex" model="child-model">
-                  <xf:label>Dates</xf:label>
-                  <xf:input ref="vra:dates/@type" type="attributeValue" model="child-model">
-                     <xf:label>type</xf:label>
-                  </xf:input>
-                  <xf:input ref="vra:earliestDate" type="nodeValue" model="child-model">
-                     <xf:label>EarliestDate</xf:label>
-                  </xf:input>
-                  <xf:input ref="vra:latestDate" type="nodeValue" model="child-model">
-                     <xf:label>LatestDate</xf:label>
-                  </xf:input>
-               </xf:group>
-               <xf:input ref="vra:name" type="nodeValue" model="child-model">
-                  <xf:label>Name</xf:label>
-               </xf:input>
-               <xf:input ref="vra:role" type="nodeValue" model="child-model">
-                  <xf:label>Role</xf:label>
-               </xf:input>
-            </xf:group>
+            <table>
+               <tbody model="m-child-model" id="r-vraAgent" xf:repeat-nodeset="vra:agent">
+                  <tr>
+                     <td class="prefCol">
+                        <xf:input ref="@pref">
+                           <xf:label>pref</xf:label>
+                           <xf:hint>preferred</xf:hint>
+                        </xf:input>
+                     </td>
+                     <td class="contentCol">
+                        <xf:group ref="vra:agent" appearance="minimal" class="vraComplex" model="m-child-model">
+                           <xf:label>Agent</xf:label>
+                           <xf:input ref="vra:attribution" type="nodeValue" model="m-child-model">
+                              <xf:label>Attribution</xf:label>
+                           </xf:input>
+                           <xf:input ref="vra:culture" type="nodeValue" model="m-child-model">
+                              <xf:label>Culture</xf:label>
+                           </xf:input>
+                           <xf:group ref="vra:dates" appearance="minimal" class="vraComplex" model="m-child-model">
+                              <xf:label>Dates</xf:label>
+                              <xf:input ref="vra:dates/@type" type="attributeValue" model="m-child-model">
+                                 <xf:label>type</xf:label>
+                              </xf:input>
+                              <xf:input ref="vra:earliestDate" type="nodeValue" model="m-child-model">
+                                 <xf:label>EarliestDate</xf:label>
+                              </xf:input>
+                              <xf:input ref="vra:latestDate" type="nodeValue" model="m-child-model">
+                                 <xf:label>LatestDate</xf:label>
+                              </xf:input>
+                           </xf:group>
+                           <xf:input ref="vra:name" type="nodeValue" model="m-child-model">
+                              <xf:label>Name</xf:label>
+                           </xf:input>
+                           <xf:input ref="vra:role" type="nodeValue" model="m-child-model">
+                              <xf:label>Role</xf:label>
+                           </xf:input>
+                        </xf:group>
+                     </td>
+                     <td class="triggerCol">
+                        <xf:trigger>
+                           <xf:label>x</xf:label>
+                           <xf:delete nodeset="instance('i-agentSet')/vra:agent[index('r-vraAgent')]"></xf:delete>
+                        </xf:trigger>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
          </xf:group>
       </div>
    </body>

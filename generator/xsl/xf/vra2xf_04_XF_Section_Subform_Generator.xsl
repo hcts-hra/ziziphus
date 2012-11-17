@@ -40,8 +40,7 @@
 
     <!-- Here we assume the naming convention in VRA that agentSet core item is called agent, etc. -->
     <xsl:variable name="vraArtifact" select="substring($vraSection, 1, (string-length($vraSection)-3))"/>
-    <!-- Here we assume the naming convention in VRA that agentSet core item is called agent, etc. -->
-    <xsl:variable name="vraArtifactNode" select="substring($vraSectionNode, 1, (string-length($vraSectionNode)-3))"/>
+    <xsl:variable name="vraArtifactNode" select="functx:lowercase-first($vraArtifact)"/>
 
     <xsl:variable name="debugEnabled" as="xsd:boolean">
         <xsl:choose>
@@ -198,7 +197,7 @@
                                 </templates>
                             </xf:instance>
 
-                            <xi:include href="../bricks/vraAttributesInstance.xml"/>
+                            <xi:include href="bricks/vraAttributesInstance.xml"/>
 
                             <xf:instance id="i-util">
                                 <data xmlns="">
@@ -347,41 +346,103 @@
         <xsl:variable name="vraNodeName" select="@nodeset"/>
         <xsl:variable name="currentPath" select="concat($path,'/',$vraNodeName)"/>
         
-        <xf:group ref="instance()" appearance="minimal" class="vraRecord" model="child-model">
+        <xf:group appearance="minimal" class="vraRecord" model="m-child-model">
+            <xsl:attribute name="ref">instance('i-<xsl:value-of select="$vraSectionNode"/>')</xsl:attribute>
+
+            <!-- TODO: This label is empty in the blueprint?? -->
             <xf:label><xsl:value-of select="functx:capitalize-first($vraNodeName)"/></xf:label>
-            <xsl:apply-templates mode="ui" select="*[not(starts-with(@nodeset,'@'))]">
-                <xsl:with-param name="path" select="$currentPath"/>
+
+            <xsl:if test="$debugEnabled">
+                <xsl:message>UI root</xsl:message>
+            </xsl:if>
+
+            <table>
+                <tbody model="m-child-model">
+                    <xsl:attribute name="id">r-vra<xsl:value-of select="$vraArtifact"/></xsl:attribute>
+                    <xsl:attribute name="xf:repeat-nodeset">vra:<xsl:value-of select="$vraArtifactNode"/></xsl:attribute>
+
+                    <xsl:apply-templates mode="ui" select="*[not(starts-with(@nodeset,'@'))]">
+                        <xsl:with-param name="path"  select="$currentPath"/>
+                        <xsl:with-param name="depth" select="1"/>
+                    </xsl:apply-templates>
+                </tbody>
+            </table>
+        </xf:group>
+    </xsl:template>
+
+    <xsl:template name="ui-2-basic">
+        <xsl:param name="vraNodeName" select="''"/>
+        <xsl:param name="depth" select="''"/>
+
+        <xsl:if test="$debugEnabled">
+            <xsl:message>UI-2-basic (<xsl:value-of select="$depth"/>): create xf:group for '<xsl:value-of select="$vraNodeName"/>'</xsl:message>
+        </xsl:if>
+
+        <xf:group ref="{$vraNodeName}" appearance="minimal" class="vraComplex" model="m-child-model">
+            <xf:label><xsl:value-of select="functx:capitalize-first($vraNodeName)"/></xf:label>
+            <xsl:apply-templates mode="ui">
+                <xsl:with-param name="path" select="$vraNodeName"/>
+                <xsl:with-param name="depth" select="1+$depth"/>
             </xsl:apply-templates>
         </xf:group>
     </xsl:template>
     
     <xsl:template match="xf:bind[@xfType = 'complexType']" mode="ui" priority="20">
         <xsl:param name="path" select="''" />
+        <xsl:param name="depth" select="''"/>
         <xsl:variable name="vraNodeName" select="@nodeset"/>
         <xsl:variable name="currentPath" select="concat($path,'/',$vraNodeName)"/>
 
+        <!-- artifact node: agent etc. -->
+        <xsl:variable name="artifactNode" select="(1=number($depth)) and ($vraNodeName=concat('vra:',$vraArtifactNode))"/>
+
         <xsl:if test="$debugEnabled">
-            <xsl:message>create xf:group for '<xsl:value-of select="$vraNodeName"/>' xpath is: '<xsl:value-of select="$currentPath"/>'</xsl:message>
+            <xsl:message>UI-2 (<xsl:value-of select="$depth"/>, <xsl:value-of select="$artifactNode"/>): create xf:group for '<xsl:value-of select="$vraNodeName"/>' xpath is: '<xsl:value-of select="$currentPath"/>'</xsl:message>
         </xsl:if>
-        <xf:group ref="{$vraNodeName}" appearance="minimal" class="vraComplex" model="child-model">
-            <xf:label><xsl:value-of select="functx:capitalize-first($vraNodeName)"/></xf:label>
-            <xsl:apply-templates mode="ui">
-                <xsl:with-param name="path" select="$vraNodeName"/>
-            </xsl:apply-templates>
-        </xf:group>
 
+        <xsl:choose>
+            <xsl:when test="$artifactNode">
+                <tr>
+                    <td class="prefCol">
+                        <xf:input ref="@pref">
+                            <xf:label>pref</xf:label>
+                            <xf:hint>preferred</xf:hint>
+                        </xf:input>
+                    </td>
+                    <td class="contentCol">
+                        <xsl:call-template name="ui-2-basic">
+                            <xsl:with-param name="vraNodeName" select="$vraNodeName"/>
+                            <xsl:with-param name="depth" select="$depth"/>
+                        </xsl:call-template>
+                    </td>
+                    <td class="triggerCol">
+                        <xf:trigger>
+                            <xf:label>x</xf:label>
+                            <xf:delete>
+                                <xsl:attribute name="nodeset">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]</xsl:attribute>
+                            </xf:delete>
+                        </xf:trigger>
+                    </td>
+                </tr>
+            </xsl:when>
+            <xsl:otherwise>
+                    <xsl:call-template name="ui-2-basic">
+                        <xsl:with-param name="vraNodeName" select="$vraNodeName"/>
+                        <xsl:with-param name="depth" select="$depth"/>
+                    </xsl:call-template>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
-
-
 
     <xsl:template match="xf:bind[not(exists(xf:bind/xf:bind)) and not(starts-with(@nodeset,'@'))]" mode="ui" priority="10">
         <xsl:param name="path" select="''" />
         <xsl:variable name="vraNodeName" select="@nodeset"/>
 
         <xsl:if test="$debugEnabled">
-            <xsl:message>create xf:control for '<xsl:value-of select="$vraNodeName"/>' xpath is: '<xsl:value-of select="$path"/>'</xsl:message>
+            <xsl:message>UI-3: create xf:control for '<xsl:value-of select="$vraNodeName"/>' xpath is: '<xsl:value-of select="$path"/>'</xsl:message>
         </xsl:if>
-        <xf:input ref="{$vraNodeName}" type="nodeValue" model="child-model">
+
+        <xf:input ref="{$vraNodeName}" type="nodeValue" model="m-child-model">
             <xf:label>
                 <xsl:value-of select="functx:capitalize-first($vraNodeName)"/>
             </xf:label>
@@ -400,11 +461,12 @@
         <xsl:param name="path" select="''" />
         <xsl:variable name="vraNodeName" select="@nodeset"/>
         <xsl:variable name="currentPath" select="concat($path,'/',$vraNodeName)"/>
+
         <xsl:if test="$debugEnabled">
-            <xsl:message>create xf:control for '<xsl:value-of select="$vraNodeName"/>' attribute,  xpath is: '<xsl:value-of select="$currentPath"/>'</xsl:message>
+            <xsl:message>UI-4: create xf:control for '<xsl:value-of select="$vraNodeName"/>' attribute,  xpath is: '<xsl:value-of select="$currentPath"/>'</xsl:message>
         </xsl:if>
                 
-        <xf:input ref="{$currentPath}" type="attributeValue" model="child-model">
+        <xf:input ref="{$currentPath}" type="attributeValue" model="m-child-model">
             <xf:label><xsl:value-of select="substring-after($vraNodeName,'@')"/></xf:label>
         </xf:input>
         
