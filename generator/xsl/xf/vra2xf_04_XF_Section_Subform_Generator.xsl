@@ -39,6 +39,8 @@
     -->
 
     <!-- Here we assume the naming convention in VRA that agentSet core item is called agent, etc. -->
+    <xsl:variable name="vraArtifact" select="substring($vraSection, 1, (string-length($vraSection)-3))"/>
+    <!-- Here we assume the naming convention in VRA that agentSet core item is called agent, etc. -->
     <xsl:variable name="vraArtifactNode" select="substring($vraSectionNode, 1, (string-length($vraSectionNode)-3))"/>
 
     <xsl:variable name="debugEnabled" as="xsd:boolean">
@@ -166,6 +168,11 @@
             </head>
             <body>
                 <div id="xforms">
+
+<xsl:comment> ###################### MODEL ################################## </xsl:comment>
+<xsl:comment> ###################### MODEL ################################## </xsl:comment>
+<xsl:comment> ###################### MODEL ################################## </xsl:comment>
+
                     <div style="display:none">
                         <xf:model id="m-child-model" schema="../resources/xsd/vra-types.xsd">
                             <xf:instance id="i-{$vraSectionNode}">
@@ -199,6 +206,24 @@
                                 </data>
                             </xf:instance>
                         </xf:model>
+                    </div>
+
+<xsl:comment> ####################################### VISIBLE UI ####################################### </xsl:comment>
+<xsl:comment> ####################################### VISIBLE UI ####################################### </xsl:comment>
+<xsl:comment> ####################################### VISIBLE UI ####################################### </xsl:comment>
+
+                    <div class="toolbar">
+                        <xf:trigger class="t-save" model="m-child-model" title="Save">
+                            <xf:label>save</xf:label>
+                        </xf:trigger>
+                        <xf:trigger class="t-plus" model="m-child-model">
+                            <xsl:attribute name="title">Add <xsl:value-of select="$vraArtifact"/></xsl:attribute>
+                            <xf:label>+</xf:label>
+                            <xf:insert model="m-child-model">
+                                <xsl:attribute name="nodeset">instance()/vra:<xsl:value-of select="$vraArtifactNode"/>[last()]</xsl:attribute>
+                                <xsl:attribute name="origin">instance('i-templates')/vra:<xsl:value-of select="$vraArtifactNode"/></xsl:attribute>
+                            </xf:insert>
+                        </xf:trigger>
                     </div>
 
                     <xsl:apply-templates select="xf:bind[@nodeset='vra:work']/xf:bind[@nodeset=concat('vra:',$vraSectionNode)]" mode="ui">

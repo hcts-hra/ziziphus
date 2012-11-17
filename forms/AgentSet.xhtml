@@ -101,6 +101,9 @@
                 </style></head>
    <body>
       <div id="xforms">
+         <!-- ###################### MODEL ################################## -->
+         <!-- ###################### MODEL ################################## -->
+         <!-- ###################### MODEL ################################## -->
          <div style="display:none">
             <xf:model id="m-child-model" schema="../resources/xsd/vra-types.xsd">
                <xf:instance id="i-agentSet">
@@ -162,6 +165,19 @@
                   </data>
                </xf:instance>
             </xf:model>
+         </div>
+         <!-- ####################################### VISIBLE UI ####################################### -->
+         <!-- ####################################### VISIBLE UI ####################################### -->
+         <!-- ####################################### VISIBLE UI ####################################### -->
+         <div class="toolbar">
+            <xf:trigger class="t-save" model="m-child-model" title="Save">
+               <xf:label>save</xf:label>
+            </xf:trigger>
+            <xf:trigger class="t-plus" model="m-child-model" title="Add Agent">
+               <xf:label>+</xf:label>
+               <xf:insert model="m-child-model" nodeset="instance()/vra:agent[last()]"
+                          origin="instance('i-templates')/vra:agent"></xf:insert>
+            </xf:trigger>
          </div>
          <xf:group ref="instance()" appearance="minimal" class="vraRecord" model="child-model">
             <xf:label>AgentSet</xf:label>
