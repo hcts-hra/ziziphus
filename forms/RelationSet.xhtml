@@ -1,434 +1,446 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:vra="http://www.vraweb.org/vracore4.htm" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xf="http://www.w3.org/2002/xforms">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <title>Ziziphus_Image_DB</title>
-    </head>
-    <body>
-        <div id="xforms">
-            <div style="display:none">
-                <xf:model id="m-child-model" schema="resources/xsd/vra-types.xsd">
-                    <xf:instance id="i-relationSet">
-                        <relationSet xmlns="http://www.vraweb.org/vracore4.htm">
-                            <display dataDate="" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
-                            <notes dataDate="" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
-                            <relation relids="d1" type="" dataDate="" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
-                        </relationSet>
-                    </xf:instance>
-                    <xf:bind nodeset="instance()">
-                        <xf:bind nodeset="vra:display">
-                            <xf:bind nodeset="@dataDate" type="vra:dateValueType"/>
-                            <xf:bind nodeset="@extent"/>
-                            <xf:bind nodeset="@href" type="xsd:anyURI"/>
-                            <xf:bind nodeset="@xml:lang"/>
-                            <xf:bind nodeset="@pref" type="xsd:boolean"/>
-                            <xf:bind nodeset="@refid"/>
-                            <xf:bind nodeset="@rules"/>
-                            <xf:bind nodeset="@source"/>
-                            <xf:bind nodeset="@vocab"/>
-                        </xf:bind>
-                        <xf:bind nodeset="vra:notes">
-                            <xf:bind nodeset="@dataDate" type="vra:dateValueType"/>
-                            <xf:bind nodeset="@extent"/>
-                            <xf:bind nodeset="@href" type="xsd:anyURI"/>
-                            <xf:bind nodeset="@xml:lang"/>
-                            <xf:bind nodeset="@pref" type="xsd:boolean"/>
-                            <xf:bind nodeset="@refid"/>
-                            <xf:bind nodeset="@rules"/>
-                            <xf:bind nodeset="@source"/>
-                            <xf:bind nodeset="@vocab"/>
-                        </xf:bind>
-                        <xf:bind nodeset="vra:relation">
-                            <xf:bind nodeset="@relids" type="xsd:IDREFS"/>
-                            <xf:bind nodeset="@type" type="vra:relationTypeType"/>
-                            <xf:bind nodeset="@dataDate" type="vra:dateValueType"/>
-                            <xf:bind nodeset="@extent"/>
-                            <xf:bind nodeset="@href" type="xsd:anyURI"/>
-                            <xf:bind nodeset="@xml:lang"/>
-                            <xf:bind nodeset="@pref" type="xsd:boolean"/>
-                            <xf:bind nodeset="@refid"/>
-                            <xf:bind nodeset="@rules"/>
-                            <xf:bind nodeset="@source"/>
-                            <xf:bind nodeset="@vocab"/>
-                        </xf:bind>
-                    </xf:bind>
-                    <xf:instance id="i-templates">
-                        <templates xmlns="http://www.vraweb.org/vracore4.htm">
-                            <relation relids="" type="" dataDate="" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
-                            <orientation/>
-                        </templates>
-                    </xf:instance>
-                    <xf:instance xmlns="" id="i-relids">
-                        <relids>
-                            <relid>i_a_001</relid>
-                            <relid>i_a_002</relid>
-                            <relid>i_a_003</relid>
-                            <relid>i_a_004</relid>
-                            <relid>i_a_005</relid>
-                            <relid>i_a_006</relid>
-                            <relid>i_a_007</relid>
-                            <relid>i_a_008</relid>
-                            <relid>i_a_009</relid>
-                            <relid>i_a_010</relid>
-                            <relid>i_a_011</relid>
-                            <relid>w_a_001</relid>
-                            <relid>w_a_002</relid>
-                            <relid>w_a_003</relid>
-                            <relid>w_a_004</relid>
-                            <relid>w_a_005</relid>
-                            <relid>w_a_006</relid>
-                            <relid>w_a_007</relid>
-                            <relid>w_a_008</relid>
-                            <relid>w_a_009</relid>
-                            <relid>w_a_010</relid>
-                            <relid>w_a_011</relid>
-                        </relids>
-                    </xf:instance>
-                    <xf:submission id="s-load-data" resource="records?_query=//*[@id='{$recordId}']/*:relationSet&amp;_wrap=no" replace="instance" instance="i-relationSet" method="get" serialize="false" validate="false">
-                        <xf:message ev:event="xforms-submit-error">Could not load RelationSet data</xf:message>
-                    </xf:submission>
-                    <xf:submission id="s-save-data" resource="modules/save2section.xql?id={bf:appContext('recordId')}&amp;section=relationSet" replace="none" ref="instance('i-relationSet')" method="post" validate="false">
-                        <xf:message ev:event="xforms-submit-error">Could not save RelationSet data</xf:message>
-                        <xf:send ev:event="xforms-submit-done" submission="s-embed-w-html" if="bf:appContext('record') = 'work'"/>
-                        <xf:send ev:event="xforms-submit-done" submission="s-embed-i-html" if="bf:appContext('record') = 'image'"/>
-                    </xf:submission>
-                    <xf:submission id="s-embed-w-html" ref="instance('i-relationSet')" replace="embedHTML" targetid="w_Measurements_HtmlContent" resource="xslt:resources/xsl/vraSets/RelationSet.xsl?parseString=false" method="get" validate="false">
-                        <xf:message ev:event="xforms-submit-error">Could not embed RelationSet data</xf:message>
-                        <xf:action ev:event="xforms-submit-done">
-                            <xf:toggle case="c-w_Relation-view" model="model-1"/>
-                            <xf:setvalue ref="instance('i-control-center')/currentform" value="''" model="model-1"/>
-                        </xf:action>
-                    </xf:submission>
-                    <xf:submission id="s-embed-i-html" ref="instance('i-relationSet')" replace="embedHTML" targetid="i_Measurements_HtmlContent" resource="xslt:resources/xsl/vraSets/RelationSet.xsl?parseString=false" method="get" validate="false">
-                        <xf:message ev:event="xforms-submit-error">Could not embed RelationSet data</xf:message>
-                        <xf:action ev:event="xforms-submit-done">
-                            <xf:toggle case="c-i_Relation-view" model="model-1"/>
-                            <xf:setvalue ref="instance('i-control-center')/currentform" value="''" model="model-1"/>
-                        </xf:action>
-                    </xf:submission>
-                    <xf:action ev:event="xforms-ready">
-                        <xf:send submission="s-load-data"/>
-                    </xf:action>
-                </xf:model>
-            </div>
-            <xf:group appearance="bf:VerticalTable" ref="instance()" model="m-child-model">
-                <xf:label/>
-                <xf:trigger class="t-save" model="m-child-model" title="Save">
-                    <xf:label/>
-                    <xf:send submission="s-save-data"/>
-                </xf:trigger>
-                <div>
-                    <xf:trigger class="t-plus" model="m-child-model" title="Add Relation">
-                        <xf:label/>
-                        <xf:insert nodeset="instance()/vra:relation[last()]" origin="instance('i-templates')/vra:relation" model="m-child-model"/>
-                    </xf:trigger>
-                    <xf:trigger class="t-minus" model="m-child-model" title="Remove Relation">
-                        <xf:label/>
-                        <xf:delete nodeset="instance()/vra:relation" at="index('r-relation')" model="m-child-model"/>
-                    </xf:trigger>
-                </div>
-                <xf:repeat id="r-relation" nodeset="vra:relation" appearance="full" class="vraComplex">
-                    <xf:select1 ref="@type" type="attributeValue" model="m-child-model">
-                        <xf:label>type</xf:label>
-                        <xf:item>
-                            <xf:label>cartoonFor</xf:label>
-                            <xf:value>cartoonFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>cartoonIs</xf:label>
-                            <xf:value>cartoonIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>componentOf</xf:label>
-                            <xf:value>componentOf</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>componentIs</xf:label>
-                            <xf:value>componentIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>copyAfter</xf:label>
-                            <xf:value>copyAfter</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>copyIs</xf:label>
-                            <xf:value>copyIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>counterProofFor</xf:label>
-                            <xf:value>counterProofFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>counterProofIs</xf:label>
-                            <xf:value>counterProofIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>depicts</xf:label>
-                            <xf:value>depicts</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>depictedIn</xf:label>
-                            <xf:value>depictedIn</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>derivedFrom</xf:label>
-                            <xf:value>derivedFrom</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>sourceFor</xf:label>
-                            <xf:value>sourceFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>designedFor</xf:label>
-                            <xf:value>designedFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>contextIs</xf:label>
-                            <xf:value>contextIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>exhibitedAt</xf:label>
-                            <xf:value>exhibitedAt</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>venueFor</xf:label>
-                            <xf:value>venueFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>facsimileOf</xf:label>
-                            <xf:value>facsimileOf</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>facsimileIs</xf:label>
-                            <xf:value>facsimileIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>formerlyPartOf</xf:label>
-                            <xf:value>formerlyPartOf</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>formerlyLargerContextFor</xf:label>
-                            <xf:value>formerlyLargerContextFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>imageOf</xf:label>
-                            <xf:value>imageOf</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>imageIs</xf:label>
-                            <xf:value>imageIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>mateOf</xf:label>
-                            <xf:value>mateOf</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>modelFor</xf:label>
-                            <xf:value>modelFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>modelIs</xf:label>
-                            <xf:value>modelIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>partOf</xf:label>
-                            <xf:value>partOf</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>largerContextFor</xf:label>
-                            <xf:value>largerContextFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>partnerInSetWith</xf:label>
-                            <xf:value>partnerInSetWith</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>pendantOf</xf:label>
-                            <xf:value>pendantOf</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>planFor</xf:label>
-                            <xf:value>planFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>planIs</xf:label>
-                            <xf:value>planIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>prepatoryFor</xf:label>
-                            <xf:value>prepatoryFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>basedOn</xf:label>
-                            <xf:value>basedOn</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>printingPlateFor</xf:label>
-                            <xf:value>printingPlateFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>printingPlateIs</xf:label>
-                            <xf:value>printingPlateIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>prototypeFor</xf:label>
-                            <xf:value>prototypeFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>prototypeIs</xf:label>
-                            <xf:value>prototypeIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>relatedTo</xf:label>
-                            <xf:value>relatedTo</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>reliefFor</xf:label>
-                            <xf:value>reliefFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>impressionIs</xf:label>
-                            <xf:value>impressionIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>replicaOf</xf:label>
-                            <xf:value>replicaOf</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>replicaIs</xf:label>
-                            <xf:value>replicaIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>studyFor</xf:label>
-                            <xf:value>studyFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>studyIs</xf:label>
-                            <xf:value>studyIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>versionOf</xf:label>
-                            <xf:value>versionOf</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>versionIs</xf:label>
-                            <xf:value>versionIs</xf:value>
-                        </xf:item>
-                    </xf:select1>
-                    <xf:input ref="." type="nodeValue" model="m-child-model">
+<?xml version="1.0" encoding="UTF-8"?><html xmlns:ev="http://www.w3.org/2001/xml-events"
+      xmlns:bfc="http://betterform.sourceforge.net/xforms/controls"
+      xmlns:vra="http://www.vraweb.org/vracore4.htm"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xf="http://www.w3.org/2002/xforms"
+      xmlns:xi="http://www.w3.org/2001/XInclude">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Ziziphus_Image_DB</title><style type="text/css">
+                    .xfRequired .xfLabel:after{
+                        content:'';
+                    }
+                    .xfRequired &gt; .xfLabel:after{
+                        content:'*';
+                    }
+
+                    table, td {
+                        border: thin solid #999999;
+                        border-collapse: collapse;
+                        padding: 3px;
+                    }
+
+                    tbody {
+                        font-size: 0.85em;
+                    }
+                    tbody .xfGroup &gt; .xfControl .xfLabel {
+                        float: left;
+                        padding: 0;
+                        margin: 3px 3px 0 7px;
+                        min-width: 80px;
+                        text-align: right;
+                    }
+                    tbody tr td &gt; .xfGroup {
+                        background: #fafafa;
+                        border-top: thin solid;
+                        border-bottom: thin solid #cdcdcd;
+                        padding: 5px 0;
+                    }
+                    tbody tr td .xfGroup:last-child {
+                        border-bottom: none;
+                    }
+                    .xfRepeatItem {
+                        background: whitesmoke;
+                    }
+
+                    .xfRepeatIndex .contentCol {
+                        background-color: whitesmoke;
+                    }
+                    .bf .xfRepeatIndex {
+                        background: #dddddd !important;
+                    }
+                    td{
+                        vertical-align: top;
+                    }
+                    .vraAttributes .xfControl{
+                        float:left;
+                    }
+
+                    .prefCol, .triggerCol {
+                        width: 10px;
+                    }
+                    .prefCol .xfLabel{
+                        display: none;
+                    }
+                    .contentCol &gt; .xfGroup {
+                        width: 100%;
+                        display: inline-block;
+                        padding-bottom: 5px;
+                        border-top: none !important;
+                    }
+                    .vraAttributes .xfControl {
+                        border: thin solid #aaaaaa;
+                        border-radius: 3px;
+                        margin: 5px 5px 5px 0;
+                        padding: 3px;
+                        background: #eeeeee;
+                        text-align: center;
+                    }
+                    .vraAttributes .xfLabel, .vraAttributes .xfValue{
+                        font-size: 0.85em;
+                    }
+                    .vraAttributes .xfLabel {
+                        margin: 0 !important;
+                        padding: 0 !important;
+                        border-bottom: thin solid #aaaaaa;
+                    }
+
+                    .prefCol .xfLabel {
+                        display: none !important;
+                    }
+                    .vraAttributeTrigger {
+                        float: right;
+                    }
+                    #attrDialog .xfControl {
+                        float: none;
+                    }
+                    .buttonBar .xfTrigger{
+                        display: inline-block !important;
+                        font-size: 0.85em;
+                        margin: 5px;
+                    }
+                </style></head>
+   <body>
+      <div id="xforms">
+         <!-- ###################### MODEL ################################## -->
+         <!-- ###################### MODEL ################################## -->
+         <!-- ###################### MODEL ################################## -->
+         <div style="display:none">
+            <xf:model id="m-child-model" schema="../resources/xsd/vra-types.xsd">
+               <xf:instance id="i-relationSet">
+                  <relationSet xmlns="http://www.vraweb.org/vracore4.htm">
+                     <display></display>
+                     <notes></notes>
+                     <relation pref="false" relids="d1" type=""></relation>
+                  </relationSet>
+               </xf:instance>
+               <xf:bind nodeset="instance()">
+                  <xf:bind nodeset="vra:relation">
+                     <xf:bind nodeset="@relids" type="xsd:IDREFS"></xf:bind>
+                     <xf:bind nodeset="@type" type="vra:relationTypeType"></xf:bind>
+                  </xf:bind>
+               </xf:bind>
+               <xf:instance id="i-templates">
+                  <templates xmlns="http://www.vraweb.org/vracore4.htm">
+                     <relation pref="false" relids="d1" type=""></relation>
+                     <notes></notes>
+                     <display></display>
+                  </templates>
+               </xf:instance>
+               <xi:include href="bricks/vraAttributesInstance.xml"></xi:include>
+               <xf:instance id="i-util">
+                  <data xmlns="">
+                     <currentElement></currentElement>
+                  </data>
+               </xf:instance>
+            </xf:model>
+         </div>
+         <!-- ####################################### VISIBLE UI ####################################### -->
+         <!-- ####################################### VISIBLE UI ####################################### -->
+         <!-- ####################################### VISIBLE UI ####################################### -->
+         <div class="toolbar">
+            <xf:trigger class="t-save" model="m-child-model" title="Save">
+               <xf:label>save</xf:label>
+            </xf:trigger>
+            <xf:trigger class="t-plus" model="m-child-model" title="Add Relation">
+               <xf:label>+</xf:label>
+               <xf:insert model="m-child-model" nodeset="instance()/vra:relation[last()]"
+                          origin="instance('i-templates')/vra:relation"></xf:insert>
+            </xf:trigger>
+         </div>
+         <xf:group appearance="minimal" class="vraRecord" model="m-child-model"
+                   ref="instance('i-relationSet')">
+            <table>
+               <tbody model="m-child-model" id="r-vraRelation" xf:repeat-nodeset="vra:relation">
+                  <xf:group appearance="minimal">
+                     <xf:input ref="vra:relation" type="nodeValue">
                         <xf:label>Relation</xf:label>
-                    </xf:input>
-                    <xf:select1 ref="@relids" type="attributeValue" model="m-child-model" selection="open">
-                        <xf:label>relids</xf:label>
-                        <xf:itemset nodeset="instance('i-relids')/relid">
-                            <xf:label ref="."/>
-                            <xf:value ref="."/>
-                        </xf:itemset>
-                    </xf:select1>
-
-        <!--
-                            <div class="relationSet-relation-attributes hiddenAttributes" style="display:none;">
-                                <xf:input ref="@dataDate" type="attributeValue" model="m-child-model">
-                                    <xf:label>dataDate</xf:label>
-                                </xf:input>
-                                <xf:input ref="@extent" type="attributeValue" model="m-child-model">
-                                    <xf:label>extent</xf:label>
-                                </xf:input>
-                                <xf:input ref="@href" type="attributeValue" model="m-child-model">
-                                    <xf:label>href</xf:label>
-                                </xf:input>
-                                <xf:input ref="@xml:lang" type="attributeValue" model="m-child-model">
-                                    <xf:label>xml:lang</xf:label>
-                                </xf:input>
-                                <xf:input ref="@pref" type="attributeValue" model="m-child-model">
-                                    <xf:label>pref</xf:label>
-                                </xf:input>
-                                <xf:input ref="@refid" type="attributeValue" model="m-child-model">
-                                    <xf:label>refid</xf:label>
-                                </xf:input>
-                                <xf:input ref="@rules" type="attributeValue" model="m-child-model">
-                                    <xf:label>rules</xf:label>
-                                </xf:input>
-                                <xf:input ref="@source" type="attributeValue" model="m-child-model">
-                                    <xf:label>source</xf:label>
-                                </xf:input>
-                                <xf:input ref="@vocab" type="attributeValue" model="m-child-model">
-                                    <xf:label>vocab</xf:label>
-                                </xf:input>
-                            </div>
-        -->
-                </xf:repeat>
-
-
-                <!--
-                                <xf:input ref="vra:display" type="nodeValue" model="m-child-model">
-                                    <xf:label>Display</xf:label>
-                                </xf:input>
-                                <div class="relationSet-display-attributes hiddenAttributes" style="display:none;">
-                                    <xf:input ref="vra:display/@dataDate" type="attributeValue" model="m-child-model">
-                                        <xf:label>dataDate</xf:label>
-                                    </xf:input>
-                                    <xf:input ref="vra:display/@extent" type="attributeValue" model="m-child-model">
-                                        <xf:label>extent</xf:label>
-                                    </xf:input>
-                                    <xf:input ref="vra:display/@href" type="attributeValue" model="m-child-model">
-                                        <xf:label>href</xf:label>
-                                    </xf:input>
-                                    <xf:input ref="vra:display/@xml:lang" type="attributeValue" model="m-child-model">
-                                        <xf:label>xml:lang</xf:label>
-                                    </xf:input>
-                                    <xf:input ref="vra:display/@pref" type="attributeValue" model="m-child-model">
-                                        <xf:label>pref</xf:label>
-                                    </xf:input>
-                                    <xf:input ref="vra:display/@refid" type="attributeValue" model="m-child-model">
-                                        <xf:label>refid</xf:label>
-                                    </xf:input>
-                                    <xf:input ref="vra:display/@rules" type="attributeValue" model="m-child-model">
-                                        <xf:label>rules</xf:label>
-                                    </xf:input>
-                                    <xf:input ref="vra:display/@source" type="attributeValue" model="m-child-model">
-                                        <xf:label>source</xf:label>
-                                    </xf:input>
-                                    <xf:input ref="vra:display/@vocab" type="attributeValue" model="m-child-model">
-                                        <xf:label>vocab</xf:label>
-                                    </xf:input>
-                                </div>
-                -->
-                <xf:input ref="vra:notes" type="nodeValue" model="m-child-model">
-                    <xf:label>Notes</xf:label>
-                </xf:input>
-<!--
-                <div class="relationSet-notes-attributes hiddenAttributes" style="display:none;">
-                    <xf:input ref="vra:notes/@dataDate" type="attributeValue" model="m-child-model">
-                        <xf:label>dataDate</xf:label>
-                    </xf:input>
-                    <xf:input ref="vra:notes/@extent" type="attributeValue" model="m-child-model">
-                        <xf:label>extent</xf:label>
-                    </xf:input>
-                    <xf:input ref="vra:notes/@href" type="attributeValue" model="m-child-model">
-                        <xf:label>href</xf:label>
-                    </xf:input>
-                    <xf:input ref="vra:notes/@xml:lang" type="attributeValue" model="m-child-model">
-                        <xf:label>xml:lang</xf:label>
-                    </xf:input>
-                    <xf:input ref="vra:notes/@pref" type="attributeValue" model="m-child-model">
-                        <xf:label>pref</xf:label>
-                    </xf:input>
-                    <xf:input ref="vra:notes/@refid" type="attributeValue" model="m-child-model">
-                        <xf:label>refid</xf:label>
-                    </xf:input>
-                    <xf:input ref="vra:notes/@rules" type="attributeValue" model="m-child-model">
-                        <xf:label>rules</xf:label>
-                    </xf:input>
-                    <xf:input ref="vra:notes/@source" type="attributeValue" model="m-child-model">
-                        <xf:label>source</xf:label>
-                    </xf:input>
-                    <xf:input ref="vra:notes/@vocab" type="attributeValue" model="m-child-model">
-                        <xf:label>vocab</xf:label>
-                    </xf:input>
-                </div>
--->
+                     </xf:input>
+                     <xf:select1 ref="vra:relation/@type">
+                        <xf:label>Type</xf:label>
+                        <xf:item>
+                           <xf:label>CartoonFor</xf:label>
+                           <xf:value>cartoonFor</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>CartoonIs</xf:label>
+                           <xf:value>cartoonIs</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>ComponentOf</xf:label>
+                           <xf:value>componentOf</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>ComponentIs</xf:label>
+                           <xf:value>componentIs</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>CopyAfter</xf:label>
+                           <xf:value>copyAfter</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>CopyIs</xf:label>
+                           <xf:value>copyIs</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>CounterProofFor</xf:label>
+                           <xf:value>counterProofFor</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>CounterProofIs</xf:label>
+                           <xf:value>counterProofIs</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>Depicts</xf:label>
+                           <xf:value>depicts</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>DepictedIn</xf:label>
+                           <xf:value>depictedIn</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>DerivedFrom</xf:label>
+                           <xf:value>derivedFrom</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>SourceFor</xf:label>
+                           <xf:value>sourceFor</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>DesignedFor</xf:label>
+                           <xf:value>designedFor</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>ContextIs</xf:label>
+                           <xf:value>contextIs</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>ExhibitedAt</xf:label>
+                           <xf:value>exhibitedAt</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>VenueFor</xf:label>
+                           <xf:value>venueFor</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>FacsimileOf</xf:label>
+                           <xf:value>facsimileOf</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>FacsimileIs</xf:label>
+                           <xf:value>facsimileIs</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>FormerlyPartOf</xf:label>
+                           <xf:value>formerlyPartOf</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>FormerlyLargerContextFor</xf:label>
+                           <xf:value>formerlyLargerContextFor</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>ImageOf</xf:label>
+                           <xf:value>imageOf</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>ImageIs</xf:label>
+                           <xf:value>imageIs</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>MateOf</xf:label>
+                           <xf:value>mateOf</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>ModelFor</xf:label>
+                           <xf:value>modelFor</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>ModelIs</xf:label>
+                           <xf:value>modelIs</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>PartOf</xf:label>
+                           <xf:value>partOf</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>LargerContextFor</xf:label>
+                           <xf:value>largerContextFor</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>PartnerInSetWith</xf:label>
+                           <xf:value>partnerInSetWith</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>PendantOf</xf:label>
+                           <xf:value>pendantOf</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>PlanFor</xf:label>
+                           <xf:value>planFor</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>PlanIs</xf:label>
+                           <xf:value>planIs</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>PrepatoryFor</xf:label>
+                           <xf:value>prepatoryFor</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>BasedOn</xf:label>
+                           <xf:value>basedOn</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>PrintingPlateFor</xf:label>
+                           <xf:value>printingPlateFor</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>PrintingPlateIs</xf:label>
+                           <xf:value>printingPlateIs</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>PrototypeFor</xf:label>
+                           <xf:value>prototypeFor</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>PrototypeIs</xf:label>
+                           <xf:value>prototypeIs</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>RelatedTo</xf:label>
+                           <xf:value>relatedTo</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>ReliefFor</xf:label>
+                           <xf:value>reliefFor</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>ImpressionIs</xf:label>
+                           <xf:value>impressionIs</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>ReplicaOf</xf:label>
+                           <xf:value>replicaOf</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>ReplicaIs</xf:label>
+                           <xf:value>replicaIs</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>StudyFor</xf:label>
+                           <xf:value>studyFor</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>StudyIs</xf:label>
+                           <xf:value>studyIs</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>VersionOf</xf:label>
+                           <xf:value>versionOf</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>VersionIs</xf:label>
+                           <xf:value>versionIs</xf:value>
+                        </xf:item>
+                     </xf:select1>
+                     <xf:group class="vraAttributes" appearance="minimal" ref="vra:relation">
+                        <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
+                     </xf:group>
+                     <xf:trigger class="vraAttributeTrigger">
+                        <xf:label>...</xf:label>
+                        <xf:setvalue ref="instance('i-util')/currentElement" value="'relation'"></xf:setvalue>
+                        <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]"
+                                   origin="instance('i-relationSet')/vra:relation[index('r-vraRelation')]/vra:relation/@*"></xf:insert>
+                        <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
+                     </xf:trigger>
+                  </xf:group>
+               </tbody>
+            </table>
+            <xf:group class="showNotesDisplay">
+               <xf:trigger class="notesDisplayTrigger">
+                  <xf:label>Show/Hide Notes and Display</xf:label>
+                  <xf:setvalue ref="instance('i-relationSetController')/showNotesDisplay"
+                               value="not(boolean-from-string(instance('i-relationSetController')/showNotesDisplay))"></xf:setvalue>
+               </xf:trigger>
+               <xf:group ref="instance('i-relationSetController')/showNotesDisplay">
+                  <xf:group appearance="minimal" class="elementGroup" ref="instance('i-relationSet')">
+                     <xf:label></xf:label>
+                     <xf:textarea ref="vra:display" type="nodeValue" model="m-child-model">
+                        <xf:label>Display:</xf:label>
+                     </xf:textarea>
+                  </xf:group>
+                  <xf:group appearance="minimal" class="elementGroup" ref="instance('i-relationSet')">
+                     <xf:label></xf:label>
+                     <xf:textarea ref="vra:notes" type="nodeValue" model="m-child-model">
+                        <xf:label>Notes</xf:label>
+                     </xf:textarea>
+                  </xf:group>
+               </xf:group>
             </xf:group>
-        </div>
-    </body>
+         </xf:group>
+         <bfc:dialog id="attrDialog">
+            <xf:label>Attributes</xf:label>
+            <xf:group appearance="full" ref="instance('i-vraAttributes')/vra:vraElement">
+               <xf:label></xf:label>
+               <xf:input ref="@dataDate" id="first">
+                  <xf:label>dataDate</xf:label>
+               </xf:input>
+               <xf:input ref="@extent">
+                  <xf:label>extent</xf:label>
+               </xf:input>
+               <xf:input ref="@href">
+                  <xf:label>href</xf:label>
+               </xf:input>
+               <xf:input ref="@refid">
+                  <xf:label>refid</xf:label>
+               </xf:input>
+               <xf:input ref="@rules">
+                  <xf:label>rules</xf:label>
+               </xf:input>
+               <xf:input ref="@source">
+                  <xf:label>source</xf:label>
+               </xf:input>
+               <xf:select1 ref="@vocab">
+                  <xf:label>vocab</xf:label>
+                  <xf:item>
+                     <xf:label>ULAN</xf:label>
+                     <xf:value>ULAN</xf:value>
+                  </xf:item>
+                  <xf:item>
+                     <xf:label>GND</xf:label>
+                     <xf:value>GND</xf:value>
+                  </xf:item>
+                  <xf:item>
+                     <xf:label>(AKL)</xf:label>
+                     <xf:value>(AKL)</xf:value>
+                  </xf:item>
+               </xf:select1>
+               <xf:input ref="@lang">
+                  <xf:label>Language</xf:label>
+               </xf:input>
+               <xf:input ref="@transliteration">
+                  <xf:label>Transliteration</xf:label>
+               </xf:input>
+               <xf:input ref="@script">
+                  <xf:label>Script</xf:label>
+               </xf:input>
+               <xf:group class="buttonBar">
+                  <xf:trigger>
+                     <xf:label>Ok</xf:label>
+                     <xf:action>
+                        <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]"
+                                   context="instance('i-relationSet')/vra:relation[index('r-vraRelation')]/*[local-name()=instance('i-util')/currentElement]"></xf:insert>
+                     </xf:action>
+                     <bfc:hide dialog="attrDialog"></bfc:hide>
+                  </xf:trigger>
+                  <xf:trigger appearance="minimal">
+                     <xf:label>Cancel</xf:label>
+                     <bfc:hide dialog="attrDialog"></bfc:hide>
+                  </xf:trigger>
+               </xf:group>
+            </xf:group>
+         </bfc:dialog>
+      </div>
+   </body>
 </html>

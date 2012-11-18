@@ -1,342 +1,317 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:vra="http://www.vraweb.org/vracore4.htm" xmlns:xf="http://www.w3.org/2002/xforms">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <title>Ziziphus_Image_DB</title>
-    </head>
-    <body>
-        <div id="xforms">
-            <div style="display:none">
-                <xf:model id="m-child-model" schema="resources/xsd/vra-types.xsd">
-                    <xf:instance id="i-rightsSet">
-                        <rightsSet xmlns="http://www.vraweb.org/vracore4.htm">
-                            <display dataDate="" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
-                            <notes dataDate="" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
-                            <rights dataDate="" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="" type="">
-                                <rightsHolder dataDate="" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
-                                <text dataDate="" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
-                            </rights>
-                        </rightsSet>
-                    </xf:instance>
-                    <xf:bind nodeset="instance()">
-                        <xf:bind nodeset="vra:display">
-                            <xf:bind nodeset="@dataDate" type="vra:dateValueType"/>
-                            <xf:bind nodeset="@extent"/>
-                            <xf:bind nodeset="@href" type="xsd:anyURI"/>
-                            <xf:bind nodeset="@xml:lang"/>
-                            <xf:bind nodeset="@pref" type="xsd:boolean"/>
-                            <xf:bind nodeset="@refid"/>
-                            <xf:bind nodeset="@rules"/>
-                            <xf:bind nodeset="@source"/>
-                            <xf:bind nodeset="@vocab"/>
-                        </xf:bind>
-                        <xf:bind nodeset="vra:notes">
-                            <xf:bind nodeset="@dataDate" type="vra:dateValueType"/>
-                            <xf:bind nodeset="@extent"/>
-                            <xf:bind nodeset="@href" type="xsd:anyURI"/>
-                            <xf:bind nodeset="@xml:lang"/>
-                            <xf:bind nodeset="@pref" type="xsd:boolean"/>
-                            <xf:bind nodeset="@refid"/>
-                            <xf:bind nodeset="@rules"/>
-                            <xf:bind nodeset="@source"/>
-                            <xf:bind nodeset="@vocab"/>
-                        </xf:bind>
-                        <xf:bind nodeset="vra:rights">
-                            <xf:bind nodeset="@dataDate" type="vra:dateValueType"/>
-                            <xf:bind nodeset="@extent"/>
-                            <xf:bind nodeset="@href" type="xsd:anyURI"/>
-                            <xf:bind nodeset="@xml:lang"/>
-                            <xf:bind nodeset="@pref" type="xsd:boolean"/>
-                            <xf:bind nodeset="@refid"/>
-                            <xf:bind nodeset="@rules"/>
-                            <xf:bind nodeset="@source"/>
-                            <xf:bind nodeset="@vocab"/>
-                            <xf:bind nodeset="@type" type="vra:rightsStatusTypeType"/>
-                            <xf:bind nodeset="vra:rightsHolder">
-                                <xf:bind nodeset="@dataDate" type="vra:dateValueType"/>
-                                <xf:bind nodeset="@extent"/>
-                                <xf:bind nodeset="@href" type="xsd:anyURI"/>
-                                <xf:bind nodeset="@xml:lang"/>
-                                <xf:bind nodeset="@pref" type="xsd:boolean"/>
-                                <xf:bind nodeset="@refid"/>
-                                <xf:bind nodeset="@rules"/>
-                                <xf:bind nodeset="@source"/>
-                                <xf:bind nodeset="@vocab"/>
-                            </xf:bind>
-                            <xf:bind nodeset="vra:text">
-                                <xf:bind nodeset="@dataDate" type="vra:dateValueType"/>
-                                <xf:bind nodeset="@extent"/>
-                                <xf:bind nodeset="@href" type="xsd:anyURI"/>
-                                <xf:bind nodeset="@xml:lang"/>
-                                <xf:bind nodeset="@pref" type="xsd:boolean"/>
-                                <xf:bind nodeset="@refid"/>
-                                <xf:bind nodeset="@rules"/>
-                                <xf:bind nodeset="@source"/>
-                                <xf:bind nodeset="@vocab"/>
-                            </xf:bind>
-                        </xf:bind>
-                    </xf:bind>
-                    <xf:instance id="i-templates">
-                        <templates xmlns="http://www.vraweb.org/vracore4.htm">
-                            <rights dataDate="" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="" type="">
-                                <rightsHolder dataDate="" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
-                                <text dataDate="" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
-                            </rights>
-                        </templates>
-                    </xf:instance>
-                    <xf:submission id="s-load-data" resource="records?_query=//*[@id='{$recordId}']/*:rightsSet&amp;_wrap=no" replace="instance" instance="i-rightsSet" method="get" serialize="false" validate="false">
-                        <xf:message ev:event="xforms-submit-error">Could not load RightsSet data</xf:message>
-                    </xf:submission>
-                    <xf:submission id="s-save-data" resource="modules/save2section.xql?id={bf:appContext('recordId')}&amp;section=rightsSet" replace="none" ref="instance('i-rightsSet')" method="post" validate="false">
-                        <xf:message ev:event="xforms-submit-error">Could not save RightsSet data</xf:message>
-                        <xf:send ev:event="xforms-submit-done" submission="s-embed-w-html" if="bf:appContext('record') = 'work'"/>
-                        <xf:send ev:event="xforms-submit-done" submission="s-embed-i-html" if="bf:appContext('record') = 'image'"/>
-                    </xf:submission>
-                    <xf:submission id="s-embed-w-html" ref="instance('i-rightsSet')" replace="embedHTML" targetid="w_Rights_HtmlContent" resource="xslt:resources/xsl/vraSets/RightsSet.xsl?parseString=false" method="get" validate="false">
-                        <xf:message ev:event="xforms-submit-error">Could not embed RightsSet data</xf:message>
-                        <xf:action ev:event="xforms-submit-done">
-                            <xf:toggle case="c-w_Rights-view" model="model-1"/>
-                            <xf:setvalue ref="instance('i-control-center')/currentform" value="''" model="model-1"/>
-                        </xf:action>
-                    </xf:submission>
-                    <xf:submission id="s-embed-i-html" ref="instance('i-rightsSet')" replace="embedHTML" targetid="i_Rights_HtmlContent" resource="xslt:resources/xsl/vraSets/RightsSet.xsl?parseString=false" method="get" validate="false">
-                        <xf:message ev:event="xforms-submit-error">Could not embed RightsSet data</xf:message>
-                        <xf:action ev:event="xforms-submit-done">
-                            <xf:toggle case="c-i_Rights-view" model="model-1"/>
-                            <xf:setvalue ref="instance('i-control-center')/currentform" value="''" model="model-1"/>
-                        </xf:action>
-                    </xf:submission>
-                    <xf:action ev:event="xforms-ready">
-                        <xf:send submission="s-load-data"/>
-                    </xf:action>
-                </xf:model>
-            </div>
-            <xf:group appearance="bf:VerticalTable" ref="instance()" model="m-child-model">
-                <xf:label/>
-                <xf:trigger class="t-save" model="m-child-model" title="Save">
-                    <xf:label/>
-                    <xf:send submission="s-save-data"/>
-                </xf:trigger>
-        <!--
-                        <xf:select1 ref="instance('i-templates')/vra:orientation" type="attributeValue" model="m-child-model">
-                            <xf:label>Orientation (#issue4)</xf:label>
-                            <xf:item>
-                                <xf:label>Portrait</xf:label>
-                                <xf:value>portrait</xf:value>
-                            </xf:item>
-                            <xf:item>
-                                <xf:label>Landscape</xf:label>
-                                <xf:value>landscape</xf:value>
-                            </xf:item>
-                            <xf:item>
-                                <xf:label>Square</xf:label>
-                                <xf:value>square</xf:value>
-                            </xf:item>
+<?xml version="1.0" encoding="UTF-8"?><html xmlns:ev="http://www.w3.org/2001/xml-events"
+      xmlns:bfc="http://betterform.sourceforge.net/xforms/controls"
+      xmlns:vra="http://www.vraweb.org/vracore4.htm"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xf="http://www.w3.org/2002/xforms"
+      xmlns:xi="http://www.w3.org/2001/XInclude">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Ziziphus_Image_DB</title><style type="text/css">
+                    .xfRequired .xfLabel:after{
+                        content:'';
+                    }
+                    .xfRequired &gt; .xfLabel:after{
+                        content:'*';
+                    }
+
+                    table, td {
+                        border: thin solid #999999;
+                        border-collapse: collapse;
+                        padding: 3px;
+                    }
+
+                    tbody {
+                        font-size: 0.85em;
+                    }
+                    tbody .xfGroup &gt; .xfControl .xfLabel {
+                        float: left;
+                        padding: 0;
+                        margin: 3px 3px 0 7px;
+                        min-width: 80px;
+                        text-align: right;
+                    }
+                    tbody tr td &gt; .xfGroup {
+                        background: #fafafa;
+                        border-top: thin solid;
+                        border-bottom: thin solid #cdcdcd;
+                        padding: 5px 0;
+                    }
+                    tbody tr td .xfGroup:last-child {
+                        border-bottom: none;
+                    }
+                    .xfRepeatItem {
+                        background: whitesmoke;
+                    }
+
+                    .xfRepeatIndex .contentCol {
+                        background-color: whitesmoke;
+                    }
+                    .bf .xfRepeatIndex {
+                        background: #dddddd !important;
+                    }
+                    td{
+                        vertical-align: top;
+                    }
+                    .vraAttributes .xfControl{
+                        float:left;
+                    }
+
+                    .prefCol, .triggerCol {
+                        width: 10px;
+                    }
+                    .prefCol .xfLabel{
+                        display: none;
+                    }
+                    .contentCol &gt; .xfGroup {
+                        width: 100%;
+                        display: inline-block;
+                        padding-bottom: 5px;
+                        border-top: none !important;
+                    }
+                    .vraAttributes .xfControl {
+                        border: thin solid #aaaaaa;
+                        border-radius: 3px;
+                        margin: 5px 5px 5px 0;
+                        padding: 3px;
+                        background: #eeeeee;
+                        text-align: center;
+                    }
+                    .vraAttributes .xfLabel, .vraAttributes .xfValue{
+                        font-size: 0.85em;
+                    }
+                    .vraAttributes .xfLabel {
+                        margin: 0 !important;
+                        padding: 0 !important;
+                        border-bottom: thin solid #aaaaaa;
+                    }
+
+                    .prefCol .xfLabel {
+                        display: none !important;
+                    }
+                    .vraAttributeTrigger {
+                        float: right;
+                    }
+                    #attrDialog .xfControl {
+                        float: none;
+                    }
+                    .buttonBar .xfTrigger{
+                        display: inline-block !important;
+                        font-size: 0.85em;
+                        margin: 5px;
+                    }
+                </style></head>
+   <body>
+      <div id="xforms">
+         <!-- ###################### MODEL ################################## -->
+         <!-- ###################### MODEL ################################## -->
+         <!-- ###################### MODEL ################################## -->
+         <div style="display:none">
+            <xf:model id="m-child-model" schema="../resources/xsd/vra-types.xsd">
+               <xf:instance id="i-rightsSet">
+                  <rightsSet xmlns="http://www.vraweb.org/vracore4.htm">
+                     <display></display>
+                     <notes></notes>
+                     <rights pref="false" type="">
+                        <rightsHolder></rightsHolder>
+                        <text></text>
+                     </rights>
+                  </rightsSet>
+               </xf:instance>
+               <xf:bind nodeset="instance()">
+                  <xf:bind nodeset="vra:rights">
+                     <xf:bind nodeset="@pref" type="boolean"></xf:bind>
+                     <xf:bind nodeset="@type" type="vra:rightsStatusTypeType"></xf:bind>
+                     <xf:bind nodeset="vra:rightsHolder"></xf:bind>
+                     <xf:bind nodeset="vra:text"></xf:bind>
+                  </xf:bind>
+               </xf:bind>
+               <xf:instance id="i-templates">
+                  <templates xmlns="http://www.vraweb.org/vracore4.htm">
+                     <rights pref="false" type="">
+                        <rightsHolder></rightsHolder>
+                        <text></text>
+                     </rights>
+                     <notes></notes>
+                     <display></display>
+                  </templates>
+               </xf:instance>
+               <xi:include href="bricks/vraAttributesInstance.xml"></xi:include>
+               <xf:instance id="i-util">
+                  <data xmlns="">
+                     <currentElement></currentElement>
+                  </data>
+               </xf:instance>
+            </xf:model>
+         </div>
+         <!-- ####################################### VISIBLE UI ####################################### -->
+         <!-- ####################################### VISIBLE UI ####################################### -->
+         <!-- ####################################### VISIBLE UI ####################################### -->
+         <div class="toolbar">
+            <xf:trigger class="t-save" model="m-child-model" title="Save">
+               <xf:label>save</xf:label>
+            </xf:trigger>
+            <xf:trigger class="t-plus" model="m-child-model" title="Add Rights">
+               <xf:label>+</xf:label>
+               <xf:insert model="m-child-model" nodeset="instance()/vra:rights[last()]"
+                          origin="instance('i-templates')/vra:rights"></xf:insert>
+            </xf:trigger>
+         </div>
+         <xf:group appearance="minimal" class="vraRecord" model="m-child-model"
+                   ref="instance('i-rightsSet')">
+            <table>
+               <tbody model="m-child-model" id="r-vraRights" xf:repeat-nodeset="vra:rights">
+                  <tr>
+                     <td class="prefCol">
+                        <xf:input ref="@pref">
+                           <xf:label>pref</xf:label>
+                           <xf:hint>preferred</xf:hint>
+                        </xf:input>
+                     </td>
+                     <td class="contentCol">
+                        <xf:select1 ref="vra:rights/@type">
+                           <xf:label>Type</xf:label>
+                           <xf:item>
+                              <xf:label>Copyrighted</xf:label>
+                              <xf:value>copyrighted</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>PublicDomain</xf:label>
+                              <xf:value>publicDomain</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>Undetermined</xf:label>
+                              <xf:value>undetermined</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>Other</xf:label>
+                              <xf:value>other</xf:value>
+                           </xf:item>
                         </xf:select1>
-        -->
-                <div>
-                    <xf:trigger class="t-plus" model="m-child-model" title="Add Rights">
-                        <xf:label/>
-                        <xf:insert nodeset="instance()/vra:rights[last()]" origin="instance('i-templates')/vra:rights" model="m-child-model"/>
-                    </xf:trigger>
-                    <xf:trigger class="t-minus" model="m-child-model" title="Remove Rights">
-                        <xf:label/>
-                        <xf:delete nodeset="instance()/vra:rights" at="index('r-rights')" model="m-child-model"/>
-                    </xf:trigger>
-                </div>
-                <xf:repeat id="r-rights" nodeset="vra:rights" appearance="full" class="vraComplex" model="m-child-model">
-                    <xf:select1 ref="@type" type="attributeValue" model="m-child-model">
-                        <xf:label>Type</xf:label>
-                        <xf:item>
-                            <xf:label>copyrighted</xf:label>
-                            <xf:value>copyrighted</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>publicDomain</xf:label>
-                            <xf:value>publicDomain</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>undetermined</xf:label>
-                            <xf:value>undetermined</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>other</xf:label>
-                            <xf:value>other</xf:value>
-                        </xf:item>
-                    </xf:select1>
-
-
-            <!--
-                                <div class="rightsSet-relation-attributes hiddenAttributes" style="display:none;">
-                                    <xf:input ref="@dataDate" type="attributeValue" model="m-child-model">
-                                        <xf:label>dataDate</xf:label>
-                                    </xf:input>
-                                    <xf:input ref="@extent" type="attributeValue" model="m-child-model">
-                                        <xf:label>extent</xf:label>
-                                    </xf:input>
-                                    <xf:input ref="@href" type="attributeValue" model="m-child-model">
-                                        <xf:label>href</xf:label>
-                                    </xf:input>
-                                    <xf:input ref="@xml:lang" type="attributeValue" model="m-child-model">
-                                        <xf:label>xml:lang</xf:label>
-                                    </xf:input>
-                                    <xf:input ref="@pref" type="attributeValue" model="m-child-model">
-                                        <xf:label>pref</xf:label>
-                                    </xf:input>
-                                    <xf:input ref="@refid" type="attributeValue" model="m-child-model">
-                                        <xf:label>refid</xf:label>
-                                    </xf:input>
-                                    <xf:input ref="@rules" type="attributeValue" model="m-child-model">
-                                        <xf:label>rules</xf:label>
-                                    </xf:input>
-                                    <xf:input ref="@source" type="attributeValue" model="m-child-model">
-                                        <xf:label>source</xf:label>
-                                    </xf:input>
-                                    <xf:input ref="@vocab" type="attributeValue" model="m-child-model">
-                                        <xf:label>vocab</xf:label>
-                                    </xf:input>
-                                </div>
-            -->
-                    <xf:input ref="vra:rightsHolder" type="nodeValue" model="m-child-model">
-                        <xf:label>RightsHolder</xf:label>
-                    </xf:input>
-            <!--
-                                <div class="rightsSet-rightsHolder-attributes hiddenAttributes" style="display:none;">
-                                    <xf:input ref="vra:rightsHolder/@dataDate" type="attributeValue" model="m-child-model">
-                                        <xf:label>dataDate</xf:label>
-                                    </xf:input>
-                                    <xf:input ref="vra:rightsHolder/@extent" type="attributeValue" model="m-child-model">
-                                        <xf:label>extent</xf:label>
-                                    </xf:input>
-                                    <xf:input ref="vra:rightsHolder/@href" type="attributeValue" model="m-child-model">
-                                        <xf:label>href</xf:label>
-                                    </xf:input>
-                                    <xf:input ref="vra:rightsHolder/@xml:lang" type="attributeValue" model="m-child-model">
-                                        <xf:label>xml:lang</xf:label>
-                                    </xf:input>
-                                    <xf:input ref="vra:rightsHolder/@pref" type="attributeValue" model="m-child-model">
-                                        <xf:label>pref</xf:label>
-                                    </xf:input>
-                                    <xf:input ref="vra:rightsHolder/@refid" type="attributeValue" model="m-child-model">
-                                        <xf:label>refid</xf:label>
-                                    </xf:input>
-                                    <xf:input ref="vra:rightsHolder/@rules" type="attributeValue" model="m-child-model">
-                                        <xf:label>rules</xf:label>
-                                    </xf:input>
-                                    <xf:input ref="vra:rightsHolder/@source" type="attributeValue" model="m-child-model">
-                                        <xf:label>source</xf:label>
-                                    </xf:input>
-                                    <xf:input ref="vra:rightsHolder/@vocab" type="attributeValue" model="m-child-model">
-                                        <xf:label>vocab</xf:label>
-                                    </xf:input>
-                                </div>
-            -->
-                    <xf:input ref="vra:text" type="nodeValue" model="m-child-model">
-                        <xf:label>Text</xf:label>
-                    </xf:input>
-            <!--
-                                <div class="rightsSet-text-attributes hiddenAttributes" style="display:none;">
-                                    <xf:input ref="vra:text/@dataDate" type="attributeValue" model="m-child-model">
-                                        <xf:label>dataDate</xf:label>
-                                    </xf:input>
-                                    <xf:input ref="vra:text/@extent" type="attributeValue" model="m-child-model">
-                                        <xf:label>extent</xf:label>
-                                    </xf:input>
-                                    <xf:input ref="vra:text/@href" type="attributeValue" model="m-child-model">
-                                        <xf:label>href</xf:label>
-                                    </xf:input>
-                                    <xf:input ref="vra:text/@xml:lang" type="attributeValue" model="m-child-model">
-                                        <xf:label>xml:lang</xf:label>
-                                    </xf:input>
-                                    <xf:input ref="vra:text/@pref" type="attributeValue" model="m-child-model">
-                                        <xf:label>pref</xf:label>
-                                    </xf:input>
-                                    <xf:input ref="vra:text/@refid" type="attributeValue" model="m-child-model">
-                                        <xf:label>refid</xf:label>
-                                    </xf:input>
-                                    <xf:input ref="vra:text/@rules" type="attributeValue" model="m-child-model">
-                                        <xf:label>rules</xf:label>
-                                    </xf:input>
-                                    <xf:input ref="vra:text/@source" type="attributeValue" model="m-child-model">
-                                        <xf:label>source</xf:label>
-                                    </xf:input>
-                                    <xf:input ref="vra:text/@vocab" type="attributeValue" model="m-child-model">
-                                        <xf:label>vocab</xf:label>
-                                    </xf:input>
-                                </div>
-            -->
-                </xf:repeat>
-
-
-        <!--
-            <xf:input ref="vra:display" type="nodeValue" model="m-child-model">
-                <xf:label>Display</xf:label>
-            </xf:input>
-            <div class="rightsSet-display-attributes hiddenAttributes" style="display:none;">
-                <xf:input ref="vra:display/@dataDate" type="attributeValue" model="m-child-model">
-                    <xf:label>dataDate</xf:label>
-                </xf:input>
-                <xf:input ref="vra:display/@extent" type="attributeValue" model="m-child-model">
-                    <xf:label>extent</xf:label>
-                </xf:input>
-                <xf:input ref="vra:display/@href" type="attributeValue" model="m-child-model">
-                    <xf:label>href</xf:label>
-                </xf:input>
-                <xf:input ref="vra:display/@xml:lang" type="attributeValue" model="m-child-model">
-                    <xf:label>xml:lang</xf:label>
-                </xf:input>
-                <xf:input ref="vra:display/@pref" type="attributeValue" model="m-child-model">
-                    <xf:label>pref</xf:label>
-                </xf:input>
-                <xf:input ref="vra:display/@refid" type="attributeValue" model="m-child-model">
-                    <xf:label>refid</xf:label>
-                </xf:input>
-                <xf:input ref="vra:display/@rules" type="attributeValue" model="m-child-model">
-                    <xf:label>rules</xf:label>
-                </xf:input>
-                <xf:input ref="vra:display/@source" type="attributeValue" model="m-child-model">
-                    <xf:label>source</xf:label>
-                </xf:input>
-                <xf:input ref="vra:display/@vocab" type="attributeValue" model="m-child-model">
-                    <xf:label>vocab</xf:label>
-                </xf:input>
-            </div>
-        -->
-                <xf:input ref="vra:notes" type="nodeValue" model="m-child-model">
-                    <xf:label>Notes</xf:label>
-                </xf:input>
-        <!--
-                        <div class="rightsSet-notes-attributes hiddenAttributes" style="display:none;">
-                            <xf:input ref="vra:notes/@dataDate" type="attributeValue" model="m-child-model">
-                                <xf:label>dataDate</xf:label>
-                            </xf:input>
-                            <xf:input ref="vra:notes/@extent" type="attributeValue" model="m-child-model">
-                                <xf:label>extent</xf:label>
-                            </xf:input>
-                            <xf:input ref="vra:notes/@href" type="attributeValue" model="m-child-model">
-                                <xf:label>href</xf:label>
-                            </xf:input>
-                            <xf:input ref="vra:notes/@xml:lang" type="attributeValue" model="m-child-model">
-                                <xf:label>xml:lang</xf:label>
-                            </xf:input>
-                            <xf:input ref="vra:notes/@pref" type="attributeValue" model="m-child-model">
-                                <xf:label>pref</xf:label>
-                            </xf:input>
-                            <xf:input ref="vra:notes/@refid" type="attributeValue" model="m-child-model">
-                                <xf:label>refid</xf:label>
-                            </xf:input>
-                            <xf:input ref="vra:notes/@rules" type="attributeValue" model="m-child-model">
-                                <xf:label>rules</xf:label>
-                            </xf:input>
-                            <xf:input ref="vra:notes/@source" type="attributeValue" model="m-child-model">
-                                <xf:label>source</xf:label>
-                            </xf:input>
-                            <xf:input ref="vra:notes/@vocab" type="attributeValue" model="m-child-model">
-                                <xf:label>vocab</xf:label>
-                            </xf:input>
-                        </div>
-        -->
+                        <xf:group appearance="minimal">
+                           <xf:input ref="vra:rightsHolder" type="nodeValue">
+                              <xf:label>RightsHolder</xf:label>
+                           </xf:input>
+                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:rightsHolder">
+                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
+                           </xf:group>
+                           <xf:trigger class="vraAttributeTrigger">
+                              <xf:label>...</xf:label>
+                              <xf:setvalue ref="instance('i-util')/currentElement" value="'rightsHolder'"></xf:setvalue>
+                              <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]"
+                                         origin="instance('i-rightsSet')/vra:rights[index('r-vraRights')]/vra:rightsHolder/@*"></xf:insert>
+                              <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
+                           </xf:trigger>
+                        </xf:group>
+                        <xf:group appearance="minimal">
+                           <xf:input ref="vra:text" type="nodeValue">
+                              <xf:label>Text</xf:label>
+                           </xf:input>
+                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:text">
+                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
+                           </xf:group>
+                           <xf:trigger class="vraAttributeTrigger">
+                              <xf:label>...</xf:label>
+                              <xf:setvalue ref="instance('i-util')/currentElement" value="'text'"></xf:setvalue>
+                              <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]"
+                                         origin="instance('i-rightsSet')/vra:rights[index('r-vraRights')]/vra:text/@*"></xf:insert>
+                              <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
+                           </xf:trigger>
+                        </xf:group>
+                     </td>
+                     <td class="triggerCol">
+                        <xf:trigger>
+                           <xf:label>x</xf:label>
+                           <xf:delete nodeset="instance('i-rightsSet')/vra:rights[index('r-vraRights')]"></xf:delete>
+                        </xf:trigger>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+            <xf:group class="showNotesDisplay">
+               <xf:trigger class="notesDisplayTrigger">
+                  <xf:label>Show/Hide Notes and Display</xf:label>
+                  <xf:setvalue ref="instance('i-rightsSetController')/showNotesDisplay"
+                               value="not(boolean-from-string(instance('i-rightsSetController')/showNotesDisplay))"></xf:setvalue>
+               </xf:trigger>
+               <xf:group ref="instance('i-rightsSetController')/showNotesDisplay">
+                  <xf:group appearance="minimal" class="elementGroup" ref="instance('i-rightsSet')">
+                     <xf:label></xf:label>
+                     <xf:textarea ref="vra:display" type="nodeValue" model="m-child-model">
+                        <xf:label>Display:</xf:label>
+                     </xf:textarea>
+                  </xf:group>
+                  <xf:group appearance="minimal" class="elementGroup" ref="instance('i-rightsSet')">
+                     <xf:label></xf:label>
+                     <xf:textarea ref="vra:notes" type="nodeValue" model="m-child-model">
+                        <xf:label>Notes</xf:label>
+                     </xf:textarea>
+                  </xf:group>
+               </xf:group>
             </xf:group>
-        </div>
-    </body>
+         </xf:group>
+         <bfc:dialog id="attrDialog">
+            <xf:label>Attributes</xf:label>
+            <xf:group appearance="full" ref="instance('i-vraAttributes')/vra:vraElement">
+               <xf:label></xf:label>
+               <xf:input ref="@dataDate" id="first">
+                  <xf:label>dataDate</xf:label>
+               </xf:input>
+               <xf:input ref="@extent">
+                  <xf:label>extent</xf:label>
+               </xf:input>
+               <xf:input ref="@href">
+                  <xf:label>href</xf:label>
+               </xf:input>
+               <xf:input ref="@refid">
+                  <xf:label>refid</xf:label>
+               </xf:input>
+               <xf:input ref="@rules">
+                  <xf:label>rules</xf:label>
+               </xf:input>
+               <xf:input ref="@source">
+                  <xf:label>source</xf:label>
+               </xf:input>
+               <xf:select1 ref="@vocab">
+                  <xf:label>vocab</xf:label>
+                  <xf:item>
+                     <xf:label>ULAN</xf:label>
+                     <xf:value>ULAN</xf:value>
+                  </xf:item>
+                  <xf:item>
+                     <xf:label>GND</xf:label>
+                     <xf:value>GND</xf:value>
+                  </xf:item>
+                  <xf:item>
+                     <xf:label>(AKL)</xf:label>
+                     <xf:value>(AKL)</xf:value>
+                  </xf:item>
+               </xf:select1>
+               <xf:input ref="@lang">
+                  <xf:label>Language</xf:label>
+               </xf:input>
+               <xf:input ref="@transliteration">
+                  <xf:label>Transliteration</xf:label>
+               </xf:input>
+               <xf:input ref="@script">
+                  <xf:label>Script</xf:label>
+               </xf:input>
+               <xf:group class="buttonBar">
+                  <xf:trigger>
+                     <xf:label>Ok</xf:label>
+                     <xf:action>
+                        <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]"
+                                   context="instance('i-rightsSet')/vra:rights[index('r-vraRights')]/*[local-name()=instance('i-util')/currentElement]"></xf:insert>
+                     </xf:action>
+                     <bfc:hide dialog="attrDialog"></bfc:hide>
+                  </xf:trigger>
+                  <xf:trigger appearance="minimal">
+                     <xf:label>Cancel</xf:label>
+                     <bfc:hide dialog="attrDialog"></bfc:hide>
+                  </xf:trigger>
+               </xf:group>
+            </xf:group>
+         </bfc:dialog>
+      </div>
+   </body>
 </html>

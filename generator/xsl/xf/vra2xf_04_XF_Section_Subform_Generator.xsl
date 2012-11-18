@@ -231,6 +231,69 @@
                         <xsl:with-param name="path" select="'instance()'"/>
                     </xsl:apply-templates>
 
+                    <bfc:dialog id="attrDialog">
+                        <xf:label>Attributes</xf:label>
+                        <xf:group appearance="full" ref="instance('i-vraAttributes')/vra:vraElement">
+                            <xf:label/>
+                            <xf:input ref="@dataDate" id="first">
+                                <xf:label>dataDate</xf:label>
+                            </xf:input>
+                            <xf:input ref="@extent">
+                                <xf:label>extent</xf:label>
+                            </xf:input>
+                            <xf:input ref="@href">
+                                <xf:label>href</xf:label>
+                            </xf:input>
+                            <xf:input ref="@refid">
+                                <xf:label>refid</xf:label>
+                            </xf:input>
+                            <xf:input ref="@rules">
+                                <xf:label>rules</xf:label>
+                            </xf:input>
+                            <xf:input ref="@source">
+                                <xf:label>source</xf:label>
+                            </xf:input>
+                            <xf:select1 ref="@vocab">
+                                <xf:label>vocab</xf:label>
+                                <xf:item>
+                                    <xf:label>ULAN</xf:label>
+                                    <xf:value>ULAN</xf:value>
+                                </xf:item>
+                                <xf:item>
+                                    <xf:label>GND</xf:label>
+                                    <xf:value>GND</xf:value>
+                                </xf:item>
+                                <xf:item>
+                                    <xf:label>(AKL)</xf:label>
+                                    <xf:value>(AKL)</xf:value>
+                                </xf:item>
+                            </xf:select1>
+                            <xf:input ref="@lang">
+                                <xf:label>Language</xf:label>
+                            </xf:input>
+                            <xf:input ref="@transliteration">
+                                <xf:label>Transliteration</xf:label>
+                            </xf:input>
+                            <xf:input ref="@script">
+                                <xf:label>Script</xf:label>
+                            </xf:input>
+                            <xf:group class="buttonBar">
+                                <xf:trigger>
+                                    <xf:label>Ok</xf:label>
+                                    <xf:action>
+                                        <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]">
+                                            <xsl:attribute name="context">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/*[local-name()=instance('i-util')/currentElement]</xsl:attribute>
+                                        </xf:insert>
+                                    </xf:action>
+                                    <bfc:hide dialog="attrDialog"></bfc:hide>
+                                </xf:trigger>
+                                <xf:trigger appearance="minimal">
+                                    <xf:label>Cancel</xf:label>
+                                    <bfc:hide dialog="attrDialog"></bfc:hide>
+                                </xf:trigger>
+                            </xf:group>
+                        </xf:group>
+                    </bfc:dialog>
                 </div>
             </body>
         </html>
@@ -342,6 +405,7 @@
         ########################################################################################
     -->
     
+    <!-- section (like AgentSet) -->
     <xsl:template match="xf:bind[@nodeset=concat('vra:',$vraSectionNode)]" mode="ui" priority="40">
         <xsl:param name="path" select="''"/>
         
@@ -366,6 +430,33 @@
                     </xsl:apply-templates>
                 </tbody>
             </table>
+
+            <xf:group class="showNotesDisplay">
+                <xf:trigger class="notesDisplayTrigger">
+                    <xf:label>Show/Hide Notes and Display</xf:label>
+                    <xf:setvalue>
+                        <xsl:attribute name="ref">instance('i-<xsl:value-of select="$vraSectionNode"/>Controller')/showNotesDisplay</xsl:attribute>
+                        <xsl:attribute name="value">not(boolean-from-string(instance('i-<xsl:value-of select="$vraSectionNode"/>Controller')/showNotesDisplay))</xsl:attribute>
+                    </xf:setvalue>
+                </xf:trigger>
+                <xf:group>
+                    <xsl:attribute name="ref">instance('i-<xsl:value-of select="$vraSectionNode"/>Controller')/showNotesDisplay</xsl:attribute>
+                    <xf:group appearance="minimal" class="elementGroup">
+                        <xsl:attribute name="ref">instance('i-<xsl:value-of select="$vraSectionNode"/>')</xsl:attribute>
+                        <xf:label/>
+                        <xf:textarea ref="vra:display" type="nodeValue" model="m-child-model">
+                            <xf:label>Display:</xf:label>
+                        </xf:textarea>
+                    </xf:group>
+                    <xf:group appearance="minimal" class="elementGroup">
+                        <xsl:attribute name="ref">instance('i-<xsl:value-of select="$vraSectionNode"/>')</xsl:attribute>
+                        <xf:label/>
+                        <xf:textarea ref="vra:notes" type="nodeValue" model="m-child-model">
+                            <xf:label>Notes</xf:label>
+                        </xf:textarea>
+                    </xf:group>
+                </xf:group>
+            </xf:group>
         </xf:group>
     </xsl:template>
 
@@ -469,7 +560,6 @@
 -->
     </xsl:template>
 
-<!--
     <xsl:template match="xf:bind[starts-with(@nodeset,'@')]" mode="ui" priority="10">
         <xsl:param name="path" select="''" />
         <xsl:variable name="vraNodeName" select="@nodeset"/>
@@ -479,17 +569,18 @@
             <xsl:message>UI-4: create xf:control for '<xsl:value-of select="$vraNodeName"/>' attribute,  xpath is: '<xsl:value-of select="$currentPath"/>'</xsl:message>
         </xsl:if>
 
-        <xf:input ref="{$currentPath}" type="attributeValue">
-            <xf:label><xsl:value-of select="substring-after($vraNodeName,'@')"/></xf:label>
-        </xf:input>
-        
-        <xsl:apply-templates mode="ui">
-            <xsl:with-param name="path" select="$currentPath"/>
-        </xsl:apply-templates>
-    </xsl:template>
--->
+        <xf:group appearance="minimal">
+            <xf:input ref="{$currentPath}" type="attributeValue">
+                <xf:label><xsl:value-of select="substring-after($vraNodeName,'@')"/></xf:label>
+            </xf:input>
 
-    <xsl:template match="xf:bind[@nodeset='@type' and @attrName='type' and starts-with(@type,'vra:') and @xfType='attribute']" mode="ui" priority="10">
+            <xsl:apply-templates mode="ui">
+                <xsl:with-param name="path" select="$currentPath"/>
+            </xsl:apply-templates>
+        </xf:group>
+    </xsl:template>
+
+    <xsl:template match="xf:bind[@nodeset='@type' and @attrName='type' and starts-with(@type,'vra:') and @xfType='attribute']" mode="ui" priority="15">
         <xsl:variable name="vraTypeName" select="substring-after(@type,'vra:')"/>
 
         <xsl:if test="$debugEnabled">
@@ -502,7 +593,7 @@
         </xsl:apply-templates>
     </xsl:template>
 
-    <xsl:template match="xsd:restriction[@base='xsd:string']" mode="ui" priority="10">
+    <xsl:template match="xsd:restriction[@base='xsd:string']" mode="ui">
         <xsl:param name="pref"   select="''" />
         <xsl:param name="plabel" select="''" />
 
@@ -526,9 +617,6 @@
         <xsl:message>Matched xf:bind with nodeset='<xsl:value-of select="@nodeset"/>'</xsl:message>
         <xsl:message terminate="yes">This rule must never be matched</xsl:message>
     </xsl:template>
-
-
-
 
     <!--
         ########################################################################################

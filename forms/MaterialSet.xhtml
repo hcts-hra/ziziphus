@@ -1,225 +1,273 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:vra="http://www.vraweb.org/vracore4.htm" xmlns:xf="http://www.w3.org/2002/xforms">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <title>Ziziphus_Image_DB</title>
-    </head>
-    <body>
-        <div id="xforms">
-            <div style="display:none">
-                <xf:model id="m-child-model" schema="resources/xsd/vra-types.xsd">
-                    <xf:instance id="i-materialSet">
-                        <materialSet xmlns="http://www.vraweb.org/vracore4.htm">
-                            <display dataDate="" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
-                            <notes dataDate="" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
-                            <material type="" dataDate="" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
-                        </materialSet>
-                    </xf:instance>
-                    <xf:bind nodeset="instance()">
-                        <xf:bind nodeset="vra:display">
-                            <xf:bind nodeset="@dataDate" type="vra:dateValueType"/>
-                            <xf:bind nodeset="@extent"/>
-                            <xf:bind nodeset="@href" type="xsd:anyURI"/>
-                            <xf:bind nodeset="@xml:lang"/>
-                            <xf:bind nodeset="@pref" type="xsd:boolean"/>
-                            <xf:bind nodeset="@refid"/>
-                            <xf:bind nodeset="@rules"/>
-                            <xf:bind nodeset="@source"/>
-                            <xf:bind nodeset="@vocab"/>
-                        </xf:bind>
-                        <xf:bind nodeset="vra:notes">
-                            <xf:bind nodeset="@dataDate" type="vra:dateValueType"/>
-                            <xf:bind nodeset="@extent"/>
-                            <xf:bind nodeset="@href" type="xsd:anyURI"/>
-                            <xf:bind nodeset="@xml:lang"/>
-                            <xf:bind nodeset="@pref" type="xsd:boolean"/>
-                            <xf:bind nodeset="@refid"/>
-                            <xf:bind nodeset="@rules"/>
-                            <xf:bind nodeset="@source"/>
-                            <xf:bind nodeset="@vocab"/>
-                        </xf:bind>
-                        <xf:bind nodeset="vra:material">
-                            <xf:bind nodeset="@type" type="vra:materialTypeType"/>
-                            <xf:bind nodeset="@dataDate" type="vra:dateValueType"/>
-                            <xf:bind nodeset="@extent"/>
-                            <xf:bind nodeset="@href" type="xsd:anyURI"/>
-                            <xf:bind nodeset="@xml:lang"/>
-                            <xf:bind nodeset="@pref" type="xsd:boolean"/>
-                            <xf:bind nodeset="@refid"/>
-                            <xf:bind nodeset="@rules"/>
-                            <xf:bind nodeset="@source"/>
-                            <xf:bind nodeset="@vocab"/>
-                        </xf:bind>
-                    </xf:bind>
-                    <xf:instance id="i-templates">
-                        <templates xmlns="http://www.vraweb.org/vracore4.htm">
-                            <material type="" dataDate="" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
-                        </templates>
-                    </xf:instance>
-                    <xf:submission id="s-load-data" resource="records?_query=//*[@id='{$recordId}']/*:materialSet&amp;_wrap=no" replace="instance" instance="i-materialSet" method="get" serialize="false" validate="false">
-                        <xf:message ev:event="xforms-submit-error">Could not load MaterialSet data</xf:message>
-                    </xf:submission>
-                    <xf:submission id="s-save-data" resource="modules/save2section.xql?id={bf:appContext('recordId')}&amp;section=materialSet" replace="none" ref="instance('i-materialSet')" method="post" validate="false">
-                        <xf:message ev:event="xforms-submit-error">Could not save MaterialSet data</xf:message>
-                        <xf:send ev:event="xforms-submit-done" submission="s-embed-w-html" if="bf:appContext('record') = 'work'"/>
-                        <xf:send ev:event="xforms-submit-done" submission="s-embed-i-html" if="bf:appContext('record') = 'image'"/>
-                    </xf:submission>
-                    <xf:submission id="s-embed-i-html" ref="instance('i-materialSet')" replace="embedHTML" targetid="i_Material_HtmlContent" resource="xslt:resources/xsl/vraSets/MaterialSet.xsl?parseString=false" method="get" validate="false">
-                        <xf:message ev:event="xforms-submit-error">Could not embed MaterialSet data</xf:message>
-                        <xf:action ev:event="xforms-submit-done">
-                            <xf:toggle case="c-i_Material-view" model="model-1"/>
-                            <xf:setvalue ref="instance('i-control-center')/currentform" value="''" model="model-1"/>
-                        </xf:action>
-                    </xf:submission>
-                    <xf:action ev:event="xforms-ready">
-                        <xf:send submission="s-load-data"/>
-                    </xf:action>
-                </xf:model>
-            </div>
-            <xf:group appearance="bf:VerticalTable" ref="instance()" model="m-child-model">
-                <xf:label/>
-                <xf:trigger class="t-save" model="m-child-model" title="Save">
-                    <xf:label/>
-                    <xf:send submission="s-save-data"/>
-                </xf:trigger>
-                <div>
-                    <xf:trigger class="t-plus" model="m-child-model" title="Add Material">
-                        <xf:label/>
-                        <xf:insert nodeset="instance()/vra:material[last()]" origin="instance('i-templates')/vra:material" model="m-child-model"/>
-                    </xf:trigger>
-                    <xf:trigger class="t-minus" model="m-child-model" title="Remove Material">
-                        <xf:label/>
-                        <xf:delete nodeset="instance()/vra:material" at="index('r-material')" model="m-child-model"/>
-                    </xf:trigger>
-                </div>
-                <xf:repeat id="r-material" nodeset="vra:material" appearance="full" class="vraComplex">
-                    <xf:select1 ref="@type" type="attributeValue" model="m-child-model">
-                        <xf:label>type</xf:label>
-                        <xsd:enumeration value=""/>
-                        <xsd:enumeration value=""/>
-                        <xsd:enumeration value="other"/>
-                        <xf:item>
-                            <xf:label>Medium</xf:label>
-                            <xf:value>medium</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>Support</xf:label>
-                            <xf:value>support</xf:value>
-                        </xf:item>
-                        <xf:item>
-                            <xf:label>Other</xf:label>
-                            <xf:value>other</xf:value>
-                        </xf:item>
-                    </xf:select1>
-                    <xf:input ref="." type="nodeValue" model="m-child-model">
+<?xml version="1.0" encoding="UTF-8"?><html xmlns:ev="http://www.w3.org/2001/xml-events"
+      xmlns:bfc="http://betterform.sourceforge.net/xforms/controls"
+      xmlns:vra="http://www.vraweb.org/vracore4.htm"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xf="http://www.w3.org/2002/xforms"
+      xmlns:xi="http://www.w3.org/2001/XInclude">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Ziziphus_Image_DB</title><style type="text/css">
+                    .xfRequired .xfLabel:after{
+                        content:'';
+                    }
+                    .xfRequired &gt; .xfLabel:after{
+                        content:'*';
+                    }
+
+                    table, td {
+                        border: thin solid #999999;
+                        border-collapse: collapse;
+                        padding: 3px;
+                    }
+
+                    tbody {
+                        font-size: 0.85em;
+                    }
+                    tbody .xfGroup &gt; .xfControl .xfLabel {
+                        float: left;
+                        padding: 0;
+                        margin: 3px 3px 0 7px;
+                        min-width: 80px;
+                        text-align: right;
+                    }
+                    tbody tr td &gt; .xfGroup {
+                        background: #fafafa;
+                        border-top: thin solid;
+                        border-bottom: thin solid #cdcdcd;
+                        padding: 5px 0;
+                    }
+                    tbody tr td .xfGroup:last-child {
+                        border-bottom: none;
+                    }
+                    .xfRepeatItem {
+                        background: whitesmoke;
+                    }
+
+                    .xfRepeatIndex .contentCol {
+                        background-color: whitesmoke;
+                    }
+                    .bf .xfRepeatIndex {
+                        background: #dddddd !important;
+                    }
+                    td{
+                        vertical-align: top;
+                    }
+                    .vraAttributes .xfControl{
+                        float:left;
+                    }
+
+                    .prefCol, .triggerCol {
+                        width: 10px;
+                    }
+                    .prefCol .xfLabel{
+                        display: none;
+                    }
+                    .contentCol &gt; .xfGroup {
+                        width: 100%;
+                        display: inline-block;
+                        padding-bottom: 5px;
+                        border-top: none !important;
+                    }
+                    .vraAttributes .xfControl {
+                        border: thin solid #aaaaaa;
+                        border-radius: 3px;
+                        margin: 5px 5px 5px 0;
+                        padding: 3px;
+                        background: #eeeeee;
+                        text-align: center;
+                    }
+                    .vraAttributes .xfLabel, .vraAttributes .xfValue{
+                        font-size: 0.85em;
+                    }
+                    .vraAttributes .xfLabel {
+                        margin: 0 !important;
+                        padding: 0 !important;
+                        border-bottom: thin solid #aaaaaa;
+                    }
+
+                    .prefCol .xfLabel {
+                        display: none !important;
+                    }
+                    .vraAttributeTrigger {
+                        float: right;
+                    }
+                    #attrDialog .xfControl {
+                        float: none;
+                    }
+                    .buttonBar .xfTrigger{
+                        display: inline-block !important;
+                        font-size: 0.85em;
+                        margin: 5px;
+                    }
+                </style></head>
+   <body>
+      <div id="xforms">
+         <!-- ###################### MODEL ################################## -->
+         <!-- ###################### MODEL ################################## -->
+         <!-- ###################### MODEL ################################## -->
+         <div style="display:none">
+            <xf:model id="m-child-model" schema="../resources/xsd/vra-types.xsd">
+               <xf:instance id="i-materialSet">
+                  <materialSet xmlns="http://www.vraweb.org/vracore4.htm">
+                     <display></display>
+                     <notes></notes>
+                     <material pref="false" type=""></material>
+                  </materialSet>
+               </xf:instance>
+               <xf:bind nodeset="instance()">
+                  <xf:bind nodeset="vra:material">
+                     <xf:bind nodeset="@type" type="vra:materialTypeType"></xf:bind>
+                  </xf:bind>
+               </xf:bind>
+               <xf:instance id="i-templates">
+                  <templates xmlns="http://www.vraweb.org/vracore4.htm">
+                     <material pref="false" type=""></material>
+                     <notes></notes>
+                     <display></display>
+                  </templates>
+               </xf:instance>
+               <xi:include href="bricks/vraAttributesInstance.xml"></xi:include>
+               <xf:instance id="i-util">
+                  <data xmlns="">
+                     <currentElement></currentElement>
+                  </data>
+               </xf:instance>
+            </xf:model>
+         </div>
+         <!-- ####################################### VISIBLE UI ####################################### -->
+         <!-- ####################################### VISIBLE UI ####################################### -->
+         <!-- ####################################### VISIBLE UI ####################################### -->
+         <div class="toolbar">
+            <xf:trigger class="t-save" model="m-child-model" title="Save">
+               <xf:label>save</xf:label>
+            </xf:trigger>
+            <xf:trigger class="t-plus" model="m-child-model" title="Add Material">
+               <xf:label>+</xf:label>
+               <xf:insert model="m-child-model" nodeset="instance()/vra:material[last()]"
+                          origin="instance('i-templates')/vra:material"></xf:insert>
+            </xf:trigger>
+         </div>
+         <xf:group appearance="minimal" class="vraRecord" model="m-child-model"
+                   ref="instance('i-materialSet')">
+            <table>
+               <tbody model="m-child-model" id="r-vraMaterial" xf:repeat-nodeset="vra:material">
+                  <xf:group appearance="minimal">
+                     <xf:input ref="vra:material" type="nodeValue">
                         <xf:label>Material</xf:label>
-                    </xf:input>
-                    <xf:input ref="@pref" type="attributeValue" model="m-child-model">
-                        <xf:label>prefered</xf:label>
-                    </xf:input>
-<!--
-                    <div class="materialSet-material-attributes hiddenAttributes" style="display:none;">
-                        <xf:input ref="@dataDate" type="attributeValue" model="m-child-model">
-                            <xf:label>dataDate</xf:label>
-                        </xf:input>
-                        <xf:input ref="@extent" type="attributeValue" model="m-child-model">
-                            <xf:label>extent</xf:label>
-                        </xf:input>
-                        <xf:input ref="@href" type="attributeValue" model="m-child-model">
-                            <xf:label>href</xf:label>
-                        </xf:input>
-                        <xf:input ref="@xml:lang" type="attributeValue" model="m-child-model">
-                            <xf:label>xml:lang</xf:label>
-                        </xf:input>
-                        <xf:input ref="@pref" type="attributeValue" model="m-child-model">
-                            <xf:label>pref</xf:label>
-                        </xf:input>
-                        <xf:input ref="@refid" type="attributeValue" model="m-child-model">
-                            <xf:label>refid</xf:label>
-                        </xf:input>
-                        <xf:input ref="@rules" type="attributeValue" model="m-child-model">
-                            <xf:label>rules</xf:label>
-                        </xf:input>
-                        <xf:input ref="@source" type="attributeValue" model="m-child-model">
-                            <xf:label>source</xf:label>
-                        </xf:input>
-                        <xf:input ref="@vocab" type="attributeValue" model="m-child-model">
-                            <xf:label>vocab</xf:label>
-                        </xf:input>
-                    </div>
--->
-                </xf:repeat>
-
-
-<!--
-                <xf:input ref="vra:display" type="nodeValue" model="m-child-model">
-                    <xf:label>Display</xf:label>
-                </xf:input>
-                <div class="materialSet-display-attributes hiddenAttributes" style="display:none;">
-                    <xf:input ref="vra:display/@dataDate" type="attributeValue" model="m-child-model">
-                        <xf:label>dataDate</xf:label>
-                    </xf:input>
-                    <xf:input ref="vra:display/@extent" type="attributeValue" model="m-child-model">
-                        <xf:label>extent</xf:label>
-                    </xf:input>
-                    <xf:input ref="vra:display/@href" type="attributeValue" model="m-child-model">
-                        <xf:label>href</xf:label>
-                    </xf:input>
-                    <xf:input ref="vra:display/@xml:lang" type="attributeValue" model="m-child-model">
-                        <xf:label>xml:lang</xf:label>
-                    </xf:input>
-                    <xf:input ref="vra:display/@pref" type="attributeValue" model="m-child-model">
-                        <xf:label>pref</xf:label>
-                    </xf:input>
-                    <xf:input ref="vra:display/@refid" type="attributeValue" model="m-child-model">
-                        <xf:label>refid</xf:label>
-                    </xf:input>
-                    <xf:input ref="vra:display/@rules" type="attributeValue" model="m-child-model">
-                        <xf:label>rules</xf:label>
-                    </xf:input>
-                    <xf:input ref="vra:display/@source" type="attributeValue" model="m-child-model">
-                        <xf:label>source</xf:label>
-                    </xf:input>
-                    <xf:input ref="vra:display/@vocab" type="attributeValue" model="m-child-model">
-                        <xf:label>vocab</xf:label>
-                    </xf:input>
-                </div>
--->
-                <xf:input ref="vra:notes" type="nodeValue" model="m-child-model">
-                    <xf:label>Notes</xf:label>
-                </xf:input>
-<!--
-                <div class="materialSet-notes-attributes hiddenAttributes" style="display:none;">
-                    <xf:input ref="vra:notes/@dataDate" type="attributeValue" model="m-child-model">
-                        <xf:label>dataDate</xf:label>
-                    </xf:input>
-                    <xf:input ref="vra:notes/@extent" type="attributeValue" model="m-child-model">
-                        <xf:label>extent</xf:label>
-                    </xf:input>
-                    <xf:input ref="vra:notes/@href" type="attributeValue" model="m-child-model">
-                        <xf:label>href</xf:label>
-                    </xf:input>
-                    <xf:input ref="vra:notes/@xml:lang" type="attributeValue" model="m-child-model">
-                        <xf:label>xml:lang</xf:label>
-                    </xf:input>
-                    <xf:input ref="vra:notes/@pref" type="attributeValue" model="m-child-model">
-                        <xf:label>pref</xf:label>
-                    </xf:input>
-                    <xf:input ref="vra:notes/@refid" type="attributeValue" model="m-child-model">
-                        <xf:label>refid</xf:label>
-                    </xf:input>
-                    <xf:input ref="vra:notes/@rules" type="attributeValue" model="m-child-model">
-                        <xf:label>rules</xf:label>
-                    </xf:input>
-                    <xf:input ref="vra:notes/@source" type="attributeValue" model="m-child-model">
-                        <xf:label>source</xf:label>
-                    </xf:input>
-                    <xf:input ref="vra:notes/@vocab" type="attributeValue" model="m-child-model">
-                        <xf:label>vocab</xf:label>
-                    </xf:input>
-                </div>
--->
+                     </xf:input>
+                     <xf:select1 ref="vra:material/@type">
+                        <xf:label>Type</xf:label>
+                        <xf:item>
+                           <xf:label>Medium</xf:label>
+                           <xf:value>medium</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>Support</xf:label>
+                           <xf:value>support</xf:value>
+                        </xf:item>
+                        <xf:item>
+                           <xf:label>Other</xf:label>
+                           <xf:value>other</xf:value>
+                        </xf:item>
+                     </xf:select1>
+                     <xf:group class="vraAttributes" appearance="minimal" ref="vra:material">
+                        <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
+                     </xf:group>
+                     <xf:trigger class="vraAttributeTrigger">
+                        <xf:label>...</xf:label>
+                        <xf:setvalue ref="instance('i-util')/currentElement" value="'material'"></xf:setvalue>
+                        <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]"
+                                   origin="instance('i-materialSet')/vra:material[index('r-vraMaterial')]/vra:material/@*"></xf:insert>
+                        <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
+                     </xf:trigger>
+                  </xf:group>
+               </tbody>
+            </table>
+            <xf:group class="showNotesDisplay">
+               <xf:trigger class="notesDisplayTrigger">
+                  <xf:label>Show/Hide Notes and Display</xf:label>
+                  <xf:setvalue ref="instance('i-materialSetController')/showNotesDisplay"
+                               value="not(boolean-from-string(instance('i-materialSetController')/showNotesDisplay))"></xf:setvalue>
+               </xf:trigger>
+               <xf:group ref="instance('i-materialSetController')/showNotesDisplay">
+                  <xf:group appearance="minimal" class="elementGroup" ref="instance('i-materialSet')">
+                     <xf:label></xf:label>
+                     <xf:textarea ref="vra:display" type="nodeValue" model="m-child-model">
+                        <xf:label>Display:</xf:label>
+                     </xf:textarea>
+                  </xf:group>
+                  <xf:group appearance="minimal" class="elementGroup" ref="instance('i-materialSet')">
+                     <xf:label></xf:label>
+                     <xf:textarea ref="vra:notes" type="nodeValue" model="m-child-model">
+                        <xf:label>Notes</xf:label>
+                     </xf:textarea>
+                  </xf:group>
+               </xf:group>
             </xf:group>
-        </div>
-    </body>
+         </xf:group>
+         <bfc:dialog id="attrDialog">
+            <xf:label>Attributes</xf:label>
+            <xf:group appearance="full" ref="instance('i-vraAttributes')/vra:vraElement">
+               <xf:label></xf:label>
+               <xf:input ref="@dataDate" id="first">
+                  <xf:label>dataDate</xf:label>
+               </xf:input>
+               <xf:input ref="@extent">
+                  <xf:label>extent</xf:label>
+               </xf:input>
+               <xf:input ref="@href">
+                  <xf:label>href</xf:label>
+               </xf:input>
+               <xf:input ref="@refid">
+                  <xf:label>refid</xf:label>
+               </xf:input>
+               <xf:input ref="@rules">
+                  <xf:label>rules</xf:label>
+               </xf:input>
+               <xf:input ref="@source">
+                  <xf:label>source</xf:label>
+               </xf:input>
+               <xf:select1 ref="@vocab">
+                  <xf:label>vocab</xf:label>
+                  <xf:item>
+                     <xf:label>ULAN</xf:label>
+                     <xf:value>ULAN</xf:value>
+                  </xf:item>
+                  <xf:item>
+                     <xf:label>GND</xf:label>
+                     <xf:value>GND</xf:value>
+                  </xf:item>
+                  <xf:item>
+                     <xf:label>(AKL)</xf:label>
+                     <xf:value>(AKL)</xf:value>
+                  </xf:item>
+               </xf:select1>
+               <xf:input ref="@lang">
+                  <xf:label>Language</xf:label>
+               </xf:input>
+               <xf:input ref="@transliteration">
+                  <xf:label>Transliteration</xf:label>
+               </xf:input>
+               <xf:input ref="@script">
+                  <xf:label>Script</xf:label>
+               </xf:input>
+               <xf:group class="buttonBar">
+                  <xf:trigger>
+                     <xf:label>Ok</xf:label>
+                     <xf:action>
+                        <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]"
+                                   context="instance('i-materialSet')/vra:material[index('r-vraMaterial')]/*[local-name()=instance('i-util')/currentElement]"></xf:insert>
+                     </xf:action>
+                     <bfc:hide dialog="attrDialog"></bfc:hide>
+                  </xf:trigger>
+                  <xf:trigger appearance="minimal">
+                     <xf:label>Cancel</xf:label>
+                     <bfc:hide dialog="attrDialog"></bfc:hide>
+                  </xf:trigger>
+               </xf:group>
+            </xf:group>
+         </bfc:dialog>
+      </div>
+   </body>
 </html>

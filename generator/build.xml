@@ -155,6 +155,12 @@
         </antcall>
     </target>
 
+    <target name="generate-StateEditionSet-form" depends="prepare" description="generate the StateEditionSet form">
+        <antcall target="generate-subform">
+            <param name="subformName" value="StateEditionSet"/>
+        </antcall>
+    </target>
+
     <target name="generate-subform">
         <echo>generate-subform ${subformName}</echo>
         <xslt style="${xsl.dir}/xf/vra2xf_04_XF_Section_Subform_Generator.xsl"
