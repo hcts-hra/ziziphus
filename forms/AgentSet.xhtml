@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><html xmlns:vra="http://www.vraweb.org/vracore4.htm"
+<?xml version="1.0" encoding="UTF-8"?><html xmlns:ev="http://www.w3.org/2001/xml-events"
+      xmlns:bfc="http://betterform.sourceforge.net/xforms/controls"
+      xmlns:vra="http://www.vraweb.org/vracore4.htm"
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:xsd="http://www.w3.org/2001/XMLSchema"
       xmlns:xf="http://www.w3.org/2002/xforms"
@@ -181,7 +183,6 @@
          </div>
          <xf:group appearance="minimal" class="vraRecord" model="m-child-model"
                    ref="instance('i-agentSet')">
-            <xf:label>AgentSet</xf:label>
             <table>
                <tbody model="m-child-model" id="r-vraAgent" xf:repeat-nodeset="vra:agent">
                   <tr>
@@ -192,32 +193,132 @@
                         </xf:input>
                      </td>
                      <td class="contentCol">
-                        <xf:group ref="vra:agent" appearance="minimal" class="vraComplex" model="m-child-model">
-                           <xf:label>Agent</xf:label>
-                           <xf:input ref="vra:attribution" type="nodeValue" model="m-child-model">
-                              <xf:label>Attribution</xf:label>
-                           </xf:input>
-                           <xf:input ref="vra:culture" type="nodeValue" model="m-child-model">
-                              <xf:label>Culture</xf:label>
-                           </xf:input>
-                           <xf:group ref="vra:dates" appearance="minimal" class="vraComplex" model="m-child-model">
-                              <xf:label>Dates</xf:label>
-                              <xf:input ref="vra:dates/@type" type="attributeValue" model="m-child-model">
-                                 <xf:label>type</xf:label>
-                              </xf:input>
-                              <xf:input ref="vra:earliestDate" type="nodeValue" model="m-child-model">
-                                 <xf:label>EarliestDate</xf:label>
-                              </xf:input>
-                              <xf:input ref="vra:latestDate" type="nodeValue" model="m-child-model">
-                                 <xf:label>LatestDate</xf:label>
-                              </xf:input>
-                           </xf:group>
-                           <xf:input ref="vra:name" type="nodeValue" model="m-child-model">
+                        <xf:group appearance="minimal">
+                           <xf:input ref="vra:name" type="nodeValue" class="elementName">
                               <xf:label>Name</xf:label>
                            </xf:input>
-                           <xf:input ref="vra:role" type="nodeValue" model="m-child-model">
+                           <xf:select1 ref="vra:name/@type">
+                              <xf:label>Type</xf:label>
+                              <xf:item>
+                                 <xf:label>Personal</xf:label>
+                                 <xf:value>personal</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Corporate</xf:label>
+                                 <xf:value>corporate</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Family</xf:label>
+                                 <xf:value>family</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Other</xf:label>
+                                 <xf:value>other</xf:value>
+                              </xf:item>
+                           </xf:select1>
+                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:name">
+                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
+                           </xf:group>
+                           <xf:trigger class="vraAttributeTrigger">
+                              <xf:label>...</xf:label>
+                              <xf:setvalue ref="instance('i-util')/currentElement" value="'name'"></xf:setvalue>
+                              <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]"
+                                         origin="instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:name/@*"></xf:insert>
+                              <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
+                           </xf:trigger>
+                        </xf:group>
+                        <xf:group appearance="minimal">
+                           <xf:input ref="vra:attribution" type="nodeValue">
+                              <xf:label>Attribution</xf:label>
+                           </xf:input>
+                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:attribution">
+                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
+                           </xf:group>
+                           <xf:trigger class="vraAttributeTrigger">
+                              <xf:label>...</xf:label>
+                              <xf:setvalue ref="instance('i-util')/currentElement" value="'attribution'"></xf:setvalue>
+                              <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]"
+                                         origin="instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:attribution/@*"></xf:insert>
+                              <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
+                           </xf:trigger>
+                        </xf:group>
+                        <xf:group appearance="minimal">
+                           <xf:input ref="vra:culture" type="nodeValue">
+                              <xf:label>Culture</xf:label>
+                           </xf:input>
+                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:culture">
+                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
+                           </xf:group>
+                           <xf:trigger class="vraAttributeTrigger">
+                              <xf:label>...</xf:label>
+                              <xf:setvalue ref="instance('i-util')/currentElement" value="'culture'"></xf:setvalue>
+                              <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]"
+                                         origin="instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:culture/@*"></xf:insert>
+                              <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
+                           </xf:trigger>
+                        </xf:group>
+                        <xf:group ref="vra:dates" appearance="minimal" class="vraComplex" model="m-child-model">
+                           <xf:label>Dates</xf:label>
+                           <xf:select1 ref="vra:dates/@type">
+                              <xf:label>Type</xf:label>
+                              <xf:item>
+                                 <xf:label>Activity</xf:label>
+                                 <xf:value>activity</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Life</xf:label>
+                                 <xf:value>life</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Other</xf:label>
+                                 <xf:value>other</xf:value>
+                              </xf:item>
+                           </xf:select1>
+                           <xf:group appearance="minimal">
+                              <xf:input ref="vra:earliestDate" type="nodeValue">
+                                 <xf:label>EarliestDate</xf:label>
+                              </xf:input>
+                              <xf:group class="vraAttributes" appearance="minimal" ref="vra:earliestDate">
+                                 <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
+                              </xf:group>
+                              <xf:trigger class="vraAttributeTrigger">
+                                 <xf:label>...</xf:label>
+                                 <xf:setvalue ref="instance('i-util')/currentElement" value="'earliestDate'"></xf:setvalue>
+                                 <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]"
+                                            origin="instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:earliestDate/@*"></xf:insert>
+                                 <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
+                              </xf:trigger>
+                           </xf:group>
+                           <xf:group appearance="minimal">
+                              <xf:input ref="vra:latestDate" type="nodeValue">
+                                 <xf:label>LatestDate</xf:label>
+                              </xf:input>
+                              <xf:group class="vraAttributes" appearance="minimal" ref="vra:latestDate">
+                                 <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
+                              </xf:group>
+                              <xf:trigger class="vraAttributeTrigger">
+                                 <xf:label>...</xf:label>
+                                 <xf:setvalue ref="instance('i-util')/currentElement" value="'latestDate'"></xf:setvalue>
+                                 <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]"
+                                            origin="instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:latestDate/@*"></xf:insert>
+                                 <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
+                              </xf:trigger>
+                           </xf:group>
+                        </xf:group>
+                        <xf:group appearance="minimal">
+                           <xf:input ref="vra:role" type="nodeValue">
                               <xf:label>Role</xf:label>
                            </xf:input>
+                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:role">
+                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
+                           </xf:group>
+                           <xf:trigger class="vraAttributeTrigger">
+                              <xf:label>...</xf:label>
+                              <xf:setvalue ref="instance('i-util')/currentElement" value="'role'"></xf:setvalue>
+                              <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]"
+                                         origin="instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role/@*"></xf:insert>
+                              <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
+                           </xf:trigger>
                         </xf:group>
                      </td>
                      <td class="triggerCol">

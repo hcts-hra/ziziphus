@@ -21,6 +21,7 @@
     
     <property name="vra.bf.schema.name" value="vra-bf.xsd"/>
     <property name="vra.types.schema.name" value="vra-types.xsd"/>
+    <property name="vra.types.schema.path" value="${deploy.schema.dir}/${vra.types.schema.name}"/>
 
     <!-- **************************************** HOUSEKEEPING **************************************** -->
     <!-- **************************************** HOUSEKEEPING **************************************** -->
@@ -162,7 +163,7 @@
                 force="true">
             <classpath refid="transform.class.path"/>
             <param name="debug" expression="true"/>
-            <param name="path_2_vra_types_schema" expression="${target.schema.dir}/${vra.types.schema.name}"/>
+            <param name="path_2_vra_types_schema" expression="${vra.types.schema.path}"/>
             <param name="path_2_xf_instance" expression="${target.dir}/01_VRA_Instance.xml"/>
             <param name="vraSection" expression="${subformName}"/>
         </xslt>
