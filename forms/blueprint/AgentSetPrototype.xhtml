@@ -107,6 +107,12 @@
                 font-size: 0.85em;
                 margin: 5px;
             }
+            .notesDisplayTrigger {
+                float: right;
+            }
+            #notes, #notes .widgetContainer, #notes textarea{
+                width: 100%;
+            }
         </style>
 
     </head>
@@ -342,27 +348,23 @@
                 <!-- ############################## NOTES ####################################### -->
                 <!-- ############################## NOTES ####################################### -->
                 <!-- ############################## NOTES ####################################### -->
-                <xf:group class="showNotesDisplay">
-                    <xf:trigger class="notesDisplayTrigger">
-                        <xf:label>Show/Hide Notes and Display</xf:label>
-                        <xf:setvalue ref="instance('i-agentSetController')/showNotesDisplay"
-                                     value="not(boolean-from-string(instance('i-agentSetController')/showNotesDisplay))"/>
-                    </xf:trigger>
-                    <xf:group ref="instance('i-agentSetController')/showNotesDisplay">
-                        <xf:group appearance="minimal" class="elementGroup" ref="instance('i-agentSet')">
-                            <xf:label/>
-                            <xf:textarea ref="vra:display" type="nodeValue" model="m-child-model">
-                                <xf:label>Display:</xf:label>
-                            </xf:textarea>
-                        </xf:group>
-                        <xf:group appearance="minimal" class="elementGroup" ref="instance('i-agentSet')">
-                            <xf:label/>
-                            <xf:textarea ref="vra:notes" type="nodeValue" model="m-child-model">
-                                <xf:label>Notes</xf:label>
-                            </xf:textarea>
-                        </xf:group>
-                    </xf:group>
-                </xf:group>
+                <xf:switch>
+                    <xf:case id="c-hidden">
+                        <xf:trigger class="notesDisplayTrigger">
+                            <xf:label>Show Notes</xf:label>
+                            <xf:toggle case="c-showNotes"/>
+                        </xf:trigger>
+                    </xf:case>
+                    <xf:case id="c-showNotes">
+                        <xf:trigger class="notesDisplayTrigger">
+                            <xf:label>Hide Notes</xf:label>
+                            <xf:toggle case="c-hidden"/>
+                        </xf:trigger>
+                        <xf:textarea id="notes" ref="vra:notes" type="nodeValue" model="m-child-model">
+                            <xf:label>Notes</xf:label>
+                        </xf:textarea>
+                    </xf:case>
+                </xf:switch>
             </xf:group>
 
             <bfc:dialog id="attrDialog">
