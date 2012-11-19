@@ -4,7 +4,9 @@
                 xmlns="http://www.vraweb.org/vracore4.htm"
                 xmlns:xsd="http://www.w3.org/2001/XMLSchema"
                 xmlns:xf="http://www.w3.org/2002/xforms"
+                xmlns:functx="http://www.functx.com"
                 xpath-default-namespace="http://www.vraweb.org/vracore4.htm">
+    <xsl:include href="functions.xsl"/>
 
     <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"/>
     <xsl:strip-space elements="*"/>
@@ -127,6 +129,13 @@
             <xsl:message>create attribute [name: '<xsl:value-of  select="@name"/>' , type: '<xsl:value-of  select="@type"/>', ref: '<xsl:value-of  select="@ref"/>']</xsl:message>
         </xsl:if>
         <xsl:choose>
+            <!-- ### ignoring common vra attributes #### -->
+            <xsl:when test="functx:isVraAttribute(@name)">
+                <xsl:message>skipping '<xsl:value-of select="@name"/>' attribute</xsl:message>
+            </xsl:when>
+            <xsl:when test="@ref='xml:lang'">
+                <xsl:message>skipping 'xml:lang' attribute</xsl:message>
+            </xsl:when>
             <xsl:when test="exists(@name)">
                 <xsl:element name="bind" namespace="http://www.w3.org/2002/xforms">
                     <xsl:attribute name="nodeset" select="concat('@',@name)"/>
@@ -187,6 +196,5 @@
     <xsl:template match="comment()" priority="20">
         <xsl:copy/>
     </xsl:template>
-
 
 </xsl:stylesheet>

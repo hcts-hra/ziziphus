@@ -8,6 +8,7 @@
         xmlns:functx="http://www.functx.com"
         xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         >
+    <xsl:include href="functions.xsl"/>
 
     <xsl:variable name="vraAttributes"
         select="'@dataDate @extent @href @xml:lang @pref @refid @rules @source @vocab'"/>
@@ -42,28 +43,11 @@
     <xsl:template match="xf:bind[@nodeset='vra:display']" mode="bind" priority="10"/>
     <xsl:template match="xf:bind[@nodeset='vra:notes']" mode="bind" priority="10"/>
     <xsl:template match="xf:bind[contains($vraAttributes,@nodeset)]" mode="bind" priority="10"/>
-
+    <xsl:template match="xf:bind[@xfType='simpleType' and not(exists(.//@type))]" mode="bind" priority="100"/>
 
 
     <xsl:template match="xf:bind[@nodeset='vra:display']" mode="ui" priority="20"/>
     <xsl:template match="xf:bind[@nodeset='vra:notes']" mode="ui" priority="20"/>
     <xsl:template match="xf:bind[contains($vraAttributes,@nodeset)]" mode="ui" priority="20"/>
-
-
-    <xsl:function name="functx:isVraAttribute" as="xsd:boolean?">
-        <xsl:param name="arg" as="xsd:string?"/>
-        <xsl:choose>
-            <xsl:when test="$arg='dataDate'"><xsl:value-of select="true()"/></xsl:when>
-            <xsl:when test="$arg='extent'"><xsl:value-of select="true()"/></xsl:when>
-            <xsl:when test="$arg='href'"><xsl:value-of select="true()"/></xsl:when>
-            <xsl:when test="$arg='lang'"><xsl:value-of select="true()"/></xsl:when>
-            <xsl:when test="$arg='pref'"><xsl:value-of select="true()"/></xsl:when>
-            <xsl:when test="$arg='refid'"><xsl:value-of select="true()"/></xsl:when>
-            <xsl:when test="$arg='rules'"><xsl:value-of select="true()"/></xsl:when>
-            <xsl:when test="$arg='source'"><xsl:value-of select="true()"/></xsl:when>
-            <xsl:when test="$arg='vocab'"><xsl:value-of select="true()"/></xsl:when>
-            <xsl:otherwise><xsl:value-of select="false()"/></xsl:otherwise>
-        </xsl:choose>
-    </xsl:function>
 
 </xsl:stylesheet>
