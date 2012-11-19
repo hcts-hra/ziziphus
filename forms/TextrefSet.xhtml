@@ -172,11 +172,11 @@
                         </xf:input>
                      </td>
                      <td class="contentCol">
-                        <xf:group appearance="minimal">
-                           <xf:input ref="vra:name" type="nodeValue" class="elementName">
+                        <xf:group ref="vra:name" appearance="minimal">
+                           <xf:input type="nodeValue" class="elementName">
                               <xf:label>Name</xf:label>
                            </xf:input>
-                           <xf:select1 ref="vra:name/@type">
+                           <xf:select1 ref="@type">
                               <xf:label>Type</xf:label>
                               <xf:item>
                                  <xf:label>Book</xf:label>
@@ -203,7 +203,7 @@
                                  <xf:value>other</xf:value>
                               </xf:item>
                            </xf:select1>
-                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:name">
+                           <xf:group class="vraAttributes" appearance="minimal">
                               <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                            </xf:group>
                            <xf:trigger class="vraAttributeTrigger">
@@ -214,11 +214,11 @@
                               <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
                            </xf:trigger>
                         </xf:group>
-                        <xf:group appearance="minimal">
-                           <xf:input ref="vra:refid" type="nodeValue">
+                        <xf:group ref="vra:refid" appearance="minimal">
+                           <xf:input type="nodeValue">
                               <xf:label>Refid</xf:label>
                            </xf:input>
-                           <xf:select1 ref="vra:refid/@type">
+                           <xf:select1 ref="@type">
                               <xf:label>Type</xf:label>
                               <xf:item>
                                  <xf:label>Citation</xf:label>
@@ -249,7 +249,7 @@
                                  <xf:value>other</xf:value>
                               </xf:item>
                            </xf:select1>
-                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:refid">
+                           <xf:group class="vraAttributes" appearance="minimal">
                               <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                            </xf:group>
                            <xf:trigger class="vraAttributeTrigger">

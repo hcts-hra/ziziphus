@@ -522,8 +522,8 @@
             <xsl:message>UI-3: create xf:control for '<xsl:value-of select="$vraNodeName"/>' xpath is: '<xsl:value-of select="$path"/>'</xsl:message>
         </xsl:if>
 
-        <xf:group appearance="minimal">
-            <xf:input ref="{$vraNodeName}" type="nodeValue">
+        <xf:group ref="{$vraNodeName}" appearance="minimal">
+            <xf:input type="nodeValue">
                 <xsl:if test="'vra:name'=$vraNodeName">
                     <xsl:attribute name="class">elementName</xsl:attribute>
                 </xsl:if>
@@ -535,7 +535,7 @@
             <xsl:apply-templates select="*[@nodeset='@type' and @attrName='type' and starts-with(@type,'vra:') and @xfType='attribute']" mode="ui"/>
 
             <xf:group class="vraAttributes" appearance="minimal">
-                <xsl:attribute name="ref" select="$vraNodeName"/>
+                <!-- xsl:attribute name="ref" select="$vraNodeName"/ -->
                 <xi:include href="bricks/vraAttributesViewUI.xml"/>
             </xf:group>
 
@@ -602,7 +602,8 @@
         </xsl:if>
 
         <xf:select1>
-            <xsl:attribute name="ref"><xsl:value-of select="$pref"/></xsl:attribute>
+            <!-- <xsl:attribute name="ref"><xsl:value-of select="$pref"/></xsl:attribute> -->
+            <xsl:attribute name="ref" select="'@type'"/>
             <xf:label><xsl:value-of select="$plabel"/></xf:label>
             <xsl:for-each select="xsd:enumeration">
                 <xf:item>

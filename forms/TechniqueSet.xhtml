@@ -115,9 +115,7 @@
                      <technique pref="false"></technique>
                   </techniqueSet>
                </xf:instance>
-               <xf:bind nodeset="instance()">
-                  <xf:bind nodeset="vra:technique"></xf:bind>
-               </xf:bind>
+               <xf:bind nodeset="instance()"></xf:bind>
                <xf:instance id="i-templates">
                   <templates xmlns="http://www.vraweb.org/vracore4.htm">
                      <technique pref="false"></technique>
@@ -150,11 +148,11 @@
                    ref="instance('i-techniqueSet')">
             <table>
                <tbody model="m-child-model" id="r-vraTechnique" xf:repeat-nodeset="vra:technique">
-                  <xf:group appearance="minimal">
-                     <xf:input ref="vra:technique" type="nodeValue">
+                  <xf:group ref="vra:technique" appearance="minimal">
+                     <xf:input type="nodeValue">
                         <xf:label>Technique</xf:label>
                      </xf:input>
-                     <xf:group class="vraAttributes" appearance="minimal" ref="vra:technique">
+                     <xf:group class="vraAttributes" appearance="minimal">
                         <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                      </xf:group>
                      <xf:trigger class="vraAttributeTrigger">

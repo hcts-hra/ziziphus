@@ -152,11 +152,11 @@
                    ref="instance('i-materialSet')">
             <table>
                <tbody model="m-child-model" id="r-vraMaterial" xf:repeat-nodeset="vra:material">
-                  <xf:group appearance="minimal">
-                     <xf:input ref="vra:material" type="nodeValue">
+                  <xf:group ref="vra:material" appearance="minimal">
+                     <xf:input type="nodeValue">
                         <xf:label>Material</xf:label>
                      </xf:input>
-                     <xf:select1 ref="vra:material/@type">
+                     <xf:select1 ref="@type">
                         <xf:label>Type</xf:label>
                         <xf:item>
                            <xf:label>Medium</xf:label>
@@ -171,7 +171,7 @@
                            <xf:value>other</xf:value>
                         </xf:item>
                      </xf:select1>
-                     <xf:group class="vraAttributes" appearance="minimal" ref="vra:material">
+                     <xf:group class="vraAttributes" appearance="minimal">
                         <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                      </xf:group>
                      <xf:trigger class="vraAttributeTrigger">

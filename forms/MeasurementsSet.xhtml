@@ -154,11 +154,11 @@
             <table>
                <tbody model="m-child-model" id="r-vraMeasurements"
                       xf:repeat-nodeset="vra:measurements">
-                  <xf:group appearance="minimal">
-                     <xf:input ref="vra:measurements" type="nodeValue">
+                  <xf:group ref="vra:measurements" appearance="minimal">
+                     <xf:input type="nodeValue">
                         <xf:label>Measurements</xf:label>
                      </xf:input>
-                     <xf:select1 ref="vra:measurements/@type">
+                     <xf:select1 ref="@type">
                         <xf:label>Type</xf:label>
                         <xf:item>
                            <xf:label>Area</xf:label>
@@ -241,7 +241,7 @@
                            <xf:value>other</xf:value>
                         </xf:item>
                      </xf:select1>
-                     <xf:group class="vraAttributes" appearance="minimal" ref="vra:measurements">
+                     <xf:group class="vraAttributes" appearance="minimal">
                         <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                      </xf:group>
                      <xf:trigger class="vraAttributeTrigger">

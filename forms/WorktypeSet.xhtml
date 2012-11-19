@@ -115,9 +115,7 @@
                      <worktype pref="false"></worktype>
                   </worktypeSet>
                </xf:instance>
-               <xf:bind nodeset="instance()">
-                  <xf:bind nodeset="vra:worktype"></xf:bind>
-               </xf:bind>
+               <xf:bind nodeset="instance()"></xf:bind>
                <xf:instance id="i-templates">
                   <templates xmlns="http://www.vraweb.org/vracore4.htm">
                      <worktype pref="false"></worktype>
@@ -150,11 +148,11 @@
                    ref="instance('i-worktypeSet')">
             <table>
                <tbody model="m-child-model" id="r-vraWorktype" xf:repeat-nodeset="vra:worktype">
-                  <xf:group appearance="minimal">
-                     <xf:input ref="vra:worktype" type="nodeValue">
+                  <xf:group ref="vra:worktype" appearance="minimal">
+                     <xf:input type="nodeValue">
                         <xf:label>Worktype</xf:label>
                      </xf:input>
-                     <xf:group class="vraAttributes" appearance="minimal" ref="vra:worktype">
+                     <xf:group class="vraAttributes" appearance="minimal">
                         <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                      </xf:group>
                      <xf:trigger class="vraAttributeTrigger">

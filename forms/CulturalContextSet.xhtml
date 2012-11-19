@@ -115,9 +115,7 @@
                      <culturalContext pref="false"></culturalContext>
                   </culturalContextSet>
                </xf:instance>
-               <xf:bind nodeset="instance()">
-                  <xf:bind nodeset="vra:culturalContext"></xf:bind>
-               </xf:bind>
+               <xf:bind nodeset="instance()"></xf:bind>
                <xf:instance id="i-templates">
                   <templates xmlns="http://www.vraweb.org/vracore4.htm">
                      <culturalContext pref="false"></culturalContext>
@@ -151,11 +149,11 @@
             <table>
                <tbody model="m-child-model" id="r-vraCulturalContext"
                       xf:repeat-nodeset="vra:culturalContext">
-                  <xf:group appearance="minimal">
-                     <xf:input ref="vra:culturalContext" type="nodeValue">
+                  <xf:group ref="vra:culturalContext" appearance="minimal">
+                     <xf:input type="nodeValue">
                         <xf:label>CulturalContext</xf:label>
                      </xf:input>
-                     <xf:group class="vraAttributes" appearance="minimal" ref="vra:culturalContext">
+                     <xf:group class="vraAttributes" appearance="minimal">
                         <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                      </xf:group>
                      <xf:trigger class="vraAttributeTrigger">

@@ -167,11 +167,11 @@
                         </xf:input>
                      </td>
                      <td class="contentCol">
-                        <xf:group appearance="minimal">
-                           <xf:input ref="vra:term" type="nodeValue">
+                        <xf:group ref="vra:term" appearance="minimal">
+                           <xf:input type="nodeValue">
                               <xf:label>Term</xf:label>
                            </xf:input>
-                           <xf:select1 ref="vra:term/@type">
+                           <xf:select1 ref="@type">
                               <xf:label>Type</xf:label>
                               <xf:item>
                                  <xf:label>ConceptTopic</xf:label>
@@ -222,7 +222,7 @@
                                  <xf:value>otherName</xf:value>
                               </xf:item>
                            </xf:select1>
-                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:term">
+                           <xf:group class="vraAttributes" appearance="minimal">
                               <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                            </xf:group>
                            <xf:trigger class="vraAttributeTrigger">

@@ -153,11 +153,11 @@
                    ref="instance('i-relationSet')">
             <table>
                <tbody model="m-child-model" id="r-vraRelation" xf:repeat-nodeset="vra:relation">
-                  <xf:group appearance="minimal">
-                     <xf:input ref="vra:relation" type="nodeValue">
+                  <xf:group ref="vra:relation" appearance="minimal">
+                     <xf:input type="nodeValue">
                         <xf:label>Relation</xf:label>
                      </xf:input>
-                     <xf:select1 ref="vra:relation/@type">
+                     <xf:select1 ref="@type">
                         <xf:label>Type</xf:label>
                         <xf:item>
                            <xf:label>CartoonFor</xf:label>
@@ -344,7 +344,7 @@
                            <xf:value>versionIs</xf:value>
                         </xf:item>
                      </xf:select1>
-                     <xf:group class="vraAttributes" appearance="minimal" ref="vra:relation">
+                     <xf:group class="vraAttributes" appearance="minimal">
                         <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                      </xf:group>
                      <xf:trigger class="vraAttributeTrigger">

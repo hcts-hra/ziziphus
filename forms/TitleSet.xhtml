@@ -152,11 +152,11 @@
                    ref="instance('i-titleSet')">
             <table>
                <tbody model="m-child-model" id="r-vraTitle" xf:repeat-nodeset="vra:title">
-                  <xf:group appearance="minimal">
-                     <xf:input ref="vra:title" type="nodeValue">
+                  <xf:group ref="vra:title" appearance="minimal">
+                     <xf:input type="nodeValue">
                         <xf:label>Title</xf:label>
                      </xf:input>
-                     <xf:select1 ref="vra:title/@type">
+                     <xf:select1 ref="@type">
                         <xf:label>Type</xf:label>
                         <xf:item>
                            <xf:label>BrandName</xf:label>
@@ -211,7 +211,7 @@
                            <xf:value>other</xf:value>
                         </xf:item>
                      </xf:select1>
-                     <xf:group class="vraAttributes" appearance="minimal" ref="vra:title">
+                     <xf:group class="vraAttributes" appearance="minimal">
                         <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                      </xf:group>
                      <xf:trigger class="vraAttributeTrigger">

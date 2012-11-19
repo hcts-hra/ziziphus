@@ -122,8 +122,6 @@
                <xf:bind nodeset="instance()">
                   <xf:bind nodeset="vra:inscription">
                      <xf:bind nodeset="@pref" type="boolean"></xf:bind>
-                     <xf:bind nodeset="vra:author"></xf:bind>
-                     <xf:bind nodeset="vra:position"></xf:bind>
                      <xf:bind nodeset="vra:text">
                         <xf:bind nodeset="@type" type="vra:inscriptionTextTypeType"></xf:bind>
                      </xf:bind>
@@ -173,11 +171,11 @@
                         </xf:input>
                      </td>
                      <td class="contentCol">
-                        <xf:group appearance="minimal">
-                           <xf:input ref="vra:author" type="nodeValue">
+                        <xf:group ref="vra:author" appearance="minimal">
+                           <xf:input type="nodeValue">
                               <xf:label>Author</xf:label>
                            </xf:input>
-                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:author">
+                           <xf:group class="vraAttributes" appearance="minimal">
                               <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                            </xf:group>
                            <xf:trigger class="vraAttributeTrigger">
@@ -188,11 +186,11 @@
                               <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
                            </xf:trigger>
                         </xf:group>
-                        <xf:group appearance="minimal">
-                           <xf:input ref="vra:position" type="nodeValue">
+                        <xf:group ref="vra:position" appearance="minimal">
+                           <xf:input type="nodeValue">
                               <xf:label>Position</xf:label>
                            </xf:input>
-                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:position">
+                           <xf:group class="vraAttributes" appearance="minimal">
                               <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                            </xf:group>
                            <xf:trigger class="vraAttributeTrigger">
@@ -203,11 +201,11 @@
                               <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
                            </xf:trigger>
                         </xf:group>
-                        <xf:group appearance="minimal">
-                           <xf:input ref="vra:text" type="nodeValue">
+                        <xf:group ref="vra:text" appearance="minimal">
+                           <xf:input type="nodeValue">
                               <xf:label>Text</xf:label>
                            </xf:input>
-                           <xf:select1 ref="vra:text/@type">
+                           <xf:select1 ref="@type">
                               <xf:label>Type</xf:label>
                               <xf:item>
                                  <xf:label>Signature</xf:label>
@@ -238,7 +236,7 @@
                                  <xf:value>other</xf:value>
                               </xf:item>
                            </xf:select1>
-                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:text">
+                           <xf:group class="vraAttributes" appearance="minimal">
                               <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                            </xf:group>
                            <xf:trigger class="vraAttributeTrigger">

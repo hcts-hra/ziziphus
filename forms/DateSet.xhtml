@@ -173,7 +173,7 @@
                         </xf:input>
                      </td>
                      <td class="contentCol">
-                        <xf:select1 ref="vra:date/@type">
+                        <xf:select1 ref="@type">
                            <xf:label>Type</xf:label>
                            <xf:item>
                               <xf:label>Alteration</xf:label>
@@ -236,11 +236,11 @@
                               <xf:value>other</xf:value>
                            </xf:item>
                         </xf:select1>
-                        <xf:group appearance="minimal">
-                           <xf:input ref="vra:earliestDate" type="nodeValue">
+                        <xf:group ref="vra:earliestDate" appearance="minimal">
+                           <xf:input type="nodeValue">
                               <xf:label>EarliestDate</xf:label>
                            </xf:input>
-                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:earliestDate">
+                           <xf:group class="vraAttributes" appearance="minimal">
                               <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                            </xf:group>
                            <xf:trigger class="vraAttributeTrigger">
@@ -251,11 +251,11 @@
                               <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
                            </xf:trigger>
                         </xf:group>
-                        <xf:group appearance="minimal">
-                           <xf:input ref="vra:latestDate" type="nodeValue">
+                        <xf:group ref="vra:latestDate" appearance="minimal">
+                           <xf:input type="nodeValue">
                               <xf:label>LatestDate</xf:label>
                            </xf:input>
-                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:latestDate">
+                           <xf:group class="vraAttributes" appearance="minimal">
                               <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                            </xf:group>
                            <xf:trigger class="vraAttributeTrigger">

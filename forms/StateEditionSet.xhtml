@@ -124,8 +124,6 @@
                      <xf:bind nodeset="@count"></xf:bind>
                      <xf:bind nodeset="@num"></xf:bind>
                      <xf:bind nodeset="@type" type="vra:stateEditionTypeType"></xf:bind>
-                     <xf:bind nodeset="vra:description"></xf:bind>
-                     <xf:bind nodeset="vra:name"></xf:bind>
                   </xf:bind>
                </xf:bind>
                <xf:instance id="i-templates">
@@ -172,11 +170,11 @@
                         </xf:input>
                      </td>
                      <td class="contentCol">
-                        <xf:group appearance="minimal">
-                           <xf:input ref="vra:name" type="nodeValue" class="elementName">
+                        <xf:group ref="vra:name" appearance="minimal">
+                           <xf:input type="nodeValue" class="elementName">
                               <xf:label>Name</xf:label>
                            </xf:input>
-                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:name">
+                           <xf:group class="vraAttributes" appearance="minimal">
                               <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                            </xf:group>
                            <xf:trigger class="vraAttributeTrigger">
@@ -197,7 +195,7 @@
                               <xf:label>num</xf:label>
                            </xf:input>
                         </xf:group>
-                        <xf:select1 ref="vra:stateEdition/@type">
+                        <xf:select1 ref="@type">
                            <xf:label>Type</xf:label>
                            <xf:item>
                               <xf:label>Edition</xf:label>
@@ -216,11 +214,11 @@
                               <xf:value>other</xf:value>
                            </xf:item>
                         </xf:select1>
-                        <xf:group appearance="minimal">
-                           <xf:input ref="vra:description" type="nodeValue">
+                        <xf:group ref="vra:description" appearance="minimal">
+                           <xf:input type="nodeValue">
                               <xf:label>Description</xf:label>
                            </xf:input>
-                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:description">
+                           <xf:group class="vraAttributes" appearance="minimal">
                               <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                            </xf:group>
                            <xf:trigger class="vraAttributeTrigger">

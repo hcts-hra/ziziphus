@@ -115,9 +115,7 @@
                      <stylePeriod pref="false"></stylePeriod>
                   </stylePeriodSet>
                </xf:instance>
-               <xf:bind nodeset="instance()">
-                  <xf:bind nodeset="vra:stylePeriod"></xf:bind>
-               </xf:bind>
+               <xf:bind nodeset="instance()"></xf:bind>
                <xf:instance id="i-templates">
                   <templates xmlns="http://www.vraweb.org/vracore4.htm">
                      <stylePeriod pref="false"></stylePeriod>
@@ -150,11 +148,11 @@
                    ref="instance('i-stylePeriodSet')">
             <table>
                <tbody model="m-child-model" id="r-vraStylePeriod" xf:repeat-nodeset="vra:stylePeriod">
-                  <xf:group appearance="minimal">
-                     <xf:input ref="vra:stylePeriod" type="nodeValue">
+                  <xf:group ref="vra:stylePeriod" appearance="minimal">
+                     <xf:input type="nodeValue">
                         <xf:label>StylePeriod</xf:label>
                      </xf:input>
-                     <xf:group class="vraAttributes" appearance="minimal" ref="vra:stylePeriod">
+                     <xf:group class="vraAttributes" appearance="minimal">
                         <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                      </xf:group>
                      <xf:trigger class="vraAttributeTrigger">
