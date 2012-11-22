@@ -154,10 +154,19 @@
             <param name="subformName" value="AgentSet"/>
         </antcall>
     </target>
-
+    <target name="generate-MeasurementsSet-form" depends="prepare" description="generate the MeasurementsSet form">
+        <antcall target="generate-subform">
+            <param name="subformName" value="MeasurementsSet"/>
+        </antcall>
+    </target>
     <target name="generate-StateEditionSet-form" depends="prepare" description="generate the StateEditionSet form">
         <antcall target="generate-subform">
             <param name="subformName" value="StateEditionSet"/>
+        </antcall>
+    </target>
+    <target name="generate-RelationSet-form" depends="prepare" description="generate the RelationSet form">
+        <antcall target="generate-subform">
+            <param name="subformName" value="RelationSet"/>
         </antcall>
     </target>
 

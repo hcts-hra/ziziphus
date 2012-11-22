@@ -144,25 +144,41 @@
                           origin="instance('i-templates')/vra:description"></xf:insert>
             </xf:trigger>
          </div>
-         <xf:group appearance="minimal" class="vraRecord" model="m-child-model"
+         <xf:group id="outerGroup" appearance="minimal" model="m-child-model"
                    ref="instance('i-descriptionSet')">
+            <xf:label></xf:label>
+            <xf:action ev:event="reset-dialog"></xf:action>
+            <xf:action ev:event="init-dialog">
+               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@dataDate"></xf:setvalue>
+               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@extent"></xf:setvalue>
+               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@href"></xf:setvalue>
+               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@refid"></xf:setvalue>
+               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@rules"></xf:setvalue>
+               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@source"></xf:setvalue>
+               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@vocab"></xf:setvalue>
+               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@lang"></xf:setvalue>
+               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@transliteration"></xf:setvalue>
+               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@script"></xf:setvalue>
+               <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]"
+                          origin="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/*[local-name()=instance('i-util')/currentElement]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:insert>
+            </xf:action>
             <table>
                <tbody model="m-child-model" id="r-vraDescription" xf:repeat-nodeset="vra:description">
-                  <xf:group ref="vra:description" appearance="minimal">
-                     <xf:input type="nodeValue">
-                        <xf:label>Description</xf:label>
-                     </xf:input>
-                     <xf:group class="vraAttributes" appearance="minimal">
-                        <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
-                     </xf:group>
-                     <xf:trigger class="vraAttributeTrigger">
-                        <xf:label>...</xf:label>
-                        <xf:setvalue ref="instance('i-util')/currentElement" value="'description'"></xf:setvalue>
-                        <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]"
-                                   origin="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:description/@*"></xf:insert>
-                        <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
-                     </xf:trigger>
-                  </xf:group>
+                  <tr>
+                     <td class="prefCol">
+                        <xf:input ref="@pref">
+                           <xf:label>pref</xf:label>
+                           <xf:hint>preferred</xf:hint>
+                        </xf:input>
+                     </td>
+                     <td class="contentCol"></td>
+                     <td class="triggerCol">
+                        <xf:trigger>
+                           <xf:label>x</xf:label>
+                           <xf:delete nodeset="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]"></xf:delete>
+                        </xf:trigger>
+                     </td>
+                  </tr>
                </tbody>
             </table>
             <xf:group class="showNotesDisplay">
@@ -174,13 +190,13 @@
                <xf:group ref="instance('i-descriptionSetController')/showNotesDisplay">
                   <xf:group appearance="minimal" class="elementGroup" ref="instance('i-descriptionSet')">
                      <xf:label></xf:label>
-                     <xf:textarea ref="vra:display" type="nodeValue" model="m-child-model">
+                     <xf:textarea ref="vra:display" model="m-child-model">
                         <xf:label>Display:</xf:label>
                      </xf:textarea>
                   </xf:group>
                   <xf:group appearance="minimal" class="elementGroup" ref="instance('i-descriptionSet')">
                      <xf:label></xf:label>
-                     <xf:textarea ref="vra:notes" type="nodeValue" model="m-child-model">
+                     <xf:textarea ref="vra:notes" model="m-child-model">
                         <xf:label>Notes</xf:label>
                      </xf:textarea>
                   </xf:group>

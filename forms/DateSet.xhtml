@@ -161,8 +161,24 @@
                           origin="instance('i-templates')/vra:date"></xf:insert>
             </xf:trigger>
          </div>
-         <xf:group appearance="minimal" class="vraRecord" model="m-child-model"
+         <xf:group id="outerGroup" appearance="minimal" model="m-child-model"
                    ref="instance('i-dateSet')">
+            <xf:label></xf:label>
+            <xf:action ev:event="reset-dialog"></xf:action>
+            <xf:action ev:event="init-dialog">
+               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@dataDate"></xf:setvalue>
+               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@extent"></xf:setvalue>
+               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@href"></xf:setvalue>
+               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@refid"></xf:setvalue>
+               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@rules"></xf:setvalue>
+               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@source"></xf:setvalue>
+               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@vocab"></xf:setvalue>
+               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@lang"></xf:setvalue>
+               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@transliteration"></xf:setvalue>
+               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@script"></xf:setvalue>
+               <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]"
+                          origin="instance('i-dateSet')/vra:date[index('r-vraDate')]/*[local-name()=instance('i-util')/currentElement]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:insert>
+            </xf:action>
             <table>
                <tbody model="m-child-model" id="r-vraDate" xf:repeat-nodeset="vra:date">
                   <tr>
@@ -173,7 +189,7 @@
                         </xf:input>
                      </td>
                      <td class="contentCol">
-                        <xf:select1 ref="@type">
+                        <xf:select1 ref="vra:date/@type">
                            <xf:label>Type</xf:label>
                            <xf:item>
                               <xf:label>Alteration</xf:label>
@@ -236,33 +252,41 @@
                               <xf:value>other</xf:value>
                            </xf:item>
                         </xf:select1>
-                        <xf:group ref="vra:earliestDate" appearance="minimal">
-                           <xf:input type="nodeValue">
+                        <xf:group appearance="minimal">
+                           <xf:input ref="vra:earliestDate">
                               <xf:label>EarliestDate</xf:label>
                            </xf:input>
-                           <xf:group class="vraAttributes" appearance="minimal">
+                           <xf:input ref="vra:earliestDate/@circa">
+                              <xf:label>circa</xf:label>
+                           </xf:input>
+                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:earliestDate">
                               <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                            </xf:group>
                            <xf:trigger class="vraAttributeTrigger">
                               <xf:label>...</xf:label>
-                              <xf:setvalue ref="instance('i-util')/currentElement" value="'earliestDate'"></xf:setvalue>
-                              <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]"
-                                         origin="instance('i-dateSet')/vra:date[index('r-vraDate')]/vra:earliestDate/@*"></xf:insert>
+                              <xf:action>
+                                 <xf:setvalue ref="instance('i-util')/currentElement" value="'earliestDate'"></xf:setvalue>
+                                 <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
+                              </xf:action>
                               <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
                            </xf:trigger>
                         </xf:group>
-                        <xf:group ref="vra:latestDate" appearance="minimal">
-                           <xf:input type="nodeValue">
+                        <xf:group appearance="minimal">
+                           <xf:input ref="vra:latestDate">
                               <xf:label>LatestDate</xf:label>
                            </xf:input>
-                           <xf:group class="vraAttributes" appearance="minimal">
+                           <xf:input ref="vra:latestDate/@circa">
+                              <xf:label>circa</xf:label>
+                           </xf:input>
+                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:latestDate">
                               <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                            </xf:group>
                            <xf:trigger class="vraAttributeTrigger">
                               <xf:label>...</xf:label>
-                              <xf:setvalue ref="instance('i-util')/currentElement" value="'latestDate'"></xf:setvalue>
-                              <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]"
-                                         origin="instance('i-dateSet')/vra:date[index('r-vraDate')]/vra:latestDate/@*"></xf:insert>
+                              <xf:action>
+                                 <xf:setvalue ref="instance('i-util')/currentElement" value="'latestDate'"></xf:setvalue>
+                                 <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
+                              </xf:action>
                               <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
                            </xf:trigger>
                         </xf:group>
@@ -285,13 +309,13 @@
                <xf:group ref="instance('i-dateSetController')/showNotesDisplay">
                   <xf:group appearance="minimal" class="elementGroup" ref="instance('i-dateSet')">
                      <xf:label></xf:label>
-                     <xf:textarea ref="vra:display" type="nodeValue" model="m-child-model">
+                     <xf:textarea ref="vra:display" model="m-child-model">
                         <xf:label>Display:</xf:label>
                      </xf:textarea>
                   </xf:group>
                   <xf:group appearance="minimal" class="elementGroup" ref="instance('i-dateSet')">
                      <xf:label></xf:label>
-                     <xf:textarea ref="vra:notes" type="nodeValue" model="m-child-model">
+                     <xf:textarea ref="vra:notes" model="m-child-model">
                         <xf:label>Notes</xf:label>
                      </xf:textarea>
                   </xf:group>

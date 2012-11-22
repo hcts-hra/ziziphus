@@ -149,212 +149,232 @@
                           origin="instance('i-templates')/vra:relation"></xf:insert>
             </xf:trigger>
          </div>
-         <xf:group appearance="minimal" class="vraRecord" model="m-child-model"
+         <xf:group id="outerGroup" appearance="minimal" model="m-child-model"
                    ref="instance('i-relationSet')">
+            <xf:label></xf:label>
+            <xf:action ev:event="reset-dialog"></xf:action>
+            <xf:action ev:event="init-dialog">
+               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@dataDate"></xf:setvalue>
+               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@extent"></xf:setvalue>
+               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@href"></xf:setvalue>
+               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@refid"></xf:setvalue>
+               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@rules"></xf:setvalue>
+               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@source"></xf:setvalue>
+               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@vocab"></xf:setvalue>
+               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@lang"></xf:setvalue>
+               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@transliteration"></xf:setvalue>
+               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@script"></xf:setvalue>
+               <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]"
+                          origin="instance('i-relationSet')/vra:relation[index('r-vraRelation')]/*[local-name()=instance('i-util')/currentElement]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:insert>
+            </xf:action>
             <table>
                <tbody model="m-child-model" id="r-vraRelation" xf:repeat-nodeset="vra:relation">
-                  <xf:group ref="vra:relation" appearance="minimal">
-                     <xf:input type="nodeValue">
-                        <xf:label>Relation</xf:label>
-                     </xf:input>
-                     <xf:select1 ref="@type">
-                        <xf:label>Type</xf:label>
-                        <xf:item>
-                           <xf:label>CartoonFor</xf:label>
-                           <xf:value>cartoonFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>CartoonIs</xf:label>
-                           <xf:value>cartoonIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>ComponentOf</xf:label>
-                           <xf:value>componentOf</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>ComponentIs</xf:label>
-                           <xf:value>componentIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>CopyAfter</xf:label>
-                           <xf:value>copyAfter</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>CopyIs</xf:label>
-                           <xf:value>copyIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>CounterProofFor</xf:label>
-                           <xf:value>counterProofFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>CounterProofIs</xf:label>
-                           <xf:value>counterProofIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>Depicts</xf:label>
-                           <xf:value>depicts</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>DepictedIn</xf:label>
-                           <xf:value>depictedIn</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>DerivedFrom</xf:label>
-                           <xf:value>derivedFrom</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>SourceFor</xf:label>
-                           <xf:value>sourceFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>DesignedFor</xf:label>
-                           <xf:value>designedFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>ContextIs</xf:label>
-                           <xf:value>contextIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>ExhibitedAt</xf:label>
-                           <xf:value>exhibitedAt</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>VenueFor</xf:label>
-                           <xf:value>venueFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>FacsimileOf</xf:label>
-                           <xf:value>facsimileOf</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>FacsimileIs</xf:label>
-                           <xf:value>facsimileIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>FormerlyPartOf</xf:label>
-                           <xf:value>formerlyPartOf</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>FormerlyLargerContextFor</xf:label>
-                           <xf:value>formerlyLargerContextFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>ImageOf</xf:label>
-                           <xf:value>imageOf</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>ImageIs</xf:label>
-                           <xf:value>imageIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>MateOf</xf:label>
-                           <xf:value>mateOf</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>ModelFor</xf:label>
-                           <xf:value>modelFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>ModelIs</xf:label>
-                           <xf:value>modelIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>PartOf</xf:label>
-                           <xf:value>partOf</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>LargerContextFor</xf:label>
-                           <xf:value>largerContextFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>PartnerInSetWith</xf:label>
-                           <xf:value>partnerInSetWith</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>PendantOf</xf:label>
-                           <xf:value>pendantOf</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>PlanFor</xf:label>
-                           <xf:value>planFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>PlanIs</xf:label>
-                           <xf:value>planIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>PrepatoryFor</xf:label>
-                           <xf:value>prepatoryFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>BasedOn</xf:label>
-                           <xf:value>basedOn</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>PrintingPlateFor</xf:label>
-                           <xf:value>printingPlateFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>PrintingPlateIs</xf:label>
-                           <xf:value>printingPlateIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>PrototypeFor</xf:label>
-                           <xf:value>prototypeFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>PrototypeIs</xf:label>
-                           <xf:value>prototypeIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>RelatedTo</xf:label>
-                           <xf:value>relatedTo</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>ReliefFor</xf:label>
-                           <xf:value>reliefFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>ImpressionIs</xf:label>
-                           <xf:value>impressionIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>ReplicaOf</xf:label>
-                           <xf:value>replicaOf</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>ReplicaIs</xf:label>
-                           <xf:value>replicaIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>StudyFor</xf:label>
-                           <xf:value>studyFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>StudyIs</xf:label>
-                           <xf:value>studyIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>VersionOf</xf:label>
-                           <xf:value>versionOf</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>VersionIs</xf:label>
-                           <xf:value>versionIs</xf:value>
-                        </xf:item>
-                     </xf:select1>
-                     <xf:group class="vraAttributes" appearance="minimal">
-                        <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
-                     </xf:group>
-                     <xf:trigger class="vraAttributeTrigger">
-                        <xf:label>...</xf:label>
-                        <xf:setvalue ref="instance('i-util')/currentElement" value="'relation'"></xf:setvalue>
-                        <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]"
-                                   origin="instance('i-relationSet')/vra:relation[index('r-vraRelation')]/vra:relation/@*"></xf:insert>
-                        <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
-                     </xf:trigger>
-                  </xf:group>
+                  <tr>
+                     <td class="prefCol">
+                        <xf:input ref="@pref">
+                           <xf:label>pref</xf:label>
+                           <xf:hint>preferred</xf:hint>
+                        </xf:input>
+                     </td>
+                     <td class="contentCol">
+                        <xf:input ref="vra:relation/@relids">
+                           <xf:label>relids</xf:label>
+                        </xf:input>
+                        <xf:select1 ref="vra:relation/@type">
+                           <xf:label>Type</xf:label>
+                           <xf:item>
+                              <xf:label>CartoonFor</xf:label>
+                              <xf:value>cartoonFor</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>CartoonIs</xf:label>
+                              <xf:value>cartoonIs</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>ComponentOf</xf:label>
+                              <xf:value>componentOf</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>ComponentIs</xf:label>
+                              <xf:value>componentIs</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>CopyAfter</xf:label>
+                              <xf:value>copyAfter</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>CopyIs</xf:label>
+                              <xf:value>copyIs</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>CounterProofFor</xf:label>
+                              <xf:value>counterProofFor</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>CounterProofIs</xf:label>
+                              <xf:value>counterProofIs</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>Depicts</xf:label>
+                              <xf:value>depicts</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>DepictedIn</xf:label>
+                              <xf:value>depictedIn</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>DerivedFrom</xf:label>
+                              <xf:value>derivedFrom</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>SourceFor</xf:label>
+                              <xf:value>sourceFor</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>DesignedFor</xf:label>
+                              <xf:value>designedFor</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>ContextIs</xf:label>
+                              <xf:value>contextIs</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>ExhibitedAt</xf:label>
+                              <xf:value>exhibitedAt</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>VenueFor</xf:label>
+                              <xf:value>venueFor</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>FacsimileOf</xf:label>
+                              <xf:value>facsimileOf</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>FacsimileIs</xf:label>
+                              <xf:value>facsimileIs</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>FormerlyPartOf</xf:label>
+                              <xf:value>formerlyPartOf</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>FormerlyLargerContextFor</xf:label>
+                              <xf:value>formerlyLargerContextFor</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>ImageOf</xf:label>
+                              <xf:value>imageOf</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>ImageIs</xf:label>
+                              <xf:value>imageIs</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>MateOf</xf:label>
+                              <xf:value>mateOf</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>ModelFor</xf:label>
+                              <xf:value>modelFor</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>ModelIs</xf:label>
+                              <xf:value>modelIs</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>PartOf</xf:label>
+                              <xf:value>partOf</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>LargerContextFor</xf:label>
+                              <xf:value>largerContextFor</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>PartnerInSetWith</xf:label>
+                              <xf:value>partnerInSetWith</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>PendantOf</xf:label>
+                              <xf:value>pendantOf</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>PlanFor</xf:label>
+                              <xf:value>planFor</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>PlanIs</xf:label>
+                              <xf:value>planIs</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>PrepatoryFor</xf:label>
+                              <xf:value>prepatoryFor</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>BasedOn</xf:label>
+                              <xf:value>basedOn</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>PrintingPlateFor</xf:label>
+                              <xf:value>printingPlateFor</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>PrintingPlateIs</xf:label>
+                              <xf:value>printingPlateIs</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>PrototypeFor</xf:label>
+                              <xf:value>prototypeFor</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>PrototypeIs</xf:label>
+                              <xf:value>prototypeIs</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>RelatedTo</xf:label>
+                              <xf:value>relatedTo</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>ReliefFor</xf:label>
+                              <xf:value>reliefFor</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>ImpressionIs</xf:label>
+                              <xf:value>impressionIs</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>ReplicaOf</xf:label>
+                              <xf:value>replicaOf</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>ReplicaIs</xf:label>
+                              <xf:value>replicaIs</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>StudyFor</xf:label>
+                              <xf:value>studyFor</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>StudyIs</xf:label>
+                              <xf:value>studyIs</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>VersionOf</xf:label>
+                              <xf:value>versionOf</xf:value>
+                           </xf:item>
+                           <xf:item>
+                              <xf:label>VersionIs</xf:label>
+                              <xf:value>versionIs</xf:value>
+                           </xf:item>
+                        </xf:select1>
+                     </td>
+                     <td class="triggerCol">
+                        <xf:trigger>
+                           <xf:label>x</xf:label>
+                           <xf:delete nodeset="instance('i-relationSet')/vra:relation[index('r-vraRelation')]"></xf:delete>
+                        </xf:trigger>
+                     </td>
+                  </tr>
                </tbody>
             </table>
             <xf:group class="showNotesDisplay">
@@ -366,13 +386,13 @@
                <xf:group ref="instance('i-relationSetController')/showNotesDisplay">
                   <xf:group appearance="minimal" class="elementGroup" ref="instance('i-relationSet')">
                      <xf:label></xf:label>
-                     <xf:textarea ref="vra:display" type="nodeValue" model="m-child-model">
+                     <xf:textarea ref="vra:display" model="m-child-model">
                         <xf:label>Display:</xf:label>
                      </xf:textarea>
                   </xf:group>
                   <xf:group appearance="minimal" class="elementGroup" ref="instance('i-relationSet')">
                      <xf:label></xf:label>
-                     <xf:textarea ref="vra:notes" type="nodeValue" model="m-child-model">
+                     <xf:textarea ref="vra:notes" model="m-child-model">
                         <xf:label>Notes</xf:label>
                      </xf:textarea>
                   </xf:group>
