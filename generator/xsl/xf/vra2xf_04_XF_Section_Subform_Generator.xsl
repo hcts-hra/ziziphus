@@ -477,9 +477,23 @@
                         </xsl:apply-templates>
                     </xsl:when>
                     <xsl:when test="'simpleType'=$xfType">
-                        <xsl:call-template name="artf-vra-child">
-                            <xsl:with-param name="path"/>
-                        </xsl:call-template>
+                        <xf:group appearance="minimal">
+                            <xsl:call-template name="ui-nodeset-vra"/>
+
+                            <xf:group class="vraAttributes" appearance="minimal" ref=".">
+                                <xi:include href="bricks/vraAttributesViewUI.xml"/>
+                            </xf:group>
+
+                            <xf:trigger class="vraAttributeTrigger">
+                                <xf:label>...</xf:label>
+                                <xf:action>
+                                    <xf:setvalue ref="instance('i-util')/currentElement" value=".">
+                                    </xf:setvalue>
+                                    <xf:dispatch name="init-dialog" targetid="outerGroup"/>
+                                </xf:action>
+                                <bfc:show dialog="attrDialog" ev:event="DOMActivate"/>
+                            </xf:trigger>
+                        </xf:group>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:message terminate="yes">This rule must never be matched!</xsl:message>
@@ -497,12 +511,9 @@
         </tr>
     </xsl:template>
 
-    <!-- artifact node's (agent etc.) immediate VRA child ;
-         This is also used (by name) with simpleType artifacts (like Measurements).
-    -->
-    <xsl:template name="artf-vra-child" match="/xf:bind/xf:bind/xf:bind[@nodeset=concat('vra:',$vraSectionNode)]/xf:bind[@nodeset=concat('vra:',$vraArtifactNode)]/xf:bind[starts-with(@nodeset,'vra:')]" mode="ui" priority="40">
+    <!-- artifact node's (agent etc.) immediate VRA child -->
+    <xsl:template match="/xf:bind/xf:bind/xf:bind[@nodeset=concat('vra:',$vraSectionNode)]/xf:bind[@nodeset=concat('vra:',$vraArtifactNode)]/xf:bind[starts-with(@nodeset,'vra:')]" mode="ui" priority="40">
         <xsl:param name="path" select="''" />
-
         <xsl:variable name="vraNodeName" select="@nodeset"/>
 
         <xsl:if test="$debugEnabled">
@@ -532,45 +543,54 @@
 
     <!-- priority=15 because ignores have 20 -->
     <xsl:template name="ui-nodeset-vra" match="xf:bind[starts-with(@nodeset,'vra:')]" mode="ui" priority="15">
-        <xsl:param name="path" select="''" />
+        <xsl:param name="path"/>
 
         <xsl:variable name="vraNodeName" select="@nodeset"/>
-        <xsl:variable name="currentPath"><xsl:value-of select="$path"/><xsl:value-of select="$vraNodeName"/></xsl:variable>
+        <xsl:variable name="isArtifactNode" select="boolean((@nodeset=concat('vra:',$vraArtifactNode)) and (../local-name()='bind') and (../@nodeset=concat('vra:',$vraSectionNode)))"/>
+
+        <xsl:variable name="currentPath">
+            <xsl:choose>
+                <xsl:when test="$isArtifactNode">.</xsl:when>
+                <xsl:otherwise><xsl:value-of select="functx:concat-xpath($path, $vraNodeName)"/></xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
 
         <xsl:if test="$debugEnabled">
-            <xsl:message>UI-4: <xsl:value-of select="$currentPath"/></xsl:message>
+            <xsl:message>UI-4: <xsl:value-of select="$currentPath"/>#</xsl:message>
         </xsl:if>
 
         <xsl:if test="@xfType='simpleType'">
             <xf:input>
                 <xsl:attribute name="ref"><xsl:value-of select="$currentPath"/></xsl:attribute>
-                <xsl:if test="'vra:name'=$vraNodeName">
+                <xsl:if test="not($isArtifactNode) and ('vra:name'=$vraNodeName)">
                     <xsl:attribute name="class">elementName</xsl:attribute>
                 </xsl:if>
-                <xf:label>
-                    <xsl:value-of select="functx:capitalize-first($vraNodeName)"/>
-                </xf:label>
+                <xsl:if test="not($isArtifactNode)">
+                    <xf:label>
+                        <xsl:value-of select="functx:capitalize-first($vraNodeName)"/>
+                    </xf:label>
+                </xsl:if>
             </xf:input>
         </xsl:if>
 
-        <xsl:apply-templates select="xf:bind[(@nodeset='@type') and (@attrName='type') and starts-with(@type,'vra:') and (@xfType='attribute')]" mode="ui"/>
-
-        <xsl:apply-templates select="xf:bind[@nodeset!='@type']" mode="ui">
-            <xsl:with-param name="path"><xsl:value-of select="$currentPath"/>/</xsl:with-param>
+        <xsl:apply-templates select="xf:bind" mode="ui">
+            <xsl:with-param name="path" select="$currentPath"/>
         </xsl:apply-templates>
     </xsl:template>
 
-    <!-- VRA type -->
-    <xsl:template match="xf:bind[starts-with(@type,'vra:') and (@xfType='attribute')]" mode="ui" priority="30">
+    <!-- attribute VRA type -->
+    <xsl:template match="xf:bind[(@xfType='attribute') and starts-with(@type,'vra:')]" mode="ui" priority="30">
+        <xsl:param name="path" select="../@nodeset"/>
+
         <xsl:variable name="vraAttrName" select="@attrName"/>
         <xsl:variable name="vraTypeName" select="substring-after(@type,'vra:')"/>
 
         <xsl:if test="$debugEnabled">
-            <xsl:message>UI-5 (type): <xsl:value-of select="@nodeset"/>/<xsl:value-of select="@type"/></xsl:message>
+            <xsl:message>UI-5  (type): <xsl:value-of select="$path"/>, <xsl:value-of select="@nodeset"/>, <xsl:value-of select="@type"/></xsl:message>
         </xsl:if>
 
         <xsl:apply-templates select="$vraTypes/*/xsd:simpleType[@name=$vraTypeName][1]/*" mode="ui">
-            <xsl:with-param name="pref"><xsl:value-of select="../@nodeset"/>/@<xsl:value-of select="$vraAttrName"/></xsl:with-param>
+            <xsl:with-param name="pref"><xsl:value-of select="functx:concat-xpath($path,concat('@',$vraAttrName))"/></xsl:with-param>
             <xsl:with-param name="plabel"><xsl:value-of select="functx:capitalize-first($vraAttrName)"/></xsl:with-param>
         </xsl:apply-templates>
     </xsl:template>
@@ -614,7 +634,7 @@
         <xsl:param name="path" select="''" />
 
         <xsl:variable name="vraNodeName" select="@nodeset"/>
-        <xsl:variable name="currentPath"><xsl:value-of select="$path"/><xsl:value-of select="$vraNodeName"/></xsl:variable>
+        <xsl:variable name="currentPath" select="functx:concat-xpath($path,$vraNodeName)"></xsl:variable>
 
         <xsl:if test="$debugEnabled">
             <xsl:message>UI-7: <xsl:value-of select="$currentPath"/></xsl:message>
@@ -655,6 +675,18 @@
         <xsl:choose>
             <xsl:when test="starts-with($arg, 'vra')"><xsl:value-of select="substring-after($arg, 'vra:')"/></xsl:when>
             <xsl:otherwise><xsl:value-of select="$arg"/></xsl:otherwise>
+        </xsl:choose>
+    </xsl:function>
+
+    <xsl:function name="functx:concat-xpath" as="xsd:string?">
+        <xsl:param name="arg1" as="xsd:string?"/>
+        <xsl:param name="arg2" as="xsd:string?"/>
+        <xsl:choose>
+            <xsl:when test="0=string-length($arg1)"><xsl:value-of select="$arg2"/></xsl:when>
+            <xsl:when test="0=string-length($arg2)"><xsl:value-of select="$arg1"/></xsl:when>
+            <xsl:when test="'.'=$arg1"><xsl:value-of select="$arg2"/></xsl:when>
+            <xsl:when test="ends-with($arg1,'/')"><xsl:value-of select="concat($arg1,$arg2)"/></xsl:when>
+            <xsl:otherwise><xsl:value-of select="concat($arg1,concat('/',$arg2))"/></xsl:otherwise>
         </xsl:choose>
     </xsl:function>
 

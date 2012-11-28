@@ -174,16 +174,14 @@
                      </td>
                      <td class="contentCol">
                         <xf:group appearance="minimal">
-                           <xf:input ref="vra:culturalContext">
-                              <xf:label>CulturalContext</xf:label>
-                           </xf:input>
-                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:culturalContext">
+                           <xf:input ref="."></xf:input>
+                           <xf:group class="vraAttributes" appearance="minimal" ref=".">
                               <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                            </xf:group>
                            <xf:trigger class="vraAttributeTrigger">
                               <xf:label>...</xf:label>
                               <xf:action>
-                                 <xf:setvalue ref="instance('i-util')/currentElement" value="'culturalContext'"></xf:setvalue>
+                                 <xf:setvalue ref="instance('i-util')/currentElement" value="."></xf:setvalue>
                                  <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
                               </xf:action>
                               <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
