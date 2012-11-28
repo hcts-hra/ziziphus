@@ -314,9 +314,20 @@
             <!-- Common VRA attributes get ignored in ignores.xsl, so here
                  goes the special case for top-level @pref
                  (agentSet/agent/@pref etc.)
+                and several other special cases
             -->
             <xsl:if test="(local-name()=$vraArtifactNode) and (..[local-name()=$vraSectionNode])">
                 <xsl:copy-of select="@pref"/>
+
+                <xsl:if test="('Measurements'=$vraArtifact)">
+                    <xsl:attribute name="extent"/>
+                </xsl:if>
+                <xsl:if test="('Relation'=$vraArtifact)">
+                    <xsl:attribute name="href"/>
+                </xsl:if>
+                <xsl:if test="('StateEdition'=$vraArtifact) or ('Title'=$vraArtifact)">
+                    <xsl:attribute name="source"/>
+                </xsl:if>
             </xsl:if>
 
             <xsl:apply-templates select="@*|text()" mode="instanceAttrs"/>
@@ -353,12 +364,20 @@
             <!-- Common VRA attributes get ignored in ignores.xsl, so here
                  goes the special case for top-level @pref
                  (agentSet/agent/@pref etc.)
+                 and several other special cases
             -->
             <xsl:if test="$isArtifactNode">
-                <xf:bind>
-                    <xsl:attribute name="nodeset">@pref</xsl:attribute>
-                    <xsl:attribute name="type">boolean</xsl:attribute>
-                </xf:bind>
+                <xf:bind nodeset="@pref" type="boolean"/>
+
+                <xsl:if test="('Measurements'=$vraArtifact)">
+                    <xf:bind nodeset="@extent" type="xsd:string"/>
+                </xsl:if>
+                <xsl:if test="('Relation'=$vraArtifact)">
+                    <xf:bind nodeset="@href" type="xsd:string"/>
+                </xsl:if>
+                <xsl:if test="('StateEdition'=$vraArtifact) or ('Title'=$vraArtifact)">
+                    <xf:bind nodeset="@source" type="xsd:string"/>
+                </xsl:if>
             </xsl:if>
 
             <xsl:apply-templates select="*[(@xfType!='simpleType') or exists(child::*)]" mode="bind">
@@ -466,6 +485,13 @@
                                 <xsl:apply-templates select="xf:bind[@xfType='attribute']" mode="ui">
                                     <xsl:with-param name="path"/>
                                 </xsl:apply-templates>
+
+                                <!-- a special case: some top-level common attributes that we need! -->
+                                <xsl:if test="('StateEdition'=$vraArtifact)">
+                                    <xf:input ref="@source">
+                                        <xf:label>Source</xf:label>
+                                    </xf:input>
+                                </xsl:if>
                             </xf:group>
                         </xsl:if>
 
@@ -562,6 +588,25 @@
         <xsl:apply-templates select="xf:bind" mode="ui">
             <xsl:with-param name="path" select="$currentPath"/>
         </xsl:apply-templates>
+
+        <!-- a special case: some top-level common attributes that we need! -->
+        <xsl:if test="$isArtifactNode">
+            <xsl:if test="('Measurements'=$vraArtifact)">
+                <xf:input ref="@extent">
+                    <xf:label>Extent</xf:label>
+                </xf:input>
+            </xsl:if>
+            <xsl:if test="('Relation'=$vraArtifact)">
+                <xf:input ref="@href">
+                    <xf:label>URL</xf:label>
+                </xf:input>
+            </xsl:if>
+            <xsl:if test="('Title'=$vraArtifact)">
+                <xf:input ref="@source">
+                    <xf:label>Source</xf:label>
+                </xf:input>
+            </xsl:if>
+        </xsl:if>
     </xsl:template>
 
     <!-- attribute VRA type -->

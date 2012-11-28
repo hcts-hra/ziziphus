@@ -112,7 +112,7 @@
                   <stateEditionSet xmlns="http://www.vraweb.org/vracore4.htm">
                      <display></display>
                      <notes></notes>
-                     <stateEdition pref="false" count="" num="" type="">
+                     <stateEdition pref="false" source="" count="" num="" type="">
                         <description></description>
                         <name></name>
                      </stateEdition>
@@ -121,6 +121,7 @@
                <xf:bind nodeset="instance()">
                   <xf:bind nodeset="vra:stateEdition">
                      <xf:bind nodeset="@pref" type="boolean"></xf:bind>
+                     <xf:bind nodeset="@source" type="xsd:string"></xf:bind>
                      <xf:bind nodeset="@count"></xf:bind>
                      <xf:bind nodeset="@num"></xf:bind>
                      <xf:bind nodeset="@type" type="vra:stateEditionTypeType"></xf:bind>
@@ -128,7 +129,7 @@
                </xf:bind>
                <xf:instance id="i-templates">
                   <templates xmlns="http://www.vraweb.org/vracore4.htm">
-                     <stateEdition pref="false" count="" num="" type="">
+                     <stateEdition pref="false" source="" count="" num="" type="">
                         <description></description>
                         <name></name>
                      </stateEdition>
@@ -212,6 +213,9 @@
                                  <xf:value>other</xf:value>
                               </xf:item>
                            </xf:select1>
+                           <xf:input ref="@source">
+                              <xf:label>Source</xf:label>
+                           </xf:input>
                         </xf:group>
                         <xf:group appearance="minimal">
                            <xf:input ref="vra:name" class="elementName">

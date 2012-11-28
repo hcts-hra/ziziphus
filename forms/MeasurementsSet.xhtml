@@ -112,19 +112,20 @@
                   <measurementsSet xmlns="http://www.vraweb.org/vracore4.htm">
                      <display></display>
                      <notes></notes>
-                     <measurements pref="false" type="" unit=""></measurements>
+                     <measurements pref="false" extent="" type="" unit=""></measurements>
                   </measurementsSet>
                </xf:instance>
                <xf:bind nodeset="instance()">
                   <xf:bind nodeset="vra:measurements">
                      <xf:bind nodeset="@pref" type="boolean"></xf:bind>
+                     <xf:bind nodeset="@extent" type="xsd:string"></xf:bind>
                      <xf:bind nodeset="@type" type="vra:measurementsTypeType"></xf:bind>
                      <xf:bind nodeset="@unit" type="vra:measurementsUnitType"></xf:bind>
                   </xf:bind>
                </xf:bind>
                <xf:instance id="i-templates">
                   <templates xmlns="http://www.vraweb.org/vracore4.htm">
-                     <measurements pref="false" type="" unit=""></measurements>
+                     <measurements pref="false" extent="" type="" unit=""></measurements>
                      <notes></notes>
                      <display></display>
                   </templates>
@@ -266,6 +267,9 @@
                            </xf:select1>
                            <xf:input ref="@unit">
                               <xf:label>Unit</xf:label>
+                           </xf:input>
+                           <xf:input ref="@extent">
+                              <xf:label>Extent</xf:label>
                            </xf:input>
                         </xf:group>
                      </td>

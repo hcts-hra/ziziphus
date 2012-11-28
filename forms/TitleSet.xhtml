@@ -112,18 +112,19 @@
                   <titleSet xmlns="http://www.vraweb.org/vracore4.htm">
                      <display></display>
                      <notes></notes>
-                     <title pref="false" type=""></title>
+                     <title pref="false" source="" type=""></title>
                   </titleSet>
                </xf:instance>
                <xf:bind nodeset="instance()">
                   <xf:bind nodeset="vra:title">
                      <xf:bind nodeset="@pref" type="boolean"></xf:bind>
+                     <xf:bind nodeset="@source" type="xsd:string"></xf:bind>
                      <xf:bind nodeset="@type" type="vra:titleTypeType"></xf:bind>
                   </xf:bind>
                </xf:bind>
                <xf:instance id="i-templates">
                   <templates xmlns="http://www.vraweb.org/vracore4.htm">
-                     <title pref="false" type=""></title>
+                     <title pref="false" source="" type=""></title>
                      <notes></notes>
                      <display></display>
                   </templates>
@@ -234,6 +235,9 @@
                                  <xf:value>other</xf:value>
                               </xf:item>
                            </xf:select1>
+                           <xf:input ref="@source">
+                              <xf:label>Source</xf:label>
+                           </xf:input>
                         </xf:group>
                      </td>
                      <td class="triggerCol">

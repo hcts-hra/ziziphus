@@ -112,19 +112,20 @@
                   <relationSet xmlns="http://www.vraweb.org/vracore4.htm">
                      <display></display>
                      <notes></notes>
-                     <relation pref="false" relids="d1" type=""></relation>
+                     <relation pref="false" href="" relids="d1" type=""></relation>
                   </relationSet>
                </xf:instance>
                <xf:bind nodeset="instance()">
                   <xf:bind nodeset="vra:relation">
                      <xf:bind nodeset="@pref" type="boolean"></xf:bind>
+                     <xf:bind nodeset="@href" type="xsd:string"></xf:bind>
                      <xf:bind nodeset="@relids" type="xsd:IDREFS"></xf:bind>
                      <xf:bind nodeset="@type" type="vra:relationTypeType"></xf:bind>
                   </xf:bind>
                </xf:bind>
                <xf:instance id="i-templates">
                   <templates xmlns="http://www.vraweb.org/vracore4.htm">
-                     <relation pref="false" relids="d1" type=""></relation>
+                     <relation pref="false" href="" relids="d1" type=""></relation>
                      <notes></notes>
                      <display></display>
                   </templates>
@@ -370,6 +371,9 @@
                                  <xf:value>versionIs</xf:value>
                               </xf:item>
                            </xf:select1>
+                           <xf:input ref="@href">
+                              <xf:label>URL</xf:label>
+                           </xf:input>
                         </xf:group>
                      </td>
                      <td class="triggerCol">
