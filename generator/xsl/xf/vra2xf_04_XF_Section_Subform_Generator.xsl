@@ -333,24 +333,16 @@
         ########################################################################################
     -->
 
-    <xsl:template match="xf:bind[@nodeset=concat('vra:',$vraSectionNode)]" mode="bind" priority="40">
+    <xsl:template match="xf:bind" mode="bind" priority="10">
         <xsl:param name="path" select="''"/>
 
-        <xsl:variable name="vraNodeName" select="@nodeset"/>
-        <xsl:variable name="currentPath" select="concat($path,'/',$vraNodeName)"/>
-        
-        <xf:bind>
-            <xsl:attribute name="nodeset" select="$vraNodeName"/>
-            <xsl:apply-templates mode="bind" select="*[not(starts-with(@nodeset,'@'))]">
-                <xsl:with-param name="path" select="$currentPath"/>
-            </xsl:apply-templates>
-        </xf:bind>
-    </xsl:template>
+        <xsl:if test="$debugEnabled">
+            <xsl:message>Bind: <xsl:value-of select="$path"/></xsl:message>
+        </xsl:if>
 
-    <xsl:template match="xf:bind" mode="bind" priority="20">
-        <xsl:param name="path" select="''"/>
         <xsl:variable name="vraNodeName" select="@nodeset"/>
-        <xsl:variable name="currentPath" select="concat($path,'/',$vraNodeName)"/>
+        <xsl:variable name="currentPath" select="functx:concat-xpath($path,$vraNodeName)"/>
+        <xsl:variable name="isArtifactNode" select="boolean((@nodeset=concat('vra:',$vraArtifactNode)) and (../local-name()='bind') and (../@nodeset=concat('vra:',$vraSectionNode)))"/>
 
         <xf:bind>
             <xsl:attribute name="nodeset" select="$vraNodeName"/>
@@ -362,14 +354,14 @@
                  goes the special case for top-level @pref
                  (agentSet/agent/@pref etc.)
             -->
-            <xsl:if test="..[(local-name()='bind') and (@nodeset=concat('vra:',$vraSectionNode))]">
+            <xsl:if test="$isArtifactNode">
                 <xf:bind>
                     <xsl:attribute name="nodeset">@pref</xsl:attribute>
                     <xsl:attribute name="type">boolean</xsl:attribute>
                 </xf:bind>
             </xsl:if>
 
-            <xsl:apply-templates mode="bind">
+            <xsl:apply-templates select="*[(@xfType!='simpleType') or exists(child::*)]" mode="bind">
                 <xsl:with-param name="path" select="$currentPath"/>
             </xsl:apply-templates>
         </xf:bind>

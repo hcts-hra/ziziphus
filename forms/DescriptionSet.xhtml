@@ -115,7 +115,11 @@
                      <description pref="false"></description>
                   </descriptionSet>
                </xf:instance>
-               <xf:bind nodeset="instance()"></xf:bind>
+               <xf:bind nodeset="instance()">
+                  <xf:bind nodeset="vra:description">
+                     <xf:bind nodeset="@pref" type="boolean"></xf:bind>
+                  </xf:bind>
+               </xf:bind>
                <xf:instance id="i-templates">
                   <templates xmlns="http://www.vraweb.org/vracore4.htm">
                      <description pref="false"></description>

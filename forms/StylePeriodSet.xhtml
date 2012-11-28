@@ -115,7 +115,11 @@
                      <stylePeriod pref="false"></stylePeriod>
                   </stylePeriodSet>
                </xf:instance>
-               <xf:bind nodeset="instance()"></xf:bind>
+               <xf:bind nodeset="instance()">
+                  <xf:bind nodeset="vra:stylePeriod">
+                     <xf:bind nodeset="@pref" type="boolean"></xf:bind>
+                  </xf:bind>
+               </xf:bind>
                <xf:instance id="i-templates">
                   <templates xmlns="http://www.vraweb.org/vracore4.htm">
                      <stylePeriod pref="false"></stylePeriod>
