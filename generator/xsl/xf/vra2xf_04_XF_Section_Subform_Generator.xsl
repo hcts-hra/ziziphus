@@ -347,14 +347,13 @@
         </xf:bind>
     </xsl:template>
 
-    <xsl:template match="xf:bind[@xfType = 'complexType']" mode="bind" priority="20">
+    <xsl:template match="xf:bind" mode="bind" priority="20">
         <xsl:param name="path" select="''"/>
         <xsl:variable name="vraNodeName" select="@nodeset"/>
         <xsl:variable name="currentPath" select="concat($path,'/',$vraNodeName)"/>
 
-        <xsl:variable name="nodesetValue" select="@nodeset"/>
         <xf:bind>
-            <xsl:attribute name="nodeset" select="$nodesetValue"/>
+            <xsl:attribute name="nodeset" select="$vraNodeName"/>
             <xsl:if test="exists(@type) and not(@type = 'xsd:string')">
                 <xsl:attribute name="type" select="@type"/>
             </xsl:if>
@@ -375,23 +374,6 @@
             </xsl:apply-templates>
         </xf:bind>
     </xsl:template>
-
-    <xsl:template match="xf:bind" mode="bind" >
-        <xsl:param name="path" select="''"/>
-
-        <xsl:variable name="vraNodeName" select="@nodeset"/>
-        <xsl:variable name="currentPath" select="concat($path,'/',$vraNodeName)"/>
-
-        <xf:bind>
-            <xsl:attribute name="nodeset" select="$vraNodeName"/>
-            <xsl:if test="exists(@type) and not(@type = 'xsd:string')">
-                <xsl:attribute name="type" select="@type"/>
-            </xsl:if>
-            <xsl:apply-templates mode="bind">
-                <xsl:with-param name="path" select="$currentPath"/>
-            </xsl:apply-templates>
-        </xf:bind>
-    </xsl:template>    
 
     <!--
         ########################################################################################
