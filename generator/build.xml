@@ -159,6 +159,16 @@
             <param name="subformName" value="CulturalContextSet"/>
         </antcall>
     </target>
+    <target name="generate-DateSet-form" depends="prepare" description="generate the DateSet form">
+        <antcall target="generate-subform">
+            <param name="subformName" value="DateSet"/>
+        </antcall>
+    </target>
+    <target name="generate-LocationSet-form" depends="prepare" description="generate the LocationSet form">
+        <antcall target="generate-subform">
+            <param name="subformName" value="LocationSet"/>
+        </antcall>
+    </target>
     <target name="generate-MeasurementsSet-form" depends="prepare" description="generate the MeasurementsSet form">
         <antcall target="generate-subform">
             <param name="subformName" value="MeasurementsSet"/>
