@@ -461,10 +461,18 @@
             <td class="contentCol">
                 <xsl:choose>
                     <xsl:when test="'complexType'=$xfType">
-                        <xsl:apply-templates select="xf:bind[@nodeset='vra:name']" mode="ui">
+                        <xsl:if test="xf:bind[@xfType='attribute']">
+                            <xf:group appearance="minimal">
+                                <xsl:apply-templates select="xf:bind[@xfType='attribute']" mode="ui">
+                                    <xsl:with-param name="path"/>
+                                </xsl:apply-templates>
+                            </xf:group>
+                        </xsl:if>
+
+                        <xsl:apply-templates select="xf:bind[(@xfType!='attribute') and (@nodeset='vra:name')]" mode="ui">
                             <xsl:with-param name="path"/>
                         </xsl:apply-templates>
-                        <xsl:apply-templates select="xf:bind[@nodeset!='vra:name']" mode="ui">
+                        <xsl:apply-templates select="xf:bind[(@xfType!='attribute') and (@nodeset!='vra:name')]" mode="ui">
                             <xsl:with-param name="path"/>
                         </xsl:apply-templates>
                     </xsl:when>
