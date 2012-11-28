@@ -171,7 +171,24 @@
                            <xf:hint>preferred</xf:hint>
                         </xf:input>
                      </td>
-                     <td class="contentCol"></td>
+                     <td class="contentCol">
+                        <xf:group appearance="minimal">
+                           <xf:input ref="vra:worktype">
+                              <xf:label>Worktype</xf:label>
+                           </xf:input>
+                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:worktype">
+                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
+                           </xf:group>
+                           <xf:trigger class="vraAttributeTrigger">
+                              <xf:label>...</xf:label>
+                              <xf:action>
+                                 <xf:setvalue ref="instance('i-util')/currentElement" value="'worktype'"></xf:setvalue>
+                                 <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
+                              </xf:action>
+                              <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
+                           </xf:trigger>
+                        </xf:group>
+                     </td>
                      <td class="triggerCol">
                         <xf:trigger>
                            <xf:label>x</xf:label>

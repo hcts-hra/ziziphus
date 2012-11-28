@@ -176,21 +176,37 @@
                         </xf:input>
                      </td>
                      <td class="contentCol">
-                        <xf:select1 ref="vra:material/@type">
-                           <xf:label>Type</xf:label>
-                           <xf:item>
-                              <xf:label>Medium</xf:label>
-                              <xf:value>medium</xf:value>
-                           </xf:item>
-                           <xf:item>
-                              <xf:label>Support</xf:label>
-                              <xf:value>support</xf:value>
-                           </xf:item>
-                           <xf:item>
-                              <xf:label>Other</xf:label>
-                              <xf:value>other</xf:value>
-                           </xf:item>
-                        </xf:select1>
+                        <xf:group appearance="minimal">
+                           <xf:input ref="vra:material">
+                              <xf:label>Material</xf:label>
+                           </xf:input>
+                           <xf:select1 ref="vra:material/@type">
+                              <xf:label>Type</xf:label>
+                              <xf:item>
+                                 <xf:label>Medium</xf:label>
+                                 <xf:value>medium</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Support</xf:label>
+                                 <xf:value>support</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Other</xf:label>
+                                 <xf:value>other</xf:value>
+                              </xf:item>
+                           </xf:select1>
+                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:material">
+                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
+                           </xf:group>
+                           <xf:trigger class="vraAttributeTrigger">
+                              <xf:label>...</xf:label>
+                              <xf:action>
+                                 <xf:setvalue ref="instance('i-util')/currentElement" value="'material'"></xf:setvalue>
+                                 <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
+                              </xf:action>
+                              <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
+                           </xf:trigger>
+                        </xf:group>
                      </td>
                      <td class="triggerCol">
                         <xf:trigger>

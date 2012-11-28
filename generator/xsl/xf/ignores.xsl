@@ -49,5 +49,6 @@
     <xsl:template match="xf:bind[@nodeset='vra:display']" mode="ui" priority="20"/>
     <xsl:template match="xf:bind[@nodeset='vra:notes']" mode="ui" priority="20"/>
     <xsl:template match="xf:bind[contains($vraAttributes,@nodeset)]" mode="ui" priority="20"/>
+    <xsl:template match="xsd:annotation" mode="ui" priority="20"/>
 
 </xsl:stylesheet>

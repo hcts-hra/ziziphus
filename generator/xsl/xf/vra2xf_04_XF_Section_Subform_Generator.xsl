@@ -471,6 +471,7 @@
     <!-- artifact node: agent etc. -->
     <xsl:template match="/xf:bind/xf:bind/xf:bind[@nodeset=concat('vra:',$vraSectionNode)]/xf:bind[@nodeset=concat('vra:',$vraArtifactNode)]" mode="ui" priority="45">
         <xsl:variable name="vraNodeName" select="@nodeset"/>
+        <xsl:variable name="xfType" select="@xfType"/>
 
         <xsl:if test="$debugEnabled">
             <xsl:message>UI-2: <xsl:value-of select="$vraNodeName"/></xsl:message>
@@ -484,12 +485,24 @@
                 </xf:input>
             </td>
             <td class="contentCol">
-                <xsl:apply-templates select="xf:bind[@nodeset='vra:name']" mode="ui">
-                    <xsl:with-param name="path"><xsl:value-of select="$vraNodeName"/>/</xsl:with-param>
-                </xsl:apply-templates>
-                <xsl:apply-templates select="xf:bind[@nodeset!='vra:name']" mode="ui">
-                    <xsl:with-param name="path"><xsl:value-of select="$vraNodeName"/>/</xsl:with-param>
-                </xsl:apply-templates>
+                <xsl:choose>
+                    <xsl:when test="'complexType'=$xfType">
+                        <xsl:apply-templates select="xf:bind[@nodeset='vra:name']" mode="ui">
+                            <xsl:with-param name="path"><xsl:value-of select="$vraNodeName"/>/</xsl:with-param>
+                        </xsl:apply-templates>
+                        <xsl:apply-templates select="xf:bind[@nodeset!='vra:name']" mode="ui">
+                            <xsl:with-param name="path"><xsl:value-of select="$vraNodeName"/>/</xsl:with-param>
+                        </xsl:apply-templates>
+                    </xsl:when>
+                    <xsl:when test="'simpleType'=$xfType">
+                        <xsl:call-template name="artf-vra-child">
+                            <xsl:with-param name="path"/>
+                        </xsl:call-template>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:message terminate="yes">This rule must never be matched!</xsl:message>
+                    </xsl:otherwise>
+                </xsl:choose>
             </td>
             <td class="triggerCol">
                 <xf:trigger>
@@ -502,8 +515,10 @@
         </tr>
     </xsl:template>
 
-    <!-- artifact node's (agent etc.) immediate VRA child -->
-    <xsl:template match="/xf:bind/xf:bind/xf:bind[@nodeset=concat('vra:',$vraSectionNode)]/xf:bind[@nodeset=concat('vra:',$vraArtifactNode)]/xf:bind[starts-with(@nodeset,'vra:')]" mode="ui" priority="40">
+    <!-- artifact node's (agent etc.) immediate VRA child ;
+         This is also used (by name) with simpleType artifacts (like Measurements).
+    -->
+    <xsl:template name="artf-vra-child" match="/xf:bind/xf:bind/xf:bind[@nodeset=concat('vra:',$vraSectionNode)]/xf:bind[@nodeset=concat('vra:',$vraArtifactNode)]/xf:bind[starts-with(@nodeset,'vra:')]" mode="ui" priority="40">
         <xsl:param name="path" select="''" />
 
         <xsl:variable name="vraNodeName" select="@nodeset"/>
@@ -564,30 +579,30 @@
     </xsl:template>
 
     <!-- VRA type -->
-    <xsl:template match="xf:bind[(@nodeset='@type') and (@attrName='type') and starts-with(@type,'vra:') and (@xfType='attribute')]" mode="ui" priority="30">
+    <xsl:template match="xf:bind[starts-with(@type,'vra:') and (@xfType='attribute')]" mode="ui" priority="30">
+        <xsl:variable name="vraAttrName" select="@attrName"/>
         <xsl:variable name="vraTypeName" select="substring-after(@type,'vra:')"/>
 
         <xsl:if test="$debugEnabled">
-            <xsl:message>UI-5 (type): <xsl:value-of select="@type"/></xsl:message>
+            <xsl:message>UI-5 (type): <xsl:value-of select="@nodeset"/>/<xsl:value-of select="@type"/></xsl:message>
         </xsl:if>
 
         <xsl:apply-templates select="$vraTypes/*/xsd:simpleType[@name=$vraTypeName][1]/*" mode="ui">
-            <xsl:with-param name="pref"><xsl:value-of select="../@nodeset"/>/@type</xsl:with-param>
-            <xsl:with-param name="plabel">Type</xsl:with-param>
+            <xsl:with-param name="pref"><xsl:value-of select="../@nodeset"/>/@<xsl:value-of select="$vraAttrName"/></xsl:with-param>
+            <xsl:with-param name="plabel"><xsl:value-of select="functx:capitalize-first($vraAttrName)"/></xsl:with-param>
         </xsl:apply-templates>
     </xsl:template>
 
-    <xsl:template match="xsd:restriction[@base='xsd:string']" mode="ui">
+    <xsl:template match="xsd:restriction[(@base='xsd:string') and count(xsd:enumeration)]" mode="ui">
         <xsl:param name="pref"   select="''" />
         <xsl:param name="plabel" select="''" />
 
         <xsl:if test="$debugEnabled">
-            <xsl:message>UI-6 (type): string restriction</xsl:message>
+            <xsl:message>UI-6a (type): xsd:string restriction (select1)</xsl:message>
         </xsl:if>
 
         <xf:select1>
             <xsl:attribute name="ref"><xsl:value-of select="$pref"/></xsl:attribute>
-            <!-- xsl:attribute name="ref" select="'@type'" -->
             <xf:label><xsl:value-of select="$plabel"/></xf:label>
             <xsl:for-each select="xsd:enumeration">
                 <xf:item>
@@ -596,6 +611,20 @@
                 </xf:item>
             </xsl:for-each>
         </xf:select1>
+    </xsl:template>
+
+    <xsl:template match="xsd:restriction[(@base='xsd:string') and (0=(count(xsd:enumeration)))]" mode="ui">
+        <xsl:param name="pref"   select="''" />
+        <xsl:param name="plabel" select="''" />
+
+        <xsl:if test="$debugEnabled">
+            <xsl:message>UI-6b (type): xsd:string restriction (empty)</xsl:message>
+        </xsl:if>
+
+        <xf:input>
+            <xsl:attribute name="ref"><xsl:value-of select="$pref"/></xsl:attribute>
+            <xf:label><xsl:value-of select="$plabel"/></xf:label>
+        </xf:input>
     </xsl:template>
 
     <!-- priority=15 because ignores have 20 -->

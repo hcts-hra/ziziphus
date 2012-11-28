@@ -176,61 +176,77 @@
                         </xf:input>
                      </td>
                      <td class="contentCol">
-                        <xf:select1 ref="vra:title/@type">
-                           <xf:label>Type</xf:label>
-                           <xf:item>
-                              <xf:label>BrandName</xf:label>
-                              <xf:value>brandName</xf:value>
-                           </xf:item>
-                           <xf:item>
-                              <xf:label>Cited</xf:label>
-                              <xf:value>cited</xf:value>
-                           </xf:item>
-                           <xf:item>
-                              <xf:label>Creator</xf:label>
-                              <xf:value>creator</xf:value>
-                           </xf:item>
-                           <xf:item>
-                              <xf:label>Descriptive</xf:label>
-                              <xf:value>descriptive</xf:value>
-                           </xf:item>
-                           <xf:item>
-                              <xf:label>Former</xf:label>
-                              <xf:value>former</xf:value>
-                           </xf:item>
-                           <xf:item>
-                              <xf:label>GeneralView</xf:label>
-                              <xf:value>generalView</xf:value>
-                           </xf:item>
-                           <xf:item>
-                              <xf:label>Inscribed</xf:label>
-                              <xf:value>inscribed</xf:value>
-                           </xf:item>
-                           <xf:item>
-                              <xf:label>Owner</xf:label>
-                              <xf:value>owner</xf:value>
-                           </xf:item>
-                           <xf:item>
-                              <xf:label>PartialView</xf:label>
-                              <xf:value>partialView</xf:value>
-                           </xf:item>
-                           <xf:item>
-                              <xf:label>Popular</xf:label>
-                              <xf:value>popular</xf:value>
-                           </xf:item>
-                           <xf:item>
-                              <xf:label>Repository</xf:label>
-                              <xf:value>repository</xf:value>
-                           </xf:item>
-                           <xf:item>
-                              <xf:label>Translated</xf:label>
-                              <xf:value>translated</xf:value>
-                           </xf:item>
-                           <xf:item>
-                              <xf:label>Other</xf:label>
-                              <xf:value>other</xf:value>
-                           </xf:item>
-                        </xf:select1>
+                        <xf:group appearance="minimal">
+                           <xf:input ref="vra:title">
+                              <xf:label>Title</xf:label>
+                           </xf:input>
+                           <xf:select1 ref="vra:title/@type">
+                              <xf:label>Type</xf:label>
+                              <xf:item>
+                                 <xf:label>BrandName</xf:label>
+                                 <xf:value>brandName</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Cited</xf:label>
+                                 <xf:value>cited</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Creator</xf:label>
+                                 <xf:value>creator</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Descriptive</xf:label>
+                                 <xf:value>descriptive</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Former</xf:label>
+                                 <xf:value>former</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>GeneralView</xf:label>
+                                 <xf:value>generalView</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Inscribed</xf:label>
+                                 <xf:value>inscribed</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Owner</xf:label>
+                                 <xf:value>owner</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>PartialView</xf:label>
+                                 <xf:value>partialView</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Popular</xf:label>
+                                 <xf:value>popular</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Repository</xf:label>
+                                 <xf:value>repository</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Translated</xf:label>
+                                 <xf:value>translated</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Other</xf:label>
+                                 <xf:value>other</xf:value>
+                              </xf:item>
+                           </xf:select1>
+                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:title">
+                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
+                           </xf:group>
+                           <xf:trigger class="vraAttributeTrigger">
+                              <xf:label>...</xf:label>
+                              <xf:action>
+                                 <xf:setvalue ref="instance('i-util')/currentElement" value="'title'"></xf:setvalue>
+                                 <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
+                              </xf:action>
+                              <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
+                           </xf:trigger>
+                        </xf:group>
                      </td>
                      <td class="triggerCol">
                         <xf:trigger>
