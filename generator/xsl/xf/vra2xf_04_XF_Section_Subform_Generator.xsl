@@ -479,20 +479,6 @@
                     <xsl:when test="'simpleType'=$xfType">
                         <xf:group appearance="minimal">
                             <xsl:call-template name="ui-nodeset-vra"/>
-
-                            <xf:group class="vraAttributes" appearance="minimal" ref=".">
-                                <xi:include href="bricks/vraAttributesViewUI.xml"/>
-                            </xf:group>
-
-                            <xf:trigger class="vraAttributeTrigger">
-                                <xf:label>...</xf:label>
-                                <xf:action>
-                                    <xf:setvalue ref="instance('i-util')/currentElement" value=".">
-                                    </xf:setvalue>
-                                    <xf:dispatch name="init-dialog" targetid="outerGroup"/>
-                                </xf:action>
-                                <bfc:show dialog="attrDialog" ev:event="DOMActivate"/>
-                            </xf:trigger>
                         </xf:group>
                     </xsl:when>
                     <xsl:otherwise>
