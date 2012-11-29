@@ -1,4 +1,14 @@
-<xsl:stylesheet xmlns="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:vra="http://www.vraweb.org/vracore4.htm" xmlns:xf="http://www.w3.org/2002/xforms" xmlns:bfn="http://www.betterform.de/XSL/Functions" version="2.0" xpath-default-namespace="http://www.w3.org/2002/xforms" exclude-result-prefixes="bfn">
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+        xmlns:ev="http://www.w3.org/2001/xml-events"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:vra="http://www.vraweb.org/vracore4.htm"
+        xmlns:xf="http://www.w3.org/2002/xforms"
+        xmlns:bfn="http://www.betterform.de/XSL/Functions"
+        xmlns:bfc="http://betterform.sourceforge.net/xforms/controls"
+        version="2.0" xpath-default-namespace="http://www.w3.org/2002/xforms"
+        exclude-result-prefixes="bfn">
     <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"/>
     <xsl:strip-space elements="*"/>
 
@@ -35,7 +45,8 @@
 
     <!-- top level - entry template - handles a work or an image record -->
     <xsl:template match="/vra:work |/vra:image">
-        <td class="sidePanel">
+        <xsl:variable name="side" select="if(local-name(.)='work') then 'leftPanel' else 'rightPanel'"/>
+        <td id="{$side}" class="sidePanel">
             <div class="panel">
                 <div class="columntitle">
                     <xsl:value-of select="$title"/>
@@ -131,41 +142,50 @@
             <xsl:variable name="mountPoint" select="concat($id,'_MountPoint')"/>
             <xsl:variable name="caseId" select="concat('c-',$id)"/>
             <xsl:variable name="tableId" select="concat('table-',$id)"/>
+
+            <div class="t-edit">
+                <xf:trigger class="-icon -icon-edit">
+                    <xf:label/>
+                    <!--<bfc:show dialog="sectionDialog" ev:event="DOMActivate"/>-->
+                    <xf:action>
+                        <xf:dispatch name="unload-subform" targetid="controlCenter"/>
+
+
+                        <!--                        <xf:message><xsl:value-of select="$type"/></xf:message>-->
+                        <xf:setvariable name="record" select="'{$type}'"/>
+                        <xf:setvariable name="recordId" select="'{$recordId}'"/>
+                        <xf:load show="embed" targetid="{$mountPoint}">
+                            <xf:resource value="'forms/{$vraSetName}.xhtml#xforms'"/>
+                            <xf:extension includeCSS="true" includeScript="false"/>
+                        </xf:load>
+                        <xf:setvalue model="model-1" ref="instance('i-control-center')/currentform" value="'{$id}'"/>
+                        <!--
+                        This is not used for the time being. It was a test to use xquery to generate the
+                        forms which might get interesting later again when it comes to optimization e.g.
+                        the data instances can probably be inlined within the forms when requesting the form
+                        thus avoiding additional submissions to load the data. This *might* improve overall
+                        performance.
+
+                         <xf:load show="embed" targetid="{$mountPoint}">
+                            <xf:resource value="'modules/forms/{$vraSetName}.xql#xforms?recordId={$recordId}'"/>
+                            <xf:extension includeCSS="false" includeScript="false"/>
+                        </xf:load>
+                        -->
+                        <xf:toggle case="{$caseId}-edit"/>
+<!--
+                        <script type="text/javascript">
+                            document.getElementById("leftPanel").setAttribute("style","width:80% !important;");
+                        </script>
+-->
+                    </xf:action>
+                </xf:trigger>
+                <button type="button" onclick="toggleDetail(this, '{$tableId}');" class="icon icon-zoom-in"/>
+            </div>
             <xf:switch>
                 <!-- ############ VIEW CASE ######### -->
                 <!-- ############ VIEW CASE ######### -->
                 <!-- ############ VIEW CASE ######### -->
                 <xf:case id="{$caseId}-view" selected="true">
-                    <div class="t-edit">
-                        <xf:trigger class="-icon-edit">
-                            <xf:label/>
-                            <xf:action>
-                                <!--                        <xf:message><xsl:value-of select="$type"/></xf:message>-->
-                                <xf:setvariable name="record" select="'{$type}'"/>
-                                <xf:setvariable name="recordId" select="'{$recordId}'"/>
-                                <xf:load show="embed" targetid="{$mountPoint}">
-                                    <xf:resource value="'forms/{$vraSetName}.xhtml#xforms'"/>
-                                    <xf:extension includeCSS="false" includeScript="false"/>
-                                </xf:load>
-                                <!--
-                                This is not used for the time being. It was a test to use xquery to generate the
-                                forms which might get interesting later again when it comes to optimization e.g.
-                                the data instances can probably be inlined within the forms when requesting the form
-                                thus avoiding additional submissions to load the data. This *might* improve overall
-                                performance.
-
-                                 <xf:load show="embed" targetid="{$mountPoint}">
-                                    <xf:resource value="'modules/forms/{$vraSetName}.xql#xforms?recordId={$recordId}'"/>
-                                    <xf:extension includeCSS="false" includeScript="false"/>
-                                </xf:load>
-                                -->
-                                <xf:toggle case="{$caseId}-edit"/>
-                                <xf:dispatch name="unload-subform" targetid="controlCenter"/>
-                                <xf:setvalue model="model-1" ref="instance('i-control-center')/currentform" value="'{$id}'"/>
-                            </xf:action>
-                        </xf:trigger>
-                        <button type="button" onclick="toggleDetail(this, '{$tableId}');" class="icon-zoom-in"/>
-                    </div>
                     <div class="vraSection" id="{concat($id,'_HtmlContent')}">
                         <div class="simple" id="{$tableId}">
                             <xsl:choose>
@@ -177,7 +197,6 @@
                                     <xsl:apply-templates select="$vraSetNode"/>
                                 </xsl:otherwise>
                             </xsl:choose>
-
                             <xsl:apply-templates select="$vraSetNode/vra:notes"/>
                         </div>
                     </div>
@@ -186,16 +205,45 @@
                 <!-- ############ EDIT CASE ############### -->
                 <!-- ############ EDIT CASE ############### -->
                 <xf:case id="{$caseId}-edit">
-                    <xf:trigger class="-icon-remove">
-                        <xf:label/>
-                        <xf:action>
+                    <xf:group appearance="minimal" class="dialogControls">
+                        <xf:trigger>
+                            <xf:label>Save changes</xf:label>
+                            <xf:action>
+                                <xf:toggle case="{$caseId}-view"/>
+                                <xf:setvalue ref="instance('i-control-center')/currentform" value="''" model="model-1"/>
+                            </xf:action>
+                        </xf:trigger>
+                        <xf:trigger appearance="minimal">
+                            <xf:label>Close</xf:label>
                             <xf:toggle case="{$caseId}-view"/>
                             <xf:setvalue ref="instance('i-control-center')/currentform" value="''" model="model-1"/>
-                        </xf:action>
-                    </xf:trigger>
+<!--
+                            <script type="text/javascript">
+                                document.getElementById("leftPanel").removeAttribute("style");
+                            </script>
+-->
+                        </xf:trigger>
+                    </xf:group>
                     <div id="{$mountPoint}"/>
                 </xf:case>
             </xf:switch>
+<!--
+            <bfc:dialog id="sectionDialog">
+                <xf:label><xsl:value-of select="$title"/></xf:label>
+                <div id="{$mountPoint}"/>
+                <xf:group class="dialogControls" >
+                    <xf:trigger>
+                        <xf:label>OK</xf:label>
+                        <bfc:hide dialog="sectionDialog"/>
+                    </xf:trigger>
+                    <xf:trigger appearance="minimal">
+                        <xf:label>Cancel</xf:label>
+                        <bfc:hide dialog="sectionDialog"/>
+                    </xf:trigger>
+                </xf:group>
+            </bfc:dialog>
+-->
+
         </div>
     </xsl:template>
 
@@ -253,17 +301,22 @@
         <xsl:param name="arg" as="xsd:string?"/>
         <xsl:sequence select="concat(upper-case(substring($arg,1,1)),substring($arg,2))"/>
     </xsl:function>
-
     <xsl:template name="renderVraAttr">
         <xsl:param name="attrName"/>
         <xsl:param name="mode">inline</xsl:param>
         <xsl:param name="ifAbsent"/>
-
         <xsl:choose>
             <xsl:when test="@*[name()=$attrName]">
                 <xsl:choose>
                     <xsl:when test="'inline'=$mode">
-                        <span class="vraAttr"><span class="vraAttrName"><xsl:value-of select="$attrName"/></span><span class="vraAttrValue"><xsl:value-of select="@*[name()=$attrName]"/></span></span>
+                        <span class="vraAttr">
+                            <span class="vraAttrName">
+                                <xsl:value-of select="$attrName"/>
+                            </span>
+                            <span class="vraAttrValue">
+                                <xsl:value-of select="@*[name()=$attrName]"/>
+                            </span>
+                        </span>
                     </xsl:when>
                     <xsl:when test="'simple'=$mode">
                         <xsl:value-of select="@*[name()=$attrName]"/>
@@ -275,16 +328,20 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-
     <xsl:template match="vra:display" priority="40">
         <xsl:if test="text()">
-            <div class="display-container"><xsl:value-of select="text()"/></div>
+            <div class="display-container">
+                <xsl:value-of select="text()"/>
+            </div>
         </xsl:if>
     </xsl:template>
-
     <xsl:template match="vra:notes" priority="40">
         <xsl:if test="text()">
-            <div class="notes-container detail"><span class="notes"><xsl:value-of select="text()"/></span></div>
+            <div class="notes-container detail">
+                <span class="notes">
+                    <xsl:value-of select="text()"/>
+                </span>
+            </div>
         </xsl:if>
     </xsl:template>
 </xsl:stylesheet>

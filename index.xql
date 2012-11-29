@@ -56,6 +56,7 @@ return
       xmlns:ev="http://www.w3.org/2001/xml-events"
       xmlns:xf="http://www.w3.org/2002/xforms"
       xmlns:bf="http://betterform.sourceforge.net/xforms"
+      xmlns:bfc="http://betterform.sourceforge.net/xforms/controls"
       bf:transform="/apps/ziziphus/resources/xsl/ziziphus.xsl">
     <head>
         <title>Ziziphus Image DB</title>

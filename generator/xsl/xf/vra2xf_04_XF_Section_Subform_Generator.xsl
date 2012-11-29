@@ -83,8 +83,10 @@
 <xsl:comment> ###################### MODEL ################################## </xsl:comment>
 
                     <div style="display:none">
-                        <xf:model id="m-child-model" schema="../resources/xsd/vra-types.xsd">
-                            <xf:instance id="i-{$vraSectionNode}">
+                        <xf:model id="m-child-model" schema="resources/xsd/vra-types.xsd">
+                            <!-- todo: record is hardcoded here !!!-->
+                            <xf:instance id="i-{$vraSectionNode}"
+                                    src="records?_query=//*[@id='w_40ca74a3-3e6c-5749-b0a0-b42afbadff01']/*:{$vraSectionNode}&amp;_wrap=no">
                                     <xsl:apply-templates select="$vraInstance/vra:vra/vra:work/*[local-name(.)=$vraSectionNode]" mode="instance">
                                         <xsl:with-param name="path" select="'instance()'"/>
                                     </xsl:apply-templates>
@@ -114,6 +116,7 @@
                                     <currentElement/>
                                 </data>
                             </xf:instance>
+
                         </xf:model>
                     </div>
 
@@ -122,9 +125,11 @@
 <xsl:comment> ####################################### VISIBLE UI ####################################### </xsl:comment>
 
                     <div class="toolbar">
+<!--
                         <xf:trigger class="t-save" model="m-child-model" title="Save">
                             <xf:label>save</xf:label>
                         </xf:trigger>
+-->
                         <xf:trigger class="t-plus" model="m-child-model">
                             <xsl:attribute name="title">Add <xsl:value-of select="$vraArtifact"/></xsl:attribute>
                             <xf:label>+</xf:label>
