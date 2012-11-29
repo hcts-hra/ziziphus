@@ -58,9 +58,6 @@ table tr td .xfGroup:last-child {
   padding: 0 !important;
   border-bottom: thin solid #aaaaaa;
 }
-.vraAttributes .xfValue {
-  font-size: 0.85em;
-}
 .vraAttributeTrigger {
   float: right;
 }

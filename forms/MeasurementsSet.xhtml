@@ -9,7 +9,7 @@
       bf:transform="/apps/ziziphus/resources/xsl/ziziphus.xsl">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-      <link href="../resources/css/edit-form.css" rel="stylesheet" type="text/css" />
+      <link href="resources/css/edit-form.css" rel="stylesheet" type="text/css" />
       <title>Ziziphus_Image_DB</title>
    </head>
    <body>
@@ -18,8 +18,9 @@
          <!-- ###################### MODEL ################################## -->
          <!-- ###################### MODEL ################################## -->
          <div style="display:none">
-            <xf:model id="m-child-model" schema="../resources/xsd/vra-types.xsd">
-               <xf:instance id="i-measurementsSet">
+            <xf:model id="m-child-model" schema="resources/xsd/vra-types.xsd">
+               <xf:instance id="i-measurementsSet"
+                            src="records?_query=//*[@id='w_40ca74a3-3e6c-5749-b0a0-b42afbadff01']/*:measurementsSet&amp;_wrap=no">
                   <measurementsSet xmlns="http://www.vraweb.org/vracore4.htm">
                      <display></display>
                      <notes></notes>
@@ -53,9 +54,6 @@
          <!-- ####################################### VISIBLE UI ####################################### -->
          <!-- ####################################### VISIBLE UI ####################################### -->
          <div class="toolbar">
-            <xf:trigger class="t-save" model="m-child-model" title="Save">
-               <xf:label>save</xf:label>
-            </xf:trigger>
             <xf:trigger class="t-plus" model="m-child-model" title="Add Measurements">
                <xf:label>+</xf:label>
                <xf:insert model="m-child-model" nodeset="instance()/vra:measurements[last()]"

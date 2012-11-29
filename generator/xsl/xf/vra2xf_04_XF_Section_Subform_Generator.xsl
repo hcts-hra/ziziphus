@@ -72,7 +72,7 @@
             xmlns:bf="http://betterform.sourceforge.net/xforms"
             bf:transform="/apps/ziziphus/resources/xsl/ziziphus.xsl">
             <head>
-                <link href="../resources/css/edit-form.css" rel="stylesheet" type="text/css"/>
+                <link href="resources/css/edit-form.css" rel="stylesheet" type="text/css"/>
                 <title>Ziziphus_Image_DB</title>
             </head>
             <body>
