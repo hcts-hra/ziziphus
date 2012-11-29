@@ -233,54 +233,124 @@
 
                     <bfc:dialog id="attrDialog">
                         <xf:label>Attributes</xf:label>
-                        <xf:group appearance="full" ref="instance('i-vraAttributes')/vra:vraElement">
-                            <xf:label/>
-                            <xf:input ref="@dataDate" id="first">
-                                <xf:label>dataDate</xf:label>
-                            </xf:input>
-                            <xf:input ref="@extent">
-                                <xf:label>extent</xf:label>
-                            </xf:input>
-                            <xf:input ref="@href">
-                                <xf:label>href</xf:label>
-                            </xf:input>
-                            <xf:input ref="@refid">
-                                <xf:label>refid</xf:label>
-                            </xf:input>
-                            <xf:input ref="@rules">
-                                <xf:label>rules</xf:label>
-                            </xf:input>
-                            <xf:input ref="@source">
-                                <xf:label>source</xf:label>
-                            </xf:input>
-                            <xf:select1 ref="@vocab">
-                                <xf:label>vocab</xf:label>
-                                <xf:item>
-                                    <xf:label>ULAN</xf:label>
-                                    <xf:value>ULAN</xf:value>
-                                </xf:item>
-                                <xf:item>
-                                    <xf:label>GND</xf:label>
-                                    <xf:value>GND</xf:value>
-                                </xf:item>
-                                <xf:item>
-                                    <xf:label>(AKL)</xf:label>
-                                    <xf:value>(AKL)</xf:value>
-                                </xf:item>
-                            </xf:select1>
-                            <xf:input ref="@lang">
-                                <xf:label>Language</xf:label>
-                            </xf:input>
-                            <xf:input ref="@transliteration">
-                                <xf:label>Transliteration</xf:label>
-                            </xf:input>
-                            <xf:input ref="@script">
-                                <xf:label>Script</xf:label>
-                            </xf:input>
+                        <xf:group appearance="minimal" ref="instance('i-vraAttributes')/vra:vraElement">
+                            <xf:group appearance="minimal" class="attrDialogGroup">
+                                <xf:input ref="@dataDate" id="first">
+                                    <xf:label>dataDate</xf:label>
+                                </xf:input>
+                                <xf:trigger class="deleteAttribute">
+                                    <xf:label>delete</xf:label>
+                                    <xf:setvalue ref="@dataDate"/>
+                                </xf:trigger>
+                            </xf:group>
+                            <xf:group appearance="minimal" class="attrDialogGroup">
+                                <xf:input ref="@extent">
+                                    <xf:label>extent</xf:label>
+                                </xf:input>
+                                <xf:trigger class="deleteAttribute">
+                                    <xf:label>delete</xf:label>
+                                    <xf:setvalue ref="@extent"/>
+                                </xf:trigger>
+                            </xf:group>
+                            <xf:group appearance="minimal" class="attrDialogGroup">
+                                <xf:input ref="@href">
+                                    <xf:label>href</xf:label>
+                                </xf:input>
+                                <xf:trigger class="deleteAttribute">
+                                    <xf:label>delete</xf:label>
+                                    <xf:setvalue ref="@href"/>
+                                </xf:trigger>
+                            </xf:group>
+                            <xf:group appearance="minimal" class="attrDialogGroup">
+                                <xf:input ref="@refid">
+                                    <xf:label>refid</xf:label>
+                                </xf:input>
+                                <xf:trigger class="deleteAttribute">
+                                    <xf:label>delete</xf:label>
+                                    <xf:setvalue ref="@refid"/>
+                                </xf:trigger>
+                            </xf:group>
+                            <xf:group appearance="minimal" class="attrDialogGroup">
+                                <xf:input ref="@rules">
+                                    <xf:label>rules</xf:label>
+                                </xf:input>
+                                <xf:trigger class="deleteAttribute">
+                                    <xf:label>delete</xf:label>
+                                    <xf:setvalue ref="@rules"/>
+                                </xf:trigger>
+                            </xf:group>
+                            <xf:group appearance="minimal" class="attrDialogGroup">
+                                <xf:input ref="@source">
+                                    <xf:label>source</xf:label>
+                                </xf:input>
+                                <xf:trigger class="deleteAttribute">
+                                    <xf:label>delete</xf:label>
+                                    <xf:setvalue ref="@source"/>
+                                </xf:trigger>
+                            </xf:group>
+                            <xf:group appearance="minimal" class="attrDialogGroup">
+                                <xf:select1 ref="@vocab">
+                                    <xf:label>vocab</xf:label>
+                                    <xf:item>
+                                        <xf:label>ULAN</xf:label>
+                                        <xf:value>ULAN</xf:value>
+                                    </xf:item>
+                                    <xf:item>
+                                        <xf:label>GND</xf:label>
+                                        <xf:value>GND</xf:value>
+                                    </xf:item>
+                                    <xf:item>
+                                        <xf:label>(AKL)</xf:label>
+                                        <xf:value>(AKL)</xf:value>
+                                    </xf:item>
+                                </xf:select1>
+                                <xf:trigger class="deleteAttribute">
+                                    <xf:label>delete</xf:label>
+                                    <xf:setvalue ref="@vocab"/>
+                                </xf:trigger>
+                            </xf:group>
+                            <xf:group appearance="minimal" class="attrDialogGroup">
+                                <xf:input ref="@lang">
+                                    <xf:label>Language</xf:label>
+                                </xf:input>
+                                <xf:trigger class="deleteAttribute">
+                                    <xf:label>delete</xf:label>
+                                    <xf:setvalue ref="@lang"/>
+                                </xf:trigger>
+                            </xf:group>
+                            <xf:group appearance="minimal" class="attrDialogGroup">
+                                <xf:input ref="@transliteration">
+                                    <xf:label>Transliteration</xf:label>
+                                </xf:input>
+                                <xf:trigger class="deleteAttribute">
+                                    <xf:label>delete</xf:label>
+                                    <xf:setvalue ref="@transliteration"/>
+                                </xf:trigger>
+                            </xf:group>
+                            <xf:group appearance="minimal" class="attrDialogGroup">
+                                <xf:input ref="@script">
+                                    <xf:label>Script</xf:label>
+                                </xf:input>
+                                <xf:trigger class="deleteAttribute">
+                                    <xf:label>delete</xf:label>
+                                    <xf:setvalue ref="@script"/>
+                                </xf:trigger>
+                            </xf:group>
+
                             <xf:group class="buttonBar">
                                 <xf:trigger>
                                     <xf:label>Ok</xf:label>
+                                    <!--
+                                    updating of the common vra attributes:
+                                    attributes are updated by first deleting all of the common vra attributes from the
+                                    main instance (i-agentset here) and then copying over all values from the i-vraAttributes
+                                    instance which represents all values deleted or inputted by the user in the dialog.
+                                    -->
                                     <xf:action>
+                                        <xf:delete>
+                                            <xsl:attribute name="nodeset">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>/*[local-name()=instance('i-util')/currentElement]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]</xsl:attribute>
+                                        </xf:delete>
+
                                         <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]">
                                             <xsl:attribute name="context">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/*[local-name()=instance('i-util')/currentElement]</xsl:attribute>
                                         </xf:insert>

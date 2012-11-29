@@ -409,54 +409,114 @@
          </xf:group>
          <bfc:dialog id="attrDialog">
             <xf:label>Attributes</xf:label>
-            <xf:group appearance="full" ref="instance('i-vraAttributes')/vra:vraElement">
-               <xf:label></xf:label>
-               <xf:input ref="@dataDate" id="first">
-                  <xf:label>dataDate</xf:label>
-               </xf:input>
-               <xf:input ref="@extent">
-                  <xf:label>extent</xf:label>
-               </xf:input>
-               <xf:input ref="@href">
-                  <xf:label>href</xf:label>
-               </xf:input>
-               <xf:input ref="@refid">
-                  <xf:label>refid</xf:label>
-               </xf:input>
-               <xf:input ref="@rules">
-                  <xf:label>rules</xf:label>
-               </xf:input>
-               <xf:input ref="@source">
-                  <xf:label>source</xf:label>
-               </xf:input>
-               <xf:select1 ref="@vocab">
-                  <xf:label>vocab</xf:label>
-                  <xf:item>
-                     <xf:label>ULAN</xf:label>
-                     <xf:value>ULAN</xf:value>
-                  </xf:item>
-                  <xf:item>
-                     <xf:label>GND</xf:label>
-                     <xf:value>GND</xf:value>
-                  </xf:item>
-                  <xf:item>
-                     <xf:label>(AKL)</xf:label>
-                     <xf:value>(AKL)</xf:value>
-                  </xf:item>
-               </xf:select1>
-               <xf:input ref="@lang">
-                  <xf:label>Language</xf:label>
-               </xf:input>
-               <xf:input ref="@transliteration">
-                  <xf:label>Transliteration</xf:label>
-               </xf:input>
-               <xf:input ref="@script">
-                  <xf:label>Script</xf:label>
-               </xf:input>
+            <xf:group appearance="minimal" ref="instance('i-vraAttributes')/vra:vraElement">
+               <xf:group appearance="minimal" class="attrDialogGroup">
+                  <xf:input ref="@dataDate" id="first">
+                     <xf:label>dataDate</xf:label>
+                  </xf:input>
+                  <xf:trigger class="deleteAttribute">
+                     <xf:label>delete</xf:label>
+                     <xf:setvalue ref="@dataDate"></xf:setvalue>
+                  </xf:trigger>
+               </xf:group>
+               <xf:group appearance="minimal" class="attrDialogGroup">
+                  <xf:input ref="@extent">
+                     <xf:label>extent</xf:label>
+                  </xf:input>
+                  <xf:trigger class="deleteAttribute">
+                     <xf:label>delete</xf:label>
+                     <xf:setvalue ref="@extent"></xf:setvalue>
+                  </xf:trigger>
+               </xf:group>
+               <xf:group appearance="minimal" class="attrDialogGroup">
+                  <xf:input ref="@href">
+                     <xf:label>href</xf:label>
+                  </xf:input>
+                  <xf:trigger class="deleteAttribute">
+                     <xf:label>delete</xf:label>
+                     <xf:setvalue ref="@href"></xf:setvalue>
+                  </xf:trigger>
+               </xf:group>
+               <xf:group appearance="minimal" class="attrDialogGroup">
+                  <xf:input ref="@refid">
+                     <xf:label>refid</xf:label>
+                  </xf:input>
+                  <xf:trigger class="deleteAttribute">
+                     <xf:label>delete</xf:label>
+                     <xf:setvalue ref="@refid"></xf:setvalue>
+                  </xf:trigger>
+               </xf:group>
+               <xf:group appearance="minimal" class="attrDialogGroup">
+                  <xf:input ref="@rules">
+                     <xf:label>rules</xf:label>
+                  </xf:input>
+                  <xf:trigger class="deleteAttribute">
+                     <xf:label>delete</xf:label>
+                     <xf:setvalue ref="@rules"></xf:setvalue>
+                  </xf:trigger>
+               </xf:group>
+               <xf:group appearance="minimal" class="attrDialogGroup">
+                  <xf:input ref="@source">
+                     <xf:label>source</xf:label>
+                  </xf:input>
+                  <xf:trigger class="deleteAttribute">
+                     <xf:label>delete</xf:label>
+                     <xf:setvalue ref="@source"></xf:setvalue>
+                  </xf:trigger>
+               </xf:group>
+               <xf:group appearance="minimal" class="attrDialogGroup">
+                  <xf:select1 ref="@vocab">
+                     <xf:label>vocab</xf:label>
+                     <xf:item>
+                        <xf:label>ULAN</xf:label>
+                        <xf:value>ULAN</xf:value>
+                     </xf:item>
+                     <xf:item>
+                        <xf:label>GND</xf:label>
+                        <xf:value>GND</xf:value>
+                     </xf:item>
+                     <xf:item>
+                        <xf:label>(AKL)</xf:label>
+                        <xf:value>(AKL)</xf:value>
+                     </xf:item>
+                  </xf:select1>
+                  <xf:trigger class="deleteAttribute">
+                     <xf:label>delete</xf:label>
+                     <xf:setvalue ref="@vocab"></xf:setvalue>
+                  </xf:trigger>
+               </xf:group>
+               <xf:group appearance="minimal" class="attrDialogGroup">
+                  <xf:input ref="@lang">
+                     <xf:label>Language</xf:label>
+                  </xf:input>
+                  <xf:trigger class="deleteAttribute">
+                     <xf:label>delete</xf:label>
+                     <xf:setvalue ref="@lang"></xf:setvalue>
+                  </xf:trigger>
+               </xf:group>
+               <xf:group appearance="minimal" class="attrDialogGroup">
+                  <xf:input ref="@transliteration">
+                     <xf:label>Transliteration</xf:label>
+                  </xf:input>
+                  <xf:trigger class="deleteAttribute">
+                     <xf:label>delete</xf:label>
+                     <xf:setvalue ref="@transliteration"></xf:setvalue>
+                  </xf:trigger>
+               </xf:group>
+               <xf:group appearance="minimal" class="attrDialogGroup">
+                  <xf:input ref="@script">
+                     <xf:label>Script</xf:label>
+                  </xf:input>
+                  <xf:trigger class="deleteAttribute">
+                     <xf:label>delete</xf:label>
+                     <xf:setvalue ref="@script"></xf:setvalue>
+                  </xf:trigger>
+               </xf:group>
                <xf:group class="buttonBar">
                   <xf:trigger>
                      <xf:label>Ok</xf:label>
                      <xf:action>
+                        <xf:delete nodeset="instance('i-relationSet')/vra:relation/*[local-name()=instance('i-util')/currentElement]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:delete>
                         <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]"
                                    context="instance('i-relationSet')/vra:relation[index('r-vraRelation')]/*[local-name()=instance('i-util')/currentElement]"></xf:insert>
                      </xf:action>
