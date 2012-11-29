@@ -1,0 +1,116 @@
+.xfRequired .xfLabel:after {
+  content: '';
+}
+.xfRequired > .xfLabel:after {
+  content: '*';
+}
+.xfRepeatItem {
+  background: whitesmoke;
+}
+.xfRepeatIndex .contentCol {
+  background-color: whitesmoke;
+}
+table {
+  border: thin solid #999999;
+  border-collapse: collapse;
+  padding: 3px;
+}
+table tbody {
+  font-size: 0.85em;
+}
+table tbody .xfGroup > .xfControl .xfLabel {
+  float: left;
+  padding: 0;
+  margin: 3px 3px 0 7px;
+  min-width: 80px;
+  text-align: right;
+}
+table tr td {
+  vertical-align: top;
+  border: thin solid #999999;
+  border-collapse: collapse;
+  padding: 3px;
+}
+table tr td > .xfGroup {
+  background: #fafafa;
+  border-top: thin solid;
+  border-bottom: thin solid #cdcdcd;
+  padding: 5px 0;
+}
+table tr td .xfGroup:last-child {
+  border-bottom: none;
+}
+.bf .xfRepeatIndex {
+  background: #dddddd !important;
+}
+.vraAttributes .xfControl {
+  float: left;
+  border: thin solid #aaaaaa;
+  border-radius: 3px;
+  margin: 5px 5px 5px 0;
+  padding: 3px;
+  background: #eeeeee;
+  text-align: center;
+}
+.vraAttributes .xfLabel {
+  font-size: 0.85em;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-bottom: thin solid #aaaaaa;
+}
+.vraAttributes .xfValue {
+  font-size: 0.85em;
+}
+.vraAttributeTrigger {
+  float: right;
+}
+.triggerCol {
+  width: 10px;
+}
+.prefCol {
+  width: 10px;
+}
+.prefCol .xfLabel {
+  display: none !important;
+}
+.contentCol > .xfGroup {
+  width: 100%;
+  display: inline-block;
+  padding-bottom: 5px;
+  border-top: none !important;
+}
+#attrDialog .xfControl {
+  float: none;
+}
+#attrDialog .xfLabel {
+  float: left;
+  margin: 0px 10px;
+  width: 100px;
+  text-align: right;
+}
+#attrDialog .xfInput .xfValue {
+  width: 250px;
+}
+#attrDialog .deleteAttribute {
+  float: right !important;
+}
+#attrDialog .xfGroup {
+  margin-bottom: 10px;
+}
+.buttonBar .xfTrigger {
+  display: inline-block !important;
+  font-size: 0.85em;
+  margin: 5px;
+}
+.notesDisplayTrigger {
+  float: right;
+}
+#notes {
+  width: 100%;
+}
+#notes .widgetContainer {
+  width: 100%;
+}
+#notes textarea {
+  width: 100%;
+}

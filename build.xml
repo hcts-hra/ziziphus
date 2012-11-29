@@ -5,7 +5,7 @@
     <property name="target.ziziphus.dir" value="${target.dir}/ziziphus"/>
     <property name="resource.dir" value="${basedir}/resources"/>
     <property name="resource.css.dir" value="${resource.dir}/css/"/>
-    <property name="resource.less.dir" value="${resource.dir}/less/"/>
+    <property name="resource.less.dir" value="${resource.dir}/css/"/>
     <property name="schema.dir" value="${resource.dir}/xsd"/>
     <property name="xsl.dir" value="${basedir}/generator/xsl"/>
     
@@ -21,6 +21,9 @@
     </target>
     <target name="-lesscss-check-record" unless="lesscss.needs.update.record">
         <uptodate property="lesscss.needs.update.record" srcfile="${resource.css.dir}/record.css" targetfile="${resource.less.dir}/record.less"/>
+    </target>
+    <target name="-lesscss-check-edit-form" unless="lesscss.needs.update.edit-form">
+        <uptodate property="lesscss.needs.update.edit-form" srcfile="${resource.css.dir}/edit-form.css" targetfile="${resource.less.dir}/edit-form.less"/>
     </target>
 
     <target name="lesscss-layout" depends="-lesscss-check-layout" if="${lesscss.needs.update.layout}">
@@ -41,7 +44,16 @@
         </exec>
     </target>
 
-    <target name="lesscss" depends="lesscss-layout, lesscss-record"/>
+    <target name="lesscss-edit-form" depends="-lesscss-check-edit-form" if="${lesscss.needs.update.edit-form}">
+        <echo message="Executing lessc (edit-form.css)..."/>
+        <exec executable="lessc" logError="true" failonerror="true">
+            <arg value="--verbose"/>
+            <arg value="${resource.less.dir}/edit-form.less"/>
+            <arg value="${resource.css.dir}/edit-form.css"/>
+        </exec>
+    </target>
+
+    <target name="lesscss" depends="lesscss-layout, lesscss-record, lesscss-edit-form"/>
 
     <!-- **************************************** GENERATE XAR **************************************** -->
     <!-- **************************************** GENERATE XAR **************************************** -->

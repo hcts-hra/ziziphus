@@ -1,0 +1,164 @@
+// this matcher does only exist due to an error in thea generic xforms.css
+.xfRequired {
+    .xfLabel {
+        &:after {
+            content:'';
+        }
+    }
+    > .xfLabel {
+        &:after {
+            content:'*';
+        }
+    }
+}
+
+.xfRepeatItem {
+    background: whitesmoke;
+}
+
+.xfRepeatIndex {
+    .contentCol {
+        background-color: whitesmoke;
+    }
+}
+
+table {
+    border: thin solid #999999;
+    border-collapse: collapse;
+    padding: 3px;
+
+    tbody {
+        font-size: 0.85em;
+
+        .xfGroup {
+            > .xfControl {
+                .xfLabel {
+                    float: left;
+                    padding: 0;
+                    margin: 3px 3px 0 7px;
+                    min-width: 80px;
+                    text-align: right;
+                }
+            }
+        }
+    }
+
+    tr {
+        td {
+            vertical-align: top;
+            border: thin solid #999999;
+            border-collapse: collapse;
+            padding: 3px;
+
+            > .xfGroup {
+                background: #fafafa;
+                border-top: thin solid;
+                border-bottom: thin solid #cdcdcd;
+                padding: 5px 0;
+            }
+
+            .xfGroup {
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+}
+
+.bf {
+    .xfRepeatIndex {
+        background: #dddddd !important;
+    }
+}
+
+.vraAttributes {
+    .xfControl {
+        float:left;
+        border: thin solid #aaaaaa;
+        border-radius: 3px;
+        margin: 5px 5px 5px 0;
+        padding: 3px;
+        background: #eeeeee;
+        text-align: center;
+    }
+    .xfLabel {
+        font-size: 0.85em;
+        margin: 0 !important;
+        padding: 0 !important;
+        border-bottom: thin solid #aaaaaa;
+    }
+    .xfValue {
+        font-size: 0.85em;
+    }
+}
+
+.vraAttributeTrigger {
+    float: right;
+}
+
+.triggerCol {
+    width: 10px;
+}
+
+.prefCol {
+    width: 10px;
+
+    .xfLabel {
+        display: none !important;
+    }
+}
+
+.contentCol {
+    > .xfGroup {
+        width: 100%;
+        display: inline-block;
+        padding-bottom: 5px;
+        border-top: none !important;
+    }
+}
+
+#attrDialog {
+    .xfControl {
+        float: none;
+    }
+    .xfLabel {
+        float: left;
+        margin: 0px 10px;
+        width: 100px;
+        text-align: right;
+    }
+    .xfInput {
+        .xfValue {
+            width: 250px;
+        }
+    }
+
+    .deleteAttribute {
+        float: right !important;
+    }
+    .xfGroup {
+        margin-bottom: 10px;
+    }
+}
+
+.buttonBar {
+    .xfTrigger {
+        display: inline-block !important;
+        font-size: 0.85em;
+        margin: 5px;
+    }
+}
+.notesDisplayTrigger {
+    float: right;
+}
+#notes {
+    width: 100%;
+
+    .widgetContainer {
+        width: 100%;
+    }
+    textarea {
+        width: 100%;
+    }
+}
