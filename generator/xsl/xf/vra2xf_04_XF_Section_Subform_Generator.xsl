@@ -68,104 +68,129 @@
             <xsl:message terminate="yes">XSD with schema redefinition rules is missing</xsl:message>
         </xsl:if>
         <xsl:variable name="result">
-        <html>
+        <html
+            xmlns:bf="http://betterform.sourceforge.net/xforms"
+            bf:transform="/apps/ziziphus/resources/xsl/ziziphus.xsl">
             <head>
                 <title>Ziziphus_Image_DB</title>
 
                 <!-- TODO: externalize this -->
                 <style type="text/css">
+                    <!-- this matcher does only exist due to an error in thea generic xforms.css-->
                     .xfRequired .xfLabel:after{
-                        content:'';
+                    content:'';
                     }
-                    .xfRequired > .xfLabel:after{
-                        content:'*';
+                    .xfRequired &gt; .xfLabel:after{
+                    content:'*';
                     }
 
                     table, td {
-                        border: thin solid #999999;
-                        border-collapse: collapse;
-                        padding: 3px;
+                    border: thin solid #999999;
+                    border-collapse: collapse;
+                    padding: 3px;
                     }
 
                     tbody {
-                        font-size: 0.85em;
+                    font-size: 0.85em;
                     }
-                    tbody .xfGroup > .xfControl .xfLabel {
-                        float: left;
-                        padding: 0;
-                        margin: 3px 3px 0 7px;
-                        min-width: 80px;
-                        text-align: right;
+                    tbody .xfGroup &gt; .xfControl .xfLabel {
+                    float: left;
+                    padding: 0;
+                    margin: 3px 3px 0 7px;
+                    min-width: 80px;
+                    text-align: right;
                     }
-                    tbody tr td > .xfGroup {
-                        background: #fafafa;
-                        border-top: thin solid;
-                        border-bottom: thin solid #cdcdcd;
-                        padding: 5px 0;
+                    tbody tr td &gt; .xfGroup {
+                    background: #fafafa;
+                    border-top: thin solid;
+                    border-bottom: thin solid #cdcdcd;
+                    padding: 5px 0;
                     }
                     tbody tr td .xfGroup:last-child {
-                        border-bottom: none;
+                    border-bottom: none;
                     }
                     .xfRepeatItem {
-                        background: whitesmoke;
+                    background: whitesmoke;
                     }
 
                     .xfRepeatIndex .contentCol {
-                        background-color: whitesmoke;
+                    background-color: whitesmoke;
                     }
                     .bf .xfRepeatIndex {
-                        background: #dddddd !important;
+                    background: #dddddd !important;
                     }
                     td{
-                        vertical-align: top;
+                    vertical-align: top;
                     }
                     .vraAttributes .xfControl{
-                        float:left;
+                    float:left;
                     }
 
                     .prefCol, .triggerCol {
-                        width: 10px;
+                    width: 10px;
                     }
                     .prefCol .xfLabel{
-                        display: none;
+                    display: none;
                     }
-                    .contentCol > .xfGroup {
-                        width: 100%;
-                        display: inline-block;
-                        padding-bottom: 5px;
-                        border-top: none !important;
+                    .contentCol &gt; .xfGroup {
+                    width: 100%;
+                    display: inline-block;
+                    padding-bottom: 5px;
+                    border-top: none !important;
                     }
                     .vraAttributes .xfControl {
-                        border: thin solid #aaaaaa;
-                        border-radius: 3px;
-                        margin: 5px 5px 5px 0;
-                        padding: 3px;
-                        background: #eeeeee;
-                        text-align: center;
+                    border: thin solid #aaaaaa;
+                    border-radius: 3px;
+                    margin: 5px 5px 5px 0;
+                    padding: 3px;
+                    background: #eeeeee;
+                    text-align: center;
                     }
                     .vraAttributes .xfLabel, .vraAttributes .xfValue{
-                        font-size: 0.85em;
+                    font-size: 0.85em;
                     }
                     .vraAttributes .xfLabel {
-                        margin: 0 !important;
-                        padding: 0 !important;
-                        border-bottom: thin solid #aaaaaa;
+                    margin: 0 !important;
+                    padding: 0 !important;
+                    border-bottom: thin solid #aaaaaa;
                     }
 
                     .prefCol .xfLabel {
-                        display: none !important;
+                    display: none !important;
                     }
                     .vraAttributeTrigger {
-                        float: right;
+                    float: right;
                     }
                     #attrDialog .xfControl {
-                        float: none;
+                    float: none;
                     }
                     .buttonBar .xfTrigger{
-                        display: inline-block !important;
-                        font-size: 0.85em;
-                        margin: 5px;
+                    display: inline-block !important;
+                    font-size: 0.85em;
+                    margin: 5px;
                     }
+                    .notesDisplayTrigger {
+                    float: right;
+                    }
+                    #notes, #notes .widgetContainer, #notes textarea{
+                    width: 100%;
+                    }
+                    #attrDialog .xfLabel {
+                    float: left;
+                    margin: 0px 10px;
+                    width: 100px;
+                    text-align: right;
+                    }
+                    #attrDialog .xfInput .xfValue {
+                    width: 250px;
+                    }
+                    #attrDialog .deleteAttribute {
+                    float: right !important;
+                    }
+                    #attrDialog .xfGroup {
+                    margin-bottom: 10px;
+                    }
+
                 </style>
 
             </head>

@@ -1,0 +1,92 @@
+.xfRequired .xfLabel:after{
+    content:'';
+}
+.xfRequired &gt; .xfLabel:after{
+                     content:'*';
+                 }
+
+table, td {
+    border: thin solid #999999;
+    border-collapse: collapse;
+    padding: 3px;
+}
+
+tbody {
+    font-size: 0.85em;
+}
+tbody .xfGroup &gt; .xfControl .xfLabel {
+                        float: left;
+                        padding: 0;
+                        margin: 3px 3px 0 7px;
+                        min-width: 80px;
+                        text-align: right;
+                    }
+tbody tr td &gt; .xfGroup {
+                     background: #fafafa;
+                     border-top: thin solid;
+                     border-bottom: thin solid #cdcdcd;
+                     padding: 5px 0;
+                 }
+tbody tr td .xfGroup:last-child {
+    border-bottom: none;
+}
+.xfRepeatItem {
+    background: whitesmoke;
+}
+
+.xfRepeatIndex .contentCol {
+    background-color: whitesmoke;
+}
+.bf .xfRepeatIndex {
+    background: #dddddd !important;
+}
+td{
+    vertical-align: top;
+}
+.vraAttributes .xfControl{
+    float:left;
+}
+
+.prefCol, .triggerCol {
+    width: 10px;
+}
+.prefCol .xfLabel{
+    display: none;
+}
+.contentCol &gt; .xfGroup {
+                     width: 100%;
+                     display: inline-block;
+                     padding-bottom: 5px;
+                     border-top: none !important;
+                 }
+.vraAttributes .xfControl {
+    border: thin solid #aaaaaa;
+    border-radius: 3px;
+    margin: 5px 5px 5px 0;
+    padding: 3px;
+    background: #eeeeee;
+    text-align: center;
+}
+.vraAttributes .xfLabel, .vraAttributes .xfValue{
+    font-size: 0.85em;
+}
+.vraAttributes .xfLabel {
+    margin: 0 !important;
+    padding: 0 !important;
+    border-bottom: thin solid #aaaaaa;
+}
+
+.prefCol .xfLabel {
+    display: none !important;
+}
+.vraAttributeTrigger {
+    float: right;
+}
+#attrDialog .xfControl {
+    float: none;
+}
+.buttonBar .xfTrigger{
+    display: inline-block !important;
+    font-size: 0.85em;
+    margin: 5px;
+}
