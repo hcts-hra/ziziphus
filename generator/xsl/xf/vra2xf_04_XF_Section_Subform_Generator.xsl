@@ -8,7 +8,9 @@
                 xmlns:xf="http://www.w3.org/2002/xforms"
                 xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:ev="http://www.w3.org/2001/xml-events"
+                xmlns:bf="http://betterform.sourceforge.net/xforms"
                 xmlns:bfc="http://betterform.sourceforge.net/xforms/controls"
+                bf:transform="/apps/ziziphus/resources/xsl/ziziphus.xsl"
                 xpath-default-namespace="http://www.w3.org/2002/xforms" exclude-result-prefixes="functx">
 
     <!--
