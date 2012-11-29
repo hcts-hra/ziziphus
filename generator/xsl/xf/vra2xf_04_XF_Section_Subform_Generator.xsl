@@ -434,32 +434,27 @@
                 </tbody>
             </table>
 
-            <xf:group class="showNotesDisplay">
-                <xf:trigger class="notesDisplayTrigger">
-                    <xf:label>Show/Hide Notes and Display</xf:label>
-                    <xf:setvalue>
-                        <xsl:attribute name="ref">instance('i-<xsl:value-of select="$vraSectionNode"/>Controller')/showNotesDisplay</xsl:attribute>
-                        <xsl:attribute name="value">not(boolean-from-string(instance('i-<xsl:value-of select="$vraSectionNode"/>Controller')/showNotesDisplay))</xsl:attribute>
-                    </xf:setvalue>
-                </xf:trigger>
-                <xf:group>
-                    <xsl:attribute name="ref">instance('i-<xsl:value-of select="$vraSectionNode"/>Controller')/showNotesDisplay</xsl:attribute>
-                    <xf:group appearance="minimal" class="elementGroup">
-                        <xsl:attribute name="ref">instance('i-<xsl:value-of select="$vraSectionNode"/>')</xsl:attribute>
-                        <xf:label/>
-                        <xf:textarea ref="vra:display" model="m-child-model">
-                            <xf:label>Display:</xf:label>
-                        </xf:textarea>
-                    </xf:group>
-                    <xf:group appearance="minimal" class="elementGroup">
-                        <xsl:attribute name="ref">instance('i-<xsl:value-of select="$vraSectionNode"/>')</xsl:attribute>
-                        <xf:label/>
-                        <xf:textarea ref="vra:notes" model="m-child-model">
-                            <xf:label>Notes</xf:label>
-                        </xf:textarea>
-                    </xf:group>
-                </xf:group>
-            </xf:group>
+            <xsl:comment> ############################## NOTES ####################################### </xsl:comment>
+            <xsl:comment> ############################## NOTES ####################################### </xsl:comment>
+            <xsl:comment> ############################## NOTES ####################################### </xsl:comment>
+
+            <xf:switch>
+                <xf:case id="c-hidden">
+                    <xf:trigger class="notesDisplayTrigger">
+                        <xf:label>Show Notes</xf:label>
+                        <xf:toggle case="c-showNotes"/>
+                    </xf:trigger>
+                </xf:case>
+                <xf:case id="c-showNotes">
+                    <xf:trigger class="notesDisplayTrigger">
+                        <xf:label>Hide Notes</xf:label>
+                        <xf:toggle case="c-hidden"/>
+                    </xf:trigger>
+                    <xf:textarea id="notes" ref="vra:notes" type="nodeValue" model="m-child-model">
+                        <xf:label>Notes</xf:label>
+                    </xf:textarea>
+                </xf:case>
+            </xf:switch>
         </xf:group>
     </xsl:template>
 
