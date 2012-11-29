@@ -46,7 +46,7 @@
     <!-- **************************************** GENERATE XAR **************************************** -->
     <!-- **************************************** GENERATE XAR **************************************** -->
     <!-- **************************************** GENERATE XAR **************************************** -->
-    <target name="xar" depends="lesscss">
+    <target name="xar">
         <delete dir="${target.dir}"/>
         <mkdir dir="${target.dir}"/>
         <copy todir="${target.ziziphus.dir}/modules">

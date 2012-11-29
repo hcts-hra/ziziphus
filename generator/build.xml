@@ -47,7 +47,7 @@
               in="${deploy.schema.dir}/${vra.bf.schema.name}"
               out="${target.dir}/02_XF_Binds.xml">
             <classpath refid="transform.class.path"/>
-            <param name="debug" expression="false"/>
+            <param name="debug" expression="true"/>
         </xslt>
     </target>
 

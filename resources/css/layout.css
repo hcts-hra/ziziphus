@@ -5,6 +5,14 @@ body {
   margin: 0;
   font-size: 10px;
 }
+.bf .panel {
+  background: whitesmoke;
+  padding: 0 3px;
+}
+.bf .panel .columntitle {
+  font-size: 1.2em;
+  padding-left: 2px;
+}
 .bf .panel input,
 .bf .panel select {
   font-size: 10px;
