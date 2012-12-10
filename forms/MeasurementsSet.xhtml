@@ -24,20 +24,19 @@
                   <measurementsSet xmlns="http://www.vraweb.org/vracore4.htm">
                      <display></display>
                      <notes></notes>
-                     <measurements pref="false" extent="" type="" unit=""></measurements>
+                     <measurements pref="false" type="" unit=""></measurements>
                   </measurementsSet>
                </xf:instance>
                <xf:bind nodeset="instance()">
                   <xf:bind nodeset="vra:measurements">
                      <xf:bind nodeset="@pref" type="boolean"></xf:bind>
-                     <xf:bind nodeset="@extent" type="xsd:string"></xf:bind>
                      <xf:bind nodeset="@type" type="vra:measurementsTypeType"></xf:bind>
                      <xf:bind nodeset="@unit" type="vra:measurementsUnitType"></xf:bind>
                   </xf:bind>
                </xf:bind>
                <xf:instance id="i-templates">
                   <templates xmlns="http://www.vraweb.org/vracore4.htm">
-                     <measurements pref="false" extent="" type="" unit=""></measurements>
+                     <measurements pref="false" type="" unit=""></measurements>
                      <notes></notes>
                      <display></display>
                   </templates>
@@ -76,6 +75,10 @@
                <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@transliteration"></xf:setvalue>
                <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@script"></xf:setvalue>
                <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]"
+                          if="'.'=instance('i-util')/currentElement"
+                          origin="instance('i-measurementsSet')/vra:measurements[index('r-vraMeasurements')]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:insert>
+               <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]"
+                          if="not('.'=instance('i-util')/currentElement)"
                           origin="instance('i-measurementsSet')/vra:measurements[index('r-vraMeasurements')]/*[local-name()=instance('i-util')/currentElement]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:insert>
             </xf:action>
             <table>
@@ -177,15 +180,20 @@
                            <xf:input ref="@unit">
                               <xf:label>Unit</xf:label>
                            </xf:input>
-                           <xf:input ref="@extent">
-                              <xf:label>Extent</xf:label>
-                           </xf:input>
                         </xf:group>
                      </td>
                      <td class="triggerCol">
                         <xf:trigger>
                            <xf:label>x</xf:label>
                            <xf:delete nodeset="instance('i-measurementsSet')/vra:measurements[index('r-vraMeasurements')]"></xf:delete>
+                        </xf:trigger>
+                        <xf:trigger class="vraAttributeTrigger">
+                           <xf:label>...</xf:label>
+                           <xf:action>
+                              <xf:setvalue ref="instance('i-util')/currentElement">.</xf:setvalue>
+                              <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
+                           </xf:action>
+                           <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
                         </xf:trigger>
                      </td>
                   </tr>
@@ -320,7 +328,12 @@
                <xf:group class="buttonBar">
                   <xf:trigger>
                      <xf:label>Ok</xf:label>
-                     <xf:action>
+                     <xf:action if="'.'=instance('i-util')/currentElement">
+                        <xf:delete nodeset="instance('i-measurementsSet')/vra:measurements/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:delete>
+                        <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]"
+                                   context="instance('i-measurementsSet')/vra:measurements[index('r-vraMeasurements')]"></xf:insert>
+                     </xf:action>
+                     <xf:action if="not('.'=instance('i-util')/currentElement)">
                         <xf:delete nodeset="instance('i-measurementsSet')/vra:measurements/*[local-name()=instance('i-util')/currentElement]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:delete>
                         <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]"
                                    context="instance('i-measurementsSet')/vra:measurements[index('r-vraMeasurements')]/*[local-name()=instance('i-util')/currentElement]"></xf:insert>

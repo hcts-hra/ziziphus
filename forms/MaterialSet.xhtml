@@ -74,6 +74,10 @@
                <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@transliteration"></xf:setvalue>
                <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@script"></xf:setvalue>
                <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]"
+                          if="'.'=instance('i-util')/currentElement"
+                          origin="instance('i-materialSet')/vra:material[index('r-vraMaterial')]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:insert>
+               <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]"
+                          if="not('.'=instance('i-util')/currentElement)"
                           origin="instance('i-materialSet')/vra:material[index('r-vraMaterial')]/*[local-name()=instance('i-util')/currentElement]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:insert>
             </xf:action>
             <table>
@@ -109,6 +113,14 @@
                         <xf:trigger>
                            <xf:label>x</xf:label>
                            <xf:delete nodeset="instance('i-materialSet')/vra:material[index('r-vraMaterial')]"></xf:delete>
+                        </xf:trigger>
+                        <xf:trigger class="vraAttributeTrigger">
+                           <xf:label>...</xf:label>
+                           <xf:action>
+                              <xf:setvalue ref="instance('i-util')/currentElement">.</xf:setvalue>
+                              <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
+                           </xf:action>
+                           <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
                         </xf:trigger>
                      </td>
                   </tr>
@@ -243,7 +255,12 @@
                <xf:group class="buttonBar">
                   <xf:trigger>
                      <xf:label>Ok</xf:label>
-                     <xf:action>
+                     <xf:action if="'.'=instance('i-util')/currentElement">
+                        <xf:delete nodeset="instance('i-materialSet')/vra:material/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:delete>
+                        <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]"
+                                   context="instance('i-materialSet')/vra:material[index('r-vraMaterial')]"></xf:insert>
+                     </xf:action>
+                     <xf:action if="not('.'=instance('i-util')/currentElement)">
                         <xf:delete nodeset="instance('i-materialSet')/vra:material/*[local-name()=instance('i-util')/currentElement]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:delete>
                         <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]"
                                    context="instance('i-materialSet')/vra:material[index('r-vraMaterial')]/*[local-name()=instance('i-util')/currentElement]"></xf:insert>

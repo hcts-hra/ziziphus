@@ -257,7 +257,16 @@
                                     main instance (i-agentset here) and then copying over all values from the i-vraAttributes
                                     instance which represents all values deleted or inputted by the user in the dialog.
                                     -->
-                                    <xf:action>
+                                    <xf:action if="'.'=instance('i-util')/currentElement">
+                                        <xf:delete>
+                                            <xsl:attribute name="nodeset">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]</xsl:attribute>
+                                        </xf:delete>
+
+                                        <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]">
+                                            <xsl:attribute name="context">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]</xsl:attribute>
+                                        </xf:insert>
+                                    </xf:action>
+                                    <xf:action if="not('.'=instance('i-util')/currentElement)">
                                         <xf:delete>
                                             <xsl:attribute name="nodeset">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>/*[local-name()=instance('i-util')/currentElement]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]</xsl:attribute>
                                         </xf:delete>
@@ -297,20 +306,9 @@
             <!-- Common VRA attributes get ignored in ignores.xsl, so here
                  goes the special case for top-level @pref
                  (agentSet/agent/@pref etc.)
-                and several other special cases
             -->
             <xsl:if test="(local-name()=$vraArtifactNode) and (..[local-name()=$vraSectionNode])">
                 <xsl:copy-of select="@pref"/>
-
-                <xsl:if test="('Measurements'=$vraArtifact)">
-                    <xsl:attribute name="extent"/>
-                </xsl:if>
-                <xsl:if test="('Relation'=$vraArtifact)">
-                    <xsl:attribute name="href"/>
-                </xsl:if>
-                <xsl:if test="('StateEdition'=$vraArtifact) or ('Title'=$vraArtifact)">
-                    <xsl:attribute name="source"/>
-                </xsl:if>
             </xsl:if>
 
             <xsl:apply-templates select="@*|text()" mode="instanceAttrs"/>
@@ -347,20 +345,9 @@
             <!-- Common VRA attributes get ignored in ignores.xsl, so here
                  goes the special case for top-level @pref
                  (agentSet/agent/@pref etc.)
-                 and several other special cases
             -->
             <xsl:if test="$isArtifactNode">
                 <xf:bind nodeset="@pref" type="boolean"/>
-
-                <xsl:if test="('Measurements'=$vraArtifact)">
-                    <xf:bind nodeset="@extent" type="xsd:string"/>
-                </xsl:if>
-                <xsl:if test="('Relation'=$vraArtifact)">
-                    <xf:bind nodeset="@href" type="xsd:string"/>
-                </xsl:if>
-                <xsl:if test="('StateEdition'=$vraArtifact) or ('Title'=$vraArtifact)">
-                    <xf:bind nodeset="@source" type="xsd:string"/>
-                </xsl:if>
             </xsl:if>
 
             <xsl:apply-templates select="*[(@xfType!='simpleType') or exists(child::*)]" mode="bind">
@@ -401,7 +388,10 @@
                 <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@lang"/>
                 <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@transliteration"/>
                 <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@script"/>
-                <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]">
+                <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]" if="'.'=instance('i-util')/currentElement">
+                    <xsl:attribute name="origin">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]</xsl:attribute>
+                </xf:insert>
+                <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]" if="not('.'=instance('i-util')/currentElement)">
                     <xsl:attribute name="origin">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/*[local-name()=instance('i-util')/currentElement]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]</xsl:attribute>
                 </xf:insert>
             </xf:action>
@@ -463,13 +453,6 @@
                                 <xsl:apply-templates select="xf:bind[@xfType='attribute']" mode="ui">
                                     <xsl:with-param name="path"/>
                                 </xsl:apply-templates>
-
-                                <!-- a special case: some top-level common attributes that we need! -->
-                                <xsl:if test="('StateEdition'=$vraArtifact)">
-                                    <xf:input ref="@source">
-                                        <xf:label>Source</xf:label>
-                                    </xf:input>
-                                </xsl:if>
                             </xf:group>
                         </xsl:if>
 
@@ -496,6 +479,15 @@
                     <xf:delete>
                         <xsl:attribute name="nodeset">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]</xsl:attribute>
                     </xf:delete>
+                </xf:trigger>
+
+                <xf:trigger class="vraAttributeTrigger">
+                    <xf:label>...</xf:label>
+                    <xf:action>
+                        <xf:setvalue ref="instance('i-util')/currentElement">.</xf:setvalue>
+                        <xf:dispatch name="init-dialog" targetid="outerGroup"/>
+                    </xf:action>
+                    <bfc:show dialog="attrDialog" ev:event="DOMActivate"/>
                 </xf:trigger>
             </td>
         </tr>
@@ -566,25 +558,6 @@
         <xsl:apply-templates select="xf:bind" mode="ui">
             <xsl:with-param name="path" select="$currentPath"/>
         </xsl:apply-templates>
-
-        <!-- a special case: some top-level common attributes that we need! -->
-        <xsl:if test="$isArtifactNode">
-            <xsl:if test="('Measurements'=$vraArtifact)">
-                <xf:input ref="@extent">
-                    <xf:label>Extent</xf:label>
-                </xf:input>
-            </xsl:if>
-            <xsl:if test="('Relation'=$vraArtifact)">
-                <xf:input ref="@href">
-                    <xf:label>URL</xf:label>
-                </xf:input>
-            </xsl:if>
-            <xsl:if test="('Title'=$vraArtifact)">
-                <xf:input ref="@source">
-                    <xf:label>Source</xf:label>
-                </xf:input>
-            </xsl:if>
-        </xsl:if>
     </xsl:template>
 
     <!-- attribute VRA type -->

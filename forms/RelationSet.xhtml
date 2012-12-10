@@ -24,20 +24,19 @@
                   <relationSet xmlns="http://www.vraweb.org/vracore4.htm">
                      <display></display>
                      <notes></notes>
-                     <relation pref="false" href="" relids="d1" type=""></relation>
+                     <relation pref="false" relids="d1" type=""></relation>
                   </relationSet>
                </xf:instance>
                <xf:bind nodeset="instance()">
                   <xf:bind nodeset="vra:relation">
                      <xf:bind nodeset="@pref" type="boolean"></xf:bind>
-                     <xf:bind nodeset="@href" type="xsd:string"></xf:bind>
                      <xf:bind nodeset="@relids" type="xsd:IDREFS"></xf:bind>
                      <xf:bind nodeset="@type" type="vra:relationTypeType"></xf:bind>
                   </xf:bind>
                </xf:bind>
                <xf:instance id="i-templates">
                   <templates xmlns="http://www.vraweb.org/vracore4.htm">
-                     <relation pref="false" href="" relids="d1" type=""></relation>
+                     <relation pref="false" relids="d1" type=""></relation>
                      <notes></notes>
                      <display></display>
                   </templates>
@@ -76,6 +75,10 @@
                <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@transliteration"></xf:setvalue>
                <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@script"></xf:setvalue>
                <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]"
+                          if="'.'=instance('i-util')/currentElement"
+                          origin="instance('i-relationSet')/vra:relation[index('r-vraRelation')]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:insert>
+               <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]"
+                          if="not('.'=instance('i-util')/currentElement)"
                           origin="instance('i-relationSet')/vra:relation[index('r-vraRelation')]/*[local-name()=instance('i-util')/currentElement]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:insert>
             </xf:action>
             <table>
@@ -280,15 +283,20 @@
                                  <xf:value>versionIs</xf:value>
                               </xf:item>
                            </xf:select1>
-                           <xf:input ref="@href">
-                              <xf:label>URL</xf:label>
-                           </xf:input>
                         </xf:group>
                      </td>
                      <td class="triggerCol">
                         <xf:trigger>
                            <xf:label>x</xf:label>
                            <xf:delete nodeset="instance('i-relationSet')/vra:relation[index('r-vraRelation')]"></xf:delete>
+                        </xf:trigger>
+                        <xf:trigger class="vraAttributeTrigger">
+                           <xf:label>...</xf:label>
+                           <xf:action>
+                              <xf:setvalue ref="instance('i-util')/currentElement">.</xf:setvalue>
+                              <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
+                           </xf:action>
+                           <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
                         </xf:trigger>
                      </td>
                   </tr>
@@ -423,7 +431,12 @@
                <xf:group class="buttonBar">
                   <xf:trigger>
                      <xf:label>Ok</xf:label>
-                     <xf:action>
+                     <xf:action if="'.'=instance('i-util')/currentElement">
+                        <xf:delete nodeset="instance('i-relationSet')/vra:relation/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:delete>
+                        <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]"
+                                   context="instance('i-relationSet')/vra:relation[index('r-vraRelation')]"></xf:insert>
+                     </xf:action>
+                     <xf:action if="not('.'=instance('i-util')/currentElement)">
                         <xf:delete nodeset="instance('i-relationSet')/vra:relation/*[local-name()=instance('i-util')/currentElement]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:delete>
                         <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]"
                                    context="instance('i-relationSet')/vra:relation[index('r-vraRelation')]/*[local-name()=instance('i-util')/currentElement]"></xf:insert>
