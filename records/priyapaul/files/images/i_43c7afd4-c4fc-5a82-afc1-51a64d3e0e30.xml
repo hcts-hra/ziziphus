@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_d4fadbce-01d8-507a-b025-494a1be83271" refid="108765" source="EXC Priya Paul Collection">Sugriv Ticket- a textile label of S. Russ & Co., Calcutta</relation>
+			<relation type="imageOf" relids="w_d4fadbce-01d8-507a-b025-494a1be83271" refid="108765" source="EXC Priya Paul Collection">Sugriv Ticket- a textile label of S. Russ &amp; Co., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_8849791e-ca05-5d1a-9aad-3687ddd26a11" refid="119088" source="EXC Priya Paul Collection">A view of Narad Muni coming to resolve the conflict between two armies, in a poster of N.V. Shunmugam & Co., Bangalore</relation>
+			<relation type="imageOf" relids="w_8849791e-ca05-5d1a-9aad-3687ddd26a11" refid="119088" source="EXC Priya Paul Collection">A view of Narad Muni coming to resolve the conflict between two armies, in a poster of N.V. Shunmugam &amp; Co., Bangalore</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

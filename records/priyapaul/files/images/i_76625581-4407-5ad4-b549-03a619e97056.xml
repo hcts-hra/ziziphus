@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_63d77cdc-715b-5ca0-b64f-6eae0dc45c7c" refid="108771" source="EXC Priya Paul Collection">Portrait of a queen sitting on a chair- a textile label of  the Wilson, Latham & Co. Ltd.</relation>
+			<relation type="imageOf" relids="w_63d77cdc-715b-5ca0-b64f-6eae0dc45c7c" refid="108771" source="EXC Priya Paul Collection">Portrait of a queen sitting on a chair- a textile label of  the Wilson, Latham &amp; Co. Ltd.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

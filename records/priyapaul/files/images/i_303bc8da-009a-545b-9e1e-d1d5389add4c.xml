@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_d7d3c484-1a7b-5917-b14f-9aef8ef51655" refid="106183" source="EXC Priya Paul Collection">Textile label by Wilson, Latham & Co.</relation>
+			<relation type="imageOf" relids="w_d7d3c484-1a7b-5917-b14f-9aef8ef51655" refid="106183" source="EXC Priya Paul Collection">Textile label by Wilson, Latham &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

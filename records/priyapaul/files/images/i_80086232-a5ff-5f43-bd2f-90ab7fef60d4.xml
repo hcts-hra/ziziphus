@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_526336ba-304c-5b3a-b537-556bc6d5f4bd" refid="107867" source="EXC Priya Paul Collection">Shri Satyanarayana Ticket - a textile label of Kerrtarruck & Co.Calcutta, Karachi & Bombay.</relation>
+			<relation type="imageOf" relids="w_526336ba-304c-5b3a-b537-556bc6d5f4bd" refid="107867" source="EXC Priya Paul Collection">Shri Satyanarayana Ticket - a textile label of Kerrtarruck &amp; Co.Calcutta, Karachi &amp; Bombay.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_6c862499-ea73-5b3d-aa24-688c8c52cd2b" refid="120251" source="EXC Priya Paul Collection">A view of a lady and her attendants- a textile label of the B. Whalley Ashwell & Company, Manchester</relation>
+			<relation type="imageOf" relids="w_6c862499-ea73-5b3d-aa24-688c8c52cd2b" refid="120251" source="EXC Priya Paul Collection">A view of a lady and her attendants- a textile label of the B. Whalley Ashwell &amp; Company, Manchester</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

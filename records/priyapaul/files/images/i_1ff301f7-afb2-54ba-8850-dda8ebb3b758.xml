@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_299d51b8-b1e8-5819-8eed-056add280ff3" refid="119863" source="EXC Priya Paul Collection">Henry Potter & Co., London: Deals in Drums, Painting, etc.</relation>
+			<relation type="imageOf" relids="w_299d51b8-b1e8-5819-8eed-056add280ff3" refid="119863" source="EXC Priya Paul Collection">Henry Potter &amp; Co., London: Deals in Drums, Painting, etc.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

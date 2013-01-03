@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_718f8a1a-56fd-5f49-bc12-3a00072820e5" refid="120266" source="EXC Priya Paul Collection">Shankar with Parvati and Ganesha- a textile label of the John Orrewing & Co.</relation>
+			<relation type="imageOf" relids="w_718f8a1a-56fd-5f49-bc12-3a00072820e5" refid="120266" source="EXC Priya Paul Collection">Shankar with Parvati and Ganesha- a textile label of the John Orrewing &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

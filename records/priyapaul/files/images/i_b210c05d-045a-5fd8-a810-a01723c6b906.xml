@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_daf65902-6595-5da3-8541-bfb673fe2090" refid="108860" source="EXC Priya Paul Collection">"Graham & Co., Manchester"</relation>
+			<relation type="imageOf" relids="w_daf65902-6595-5da3-8541-bfb673fe2090" refid="108860" source="EXC Priya Paul Collection">"Graham &amp; Co., Manchester"</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

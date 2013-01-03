@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_7195b7ad-a784-5a96-8af6-f3d66964a143" refid="119814" source="EXC Priya Paul Collection">Erasmic Soaps & Perfumes</relation>
+			<relation type="imageOf" relids="w_7195b7ad-a784-5a96-8af6-f3d66964a143" refid="119814" source="EXC Priya Paul Collection">Erasmic Soaps &amp; Perfumes</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

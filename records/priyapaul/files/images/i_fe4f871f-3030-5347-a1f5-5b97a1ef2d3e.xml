@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_b0d906bf-9fa4-5b84-b9e9-23adc39d2e18" refid="106214" source="EXC Priya Paul Collection">Shri Satyanarayana Ticket (a scene depicting the performance of the worship of lord Satyanarayana)- a textile label of Mc Nulty, Poddar & Co., Karachi.</relation>
+			<relation type="imageOf" relids="w_b0d906bf-9fa4-5b84-b9e9-23adc39d2e18" refid="106214" source="EXC Priya Paul Collection">Shri Satyanarayana Ticket (a scene depicting the performance of the worship of lord Satyanarayana)- a textile label of Mc Nulty, Poddar &amp; Co., Karachi.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

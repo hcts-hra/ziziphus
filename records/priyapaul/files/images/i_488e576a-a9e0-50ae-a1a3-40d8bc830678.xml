@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_f07eea6b-7662-53ae-9dbf-5020fa5fbf35" refid="108718" source="EXC Priya Paul Collection">Mangoes and the monkeys- a textile label of Finlay Campbell & Co. Ltd., Manchester</relation>
+			<relation type="imageOf" relids="w_f07eea6b-7662-53ae-9dbf-5020fa5fbf35" refid="108718" source="EXC Priya Paul Collection">Mangoes and the monkeys- a textile label of Finlay Campbell &amp; Co. Ltd., Manchester</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

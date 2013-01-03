@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_18e2643b-fe9f-50e5-a596-a83fd3131b58" refid="119674" source="EXC Priya Paul Collection">Sitaharan  Ticket (the scene depicts the kidnapping of Sita )- a textile label of Finlay Muir & Co., Calcutta</relation>
+			<relation type="imageOf" relids="w_18e2643b-fe9f-50e5-a596-a83fd3131b58" refid="119674" source="EXC Priya Paul Collection">Sitaharan  Ticket (the scene depicts the kidnapping of Sita )- a textile label of Finlay Muir &amp; Co., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

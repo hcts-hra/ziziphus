@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_951604a7-98e2-5aa8-920f-8ee61d29e49d" refid="118058" source="EXC Priya Paul Collection">Title page of a catalogue of textile patterns of Kettlewell Bullen & Co., Calcutta</relation>
+			<relation type="imageOf" relids="w_951604a7-98e2-5aa8-920f-8ee61d29e49d" refid="118058" source="EXC Priya Paul Collection">Title page of a catalogue of textile patterns of Kettlewell Bullen &amp; Co., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

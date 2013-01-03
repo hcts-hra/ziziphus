@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_0b383f89-ac09-5f11-8822-fde213ea5e14" refid="108790" source="EXC Priya Paul Collection">Sri Satnarayan Ticket- a textile label of  Mc Nulty Podar & Co., Karachi</relation>
+			<relation type="imageOf" relids="w_0b383f89-ac09-5f11-8822-fde213ea5e14" refid="108790" source="EXC Priya Paul Collection">Sri Satnarayan Ticket- a textile label of  Mc Nulty Podar &amp; Co., Karachi</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

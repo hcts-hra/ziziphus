@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_4cdc32d7-4b61-557f-a90a-78f283198e68" refid="106194" source="EXC Priya Paul Collection">Bulbul-e-Hind- a textile label of Ganesh Gangaram & Sons, Bombay.</relation>
+			<relation type="imageOf" relids="w_4cdc32d7-4b61-557f-a90a-78f283198e68" refid="106194" source="EXC Priya Paul Collection">Bulbul-e-Hind- a textile label of Ganesh Gangaram &amp; Sons, Bombay.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_05787409-8e32-58d3-b08f-de53b992a1a2" refid="119188" source="EXC Priya Paul Collection">January 1937 Advertisement calendar by K. T. Dongre & Co.</relation>
+			<relation type="imageOf" relids="w_05787409-8e32-58d3-b08f-de53b992a1a2" refid="119188" source="EXC Priya Paul Collection">January 1937 Advertisement calendar by K. T. Dongre &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

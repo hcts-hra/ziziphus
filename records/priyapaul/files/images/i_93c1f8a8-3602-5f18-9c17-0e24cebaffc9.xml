@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_f4770f3b-b271-5260-9dda-50a805156c68" refid="119708" source="EXC Priya Paul Collection">"H. M. King George V & H. M. Queen Mary"</relation>
+			<relation type="imageOf" relids="w_f4770f3b-b271-5260-9dda-50a805156c68" refid="119708" source="EXC Priya Paul Collection">"H. M. King George V &amp; H. M. Queen Mary"</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_fdfb7f41-e256-5c85-93ef-dd931ca256f1" refid="108417" source="EXC Priya Paul Collection">Textile label by Messrs Currimbhoy Ebrahim & Sons Ltd.</relation>
+			<relation type="imageOf" relids="w_fdfb7f41-e256-5c85-93ef-dd931ca256f1" refid="108417" source="EXC Priya Paul Collection">Textile label by Messrs Currimbhoy Ebrahim &amp; Sons Ltd.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

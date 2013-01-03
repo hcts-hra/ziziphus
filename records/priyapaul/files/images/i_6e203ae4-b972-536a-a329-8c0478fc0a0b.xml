@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_e8c724d8-1078-5c8d-8a9d-282c68dda3c6" refid="118963" source="EXC Priya Paul Collection">Chari & Ram</relation>
+			<relation type="imageOf" relids="w_e8c724d8-1078-5c8d-8a9d-282c68dda3c6" refid="118963" source="EXC Priya Paul Collection">Chari &amp; Ram</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_0939979e-67d7-5321-bf68-6dd741437858" refid="108701" source="EXC Priya Paul Collection">Vishwamitra with Ram & others- a textile label of Graham, Manchester</relation>
+			<relation type="imageOf" relids="w_0939979e-67d7-5321-bf68-6dd741437858" refid="108701" source="EXC Priya Paul Collection">Vishwamitra with Ram &amp; others- a textile label of Graham, Manchester</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_d9397cc0-710a-5c8e-8429-1cecabba8d7a" refid="120073" source="EXC Priya Paul Collection">A warrior rides a supernatural animal- a textile label of the Finlay Fleming & Co., Rangoon</relation>
+			<relation type="imageOf" relids="w_d9397cc0-710a-5c8e-8429-1cecabba8d7a" refid="120073" source="EXC Priya Paul Collection">A warrior rides a supernatural animal- a textile label of the Finlay Fleming &amp; Co., Rangoon</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

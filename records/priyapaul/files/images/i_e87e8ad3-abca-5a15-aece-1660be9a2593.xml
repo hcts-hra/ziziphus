@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_ea431207-bef3-5e87-8ee4-b1848629e7ee" refid="118577" source="EXC Priya Paul Collection">The Mettur Chemical & Industrial Corporation Ltd., Salem</relation>
+			<relation type="imageOf" relids="w_ea431207-bef3-5e87-8ee4-b1848629e7ee" refid="118577" source="EXC Priya Paul Collection">The Mettur Chemical &amp; Industrial Corporation Ltd., Salem</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

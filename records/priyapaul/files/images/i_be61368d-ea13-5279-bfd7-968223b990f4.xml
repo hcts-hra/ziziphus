@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_9d62be61-ff99-5568-8dde-f5e36ba1ca5d" refid="120702" source="EXC Priya Paul Collection">Church & Barracks, Dagshai (India)</relation>
+			<relation type="imageOf" relids="w_9d62be61-ff99-5568-8dde-f5e36ba1ca5d" refid="120702" source="EXC Priya Paul Collection">Church &amp; Barracks, Dagshai (India)</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

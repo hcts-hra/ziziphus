@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_def782af-6ae3-5697-872c-e895112924f1" refid="119416" source="EXC Priya Paul Collection">Smt. Indira Gandhi (S.S.Brijbasi & Sons, Delhi)</relation>
+			<relation type="imageOf" relids="w_def782af-6ae3-5697-872c-e895112924f1" refid="119416" source="EXC Priya Paul Collection">Smt. Indira Gandhi (S.S.Brijbasi &amp; Sons, Delhi)</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

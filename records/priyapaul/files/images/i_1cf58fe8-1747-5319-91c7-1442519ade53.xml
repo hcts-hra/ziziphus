@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_9a1e0dc3-7dc8-5811-b331-8bf03b51b6af" refid="108848" source="EXC Priya Paul Collection">damaged - The rising sun- a textile label of the Pratap Spinning Weaving & Manufacturing Company Ltd., Khandesh</relation>
+			<relation type="imageOf" relids="w_9a1e0dc3-7dc8-5811-b331-8bf03b51b6af" refid="108848" source="EXC Priya Paul Collection">damaged - The rising sun- a textile label of the Pratap Spinning Weaving &amp; Manufacturing Company Ltd., Khandesh</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

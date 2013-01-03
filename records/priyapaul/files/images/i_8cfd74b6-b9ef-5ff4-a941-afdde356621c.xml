@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_d78ce897-4145-5510-95e2-fc055ecb8ba9" refid="119621" source="EXC Priya Paul Collection">Textile label by Seth Bansilal Abirchand Raibahadur Spc. & Wng. Mill</relation>
+			<relation type="imageOf" relids="w_d78ce897-4145-5510-95e2-fc055ecb8ba9" refid="119621" source="EXC Priya Paul Collection">Textile label by Seth Bansilal Abirchand Raibahadur Spc. &amp; Wng. Mill</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

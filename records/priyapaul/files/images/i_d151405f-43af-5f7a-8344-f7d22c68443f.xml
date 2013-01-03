@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_02f6b806-f446-5d22-bc8d-9712664bca16" refid="106164" source="EXC Priya Paul Collection">Lord Vishnu riding garuda - a textile label of Jules Karpelles & Co., Calcutta.</relation>
+			<relation type="imageOf" relids="w_02f6b806-f446-5d22-bc8d-9712664bca16" refid="106164" source="EXC Priya Paul Collection">Lord Vishnu riding garuda - a textile label of Jules Karpelles &amp; Co., Calcutta.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

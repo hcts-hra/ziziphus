@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_bd1918b8-f523-5ee1-9da5-e6a65875a343" refid="109751" source="EXC Priya Paul Collection">Parting, in a postcard, published by B.K.Das & Co., Calcutta, under 'amorous, series no.4'</relation>
+			<relation type="imageOf" relids="w_bd1918b8-f523-5ee1-9da5-e6a65875a343" refid="109751" source="EXC Priya Paul Collection">Parting, in a postcard, published by B.K.Das &amp; Co., Calcutta, under 'amorous, series no.4'</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

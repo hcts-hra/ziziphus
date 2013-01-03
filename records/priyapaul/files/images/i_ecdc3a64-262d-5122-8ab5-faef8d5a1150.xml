@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_7901ca5a-70eb-5aab-b4a1-4fd59dccc01a" refid="120087" source="EXC Priya Paul Collection">Shri Mahabharat Katha Ticket- a textile label of the F. Steiner & Co., Manchester</relation>
+			<relation type="imageOf" relids="w_7901ca5a-70eb-5aab-b4a1-4fd59dccc01a" refid="120087" source="EXC Priya Paul Collection">Shri Mahabharat Katha Ticket- a textile label of the F. Steiner &amp; Co., Manchester</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

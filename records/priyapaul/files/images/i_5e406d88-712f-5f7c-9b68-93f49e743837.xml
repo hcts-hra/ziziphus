@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_02adb0b4-a978-5f81-a045-ee92510b1414" refid="118406" source="EXC Priya Paul Collection">Saraswati, Lakshmi and Ganesha, in an A & F Harvey Ltd's calender poster 1954</relation>
+			<relation type="imageOf" relids="w_02adb0b4-a978-5f81-a045-ee92510b1414" refid="118406" source="EXC Priya Paul Collection">Saraswati, Lakshmi and Ganesha, in an A &amp; F Harvey Ltd's calender poster 1954</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

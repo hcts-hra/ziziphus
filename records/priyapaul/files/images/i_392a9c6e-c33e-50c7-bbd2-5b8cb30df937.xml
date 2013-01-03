@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_9f4ad0db-c29c-5d34-ba78-0c7cdd124962" refid="120135" source="EXC Priya Paul Collection">Deity of Narayan- a textile label of W.M.Stirling & Sons, Glasgow</relation>
+			<relation type="imageOf" relids="w_9f4ad0db-c29c-5d34-ba78-0c7cdd124962" refid="120135" source="EXC Priya Paul Collection">Deity of Narayan- a textile label of W.M.Stirling &amp; Sons, Glasgow</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

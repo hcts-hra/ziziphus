@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_5d777fa7-951f-56ec-9501-99f153cb72ca" refid="120601" source="EXC Priya Paul Collection">Rising sun in a textile label of M. Jaffer & Co., Kobe</relation>
+			<relation type="imageOf" relids="w_5d777fa7-951f-56ec-9501-99f153cb72ca" refid="120601" source="EXC Priya Paul Collection">Rising sun in a textile label of M. Jaffer &amp; Co., Kobe</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

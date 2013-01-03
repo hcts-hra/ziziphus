@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_f90c8275-48b2-516a-a927-7cfb98f6ce0b" refid="107970" source="EXC Priya Paul Collection">Dancing girls with musicians, Jaipur in a postcard, published by Gobind Ram & Ooday Ram, Jaipur.</relation>
+			<relation type="imageOf" relids="w_f90c8275-48b2-516a-a927-7cfb98f6ce0b" refid="107970" source="EXC Priya Paul Collection">Dancing girls with musicians, Jaipur in a postcard, published by Gobind Ram &amp; Ooday Ram, Jaipur.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

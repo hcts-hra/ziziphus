@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_337c2b63-2651-5ddc-9e5d-3b4837ccceea" refid="118179" source="EXC Priya Paul Collection">Poster of King George V & Queen Mary</relation>
+			<relation type="imageOf" relids="w_337c2b63-2651-5ddc-9e5d-3b4837ccceea" refid="118179" source="EXC Priya Paul Collection">Poster of King George V &amp; Queen Mary</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

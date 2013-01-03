@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_92259377-d8fd-59b6-bbbe-d2da3fdb3285" refid="120255" source="EXC Priya Paul Collection">Nariman Ticket- a textile label of the F. Stiener & Company, Church</relation>
+			<relation type="imageOf" relids="w_92259377-d8fd-59b6-bbbe-d2da3fdb3285" refid="120255" source="EXC Priya Paul Collection">Nariman Ticket- a textile label of the F. Stiener &amp; Company, Church</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

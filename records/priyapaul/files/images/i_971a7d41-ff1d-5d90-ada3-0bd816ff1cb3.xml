@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_afd39a8b-9da4-5d17-8b53-2e583d36b718" refid="119590" source="EXC Priya Paul Collection">An European dancing girl- a textile label of John Fleming & Co., Bombay</relation>
+			<relation type="imageOf" relids="w_afd39a8b-9da4-5d17-8b53-2e583d36b718" refid="119590" source="EXC Priya Paul Collection">An European dancing girl- a textile label of John Fleming &amp; Co., Bombay</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

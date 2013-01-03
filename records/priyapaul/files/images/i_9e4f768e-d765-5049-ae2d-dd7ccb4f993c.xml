@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_292d9522-7fa5-5d5b-9a08-7c9c05f7177f" refid="108744" source="EXC Priya Paul Collection">Best Turkey Red - a textile label of W.M. Stirling & Sons, Glasgow, showing an Indian teacher and his pupils</relation>
+			<relation type="imageOf" relids="w_292d9522-7fa5-5d5b-9a08-7c9c05f7177f" refid="108744" source="EXC Priya Paul Collection">Best Turkey Red - a textile label of W.M. Stirling &amp; Sons, Glasgow, showing an Indian teacher and his pupils</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

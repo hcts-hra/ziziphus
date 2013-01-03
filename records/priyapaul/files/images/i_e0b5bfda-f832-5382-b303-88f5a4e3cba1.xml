@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_3f1f07e2-8c7b-53cb-b99d-d1b06e8753e3" refid="120028" source="EXC Priya Paul Collection">Zodiac signs in Hindu astrology, textile label, Ashton Hoare & Co. Ltd., Manchester</relation>
+			<relation type="imageOf" relids="w_3f1f07e2-8c7b-53cb-b99d-d1b06e8753e3" refid="120028" source="EXC Priya Paul Collection">Zodiac signs in Hindu astrology, textile label, Ashton Hoare &amp; Co. Ltd., Manchester</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

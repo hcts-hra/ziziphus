@@ -1,4 +1,8 @@
-<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+<vra    xmlns="http://www.vraweb.org/vracore4.htm"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:hra="http://cluster-schemas.uni-hd.de"
+        xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+
 	<work id="w_a098ccbe-52a9-582e-8ad1-1b48e09c96d8" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
 		<agentSet>
 			<agent>
@@ -18,7 +22,7 @@
   			</agent>
 			<agent>
 				<culture/>
-				<name vocab="local" type="personal" refid="uuid-8e16171f-0078-51af-9b11-16f6b6ec064a">Mulgaoker <artist></name>
+				<name vocab="local" type="personal" refid="uuid-8e16171f-0078-51af-9b11-16f6b6ec064a">Mulgaoker</name>
 				<role/>
   			</agent>
 			<agent>

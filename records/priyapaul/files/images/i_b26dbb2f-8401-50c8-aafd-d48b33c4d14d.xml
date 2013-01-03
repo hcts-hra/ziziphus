@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_f5b55f46-f897-55af-a6c4-f6f0c96a55b3" refid="120271" source="EXC Priya Paul Collection">The palanquin and its bearers,  in a textile label of the Robert Barclay & Co., Manchester</relation>
+			<relation type="imageOf" relids="w_f5b55f46-f897-55af-a6c4-f6f0c96a55b3" refid="120271" source="EXC Priya Paul Collection">The palanquin and its bearers,  in a textile label of the Robert Barclay &amp; Co., Manchester</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

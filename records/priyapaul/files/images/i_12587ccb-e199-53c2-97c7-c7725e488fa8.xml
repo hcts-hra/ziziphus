@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_b70ce581-53fc-5e5f-8841-f109df46b0cb" refid="108759" source="EXC Priya Paul Collection">A woman stands against trees- a textile label of James Finlay & Co. Ltd., Calcutta</relation>
+			<relation type="imageOf" relids="w_b70ce581-53fc-5e5f-8841-f109df46b0cb" refid="108759" source="EXC Priya Paul Collection">A woman stands against trees- a textile label of James Finlay &amp; Co. Ltd., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

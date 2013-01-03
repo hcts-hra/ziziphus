@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_0b0f6011-b1db-5055-902e-5c3b0a2159d6" refid="108632" source="EXC Priya Paul Collection">Photograph of the Maharaja of Nabha & others</relation>
+			<relation type="imageOf" relids="w_0b0f6011-b1db-5055-902e-5c3b0a2159d6" refid="108632" source="EXC Priya Paul Collection">Photograph of the Maharaja of Nabha &amp; others</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

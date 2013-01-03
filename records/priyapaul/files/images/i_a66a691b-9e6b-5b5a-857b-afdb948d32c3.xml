@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_13a3e854-bd8b-520e-8b9b-5c7e70ed0c0c" refid="118960" source="EXC Priya Paul Collection">Advertisement poster for snuff  by T. A. S. Rathnam & Bros.</relation>
+			<relation type="imageOf" relids="w_13a3e854-bd8b-520e-8b9b-5c7e70ed0c0c" refid="118960" source="EXC Priya Paul Collection">Advertisement poster for snuff  by T. A. S. Rathnam &amp; Bros.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

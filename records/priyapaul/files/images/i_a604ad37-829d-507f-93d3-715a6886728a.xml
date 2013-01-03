@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_f9564da3-8629-5e33-ba39-08ffc798cee8" refid="108686" source="EXC Priya Paul Collection">Shri Radhaji- a textile label of Finlay. Muir & Co., Calcutta</relation>
+			<relation type="imageOf" relids="w_f9564da3-8629-5e33-ba39-08ffc798cee8" refid="108686" source="EXC Priya Paul Collection">Shri Radhaji- a textile label of Finlay. Muir &amp; Co., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_575367d2-a2cb-5ad0-80f9-daf507e4e075" refid="108789" source="EXC Priya Paul Collection">Sitaji Arpanvan- a textile label of  Finlay Muir & Co., Calcutta</relation>
+			<relation type="imageOf" relids="w_575367d2-a2cb-5ad0-80f9-daf507e4e075" refid="108789" source="EXC Priya Paul Collection">Sitaji Arpanvan- a textile label of  Finlay Muir &amp; Co., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

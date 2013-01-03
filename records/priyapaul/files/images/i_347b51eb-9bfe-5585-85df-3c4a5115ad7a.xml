@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_f4c5d294-587f-5e56-af30-553f3b41fd7a" refid="119854" source="EXC Priya Paul Collection">Potter & Moore's Mitcham Lavender, London</relation>
+			<relation type="imageOf" relids="w_f4c5d294-587f-5e56-af30-553f3b41fd7a" refid="119854" source="EXC Priya Paul Collection">Potter &amp; Moore's Mitcham Lavender, London</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_5b73a2e6-dc6c-581c-beb6-87dd34f74a49" refid="119627" source="EXC Priya Paul Collection">Radha Shyam Ticket- a textile label of Elinger Mohatta & Co., Karachi (Registered. Copyright)</relation>
+			<relation type="imageOf" relids="w_5b73a2e6-dc6c-581c-beb6-87dd34f74a49" refid="119627" source="EXC Priya Paul Collection">Radha Shyam Ticket- a textile label of Elinger Mohatta &amp; Co., Karachi (Registered. Copyright)</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

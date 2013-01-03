@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_2df94d3d-b91d-53f5-8a5f-dc129fa048cc" refid="108300" source="EXC Priya Paul Collection">Parrot & Rainbow Mark- a textile label (BT)</relation>
+			<relation type="imageOf" relids="w_2df94d3d-b91d-53f5-8a5f-dc129fa048cc" refid="108300" source="EXC Priya Paul Collection">Parrot &amp; Rainbow Mark- a textile label (BT)</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

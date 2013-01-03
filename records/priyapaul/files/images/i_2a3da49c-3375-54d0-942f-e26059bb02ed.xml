@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_dff3999d-3a83-51d4-b516-e6c5fbcbc749" refid="118871" source="EXC Priya Paul Collection">Portrait of a bejewelled Hema Malini, in the poster calender of Mooljibhai Mathoorbhai & Sons, Calcutta. (1970)</relation>
+			<relation type="imageOf" relids="w_dff3999d-3a83-51d4-b516-e6c5fbcbc749" refid="118871" source="EXC Priya Paul Collection">Portrait of a bejewelled Hema Malini, in the poster calender of Mooljibhai Mathoorbhai &amp; Sons, Calcutta. (1970)</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

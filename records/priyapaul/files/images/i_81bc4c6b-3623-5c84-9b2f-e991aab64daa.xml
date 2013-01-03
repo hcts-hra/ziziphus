@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_448d1995-b671-573b-81f1-93956942f1f7" refid="106163" source="EXC Priya Paul Collection">Lord Mahadeva sits in the mountains on a tiger-skin- a textile label of Shaw, Wallace & Co., Calcutta.</relation>
+			<relation type="imageOf" relids="w_448d1995-b671-573b-81f1-93956942f1f7" refid="106163" source="EXC Priya Paul Collection">Lord Mahadeva sits in the mountains on a tiger-skin- a textile label of Shaw, Wallace &amp; Co., Calcutta.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

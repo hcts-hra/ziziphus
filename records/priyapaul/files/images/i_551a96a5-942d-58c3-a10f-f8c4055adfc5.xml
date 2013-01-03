@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_c367f5cc-d372-53ef-8e41-1ca71549da65" refid="120921" source="EXC Priya Paul Collection">Sita with her two kids, in an advertisement calender of M.K. Sunderamier & Sons. (1958)</relation>
+			<relation type="imageOf" relids="w_c367f5cc-d372-53ef-8e41-1ca71549da65" refid="120921" source="EXC Priya Paul Collection">Sita with her two kids, in an advertisement calender of M.K. Sunderamier &amp; Sons. (1958)</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_2f0e76e5-e951-53ca-a3a4-a2f0b4e60497" refid="118595" source="EXC Priya Paul Collection">Advertisement calendar page sample by E. I. du Pont de Nemours & Co.</relation>
+			<relation type="imageOf" relids="w_2f0e76e5-e951-53ca-a3a4-a2f0b4e60497" refid="118595" source="EXC Priya Paul Collection">Advertisement calendar page sample by E. I. du Pont de Nemours &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

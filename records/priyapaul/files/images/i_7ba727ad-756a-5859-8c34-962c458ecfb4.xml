@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_5a28bd29-802b-5650-968b-53988c609b7d" refid="119726" source="EXC Priya Paul Collection">Matchbox cover: "Pan &  Birrih Shop SAFETY MATCHES MADE IN SWEDEN"</relation>
+			<relation type="imageOf" relids="w_5a28bd29-802b-5650-968b-53988c609b7d" refid="119726" source="EXC Priya Paul Collection">Matchbox cover: "Pan &amp;  Birrih Shop SAFETY MATCHES MADE IN SWEDEN"</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

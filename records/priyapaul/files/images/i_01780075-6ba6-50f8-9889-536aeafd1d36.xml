@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_1a6ba4fc-6a8a-5d9f-9487-b7b7e3133387" refid="119720" source="EXC Priya Paul Collection">Matchbox cover by Tatasons & Co.</relation>
+			<relation type="imageOf" relids="w_1a6ba4fc-6a8a-5d9f-9487-b7b7e3133387" refid="119720" source="EXC Priya Paul Collection">Matchbox cover by Tatasons &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

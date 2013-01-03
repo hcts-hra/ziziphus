@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_57f01d32-794e-5736-a8cf-46f44e03b952" refid="120129" source="EXC Priya Paul Collection">An episode from the Ramayana- a textile label of Alexander Drew & Sons.</relation>
+			<relation type="imageOf" relids="w_57f01d32-794e-5736-a8cf-46f44e03b952" refid="120129" source="EXC Priya Paul Collection">An episode from the Ramayana- a textile label of Alexander Drew &amp; Sons.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

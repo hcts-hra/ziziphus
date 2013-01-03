@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_d8b40983-4256-5e6f-9102-559d738653c6" refid="120265" source="EXC Priya Paul Collection">Portrait of a bearded Englishman- a textile label of the James Finlay & Co. Ltd., Bombay</relation>
+			<relation type="imageOf" relids="w_d8b40983-4256-5e6f-9102-559d738653c6" refid="120265" source="EXC Priya Paul Collection">Portrait of a bearded Englishman- a textile label of the James Finlay &amp; Co. Ltd., Bombay</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

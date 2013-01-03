@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_870d140c-d36c-5ed4-8a9d-5311d8f1a5b7" refid="108865" source="EXC Priya Paul Collection">Portrait of queen with a sword- a textile label of Wilson, Latham & Co., Ltd.</relation>
+			<relation type="imageOf" relids="w_870d140c-d36c-5ed4-8a9d-5311d8f1a5b7" refid="108865" source="EXC Priya Paul Collection">Portrait of queen with a sword- a textile label of Wilson, Latham &amp; Co., Ltd.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

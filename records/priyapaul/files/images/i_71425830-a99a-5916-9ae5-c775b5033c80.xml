@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_800d98a8-0ce8-5264-9317-a832eaa1985b" refid="119568" source="EXC Priya Paul Collection">Shri Mahalaxmi- a textile label of Gopaljidas Faqirchandji General Merchant & Commission Agent, Bikaner</relation>
+			<relation type="imageOf" relids="w_800d98a8-0ce8-5264-9317-a832eaa1985b" refid="119568" source="EXC Priya Paul Collection">Shri Mahalaxmi- a textile label of Gopaljidas Faqirchandji General Merchant &amp; Commission Agent, Bikaner</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

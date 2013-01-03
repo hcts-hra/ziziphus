@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_d8026de8-9468-5de0-aab9-537c539e3fc7" refid="120311" source="EXC Priya Paul Collection">printed advertisement of Steuart & Co. (Coach and motor body builders)</relation>
+			<relation type="imageOf" relids="w_d8026de8-9468-5de0-aab9-537c539e3fc7" refid="120311" source="EXC Priya Paul Collection">printed advertisement of Steuart &amp; Co. (Coach and motor body builders)</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

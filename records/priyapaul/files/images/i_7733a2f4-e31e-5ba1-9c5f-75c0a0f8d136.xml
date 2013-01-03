@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_824f5223-d223-5943-bfdc-f15ec77d7b3f" refid="108255" source="EXC Priya Paul Collection">Back of a postcard published by H. A. Mirza & Sons, Delhi.</relation>
+			<relation type="imageOf" relids="w_824f5223-d223-5943-bfdc-f15ec77d7b3f" refid="108255" source="EXC Priya Paul Collection">Back of a postcard published by H. A. Mirza &amp; Sons, Delhi.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

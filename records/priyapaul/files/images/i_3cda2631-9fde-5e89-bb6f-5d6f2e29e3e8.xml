@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_deb20dcc-cce4-5bb5-ad68-48e8d38fdfcd" refid="108671" source="EXC Priya Paul Collection">Picture Post Card showing mountains, lake and the town, by Nanumal, Riayatmal & Co, Sukkur, Sind</relation>
+			<relation type="imageOf" relids="w_deb20dcc-cce4-5bb5-ad68-48e8d38fdfcd" refid="108671" source="EXC Priya Paul Collection">Picture Post Card showing mountains, lake and the town, by Nanumal, Riayatmal &amp; Co, Sukkur, Sind</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

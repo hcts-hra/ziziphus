@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_dd6570d7-eed4-5642-be6e-202e6bf2477b" refid="108829" source="EXC Priya Paul Collection">Kisan Leela- a textile label of Finlay Muir & Co., Bombay</relation>
+			<relation type="imageOf" relids="w_dd6570d7-eed4-5642-be6e-202e6bf2477b" refid="108829" source="EXC Priya Paul Collection">Kisan Leela- a textile label of Finlay Muir &amp; Co., Bombay</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

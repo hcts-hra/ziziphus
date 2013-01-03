@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_01627ca2-924e-594c-bacc-7c5fe04e3d2c" refid="119850" source="EXC Priya Paul Collection">Johnson's Baby & Toilet Powder</relation>
+			<relation type="imageOf" relids="w_01627ca2-924e-594c-bacc-7c5fe04e3d2c" refid="119850" source="EXC Priya Paul Collection">Johnson's Baby &amp; Toilet Powder</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

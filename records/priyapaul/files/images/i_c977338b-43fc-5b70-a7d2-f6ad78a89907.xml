@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_34af4242-e65b-59d8-ab0c-4f05ef8ea16d" refid="119716" source="EXC Priya Paul Collection">Parrot Polishes & Creams</relation>
+			<relation type="imageOf" relids="w_34af4242-e65b-59d8-ab0c-4f05ef8ea16d" refid="119716" source="EXC Priya Paul Collection">Parrot Polishes &amp; Creams</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

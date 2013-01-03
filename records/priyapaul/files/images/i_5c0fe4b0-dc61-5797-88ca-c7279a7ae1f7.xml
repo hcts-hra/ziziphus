@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_a4198f4c-3faa-5767-a966-260561d2e31a" refid="120083" source="EXC Priya Paul Collection">Sita-haran Ticket- a textile label of the Finlay Muir & Co., Calcutta</relation>
+			<relation type="imageOf" relids="w_a4198f4c-3faa-5767-a966-260561d2e31a" refid="120083" source="EXC Priya Paul Collection">Sita-haran Ticket- a textile label of the Finlay Muir &amp; Co., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

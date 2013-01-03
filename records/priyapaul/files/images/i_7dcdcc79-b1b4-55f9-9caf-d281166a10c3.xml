@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_6add76bd-c290-5545-9f54-d1ca4d87575f" refid="120059" source="EXC Priya Paul Collection">An oldman with his daughter- a textile label of the George Robinson & Company Ltd., Manchester</relation>
+			<relation type="imageOf" relids="w_6add76bd-c290-5545-9f54-d1ca4d87575f" refid="120059" source="EXC Priya Paul Collection">An oldman with his daughter- a textile label of the George Robinson &amp; Company Ltd., Manchester</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

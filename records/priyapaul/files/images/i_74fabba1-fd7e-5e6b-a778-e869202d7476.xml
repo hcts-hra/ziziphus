@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_438e43ff-ee20-556c-96ae-2e2d4ac870da" refid="119577" source="EXC Priya Paul Collection">The Mahadev- a textile label of Allen Brothers & Co., Calcutta</relation>
+			<relation type="imageOf" relids="w_438e43ff-ee20-556c-96ae-2e2d4ac870da" refid="119577" source="EXC Priya Paul Collection">The Mahadev- a textile label of Allen Brothers &amp; Co., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

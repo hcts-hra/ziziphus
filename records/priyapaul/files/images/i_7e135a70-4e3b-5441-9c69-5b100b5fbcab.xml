@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_30153ea9-028d-5dae-ac8d-216c30357483" refid="108059" source="EXC Priya Paul Collection">Saraswati, in a postcard, published by B.K.Das & Co., Calcutta, under 'Hindu gods, series no.2'</relation>
+			<relation type="imageOf" relids="w_30153ea9-028d-5dae-ac8d-216c30357483" refid="108059" source="EXC Priya Paul Collection">Saraswati, in a postcard, published by B.K.Das &amp; Co., Calcutta, under 'Hindu gods, series no.2'</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

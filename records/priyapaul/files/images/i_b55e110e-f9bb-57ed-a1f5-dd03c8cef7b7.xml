@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_2ed912bf-5366-5da3-84e3-f60cfaaf3db0" refid="108731" source="EXC Priya Paul Collection">The Princess on the chariot- a textile label of the Lyon Lord & Co., Manchester</relation>
+			<relation type="imageOf" relids="w_2ed912bf-5366-5da3-84e3-f60cfaaf3db0" refid="108731" source="EXC Priya Paul Collection">The Princess on the chariot- a textile label of the Lyon Lord &amp; Co., Manchester</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

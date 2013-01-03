@@ -51,7 +51,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_1f3b4f68-cd98-52ee-ae99-2f74433e37e1" refid="109756" source="EXC Priya Paul Collection">Fakirs, in a postcard, published by Raphael Tuck & Sons, under 'native life-India series, postcard no.7408</relation>
+			<relation type="imageOf" relids="w_1f3b4f68-cd98-52ee-ae99-2f74433e37e1" refid="109756" source="EXC Priya Paul Collection">Fakirs, in a postcard, published by Raphael Tuck &amp; Sons, under 'native life-India series, postcard no.7408</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

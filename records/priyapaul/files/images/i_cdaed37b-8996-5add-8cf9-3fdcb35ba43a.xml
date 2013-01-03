@@ -32,7 +32,7 @@
 			<inscription>
 				<author vocab="" refid="" />
 				<position />
-				<text type="" lang="">M. V. & Co.</text>
+				<text type="" lang="">M. V. &amp; Co.</text>
 			</inscription>
 		</inscriptionSet>
 		<locationSet>

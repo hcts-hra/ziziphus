@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_92687267-d94e-5eed-88c6-67d176a070b5" refid="108717" source="EXC Priya Paul Collection">Portrait of a Hindu god- a textile label of Chotalal Ravicarandas & Co.</relation>
+			<relation type="imageOf" relids="w_92687267-d94e-5eed-88c6-67d176a070b5" refid="108717" source="EXC Priya Paul Collection">Portrait of a Hindu god- a textile label of Chotalal Ravicarandas &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

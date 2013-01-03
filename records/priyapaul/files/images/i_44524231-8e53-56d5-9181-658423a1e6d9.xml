@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_2fd7d64b-3f09-5be8-91ca-8ac98cf07f9e" refid="107959" source="EXC Priya Paul Collection">Nani Peacock dance, Jaipur, in a postcard, published by Gobind Ram & Ooday Ram, Jaipur.</relation>
+			<relation type="imageOf" relids="w_2fd7d64b-3f09-5be8-91ca-8ac98cf07f9e" refid="107959" source="EXC Priya Paul Collection">Nani Peacock dance, Jaipur, in a postcard, published by Gobind Ram &amp; Ooday Ram, Jaipur.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

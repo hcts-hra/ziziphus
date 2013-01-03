@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_2f2a8df0-36ff-5c0f-b2c2-4504b89b6a2c" refid="119817" source="EXC Priya Paul Collection">P & O and British India Lines: Passenger & Freight Services</relation>
+			<relation type="imageOf" relids="w_2f2a8df0-36ff-5c0f-b2c2-4504b89b6a2c" refid="119817" source="EXC Priya Paul Collection">P &amp; O and British India Lines: Passenger &amp; Freight Services</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

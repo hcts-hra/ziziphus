@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_48fea360-0b1b-5017-ae09-19827db7b894" refid="108859" source="EXC Priya Paul Collection">Marriage of Sita at Janakpur- a textile label of F. Stiener & Co., Manchester</relation>
+			<relation type="imageOf" relids="w_48fea360-0b1b-5017-ae09-19827db7b894" refid="108859" source="EXC Priya Paul Collection">Marriage of Sita at Janakpur- a textile label of F. Stiener &amp; Co., Manchester</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_9f95b789-b524-5fdc-b606-95e5e8e78954" refid="108428" source="EXC Priya Paul Collection">Two flags and moon-star,  in a textile label of E.D. Sassoon & Co. Ltd., Bombay</relation>
+			<relation type="imageOf" relids="w_9f95b789-b524-5fdc-b606-95e5e8e78954" refid="108428" source="EXC Priya Paul Collection">Two flags and moon-star,  in a textile label of E.D. Sassoon &amp; Co. Ltd., Bombay</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

@@ -51,7 +51,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_326677b6-7734-5bd2-bfc9-bc25a79b079c" refid="119059" source="EXC Priya Paul Collection">1936 Advertisement calendar for Anand Singh & Co. harmoniums</relation>
+			<relation type="imageOf" relids="w_326677b6-7734-5bd2-bfc9-bc25a79b079c" refid="119059" source="EXC Priya Paul Collection">1936 Advertisement calendar for Anand Singh &amp; Co. harmoniums</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

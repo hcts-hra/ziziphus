@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_c6325042-c618-5846-a6cf-74dd7ee48645" refid="118966" source="EXC Priya Paul Collection">Brown & Polson's Corn Flour</relation>
+			<relation type="imageOf" relids="w_c6325042-c618-5846-a6cf-74dd7ee48645" refid="118966" source="EXC Priya Paul Collection">Brown &amp; Polson's Corn Flour</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

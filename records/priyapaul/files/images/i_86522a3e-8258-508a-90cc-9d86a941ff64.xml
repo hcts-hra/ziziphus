@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_36cc069e-7651-54f6-9882-6d685ea688c2" refid="120050" source="EXC Priya Paul Collection">Two guards and a horse, in a packing material of Augur Chund Bharoodan Sethia & Co., Calcutta</relation>
+			<relation type="imageOf" relids="w_36cc069e-7651-54f6-9882-6d685ea688c2" refid="120050" source="EXC Priya Paul Collection">Two guards and a horse, in a packing material of Augur Chund Bharoodan Sethia &amp; Co., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

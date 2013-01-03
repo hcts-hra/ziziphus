@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_66f6f265-9ccd-5ae4-851d-f84e97e8b274" refid="108836" source="EXC Priya Paul Collection">Laila Majnu- a textile label of Finlay Muir & Co., Calcutta</relation>
+			<relation type="imageOf" relids="w_66f6f265-9ccd-5ae4-851d-f84e97e8b274" refid="108836" source="EXC Priya Paul Collection">Laila Majnu- a textile label of Finlay Muir &amp; Co., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

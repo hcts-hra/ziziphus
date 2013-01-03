@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_e4418e56-91c3-5696-a92a-f5057fb5ffde" refid="119583" source="EXC Priya Paul Collection">Putna Ticket- a textile label of Gillanders Arbuthnot & Co., Calcutta</relation>
+			<relation type="imageOf" relids="w_e4418e56-91c3-5696-a92a-f5057fb5ffde" refid="119583" source="EXC Priya Paul Collection">Putna Ticket- a textile label of Gillanders Arbuthnot &amp; Co., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

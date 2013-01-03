@@ -1,9 +1,13 @@
-<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+<vra    xmlns="http://www.vraweb.org/vracore4.htm"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:hra="http://cluster-schemas.uni-hd.de"
+        xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+
 	<work id="w_332ef11c-8682-562e-983d-3347c6003873" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
 		<agentSet>
 			<agent>
 				<culture/>
-				<name vocab="local" type="corporate" refid="uuid-c276fbf4-d5c0-589c-8270-d2888248c449">William Jacks & Co.</name>
+				<name vocab="local" type="corporate" refid="uuid-c276fbf4-d5c0-589c-8270-d2888248c449">William Jacks &amp; Co.</name>
 				<role/>
   			</agent>
 		</agentSet>

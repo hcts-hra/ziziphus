@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_30840cd2-3db6-5e77-b237-61a8e676c915" refid="119803" source="EXC Priya Paul Collection">Red, White & Blue Coffee</relation>
+			<relation type="imageOf" relids="w_30840cd2-3db6-5e77-b237-61a8e676c915" refid="119803" source="EXC Priya Paul Collection">Red, White &amp; Blue Coffee</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

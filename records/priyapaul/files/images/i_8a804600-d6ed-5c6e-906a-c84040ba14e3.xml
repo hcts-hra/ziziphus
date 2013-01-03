@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_549a1da1-c928-5019-a476-76aa83c76869" refid="120685" source="EXC Priya Paul Collection">Bharat Mata with a trident, beside an elephant - Made in Japan, a textile label of Santram & Sons, Bombay</relation>
+			<relation type="imageOf" relids="w_549a1da1-c928-5019-a476-76aa83c76869" refid="120685" source="EXC Priya Paul Collection">Bharat Mata with a trident, beside an elephant - Made in Japan, a textile label of Santram &amp; Sons, Bombay</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

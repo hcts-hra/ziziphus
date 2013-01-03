@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_bd481d86-dd78-5c0b-8350-45e0e223be99" refid="108787" source="EXC Priya Paul Collection">Two horses- a textile label of  W.M. Stirling & Sons, Glasgow</relation>
+			<relation type="imageOf" relids="w_bd481d86-dd78-5c0b-8350-45e0e223be99" refid="108787" source="EXC Priya Paul Collection">Two horses- a textile label of  W.M. Stirling &amp; Sons, Glasgow</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

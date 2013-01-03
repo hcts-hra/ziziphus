@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_c4f5a37c-8c2d-5542-b76d-9373b7272539" refid="119011" source="EXC Priya Paul Collection">Arpan (Raj Babbar & Jitendra)</relation>
+			<relation type="imageOf" relids="w_c4f5a37c-8c2d-5542-b76d-9373b7272539" refid="119011" source="EXC Priya Paul Collection">Arpan (Raj Babbar &amp; Jitendra)</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_78bcfba9-4512-555c-b10f-30b2f608f1bf" refid="121077" source="EXC Priya Paul Collection">Calendar advertisement of Anand Singh & Co., showing an Indian woman on a writing desk</relation>
+			<relation type="imageOf" relids="w_78bcfba9-4512-555c-b10f-30b2f608f1bf" refid="121077" source="EXC Priya Paul Collection">Calendar advertisement of Anand Singh &amp; Co., showing an Indian woman on a writing desk</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

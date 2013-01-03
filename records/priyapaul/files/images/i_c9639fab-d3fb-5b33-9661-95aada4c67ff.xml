@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_47f92a43-7d77-59f8-99ee-acb93443f08b" refid="109736" source="EXC Priya Paul Collection">"Col: Nasar & Jawaharlal"</relation>
+			<relation type="imageOf" relids="w_47f92a43-7d77-59f8-99ee-acb93443f08b" refid="109736" source="EXC Priya Paul Collection">"Col: Nasar &amp; Jawaharlal"</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

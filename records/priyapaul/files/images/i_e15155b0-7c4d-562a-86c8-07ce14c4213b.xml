@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_fb69b01b-fbf9-53d8-a81f-84f46ca5fc76" refid="119676" source="EXC Priya Paul Collection">L & I Rapaport- a textile label</relation>
+			<relation type="imageOf" relids="w_fb69b01b-fbf9-53d8-a81f-84f46ca5fc76" refid="119676" source="EXC Priya Paul Collection">L &amp; I Rapaport- a textile label</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

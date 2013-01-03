@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_f56a3ea5-8c7a-57c0-8a64-d35215e1a404" refid="119779" source="EXC Priya Paul Collection">An advertisement of Stanes Red Ensign Tea & Coffee</relation>
+			<relation type="imageOf" relids="w_f56a3ea5-8c7a-57c0-8a64-d35215e1a404" refid="119779" source="EXC Priya Paul Collection">An advertisement of Stanes Red Ensign Tea &amp; Coffee</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

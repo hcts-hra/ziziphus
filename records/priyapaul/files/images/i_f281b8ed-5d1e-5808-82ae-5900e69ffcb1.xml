@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_49d7164f-4428-5ca9-bd1d-8458bd337745" refid="108062" source="EXC Priya Paul Collection">Postcard of B. K. Das & Co.</relation>
+			<relation type="imageOf" relids="w_49d7164f-4428-5ca9-bd1d-8458bd337745" refid="108062" source="EXC Priya Paul Collection">Postcard of B. K. Das &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

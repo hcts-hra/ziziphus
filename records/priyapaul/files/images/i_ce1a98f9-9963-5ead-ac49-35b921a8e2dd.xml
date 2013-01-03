@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_00588d19-9e77-535c-9966-6963817b659e" refid="120124" source="EXC Priya Paul Collection">Tripura-sur Vadh- a textile label of F.Steiner & Co., Manchester (1)</relation>
+			<relation type="imageOf" relids="w_00588d19-9e77-535c-9966-6963817b659e" refid="120124" source="EXC Priya Paul Collection">Tripura-sur Vadh- a textile label of F.Steiner &amp; Co., Manchester (1)</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

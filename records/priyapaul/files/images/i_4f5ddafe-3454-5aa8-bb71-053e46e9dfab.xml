@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_10f52997-208a-5e60-811d-b381c6b09cb7" refid="108716" source="EXC Priya Paul Collection">Krishna lifts the Govardhan mountain on his finger- a textile label of John Orrewing & Co. "Best Turkey Red"</relation>
+			<relation type="imageOf" relids="w_10f52997-208a-5e60-811d-b381c6b09cb7" refid="108716" source="EXC Priya Paul Collection">Krishna lifts the Govardhan mountain on his finger- a textile label of John Orrewing &amp; Co. "Best Turkey Red"</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

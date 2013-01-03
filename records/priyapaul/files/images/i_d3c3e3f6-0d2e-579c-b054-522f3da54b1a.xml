@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_d6f876f5-2b5c-5ecc-a9c2-baff51ba56d4" refid="120082" source="EXC Priya Paul Collection">Shri Hansa Autar (incarnation)- a textile label of the Gladstone Wyllie & Co., Calcutta</relation>
+			<relation type="imageOf" relids="w_d6f876f5-2b5c-5ecc-a9c2-baff51ba56d4" refid="120082" source="EXC Priya Paul Collection">Shri Hansa Autar (incarnation)- a textile label of the Gladstone Wyllie &amp; Co., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_07ad275c-6719-5ce7-88d6-898532aa5740" refid="119622" source="EXC Priya Paul Collection">Textile label of Svadeshi Mills Co. Ltd. and Tata Sons & Co.</relation>
+			<relation type="imageOf" relids="w_07ad275c-6719-5ce7-88d6-898532aa5740" refid="119622" source="EXC Priya Paul Collection">Textile label of Svadeshi Mills Co. Ltd. and Tata Sons &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

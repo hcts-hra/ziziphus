@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_9c1f6731-567a-57a9-810d-1a2d69f06b6e" refid="108048" source="EXC Priya Paul Collection">Radha & Madhava, in a postcard, published in Art Series, by P.S.Joshi Art Publishers, Bombay</relation>
+			<relation type="imageOf" relids="w_9c1f6731-567a-57a9-810d-1a2d69f06b6e" refid="108048" source="EXC Priya Paul Collection">Radha &amp; Madhava, in a postcard, published in Art Series, by P.S.Joshi Art Publishers, Bombay</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

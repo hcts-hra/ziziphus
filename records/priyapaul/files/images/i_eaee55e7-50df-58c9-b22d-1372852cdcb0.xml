@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_42a5239c-428c-5055-a594-7982c0e52dc8" refid="108361" source="EXC Priya Paul Collection">Shri Dasrath Rajkumar Ticket- a textile label of Kertarruck & Co., Calcutta, Karachi, Bombay</relation>
+			<relation type="imageOf" relids="w_42a5239c-428c-5055-a594-7982c0e52dc8" refid="108361" source="EXC Priya Paul Collection">Shri Dasrath Rajkumar Ticket- a textile label of Kertarruck &amp; Co., Calcutta, Karachi, Bombay</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_095965b0-0d7a-5bea-9364-652c8efd5637" refid="107971" source="EXC Priya Paul Collection">Palki with the high priest, Jaipur in a postcard, published by Gobind Ram & Ooday Ram, Jaipur.</relation>
+			<relation type="imageOf" relids="w_095965b0-0d7a-5bea-9364-652c8efd5637" refid="107971" source="EXC Priya Paul Collection">Palki with the high priest, Jaipur in a postcard, published by Gobind Ram &amp; Ooday Ram, Jaipur.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

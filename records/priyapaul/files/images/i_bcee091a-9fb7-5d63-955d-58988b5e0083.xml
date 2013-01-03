@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_57a8dd7d-3f88-55d7-b577-555d982b4c00" refid="118089" source="EXC Priya Paul Collection">Textile label of Allen Bros & Co.</relation>
+			<relation type="imageOf" relids="w_57a8dd7d-3f88-55d7-b577-555d982b4c00" refid="118089" source="EXC Priya Paul Collection">Textile label of Allen Bros &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

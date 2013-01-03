@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_785b3c67-b357-5de6-a900-45f9914203bc" refid="119542" source="EXC Priya Paul Collection">Maa Sherowali- a textile label of Anderson, Wright & Co., Calcutta</relation>
+			<relation type="imageOf" relids="w_785b3c67-b357-5de6-a900-45f9914203bc" refid="119542" source="EXC Priya Paul Collection">Maa Sherowali- a textile label of Anderson, Wright &amp; Co., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

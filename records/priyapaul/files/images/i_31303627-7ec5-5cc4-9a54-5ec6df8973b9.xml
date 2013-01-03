@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_417f032b-d14a-5ada-a137-3028e4b57c7f" refid="118049" source="EXC Priya Paul Collection">Piece of textile label of the company, "Hazareemull & Heeralall, Calcutta"</relation>
+			<relation type="imageOf" relids="w_417f032b-d14a-5ada-a137-3028e4b57c7f" refid="118049" source="EXC Priya Paul Collection">Piece of textile label of the company, "Hazareemull &amp; Heeralall, Calcutta"</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

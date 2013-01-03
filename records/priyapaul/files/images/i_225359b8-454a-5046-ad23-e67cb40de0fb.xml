@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_54af741d-63a0-5cf5-926e-496b321d128d" refid="108801" source="EXC Priya Paul Collection">Lanka Puri- a textile label of  F. Steiner & Co., Church</relation>
+			<relation type="imageOf" relids="w_54af741d-63a0-5cf5-926e-496b321d128d" refid="108801" source="EXC Priya Paul Collection">Lanka Puri- a textile label of  F. Steiner &amp; Co., Church</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

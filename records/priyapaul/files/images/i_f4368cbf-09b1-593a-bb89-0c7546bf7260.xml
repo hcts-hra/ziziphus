@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_b7465065-a02e-5ad3-bbc7-68ae839d1b5f" refid="119585" source="EXC Priya Paul Collection">Kunj Bihari- a textile label of A.K.Joshi & Co., Bombay</relation>
+			<relation type="imageOf" relids="w_b7465065-a02e-5ad3-bbc7-68ae839d1b5f" refid="119585" source="EXC Priya Paul Collection">Kunj Bihari- a textile label of A.K.Joshi &amp; Co., Bombay</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

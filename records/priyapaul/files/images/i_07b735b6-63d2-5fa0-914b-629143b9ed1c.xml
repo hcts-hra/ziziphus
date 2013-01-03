@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_a9b9bec6-7d09-5815-a7a9-5138c930a568" refid="107864" source="EXC Priya Paul Collection">Sukhdev Samvad- a textile label of F.Steiner & Co. Ltd., Chruch & Manchester.</relation>
+			<relation type="imageOf" relids="w_a9b9bec6-7d09-5815-a7a9-5138c930a568" refid="107864" source="EXC Priya Paul Collection">Sukhdev Samvad- a textile label of F.Steiner &amp; Co. Ltd., Chruch &amp; Manchester.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_15808760-5fe9-523a-9b12-0201213aa252" refid="108825" source="EXC Priya Paul Collection">Textile label by F. Steiner & Co.</relation>
+			<relation type="imageOf" relids="w_15808760-5fe9-523a-9b12-0201213aa252" refid="108825" source="EXC Priya Paul Collection">Textile label by F. Steiner &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

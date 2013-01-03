@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_f78c9b04-8c83-55a5-ba9c-f33008836cab" refid="118635" source="EXC Priya Paul Collection">Shree Krishna, in a poster calender of N.V. Shungmugam & Co., (high class Madras snuff)</relation>
+			<relation type="imageOf" relids="w_f78c9b04-8c83-55a5-ba9c-f33008836cab" refid="118635" source="EXC Priya Paul Collection">Shree Krishna, in a poster calender of N.V. Shungmugam &amp; Co., (high class Madras snuff)</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

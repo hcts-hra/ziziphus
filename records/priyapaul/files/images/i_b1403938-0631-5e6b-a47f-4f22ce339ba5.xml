@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_eb6ed378-0d14-522e-b203-d5182e482917" refid="119762" source="EXC Priya Paul Collection">An advertisement of M.A. Joshi & Co.</relation>
+			<relation type="imageOf" relids="w_eb6ed378-0d14-522e-b203-d5182e482917" refid="119762" source="EXC Priya Paul Collection">An advertisement of M.A. Joshi &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_f6ff7564-2ed4-5d25-b784-5b21a67cac6b" refid="106193" source="EXC Priya Paul Collection">Two children sit on a cart which is driven by two cocks- a textile label of Madhowji Thackersey & Co., Bombay.</relation>
+			<relation type="imageOf" relids="w_f6ff7564-2ed4-5d25-b784-5b21a67cac6b" refid="106193" source="EXC Priya Paul Collection">Two children sit on a cart which is driven by two cocks- a textile label of Madhowji Thackersey &amp; Co., Bombay.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

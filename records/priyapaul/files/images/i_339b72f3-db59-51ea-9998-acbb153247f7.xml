@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_f573fb2a-2a7e-562d-81ed-6fe1485454fd" refid="119756" source="EXC Priya Paul Collection">An advertisement of Bombay Baroda & Central Indian Rly</relation>
+			<relation type="imageOf" relids="w_f573fb2a-2a7e-562d-81ed-6fe1485454fd" refid="119756" source="EXC Priya Paul Collection">An advertisement of Bombay Baroda &amp; Central Indian Rly</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

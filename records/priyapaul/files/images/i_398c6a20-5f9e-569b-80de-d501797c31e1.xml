@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_00f13bae-8ff8-5b4d-bc01-47789ed811a1" refid="106184" source="EXC Priya Paul Collection">A warrior helps a woman in coming out of a well- a textile label of Graham, Glasgow & Karachi.</relation>
+			<relation type="imageOf" relids="w_00f13bae-8ff8-5b4d-bc01-47789ed811a1" refid="106184" source="EXC Priya Paul Collection">A warrior helps a woman in coming out of a well- a textile label of Graham, Glasgow &amp; Karachi.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_05bc4bfa-049e-50fd-b031-10743ca0b56f" refid="108823" source="EXC Priya Paul Collection">Moon & stars- a textile label of Haji Mohamed Habib Hasan Dada, Bombay</relation>
+			<relation type="imageOf" relids="w_05bc4bfa-049e-50fd-b031-10743ca0b56f" refid="108823" source="EXC Priya Paul Collection">Moon &amp; stars- a textile label of Haji Mohamed Habib Hasan Dada, Bombay</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

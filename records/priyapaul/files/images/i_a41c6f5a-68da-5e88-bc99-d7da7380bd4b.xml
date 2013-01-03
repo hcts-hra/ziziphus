@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_058a5c21-1d77-5a91-b897-22882d1c1894" refid="107891" source="EXC Priya Paul Collection">Maharani Victoria (Queen Victoria)- a textile label of Chotalal Ravicarandas & Co.</relation>
+			<relation type="imageOf" relids="w_058a5c21-1d77-5a91-b897-22882d1c1894" refid="107891" source="EXC Priya Paul Collection">Maharani Victoria (Queen Victoria)- a textile label of Chotalal Ravicarandas &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

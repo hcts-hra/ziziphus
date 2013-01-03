@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_65916aab-76a1-5a85-bfdb-5e2d2a33d927" refid="108196" source="EXC Priya Paul Collection">back of postcard printed in England and published .by B & L.T.Co., Calcutta.</relation>
+			<relation type="imageOf" relids="w_65916aab-76a1-5a85-bfdb-5e2d2a33d927" refid="108196" source="EXC Priya Paul Collection">back of postcard printed in England and published .by B &amp; L.T.Co., Calcutta.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

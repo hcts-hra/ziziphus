@@ -1,4 +1,8 @@
-<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+<vra    xmlns="http://www.vraweb.org/vracore4.htm"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:hra="http://cluster-schemas.uni-hd.de"
+        xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+
 	<work id="w_dbe2149c-bb96-58ad-b3e7-bbe5dc08d405" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
 		<agentSet>
 			<agent>

@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_152626fb-d1f3-578a-80c3-4ae459051b0f" refid="120039" source="EXC Priya Paul Collection">Sansar Sagar Ticket- a textile label of F. Stiener & Co., Manchester</relation>
+			<relation type="imageOf" relids="w_152626fb-d1f3-578a-80c3-4ae459051b0f" refid="120039" source="EXC Priya Paul Collection">Sansar Sagar Ticket- a textile label of F. Stiener &amp; Co., Manchester</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

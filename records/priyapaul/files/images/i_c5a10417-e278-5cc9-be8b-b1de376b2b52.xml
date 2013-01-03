@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_775cb202-74ad-5a7b-b9af-8fe24e4802c0" refid="120035" source="EXC Priya Paul Collection">Raslila Ticket- a textile label of John Orrewing & Co., Calcutta</relation>
+			<relation type="imageOf" relids="w_775cb202-74ad-5a7b-b9af-8fe24e4802c0" refid="120035" source="EXC Priya Paul Collection">Raslila Ticket- a textile label of John Orrewing &amp; Co., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

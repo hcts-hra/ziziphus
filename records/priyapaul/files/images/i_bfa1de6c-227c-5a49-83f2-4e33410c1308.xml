@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_1d8fb96d-6095-56d2-b781-f6e0702e2bc0" refid="108357" source="EXC Priya Paul Collection">Shri Ram Chander Ticket, Arched Orrewing & Co., Glasgow</relation>
+			<relation type="imageOf" relids="w_1d8fb96d-6095-56d2-b781-f6e0702e2bc0" refid="108357" source="EXC Priya Paul Collection">Shri Ram Chander Ticket, Arched Orrewing &amp; Co., Glasgow</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

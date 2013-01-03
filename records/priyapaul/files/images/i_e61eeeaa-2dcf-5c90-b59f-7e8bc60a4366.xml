@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_5f1b59ee-e7b3-5d8d-b8d1-c18fbb21a467" refid="107912" source="EXC Priya Paul Collection">Textile label by Parikh Motilal Jamnadas & Co.</relation>
+			<relation type="imageOf" relids="w_5f1b59ee-e7b3-5d8d-b8d1-c18fbb21a467" refid="107912" source="EXC Priya Paul Collection">Textile label by Parikh Motilal Jamnadas &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

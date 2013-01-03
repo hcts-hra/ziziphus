@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_dcf4e88f-fae8-5116-9842-7e2fe25acc92" refid="120132" source="EXC Priya Paul Collection">Shri Kalki Avatar- a textile label of W.M. Sterling & Sons.</relation>
+			<relation type="imageOf" relids="w_dcf4e88f-fae8-5116-9842-7e2fe25acc92" refid="120132" source="EXC Priya Paul Collection">Shri Kalki Avatar- a textile label of W.M. Sterling &amp; Sons.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

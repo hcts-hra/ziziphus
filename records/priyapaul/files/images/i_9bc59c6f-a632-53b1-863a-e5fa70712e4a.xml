@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_23115853-4351-5f09-af9a-87cf3172913a" refid="120253" source="EXC Priya Paul Collection">Durga Nar Ka Awatar Ticket- a textile label of the F. Stiener & Company, Manchester</relation>
+			<relation type="imageOf" relids="w_23115853-4351-5f09-af9a-87cf3172913a" refid="120253" source="EXC Priya Paul Collection">Durga Nar Ka Awatar Ticket- a textile label of the F. Stiener &amp; Company, Manchester</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

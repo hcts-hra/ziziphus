@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_60b85487-f9e7-5f82-a322-ba60184e8525" refid="108815" source="EXC Priya Paul Collection">Shri Shri Jagannath Puri- a textile label of  F. Steiner & Co., Manchester (2)</relation>
+			<relation type="imageOf" relids="w_60b85487-f9e7-5f82-a322-ba60184e8525" refid="108815" source="EXC Priya Paul Collection">Shri Shri Jagannath Puri- a textile label of  F. Steiner &amp; Co., Manchester (2)</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

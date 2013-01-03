@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_fe58464e-d373-5055-ab99-922bf73ff907" refid="108858" source="EXC Priya Paul Collection">Horse and cow- a textile label of the City of Ahmedabad Spinning & Manufacturing Co. Ltd.</relation>
+			<relation type="imageOf" relids="w_fe58464e-d373-5055-ab99-922bf73ff907" refid="108858" source="EXC Priya Paul Collection">Horse and cow- a textile label of the City of Ahmedabad Spinning &amp; Manufacturing Co. Ltd.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

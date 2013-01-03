@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_2a1da3df-dbb7-5fa0-ac1f-cd37523ebfad" refid="118042" source="EXC Priya Paul Collection">Back of Post card by Wilde & Cray, London</relation>
+			<relation type="imageOf" relids="w_2a1da3df-dbb7-5fa0-ac1f-cd37523ebfad" refid="118042" source="EXC Priya Paul Collection">Back of Post card by Wilde &amp; Cray, London</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

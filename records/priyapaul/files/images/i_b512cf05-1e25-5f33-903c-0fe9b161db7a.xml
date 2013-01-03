@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_8ce51a5f-c328-5fa4-8e60-0aec4ca010e2" refid="118639" source="EXC Priya Paul Collection">1942 Advertisement calendar for Thakur Savadekar & Co.</relation>
+			<relation type="imageOf" relids="w_8ce51a5f-c328-5fa4-8e60-0aec4ca010e2" refid="118639" source="EXC Priya Paul Collection">1942 Advertisement calendar for Thakur Savadekar &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

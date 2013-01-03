@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_2e58afa6-ff50-59be-bb59-bf8d5b293347" refid="108816" source="EXC Priya Paul Collection">Kadam Leela Ticket- a textile label of  Finlay Muir & Co., Calcutta</relation>
+			<relation type="imageOf" relids="w_2e58afa6-ff50-59be-bb59-bf8d5b293347" refid="108816" source="EXC Priya Paul Collection">Kadam Leela Ticket- a textile label of  Finlay Muir &amp; Co., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

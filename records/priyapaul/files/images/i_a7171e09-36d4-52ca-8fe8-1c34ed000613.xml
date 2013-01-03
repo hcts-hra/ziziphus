@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_fa0db5f7-9d99-5511-abbd-7eae126b67b4" refid="120064" source="EXC Priya Paul Collection">Three women perform dance- a textile label of the George Robinson & Company Ltd., Manchester</relation>
+			<relation type="imageOf" relids="w_fa0db5f7-9d99-5511-abbd-7eae126b67b4" refid="120064" source="EXC Priya Paul Collection">Three women perform dance- a textile label of the George Robinson &amp; Company Ltd., Manchester</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

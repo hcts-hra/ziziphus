@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_93626181-19ed-5af5-8a51-67cf5d5ebdb1" refid="108668" source="EXC Priya Paul Collection">J & Sons, Churiwalan, Shamsi Cottage, Delhi</relation>
+			<relation type="imageOf" relids="w_93626181-19ed-5af5-8a51-67cf5d5ebdb1" refid="108668" source="EXC Priya Paul Collection">J &amp; Sons, Churiwalan, Shamsi Cottage, Delhi</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

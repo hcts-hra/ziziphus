@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_2a44b066-a21c-5b43-925d-81dd786ce6c5" refid="109744" source="EXC Priya Paul Collection">Textile label of Nassur Hajee Mowjee & Co. Bombay</relation>
+			<relation type="imageOf" relids="w_2a44b066-a21c-5b43-925d-81dd786ce6c5" refid="109744" source="EXC Priya Paul Collection">Textile label of Nassur Hajee Mowjee &amp; Co. Bombay</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

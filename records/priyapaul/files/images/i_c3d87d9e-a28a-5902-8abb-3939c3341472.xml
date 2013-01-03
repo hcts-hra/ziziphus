@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_77c8cf2b-07bb-5081-8e1a-fe6f74b7f6cb" refid="106206" source="EXC Priya Paul Collection">Phulmala (the garland of flowers)- a textile label of Currimbhoy Ebrahim & Sons. Ltd.</relation>
+			<relation type="imageOf" relids="w_77c8cf2b-07bb-5081-8e1a-fe6f74b7f6cb" refid="106206" source="EXC Priya Paul Collection">Phulmala (the garland of flowers)- a textile label of Currimbhoy Ebrahim &amp; Sons. Ltd.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

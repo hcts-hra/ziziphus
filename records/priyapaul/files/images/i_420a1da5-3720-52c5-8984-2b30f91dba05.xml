@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_858842f3-8f60-53fe-b344-5b82879f659d" refid="109840" source="EXC Priya Paul Collection">Portrait of a devotee on her way to the temple- a textile label of  N.K. Jayakar & Co., Bombay</relation>
+			<relation type="imageOf" relids="w_858842f3-8f60-53fe-b344-5b82879f659d" refid="109840" source="EXC Priya Paul Collection">Portrait of a devotee on her way to the temple- a textile label of  N.K. Jayakar &amp; Co., Bombay</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

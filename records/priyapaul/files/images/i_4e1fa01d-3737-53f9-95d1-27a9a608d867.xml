@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_95e01ccb-b37b-5991-94e4-c8e796b47577" refid="120047" source="EXC Priya Paul Collection">Lakshmi, in a packing material of A.K. Joshi & Sons., Bombay</relation>
+			<relation type="imageOf" relids="w_95e01ccb-b37b-5991-94e4-c8e796b47577" refid="120047" source="EXC Priya Paul Collection">Lakshmi, in a packing material of A.K. Joshi &amp; Sons., Bombay</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

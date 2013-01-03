@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_2a18f96a-45e1-5140-b4a8-36252a233d1b" refid="107884" source="EXC Priya Paul Collection">An old building with a dome- a textile label of Ewing & Co., Calcutta</relation>
+			<relation type="imageOf" relids="w_2a18f96a-45e1-5140-b4a8-36252a233d1b" refid="107884" source="EXC Priya Paul Collection">An old building with a dome- a textile label of Ewing &amp; Co., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

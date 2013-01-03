@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_e7defb2c-2f0d-5ced-afc2-a888ed03eaf3" refid="108791" source="EXC Priya Paul Collection">Sri Satnarayanji- a textile label of  Kerr Tarruck & Co., Calcutta</relation>
+			<relation type="imageOf" relids="w_e7defb2c-2f0d-5ced-afc2-a888ed03eaf3" refid="108791" source="EXC Priya Paul Collection">Sri Satnarayanji- a textile label of  Kerr Tarruck &amp; Co., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

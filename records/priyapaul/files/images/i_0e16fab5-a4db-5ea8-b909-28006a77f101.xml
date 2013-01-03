@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_5086e94c-eb2d-5b14-b1c5-199f47bc3e9f" refid="120261" source="EXC Priya Paul Collection">Portrait of a female goddess- a textile label of Chotalal Ravicarandas & Co.</relation>
+			<relation type="imageOf" relids="w_5086e94c-eb2d-5b14-b1c5-199f47bc3e9f" refid="120261" source="EXC Priya Paul Collection">Portrait of a female goddess- a textile label of Chotalal Ravicarandas &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

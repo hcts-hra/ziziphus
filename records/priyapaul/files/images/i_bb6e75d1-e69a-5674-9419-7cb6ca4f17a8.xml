@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_6615761f-04ed-51e1-ba51-265611c42279" refid="108722" source="EXC Priya Paul Collection">An edifice- a textile label of Lyon & Co., Bombay</relation>
+			<relation type="imageOf" relids="w_6615761f-04ed-51e1-ba51-265611c42279" refid="108722" source="EXC Priya Paul Collection">An edifice- a textile label of Lyon &amp; Co., Bombay</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

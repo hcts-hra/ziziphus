@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_e16686cd-223e-521b-ac61-3fc47146053c" refid="107879" source="EXC Priya Paul Collection">Textile label by Wm. Stirling & Sons</relation>
+			<relation type="imageOf" relids="w_e16686cd-223e-521b-ac61-3fc47146053c" refid="107879" source="EXC Priya Paul Collection">Textile label by Wm. Stirling &amp; Sons</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

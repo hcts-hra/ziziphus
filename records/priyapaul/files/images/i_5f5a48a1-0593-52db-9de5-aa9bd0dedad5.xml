@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_b59cb966-6cd0-5046-94a2-386169c4cb2b" refid="119671" source="EXC Priya Paul Collection">Textile label of Jainy Bros. & Co.</relation>
+			<relation type="imageOf" relids="w_b59cb966-6cd0-5046-94a2-386169c4cb2b" refid="119671" source="EXC Priya Paul Collection">Textile label of Jainy Bros. &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

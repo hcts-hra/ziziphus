@@ -1,9 +1,13 @@
-<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+<vra    xmlns="http://www.vraweb.org/vracore4.htm"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:hra="http://cluster-schemas.uni-hd.de"
+        xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+
 	<work id="w_fbd39819-beef-5dfe-990f-27ac827687ac" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
 		<agentSet>
 			<agent>
 				<culture/>
-				<name vocab="local" type="corporate" refid="uuid-0e848dd7-966b-508a-86d6-faf4d7ef2521">Keekabhoy & Abdoolhoosen Bombay</name>
+				<name vocab="local" type="corporate" refid="uuid-0e848dd7-966b-508a-86d6-faf4d7ef2521">Keekabhoy &amp; Abdoolhoosen Bombay</name>
 				<role/>
   			</agent>
 		</agentSet>

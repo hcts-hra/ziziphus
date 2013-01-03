@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_0aab2293-f66f-572a-9535-bc45eb9a69c0" refid="107899" source="EXC Priya Paul Collection">Dasai Badshah ( ten gurus of the Sikhs)- a textile label of F.Steiner & Co. Ltd., Chruch & Manchester.</relation>
+			<relation type="imageOf" relids="w_0aab2293-f66f-572a-9535-bc45eb9a69c0" refid="107899" source="EXC Priya Paul Collection">Dasai Badshah ( ten gurus of the Sikhs)- a textile label of F.Steiner &amp; Co. Ltd., Chruch &amp; Manchester.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

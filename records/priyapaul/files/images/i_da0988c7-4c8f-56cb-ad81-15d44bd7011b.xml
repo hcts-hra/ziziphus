@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_a7025d2a-aff9-58f0-b3e3-930b4d8ca5fd" refid="108845" source="EXC Priya Paul Collection">Bower stamp brand- a textile label of Motilal Vallabji & Co., Bombay</relation>
+			<relation type="imageOf" relids="w_a7025d2a-aff9-58f0-b3e3-930b4d8ca5fd" refid="108845" source="EXC Priya Paul Collection">Bower stamp brand- a textile label of Motilal Vallabji &amp; Co., Bombay</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

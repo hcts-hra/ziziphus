@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_b32e7f2b-0e99-57b7-88cc-3767edc06d67" refid="119119" source="EXC Priya Paul Collection">Krishna & Kaliya Daman</relation>
+			<relation type="imageOf" relids="w_b32e7f2b-0e99-57b7-88cc-3767edc06d67" refid="119119" source="EXC Priya Paul Collection">Krishna &amp; Kaliya Daman</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

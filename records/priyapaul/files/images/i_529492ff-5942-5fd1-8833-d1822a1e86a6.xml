@@ -51,7 +51,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_efde1fb7-2127-5d9f-8c42-8f5b934f0e80" refid="118358" source="EXC Priya Paul Collection">1961 Advertisement calendar for A & F Harvey Ltd.</relation>
+			<relation type="imageOf" relids="w_efde1fb7-2127-5d9f-8c42-8f5b934f0e80" refid="118358" source="EXC Priya Paul Collection">1961 Advertisement calendar for A &amp; F Harvey Ltd.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

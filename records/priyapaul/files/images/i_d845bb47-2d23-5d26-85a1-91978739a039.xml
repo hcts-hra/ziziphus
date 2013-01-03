@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_b01360c8-8b4d-5998-8853-4077be4ea62a" refid="119861" source="EXC Priya Paul Collection">Precision Watches: Favre Leuba & Co. Ltd., Bombay</relation>
+			<relation type="imageOf" relids="w_b01360c8-8b4d-5998-8853-4077be4ea62a" refid="119861" source="EXC Priya Paul Collection">Precision Watches: Favre Leuba &amp; Co. Ltd., Bombay</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

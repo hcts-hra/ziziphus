@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_6b937b6e-1ccb-5bec-b6e9-f4808a656192" refid="108890" source="EXC Priya Paul Collection">Portrait of a lady with a sitar- a textile label of Morarji Goculdass Spinning & Weaving Company Ltd.</relation>
+			<relation type="imageOf" relids="w_6b937b6e-1ccb-5bec-b6e9-f4808a656192" refid="108890" source="EXC Priya Paul Collection">Portrait of a lady with a sitar- a textile label of Morarji Goculdass Spinning &amp; Weaving Company Ltd.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

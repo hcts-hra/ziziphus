@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_8955312b-f610-5cf8-bf0e-fe0d2fdf4ef6" refid="108691" source="EXC Priya Paul Collection">A view of a procession- a textile label of the King & Co., Bombay</relation>
+			<relation type="imageOf" relids="w_8955312b-f610-5cf8-bf0e-fe0d2fdf4ef6" refid="108691" source="EXC Priya Paul Collection">A view of a procession- a textile label of the King &amp; Co., Bombay</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

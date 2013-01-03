@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_ee4eb2eb-f4c2-5379-b09a-a9c699b41b32" refid="108770" source="EXC Priya Paul Collection">Portrait of a Burmese gentleman sitting on a chair- a textile label of  the John Orrewing & Co., Glasgow</relation>
+			<relation type="imageOf" relids="w_ee4eb2eb-f4c2-5379-b09a-a9c699b41b32" refid="108770" source="EXC Priya Paul Collection">Portrait of a Burmese gentleman sitting on a chair- a textile label of  the John Orrewing &amp; Co., Glasgow</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

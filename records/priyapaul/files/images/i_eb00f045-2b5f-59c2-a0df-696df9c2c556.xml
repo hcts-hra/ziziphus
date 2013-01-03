@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_e149dc61-253f-5b0f-9e2b-da1a0e98739f" refid="108824" source="EXC Priya Paul Collection">Shri Radha Sabha- a textile label of F.Steiner & Co., Manchester</relation>
+			<relation type="imageOf" relids="w_e149dc61-253f-5b0f-9e2b-da1a0e98739f" refid="108824" source="EXC Priya Paul Collection">Shri Radha Sabha- a textile label of F.Steiner &amp; Co., Manchester</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

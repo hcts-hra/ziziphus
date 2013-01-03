@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_cd25b70d-cb92-5ce7-8879-8e179faedc19" refid="108843" source="EXC Priya Paul Collection">Anant Shaiya- a textile label of Orrewing & Co., Calcutta</relation>
+			<relation type="imageOf" relids="w_cd25b70d-cb92-5ce7-8879-8e179faedc19" refid="108843" source="EXC Priya Paul Collection">Anant Shaiya- a textile label of Orrewing &amp; Co., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

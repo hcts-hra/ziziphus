@@ -1,4 +1,8 @@
-<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+<vra    xmlns="http://www.vraweb.org/vracore4.htm"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:hra="http://cluster-schemas.uni-hd.de"
+        xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+
 	<work id="w_5463a9b0-5a08-5a06-8854-1cacc0c6c88f" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
 		<agentSet>
 			<agent>
@@ -8,7 +12,7 @@
   			</agent>
 			<agent>
 				<culture/>
-				<name vocab="local" type="personal" refid="uuid-1685fe15-a821-57c3-b652-75f1b6fb75bd">Ravi <artist></name>
+				<name vocab="local" type="personal" refid="uuid-1685fe15-a821-57c3-b652-75f1b6fb75bd">Ravi</name>
 				<role/>
   			</agent>
 			<agent>

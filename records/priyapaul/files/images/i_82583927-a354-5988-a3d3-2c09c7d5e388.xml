@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_8a17f8e0-1913-5d25-9601-48c9f95915f3" refid="118686" source="EXC Priya Paul Collection">Court of Lord Rama, in a poster advertisement of Laljee Godhoo & Co. (Assafoetida and saffron merchants), Bombay</relation>
+			<relation type="imageOf" relids="w_8a17f8e0-1913-5d25-9601-48c9f95915f3" refid="118686" source="EXC Priya Paul Collection">Court of Lord Rama, in a poster advertisement of Laljee Godhoo &amp; Co. (Assafoetida and saffron merchants), Bombay</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

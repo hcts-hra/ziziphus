@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_99a06390-ded3-5ae1-9b5e-45f70cc7bf42" refid="108395" source="EXC Priya Paul Collection">Firpo's Chowringhee Calcutta: caterers & confectioners</relation>
+			<relation type="imageOf" relids="w_99a06390-ded3-5ae1-9b5e-45f70cc7bf42" refid="108395" source="EXC Priya Paul Collection">Firpo's Chowringhee Calcutta: caterers &amp; confectioners</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

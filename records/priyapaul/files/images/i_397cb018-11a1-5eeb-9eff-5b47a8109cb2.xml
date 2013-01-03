@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_39c9688d-677d-53e6-9c8c-eca027412daa" refid="120242" source="EXC Priya Paul Collection">A view of the rising sun- a textile label of the Pratap Spinning, Weaving & Manufacturing Company Ltd., Amalner, Khandesh</relation>
+			<relation type="imageOf" relids="w_39c9688d-677d-53e6-9c8c-eca027412daa" refid="120242" source="EXC Priya Paul Collection">A view of the rising sun- a textile label of the Pratap Spinning, Weaving &amp; Manufacturing Company Ltd., Amalner, Khandesh</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

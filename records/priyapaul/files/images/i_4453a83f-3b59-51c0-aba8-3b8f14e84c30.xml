@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_4ef78cff-3214-533e-b6a8-f47ffef6ea3f" refid="120118" source="EXC Priya Paul Collection">Portrait of Lokmanya Gangadhar Tilak- a textile label of A.K. Joshi & Company, Bombay</relation>
+			<relation type="imageOf" relids="w_4ef78cff-3214-533e-b6a8-f47ffef6ea3f" refid="120118" source="EXC Priya Paul Collection">Portrait of Lokmanya Gangadhar Tilak- a textile label of A.K. Joshi &amp; Company, Bombay</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

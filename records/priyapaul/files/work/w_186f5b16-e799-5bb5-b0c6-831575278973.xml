@@ -1,9 +1,13 @@
-<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+<vra    xmlns="http://www.vraweb.org/vracore4.htm"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:hra="http://cluster-schemas.uni-hd.de"
+        xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+
 	<work id="w_186f5b16-e799-5bb5-b0c6-831575278973" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
 		<agentSet>
 			<agent>
 				<culture/>
-				<name vocab="local" type="corporate" refid="uuid-f268d38e-ef59-57bb-8b22-4bc5b413216b">Jacob & Co.'s Biscuits</name>
+				<name vocab="local" type="corporate" refid="uuid-f268d38e-ef59-57bb-8b22-4bc5b413216b">Jacob &amp; Co.'s Biscuits</name>
 				<role/>
   			</agent>
 		</agentSet>

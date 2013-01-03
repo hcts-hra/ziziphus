@@ -1,4 +1,8 @@
-<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+<vra    xmlns="http://www.vraweb.org/vracore4.htm"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:hra="http://cluster-schemas.uni-hd.de"
+        xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+
 	<work id="w_1a90aeab-154e-57bd-82d7-732fcd4facc4" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
 		<agentSet>
 			<agent>
@@ -8,7 +12,7 @@
   			</agent>
 			<agent>
 				<culture/>
-				<name vocab="local" type="corporate" refid="uuid-4b0587fc-b79e-508e-b15f-b9c900048fd1">F. Steiner & Co.</name>
+				<name vocab="local" type="corporate" refid="uuid-4b0587fc-b79e-508e-b15f-b9c900048fd1">F. Steiner &amp; Co.</name>
 				<role/>
   			</agent>
 		</agentSet>

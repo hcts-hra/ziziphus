@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_154a9f19-214d-5b7a-ac64-f9fffd37e574" refid="108756" source="EXC Priya Paul Collection">The Gulal Flower- a textile label of the Harmiller & Co.Calcutta</relation>
+			<relation type="imageOf" relids="w_154a9f19-214d-5b7a-ac64-f9fffd37e574" refid="108756" source="EXC Priya Paul Collection">The Gulal Flower- a textile label of the Harmiller &amp; Co.Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

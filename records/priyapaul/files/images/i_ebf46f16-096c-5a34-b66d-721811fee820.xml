@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_74726bc0-d1f8-5227-bc4c-b301643587cb" refid="119236" source="EXC Priya Paul Collection">Advertisement for Bayer and Meister Lucius & Bruning</relation>
+			<relation type="imageOf" relids="w_74726bc0-d1f8-5227-bc4c-b301643587cb" refid="119236" source="EXC Priya Paul Collection">Advertisement for Bayer and Meister Lucius &amp; Bruning</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_5b04c90b-cc62-520d-a8d2-180ccb18aa50" refid="120094" source="EXC Priya Paul Collection">Four Portraits- a textile label of Finlay Muir & Company, Calcutta</relation>
+			<relation type="imageOf" relids="w_5b04c90b-cc62-520d-a8d2-180ccb18aa50" refid="120094" source="EXC Priya Paul Collection">Four Portraits- a textile label of Finlay Muir &amp; Company, Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

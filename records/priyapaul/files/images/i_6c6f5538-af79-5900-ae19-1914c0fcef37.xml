@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_41e3545a-fa7a-579b-b47d-8ae53d186d25" refid="119587" source="EXC Priya Paul Collection">Semper Eadem, trademark of Horrockses, Miller & Co. (Registered no.22774)</relation>
+			<relation type="imageOf" relids="w_41e3545a-fa7a-579b-b47d-8ae53d186d25" refid="119587" source="EXC Priya Paul Collection">Semper Eadem, trademark of Horrockses, Miller &amp; Co. (Registered no.22774)</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

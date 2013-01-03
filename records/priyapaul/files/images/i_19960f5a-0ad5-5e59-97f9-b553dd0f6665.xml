@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_0f79240e-7e60-529e-bfb1-d1c45ab8aa28" refid="118967" source="EXC Priya Paul Collection">Collage of thumbnail photographs of Princes & Rajas of India</relation>
+			<relation type="imageOf" relids="w_0f79240e-7e60-529e-bfb1-d1c45ab8aa28" refid="118967" source="EXC Priya Paul Collection">Collage of thumbnail photographs of Princes &amp; Rajas of India</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

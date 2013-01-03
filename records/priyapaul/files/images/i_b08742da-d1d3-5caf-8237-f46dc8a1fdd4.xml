@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_fb5cd646-fcaa-541a-aef6-ca988bd93ccc" refid="119770" source="EXC Priya Paul Collection">Advertisement for Karnad & Bellare, Limited</relation>
+			<relation type="imageOf" relids="w_fb5cd646-fcaa-541a-aef6-ca988bd93ccc" refid="119770" source="EXC Priya Paul Collection">Advertisement for Karnad &amp; Bellare, Limited</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

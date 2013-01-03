@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_17cadc8f-b8b6-5914-941d-b140bd703c08" refid="108796" source="EXC Priya Paul Collection">Lord Vishnu- a textile label of  Geo Henderson & Co., Calcutta</relation>
+			<relation type="imageOf" relids="w_17cadc8f-b8b6-5914-941d-b140bd703c08" refid="108796" source="EXC Priya Paul Collection">Lord Vishnu- a textile label of  Geo Henderson &amp; Co., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

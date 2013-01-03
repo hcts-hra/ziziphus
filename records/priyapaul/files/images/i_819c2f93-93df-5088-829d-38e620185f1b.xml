@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_3eede1e3-8e91-590b-ae2a-16c880e7a5b3" refid="119578" source="EXC Priya Paul Collection">The Ticket of Golock Dham- a textile label of gladstone Willey & Co., Calcutta</relation>
+			<relation type="imageOf" relids="w_3eede1e3-8e91-590b-ae2a-16c880e7a5b3" refid="119578" source="EXC Priya Paul Collection">The Ticket of Golock Dham- a textile label of gladstone Willey &amp; Co., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

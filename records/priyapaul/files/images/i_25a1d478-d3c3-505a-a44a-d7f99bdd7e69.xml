@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_b324ee40-4915-5121-8041-c6fc51e24322" refid="120669" source="EXC Priya Paul Collection">Shri Mahabharat Ticket in a textile label of F. Stiener & Co., Manchester</relation>
+			<relation type="imageOf" relids="w_b324ee40-4915-5121-8041-c6fc51e24322" refid="120669" source="EXC Priya Paul Collection">Shri Mahabharat Ticket in a textile label of F. Stiener &amp; Co., Manchester</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

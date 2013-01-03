@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_7196712a-dd37-5698-af6c-2c3d244468a4" refid="120723" source="EXC Priya Paul Collection">Advertisement for Forbes, Campbell & Co. Ltd.</relation>
+			<relation type="imageOf" relids="w_7196712a-dd37-5698-af6c-2c3d244468a4" refid="120723" source="EXC Priya Paul Collection">Advertisement for Forbes, Campbell &amp; Co. Ltd.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

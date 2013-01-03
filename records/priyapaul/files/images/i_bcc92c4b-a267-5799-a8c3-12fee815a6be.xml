@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_a1b03640-6c85-5028-9063-c32942852ca5" refid="119781" source="EXC Priya Paul Collection">An advertisement of Moosa Omer & Co., Bombay</relation>
+			<relation type="imageOf" relids="w_a1b03640-6c85-5028-9063-c32942852ca5" refid="119781" source="EXC Priya Paul Collection">An advertisement of Moosa Omer &amp; Co., Bombay</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

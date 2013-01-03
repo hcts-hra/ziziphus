@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_269b9cb2-a9a5-5388-97e2-30b4612cf481" refid="107887" source="EXC Priya Paul Collection">An Indian boy in dhoti, cap and a western style coat - a textile label of L.N.Gadodia & Co. Delhi & Kanpur</relation>
+			<relation type="imageOf" relids="w_269b9cb2-a9a5-5388-97e2-30b4612cf481" refid="107887" source="EXC Priya Paul Collection">An Indian boy in dhoti, cap and a western style coat - a textile label of L.N.Gadodia &amp; Co. Delhi &amp; Kanpur</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

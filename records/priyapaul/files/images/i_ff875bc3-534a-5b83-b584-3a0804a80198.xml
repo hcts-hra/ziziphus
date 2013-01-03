@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_760ffd7f-087e-53bf-a09b-7e26bf924a8c" refid="106195" source="EXC Priya Paul Collection">Textile label by Ganesh Gangaram & Son</relation>
+			<relation type="imageOf" relids="w_760ffd7f-087e-53bf-a09b-7e26bf924a8c" refid="106195" source="EXC Priya Paul Collection">Textile label by Ganesh Gangaram &amp; Son</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_d774b9c1-4a5a-5af5-adbe-7ed66fb98e95" refid="119761" source="EXC Priya Paul Collection">Travel by P & O and British India Lines</relation>
+			<relation type="imageOf" relids="w_d774b9c1-4a5a-5af5-adbe-7ed66fb98e95" refid="119761" source="EXC Priya Paul Collection">Travel by P &amp; O and British India Lines</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

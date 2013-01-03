@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_9847cec7-a47d-5533-865d-615f7fd3aa9d" refid="108774" source="EXC Priya Paul Collection">Hunting a lion- a textile label of  Latham Abercrombie & Co.</relation>
+			<relation type="imageOf" relids="w_9847cec7-a47d-5533-865d-615f7fd3aa9d" refid="108774" source="EXC Priya Paul Collection">Hunting a lion- a textile label of  Latham Abercrombie &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

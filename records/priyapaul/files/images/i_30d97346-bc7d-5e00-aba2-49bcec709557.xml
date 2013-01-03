@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_ffe53218-06c1-5b86-8e1c-ba161176b7b1" refid="108821" source="EXC Priya Paul Collection">Textile label of Shimwell & Brother</relation>
+			<relation type="imageOf" relids="w_ffe53218-06c1-5b86-8e1c-ba161176b7b1" refid="108821" source="EXC Priya Paul Collection">Textile label of Shimwell &amp; Brother</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

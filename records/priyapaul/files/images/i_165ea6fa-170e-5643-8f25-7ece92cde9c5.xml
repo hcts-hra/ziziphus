@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_76e1a6f2-bbe6-5112-9b3c-e95e9ae5e26c" refid="108735" source="EXC Priya Paul Collection">Shree Barat Ticket (a view of the marriage procession)- a textile label of Alexander Drew & Sons.</relation>
+			<relation type="imageOf" relids="w_76e1a6f2-bbe6-5112-9b3c-e95e9ae5e26c" refid="108735" source="EXC Priya Paul Collection">Shree Barat Ticket (a view of the marriage procession)- a textile label of Alexander Drew &amp; Sons.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

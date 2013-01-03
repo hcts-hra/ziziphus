@@ -51,7 +51,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_99ca9a31-720d-5771-beef-c728446c5462" refid="118230" source="EXC Priya Paul Collection">Advertisement calendar for Oil Storage & Distributing Co. of India Ltd.</relation>
+			<relation type="imageOf" relids="w_99ca9a31-720d-5771-beef-c728446c5462" refid="118230" source="EXC Priya Paul Collection">Advertisement calendar for Oil Storage &amp; Distributing Co. of India Ltd.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

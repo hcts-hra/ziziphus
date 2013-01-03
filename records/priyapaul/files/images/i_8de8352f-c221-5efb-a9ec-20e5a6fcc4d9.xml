@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_06ff02fb-612b-58d0-8efe-987b2bd3e8c9" refid="120547" source="EXC Priya Paul Collection">Promotional Hand Fan for Baliwala & Homi Ltd.</relation>
+			<relation type="imageOf" relids="w_06ff02fb-612b-58d0-8efe-987b2bd3e8c9" refid="120547" source="EXC Priya Paul Collection">Promotional Hand Fan for Baliwala &amp; Homi Ltd.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

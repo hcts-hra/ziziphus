@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_50b1bd19-ff27-51b4-b5fe-be94b63e8f23" refid="120587" source="EXC Priya Paul Collection">Nav Ratan, Currimbhoy Ebrahim & Sons Ltd., Bombay</relation>
+			<relation type="imageOf" relids="w_50b1bd19-ff27-51b4-b5fe-be94b63e8f23" refid="120587" source="EXC Priya Paul Collection">Nav Ratan, Currimbhoy Ebrahim &amp; Sons Ltd., Bombay</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

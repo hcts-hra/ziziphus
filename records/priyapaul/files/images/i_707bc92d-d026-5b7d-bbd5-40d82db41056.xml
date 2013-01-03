@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_ef2f6053-5dd1-5c04-a26a-97a132cfacad" refid="108696" source="EXC Priya Paul Collection">Two saints- a textile label of Graham, Bombay & Calcutta</relation>
+			<relation type="imageOf" relids="w_ef2f6053-5dd1-5c04-a26a-97a132cfacad" refid="108696" source="EXC Priya Paul Collection">Two saints- a textile label of Graham, Bombay &amp; Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

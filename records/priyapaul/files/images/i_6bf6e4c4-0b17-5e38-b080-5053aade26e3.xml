@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_0bed1740-37f4-5d35-b0e7-3d1427b18263" refid="119808" source="EXC Priya Paul Collection">Ellerman's City & Hall Lines</relation>
+			<relation type="imageOf" relids="w_0bed1740-37f4-5d35-b0e7-3d1427b18263" refid="119808" source="EXC Priya Paul Collection">Ellerman's City &amp; Hall Lines</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

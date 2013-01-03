@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_35ae23d4-80d5-53db-834c-083a0d133596" refid="108814" source="EXC Priya Paul Collection">Baba Taraknath- a textile label of F. Steiner & Co., Manchester</relation>
+			<relation type="imageOf" relids="w_35ae23d4-80d5-53db-834c-083a0d133596" refid="108814" source="EXC Priya Paul Collection">Baba Taraknath- a textile label of F. Steiner &amp; Co., Manchester</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_e4fe61e5-a441-585e-8352-04c47ad91941" refid="108726" source="EXC Priya Paul Collection">Ganesha- a textile label of Forrest Frew & Co.</relation>
+			<relation type="imageOf" relids="w_e4fe61e5-a441-585e-8352-04c47ad91941" refid="108726" source="EXC Priya Paul Collection">Ganesha- a textile label of Forrest Frew &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

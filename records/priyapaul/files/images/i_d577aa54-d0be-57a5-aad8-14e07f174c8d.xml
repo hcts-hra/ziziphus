@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_1fb02788-9bb3-556d-ac5d-2cae33e9c70b" refid="119646" source="EXC Priya Paul Collection">a textile label of K. Hassaram & Co., Jackria Musjid, Bombay, "Yokohama"</relation>
+			<relation type="imageOf" relids="w_1fb02788-9bb3-556d-ac5d-2cae33e9c70b" refid="119646" source="EXC Priya Paul Collection">a textile label of K. Hassaram &amp; Co., Jackria Musjid, Bombay, "Yokohama"</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

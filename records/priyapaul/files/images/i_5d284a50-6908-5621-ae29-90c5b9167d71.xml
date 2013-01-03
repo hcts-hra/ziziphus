@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_6b4d0c74-0253-50cd-b6cb-8e7327a94e1e" refid="108792" source="EXC Priya Paul Collection">Shri Durga Ticket- a textile label of  Geo Henderson & Co., Calcutta</relation>
+			<relation type="imageOf" relids="w_6b4d0c74-0253-50cd-b6cb-8e7327a94e1e" refid="108792" source="EXC Priya Paul Collection">Shri Durga Ticket- a textile label of  Geo Henderson &amp; Co., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

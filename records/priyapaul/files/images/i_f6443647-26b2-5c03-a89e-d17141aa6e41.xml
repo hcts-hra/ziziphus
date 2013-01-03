@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_9d97895e-cb0e-5e7a-8d48-11ab3e613438" refid="108188" source="EXC Priya Paul Collection">back of postcard which is an Eid greeting card, distributed by Hafiz Qamruddin & Sons, Karachi.</relation>
+			<relation type="imageOf" relids="w_9d97895e-cb0e-5e7a-8d48-11ab3e613438" refid="108188" source="EXC Priya Paul Collection">back of postcard which is an Eid greeting card, distributed by Hafiz Qamruddin &amp; Sons, Karachi.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

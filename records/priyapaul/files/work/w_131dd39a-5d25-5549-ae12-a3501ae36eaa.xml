@@ -1,9 +1,13 @@
-<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+<vra    xmlns="http://www.vraweb.org/vracore4.htm"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:hra="http://cluster-schemas.uni-hd.de"
+        xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+
 	<work id="w_131dd39a-5d25-5549-ae12-a3501ae36eaa" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
 		<agentSet>
 			<agent>
 				<culture/>
-				<name vocab="local" type="personal" refid="uuid-f29829a2-6c2d-5a2d-bf29-be0d30804169">Plavi <artist></name>
+				<name vocab="local" type="personal" refid="uuid-f29829a2-6c2d-5a2d-bf29-be0d30804169">Plavi</name>
 				<role/>
   			</agent>
 			<agent>

@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_92e0e3f7-0958-5dbb-bbb0-88f3e203c399" refid="108173" source="EXC Priya Paul Collection">Snowdon and Mashobra Ridge, Simla. 7135 Photo Johnston & Hoffman</relation>
+			<relation type="imageOf" relids="w_92e0e3f7-0958-5dbb-bbb0-88f3e203c399" refid="108173" source="EXC Priya Paul Collection">Snowdon and Mashobra Ridge, Simla. 7135 Photo Johnston &amp; Hoffman</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

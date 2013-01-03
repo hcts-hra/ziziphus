@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_fbd5f733-c2d2-5a7c-ac6c-19207a1f9127" refid="119631" source="EXC Priya Paul Collection">Rama restored to the throne of Ayodhya- a textile label of Finlay Muir & Co.Bombay.</relation>
+			<relation type="imageOf" relids="w_fbd5f733-c2d2-5a7c-ac6c-19207a1f9127" refid="119631" source="EXC Priya Paul Collection">Rama restored to the throne of Ayodhya- a textile label of Finlay Muir &amp; Co.Bombay.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

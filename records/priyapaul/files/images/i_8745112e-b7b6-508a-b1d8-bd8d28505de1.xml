@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_aa02db28-c046-5ade-bb8f-3fee6b376952" refid="108695" source="EXC Priya Paul Collection">A weird creature- a textile label of Stewart, Moir & Muir, Glasgow</relation>
+			<relation type="imageOf" relids="w_aa02db28-c046-5ade-bb8f-3fee6b376952" refid="108695" source="EXC Priya Paul Collection">A weird creature- a textile label of Stewart, Moir &amp; Muir, Glasgow</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

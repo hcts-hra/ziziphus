@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_49e6a873-b4f4-50fb-9af8-ec6df1375e7c" refid="108042" source="EXC Priya Paul Collection">Satyavati & Shantanu, in a postcard, published in Art Series, by P.S.Joshi Art Publishers, Bombay</relation>
+			<relation type="imageOf" relids="w_49e6a873-b4f4-50fb-9af8-ec6df1375e7c" refid="108042" source="EXC Priya Paul Collection">Satyavati &amp; Shantanu, in a postcard, published in Art Series, by P.S.Joshi Art Publishers, Bombay</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

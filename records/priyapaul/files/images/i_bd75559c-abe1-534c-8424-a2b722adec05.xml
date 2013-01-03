@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_dccf7671-e9c3-596c-aa1c-c950bb40d8df" refid="120104" source="EXC Priya Paul Collection">A warrior in uniform- a textile label of Greaves Cotton & Company, Manchester</relation>
+			<relation type="imageOf" relids="w_dccf7671-e9c3-596c-aa1c-c950bb40d8df" refid="120104" source="EXC Priya Paul Collection">A warrior in uniform- a textile label of Greaves Cotton &amp; Company, Manchester</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

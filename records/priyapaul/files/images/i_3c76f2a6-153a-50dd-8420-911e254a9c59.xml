@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_8d4f702c-b772-5273-afca-d2b21b75e461" refid="108795" source="EXC Priya Paul Collection">Durga kills Mahisasur- a textile label of  John Orrewing & Co.</relation>
+			<relation type="imageOf" relids="w_8d4f702c-b772-5273-afca-d2b21b75e461" refid="108795" source="EXC Priya Paul Collection">Durga kills Mahisasur- a textile label of  John Orrewing &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

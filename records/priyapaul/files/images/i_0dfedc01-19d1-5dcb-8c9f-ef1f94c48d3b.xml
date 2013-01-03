@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_3c59cb7b-e2c6-5635-bed1-b340298d4a2b" refid="120283" source="EXC Priya Paul Collection">An advertisement of Red White & Blue Coffee</relation>
+			<relation type="imageOf" relids="w_3c59cb7b-e2c6-5635-bed1-b340298d4a2b" refid="120283" source="EXC Priya Paul Collection">An advertisement of Red White &amp; Blue Coffee</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

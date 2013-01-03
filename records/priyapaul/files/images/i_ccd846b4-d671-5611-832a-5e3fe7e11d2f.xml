@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_a8f25dee-abe8-505c-846f-1ce0b5206471" refid="119773" source="EXC Priya Paul Collection">An advertisement of Veet Hair Remover & Stamps</relation>
+			<relation type="imageOf" relids="w_a8f25dee-abe8-505c-846f-1ce0b5206471" refid="119773" source="EXC Priya Paul Collection">An advertisement of Veet Hair Remover &amp; Stamps</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

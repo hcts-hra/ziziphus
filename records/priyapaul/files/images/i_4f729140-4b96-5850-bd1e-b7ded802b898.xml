@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_05cf0cb9-0470-576e-95b9-db9f2888a922" refid="119531" source="EXC Priya Paul Collection">Shri Shri Mahadevji Ticket in a textile label of Shaw Wallace & Co., Calcutta</relation>
+			<relation type="imageOf" relids="w_05cf0cb9-0470-576e-95b9-db9f2888a922" refid="119531" source="EXC Priya Paul Collection">Shri Shri Mahadevji Ticket in a textile label of Shaw Wallace &amp; Co., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_748eeb11-0f49-5db3-bc4c-fb152338df58" refid="119838" source="EXC Priya Paul Collection">Stanes Coffee & Tea, Coimbatore</relation>
+			<relation type="imageOf" relids="w_748eeb11-0f49-5db3-bc4c-fb152338df58" refid="119838" source="EXC Priya Paul Collection">Stanes Coffee &amp; Tea, Coimbatore</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

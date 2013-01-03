@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_fecaaaeb-e4b7-5a7d-a455-188b94138ea3" refid="119420" source="EXC Priya Paul Collection">Subhas Chandra Bose (in royal dress) (Copyright Reserved by: S.S.Brijbasi & Sons, Karachi)</relation>
+			<relation type="imageOf" relids="w_fecaaaeb-e4b7-5a7d-a455-188b94138ea3" refid="119420" source="EXC Priya Paul Collection">Subhas Chandra Bose (in royal dress) (Copyright Reserved by: S.S.Brijbasi &amp; Sons, Karachi)</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_518631b4-e103-5aeb-bea5-ba05ac947fc3" refid="106196" source="EXC Priya Paul Collection">The British Crown- a textile label of E.D. Sasson & Co. Ltd., Bombay</relation>
+			<relation type="imageOf" relids="w_518631b4-e103-5aeb-bea5-ba05ac947fc3" refid="106196" source="EXC Priya Paul Collection">The British Crown- a textile label of E.D. Sasson &amp; Co. Ltd., Bombay</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

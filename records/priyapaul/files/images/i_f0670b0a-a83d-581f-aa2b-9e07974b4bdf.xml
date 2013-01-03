@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_2e94a4ed-0168-5aa5-9fed-3d434138c3fb" refid="119376" source="EXC Priya Paul Collection">Bidi Advertisement in Hindi & Urdu</relation>
+			<relation type="imageOf" relids="w_2e94a4ed-0168-5aa5-9fed-3d434138c3fb" refid="119376" source="EXC Priya Paul Collection">Bidi Advertisement in Hindi &amp; Urdu</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

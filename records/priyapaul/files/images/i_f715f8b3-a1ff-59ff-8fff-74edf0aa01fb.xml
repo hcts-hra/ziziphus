@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_5f8083c5-f88c-547d-8c87-d75e427ac7a9" refid="108714" source="EXC Priya Paul Collection">A view of the killing of Tripura Sur- a textile label of F. Steiner & Co., Manchester</relation>
+			<relation type="imageOf" relids="w_5f8083c5-f88c-547d-8c87-d75e427ac7a9" refid="108714" source="EXC Priya Paul Collection">A view of the killing of Tripura Sur- a textile label of F. Steiner &amp; Co., Manchester</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_1fa6a255-4d93-5db5-8faa-280370920b10" refid="118262" source="EXC Priya Paul Collection">Hanuman-bhakti, in an advertisement of C & E. Morton Ltd.(year: 1929)</relation>
+			<relation type="imageOf" relids="w_1fa6a255-4d93-5db5-8faa-280370920b10" refid="118262" source="EXC Priya Paul Collection">Hanuman-bhakti, in an advertisement of C &amp; E. Morton Ltd.(year: 1929)</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

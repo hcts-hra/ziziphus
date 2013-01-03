@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_9503804d-7f8c-53b5-8d61-e1dc0f481b8d" refid="120011" source="EXC Priya Paul Collection">A tiger in a textile label of the Indian B.D. & P. Works.</relation>
+			<relation type="imageOf" relids="w_9503804d-7f8c-53b5-8d61-e1dc0f481b8d" refid="120011" source="EXC Priya Paul Collection">A tiger in a textile label of the Indian B.D. &amp; P. Works.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

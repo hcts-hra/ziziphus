@@ -51,7 +51,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_373ee3ae-a26b-5d31-b95e-583568289c77" refid="118988" source="EXC Priya Paul Collection">Arjun & Urvashi</relation>
+			<relation type="imageOf" relids="w_373ee3ae-a26b-5d31-b95e-583568289c77" refid="118988" source="EXC Priya Paul Collection">Arjun &amp; Urvashi</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

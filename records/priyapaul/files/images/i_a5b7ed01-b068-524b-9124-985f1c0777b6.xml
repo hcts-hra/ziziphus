@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_56be2d42-3486-5783-bb6b-3684fd558ea4" refid="109743" source="EXC Priya Paul Collection">White House- a textile label of Haji Hasan Dadi, Bombay, Calcutta & Bombay.</relation>
+			<relation type="imageOf" relids="w_56be2d42-3486-5783-bb6b-3684fd558ea4" refid="109743" source="EXC Priya Paul Collection">White House- a textile label of Haji Hasan Dadi, Bombay, Calcutta &amp; Bombay.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_75053f72-f4d5-581e-a86b-541b023b3c9f" refid="119057" source="EXC Priya Paul Collection">Advertisement for Anand Singh & Co.</relation>
+			<relation type="imageOf" relids="w_75053f72-f4d5-581e-a86b-541b023b3c9f" refid="119057" source="EXC Priya Paul Collection">Advertisement for Anand Singh &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

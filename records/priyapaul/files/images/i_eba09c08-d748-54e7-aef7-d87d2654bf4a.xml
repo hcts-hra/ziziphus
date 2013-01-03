@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_d62251d3-0223-5a1b-87a0-a49b96ddb145" refid="120099" source="EXC Priya Paul Collection">Women at a well- a textile label of the George Robinson & Company, Manchester</relation>
+			<relation type="imageOf" relids="w_d62251d3-0223-5a1b-87a0-a49b96ddb145" refid="120099" source="EXC Priya Paul Collection">Women at a well- a textile label of the George Robinson &amp; Company, Manchester</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

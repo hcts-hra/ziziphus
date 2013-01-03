@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_e74905cf-0624-5f63-80f3-a2f102c02520" refid="119525" source="EXC Priya Paul Collection">A woman plucks flowers in a textile label of the Sholapur Spinning & Weaving Co. Ltd. (Register no. 640)</relation>
+			<relation type="imageOf" relids="w_e74905cf-0624-5f63-80f3-a2f102c02520" refid="119525" source="EXC Priya Paul Collection">A woman plucks flowers in a textile label of the Sholapur Spinning &amp; Weaving Co. Ltd. (Register no. 640)</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

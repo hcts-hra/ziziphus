@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_5368f7c9-d872-5af7-94a5-03d536d2cfd6" refid="118065" source="EXC Priya Paul Collection">Sangram (Light & Shadow)</relation>
+			<relation type="imageOf" relids="w_5368f7c9-d872-5af7-94a5-03d536d2cfd6" refid="118065" source="EXC Priya Paul Collection">Sangram (Light &amp; Shadow)</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

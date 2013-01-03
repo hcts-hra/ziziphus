@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_2d6f252d-b78f-565d-92c3-39183d169c94" refid="120023" source="EXC Priya Paul Collection">A view of Durga's avtars in a textile label of F. Stiener & Co., Manchester</relation>
+			<relation type="imageOf" relids="w_2d6f252d-b78f-565d-92c3-39183d169c94" refid="120023" source="EXC Priya Paul Collection">A view of Durga's avtars in a textile label of F. Stiener &amp; Co., Manchester</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

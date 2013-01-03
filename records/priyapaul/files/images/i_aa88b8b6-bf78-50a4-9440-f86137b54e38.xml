@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_eebad4ba-be25-59d2-8026-2ae3e96c612e" refid="108798" source="EXC Priya Paul Collection">Sukhdev Samwad Paricharcha Sabha ( A session devoted to a dialogue with Sukhdev)- a textile label of  Kerr Tarruck & Co., Calcutta</relation>
+			<relation type="imageOf" relids="w_eebad4ba-be25-59d2-8026-2ae3e96c612e" refid="108798" source="EXC Priya Paul Collection">Sukhdev Samwad Paricharcha Sabha ( A session devoted to a dialogue with Sukhdev)- a textile label of  Kerr Tarruck &amp; Co., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

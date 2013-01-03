@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_2a824d09-9d5d-5c93-beab-9e9147479cac" refid="120139" source="EXC Priya Paul Collection">Jambu Ka Maharaja (emperor of the Jambu island)- a textile label of F. Stiener & Co., Manchester</relation>
+			<relation type="imageOf" relids="w_2a824d09-9d5d-5c93-beab-9e9147479cac" refid="120139" source="EXC Priya Paul Collection">Jambu Ka Maharaja (emperor of the Jambu island)- a textile label of F. Stiener &amp; Co., Manchester</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

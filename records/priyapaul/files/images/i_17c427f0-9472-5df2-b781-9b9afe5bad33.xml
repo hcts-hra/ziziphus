@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_fa4fde4d-ae60-54cd-87ba-6ca80c4e8220" refid="108705" source="EXC Priya Paul Collection">Lord Shankar- a textile label of Geo Henderson & Co., Calcutta</relation>
+			<relation type="imageOf" relids="w_fa4fde4d-ae60-54cd-87ba-6ca80c4e8220" refid="108705" source="EXC Priya Paul Collection">Lord Shankar- a textile label of Geo Henderson &amp; Co., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

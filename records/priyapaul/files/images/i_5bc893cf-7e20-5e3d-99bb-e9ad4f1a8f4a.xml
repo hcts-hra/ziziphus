@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_cc06906d-8ff8-5fa0-a360-c1b912c2b9e5" refid="120038" source="EXC Priya Paul Collection">People carry a palanquin- a textile label of Robert Barclay & Co., Manchester</relation>
+			<relation type="imageOf" relids="w_cc06906d-8ff8-5fa0-a360-c1b912c2b9e5" refid="120038" source="EXC Priya Paul Collection">People carry a palanquin- a textile label of Robert Barclay &amp; Co., Manchester</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

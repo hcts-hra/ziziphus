@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_71ee984f-1332-5bc7-bdc7-60ecba639b3a" refid="108675" source="EXC Priya Paul Collection">Back of picture postcard, printed "The Phototype Co, Bombay" & "Made in Luxemberg"</relation>
+			<relation type="imageOf" relids="w_71ee984f-1332-5bc7-bdc7-60ecba639b3a" refid="108675" source="EXC Priya Paul Collection">Back of picture postcard, printed "The Phototype Co, Bombay" &amp; "Made in Luxemberg"</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

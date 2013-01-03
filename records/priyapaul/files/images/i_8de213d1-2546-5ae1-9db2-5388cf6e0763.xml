@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_68691be3-fca8-5f23-97f3-579bbd096cc7" refid="108769" source="EXC Priya Paul Collection">Portrait of Maharah of Udaypur- a textile label of  the James Finlay & Co. Ltd., Bombay</relation>
+			<relation type="imageOf" relids="w_68691be3-fca8-5f23-97f3-579bbd096cc7" refid="108769" source="EXC Priya Paul Collection">Portrait of Maharah of Udaypur- a textile label of  the James Finlay &amp; Co. Ltd., Bombay</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_8f2e1216-17cf-5ada-b2e1-5929bc251c3e" refid="108431" source="EXC Priya Paul Collection">The flag-bearer- a textile label of George Robinson & Co.</relation>
+			<relation type="imageOf" relids="w_8f2e1216-17cf-5ada-b2e1-5929bc251c3e" refid="108431" source="EXC Priya Paul Collection">The flag-bearer- a textile label of George Robinson &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

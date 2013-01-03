@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_b0c77ab6-c20c-5726-ac53-f177c64f2b6c" refid="108747" source="EXC Priya Paul Collection">Goddess Durga in action- a textile label of John Orrewing & Co.</relation>
+			<relation type="imageOf" relids="w_b0c77ab6-c20c-5726-ac53-f177c64f2b6c" refid="108747" source="EXC Priya Paul Collection">Goddess Durga in action- a textile label of John Orrewing &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

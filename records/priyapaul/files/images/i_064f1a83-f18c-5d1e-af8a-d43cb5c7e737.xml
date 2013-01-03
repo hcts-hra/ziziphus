@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_186f5b16-e799-5bb5-b0c6-831575278973" refid="119179" source="EXC Priya Paul Collection">1936 Advertisement calendar of Jacob & Co.</relation>
+			<relation type="imageOf" relids="w_186f5b16-e799-5bb5-b0c6-831575278973" refid="119179" source="EXC Priya Paul Collection">1936 Advertisement calendar of Jacob &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

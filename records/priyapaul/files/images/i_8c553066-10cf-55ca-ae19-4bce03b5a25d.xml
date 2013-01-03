@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_5e814939-9f88-5deb-834f-b0d20cec8f41" refid="108729" source="EXC Priya Paul Collection">Shri Ram Chander Ticket- a textile label of  Arched Orrewing & Co., Glasgow</relation>
+			<relation type="imageOf" relids="w_5e814939-9f88-5deb-834f-b0d20cec8f41" refid="108729" source="EXC Priya Paul Collection">Shri Ram Chander Ticket- a textile label of  Arched Orrewing &amp; Co., Glasgow</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

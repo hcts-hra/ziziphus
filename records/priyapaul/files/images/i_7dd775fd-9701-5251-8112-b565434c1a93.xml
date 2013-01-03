@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_96096916-3684-50aa-8def-cf6019b239be" refid="120048" source="EXC Priya Paul Collection">Horse with a  balance, in a packing material of Augur Chund Bharoodan Sethia & Co., Calcutta</relation>
+			<relation type="imageOf" relids="w_96096916-3684-50aa-8def-cf6019b239be" refid="120048" source="EXC Priya Paul Collection">Horse with a  balance, in a packing material of Augur Chund Bharoodan Sethia &amp; Co., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

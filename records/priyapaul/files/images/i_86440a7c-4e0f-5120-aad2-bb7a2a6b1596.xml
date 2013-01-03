@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_18cb01d0-cfc0-5936-995a-674225e70b5d" refid="120045" source="EXC Priya Paul Collection">A warrior on horse- a textile label of Finlay Campbell & Company</relation>
+			<relation type="imageOf" relids="w_18cb01d0-cfc0-5936-995a-674225e70b5d" refid="120045" source="EXC Priya Paul Collection">A warrior on horse- a textile label of Finlay Campbell &amp; Company</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

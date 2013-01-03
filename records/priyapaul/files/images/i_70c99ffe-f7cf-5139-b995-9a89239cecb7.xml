@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_bc72e7b3-758d-58ad-8a26-e11d6d13e708" refid="117915" source="EXC Priya Paul Collection">Back of Shri Nar Nariman Ticket, F. Stiener & Co.Ltd., Church</relation>
+			<relation type="imageOf" relids="w_bc72e7b3-758d-58ad-8a26-e11d6d13e708" refid="117915" source="EXC Priya Paul Collection">Back of Shri Nar Nariman Ticket, F. Stiener &amp; Co.Ltd., Church</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

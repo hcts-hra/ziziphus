@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_65890f1d-c75b-56f0-986e-ad3ad29488b0" refid="120269" source="EXC Priya Paul Collection">The Holy Cow- a textile label of the W.M. Sterling & Sons., Glasgow</relation>
+			<relation type="imageOf" relids="w_65890f1d-c75b-56f0-986e-ad3ad29488b0" refid="120269" source="EXC Priya Paul Collection">The Holy Cow- a textile label of the W.M. Sterling &amp; Sons., Glasgow</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

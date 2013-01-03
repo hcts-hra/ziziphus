@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_1b348ef9-0090-59d6-a700-dbdadc88164f" refid="119628" source="EXC Priya Paul Collection">Burra Salam- a textile label of Dugdale, Everton & Halstead, Calcutta (Registered no.1690)</relation>
+			<relation type="imageOf" relids="w_1b348ef9-0090-59d6-a700-dbdadc88164f" refid="119628" source="EXC Priya Paul Collection">Burra Salam- a textile label of Dugdale, Everton &amp; Halstead, Calcutta (Registered no.1690)</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_e4f68452-b642-5950-9fce-ca3a828e688d" refid="120240" source="EXC Priya Paul Collection">Portrait of a woman- a textile label of the Currimbhoy Ebrahim & Sons. Ltd., Bombay</relation>
+			<relation type="imageOf" relids="w_e4f68452-b642-5950-9fce-ca3a828e688d" refid="120240" source="EXC Priya Paul Collection">Portrait of a woman- a textile label of the Currimbhoy Ebrahim &amp; Sons. Ltd., Bombay</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

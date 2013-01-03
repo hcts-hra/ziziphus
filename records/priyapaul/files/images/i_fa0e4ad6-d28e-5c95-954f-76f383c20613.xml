@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_cf8b02da-f884-50bc-b17e-bc0e60e12253" refid="120085" source="EXC Priya Paul Collection">Shri Shankar-Parvati- a textile label of the Lyon & Co., Bombay</relation>
+			<relation type="imageOf" relids="w_cf8b02da-f884-50bc-b17e-bc0e60e12253" refid="120085" source="EXC Priya Paul Collection">Shri Shankar-Parvati- a textile label of the Lyon &amp; Co., Bombay</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

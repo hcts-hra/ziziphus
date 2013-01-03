@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_e9c74f0e-2c8d-5926-9c54-1342bec09136" refid="120557" source="EXC Priya Paul Collection">Advertisement for Tulsidas & Co.</relation>
+			<relation type="imageOf" relids="w_e9c74f0e-2c8d-5926-9c54-1342bec09136" refid="120557" source="EXC Priya Paul Collection">Advertisement for Tulsidas &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

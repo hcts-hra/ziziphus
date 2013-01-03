@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_cc3c7480-cc0a-5f01-964d-9ff76c344b08" refid="108380" source="EXC Priya Paul Collection">Advertisement for Cooper Allen & Co. Ltd.</relation>
+			<relation type="imageOf" relids="w_cc3c7480-cc0a-5f01-964d-9ff76c344b08" refid="108380" source="EXC Priya Paul Collection">Advertisement for Cooper Allen &amp; Co. Ltd.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

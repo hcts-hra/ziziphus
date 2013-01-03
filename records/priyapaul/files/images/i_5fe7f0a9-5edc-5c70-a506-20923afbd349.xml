@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_c2d49f37-3227-5b48-a1e5-b589ed2c5342" refid="107953" source="EXC Priya Paul Collection">Rama with his consort and brothers, in a postcard, published by Gobind Ram & Ooday Ram, Jaipur.</relation>
+			<relation type="imageOf" relids="w_c2d49f37-3227-5b48-a1e5-b589ed2c5342" refid="107953" source="EXC Priya Paul Collection">Rama with his consort and brothers, in a postcard, published by Gobind Ram &amp; Ooday Ram, Jaipur.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

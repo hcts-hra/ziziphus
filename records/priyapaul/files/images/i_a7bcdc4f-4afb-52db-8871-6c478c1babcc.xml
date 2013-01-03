@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_4ba9cc17-d586-5098-9cee-9523f3c9e452" refid="118400" source="EXC Priya Paul Collection">Shri Badri Narayan, in a Dadajee Dhackjee & Co. Ltd's calender poster 1951</relation>
+			<relation type="imageOf" relids="w_4ba9cc17-d586-5098-9cee-9523f3c9e452" refid="118400" source="EXC Priya Paul Collection">Shri Badri Narayan, in a Dadajee Dhackjee &amp; Co. Ltd's calender poster 1951</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

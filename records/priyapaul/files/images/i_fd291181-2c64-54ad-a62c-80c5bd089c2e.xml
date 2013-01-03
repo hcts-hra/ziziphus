@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_fe9c76b5-2a7e-565c-9118-340d7f48cfdd" refid="118930" source="EXC Priya Paul Collection">Buckingham & Carnatic Mills</relation>
+			<relation type="imageOf" relids="w_fe9c76b5-2a7e-565c-9118-340d7f48cfdd" refid="118930" source="EXC Priya Paul Collection">Buckingham &amp; Carnatic Mills</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

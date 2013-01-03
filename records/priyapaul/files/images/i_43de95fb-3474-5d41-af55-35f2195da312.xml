@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_e5152c9c-5f90-5200-b679-882e17fa3a8c" refid="120025" source="EXC Priya Paul Collection">Shri Nar Nariman Ticket in a textile label of F. Stiener & Co.Ltd., Church</relation>
+			<relation type="imageOf" relids="w_e5152c9c-5f90-5200-b679-882e17fa3a8c" refid="120025" source="EXC Priya Paul Collection">Shri Nar Nariman Ticket in a textile label of F. Stiener &amp; Co.Ltd., Church</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

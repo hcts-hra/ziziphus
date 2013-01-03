@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_332ef11c-8682-562e-983d-3347c6003873" refid="119832" source="EXC Priya Paul Collection">Advertisement for William Jacks & Co. Paints</relation>
+			<relation type="imageOf" relids="w_332ef11c-8682-562e-983d-3347c6003873" refid="119832" source="EXC Priya Paul Collection">Advertisement for William Jacks &amp; Co. Paints</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

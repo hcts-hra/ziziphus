@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_20648f0f-e67d-5072-b6df-4e8df80c54e1" refid="118951" source="EXC Priya Paul Collection">Advertisement for T. S. R. & Co.</relation>
+			<relation type="imageOf" relids="w_20648f0f-e67d-5072-b6df-4e8df80c54e1" refid="118951" source="EXC Priya Paul Collection">Advertisement for T. S. R. &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

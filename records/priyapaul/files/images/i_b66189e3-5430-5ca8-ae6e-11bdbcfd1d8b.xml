@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_cab8ab02-6fdc-5884-8419-829662de5a45" refid="119530" source="EXC Priya Paul Collection">Sri Nathji Ticket in a textile label of E.D.Sassoon & Co., Calcutta</relation>
+			<relation type="imageOf" relids="w_cab8ab02-6fdc-5884-8419-829662de5a45" refid="119530" source="EXC Priya Paul Collection">Sri Nathji Ticket in a textile label of E.D.Sassoon &amp; Co., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

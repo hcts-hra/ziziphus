@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_049689e8-5647-571c-996b-2d2bb507ea7d" refid="108840" source="EXC Priya Paul Collection">Shri Gopinathji- a textile label of Finlay Muir & Co., Calcutta</relation>
+			<relation type="imageOf" relids="w_049689e8-5647-571c-996b-2d2bb507ea7d" refid="108840" source="EXC Priya Paul Collection">Shri Gopinathji- a textile label of Finlay Muir &amp; Co., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

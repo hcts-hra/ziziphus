@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_5983b433-03fb-5eef-87e1-60589f5a9cbb" refid="108832" source="EXC Priya Paul Collection">Shree Mahabharat Sabha Ticket- a textile label of F. Steiner & Co., Manchester (3)</relation>
+			<relation type="imageOf" relids="w_5983b433-03fb-5eef-87e1-60589f5a9cbb" refid="108832" source="EXC Priya Paul Collection">Shree Mahabharat Sabha Ticket- a textile label of F. Steiner &amp; Co., Manchester (3)</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

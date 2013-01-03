@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_e619f01f-c4ad-5b59-b1e7-38e9124c849a" refid="120843" source="EXC Priya Paul Collection">Shankar and Parvati- a textile label of Schroder, Smidt & Co. Bombay, Delhi & Calcutta</relation>
+			<relation type="imageOf" relids="w_e619f01f-c4ad-5b59-b1e7-38e9124c849a" refid="120843" source="EXC Priya Paul Collection">Shankar and Parvati- a textile label of Schroder, Smidt &amp; Co. Bombay, Delhi &amp; Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

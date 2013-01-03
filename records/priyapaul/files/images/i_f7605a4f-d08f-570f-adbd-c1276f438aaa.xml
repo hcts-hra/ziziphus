@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_9daea12c-a06a-5c68-9084-2460e7214134" refid="119828" source="EXC Priya Paul Collection">Ellerman's City & Hall Lines: A Century of Service</relation>
+			<relation type="imageOf" relids="w_9daea12c-a06a-5c68-9084-2460e7214134" refid="119828" source="EXC Priya Paul Collection">Ellerman's City &amp; Hall Lines: A Century of Service</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

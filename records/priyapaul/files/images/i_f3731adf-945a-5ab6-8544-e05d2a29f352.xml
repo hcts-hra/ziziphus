@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_66c0d617-3918-527f-a8b3-ccd75d81ad6d" refid="108869" source="EXC Priya Paul Collection">A woman stands with a chador on her head- a textile label of the Khataumakanji Spinning & Weaving Co. Ltd., Bombay</relation>
+			<relation type="imageOf" relids="w_66c0d617-3918-527f-a8b3-ccd75d81ad6d" refid="108869" source="EXC Priya Paul Collection">A woman stands with a chador on her head- a textile label of the Khataumakanji Spinning &amp; Weaving Co. Ltd., Bombay</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_81655d48-5c31-5819-a85b-09255bfa8451" refid="120126" source="EXC Priya Paul Collection">Portrait of a queen- a textile label Wilson, Latham & Co. Ltd.</relation>
+			<relation type="imageOf" relids="w_81655d48-5c31-5819-a85b-09255bfa8451" refid="120126" source="EXC Priya Paul Collection">Portrait of a queen- a textile label Wilson, Latham &amp; Co. Ltd.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

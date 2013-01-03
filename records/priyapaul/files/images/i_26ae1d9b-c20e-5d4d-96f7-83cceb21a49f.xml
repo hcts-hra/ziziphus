@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_0cb7fb90-85ed-5986-9f6c-93589bccaf7c" refid="106211" source="EXC Priya Paul Collection">Sale of jewells (1)- a textile label of Topalian Brothers, Manchester & Calcutta.</relation>
+			<relation type="imageOf" relids="w_0cb7fb90-85ed-5986-9f6c-93589bccaf7c" refid="106211" source="EXC Priya Paul Collection">Sale of jewells (1)- a textile label of Topalian Brothers, Manchester &amp; Calcutta.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

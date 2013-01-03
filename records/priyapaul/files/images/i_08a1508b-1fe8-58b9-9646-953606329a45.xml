@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_017ad8c8-119f-5030-9690-75893c1edd8f" refid="120842" source="EXC Priya Paul Collection">Kailash Ticket- a textile label of Geo. Henderson & Co., Calcutta (Registered No. 38)</relation>
+			<relation type="imageOf" relids="w_017ad8c8-119f-5030-9690-75893c1edd8f" refid="120842" source="EXC Priya Paul Collection">Kailash Ticket- a textile label of Geo. Henderson &amp; Co., Calcutta (Registered No. 38)</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

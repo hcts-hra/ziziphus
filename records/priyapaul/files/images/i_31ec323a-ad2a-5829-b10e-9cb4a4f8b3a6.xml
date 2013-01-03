@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_889493e3-142f-50b4-80a2-474f4d034f6e" refid="120079" source="EXC Priya Paul Collection">Shri Ekadashi Ticket- a textile label of the Kerrtarruck & Co., Calcutta</relation>
+			<relation type="imageOf" relids="w_889493e3-142f-50b4-80a2-474f4d034f6e" refid="120079" source="EXC Priya Paul Collection">Shri Ekadashi Ticket- a textile label of the Kerrtarruck &amp; Co., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

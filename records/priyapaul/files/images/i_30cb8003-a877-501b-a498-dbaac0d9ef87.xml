@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_b54675c0-7f78-5589-adc0-2d355aca124d" refid="120143" source="EXC Priya Paul Collection">Kali,  in a textile label of W.M. Stirling & Co., Glasgow</relation>
+			<relation type="imageOf" relids="w_b54675c0-7f78-5589-adc0-2d355aca124d" refid="120143" source="EXC Priya Paul Collection">Kali,  in a textile label of W.M. Stirling &amp; Co., Glasgow</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

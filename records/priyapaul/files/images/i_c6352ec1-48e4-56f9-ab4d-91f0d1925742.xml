@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_e8003630-6f49-5bd0-aa06-a57d50976bf4" refid="120105" source="EXC Priya Paul Collection">A woman on a cart drawn by panthers - a textile label of Lyon Lord & Co., Manchester</relation>
+			<relation type="imageOf" relids="w_e8003630-6f49-5bd0-aa06-a57d50976bf4" refid="120105" source="EXC Priya Paul Collection">A woman on a cart drawn by panthers - a textile label of Lyon Lord &amp; Co., Manchester</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

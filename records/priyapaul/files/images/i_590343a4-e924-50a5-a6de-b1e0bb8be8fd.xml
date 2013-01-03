@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_7304bc75-f5eb-59f0-b925-cadf77c53c2f" refid="120037" source="EXC Priya Paul Collection">Performing a ritual- a textile label of John Orrewing & Co., Calcutta</relation>
+			<relation type="imageOf" relids="w_7304bc75-f5eb-59f0-b925-cadf77c53c2f" refid="120037" source="EXC Priya Paul Collection">Performing a ritual- a textile label of John Orrewing &amp; Co., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

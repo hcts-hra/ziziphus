@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_e78bb046-2411-542c-aa93-95e0d4b9a4b6" refid="118868" source="EXC Priya Paul Collection">Different scenes from the film Jhoota Kahin Ka, in the poster calender of Subhash & Co., Delhi (1980)</relation>
+			<relation type="imageOf" relids="w_e78bb046-2411-542c-aa93-95e0d4b9a4b6" refid="118868" source="EXC Priya Paul Collection">Different scenes from the film Jhoota Kahin Ka, in the poster calender of Subhash &amp; Co., Delhi (1980)</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_dc9d99c0-b20d-5b89-ad08-2e9780fadcbb" refid="120113" source="EXC Priya Paul Collection">Textile label by Glazebrook, Steel & Co.</relation>
+			<relation type="imageOf" relids="w_dc9d99c0-b20d-5b89-ad08-2e9780fadcbb" refid="120113" source="EXC Priya Paul Collection">Textile label by Glazebrook, Steel &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

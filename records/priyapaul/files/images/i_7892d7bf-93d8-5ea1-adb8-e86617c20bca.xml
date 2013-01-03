@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_fd6cef78-52c4-5b14-9f41-888f922bda65" refid="119562" source="EXC Priya Paul Collection">Studio portrait by Bourne & Shepherd</relation>
+			<relation type="imageOf" relids="w_fd6cef78-52c4-5b14-9f41-888f922bda65" refid="119562" source="EXC Priya Paul Collection">Studio portrait by Bourne &amp; Shepherd</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

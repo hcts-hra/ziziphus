@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_c3b94e21-0880-52e0-bf5c-86856f28283b" refid="107910" source="EXC Priya Paul Collection">Natraja in a textile label of James Kenyon & Son, Roach Bank Mills, Bury, Lancashire</relation>
+			<relation type="imageOf" relids="w_c3b94e21-0880-52e0-bf5c-86856f28283b" refid="107910" source="EXC Priya Paul Collection">Natraja in a textile label of James Kenyon &amp; Son, Roach Bank Mills, Bury, Lancashire</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

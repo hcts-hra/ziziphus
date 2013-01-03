@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_24724946-f37d-578f-a42d-48f84f0baab3" refid="120021" source="EXC Priya Paul Collection">Shri Gau-lok Ticket in a textile label of Ellinger Mohatta & Co., Karachi</relation>
+			<relation type="imageOf" relids="w_24724946-f37d-578f-a42d-48f84f0baab3" refid="120021" source="EXC Priya Paul Collection">Shri Gau-lok Ticket in a textile label of Ellinger Mohatta &amp; Co., Karachi</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

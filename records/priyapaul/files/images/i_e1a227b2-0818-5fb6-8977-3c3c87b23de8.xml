@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_6cdc468c-a5db-58c4-ab1a-133b640229c5" refid="120259" source="EXC Priya Paul Collection">Laila Majnu Ticket- a textile label of the Finlay, Muir & Company, Calcutta</relation>
+			<relation type="imageOf" relids="w_6cdc468c-a5db-58c4-ab1a-133b640229c5" refid="120259" source="EXC Priya Paul Collection">Laila Majnu Ticket- a textile label of the Finlay, Muir &amp; Company, Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

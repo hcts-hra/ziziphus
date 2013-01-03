@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_a0505d6b-05e1-5dcf-9719-ad1e802367ab" refid="118097" source="EXC Priya Paul Collection">Ticket by James Neil & Sons, Ticket Printers, Manchester</relation>
+			<relation type="imageOf" relids="w_a0505d6b-05e1-5dcf-9719-ad1e802367ab" refid="118097" source="EXC Priya Paul Collection">Ticket by James Neil &amp; Sons, Ticket Printers, Manchester</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

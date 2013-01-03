@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_fe7c4d69-6a7f-52ca-8730-46fbe46966bb" refid="108766" source="EXC Priya Paul Collection">Textile label by John Orr Ewing & Co.</relation>
+			<relation type="imageOf" relids="w_fe7c4d69-6a7f-52ca-8730-46fbe46966bb" refid="108766" source="EXC Priya Paul Collection">Textile label by John Orr Ewing &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_b94d3ebd-4e43-5919-8a81-b7528d9e164a" refid="120034" source="EXC Priya Paul Collection">Portrait of an old man- a textile label of James Finlay & Co. Ltd., Calcutta</relation>
+			<relation type="imageOf" relids="w_b94d3ebd-4e43-5919-8a81-b7528d9e164a" refid="120034" source="EXC Priya Paul Collection">Portrait of an old man- a textile label of James Finlay &amp; Co. Ltd., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

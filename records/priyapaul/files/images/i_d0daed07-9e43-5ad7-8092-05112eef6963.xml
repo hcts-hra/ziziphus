@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_a65bfc6a-f803-590c-8448-03bd6972af5b" refid="108850" source="EXC Priya Paul Collection">A woman with a covered head - a textile label of the Khataumakanji Spinning & Weaving Co. Ltd., Bombay</relation>
+			<relation type="imageOf" relids="w_a65bfc6a-f803-590c-8448-03bd6972af5b" refid="108850" source="EXC Priya Paul Collection">A woman with a covered head - a textile label of the Khataumakanji Spinning &amp; Weaving Co. Ltd., Bombay</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

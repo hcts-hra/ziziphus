@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_8ecc99e9-088e-5ce2-9890-e64a1479e201" refid="108393" source="EXC Priya Paul Collection">Peliti's Government Place, Calcutta: court caterers & confectioners</relation>
+			<relation type="imageOf" relids="w_8ecc99e9-088e-5ce2-9890-e64a1479e201" refid="108393" source="EXC Priya Paul Collection">Peliti's Government Place, Calcutta: court caterers &amp; confectioners</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

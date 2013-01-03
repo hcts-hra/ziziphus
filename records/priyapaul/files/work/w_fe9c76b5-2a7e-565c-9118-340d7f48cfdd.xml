@@ -1,9 +1,13 @@
-<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+<vra    xmlns="http://www.vraweb.org/vracore4.htm"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:hra="http://cluster-schemas.uni-hd.de"
+        xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+
 	<work id="w_fe9c76b5-2a7e-565c-9118-340d7f48cfdd" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
 		<agentSet>
 			<agent>
 				<culture/>
-				<name vocab="local" type="corporate" refid="uuid-130c13b7-3535-5806-94f5-8e54bbf029a6">Buckingham & Carnatic Mills</name>
+				<name vocab="local" type="corporate" refid="uuid-130c13b7-3535-5806-94f5-8e54bbf029a6">Buckingham &amp; Carnatic Mills</name>
 				<role/>
   			</agent>
 		</agentSet>

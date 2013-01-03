@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_57a923de-2e3c-580a-a7a7-23a9a1ea13d3" refid="119843" source="EXC Priya Paul Collection">Asquith & Lord Ltd., Bombay: Tailors and Hosiers</relation>
+			<relation type="imageOf" relids="w_57a923de-2e3c-580a-a7a7-23a9a1ea13d3" refid="119843" source="EXC Priya Paul Collection">Asquith &amp; Lord Ltd., Bombay: Tailors and Hosiers</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

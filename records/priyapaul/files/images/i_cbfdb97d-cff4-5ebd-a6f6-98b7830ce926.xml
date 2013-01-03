@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_8e7969b3-08d6-596c-a868-c165b5607fad" refid="120138" source="EXC Priya Paul Collection">Shankar & Parvati- a textile label of Rockhit & Co., Calcutta</relation>
+			<relation type="imageOf" relids="w_8e7969b3-08d6-596c-a868-c165b5607fad" refid="120138" source="EXC Priya Paul Collection">Shankar &amp; Parvati- a textile label of Rockhit &amp; Co., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

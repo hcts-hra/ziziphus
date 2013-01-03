@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_20fd76b8-49b6-5b48-9378-9a13c742b9a6" refid="118945" source="EXC Priya Paul Collection">Robert Barbour & Brother</relation>
+			<relation type="imageOf" relids="w_20fd76b8-49b6-5b48-9378-9a13c742b9a6" refid="118945" source="EXC Priya Paul Collection">Robert Barbour &amp; Brother</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

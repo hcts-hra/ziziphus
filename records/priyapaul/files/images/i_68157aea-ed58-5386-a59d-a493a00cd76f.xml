@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_1a90aeab-154e-57bd-82d7-732fcd4facc4" refid="108812" source="EXC Priya Paul Collection">The Emperor Akbar- Textile Label From F. Steiner & Co., Manchester</relation>
+			<relation type="imageOf" relids="w_1a90aeab-154e-57bd-82d7-732fcd4facc4" refid="108812" source="EXC Priya Paul Collection">The Emperor Akbar- Textile Label From F. Steiner &amp; Co., Manchester</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

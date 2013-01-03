@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_567452b8-655c-52db-96c7-8576611e796a" refid="108822" source="EXC Priya Paul Collection">Shri Ganeshji Ticket- a textile label of James Finlay & Co., Bombay</relation>
+			<relation type="imageOf" relids="w_567452b8-655c-52db-96c7-8576611e796a" refid="108822" source="EXC Priya Paul Collection">Shri Ganeshji Ticket- a textile label of James Finlay &amp; Co., Bombay</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

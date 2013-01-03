@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_8b593a28-e0bb-5894-b8f2-f70e3e3f21ce" refid="108007" source="EXC Priya Paul Collection">The Flat Bazar & Lake, Nainital, India</relation>
+			<relation type="imageOf" relids="w_8b593a28-e0bb-5894-b8f2-f70e3e3f21ce" refid="108007" source="EXC Priya Paul Collection">The Flat Bazar &amp; Lake, Nainital, India</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

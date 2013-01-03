@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_5b12640e-bc4b-5f8e-bc05-78d7f360dae9" refid="118068" source="EXC Priya Paul Collection">Shankar & Parvati- a textile label of Kartarruck & Co. Calcutta, Karachi, Bombay</relation>
+			<relation type="imageOf" relids="w_5b12640e-bc4b-5f8e-bc05-78d7f360dae9" refid="118068" source="EXC Priya Paul Collection">Shankar &amp; Parvati- a textile label of Kartarruck &amp; Co. Calcutta, Karachi, Bombay</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

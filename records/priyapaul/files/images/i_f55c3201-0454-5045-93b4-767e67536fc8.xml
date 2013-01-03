@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_c4198a7e-2a42-5f24-ad25-ac042fa93ff9" refid="119834" source="EXC Priya Paul Collection">Squibbs's Ague Speicific: Cures Malaria, Influenza & Fevers</relation>
+			<relation type="imageOf" relids="w_c4198a7e-2a42-5f24-ad25-ac042fa93ff9" refid="119834" source="EXC Priya Paul Collection">Squibbs's Ague Speicific: Cures Malaria, Influenza &amp; Fevers</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

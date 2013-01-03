@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_fbb3c3fe-de5c-5fae-9a27-b2bffaa96695" refid="119576" source="EXC Priya Paul Collection">Shri Ramchander Teekas- a textile label of Arched Orrewing & Co., Glasgow</relation>
+			<relation type="imageOf" relids="w_fbb3c3fe-de5c-5fae-9a27-b2bffaa96695" refid="119576" source="EXC Priya Paul Collection">Shri Ramchander Teekas- a textile label of Arched Orrewing &amp; Co., Glasgow</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

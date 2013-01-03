@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_b0fcebde-f4b1-5d3f-9cf7-767caedc7a51" refid="108854" source="EXC Priya Paul Collection">Textile label of John Orrewing & Co., Glasgow</relation>
+			<relation type="imageOf" relids="w_b0fcebde-f4b1-5d3f-9cf7-767caedc7a51" refid="108854" source="EXC Priya Paul Collection">Textile label of John Orrewing &amp; Co., Glasgow</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

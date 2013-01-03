@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_38ab50a2-7705-5fea-befa-90b2fd4233d9" refid="120250" source="EXC Priya Paul Collection">Shri Gau Lok Ticket- a textile label of the F. Stiener & Company Ltd., Church</relation>
+			<relation type="imageOf" relids="w_38ab50a2-7705-5fea-befa-90b2fd4233d9" refid="120250" source="EXC Priya Paul Collection">Shri Gau Lok Ticket- a textile label of the F. Stiener &amp; Company Ltd., Church</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

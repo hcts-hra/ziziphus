@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_141a00d1-d3d9-587b-aee4-344e1f56c83b" refid="120100" source="EXC Priya Paul Collection">damaged - Sita-haran Ticket- a textile label of the Finlay Muir & Co., Calcutta (2)</relation>
+			<relation type="imageOf" relids="w_141a00d1-d3d9-587b-aee4-344e1f56c83b" refid="120100" source="EXC Priya Paul Collection">damaged - Sita-haran Ticket- a textile label of the Finlay Muir &amp; Co., Calcutta (2)</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

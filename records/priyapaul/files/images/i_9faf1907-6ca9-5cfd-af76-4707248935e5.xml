@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_aff2c57b-7f40-53d6-bf05-8c45a86fede6" refid="108802" source="EXC Priya Paul Collection">Sri Satnarayan Ticket- a textile label of  Kerr Tarruck & Co., Calcutta</relation>
+			<relation type="imageOf" relids="w_aff2c57b-7f40-53d6-bf05-8c45a86fede6" refid="108802" source="EXC Priya Paul Collection">Sri Satnarayan Ticket- a textile label of  Kerr Tarruck &amp; Co., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

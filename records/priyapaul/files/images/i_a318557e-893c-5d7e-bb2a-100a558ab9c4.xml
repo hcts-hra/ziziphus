@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_488890d2-d888-566e-b318-a1de64871300" refid="108768" source="EXC Priya Paul Collection">Kesh Vadh- a textile label of  the F. Steiner & Co., Church</relation>
+			<relation type="imageOf" relids="w_488890d2-d888-566e-b318-a1de64871300" refid="108768" source="EXC Priya Paul Collection">Kesh Vadh- a textile label of  the F. Steiner &amp; Co., Church</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

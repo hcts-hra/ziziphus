@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_96fb32cb-c3e8-5572-918c-e4b36987ead0" refid="108259" source="EXC Priya Paul Collection">Bourne & Shepherd, Simla, Calcutta & Bombay</relation>
+			<relation type="imageOf" relids="w_96fb32cb-c3e8-5572-918c-e4b36987ead0" refid="108259" source="EXC Priya Paul Collection">Bourne &amp; Shepherd, Simla, Calcutta &amp; Bombay</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

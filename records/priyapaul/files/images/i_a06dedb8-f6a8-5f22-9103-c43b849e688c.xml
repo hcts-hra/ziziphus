@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_64c6d75e-9a93-56c3-9806-ffab1ad3ff89" refid="118576" source="EXC Priya Paul Collection">Varjiwandas Hirjee & Co.,Bombay</relation>
+			<relation type="imageOf" relids="w_64c6d75e-9a93-56c3-9806-ffab1ad3ff89" refid="118576" source="EXC Priya Paul Collection">Varjiwandas Hirjee &amp; Co.,Bombay</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

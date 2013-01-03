@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_b6bbdc13-8484-57e4-9086-6ee8fee7f1c5" refid="118947" source="EXC Priya Paul Collection">Huntley & Palmers Biscuits</relation>
+			<relation type="imageOf" relids="w_b6bbdc13-8484-57e4-9086-6ee8fee7f1c5" refid="118947" source="EXC Priya Paul Collection">Huntley &amp; Palmers Biscuits</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

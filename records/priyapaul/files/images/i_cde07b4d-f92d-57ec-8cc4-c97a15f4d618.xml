@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_e2bdda3a-e453-5932-9156-c4bacd1927be" refid="119345" source="EXC Priya Paul Collection">Annapurna on a postcard published by J.N.Paul & Co., Calcutta</relation>
+			<relation type="imageOf" relids="w_e2bdda3a-e453-5932-9156-c4bacd1927be" refid="119345" source="EXC Priya Paul Collection">Annapurna on a postcard published by J.N.Paul &amp; Co., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

@@ -51,7 +51,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_f28e9979-763a-5b60-b93a-df4986a6aa67" refid="118251" source="EXC Priya Paul Collection">Advertisement for Sri Ambal & Co.</relation>
+			<relation type="imageOf" relids="w_f28e9979-763a-5b60-b93a-df4986a6aa67" refid="118251" source="EXC Priya Paul Collection">Advertisement for Sri Ambal &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

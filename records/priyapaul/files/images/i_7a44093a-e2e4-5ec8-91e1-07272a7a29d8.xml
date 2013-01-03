@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_6fe1d237-a9ee-5c75-bdbe-1a9392858c1b" refid="120030" source="EXC Priya Paul Collection">An oldman sits with a turban- a textile label of Owen & Okell, Bombay</relation>
+			<relation type="imageOf" relids="w_6fe1d237-a9ee-5c75-bdbe-1a9392858c1b" refid="120030" source="EXC Priya Paul Collection">An oldman sits with a turban- a textile label of Owen &amp; Okell, Bombay</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

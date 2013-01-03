@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_97b12644-6152-5e09-8419-ef43d0f72564" refid="120076" source="EXC Priya Paul Collection">Aiming at the eye of a revolving fish- a textile label of the Finlay, Muir & Co., Calcutta</relation>
+			<relation type="imageOf" relids="w_97b12644-6152-5e09-8419-ef43d0f72564" refid="120076" source="EXC Priya Paul Collection">Aiming at the eye of a revolving fish- a textile label of the Finlay, Muir &amp; Co., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

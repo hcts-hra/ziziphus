@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_65058ed5-c986-5c18-bb29-5b54cd5bc969" refid="120275" source="EXC Priya Paul Collection">Shri Shri Jagannath Puri,  in a textile label of the Kerrtarruck & Company, Calcutta</relation>
+			<relation type="imageOf" relids="w_65058ed5-c986-5c18-bb29-5b54cd5bc969" refid="120275" source="EXC Priya Paul Collection">Shri Shri Jagannath Puri,  in a textile label of the Kerrtarruck &amp; Company, Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

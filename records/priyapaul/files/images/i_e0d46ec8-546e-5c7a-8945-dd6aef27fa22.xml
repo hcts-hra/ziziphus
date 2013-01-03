@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_7a1efffa-27e7-5c3a-bb31-c9c200af6b1e" refid="107883" source="EXC Priya Paul Collection">Cavalry of an army with flags- a textile label of John Orrewing & Co.</relation>
+			<relation type="imageOf" relids="w_7a1efffa-27e7-5c3a-bb31-c9c200af6b1e" refid="107883" source="EXC Priya Paul Collection">Cavalry of an army with flags- a textile label of John Orrewing &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

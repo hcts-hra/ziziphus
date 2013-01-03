@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_ce3b699b-64d1-5201-b056-dacd745e764e" refid="120077" source="EXC Priya Paul Collection">Textile label by Macknight, Anderson & Co.</relation>
+			<relation type="imageOf" relids="w_ce3b699b-64d1-5201-b056-dacd745e764e" refid="120077" source="EXC Priya Paul Collection">Textile label by Macknight, Anderson &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

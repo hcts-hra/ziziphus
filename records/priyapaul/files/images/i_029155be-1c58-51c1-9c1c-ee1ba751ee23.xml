@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_738b5001-ea4f-5933-911a-56a7cfbd11b5" refid="108891" source="EXC Priya Paul Collection">Anant Shaiya- a textile label of  F. Steiner & Company Ltd., Manchester</relation>
+			<relation type="imageOf" relids="w_738b5001-ea4f-5933-911a-56a7cfbd11b5" refid="108891" source="EXC Priya Paul Collection">Anant Shaiya- a textile label of  F. Steiner &amp; Company Ltd., Manchester</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

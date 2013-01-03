@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_0b7d2b31-0ea0-5d10-866a-a6fe7bd970b6" refid="106202" source="EXC Priya Paul Collection">Sita-haran Ticket (a scene depicting the kidnap of Sita)- a textile label of F.Steiner & Co. Ltd., Chruch & Manchester.</relation>
+			<relation type="imageOf" relids="w_0b7d2b31-0ea0-5d10-866a-a6fe7bd970b6" refid="106202" source="EXC Priya Paul Collection">Sita-haran Ticket (a scene depicting the kidnap of Sita)- a textile label of F.Steiner &amp; Co. Ltd., Chruch &amp; Manchester.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

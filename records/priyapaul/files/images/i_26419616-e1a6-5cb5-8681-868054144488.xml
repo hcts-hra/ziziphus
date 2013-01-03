@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_d5c181e4-e592-53b2-9286-19f2381b1b87" refid="108750" source="EXC Priya Paul Collection">Krishna Lila- a textile label of John Orrewing & Co.</relation>
+			<relation type="imageOf" relids="w_d5c181e4-e592-53b2-9286-19f2381b1b87" refid="108750" source="EXC Priya Paul Collection">Krishna Lila- a textile label of John Orrewing &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

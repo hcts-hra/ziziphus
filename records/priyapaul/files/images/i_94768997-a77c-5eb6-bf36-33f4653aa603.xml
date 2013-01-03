@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_91c3816d-a645-576f-9ea1-5047671fe422" refid="109752" source="EXC Priya Paul Collection">Picture postcard titled, Wife's sister by B.K.Das & Co., Calcutta, under 'amorous, series no.4'</relation>
+			<relation type="imageOf" relids="w_91c3816d-a645-576f-9ea1-5047671fe422" refid="109752" source="EXC Priya Paul Collection">Picture postcard titled, Wife's sister by B.K.Das &amp; Co., Calcutta, under 'amorous, series no.4'</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

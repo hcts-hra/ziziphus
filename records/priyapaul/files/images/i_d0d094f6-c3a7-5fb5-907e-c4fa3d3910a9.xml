@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_cc5304d1-0309-5086-8c00-c708244fd0df" refid="109827" source="EXC Priya Paul Collection">M.Vadilal & Co. samples 1169, 1172</relation>
+			<relation type="imageOf" relids="w_cc5304d1-0309-5086-8c00-c708244fd0df" refid="109827" source="EXC Priya Paul Collection">M.Vadilal &amp; Co. samples 1169, 1172</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

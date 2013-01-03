@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_becd6cc3-a697-572f-bdff-32230fa8019d" refid="106110" source="EXC Priya Paul Collection">Damyanti & Radha-Krishna, on "Chit-Chat Letter Paper"</relation>
+			<relation type="imageOf" relids="w_becd6cc3-a697-572f-bdff-32230fa8019d" refid="106110" source="EXC Priya Paul Collection">Damyanti &amp; Radha-Krishna, on "Chit-Chat Letter Paper"</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

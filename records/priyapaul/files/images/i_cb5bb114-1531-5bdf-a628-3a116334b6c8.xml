@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_44ff4a11-431e-5840-8a06-9f0f11038e7f" refid="108839" source="EXC Priya Paul Collection">An avatara of Durga- a textile label of F. Steiner & Co., Manchester</relation>
+			<relation type="imageOf" relids="w_44ff4a11-431e-5840-8a06-9f0f11038e7f" refid="108839" source="EXC Priya Paul Collection">An avatara of Durga- a textile label of F. Steiner &amp; Co., Manchester</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

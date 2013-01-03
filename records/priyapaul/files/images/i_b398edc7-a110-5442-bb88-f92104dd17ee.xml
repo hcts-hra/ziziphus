@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_ec098c01-b1fc-5e56-8bf6-925398a3598b" refid="120844" source="EXC Priya Paul Collection">Shri Satya Narayanji- a textile label of Kertarruck & Co. Karachi, Calcutta & Bombay</relation>
+			<relation type="imageOf" relids="w_ec098c01-b1fc-5e56-8bf6-925398a3598b" refid="120844" source="EXC Priya Paul Collection">Shri Satya Narayanji- a textile label of Kertarruck &amp; Co. Karachi, Calcutta &amp; Bombay</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

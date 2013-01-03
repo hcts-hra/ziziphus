@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_efbed7f6-b067-5151-b5db-77551b65f781" refid="108799" source="EXC Priya Paul Collection">Portrait of the British queen & a snake-charmer- a textile label</relation>
+			<relation type="imageOf" relids="w_efbed7f6-b067-5151-b5db-77551b65f781" refid="108799" source="EXC Priya Paul Collection">Portrait of the British queen &amp; a snake-charmer- a textile label</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

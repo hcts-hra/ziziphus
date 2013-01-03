@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_71ddba63-9e1f-57f6-a1d3-cc0826f9d715" refid="119572" source="EXC Priya Paul Collection">Meera Teekas- a textile label of F.Steiner & Co., Manchester</relation>
+			<relation type="imageOf" relids="w_71ddba63-9e1f-57f6-a1d3-cc0826f9d715" refid="119572" source="EXC Priya Paul Collection">Meera Teekas- a textile label of F.Steiner &amp; Co., Manchester</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

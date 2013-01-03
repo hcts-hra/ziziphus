@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_a26d2aaa-fe6f-5552-aeca-36fd8b8949cc" refid="119771" source="EXC Priya Paul Collection">An advertisement of Faulkner's Boots & Shoes</relation>
+			<relation type="imageOf" relids="w_a26d2aaa-fe6f-5552-aeca-36fd8b8949cc" refid="119771" source="EXC Priya Paul Collection">An advertisement of Faulkner's Boots &amp; Shoes</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

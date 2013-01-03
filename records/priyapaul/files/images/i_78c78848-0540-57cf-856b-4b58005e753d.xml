@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_ae42a155-c292-532c-a352-da827c326761" refid="120144" source="EXC Priya Paul Collection">Laila Majnu Ticket,  in a textile label of F.Stiener & Co., Church</relation>
+			<relation type="imageOf" relids="w_ae42a155-c292-532c-a352-da827c326761" refid="120144" source="EXC Priya Paul Collection">Laila Majnu Ticket,  in a textile label of F.Stiener &amp; Co., Church</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

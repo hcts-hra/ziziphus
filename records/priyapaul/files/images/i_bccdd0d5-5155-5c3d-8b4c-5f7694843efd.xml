@@ -51,7 +51,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_3bc00500-96a4-5c16-8ded-44a1f8e3a5ca" refid="118855" source="EXC Priya Paul Collection">Advertisement for Sohan Lal & Sons showing farmer girls</relation>
+			<relation type="imageOf" relids="w_3bc00500-96a4-5c16-8ded-44a1f8e3a5ca" refid="118855" source="EXC Priya Paul Collection">Advertisement for Sohan Lal &amp; Sons showing farmer girls</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

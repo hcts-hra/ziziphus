@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_644c74fc-8286-575e-b5a8-c00945d11075" refid="119543" source="EXC Priya Paul Collection">An European lady stands on a sitting lion- a textile label of George Woolly & Co. Ltd., Manchester</relation>
+			<relation type="imageOf" relids="w_644c74fc-8286-575e-b5a8-c00945d11075" refid="119543" source="EXC Priya Paul Collection">An European lady stands on a sitting lion- a textile label of George Woolly &amp; Co. Ltd., Manchester</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

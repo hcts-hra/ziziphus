@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_e7af5973-2fd6-5ba1-abfd-969bd52ead07" refid="120026" source="EXC Priya Paul Collection">Laila Majnu in a textile label of Finlay Muir & Co.</relation>
+			<relation type="imageOf" relids="w_e7af5973-2fd6-5ba1-abfd-969bd52ead07" refid="120026" source="EXC Priya Paul Collection">Laila Majnu in a textile label of Finlay Muir &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

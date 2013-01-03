@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_7d0d8d27-48a8-537f-a256-895de8f6a2e2" refid="120665" source="EXC Priya Paul Collection">Title-page of the textile label catalogue of Tolson & Chisnall, Manchester</relation>
+			<relation type="imageOf" relids="w_7d0d8d27-48a8-537f-a256-895de8f6a2e2" refid="120665" source="EXC Priya Paul Collection">Title-page of the textile label catalogue of Tolson &amp; Chisnall, Manchester</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

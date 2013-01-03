@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_6d6b3a98-e7ed-5c03-bc7b-576a1d1c4e1b" refid="122971" source="EXC Priya Paul Collection">"Hide & Seek"</relation>
+			<relation type="imageOf" relids="w_6d6b3a98-e7ed-5c03-bc7b-576a1d1c4e1b" refid="122971" source="EXC Priya Paul Collection">"Hide &amp; Seek"</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

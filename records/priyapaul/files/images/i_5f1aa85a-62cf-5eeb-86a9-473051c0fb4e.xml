@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_9a3021f0-3234-57d1-a696-95385ae2d509" refid="108423" source="EXC Priya Paul Collection">A swimming girl- a textile label of Hormusjee Ardshir & Son</relation>
+			<relation type="imageOf" relids="w_9a3021f0-3234-57d1-a696-95385ae2d509" refid="108423" source="EXC Priya Paul Collection">A swimming girl- a textile label of Hormusjee Ardshir &amp; Son</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

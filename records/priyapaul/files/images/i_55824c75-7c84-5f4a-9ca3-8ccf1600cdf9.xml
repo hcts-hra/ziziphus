@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_c27a6ed8-baa0-56b4-bcdd-d7e70a799bc8" refid="117909" source="EXC Priya Paul Collection">Portrait photo by F. Kapp & Co.</relation>
+			<relation type="imageOf" relids="w_c27a6ed8-baa0-56b4-bcdd-d7e70a799bc8" refid="117909" source="EXC Priya Paul Collection">Portrait photo by F. Kapp &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

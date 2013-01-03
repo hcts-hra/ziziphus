@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_243d674b-c6bc-5d13-a730-a1fda0a91bcb" refid="106176" source="EXC Priya Paul Collection">An angel with wings- a textile label of Thomas Ashton & Sons, Manchester</relation>
+			<relation type="imageOf" relids="w_243d674b-c6bc-5d13-a730-a1fda0a91bcb" refid="106176" source="EXC Priya Paul Collection">An angel with wings- a textile label of Thomas Ashton &amp; Sons, Manchester</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

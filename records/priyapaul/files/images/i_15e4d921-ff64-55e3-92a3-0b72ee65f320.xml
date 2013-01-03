@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_91eb894b-7fa0-575c-9c77-f3ad13b70352" refid="119216" source="EXC Priya Paul Collection">poster advertisement of Sree Saradhambal & co. showing Hindu dieties</relation>
+			<relation type="imageOf" relids="w_91eb894b-7fa0-575c-9c77-f3ad13b70352" refid="119216" source="EXC Priya Paul Collection">poster advertisement of Sree Saradhambal &amp; co. showing Hindu dieties</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

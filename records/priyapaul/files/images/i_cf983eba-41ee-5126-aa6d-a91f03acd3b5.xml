@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_f91403dd-4217-5e1c-a41a-34978b68a2b1" refid="120919" source="EXC Priya Paul Collection">1936 Advertisement calendar for Anand Singh & Co.</relation>
+			<relation type="imageOf" relids="w_f91403dd-4217-5e1c-a41a-34978b68a2b1" refid="120919" source="EXC Priya Paul Collection">1936 Advertisement calendar for Anand Singh &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

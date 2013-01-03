@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_b96e9f0c-617f-53b8-bf3d-b5ed88fe1487" refid="120137" source="EXC Priya Paul Collection">Shri Mahadevji Ganeshji Ticket- a textile label of Andrew Yule & Co., Calcutta</relation>
+			<relation type="imageOf" relids="w_b96e9f0c-617f-53b8-bf3d-b5ed88fe1487" refid="120137" source="EXC Priya Paul Collection">Shri Mahadevji Ganeshji Ticket- a textile label of Andrew Yule &amp; Co., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

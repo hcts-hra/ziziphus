@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_f085f627-5874-50ad-9b8f-8d4af4425f98" refid="108715" source="EXC Priya Paul Collection">Textile label of Dürst & Co., Calcutta</relation>
+			<relation type="imageOf" relids="w_f085f627-5874-50ad-9b8f-8d4af4425f98" refid="108715" source="EXC Priya Paul Collection">Textile label of Dürst &amp; Co., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

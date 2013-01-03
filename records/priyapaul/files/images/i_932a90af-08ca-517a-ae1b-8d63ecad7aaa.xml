@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_92f627c0-59ba-5835-a2cb-33f965232e95" refid="119805" source="EXC Priya Paul Collection">An advertisement of S.D. Marker & Co., Bombay</relation>
+			<relation type="imageOf" relids="w_92f627c0-59ba-5835-a2cb-33f965232e95" refid="119805" source="EXC Priya Paul Collection">An advertisement of S.D. Marker &amp; Co., Bombay</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

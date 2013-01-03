@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_8c1154cc-d471-5d11-9a92-c43c22cf7594" refid="120029" source="EXC Priya Paul Collection">Portrait of Sai Mohan in a textile label of Chotalal Ravicarandas & Co.</relation>
+			<relation type="imageOf" relids="w_8c1154cc-d471-5d11-9a92-c43c22cf7594" refid="120029" source="EXC Priya Paul Collection">Portrait of Sai Mohan in a textile label of Chotalal Ravicarandas &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

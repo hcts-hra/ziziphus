@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_307b93c1-3978-577c-b32e-b6afb55409fe" refid="108704" source="EXC Priya Paul Collection">Anant Shaiya - a textile label of Keer, Tarruck & Co. Calcutta</relation>
+			<relation type="imageOf" relids="w_307b93c1-3978-577c-b32e-b6afb55409fe" refid="108704" source="EXC Priya Paul Collection">Anant Shaiya - a textile label of Keer, Tarruck &amp; Co. Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

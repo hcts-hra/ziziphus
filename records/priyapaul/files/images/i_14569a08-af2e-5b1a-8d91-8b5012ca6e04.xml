@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_e4cf7cf6-d3ce-56fc-bdb2-01e8bf9b2dd8" refid="120027" source="EXC Priya Paul Collection">Shri Dash Avatar in a textile label of Kerr Tarruck & Co., Bombay</relation>
+			<relation type="imageOf" relids="w_e4cf7cf6-d3ce-56fc-bdb2-01e8bf9b2dd8" refid="120027" source="EXC Priya Paul Collection">Shri Dash Avatar in a textile label of Kerr Tarruck &amp; Co., Bombay</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

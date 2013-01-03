@@ -51,7 +51,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_fd3342d8-00bf-54e8-a2ea-675095375106" refid="118942" source="EXC Priya Paul Collection">Amritlal & Co. Ltd. 1955</relation>
+			<relation type="imageOf" relids="w_fd3342d8-00bf-54e8-a2ea-675095375106" refid="118942" source="EXC Priya Paul Collection">Amritlal &amp; Co. Ltd. 1955</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

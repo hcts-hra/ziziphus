@@ -51,7 +51,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_12024c03-4f79-5bd8-811e-0f7a2540c078" refid="119787" source="EXC Priya Paul Collection">Advertisement for N. Cooper & Co. Seed Merchants</relation>
+			<relation type="imageOf" relids="w_12024c03-4f79-5bd8-811e-0f7a2540c078" refid="119787" source="EXC Priya Paul Collection">Advertisement for N. Cooper &amp; Co. Seed Merchants</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

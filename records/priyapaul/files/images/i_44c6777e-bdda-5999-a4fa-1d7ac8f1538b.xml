@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_af759ed3-e6e7-5099-b358-ccbf68646a60" refid="119827" source="EXC Priya Paul Collection">Shooting in India: Some Reflection & Reminiscences</relation>
+			<relation type="imageOf" relids="w_af759ed3-e6e7-5099-b358-ccbf68646a60" refid="119827" source="EXC Priya Paul Collection">Shooting in India: Some Reflection &amp; Reminiscences</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

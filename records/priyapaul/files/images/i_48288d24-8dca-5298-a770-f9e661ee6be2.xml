@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_777bd1a0-286c-58b4-aabf-eb8da7ba8d4f" refid="119217" source="EXC Priya Paul Collection">1929 Advertisement calendar for Peirce, Leslie & Co., Ltd.</relation>
+			<relation type="imageOf" relids="w_777bd1a0-286c-58b4-aabf-eb8da7ba8d4f" refid="119217" source="EXC Priya Paul Collection">1929 Advertisement calendar for Peirce, Leslie &amp; Co., Ltd.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

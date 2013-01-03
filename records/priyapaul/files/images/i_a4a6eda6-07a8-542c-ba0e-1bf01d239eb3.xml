@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_8df71583-48a9-5bfa-8fb2-952d2f33d3d7" refid="108830" source="EXC Priya Paul Collection">Textile label by Dubash Freres & Co.</relation>
+			<relation type="imageOf" relids="w_8df71583-48a9-5bfa-8fb2-952d2f33d3d7" refid="108830" source="EXC Priya Paul Collection">Textile label by Dubash Freres &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

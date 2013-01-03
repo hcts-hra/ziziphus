@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_328474db-eace-58b7-9182-dfbcd4df7183" refid="108857" source="EXC Priya Paul Collection">Portrait of Shri Thakurji and the lady gardener- a textile label of Gillanders Arbuthnot & Co., Calcutta</relation>
+			<relation type="imageOf" relids="w_328474db-eace-58b7-9182-dfbcd4df7183" refid="108857" source="EXC Priya Paul Collection">Portrait of Shri Thakurji and the lady gardener- a textile label of Gillanders Arbuthnot &amp; Co., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

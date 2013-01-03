@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_2a171845-401d-5bb3-936d-04767f22f4df" refid="120273" source="EXC Priya Paul Collection">An idol of Saraswati in a temple,  in a textile label of the F.Stiener & Co., Manchester</relation>
+			<relation type="imageOf" relids="w_2a171845-401d-5bb3-936d-04767f22f4df" refid="120273" source="EXC Priya Paul Collection">An idol of Saraswati in a temple,  in a textile label of the F.Stiener &amp; Co., Manchester</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

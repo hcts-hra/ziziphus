@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_95f7c4ef-88e6-5664-af79-4525a55b4f6c" refid="120668" source="EXC Priya Paul Collection">Jhulan Ticket in a textile label of F. Stiener & Co., Manchester</relation>
+			<relation type="imageOf" relids="w_95f7c4ef-88e6-5664-af79-4525a55b4f6c" refid="120668" source="EXC Priya Paul Collection">Jhulan Ticket in a textile label of F. Stiener &amp; Co., Manchester</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

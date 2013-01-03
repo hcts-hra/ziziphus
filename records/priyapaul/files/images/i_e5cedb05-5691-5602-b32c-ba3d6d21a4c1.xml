@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_eb325d37-b160-53d8-8325-825f5b4011c6" refid="119824" source="EXC Priya Paul Collection">brochure of B.B. & C.I. Railway, Bombay</relation>
+			<relation type="imageOf" relids="w_eb325d37-b160-53d8-8325-825f5b4011c6" refid="119824" source="EXC Priya Paul Collection">brochure of B.B. &amp; C.I. Railway, Bombay</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

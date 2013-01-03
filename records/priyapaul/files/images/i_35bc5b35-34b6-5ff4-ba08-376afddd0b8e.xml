@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_93a67aea-b226-5eac-ade0-dd4b2869541d" refid="118244" source="EXC Priya Paul Collection">Advertisement for N. V. Shunmugam & Co.</relation>
+			<relation type="imageOf" relids="w_93a67aea-b226-5eac-ade0-dd4b2869541d" refid="118244" source="EXC Priya Paul Collection">Advertisement for N. V. Shunmugam &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

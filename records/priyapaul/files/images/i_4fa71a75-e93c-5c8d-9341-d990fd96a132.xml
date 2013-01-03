@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_f7d25a0e-07a1-5893-8e57-c8c1e0fcd680" refid="120095" source="EXC Priya Paul Collection">Textile label by The Khandesh Spg. & Wg. Mills Co. Ld.</relation>
+			<relation type="imageOf" relids="w_f7d25a0e-07a1-5893-8e57-c8c1e0fcd680" refid="120095" source="EXC Priya Paul Collection">Textile label by The Khandesh Spg. &amp; Wg. Mills Co. Ld.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_7112be86-1c51-5199-8a2d-4a79d90f4f5d" refid="120141" source="EXC Priya Paul Collection">Gaj Gira Ticket- a textile label of Finlay Muir & Co., Calcutta</relation>
+			<relation type="imageOf" relids="w_7112be86-1c51-5199-8a2d-4a79d90f4f5d" refid="120141" source="EXC Priya Paul Collection">Gaj Gira Ticket- a textile label of Finlay Muir &amp; Co., Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

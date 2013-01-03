@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_f7548dd3-a3b4-54a9-aeb4-70ab9caf31a0" refid="108738" source="EXC Priya Paul Collection">The Sita Marriage Ticket- a textile label of F. Steiner & Co., Manchester</relation>
+			<relation type="imageOf" relids="w_f7548dd3-a3b4-54a9-aeb4-70ab9caf31a0" refid="108738" source="EXC Priya Paul Collection">The Sita Marriage Ticket- a textile label of F. Steiner &amp; Co., Manchester</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_e7137cf6-6ef1-55d4-95d1-f42e0b71afc1" refid="108411" source="EXC Priya Paul Collection">A tonga,  in a textile label of E.D. Sassoon & Company Ltd., Bombay</relation>
+			<relation type="imageOf" relids="w_e7137cf6-6ef1-55d4-95d1-f42e0b71afc1" refid="108411" source="EXC Priya Paul Collection">A tonga,  in a textile label of E.D. Sassoon &amp; Company Ltd., Bombay</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_1ca0de9b-39f2-5938-acab-d82b8e43c85d" refid="120876" source="EXC Priya Paul Collection">My Ally (Nawab Bhawul Khan) & My Enemy (Dewan Moolraj)</relation>
+			<relation type="imageOf" relids="w_1ca0de9b-39f2-5938-acab-d82b8e43c85d" refid="120876" source="EXC Priya Paul Collection">My Ally (Nawab Bhawul Khan) &amp; My Enemy (Dewan Moolraj)</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

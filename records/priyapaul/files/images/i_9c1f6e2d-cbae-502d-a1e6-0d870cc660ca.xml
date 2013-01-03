@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_ba6b31d6-779e-54dd-98ed-c058fde22b8d" refid="120060" source="EXC Priya Paul Collection">Pari (angel) Ticket- a textile label of the Ralli Brothers & Company, Calcutta</relation>
+			<relation type="imageOf" relids="w_ba6b31d6-779e-54dd-98ed-c058fde22b8d" refid="120060" source="EXC Priya Paul Collection">Pari (angel) Ticket- a textile label of the Ralli Brothers &amp; Company, Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

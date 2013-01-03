@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_3187017d-b680-5ded-9616-39e806cf62a6" refid="108794" source="EXC Priya Paul Collection">Ras Leela Ticket- a textile label of  John Orrewing & Co.</relation>
+			<relation type="imageOf" relids="w_3187017d-b680-5ded-9616-39e806cf62a6" refid="108794" source="EXC Priya Paul Collection">Ras Leela Ticket- a textile label of  John Orrewing &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

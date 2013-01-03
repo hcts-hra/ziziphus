@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_b41a88cb-2384-51f7-b846-ce0ecab5a62e" refid="120258" source="EXC Priya Paul Collection">Pictorial representation of Indian Zodiac signs- a textile label of the Ashton Hoare & Company Ltd., Manchester</relation>
+			<relation type="imageOf" relids="w_b41a88cb-2384-51f7-b846-ce0ecab5a62e" refid="120258" source="EXC Priya Paul Collection">Pictorial representation of Indian Zodiac signs- a textile label of the Ashton Hoare &amp; Company Ltd., Manchester</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

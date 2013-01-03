@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_740ed889-c326-5db7-821a-64ba00a0f010" refid="108838" source="EXC Priya Paul Collection">Shri Mahadevji- a textile label of Finlay Muir & Co., Manchester</relation>
+			<relation type="imageOf" relids="w_740ed889-c326-5db7-821a-64ba00a0f010" refid="108838" source="EXC Priya Paul Collection">Shri Mahadevji- a textile label of Finlay Muir &amp; Co., Manchester</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_31ac8052-1256-57ba-a98e-411b853ba571" refid="107975" source="EXC Priya Paul Collection">Back of Postcard, Made in Germany, by H.A. Mirza & Sons, Delhi</relation>
+			<relation type="imageOf" relids="w_31ac8052-1256-57ba-a98e-411b853ba571" refid="107975" source="EXC Priya Paul Collection">Back of Postcard, Made in Germany, by H.A. Mirza &amp; Sons, Delhi</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

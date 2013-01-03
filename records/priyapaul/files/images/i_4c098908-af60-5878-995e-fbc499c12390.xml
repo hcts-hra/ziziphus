@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_386ce6e4-7bde-5af0-bc11-44fff604cd42" refid="119087" source="EXC Priya Paul Collection">Poster advertisement of N.V. Shunmugam & Co., Madras, Snuff Manufacturers and Washerman Pet</relation>
+			<relation type="imageOf" relids="w_386ce6e4-7bde-5af0-bc11-44fff604cd42" refid="119087" source="EXC Priya Paul Collection">Poster advertisement of N.V. Shunmugam &amp; Co., Madras, Snuff Manufacturers and Washerman Pet</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

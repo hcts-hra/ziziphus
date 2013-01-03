@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_6752a119-ab60-580b-bedd-ff23d871c388" refid="120575" source="EXC Priya Paul Collection">Telephone Brand- a textile label of Nassur Hajee Mowjee & Co.</relation>
+			<relation type="imageOf" relids="w_6752a119-ab60-580b-bedd-ff23d871c388" refid="120575" source="EXC Priya Paul Collection">Telephone Brand- a textile label of Nassur Hajee Mowjee &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

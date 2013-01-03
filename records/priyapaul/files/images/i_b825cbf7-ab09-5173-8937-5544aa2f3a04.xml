@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_e0edc214-81bc-50cb-af11-aa9ea70419d6" refid="119638" source="EXC Priya Paul Collection">Two flags- a textile label of Elphinstone Spinning & Weaving Mills Co. Ltd.</relation>
+			<relation type="imageOf" relids="w_e0edc214-81bc-50cb-af11-aa9ea70419d6" refid="119638" source="EXC Priya Paul Collection">Two flags- a textile label of Elphinstone Spinning &amp; Weaving Mills Co. Ltd.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

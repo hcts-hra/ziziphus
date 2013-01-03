@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_3c63de2e-74ed-5934-b84d-eab8bf4448b8" refid="118933" source="EXC Priya Paul Collection">An advertisement of Freudenberg Boehringer & Co.</relation>
+			<relation type="imageOf" relids="w_3c63de2e-74ed-5934-b84d-eab8bf4448b8" refid="118933" source="EXC Priya Paul Collection">An advertisement of Freudenberg Boehringer &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

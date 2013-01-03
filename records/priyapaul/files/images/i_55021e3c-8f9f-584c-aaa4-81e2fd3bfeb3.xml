@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_a148371b-01a0-5a37-97e1-b89aadf2477a" refid="109709" source="EXC Priya Paul Collection">King & Queen with crown</relation>
+			<relation type="imageOf" relids="w_a148371b-01a0-5a37-97e1-b89aadf2477a" refid="109709" source="EXC Priya Paul Collection">King &amp; Queen with crown</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_4cfc6780-e7e0-5619-9af0-fc8174433c59" refid="120061" source="EXC Priya Paul Collection">Gaya Tirtha Ticket- a textile label of the Ralli Brothers & Company, Calcutta</relation>
+			<relation type="imageOf" relids="w_4cfc6780-e7e0-5619-9af0-fc8174433c59" refid="120061" source="EXC Priya Paul Collection">Gaya Tirtha Ticket- a textile label of the Ralli Brothers &amp; Company, Calcutta</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

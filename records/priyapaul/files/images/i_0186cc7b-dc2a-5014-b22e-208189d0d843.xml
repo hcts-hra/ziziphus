@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_3a6cca50-83b6-52bc-b0bf-62506d813c55" refid="108842" source="EXC Priya Paul Collection">Lord Shankar with wife Parvati and son Ganesha - a textile label of Lyon Lord & Co.</relation>
+			<relation type="imageOf" relids="w_3a6cca50-83b6-52bc-b0bf-62506d813c55" refid="108842" source="EXC Priya Paul Collection">Lord Shankar with wife Parvati and son Ganesha - a textile label of Lyon Lord &amp; Co.</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>

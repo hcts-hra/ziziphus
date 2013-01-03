@@ -46,7 +46,7 @@
 			<material/>
 		</materialSet>
 		<relationSet>
-			<relation type="imageOf" relids="w_69371d3f-ed9e-54b0-8748-e01ca777dfe2" refid="107981" source="EXC Priya Paul Collection">Back of Post card, from Mirza & Sons, Delhi, printed in Germany</relation>
+			<relation type="imageOf" relids="w_69371d3f-ed9e-54b0-8748-e01ca777dfe2" refid="107981" source="EXC Priya Paul Collection">Back of Post card, from Mirza &amp; Sons, Delhi, printed in Germany</relation>
 		</relationSet>
 		<rightsSet>
 			<display/>
