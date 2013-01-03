@@ -8,12 +8,12 @@ import module namespace transform = "http://exist-db.org/xquery/transform";
 
 declare option exist:serialize "method=xhtml media-type=application/xhtml+xml";
 
-declare function local:createVraRecords($uuid as xs:string) {
-     let $vraWorkRecord  := collection('ziziphus/records')/vra:vra/vra:work[@id = concat('w_',$uuid)]
+declare function local:createVraRecords($uuid as xs:string?) {
+     let $vraWorkRecord  := collection('/db/apps/ziziphus/records')/vra:vra/vra:work[@id = concat('w_',$uuid)]
      let $imageRecordId  := if(exists($vraWorkRecord/vra:relationSet/vra:relation/@pref[.='true']))
                                 then $vraWorkRecord/vra:relationSet/vra:relation[@pref='true']/@relids
                                 else $vraWorkRecord/vra:relationSet/vra:relation[1]/@relids
-     let $vraImageRecord := collection('ziziphus/records')/vra:vra/vra:image[@id = $imageRecordId]
+     let $vraImageRecord := collection('/db/apps/ziziphus/records')/vra:vra/vra:image[@id = $imageRecordId]
      let $vraImageId    := $vraImageRecord/@refid
      return
 
@@ -39,7 +39,7 @@ declare function local:transformVraRecord($root as node(), $id as xs:string, $vr
                                 <param  name="recordId" value="{$id}"/>
                             </parameters>
         return
-            transform:transform($root, doc("/db/ziziphus/resources/xsl/vra-record.xsl"), $parameters)
+            transform:transform($root, doc("/db/apps/ziziphus/resources/xsl/vra-record.xsl"), $parameters)
 };
 
 

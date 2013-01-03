@@ -16,7 +16,7 @@ declare option exist:serialize "method=xhtml media-type=application/xhtml+xml en
 
 let $recordId := request:get-parameter('recordId', 'w_40ca74a3-3e6c-5749-b0a0-b42afbadff01') 
 let $recordType := if(starts-with($recordId, 'w')) then ('work') else ('image')
-let $instance := doc(concat("/db/ziziphus/records/", $recordId, '.xml'))//*:agentSet
+let $instance := doc(concat("/db/apps/ziziphus/records/", $recordId, '.xml'))//*:agentSet
 
 (: 
 <xf:submission id="s-load-data" resource="records?_query=//*[@id='{$recordId}']/*:agentSet&amp;_wrap=no"

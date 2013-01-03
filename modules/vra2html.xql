@@ -50,6 +50,6 @@ declare function vra2html:transformVraRecord($root as node(), $id as xs:string, 
                                 <param  name="recordId" value="{$id}"/>
                             </parameters>
         return
-            transform:transform($root, doc("/db/ziziphus/resources/xsl/vra-record.xsl"), $parameters)
+            transform:transform($root, doc("/db/apps/ziziphus/resources/xsl/vra-record.xsl"), $parameters)
 };
 

@@ -7,7 +7,7 @@
     <repo:license>GNU-LGPL</repo:license>
     <repo:copyright>true</repo:copyright>
     <repo:type>application</repo:type>
-    <repo:target>/db/ziziphus</repo:target>
+    <repo:target>/ziziphus</repo:target>
     <repo:prepare>pre-install.xql</repo:prepare>
     <repo:finish>post-install.xql</repo:finish>
     <repo:permissions user="editor" password="editor" group="biblio.users" mode="0444"/>
