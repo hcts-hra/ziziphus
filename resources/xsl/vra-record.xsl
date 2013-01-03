@@ -210,13 +210,16 @@
                             <xf:label>Save changes</xf:label>
                             <xf:action>
                                 <xf:toggle case="{$caseId}-view"/>
-                                <xf:setvalue ref="instance('i-control-center')/currentform" value="''" model="model-1"/>
+                                <!--todo: not enough - form must be unloaded -->
+                                <xf:setvalue ref="instance('i-control-center')/currentform" model="model-1"/>
                             </xf:action>
                         </xf:trigger>
                         <xf:trigger appearance="minimal">
                             <xf:label>Close</xf:label>
                             <xf:toggle case="{$caseId}-view"/>
-                            <xf:setvalue ref="instance('i-control-center')/currentform" value="''" model="model-1"/>
+
+                            <!--todo: not enough - form must be unloaded -->
+                            <xf:setvalue ref="instance('i-control-center')/currentform" model="model-1"/>
 <!--
                             <script type="text/javascript">
                                 document.getElementById("leftPanel").removeAttribute("style");

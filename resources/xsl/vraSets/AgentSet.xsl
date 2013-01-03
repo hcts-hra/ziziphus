@@ -10,7 +10,7 @@
     </xsl:template>
 
     <xsl:template match="vra:agentSet" priority="40">
-            <table class="table table-condensed">
+            <table class="table table-striped">
                 <thead>
                     <tr>
                         <th>Name</th>

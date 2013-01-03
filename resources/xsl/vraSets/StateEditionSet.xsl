@@ -3,7 +3,7 @@
     <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"/>
 
     <xsl:template match="vra:stateEditionSet" priority="40">
-        <table class="table table-condensed">
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th>Type</th>

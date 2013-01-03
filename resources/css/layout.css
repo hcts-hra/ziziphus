@@ -35,7 +35,6 @@ body {
 }
 .bf .panel input,
 .bf .panel select {
-  font-size: 10px;
   padding: 1px;
 }
 .bf .panel select {

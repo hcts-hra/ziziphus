@@ -48,12 +48,14 @@ table tr td .xfGroup:last-child {
   border: thin solid #aaaaaa;
   border-radius: 3px;
   margin: 5px 5px 5px 0;
-  padding: 3px;
+  padding: 0 3px;
   background: #eeeeee;
   text-align: center;
+  line-height: 1.5;
 }
 .vraAttributes .xfLabel {
-  font-size: 0.85em;
+  line-height: 1.5;
+  font-size: 1em;
   margin: 0 !important;
   padding: 0 !important;
   border-bottom: thin solid #aaaaaa;
