@@ -9,22 +9,25 @@ import module namespace transform = "http://exist-db.org/xquery/transform";
 declare option exist:serialize "method=xhtml media-type=application/xhtml+xml";
 
 declare function local:createVraRecords($uuid as xs:string?) {
-     let $vraWorkRecord  := collection('/db/apps/ziziphus/records')/vra:vra/vra:work[@id = concat('w_',$uuid)]
+     let $vraWorkRecord  := collection('/db/apps/ziziphus/records/priyapaul/files/work')/vra:vra/vra:work[@id = $uuid]
      let $imageRecordId  := if(exists($vraWorkRecord/vra:relationSet/vra:relation/@pref[.='true']))
                                 then $vraWorkRecord/vra:relationSet/vra:relation[@pref='true']/@relids
                                 else $vraWorkRecord/vra:relationSet/vra:relation[1]/@relids
-     let $vraImageRecord := collection('/db/apps/ziziphus/records')/vra:vra/vra:image[@id = $imageRecordId]
+     let $vraImageRecord := collection('/db/apps/ziziphus/records/priyapaul/files/images')/vra:vra/vra:image[@id = $imageRecordId]
      let $vraImageId    := $vraImageRecord/@refid
      return
 
          <table>
                 <tr>
-                    {local:transformVraRecord($vraWorkRecord, concat('w_',$uuid), 'work')}
+                    {local:transformVraRecord($vraWorkRecord, $uuid, 'work')}
                     <td class="imagePanel">
-                        <div class="currentImage">
+                        <div class="currentImage" style="width:200px;height:200px;background:#dddddd;">
+
+                        <!--
                             <a href="records/{concat($vraImageId,'-big.jpg')}" target="_blank">
                                 <img id="vraImage" src="records/{concat($vraImageId,'.jpg')}" alt="image title" />
                             </a>
+                        -->
                         </div>
                     </td>
                     {local:transformVraRecord($vraImageRecord, $imageRecordId, 'image')}                    
@@ -47,7 +50,7 @@ declare function local:transformVraRecord($root as node(), $id as xs:string, $vr
 let $contextPath := request:get-context-path()
 
 (: ######## hardcoded dataset for testing!!! ######### :)
-let $uuid := request:get-parameter("id", "40ca74a3-3e6c-5749-b0a0-b42afbadff01")
+let $uuid := request:get-parameter("id", "w_0a0b6027-1b3d-56ce-a3b1-14e2baac93dc")
 
 return
 <html xmlns="http://www.w3.org/1999/xhtml"

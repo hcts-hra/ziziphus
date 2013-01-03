@@ -1,4 +1,4 @@
- - migrate to latest eXist version (2.0 rc2)
+ - migrate to latest eXist version (2.0 rc2)  - done
  - separate data from app (second .xar?)
  - create entry collection listing to start Ziziphus with data given by id
  - add global attributes section to forms
