@@ -30,6 +30,15 @@
         <delete dir="${target.dir}"/>
     </target>
 
+    <target name="testMerge">
+        <xslt style="${xsl.dir}/mergeData.xsl"
+                in="template.xml"
+                out="${target.dir}/merged.xml"
+                force="yes">
+            <classpath refid="transform.class.path"/>
+            <param name="incomingData" expression="../data.xml"/>
+        </xslt>
+    </target>
 
     <target name="prepare">
         <echo>Create generator resource: single file holding all instance data structures</echo>

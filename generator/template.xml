@@ -1,0 +1,16 @@
+<agentSet xmlns="http://www.vraweb.org/vracore4.htm">
+    <display/>
+    <notes foo="false"/>
+    <agent pref="false">
+        <attribution/>
+        <culture/>
+        <dates type="">
+            <earliestDate circa="false"/>
+            <latestDate circa="false"/>
+        </dates>
+        <name type=""/>
+        <role/>
+    </agent>
+</agentSet>
+
+
