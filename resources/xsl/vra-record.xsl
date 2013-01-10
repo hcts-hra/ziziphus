@@ -142,7 +142,7 @@
             <xsl:variable name="mountPoint" select="concat($id,'_MountPoint')"/>
             <xsl:variable name="caseId" select="concat('c-',$id)"/>
             <xsl:variable name="tableId" select="concat('table-',$id)"/>
-
+            <!--<xsl:value-of select="$recordId"/>-->
             <div class="t-edit">
                 <xf:trigger class="-icon -icon-edit">
                     <xf:label/>
@@ -152,13 +152,14 @@
 
 
                         <!--                        <xf:message><xsl:value-of select="$type"/></xf:message>-->
+                        <!-- todo: do we still need record and recordid? -->
                         <xf:setvariable name="record" select="'{$type}'"/>
-                        <xf:setvariable name="recordId" select="'{$recordId}'"/>
+                        <!--<xf:setvariable name="recordId" select="bf:appContext('$recordId')"/>-->
                         <xf:load show="embed" targetid="{$mountPoint}">
                             <xf:resource value="'forms/{$vraSetName}.xhtml#xforms'"/>
                             <xf:extension includeCSS="true" includeScript="false"/>
                         </xf:load>
-                        <xf:setvalue model="model-1" ref="instance('i-control-center')/currentform" value="'{$id}'"/>
+                        <xf:setvalue model="m-main" ref="instance('i-control-center')/currentform" value="'{$id}'"/>
                         <!--
                         This is not used for the time being. It was a test to use xquery to generate the
                         forms which might get interesting later again when it comes to optimization e.g.
@@ -211,7 +212,7 @@
                             <xf:action>
                                 <xf:toggle case="{$caseId}-view"/>
                                 <!--todo: not enough - form must be unloaded -->
-                                <xf:setvalue ref="instance('i-control-center')/currentform" model="model-1"/>
+                                <xf:setvalue ref="instance('i-control-center')/currentform" model="m-main"/>
                             </xf:action>
                         </xf:trigger>
                         <xf:trigger appearance="minimal">
@@ -219,7 +220,7 @@
                             <xf:toggle case="{$caseId}-view"/>
 
                             <!--todo: not enough - form must be unloaded -->
-                            <xf:setvalue ref="instance('i-control-center')/currentform" model="model-1"/>
+                            <xf:setvalue ref="instance('i-control-center')/currentform" model="m-main"/>
 <!--
                             <script type="text/javascript">
                                 document.getElementById("leftPanel").removeAttribute("style");

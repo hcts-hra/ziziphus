@@ -4,7 +4,6 @@
         <culture>asia</culture>
         <dates type="lksdjf">
             <earliestDate circa="true">1000</earliestDate>
-            <latestDate circa="false">1012</latestDate>
         </dates>
         <name vocab="local" type="personal" refid="uuid-65d331c8-aea5-564e-a372-b0b6cd6f30df">Gandhi, Mohandas Karamchand</name>
         <role/>
@@ -15,5 +14,6 @@
             <earliestDate circa="false">2000</earliestDate>
             <latestDate circa="true">2012</latestDate>
         </dates>
+        <name/>
     </agent>
 </agentSet>

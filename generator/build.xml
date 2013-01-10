@@ -31,12 +31,22 @@
     </target>
 
     <target name="testMerge">
-        <xslt style="${xsl.dir}/mergeData.xsl"
-                in="template.xml"
+        <xslt style="${basedir}/../resources/xsl/mergeData.xsl"
+                in="${basedir}/template.xml"
                 out="${target.dir}/merged.xml"
                 force="yes">
             <classpath refid="transform.class.path"/>
-            <param name="incomingData" expression="../data.xml"/>
+            <param name="incomingData" expression="${basedir}/data.xml"/>
+        </xslt>
+    </target>
+
+    <target name="testMergeNew">
+        <xslt style="${basedir}/../resources/xsl/mergeDataNew.xsl"
+                in="${basedir}/templateNew.xml"
+                out="${target.dir}/mergedNew.xml"
+                force="yes">
+            <classpath refid="transform.class.path"/>
+            <!--<param name="data2merge" expression="../data.xml"/>-->
         </xslt>
     </target>
 

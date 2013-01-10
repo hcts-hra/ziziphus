@@ -9,11 +9,11 @@ import module namespace transform = "http://exist-db.org/xquery/transform";
 declare option exist:serialize "method=xhtml media-type=application/xhtml+xml";
 
 declare function local:createVraRecords($uuid as xs:string?) {
-     let $vraWorkRecord  := collection('/db/apps/ziziphus/records/priyapaul/files/work')/vra:vra/vra:work[@id = $uuid]
+     let $vraWorkRecord  := collection('/db/apps/ziziphusData/priyapaul/files/work')/vra:vra/vra:work[@id = $uuid]
      let $imageRecordId  := if(exists($vraWorkRecord/vra:relationSet/vra:relation/@pref[.='true']))
                                 then $vraWorkRecord/vra:relationSet/vra:relation[@pref='true']/@relids
                                 else $vraWorkRecord/vra:relationSet/vra:relation[1]/@relids
-     let $vraImageRecord := collection('/db/apps/ziziphus/records/priyapaul/files/images')/vra:vra/vra:image[@id = $imageRecordId]
+     let $vraImageRecord := collection('/db/apps/ziziphusData/priyapaul/files/images')/vra:vra/vra:image[@id = $imageRecordId]
      let $vraImageId    := $vraImageRecord/@refid
      return
 
@@ -72,21 +72,22 @@ return
             <span style="font-weight:bold; font-size:200% !important;position:absolute;top:50%;width:100%;text-align:center;">... loading Ziziphus Image Database</span>
         </div>
         <div style="display:none">
-            <xf:model id="model-1">
+            <xf:model id="m-main">
                 <xf:instance id="i-control-center">
                     <data xmlns="">
                         <currentform/>
+                        <uuid>{$uuid}</uuid>
                     </data>
                 </xf:instance>
             </xf:model>
-            <xf:group id="controlCenter" model="model-1">
-                <xf:action ev:event="unload-subform"   model="model-1" if="string-length(instance('i-control-center')/currentform) &gt; 0">
+            <xf:group id="controlCenter" model="m-main">
+                <xf:action ev:event="unload-subform"   model="m-main" if="string-length(instance('i-control-center')/currentform) &gt; 0">
                     <xf:toggle>
                         <xf:case value="concat('c-',instance('i-control-center')/currentform,'-view')" />
                     </xf:toggle>
                     <xf:load show="none" targetid="{{concat(instance('i-control-center')/currentform,'_MountPoint')}}"/>
                 </xf:action>
-                <xf:action ev:event="clear-currentform" model="model-1">
+                <xf:action ev:event="clear-currentform" model="m-main">
                     <xf:setvalue ref="instance('i-control-center')/currentform" value="''"/>
                 </xf:action>
             </xf:group>

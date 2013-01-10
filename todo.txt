@@ -1,9 +1,10 @@
  - migrate to latest eXist version (2.0 rc2)  - done
- - separate data from app (second .xar?)
- - create entry collection listing to start Ziziphus with data given by id
+ - separate data from app (second .xar?) - partially done
+ - create collection listing to start Ziziphus with data given by id - done
+ - loading of data
  - add global attributes section to forms
  - saving of data
- - merging template instance with potentially incomplete datasets
+ - merging template instance with potentially incomplete datasets - done
  - optional: upgrade to latest betterFORM
  - optional: full and detail editing mode switched via existing icon
  - fix 'pref' to allow only one checkbox in the repeat to be selected
