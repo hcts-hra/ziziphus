@@ -1,15 +1,15 @@
-<xsl:stylesheet xmlns:mg="http://www.betterform.de/merge"
+<xsl:stylesheet xmlns:merge="http://www.betterform.de/merge"
         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
         version="2.0"
-        exclude-result-prefixes="mg" >
+        exclude-result-prefixes="merge" >
 
 
-    <xsl:output exclude-result-prefixes="mg" indent="yes"/>
+    <xsl:output exclude-result-prefixes="merge" indent="yes"/>
 
-    <xsl:variable name="importData" select="/mg:data/mg:importInstance/*"/>
+    <xsl:variable name="importData" select="/merge:data/merge:importInstance/*"/>
     <xsl:variable name="debug" select="'true'"/>
 
-    <xsl:param name="customNS" select="'http://www.vraweb.org/vracore4.htm'"/>
+    <xsl:param name="targetNS" select="'http://www.vraweb.org/vracore4.htm'"/>
     <!--
     Transform to merge two data files of same structure but one being possibly incomplete.
 
@@ -25,14 +25,14 @@
     - for
     author: joern turner
     -->
-    <xsl:template match="/mg:data">
+    <xsl:template match="/merge:data">
         <xsl:if test="not(exists($importData))">
             <xsl:message terminate="yes">No input data given</xsl:message>
         </xsl:if>
         <xsl:message>Given Root Elem: <xsl:value-of select="name($importData)"/></xsl:message>
-        <xsl:variable name="templateInstance" select="mg:templateInstance/*"/>
+        <xsl:variable name="templateInstance" select="merge:templateInstance/*"/>
         <xsl:message>VRA Elem: <xsl:value-of select="name($templateInstance)"/></xsl:message>
-        <xsl:element name="{name($templateInstance)}" namespace="{$customNS}">
+        <xsl:element name="{name($templateInstance)}" namespace="{$targetNS}">
             <xsl:for-each select="$templateInstance/*">
                 <xsl:apply-templates select="."/>
             </xsl:for-each>
@@ -77,7 +77,7 @@
                     -->
                     <xsl:choose>
                         <xsl:when test=".=text()">
-                            <xsl:element name="{name(.)}" namespace="{$customNS}">
+                            <xsl:element name="{name(.)}" namespace="{$targetNS}">
                                 <xsl:value-of select="text()"/>
                             </xsl:element>
                             <!--
@@ -114,7 +114,7 @@
                                 </xsl:copy>
                 -->
 
-                <xsl:element name="{name(.)}" namespace="{$customNS}">
+                <xsl:element name="{name(.)}" namespace="{$targetNS}">
                     <xsl:apply-templates select="@*"/>
                     <xsl:apply-templates/>
                 </xsl:element>
@@ -134,7 +134,7 @@
         </xsl:if>
 
         <!--todo: namespace-->
-        <xsl:element name="{name($templateNode)}" namespace="{$customNS}">
+        <xsl:element name="{name($templateNode)}" namespace="{$targetNS}">
             <xsl:if test="$debug = 'true'">
                 <xsl:message>copy attributes from template and imported</xsl:message>
             </xsl:if>
@@ -167,7 +167,7 @@
                         </xsl:call-template>
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:element name="{name(.)}" namespace="{$customNS}">
+                        <xsl:element name="{name(.)}" namespace="{$targetNS}">
                             <xsl:apply-templates select="@*"/>
                             <xsl:apply-templates select="*"/>
                         </xsl:element>

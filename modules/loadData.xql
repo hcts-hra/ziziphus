@@ -11,6 +11,7 @@ declare namespace exist = "http://exist.sourceforge.net/NS/exist";
 declare namespace xmldb="http://exist-db.org/xquery/xmldb";
 declare namespace request="http://exist-db.org/xquery/request";
 declare namespace vra="http://www.vraweb.org/vracore4.htm";
+declare namespace merge="http://www.betterform.de/merge";
 
 declare option exist:serialize "method=xml media-type=text/xml indent=yes";
 
@@ -26,14 +27,14 @@ declare function local:mergeVraRecord($root as node()) as node() {
 };
 
 declare function local:mergeXMLFragments($templateInstance as node(), $data as node()) as node() {
-    <data>
-        <templateInstance>
+    <merge:data>
+        <merge:templateInstance>
             {$templateInstance}
-        </templateInstance>
-        <importInstance>
+        </merge:templateInstance>
+        <merge:importInstance>
             {$data}
-        </importInstance>
-    </data>
+        </merge:importInstance>
+    </merge:data>
 };
 
 
@@ -42,22 +43,8 @@ let $quote := "&#39;"
 let $id := request:get-parameter('id', 'w_000197f8-4f11-5c63-9967-678e75fa6e41')
 
 (: the post data will contain the template instance to be merged with the (potentially) incomplete dataset in the database :)
-(:   :let $templateInstance := request:get-data() :)
-let $templateInstance :=   <agentSet xmlns="http://www.vraweb.org/vracore4.htm">
-                            <display/>
-                            <notes/>
-                            <agent pref="false">
-                                <attribution/>
-                                <culture/>
-                                <dates type="">
-                                    <earliestDate circa="false"/>
-                                    <latestDate circa="false"/>
-                                </dates>
-                                <name type=""/>
-                                <role/>
-                            </agent>
-                        </agentSet>
-                        
+let $templateInstance := request:get-data()
+
 (: the name of the set to be loaded is determined by the root element of the template instance :)
 let $setName := name($templateInstance)
 

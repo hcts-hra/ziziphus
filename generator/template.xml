@@ -1,5 +1,5 @@
-<mg:data xmlns:mg="http://www.betterform.de/merge">
-    <mg:templateInstance>
+<merge:data xmlns:merge="http://www.betterform.de/merge">
+    <merge:templateInstance>
         <agentSet xmlns="http://www.vraweb.org/vracore4.htm">
             <display/>
             <notes foo="false"/>
@@ -14,9 +14,9 @@
                 <role/>
             </agent>
         </agentSet>
-    </mg:templateInstance>
+    </merge:templateInstance>
 
-    <mg:importInstance>
+    <merge:importInstance>
         <agentSet xmlns="http://www.vraweb.org/vracore4.htm">
             <display>yes</display>
             <agent bar="baz">
@@ -36,6 +36,6 @@
                 <name/>
             </agent>
         </agentSet>
-    </mg:importInstance>
-</mg:data>
+    </merge:importInstance>
+</merge:data>
 
