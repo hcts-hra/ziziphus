@@ -39,6 +39,15 @@
         </xslt>
     </target>
 
+    <target name="testMergeTitleSet">
+        <xslt style="${basedir}/../resources/xsl/mergeData.xsl"
+                in="${basedir}/templateTitleSet.xml"
+                out="${target.dir}/mergedTitleSet.xml"
+                force="yes">
+            <classpath refid="transform.class.path"/>
+        </xslt>
+    </target>
+
     <target name="prepare">
         <echo>Create generator resource: single file holding all instance data structures</echo>
         <!-- generate an XML instance of vra-bf.xsd -->

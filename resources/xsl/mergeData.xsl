@@ -75,16 +75,20 @@
                                         </xsl:variable>
                                         <xsl:message>importPath:<xsl:value-of select="$importPath"/></xsl:message>
                     -->
+<!--
+                    <xsl:if test=".=text()">
+                        <xsl:element name="{name(.)}" namespace="{$targetNS}">
+                            <xsl:value-of select="text()"/>
+                        </xsl:element>
+                    </xsl:if>
+-->
                     <xsl:choose>
                         <xsl:when test=".=text()">
-                            <xsl:element name="{name(.)}" namespace="{$targetNS}">
-                                <xsl:value-of select="text()"/>
-                            </xsl:element>
-                            <!--
-                                                        <xsl:copy>
-                                                            <xsl:value-of select="text()"/>
-                                                        </xsl:copy>
-                            -->
+                            <xsl:call-template name="mergeImportNode">
+                                <xsl:with-param name="templateNode" select="$this"/>
+                                <xsl:with-param name="importedNode" select="."/>
+                                <xsl:with-param name="textValue" select="text()"/>
+                            </xsl:call-template>
                             <xsl:if test="$debug = 'true'">
                                 <xsl:message>found - copying text
                                 </xsl:message>
@@ -98,6 +102,14 @@
                             </xsl:call-template>
                         </xsl:otherwise>
                     </xsl:choose>
+<!--
+                    <xsl:call-template name="mergeImportNode">
+                        <xsl:with-param name="templateNode" select="$this"/>
+                        <xsl:with-param name="importedNode" select="."/>
+                        <xsl:with-param name="textValue"/>
+                    </xsl:call-template>
+-->
+
                 </xsl:for-each>
             </xsl:when>
             <!-- using nodes from template-->

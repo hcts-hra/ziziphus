@@ -22,6 +22,8 @@
     <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"/>
     <xsl:strip-space elements="*"/>
 
+    <!-- NOTE: change this to '../' to run the generated forms standalone -->
+    <xsl:variable name="relativePath" select="''"/>
 
     <!--
         ########################################################################################
@@ -83,10 +85,28 @@
 <xsl:comment> ###################### MODEL ################################## </xsl:comment>
 
                     <div style="display:none">
-                        <xf:model id="m-child-model" schema="resources/xsd/vra-types.xsd">
+                        <xf:model id="m-child-model" schema="{$relativePath}resources/xsd/vra-types.xsd">
+                            <xf:send ev:event="xforms-model-construct-done" submission="s-loadSet"/>
+                            <xf:submission id="s-loadSet"
+                                    resource="{$relativePath}modules/loadData.xql?id={{$id}}"
+                                    method="post" replace="instance" validate="false">
+                                <xf:header>
+                                    <xf:name>username</xf:name>
+                                    <xf:value>admin</xf:value>
+                                </xf:header>
+                                <xf:header>
+                                    <xf:name>password</xf:name>
+                                    <xf:value/>
+                                </xf:header>
+                                <xf:header>
+                                    <xf:name>realm</xf:name>
+                                    <xf:value>exist</xf:value>
+                                </xf:header>
+                                <xf:message ev:event="xforms-submit-error">Loading of Set failed</xf:message>
+                            </xf:submission>
+
                             <!-- todo: record is hardcoded here !!!-->
-                            <xf:instance id="i-{$vraSectionNode}"
-                                    src="/exist/apps/ziziphusData/priyapaul/files/work?_query=//*[@id='{{$id}}']/*:agentSet&amp;_wrap=no">
+                            <xf:instance id="i-{$vraSectionNode}">
                                     <xsl:apply-templates select="$vraInstance/vra:vra/vra:work/*[local-name(.)=$vraSectionNode]" mode="instance">
                                         <xsl:with-param name="path" select="'instance()'"/>
                                     </xsl:apply-templates>

@@ -39,20 +39,19 @@ declare function local:mergeXMLFragments($templateInstance as node(), $data as n
 
 
 (: the id of a vra record :)
-let $quote := "&#39;"
 let $id := request:get-parameter('id', 'w_000197f8-4f11-5c63-9967-678e75fa6e41')
 
 (: the post data will contain the template instance to be merged with the (potentially) incomplete dataset in the database :)
 let $templateInstance := request:get-data()
 
 (: the name of the set to be loaded is determined by the root element of the template instance :)
-let $setName := name($templateInstance)
 
+let $setName := local-name($templateInstance/*[1])
 let $data := local:getSetData($id,$setName)
-let $data2process := local:mergeXMLFragments($templateInstance, $data)
+let $data2process := local:mergeXMLFragments($templateInstance, $data) 
 
-(: let $result := local:mergeVraRecord($data2process) :)
 return 
-$data2process
+local:mergeVraRecord($data2process)
+
     
 

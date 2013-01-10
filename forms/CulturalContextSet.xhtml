@@ -19,8 +19,25 @@
          <!-- ###################### MODEL ################################## -->
          <div style="display:none">
             <xf:model id="m-child-model" schema="resources/xsd/vra-types.xsd">
-               <xf:instance id="i-culturalContextSet"
-                            src="records?_query=//*[@id='w_40ca74a3-3e6c-5749-b0a0-b42afbadff01']/*:culturalContextSet&amp;_wrap=no">
+               <xf:send ev:event="xforms-model-construct-done" submission="s-loadSet"></xf:send>
+               <xf:submission id="s-loadSet" resource="modules/loadData.xql?id={$id}" method="post"
+                              replace="instance"
+                              validate="false">
+                  <xf:header>
+                     <xf:name>username</xf:name>
+                     <xf:value>admin</xf:value>
+                  </xf:header>
+                  <xf:header>
+                     <xf:name>password</xf:name>
+                     <xf:value></xf:value>
+                  </xf:header>
+                  <xf:header>
+                     <xf:name>realm</xf:name>
+                     <xf:value>exist</xf:value>
+                  </xf:header>
+                  <xf:message ev:event="xforms-submit-error">Loading of Set failed</xf:message>
+               </xf:submission>
+               <xf:instance id="i-culturalContextSet">
                   <culturalContextSet xmlns="http://www.vraweb.org/vracore4.htm">
                      <display></display>
                      <notes></notes>
