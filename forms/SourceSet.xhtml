@@ -111,6 +111,13 @@
             <table>
                <tbody model="m-child-model" id="r-vraSource" xf:repeat-nodeset="vra:source">
                   <tr>
+                     <td colspan="3" class="globalAttrs">
+                        <xf:group class="vraAttributes" appearance="minimal" ref=".">
+                           <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
+                        </xf:group>
+                     </td>
+                  </tr>
+                  <tr>
                      <td class="prefCol">
                         <xf:input ref="@pref">
                            <xf:label>pref</xf:label>
@@ -356,12 +363,12 @@
                   <xf:trigger>
                      <xf:label>Ok</xf:label>
                      <xf:action if="'.'=instance('i-util')/currentElement">
-                        <xf:delete nodeset="instance('i-sourceSet')/vra:source/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:delete>
+                        <xf:delete nodeset="instance('i-sourceSet')/vra:source[index('r-vraSource')]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:delete>
                         <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]"
                                    context="instance('i-sourceSet')/vra:source[index('r-vraSource')]"></xf:insert>
                      </xf:action>
                      <xf:action if="not('.'=instance('i-util')/currentElement)">
-                        <xf:delete nodeset="instance('i-sourceSet')/vra:source/*[local-name()=instance('i-util')/currentElement]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:delete>
+                        <xf:delete nodeset="instance('i-sourceSet')/vra:source[index('r-vraSource')]/*[local-name()=instance('i-util')/currentElement]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:delete>
                         <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]"
                                    context="instance('i-sourceSet')/vra:source[index('r-vraSource')]/*[local-name()=instance('i-util')/currentElement]"></xf:insert>
                      </xf:action>

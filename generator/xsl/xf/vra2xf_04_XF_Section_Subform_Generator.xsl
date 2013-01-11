@@ -74,7 +74,7 @@
             xmlns:bf="http://betterform.sourceforge.net/xforms"
             bf:transform="/apps/ziziphus/resources/xsl/ziziphus.xsl">
             <head>
-                <link href="resources/css/edit-form.css" rel="stylesheet" type="text/css"/>
+                <link href="{$relativePath}resources/css/edit-form.css" rel="stylesheet" type="text/css"/>
                 <title>Ziziphus_Image_DB</title>
             </head>
             <body>
@@ -279,7 +279,7 @@
                                     -->
                                     <xf:action if="'.'=instance('i-util')/currentElement">
                                         <xf:delete>
-                                            <xsl:attribute name="nodeset">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]</xsl:attribute>
+                                            <xsl:attribute name="nodeset">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]</xsl:attribute>
                                         </xf:delete>
 
                                         <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]">
@@ -288,7 +288,7 @@
                                     </xf:action>
                                     <xf:action if="not('.'=instance('i-util')/currentElement)">
                                         <xf:delete>
-                                            <xsl:attribute name="nodeset">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>/*[local-name()=instance('i-util')/currentElement]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]</xsl:attribute>
+                                            <xsl:attribute name="nodeset">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/*[local-name()=instance('i-util')/currentElement]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]</xsl:attribute>
                                         </xf:delete>
 
                                         <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]">
@@ -420,6 +420,14 @@
                 <tbody model="m-child-model">
                     <xsl:attribute name="id">r-vra<xsl:value-of select="$vraArtifact"/></xsl:attribute>
                     <xsl:attribute name="xf:repeat-nodeset">vra:<xsl:value-of select="$vraArtifactNode"/></xsl:attribute>
+
+                    <tr>
+                        <td colspan="3" class="globalAttrs">
+                            <xf:group class="vraAttributes" appearance="minimal" ref=".">
+                                <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
+                            </xf:group>
+                        </td>
+                    </tr>
 
                     <xsl:apply-templates mode="ui" select="*[starts-with(@nodeset,'vra:')]"/>
                 </tbody>
