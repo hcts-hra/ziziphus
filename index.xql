@@ -3,11 +3,12 @@ declare namespace xmldb="http://exist-db.org/xquery/xmldb";
 declare namespace vra="http://www.vraweb.org/vracore4.htm";
 
 declare option exist:serialize "method=xhtml media-type=text/html";
-let $start := xs:integer(request:get-parameter("start", "0"))
+let $start := xs:integer(request:get-parameter("start", "1"))
 let $num := xs:integer(request:get-parameter("num", "20"))
 let $query-base := request:get-url()
 let $context := request:get-context-path()
 
+let $cnt := if($start gt ($num)) then $start + $num -1 else $num
 return
 <html>
    <head>
@@ -18,7 +19,7 @@ return
 
    <body style="padding:30px;">
       <h1>Priya Paul Collection</h1>
-      <h2>Work Records from {$start} to {$start + $num}</h2>
+      <h2>Work Records from {$start} to {$cnt}</h2>
       
       <input class="btn" type="button" onClick="parent.location='{$query-base}?start={$start - $num}&amp;num={$num}'" value="Previous" />
       <input class="btn" type="button" onClick="parent.location='{$query-base}?start={$start + $num}&amp;num={$num}'" value="Next"/>
@@ -27,22 +28,31 @@ return
            <thead>
                 <tr>
                     <th></th>
-                    <th>uuid</th> 
+                    <th>uuid</th>
+                    <th>work record data</th>
+                    <th>image record data</th>
                     <th>source</th>
                     <th>1. agent name</th>
                 </tr>
           </thead>
           <tbody>
           {
-          for $record  in subsequence(collection('/db/apps/ziziphusData/priyapaul/files/work'), $start, $num)//vra:vra/vra:work
+          for $record  at $count in subsequence(collection('/db/apps/ziziphusData/priyapaul/files/work'), $start, $num )//vra:vra/vra:work
             let $uuid := string($record/@id)
             let $source := string($record/@source)
             let $agent := string($record/vra:agentSet/vra:agent[1]/vra:name)
-            order by $uuid
+            let $vraWorkRecord  := collection('/db/apps/ziziphusData/priyapaul/files/work')/vra:vra/vra:work[@id = $uuid]
+            let $imageRecordId  := if(exists($vraWorkRecord/vra:relationSet/vra:relation/@pref[.='true']))
+                                then $vraWorkRecord/vra:relationSet/vra:relation[@pref='true']/@relids
+                                else $vraWorkRecord/vra:relationSet/vra:relation[1]/@relids
+            
+            let $counter := if($start gt ($num)) then $start+$count -1 else $count
             return
             <tr>
-                <td></td>
+                <td>{$counter}</td>
                 <td><a href="{$context}/apps/ziziphus/record.xql?id={$uuid}">{$uuid}</a></td>
+                <td><a href="{$context}/apps/ziziphusData/priyapaul/files/work/{$uuid}.xml" target="_blank">work</a></td>
+                <td><a href="{$context}/apps/ziziphusData/priyapaul/files/images/{$imageRecordId}.xml" target="_blank">image</a></td>
                 <td>{$source}</td>
                 <td>{$agent}</td>
             </tr>
