@@ -1,14 +1,8 @@
-<xsl:stylesheet xmlns:merge="http://www.betterform.de/merge"
-        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-        version="2.0"
-        exclude-result-prefixes="merge" >
-
-
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:merge="http://www.betterform.de/merge" version="2.0" exclude-result-prefixes="merge">
     <xsl:output exclude-result-prefixes="merge" indent="yes"/>
-
     <xsl:variable name="importData" select="/merge:data/merge:importInstance/*"/>
     <xsl:variable name="debug" select="'true'"/>
-
     <xsl:param name="targetNS" select="'http://www.vraweb.org/vracore4.htm'"/>
     <!--
     Transform to merge two data files of same structure but one being possibly incomplete.
@@ -29,16 +23,17 @@
         <xsl:if test="not(exists($importData))">
             <xsl:message terminate="yes">No input data given</xsl:message>
         </xsl:if>
-        <xsl:message>Given Root Elem: <xsl:value-of select="name($importData)"/></xsl:message>
+        <xsl:message>Given Root Elem: <xsl:value-of select="name($importData)"/>
+        </xsl:message>
         <xsl:variable name="templateInstance" select="merge:templateInstance/*"/>
-        <xsl:message>VRA Elem: <xsl:value-of select="name($templateInstance)"/></xsl:message>
+        <xsl:message>VRA Elem: <xsl:value-of select="name($templateInstance)"/>
+        </xsl:message>
         <xsl:element name="{name($templateInstance)}" namespace="{$targetNS}">
             <xsl:for-each select="$templateInstance/*">
                 <xsl:apply-templates select="."/>
             </xsl:for-each>
         </xsl:element>
     </xsl:template>
-
     <xsl:template match="*">
         <xsl:variable name="this" select="."/>
         <xsl:if test="$debug = 'true'">
@@ -109,7 +104,6 @@
                         <xsl:with-param name="textValue"/>
                     </xsl:call-template>
 -->
-
                 </xsl:for-each>
             </xsl:when>
             <!-- using nodes from template-->
@@ -125,16 +119,13 @@
                                     <xsl:apply-templates/>
                                 </xsl:copy>
                 -->
-
                 <xsl:element name="{name(.)}" namespace="{$targetNS}">
                     <xsl:apply-templates select="@*"/>
                     <xsl:apply-templates/>
                 </xsl:element>
-
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-
     <xsl:template name="mergeImportNode">
         <xsl:param name="templateNode"/>
         <xsl:param name="importedNode"/>
@@ -184,19 +175,16 @@
                             <xsl:apply-templates select="*"/>
                         </xsl:element>
                         <!--<xsl:copy-of select="."/>-->
-
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:for-each>
         </xsl:element>
     </xsl:template>
-
     <xsl:template match="@*|text()|comment()">
         <xsl:copy>
             <xsl:apply-templates select="*|@*|text()|comment()"/>
         </xsl:copy>
     </xsl:template>
-
     <xsl:template name="xpathExpr">
         <xsl:variable name="cnt" select="count(preceding-sibling::node())"/>
         <xsl:for-each select="ancestor-or-self::node()">

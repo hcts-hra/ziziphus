@@ -11,5 +11,5 @@
     <repo:prepare>pre-install.xql</repo:prepare>
     <repo:finish>post-install.xql</repo:finish>
     <repo:permissions user="editor" password="editor" group="biblio.users" mode="0444"/>
-    <deployed>2013-01-09T13:15:34.786+01:00</deployed>
+    <deployed>2013-01-11T12:25:29.917+01:00</deployed>
 </repo:meta>

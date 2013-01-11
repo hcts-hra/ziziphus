@@ -25,6 +25,9 @@
     <!-- NOTE: change this to '../' to run the generated forms standalone -->
     <xsl:variable name="relativePath" select="''"/>
 
+    <!-- must be '../' if testing forms standalone -->
+    <!--<xsl:variable name="relativePath" select="'../'"/>-->
+
     <!--
         ########################################################################################
             EXTERNAL PARAMETERS
@@ -104,6 +107,21 @@
                                 </xf:header>
                                 <xf:message ev:event="xforms-submit-error">Loading of Set failed</xf:message>
                             </xf:submission>
+                            <xf:submission id="s-update" resource="{$relativePath}modules/updateRecord.xql?id={{$id}}&amp;&amp;set={$vraSectionNode}" method="post" replace="none" validate="false">
+                                <xf:header>
+                                    <xf:name>username</xf:name>
+                                    <xf:value>admin</xf:value>
+                                </xf:header>
+                                <xf:header>
+                                    <xf:name>password</xf:name>
+                                    <xf:value/>
+                                </xf:header>
+                                <xf:header>
+                                    <xf:name>realm</xf:name>
+                                    <xf:value>exist</xf:value>
+                                </xf:header>
+                                <xf:message ev:event="xforms-submit-error">Sorry, updating of this record failed</xf:message>
+                            </xf:submission>
 
                             <!-- todo: record is hardcoded here !!!-->
                             <xf:instance id="i-{$vraSectionNode}">
@@ -157,6 +175,10 @@
                                 <xsl:attribute name="nodeset">instance()/vra:<xsl:value-of select="$vraArtifactNode"/>[last()]</xsl:attribute>
                                 <xsl:attribute name="origin">instance('i-templates')/vra:<xsl:value-of select="$vraArtifactNode"/></xsl:attribute>
                             </xf:insert>
+                        </xf:trigger>
+                        <xf:trigger>
+                            <xf:label>Save changes</xf:label>
+                            <xf:send submission="s-update"/>
                         </xf:trigger>
                     </div>
 
@@ -222,6 +244,10 @@
                             <xf:group appearance="minimal" class="attrDialogGroup">
                                 <xf:select1 ref="@vocab">
                                     <xf:label>vocab</xf:label>
+                                    <xf:item>
+                                        <xf:label>local</xf:label>
+                                        <xf:value>local</xf:value>
+                                    </xf:item>
                                     <xf:item>
                                         <xf:label>ULAN</xf:label>
                                         <xf:value>ULAN</xf:value>

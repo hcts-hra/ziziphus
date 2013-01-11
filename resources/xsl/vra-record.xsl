@@ -209,12 +209,13 @@
                 <!-- ############ EDIT CASE ############### -->
                 <!-- ############ EDIT CASE ############### -->
                 <xf:case id="{$caseId}-edit">
+<!--
                     <xf:group appearance="minimal" class="dialogControls">
                         <xf:trigger>
                             <xf:label>Save changes</xf:label>
                             <xf:action>
                                 <xf:toggle case="{$caseId}-view"/>
-                                <!--todo: not enough - form must be unloaded -->
+                                &lt;!&ndash;todo: not enough - form must be unloaded &ndash;&gt;
                                 <xf:setvalue ref="instance('i-control-center')/currentform" model="m-main"/>
                             </xf:action>
                         </xf:trigger>
@@ -222,15 +223,11 @@
                             <xf:label>Close</xf:label>
                             <xf:toggle case="{$caseId}-view"/>
 
-                            <!--todo: not enough - form must be unloaded -->
+                            &lt;!&ndash;todo: not enough - form must be unloaded &ndash;&gt;
                             <xf:setvalue ref="instance('i-control-center')/currentform" model="m-main"/>
-<!--
-                            <script type="text/javascript">
-                                document.getElementById("leftPanel").removeAttribute("style");
-                            </script>
--->
                         </xf:trigger>
                     </xf:group>
+-->
                     <div id="{$mountPoint}"/>
                 </xf:case>
             </xf:switch>

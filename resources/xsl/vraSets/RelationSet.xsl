@@ -39,7 +39,9 @@
                         <td class="detail-cell">
                             <xsl:if test="@href">
                                 <a>
-                                    <xsl:attribute name="href"><xsl:value-of select="@href"/></xsl:attribute>
+                                    <xsl:attribute name="href">
+                                        <xsl:value-of select="@href"/>
+                                    </xsl:attribute>
                                     <xsl:value-of select="@href"/>
                                 </a>
                             </xsl:if>

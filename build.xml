@@ -15,7 +15,6 @@
     <target name="clean">
         <delete dir="${target.dir}"/>
     </target>
-
     <target name="-lesscss-check-layout" unless="lesscss.needs.update.layout">
         <uptodate property="lesscss.needs.update.layout" srcfile="${resource.css.dir}/layout.css" targetfile="${resource.less.dir}/layout.less"/>
     </target>
@@ -25,7 +24,6 @@
     <target name="-lesscss-check-edit-form" unless="lesscss.needs.update.edit-form">
         <uptodate property="lesscss.needs.update.edit-form" srcfile="${resource.css.dir}/edit-form.css" targetfile="${resource.less.dir}/edit-form.less"/>
     </target>
-
     <target name="lesscss-layout" depends="-lesscss-check-layout" if="${lesscss.needs.update.layout}">
         <echo message="Executing lessc (layout.css)..."/>
         <exec executable="lessc" logError="true" failonerror="true">
@@ -34,7 +32,6 @@
             <arg value="${resource.css.dir}/layout.css"/>
         </exec>
     </target>
-    
     <target name="lesscss-record" depends="-lesscss-check-record" if="${lesscss.needs.update.record}">
         <echo message="Executing lessc (record.css)..."/>
         <exec executable="lessc" logError="true" failonerror="true">
@@ -43,7 +40,6 @@
             <arg value="${resource.css.dir}/record.css"/>
         </exec>
     </target>
-
     <target name="lesscss-edit-form" depends="-lesscss-check-edit-form" if="${lesscss.needs.update.edit-form}">
         <echo message="Executing lessc (edit-form.css)..."/>
         <exec executable="lessc" logError="true" failonerror="true">
@@ -52,7 +48,6 @@
             <arg value="${resource.css.dir}/edit-form.css"/>
         </exec>
     </target>
-
     <target name="lesscss" depends="lesscss-layout, lesscss-record, lesscss-edit-form"/>
 
     <!-- **************************************** GENERATE XAR **************************************** -->
@@ -81,6 +76,4 @@
         </copy>
         <zip basedir="${target.ziziphus.dir}" destfile="${target.dir}/${app.name}-${app.version}.xar" excludes="${build.excludes}"/>
     </target>
-
-
 </project>

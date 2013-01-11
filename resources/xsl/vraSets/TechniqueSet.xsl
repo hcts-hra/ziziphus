@@ -5,7 +5,7 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th></th>
+                    <th/>
                     <th class="detail-cell">vocab</th>
                     <th class="detail-cell">refid</th>
                 </tr>
@@ -13,9 +13,15 @@
             <tbody>
                 <xsl:for-each select="vra:technique">
                     <tr>
-                        <td><xsl:value-of select="."/></td>
-                        <td class="detail-cell"><xsl:value-of select="@vocab"/></td>
-                        <td class="detail-cell"><xsl:value-of select="@refid"/></td>
+                        <td>
+                            <xsl:value-of select="."/>
+                        </td>
+                        <td class="detail-cell">
+                            <xsl:value-of select="@vocab"/>
+                        </td>
+                        <td class="detail-cell">
+                            <xsl:value-of select="@refid"/>
+                        </td>
                     </tr>
                 </xsl:for-each>
             </tbody>
