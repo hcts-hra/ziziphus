@@ -193,7 +193,7 @@
                     <div class="vraSection" id="{concat($id,'_HtmlContent')}">
                         <div class="simple" id="{$tableId}">
                             <xsl:choose>
-                                <xsl:when test="$vraSetNode/vra:display">
+                                <xsl:when test="exists($vraSetNode/vra:display/text())">
                                     <xsl:apply-templates select="$vraSetNode/vra:display"/>
                                 </xsl:when>
                                 <xsl:otherwise>
