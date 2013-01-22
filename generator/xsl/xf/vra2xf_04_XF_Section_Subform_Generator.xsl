@@ -180,6 +180,10 @@
                             <xf:label>Save changes</xf:label>
                             <xf:send submission="s-update"/>
                         </xf:trigger>
+                        <xf:trigger id="closeEditor" class="-close">
+                            <xf:label>&#215;</xf:label>
+                            <xf:dispatch name="unload-subform" targetid="controlCenter"/>
+                        </xf:trigger>
                     </div>
 
                     <xsl:apply-templates select="xf:bind[@nodeset='vra:work']/xf:bind[@nodeset=concat('vra:',$vraSectionNode)]" mode="ui"/>

@@ -38,11 +38,12 @@ html, body {
     }
     .panel {
         background:whitesmoke;
-        padding:0 3px;
+        padding:0;
 
         .columntitle {
             padding-left: 2px;
-            color:#777777;
+            background:#777777;
+            color:white;
         }
         input, select{
             padding: 1px;
@@ -87,6 +88,7 @@ html, body {
         .sidePanel{
             min-width:@sidePanelWidth;
             width:@sidePanelWidth;
+            background: #999999;
         }
         .imagePanel{
             padding: 30px 5px;
@@ -128,7 +130,7 @@ html, body {
 
         .xfSelectedCase {
             display: inherit;
-            width: 95%;
+            width: 100%;
         }
     }
 
@@ -216,4 +218,17 @@ html, body {
     .dijitDialogCloseIcon{
         display: none;
     }
+
+    #closeEditor{
+        position: absolute;
+        right: 14px;
+        top:24px;
+    }
+    .close{
+        border:none;
+    }
+}
+.tundra .dijitTitlePaneTitle{
+    background:#999999;
+    color:white;
 }

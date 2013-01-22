@@ -106,6 +106,10 @@
                <xf:label>Save changes</xf:label>
                <xf:send submission="s-update"></xf:send>
             </xf:trigger>
+            <xf:trigger id="closeEditor" class="-close">
+               <xf:label>×</xf:label>
+               <xf:dispatch name="unload-subform" targetid="controlCenter"></xf:dispatch>
+            </xf:trigger>
          </div>
          <xf:group id="outerGroup" appearance="minimal" model="m-child-model"
                    ref="instance('i-inscriptionSet')">

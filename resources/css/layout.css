@@ -27,11 +27,12 @@ body {
 }
 .bf .panel {
   background: whitesmoke;
-  padding: 0 3px;
+  padding: 0;
 }
 .bf .panel .columntitle {
   padding-left: 2px;
-  color: #777777;
+  background: #777777;
+  color: white;
 }
 .bf .panel input,
 .bf .panel select {
@@ -73,6 +74,7 @@ body {
 .bf table .sidePanel {
   min-width: 480px;
   width: 480px;
+  background: #999999;
 }
 .bf table .imagePanel {
   padding: 30px 5px;
@@ -106,7 +108,7 @@ body {
 }
 .bf .xfSwitch .xfSelectedCase {
   display: inherit;
-  width: 95%;
+  width: 100%;
 }
 .bf .vraSection div.display-container {
   clear: both;
@@ -172,4 +174,16 @@ body {
 }
 .bf .dijitDialogCloseIcon {
   display: none;
+}
+.bf #closeEditor {
+  position: absolute;
+  right: 14px;
+  top: 24px;
+}
+.bf .close {
+  border: none;
+}
+.tundra .dijitTitlePaneTitle {
+  background: #999999;
+  color: white;
 }
