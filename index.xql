@@ -27,6 +27,13 @@ return
         <button type="submit" class="btn">Search</button>
       </form>
 
+      <form action="WorkrecordSearch.xql" class="form-search">
+        <label class="control-label" for="idSearch">Work Record Id:</label>
+        <input id="idSearch" type="search" name="workrecord"/>
+        <button type="submit" class="btn">Search</button>
+      </form>
+
+
       <h2>Work Records from {$start} to {$cnt}</h2>
       
       <input class="btn" type="button" onClick="parent.location='{$query-base}?start={$start - $num}&amp;num={$num}'" value="Previous" />
@@ -58,7 +65,7 @@ return
             return
             <tr>
                 <td>{$counter}</td>
-                <td><a href="{$context}/apps/ziziphus/record.xql?id={$uuid}">{$uuid}</a></td>
+                <td><a href="{$context}/apps/ziziphus/record.xql?id={$uuid}" target="_blank">{$uuid}</a></td>
                 <td><a href="{$context}/apps/ziziphusData/priyapaul/files/work/{$uuid}.xml" target="_blank">work</a></td>
                 <td><a href="{$context}/apps/ziziphusData/priyapaul/files/images/{$imageRecordId}.xml" target="_blank">image</a></td>
                 <td>{$heidiconId}</td>

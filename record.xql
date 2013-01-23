@@ -16,25 +16,26 @@ declare function local:createVraRecords($uuid as xs:string?) {
      let $vraImageRecord := collection('/db/apps/ziziphusData/priyapaul/files/images')/vra:vra/vra:image[@id = $imageRecordId]
      let $vraImageId    := $vraImageRecord/@refid
      let $id := substring($uuid,3)
-     let $imageTitle := $vraWorkRecord//vra:titleSet/vra:title/text()
+(:     let $imageTitle := $vraWorkRecord//vra:titleSet/vra:title/text():)
      return
 
          <table>
                 <tr>
                     {local:transformVraRecord($vraWorkRecord, $uuid, 'work')}
                     <td class="imagePanel">
-
-
-
-
-
+                        {
+                            for $image in $vraWorkRecord/vra:relationSet
+                            let $imageId := substring($image/vra:relation/@relids,3)
+                            return
+                                <img src="https://kjc-fs1.kjc.uni-heidelberg.de/ImageService/api/get/priya_paul/{$imageId}.jpg" alt="" class="relatedImage"/>
+                            
+                        }
+                        
 <!--                        <div class="currentImage" style="width:200px;height:200px;background:#dddddd;">
 
-
-
-                            <a href="records/{concat($vraImageId,'-big.jpg')}" target="_blank">             -->
+                            <a href="records/{concat($vraImageId,'-big.jpg')}" target="_blank">             
                                 <img id="vraImage" src="https://kjc-fs1.kjc.uni-heidelberg.de/ImageService/api/get/priya_paul/{$id}.jpg" alt="{$imageTitle}" />
-                            <!-- </a>
+                            </a>
 
                         </div>        -->
                     </td>

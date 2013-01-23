@@ -6,29 +6,29 @@ declare namespace hra="http://cluster-schemas.uni-hd.de";
 declare option exist:serialize "method=xhtml media-type=text/html";
 let $query-base := request:get-url()
 let $context := request:get-context-path()
-let $searchId := request:get-parameter("heidiconId","118874")
+let $searchId := request:get-parameter("workrecord","w_41efcf6e-5dda-5cf5-b1ac-77392c9d7f9f")
 
 return
 <html>
    <head>
-        <title>Priya Paul Collection - Heidicon Id Search</title>
+        <title>Priya Paul Collection - Work Record Search</title>
        <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css"/>
        
    </head>
 
    <body style="padding:30px;">
-      <h1>Priya Paul Collection - Heidicon Id Search</h1>
+      <h1>Priya Paul Collection - Work Record Search</h1>
 
-      <form action="HeidiconSearch.xql" class="form-search">
-        <label class="control-label" for="idSearch">Heidicon Id:</label>
-        <input id="idSearch" type="search" name="heidiconId" placeholder="please specify a Heidicon Id"/>
+      <form action="WorkrecordSearch.xql" class="form-search">
+        <label class="control-label" for="idSearch">Work Record Id:</label>
+        <input id="idSearch" type="search" name="workrecord" placeholder="please specify a Work Record Id"/>
         <button type="submit" class="btn">Search</button>
       </form>
       
       <div>
       {
          
-      for $record in collection('/db/apps/ziziphusData/priyapaul/files/work')//vra:vra[.//hra:heidicon/hra:item[@type='f_id_heidicon']/hra:value=$searchId]
+      for $record in collection('/db/apps/ziziphusData/priyapaul/files/work')//vra:vra[.//vra:work/@id=$searchId]
         let $theId := $record//hra:item[@type="f_id_heidicon" ]/hra:value[2]/text()
         let $workid := string($record/vra:work/@id)
         let $title := string($record/vra:work/vra:titleSet/vra:title)
