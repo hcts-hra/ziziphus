@@ -30,9 +30,11 @@ body {
   padding: 0;
 }
 .bf .panel .columntitle {
-  padding-left: 2px;
-  background: #777777;
+  padding: 8px;
+  background: #555555;
   color: white;
+  text-align: center;
+  font-size: 1.2em;
 }
 .bf .panel input,
 .bf .panel select {
@@ -62,7 +64,7 @@ body {
   left: 0px;
 }
 .bf .xfInput .xfValue {
-  height: 14px;
+  height: 18px;
 }
 .bf table {
   width: 100%;
@@ -77,7 +79,7 @@ body {
   background: #999999;
 }
 .bf table .imagePanel {
-  padding: 30px 5px;
+  padding: 30px 10px;
   text-align: center;
 }
 .bf table .imagePanel #vraImage {
@@ -186,4 +188,12 @@ body {
 .tundra .dijitTitlePaneTitle {
   background: #999999;
   color: white;
+}
+.relatedImage {
+  width: 100%;
+}
+.tundra .dijitMenu,
+.tundra .dijitMenuBar {
+  background: #454545;
+  color: #f5f5f5;
 }
