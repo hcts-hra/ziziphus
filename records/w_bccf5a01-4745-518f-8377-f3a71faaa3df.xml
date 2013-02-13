@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://www.vraweb.org/projects/vracore4/vra-4.0-restricted.xsd">
     <work id="w_bccf5a01-4745-518f-8377-f3a71faaa3df" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
-        <agentSet xmlns="http://www.vraweb.org/vracore4.htm">
-            <agent  >
+        <agentSet>
+            <agent>
                 <name type="" pref="false" vocab="" xml:lang="" script=""/>
-                <culture href="" source="" xml:lang=""  script=""/>
+                <culture href="" source="" xml:lang="" script=""/>
                 <role refid="" vocab=""/>
                 <attribution xml:lang="" script=""/>
             </agent>

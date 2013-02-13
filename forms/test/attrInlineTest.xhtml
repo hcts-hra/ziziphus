@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<html xmlns:vra="http://www.vraweb.org/vracore4.htm"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-      xmlns:xf="http://www.w3.org/2002/xforms"
-      xmlns:ev="http://www.w3.org/2001/xml-events"
-      xmlns:bfc="http://betterform.sourceforge.net/xforms/controls">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:vra="http://www.vraweb.org/vracore4.htm" xmlns:bfc="http://betterform.sourceforge.net/xforms/controls" xmlns:xf="http://www.w3.org/2002/xforms">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <title>Prototype - tables with inline attributes</title>
         <!--<link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.min.css"/>-->
-
         <script type="text/javascript" src="../../resources/script/jquery-1.8.0.min.js"/>
         <style type="text/css">
             #xforms .vraSet, #xforms .vraSetElement, #xforms .vraComplex {
@@ -61,49 +55,40 @@
                     <xf:instance id="i-agentSet">
                         <agentSet xmlns="http://www.vraweb.org/vracore4.htm">
                             <agent>
-                                <attribution pref="true" source="baba"></attribution>
-                                <culture></culture>
+                                <attribution pref="true" source="baba"/>
+                                <culture/>
                                 <dates type="" pref="true" refid="bubu">
-                                    <earliestDate circa="false"></earliestDate>
-                                    <latestDate circa="false"></latestDate>
+                                    <earliestDate circa="false"/>
+                                    <latestDate circa="false"/>
                                 </dates>
-                                <name type="" pref="false"></name>
-                                <role></role>
+                                <name type="" pref="false"/>
+                                <role/>
                             </agent>
                         </agentSet>
                     </xf:instance>
                     <xf:bind nodeset="instance()">
                         <xf:bind nodeset="vra:agent">
                             <xf:bind nodeset="@pref" type="xf:boolean"/>
-                            <xf:bind nodeset="vra:attribution"></xf:bind>
-                            <xf:bind nodeset="vra:culture"></xf:bind>
+                            <xf:bind nodeset="vra:attribution"/>
+                            <xf:bind nodeset="vra:culture"/>
                             <xf:bind nodeset="vra:dates">
-                                <xf:bind nodeset="@type" type="vra:agentDateTypeType"></xf:bind>
+                                <xf:bind nodeset="@type" type="vra:agentDateTypeType"/>
                                 <xf:bind nodeset="vra:earliestDate">
-                                    <xf:bind nodeset="@circa" type="xsd:boolean"></xf:bind>
+                                    <xf:bind nodeset="@circa" type="xsd:boolean"/>
                                 </xf:bind>
                                 <xf:bind nodeset="vra:latestDate">
-                                    <xf:bind nodeset="@circa" type="xsd:boolean"></xf:bind>
+                                    <xf:bind nodeset="@circa" type="xsd:boolean"/>
                                 </xf:bind>
                             </xf:bind>
                             <xf:bind nodeset="vra:name">
-                                <xf:bind nodeset="@type" type="vra:agentNameTypeType"></xf:bind>
+                                <xf:bind nodeset="@type" type="vra:agentNameTypeType"/>
                             </xf:bind>
-                            <xf:bind nodeset="vra:role"></xf:bind>
+                            <xf:bind nodeset="vra:role"/>
                         </xf:bind>
                     </xf:bind>
-
                     <xf:instance id="i-attributes">
                         <data xmlns="http://www.vraweb.org/vracore4.htm">
-                            <vraElement
-                                    dataDate=""
-                                    extent=""
-                                    href=""
-                                    pref="false"
-                                    refid=""
-                                    rules=""
-                                    source=""
-                                    vocab=""/>
+                            <vraElement dataDate="" extent="" href="" pref="false" refid="" rules="" source="" vocab=""/>
                         </data>
                     </xf:instance>
                     <xf:bind nodeset="instance('i-attributes')/*[1]">
@@ -111,7 +96,6 @@
                         <xf:bind nodeset="@href" type="xsd:anyURI"/>
                         <xf:bind nodeset="@pref" type="xsd:boolean"/>
                     </xf:bind>
-
                     <xf:instance id="i-util">
                         <data xmlns="">
                             <currentElement/>
@@ -122,10 +106,8 @@
             <h1>Set Elements with inline attributes</h1>
             <xf:group ref="instance()" appearance="minimal" class="vraSet" model="child-model">
                 <xf:label>AgentSet</xf:label>
-
                 <xf:group id="r-agentSet" class="vraSetElement" ref="vra:agent" appearance="minimal">
                     <xf:label>Agent</xf:label>
-
                     <table class="table table-condensed">
                         <thead>
                             <tr>
@@ -147,7 +129,7 @@
                                         <xf:action ev:event="DOMFocusOut">
                                             <xf:message level="ephemeral">DOM Focus out</xf:message>
                                             <script type="text/javascript">
-                                                $('#attribution-mount > .vraAttributes').remove();
+                                                $('#attribution-mount &gt; .vraAttributes').remove();
                                             </script>
                                         </xf:action>
                                     </xf:input>
@@ -158,8 +140,6 @@
                             </tr>
                         </tbody>
                     </table>
-
-
                     <table class="table table-condensed">
                         <thead>
                             <tr>
@@ -181,7 +161,7 @@
                                         <xf:action ev:event="DOMFocusOut">
                                             <xf:message level="ephemeral">DOM Focus out</xf:message>
                                             <script type="text/javascript">
-                                                $('#culture-mount > .vraAttributes').remove();
+                                                $('#culture-mount &gt; .vraAttributes').remove();
                                             </script>
                                         </xf:action>
                                     </xf:input>
@@ -192,7 +172,6 @@
                         </tbody>
                     </table>
                     <div id="culture-mount"/>
-
                     <table class="table table-condensed">
                         <thead>
                             <tr>
@@ -207,15 +186,13 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <xf:input class="elementInSet" ref="vra:dates/@type" type="nodeValue"
-                                              model="child-model">
+                                    <xf:input class="elementInSet" ref="vra:dates/@type" type="nodeValue" model="child-model">
                                         <xf:label/>
                                     </xf:input>
                                 </td>
                                 <td>
-                                    <xf:input class="elementInSet" ref="vra:dates/vra:earliestDate" type="nodeValue"
-                                              model="child-model">
-                                        <xf:label></xf:label>
+                                    <xf:input class="elementInSet" ref="vra:dates/vra:earliestDate" type="nodeValue" model="child-model">
+                                        <xf:label/>
                                     </xf:input>
                                 </td>
                                 <td>
@@ -225,7 +202,7 @@
                                 </td>
                                 <td>
                                     <xf:input ref="vra:dates/vra:latestDate" type="nodeValue" model="child-model">
-                                        <xf:label></xf:label>
+                                        <xf:label/>
                                     </xf:input>
                                 </td>
                                 <td>
@@ -238,8 +215,6 @@
                             </tr>
                         </tbody>
                     </table>
-
-
                     <table class="table table-condensed">
                         <thead>
                             <tr>
@@ -251,14 +226,13 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <xf:input class="elementInSet" ref="vra:name/@type" type="nodeValue"
-                                              model="child-model">
+                                    <xf:input class="elementInSet" ref="vra:name/@type" type="nodeValue" model="child-model">
                                         <xf:label/>
                                     </xf:input>
                                 </td>
                                 <td>
                                     <xf:input class="elementInSet" ref="vra:name" type="nodeValue" model="child-model">
-                                        <xf:label></xf:label>
+                                        <xf:label/>
                                     </xf:input>
                                 </td>
                                 <td>
@@ -266,7 +240,6 @@
                             </tr>
                         </tbody>
                     </table>
-
                     <table class="table table-condensed">
                         <thead>
                             <tr>
@@ -286,10 +259,8 @@
                             </tr>
                         </tbody>
                     </table>
-
                 </xf:group>
             </xf:group>
-
             <div style="display:none;">
                 <div id="attrDialog" class="vraAttributes">
                     <xf:label>Attributes</xf:label>
@@ -334,22 +305,17 @@
                         <xf:trigger>
                             <xf:label>Ok</xf:label>
                             <xf:action>
-                                <xf:insert
-                                        context="instance('i-agentSet')/vra:agent/*[local-name()=instance('i-util')/currentElement]"
-                                        origin="instance('i-attributes')/vra:vraElement[1]/@*[string-length(.) != 0]"/>
-
+                                <xf:insert context="instance('i-agentSet')/vra:agent/*[local-name()=instance('i-util')/currentElement]" origin="instance('i-attributes')/vra:vraElement[1]/@*[string-length(.) != 0]"/>
                             </xf:action>
-                            <bfc:hide dialog="attrDialog"></bfc:hide>
+                            <bfc:hide dialog="attrDialog"/>
                         </xf:trigger>
                         <xf:trigger appearance="minimal">
                             <xf:label>Cancel</xf:label>
-                            <bfc:hide dialog="attrDialog"></bfc:hide>
+                            <bfc:hide dialog="attrDialog"/>
                         </xf:trigger>
                     </xf:group>
                 </div>
             </div>
-
-
         </div>
     </body>
 </html>

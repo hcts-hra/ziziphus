@@ -42,11 +42,21 @@
     <target name="testMergeTitleSet">
         <xslt style="${basedir}/../resources/xsl/mergeData.xsl"
                 in="${basedir}/templateTitleSet.xml"
-                out="${target.dir}/mergedTitleSet.xml"
+                out="${target.dir}/heidicon.html"
                 force="yes">
             <classpath refid="transform.class.path"/>
         </xslt>
     </target>
+
+    <target name="heidiconOutput">
+        <xslt style="${basedir}/../resources/xsl/heidicon.xsl"
+                in="${basedir}/../records/w_40ca74a3-3e6c-5749-b0a0-b42afbadff01.xml"
+                out="${target.dir}/heidicon.html"
+                force="yes">
+            <classpath refid="transform.class.path"/>
+        </xslt>
+    </target>
+
 
     <target name="prepare">
         <echo>Create generator resource: single file holding all instance data structures</echo>

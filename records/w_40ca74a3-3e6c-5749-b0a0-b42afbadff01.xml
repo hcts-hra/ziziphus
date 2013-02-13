@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:hra="http://www.example.com/hra" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
+<vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:hra="http://cluster-schemas.uni-hd.de" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://cluster-schemas.uni-hd.de/vra-strictCluster.xsd">
     <work id="w_40ca74a3-3e6c-5749-b0a0-b42afbadff01" source="EXC Priya Paul Collection" refid="c_b9827ec8-6b66-5d98-9f5e-ca12b58044c4">
         <agentSet>
             <notes>agent notes</notes>
@@ -24,8 +24,8 @@
                 <name type="personal" vocab="ULAN" refid="500002921" dataDate="2006-09-22">Rubens, Peter Paul</name>
                 <culture>Flemish</culture>
                 <dates type="life">
-                        <earliestDate>1577</earliestDate>
-                        <latestDate>1640</latestDate>
+                    <earliestDate>1577</earliestDate>
+                    <latestDate>1640</latestDate>
                 </dates>
                 <role vocab="AAT" refid="300025136">painter (artist)</role>
             </agent>
@@ -53,7 +53,6 @@
                 <attribution>School of</attribution>
             </agent>
         </agentSet>
-
         <culturalContextSet>
             <notes>cultural context notes</notes>
             <culturalContext>Japanese</culturalContext>
@@ -79,10 +78,10 @@
         <inscriptionSet>
             <notes>inscription notes</notes>
             <inscription>
-                    <author vocab="ULAN" refid="500030596 ">Andokides Painter</author>
-                    <position>On the foot, incised</position>
-                    <text type="text" xml:lang="gr" >ANDOKIDES EPOESEN</text>
-                    <text type ="translation" xml:lang="en">Andokides made this</text>
+                <author vocab="ULAN" refid="500030596 ">Andokides Painter</author>
+                <position>On the foot, incised</position>
+                <text type="text" xml:lang="gr">ANDOKIDES EPOESEN</text>
+                <text type="translation" xml:lang="en">Andokides made this</text>
             </inscription>
             <inscription>
                 <author/>
@@ -167,25 +166,20 @@
             <measurements type="width" unit="cm" extent="base">36</measurements>
             <measurements type="depth" unit="cm" extent="base">24</measurements>
             <notes>measurements notes: 5 x 3 inch, oval</notes>
-
             <measurements type="diameter" unit="m">29.7</measurements>
             <measurements type="circumference" unit="m">15</measurements>
             <measurements type="circumferance" unit="m">16</measurements>
             <measurements type="circumfrence" unit="m">17</measurements>
             <measurements type="height" unit="m" extent="tallest stone">6.7</measurements>
             <measurements type="weight" unit="ton" extent="largest stone">45.2</measurements>
-            
             <measurements type="height" unit="m">34</measurements>
             <measurements type="length" unit="m">130</measurements>
-            
             <measurements type="length" unit="m" extent="forum">157</measurements>
             <measurements type="width" unit="m" extent="forum">35</measurements>
             <measurements type="duration" unit="ms" extent="forum">15900</measurements>
             <measurements type="runningTime" unit="s" extent="video">35</measurements>
-
             <measurements type="width" unit="m">3.13</measurements>
             <measurements type="length" unit="m">5.82</measurements>
-            
             <measurements type="length" unit="cm">34.4</measurements>
             <measurements type="diameter" unit="cm" extent="mouth end">2</measurements>
             <measurements type="diameter" unit="cm" extent="bottom end">1</measurements>
@@ -194,7 +188,7 @@
             <notes>relation notes</notes>
             <relation type="imageIs" relids="i_93d52424-a024-55d2-92b4-ca14275caeb9" refid="226566" source="EXC Priya Paul Collection" pref="true">Overall view</relation>
             <relation type="partOf" relids="w_000987653" href="http://~seurat.berkeley.edu/worksmetadata/13255.html">Altar of Zeus</relation>
-            <relation type="imageIs" relids="i_859348576" href="http://~seurat.berkeley.edu/images/554678.jpg"></relation>
+            <relation type="imageIs" relids="i_859348576" href="http://~seurat.berkeley.edu/images/554678.jpg"/>
         </relationSet>
         <rightsSet>
             <notes>Contact information: PO Box 429, Englewood, NJ 07631 858-576-0397</notes>
@@ -263,7 +257,7 @@
         <textrefSet>
             <textref>
                 <name type="corpus">Beazley, J.D., Attic Red-figure Vase Painters (2nd edition), New York: Hacker Art Books, 1984</name>
-                <refid type="citation" >p. 5, no. 6</refid>
+                <refid type="citation">p. 5, no. 6</refid>
             </textref>
             <textref type="electronic">
                 <name>The Beazley Archive</name>

@@ -2,17 +2,17 @@
 <vra xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vraweb.org/vracore4.htm http://www.vraweb.org/projects/vracore4/vra-4.0-restricted.xsd">
     <image id="i_8ef06a0c-1238-52b3-b2a1-a53ab9113006" source="EXC Priya Paul Collection" refid="8ef06a0c-1238-52b3-b2a1-a53ab9113006">
         <agentSet>
-    <display/>
-    <notes/>
-    <agent>
-        <name lang="eng" pref="false" refid="500125275" script="latn" type="corporate" vocab="">Albrecht Dürer</name>
-        <role code="mdc" vocab="marcrc">Metadata contact</role>
-    </agent>
-    <agent>
-        <name lang="eng" pref="true" refid="" script="latn" type="corporate" vocab="">Tasveer Ghar: A Digital Network of South Asian Popular Visual Culture</name>
-        <role refid="300202383" vocab="AAT">digitizing</role>
-    </agent>
-</agentSet>
+            <display/>
+            <notes/>
+            <agent>
+                <name lang="eng" pref="false" refid="500125275" script="latn" type="corporate" vocab="">Albrecht Dürer</name>
+                <role code="mdc" vocab="marcrc">Metadata contact</role>
+            </agent>
+            <agent>
+                <name lang="eng" pref="true" refid="" script="latn" type="corporate" vocab="">Tasveer Ghar: A Digital Network of South Asian Popular Visual Culture</name>
+                <role refid="300202383" vocab="AAT">digitizing</role>
+            </agent>
+        </agentSet>
         <culturalContextSet>
             <culturalContext/>
         </culturalContextSet>

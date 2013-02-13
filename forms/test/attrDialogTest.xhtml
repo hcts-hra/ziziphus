@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<html xmlns:vra="http://www.vraweb.org/vracore4.htm"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-      xmlns:xf="http://www.w3.org/2002/xforms"
-      xmlns:ev="http://www.w3.org/2001/xml-events"
-      xmlns:bfc="http://betterform.sourceforge.net/xforms/controls">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:vra="http://www.vraweb.org/vracore4.htm" xmlns:bfc="http://betterform.sourceforge.net/xforms/controls" xmlns:xf="http://www.w3.org/2002/xforms">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <title>Prototype - plain with Dialog</title>
         <link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.min.css"/>
-
         <style type="text/css">
             #xforms .vraSet, #xforms .vraSetElement, #xforms .vraComplex {
                 margin: 10px;
@@ -50,49 +44,40 @@
                     <xf:instance id="i-agentSet">
                         <agentSet xmlns="http://www.vraweb.org/vracore4.htm">
                             <agent>
-                                <attribution pref="true" source="baba"></attribution>
-                                <culture></culture>
+                                <attribution pref="true" source="baba"/>
+                                <culture/>
                                 <dates type="" pref="true" refid="bubu">
-                                    <earliestDate circa="false"></earliestDate>
-                                    <latestDate circa="false"></latestDate>
+                                    <earliestDate circa="false"/>
+                                    <latestDate circa="false"/>
                                 </dates>
-                                <name type="" pref="false"></name>
-                                <role></role>
+                                <name type="" pref="false"/>
+                                <role/>
                             </agent>
                         </agentSet>
                     </xf:instance>
                     <xf:bind nodeset="instance()">
                         <xf:bind nodeset="vra:agent">
                             <xf:bind nodeset="@pref" type="xf:boolean"/>
-                            <xf:bind nodeset="vra:attribution"></xf:bind>
-                            <xf:bind nodeset="vra:culture"></xf:bind>
+                            <xf:bind nodeset="vra:attribution"/>
+                            <xf:bind nodeset="vra:culture"/>
                             <xf:bind nodeset="vra:dates">
-                                <xf:bind nodeset="@type" type="vra:agentDateTypeType"></xf:bind>
+                                <xf:bind nodeset="@type" type="vra:agentDateTypeType"/>
                                 <xf:bind nodeset="vra:earliestDate">
-                                    <xf:bind nodeset="@circa" type="xsd:boolean"></xf:bind>
+                                    <xf:bind nodeset="@circa" type="xsd:boolean"/>
                                 </xf:bind>
                                 <xf:bind nodeset="vra:latestDate">
-                                    <xf:bind nodeset="@circa" type="xsd:boolean"></xf:bind>
+                                    <xf:bind nodeset="@circa" type="xsd:boolean"/>
                                 </xf:bind>
                             </xf:bind>
                             <xf:bind nodeset="vra:name">
-                                <xf:bind nodeset="@type" type="vra:agentNameTypeType"></xf:bind>
+                                <xf:bind nodeset="@type" type="vra:agentNameTypeType"/>
                             </xf:bind>
-                            <xf:bind nodeset="vra:role"></xf:bind>
+                            <xf:bind nodeset="vra:role"/>
                         </xf:bind>
                     </xf:bind>
-
                     <xf:instance id="i-attributes">
                         <data xmlns="http://www.vraweb.org/vracore4.htm">
-                            <vraElement
-                                    dataDate=""
-                                    extent=""
-                                    href=""
-                                    pref="false"
-                                    refid=""
-                                    rules=""
-                                    source=""
-                                    vocab=""/>
+                            <vraElement dataDate="" extent="" href="" pref="false" refid="" rules="" source="" vocab=""/>
                         </data>
                     </xf:instance>
                     <xf:bind nodeset="instance('i-attributes')/*[1]">
@@ -100,7 +85,6 @@
                         <xf:bind nodeset="@href" type="xsd:anyURI"/>
                         <xf:bind nodeset="@pref" type="xsd:boolean"/>
                     </xf:bind>
-
                     <xf:instance id="i-util">
                         <data xmlns="">
                             <currentElement/>
@@ -111,25 +95,20 @@
             <h1>Set Elements with Attribute Dialog</h1>
             <xf:group ref="instance()" appearance="minimal" class="vraSet" model="child-model">
                 <xf:label>AgentSet</xf:label>
-
                 <xf:group id="r-agentSet" class="vraSetElement" ref="vra:agent" appearance="full">
                     <xf:label>Agent</xf:label>
-
                     <xf:input class="elementInSet" ref="vra:attribution" type="nodeValue" model="child-model">
                         <xf:label>Attribution</xf:label>
                     </xf:input>
                     <xf:trigger class="-icon-tasks">
-                        <xf:label></xf:label>
+                        <xf:label/>
                         <xf:action>
                             <xf:setvalue ref="instance('i-util')/currentElement" value="'attribution'"/>
                             <!-- copy existing values from payload instance to i-attributes -->
-                            <xf:insert context="instance('i-attributes')/vra:vraElement[1]"
-                                       origin="instance('i-agentSet')/vra:agent/vra:attribution/@*"/>
+                            <xf:insert context="instance('i-attributes')/vra:vraElement[1]" origin="instance('i-agentSet')/vra:agent/vra:attribution/@*"/>
                         </xf:action>
                         <bfc:show dialog="attrDialog" ev:event="DOMActivate"/>
                     </xf:trigger>
-
-
                     <xf:input class="elementInSet" ref="vra:culture" type="nodeValue" model="child-model">
                         <xf:label>Culture</xf:label>
                         <xf:action ev:event="DOMFocusIn">
@@ -138,29 +117,25 @@
                         </xf:action>
                     </xf:input>
                     <xf:trigger class="-icon-tasks">
-                        <xf:label></xf:label>
+                        <xf:label/>
                         <xf:action>
                             <xf:setvalue ref="instance('i-util')/currentElement" value="'culture'"/>
                             <!-- copy existing values from payload instance to i-attributes -->
-                            <xf:insert context="instance('i-attributes')/vra:vraElement[1]"
-                                       origin="instance('i-agentSet')/vra:agent/vra:culture/@*"/>
+                            <xf:insert context="instance('i-attributes')/vra:vraElement[1]" origin="instance('i-agentSet')/vra:agent/vra:culture/@*"/>
                         </xf:action>
                         <bfc:show dialog="attrDialog" ev:event="DOMActivate"/>
                     </xf:trigger>
-
                     <xf:group ref="vra:dates" appearance="minimal" class="vraComplex" model="child-model">
                         <xf:label>Dates</xf:label>
                         <xf:trigger class="-icon-tasks">
-                            <xf:label></xf:label>
+                            <xf:label/>
                             <xf:action>
                                 <xf:setvalue ref="instance('i-util')/currentElement" value="'dates'"/>
                                 <!-- copy existing values from payload instance to i-attributes -->
-                                <xf:insert context="instance('i-attributes')/vra:vraElement[1]"
-                                           origin="instance('i-agentSet')/vra:agent/vra:dates/@*"/>
+                                <xf:insert context="instance('i-attributes')/vra:vraElement[1]" origin="instance('i-agentSet')/vra:agent/vra:dates/@*"/>
                             </xf:action>
                             <bfc:show dialog="attrDialog" ev:event="DOMActivate"/>
                         </xf:trigger>
-
                         <xf:input class="elementInSet" ref="vra:dates/@type" type="attributeValue" model="child-model">
                             <xf:label>type</xf:label>
                         </xf:input>
@@ -170,7 +145,6 @@
                         <xf:input ref="vra:latestDate" type="nodeValue" model="child-model">
                             <xf:label>LatestDate</xf:label>
                         </xf:input>
-
                     </xf:group>
                     <xf:input class="elementInSet" ref="vra:name" type="nodeValue" model="child-model">
                         <xf:label>Name</xf:label>
@@ -180,16 +154,14 @@
                         </xf:action>
                     </xf:input>
                     <xf:trigger class="-icon-tasks">
-                        <xf:label></xf:label>
+                        <xf:label/>
                         <xf:action>
                             <xf:setvalue ref="instance('i-util')/currentElement" value="'name'"/>
                             <!-- copy existing values from payload instance to i-attributes -->
-                            <xf:insert context="instance('i-attributes')/vra:vraElement[1]"
-                                       origin="instance('i-agentSet')/vra:agent/vra:name/@*"/>
+                            <xf:insert context="instance('i-attributes')/vra:vraElement[1]" origin="instance('i-agentSet')/vra:agent/vra:name/@*"/>
                         </xf:action>
                         <bfc:show dialog="attrDialog" ev:event="DOMActivate"/>
                     </xf:trigger>
-
                     <xf:input class="elementInSet" ref="vra:role" type="nodeValue" model="child-model">
                         <xf:label>Role</xf:label>
                         <xf:action ev:event="DOMFocusIn">
@@ -198,20 +170,16 @@
                         </xf:action>
                     </xf:input>
                     <xf:trigger class="-icon-tasks">
-                        <xf:label></xf:label>
+                        <xf:label/>
                         <xf:action>
                             <xf:setvalue ref="instance('i-util')/currentElement" value="'role'"/>
                             <!-- copy existing values from payload instance to i-attributes -->
-                            <xf:insert context="instance('i-attributes')/vra:vraElement[1]"
-                                       origin="instance('i-agentSet')/vra:agent/vra:role/@*"/>
+                            <xf:insert context="instance('i-attributes')/vra:vraElement[1]" origin="instance('i-agentSet')/vra:agent/vra:role/@*"/>
                         </xf:action>
                         <bfc:show dialog="attrDialog" ev:event="DOMActivate"/>
                     </xf:trigger>
-
                 </xf:group>
             </xf:group>
-
-
             <bfc:dialog id="attrDialog">
                 <xf:label>Attributes</xf:label>
                 <xf:group appearance="full" ref="instance('i-attributes')/vra:vraElement">
@@ -257,18 +225,14 @@
                     <xf:trigger>
                         <xf:label>Ok</xf:label>
                         <xf:action>
-                            <xf:insert
-                                    context="instance('i-agentSet')/vra:agent/*[local-name()=instance('i-util')/currentElement]"
-                                    origin="instance('i-attributes')/vra:vraElement[1]/@*[string-length(.) != 0]"/>
-
+                            <xf:insert context="instance('i-agentSet')/vra:agent/*[local-name()=instance('i-util')/currentElement]" origin="instance('i-attributes')/vra:vraElement[1]/@*[string-length(.) != 0]"/>
                         </xf:action>
-                        <bfc:hide dialog="attrDialog"></bfc:hide>
+                        <bfc:hide dialog="attrDialog"/>
                     </xf:trigger>
                     <xf:trigger appearance="minimal">
                         <xf:label>Cancel</xf:label>
-                        <bfc:hide dialog="attrDialog"></bfc:hide>
+                        <bfc:hide dialog="attrDialog"/>
                     </xf:trigger>
-
                 </xf:group>
             </bfc:dialog>
         </div>

@@ -1,0 +1,860 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>jWindow: jQuery Windows Engine 2</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="themes/umbra/style.css" />
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script type="text/javascript" src="jWindow-2.0.js"></script>
+	</head>
+	<body>
+		<div id="doc">
+			<hgroup>
+				<h1>jWindow: jQuery Windows Engine 2</h1>
+				<h2>a jQuery plugin that lets you create windowed user interfaces</h2>
+			</hgroup>
+			
+			<section>
+				<h1>Licence</h1>
+				<div>
+					<pre>jWindow: jQuery Windows Engine 2
+Copyright (c) 2011 Dominik Marczuk
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+    * The name of Dominik Marczuk may not be used to endorse or promote products
+      derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY DOMINIK MARCZUK "AS IS" AND ANY
+EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL DOMINIK MARCZUK BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</pre>
+				</div>
+			</section>
+			
+			<section>
+				<h1>Credits</h1>
+				<div>
+					<p>The original plugin, on which jWindow is based, is called <strong>jQuery Windows Engine</strong>. It was written by <a href="http://hernan.amiune.com/labs">Hernán Amiune</a> and licenced under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT licence</a>.</p>
+				</div>
+			</section>
+			
+			<section>
+				<h1>What is jWindow, exactly?</h1>
+				<div>
+					<p><strong>jWindow</strong> is a jQuery plugin that lets you create windows that look and behave just like your OS, whichever that might be. It provides you with the <code>$.jWindow</code> object, which is both powerful and easily extensible, should you choose to add custom functionality.</p>
+				</div>
+			</section>
+			
+			<section>
+				<h1>Set up</h1>
+				<div>
+					<p><strong>jWindow</strong> requires no extra libraries other than jQuery. It must be version 1.7 or newer. If you wish to make it work with earlier versions of jQuery, you will need to modify the source code and replace all occurrences of the <code>$.on()</code> method with either <code>$.live()</code> or <code>$.bind()</code>.</p>
+					<p>If you wish to use easing functions other than those that come with jQuery, you might also want to use jQuery UI's easing plugin.</p>
+					<p>You will also want to include a CSS theme for your windows.</p>
+					<p>So, the complete set up will require putting something like this in the page's <code>&lt;head&gt;</code> section:</p>
+					<pre>&lt;link type="stylesheet" href="themes/umbra/style.css" /&gt;
+&lt;script type="text/javascript" src="jquery.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="jWindow-2.0.min.js"&gt;&lt;/script&gt;</pre>
+				</div>
+			</section>
+			
+			<section>
+				<h1>Basic features</h1>
+				<div>
+					<section>
+						<h1>Create a window</h1>
+						<div>
+							<p>In order to create a new window, all you need to do is call the <code>$.jWindow()</code> method and pass it an object containing the new window's ID:</p>
+							<pre>$.jWindow({ id: "demo" });</pre>
+							<p>This will instantiate a window, but it will not display it. In order to actually make it appear on the screen, you also need to call the <code>jWindow.show()</code> method:</p>
+							<pre>var w = $.jWindow({ id: "demo" });
+w.show();</pre>
+							<p>Or, to make it shorter:</p>
+							<pre>$.jWindow({ id: "demo" }).show();</pre>
+						</div>
+					</section>
+					<section>
+						<h1>Close a window</h1>
+						<div>
+							<p>A window can be closed by clicking its close button.</p>
+							<p>Programatically, you will want to use the <code>hide()</code> method:</p>
+							<pre>$.jWindow("demo").hide();</pre>
+						</div>
+					</section>
+					<section>
+						<h1>Reference a window</h1>
+						<div>
+							<p>Each window has a unique ID. No two windows with the same ID may exist. You may reference a window by passing <code>$.jWindow()</code> the ID string. If the window with the given ID does not exist, <code>$.jWindow()</code> will return <code>null</code>.</p>
+							<pre>var w = $.jWindow("demo");</pre>
+						</div>
+					</section>
+					<section>
+						<h1>Other window states</h1>
+						<div>
+							<p>The window can be minimised or maximised. The states can be switched by pressing the minimise and maximise buttons. Pressing them again will restore the window to its original state.</p>
+							<p>You can minimise, maximise and restore a window programatically:</p>
+							<pre>$.jWindow("demo").maximise();</pre>
+							<pre>$.jWindow("demo").minimise();</pre>
+							<pre>$.jWindow("demo").restore();</pre>
+						</div>
+					</section>
+				</div>
+			</section>
+			
+			<section>
+				<h1>Theming</h1>
+				<div>
+					<p>The HTML structure generated by <strong>jWindow</strong> is the following:</p>
+					<pre>&lt;div id="demo" class="jWindow"&gt;
+	&lt;div class="jWindow-titleBar"&gt;
+		&lt;div class="jWindow-title"&gt;&lt;/div&gt;
+		&lt;div class="jWindow-button jWindow-minimiseButton"&gt;&lt;/div&gt;
+		&lt;div class="jWindow-button jWindow-maximiseButton"&gt;&lt;/div&gt;
+		&lt;div class="jWindow-button jWindow-closeButton"&gt;&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="jWindow-wrapper"&gt;
+		&lt;div class="jWindow-content"&gt;&lt;/div&gt;
+		&lt;div class="jWindow-statusBar"&gt;
+			&lt;div class="jWindow-resizeIcon"&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</pre>
+					<p>If the window is modal, the above HTML is additionally wrapped in:</p>
+					<pre>&lt;div class="jWindow-modalBackground"&gt;&lt;/div&gt;</pre>
+					<p>Also, whenever the window is being dragged or resized, the content div is overlaid with an iframe cover:</p>
+					<pre>&lt;div class="jWindow-content"&gt;
+	&lt;div class="jWindow-iframeCover"&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+					<p>The iframe cover is there to allow JavaScript to capture mouse events over an iframe, but it can be styled as well, for instance, to include a darker background.</p>
+					<p><strong>jWindow</strong> makes sure certain necessary styles are applied, such as the correct positioning context. Other than that, the look of the divs is up to you.</p>
+					<p>The basic styling includes giving the title bar and the status bar a height and changing their respective background colours.</p>
+					<p>Please note that <strong>jWindow</strong> will apply additional classes on the window's root div (the one with the class <code>.jWindow</code>). These classes correspond to the states the window might be in: <code>minimised</code>, <code>maximised</code>. They can be used to apply different styling to the window depending on the state it's currently in.</p>
+				</div>
+			</section>
+			
+			<section>
+				<h1>API reference</h1>
+				<div>
+					<section>
+						<h1>The <code>$.jWindow()</code> method</h1>
+						<div>
+							<p>The <code>$.jWindow()</code> method is the sole most important method that is handed to you. It acts as a window factory and getter.</p>
+							<section>
+								<h1><code>$.jWindow(options)</code></h1>
+								<div>
+									<p>This method is a window factory. It calls the <code>jWindow</code> constructor and returns the created object.</p>
+									<p>In case of an error (ie, missing ID), an exception is thrown.</p>
+									<p>If the provided ID is repeated, the already existing instance of <code>jWindow</code> will be returned instead of creating a new one.</p>
+									<table>
+										<tr>
+											<th colspan="6">Parametres</th>
+										</tr>
+										<tr>
+											<th>param</th>
+											<th>type</th>
+											<th>property</th>
+											<th>type</th>
+											<th>default value</th>
+											<th>description</th>
+										</tr>
+										<tr>
+											<td rowspan="16"><code>options</code></td>
+											<td rowspan="16"><em>object</em></td>
+											<td><code>id</code></td>
+											<td><em>string</em></td>
+											<td><em>none</em></td>
+											<td>Mandatory. The ID of the window that is being created. The function will fail if an ID is not specified or is not unique.</td>
+										</tr>
+										<tr>
+											<td><code>parentElement</code></td>
+											<td><em>string</em></td>
+											<td><code>"body"</code></td>
+											<td>The selector of the element the window will be placed inside.</td>
+										</tr>
+										<tr>
+											<td><code>title</code></td>
+											<td><em>string</em></td>
+											<td><code>""</code> (empty string)</td>
+											<td>Window title.</td>
+										</tr>
+										<tr>
+											<td><code>fixed</code></td>
+											<td><em>boolean</em></td>
+											<td><code>true</code></td>
+											<td>Whether the window should have fixed positioning. If set to false, the positioning context will become absolute.</td>
+										</tr>
+										<tr>
+											<td><code>posx</code></td>
+											<td><em>number</em></td>
+											<td><code>50</code></td>
+											<td>The offset from the left edge of the window (in pixels).</td>
+										</tr>
+										<tr>
+											<td><code>posy</code></td>
+											<td><em>number</em></td>
+											<td><code>50</code></td>
+											<td>The offset from the top of the window (in pixels)</td>
+										</tr>
+										<tr>
+											<td><code>width</code></td>
+											<td><em>number</em></td>
+											<td><code>300</code></td>
+											<td>The width of the window.</td>
+										</tr>
+										<tr>
+											<td><code>height</code></td>
+											<td><em>number</em></td>
+											<td><code>200</code></td>
+											<td>The height of the window's content area (i.e., excluding the title and status bars)</td>
+										</tr>
+										<tr>
+											<td><code>onClose</code></td>
+											<td><em>function</em></td>
+											<td><code>null</code></td>
+											<td>Callback function. Called after the window's close button is pressed.</td>
+										</tr>
+										<tr>
+											<td><code>onMinimise</code></td>
+											<td><em>function</em></td>
+											<td><code>null</code></td>
+											<td>Callback function. Called after the window's minimise button is pressed.</td>
+										</tr>
+										<tr>
+											<td><code>onMaximise</code></td>
+											<td><em>function</em></td>
+											<td><code>null</code></td>
+											<td>Callback function. Called after the window's maximise button is pressed.</td>
+										</tr>
+										<tr>
+											<td><code>onRestore</code></td>
+											<td><em>function</em></td>
+											<td><code>null</code></td>
+											<td>Callback function. Called after the window has been restored from the minimised or maximised state using the minimise or maximise buttons.</td>
+										</tr>
+										<tr>
+											<td><code>onDragStart</code></td>
+											<td><em>function</em></td>
+											<td><code>null</code></td>
+											<td>Callback function. Called when the window's dragging starts.</td>
+										</tr>
+										<tr>
+											<td><code>onDragEnd</code></td>
+											<td><em>function</em></td>
+											<td><code>null</code></td>
+											<td>Callback function. Called when the window's dragging ends.</td>
+										</tr>
+										<tr>
+											<td><code>onResizeStart</code></td>
+											<td><em>function</em></td>
+											<td><code>null</code></td>
+											<td>Callback function. Called when the window resizing starts.</td>
+										</tr>
+										<tr>
+											<td><code>onResizeEnd</code></td>
+											<td><em>function</em></td>
+											<td><code>null</code></td>
+											<td>Callback function. Called when the window's resizing ends.</td>
+										</tr>
+										<tr>
+											<th colspan="6">Return</th>
+										</tr>
+										<tr>
+											<th>type</th>
+											<th colspan="5">description</th>
+										</tr>
+										<tr>
+											<td><code>jWindow</code></td>
+											<td colspan="5">The newly created <code>jWindow</code> object. Provides a fluent interface.</td>
+										</tr>
+									</table>
+									<pre class="example">// minimal setup
+var w = $.jWindow({
+	id: "demo"
+});</pre>
+									<pre class="example">// all available options
+var w = $.jWindow({
+	id: "demo",
+	title: "Demo window",
+	width: 600,
+	height: 400,
+	posx: 100,
+	posy: 100
+});</pre>
+								</div>
+							</section>
+							<section>
+								<h1><code>$.jWindow(id)</code></h1>
+								<div>
+									<p>This method is a getter. It fetches an already existing instance of <code>jWindow</code>.</p>
+									<p>If the specified ID is not valid (ie, a window with that ID doesn't yet exist), the method returns <code>null</code>.</p>
+									<table>
+										<tr>
+											<th colspan="6">Parametres</th>
+										</tr>
+										<tr>
+											<th>param</th>
+											<th>type</th>
+											<th>property</th>
+											<th>type</th>
+											<th>default value</th>
+											<th>description</th>
+										</tr>
+										<tr>
+											<td><code>id</code></td>
+											<td colspan="3"><em>string</em></td>
+											<td><em>none</em></td>
+											<td>Mandatory. The ID of the window that is being retrieved. The function will fail if an ID is not specified.</td>
+										</tr>
+										<tr>
+											<th colspan="6">Return</th>
+										</tr>
+										<tr>
+											<th>type</th>
+											<th colspan="5">description</th>
+										</tr>
+										<tr>
+											<td><code>jWindow</code></td>
+											<td colspan="5">The retrieved <code>jWindow</code> object. Provides a fluent interface.</td>
+										</tr>
+										<tr>
+											<td><code>null</code></td>
+											<td colspan="5">In case the requested ID is not among the already created windows.</td>
+										</tr>
+									</table>
+									<pre class="example">var w = $.jWindow("demo");</pre>
+								</div>
+							</section>
+						</div>
+					</section>
+					
+					<section>
+						<h1>Public methods</h1>
+						<div>
+							<p>Once a <code>jWindow</code> object has been created/fetched, it is possible to call several public methods on it, enabling its manipulation.</p>
+							<section>
+								<h1><code>show([params])</code></h1>
+								<div>
+									<p>Displays a window. The window will appear with an animation.</p>
+									<p>The <code>show()</code> method can be called with several different parametres:</p>
+									<ul>
+										<li><code>show()</code></li>
+										<li><code>show(duration)</code></li>
+										<li><code>show(easing)</code></li>
+										<li><code>show(complete)</code></li>
+										<li><code>show(options)</code></li>
+									</ul>
+									<p>All parametres control the window's animation.</p>
+									<table>
+										<tr>
+											<th colspan="6">Parametres</th>
+										</tr>
+										<tr>
+											<th>param</th>
+											<th>type</th>
+											<th>property</th>
+											<th>type</th>
+											<th>default value</th>
+											<th>description</th>
+										</tr>
+										<tr>
+											<td><code>duration</code></td>
+											<td colspan="3"><em>number</em></td>
+											<td><em>350</em></td>
+											<td>The duration of the animation, in milliseconds.</td>
+										</tr>
+										<tr>
+											<td><code>easing</code></td>
+											<td colspan="3"><em>string</em></td>
+											<td><code>"linear"</code></td>
+											<td>The animation's easing.</td>
+										</tr>
+										<tr>
+											<td><code>complete</code></td>
+											<td colspan="3"><em>function</em></td>
+											<td><code>function () {}</code></td>
+											<td>The callback, called after the animation is complete.</td>
+										</tr>
+										<tr>
+											<td rowspan="3"><code>options</code></td>
+											<td rowspan="3"><em>object</em></td>
+											<td><code>duration</code></td>
+											<td><em>number</em></td>
+											<td><em>350</em></td>
+											<td>The duration of the animation, in milliseconds.</td>
+										</tr>
+										<tr>
+											<td><code>easing</code></td>
+											<td><em>string</em></td>
+											<td><code>"linear"</code></td>
+											<td>The animation's easing.</td>
+										</tr>
+										<tr>
+											<td><code>complete</code></td>
+											<td><em>function</em></td>
+											<td><code>function () {}</code></td>
+											<td>The callback, called after the animation is complete.</td>
+										</tr>
+										<tr>
+											<th colspan="6">Return</th>
+										</tr>
+										<tr>
+											<th>type</th>
+											<th colspan="5">description</th>
+										</tr>
+										<tr>
+											<td><code>jWindow</code></td>
+											<td colspan="5">The <code>jWindow</code> object the function has been called on. Provides a fluent interface.</td>
+										</tr>
+									</table>
+									<pre class="example">var w = $.jWindow("demo");
+w.show();</pre>
+									<pre class="example">w.show(1000);</pre>
+									<pre class="example">w.show({
+	duration: 1000,
+	easing: "swing",
+	complete: function() {
+		alert("Something has happened!");
+	}
+});</pre>
+									<pre class="example">// chaining
+w.show().maximise();</pre>
+								</div>
+							</section>
+							<section>
+								<h1><code>hide([params])</code></h1>
+								<div>
+									<p>Closes a window. The window will disappear with an animation. The DOM node is not removed, but rather detached, enabling you to call <code>show()</code> again when appropriate.</p>
+									<p>The <code>hide()</code> method can be called with the exact same parametres as <code>show()</code>.</p>
+								</div>
+							</section>
+							<section>
+								<h1><code>isHidden()</code></h1>
+								<div>
+									<p>Checks whether the window is hidden or not.</p>
+									<table>
+										<tr>
+											<th colspan="6">Return</th>
+										</tr>
+										<tr>
+											<th>type</th>
+											<th colspan="5">description</th>
+										</tr>
+										<tr>
+											<td><em>boolean</em></td>
+											<td colspan="5"><code>true</code> if the window is hidden, <code>false</code> it it is visible.</td>
+										</tr>
+									</table>
+								</div>
+							</section>
+							<section>
+								<h1><code>maximise([params])</code></h1>
+								<div>
+									<p>Maximises a window. The window will resize itself with an animation, taking up the entire window's space.</p>
+									<p>The <code>maximise()</code> method can be called with the exact same parametres as <code>show()</code>.</p>
+								</div>
+							</section>
+							<section>
+								<h1><code>minimise([params])</code></h1>
+								<div>
+									<p>Minimises a window. The window will fold itself the the title bar only with an animation.</p>
+									<p>The <code>minimise()</code> method can be called with the exact same parametres as <code>show()</code>.</p>
+								</div>
+							</section>
+							<section>
+								<h1><code>restore([params])</code></h1>
+								<div>
+									<p>Restores a window from either the minimised or maximised state (or both).</p>
+									<p>The <code>restore()</code> method can be called with the exact same parametres as <code>show()</code>. Additionally, there's also a possibility to specify whether the window should be restored from minimised or maximised state.</p>
+									<table>
+										<tr>
+											<th colspan="6">Parametres</th>
+										</tr>
+										<tr>
+											<th>param</th>
+											<th>type</th>
+											<th>property</th>
+											<th>type</th>
+											<th>default value</th>
+											<th>description</th>
+										</tr>
+										<tr>
+											<td><code>duration</code></td>
+											<td colspan="3"><em>number</em></td>
+											<td><em>350</em></td>
+											<td>The duration of the animation, in milliseconds.</td>
+										</tr>
+										<tr>
+											<td><code>easing</code></td>
+											<td colspan="3"><em>string</em></td>
+											<td><code>"linear"</code></td>
+											<td>The animation's easing.</td>
+										</tr>
+										<tr>
+											<td><code>complete</code></td>
+											<td colspan="3"><em>function</em></td>
+											<td><code>function () {}</code></td>
+											<td>The callback, called after the animation is complete.</td>
+										</tr>
+										<tr>
+											<td rowspan="4"><code>options</code></td>
+											<td rowspan="4"><em>object</em></td>
+											<td><code>duration</code></td>
+											<td><em>number</em></td>
+											<td><em>350</em></td>
+											<td>The duration of the animation, in milliseconds.</td>
+										</tr>
+										<tr>
+											<td><code>easing</code></td>
+											<td><em>string</em></td>
+											<td><code>"linear"</code></td>
+											<td>The animation's easing.</td>
+										</tr>
+										<tr>
+											<td><code>complete</code></td>
+											<td><em>function</em></td>
+											<td><code>function () {}</code></td>
+											<td>The callback, called after the animation is complete.</td>
+										</tr>
+										<tr>
+											<td><code>type</code></td>
+											<td><em>string</em></td>
+											<td><code>"both"</code></td>
+											<td>Whether to restore the window from the minimised, maximised or both states. Accepted values are: <code>"min"</code>, <code>"max"</code> and <code>"both"</code>.</td>
+										</tr>
+										<tr>
+											<th colspan="6">Return</th>
+										</tr>
+										<tr>
+											<th>type</th>
+											<th colspan="5">description</th>
+										</tr>
+										<tr>
+											<td><code>jWindow</code></td>
+											<td colspan="5">The <code>jWindow</code> object the function has been called on. Provides a fluent interface.</td>
+										</tr>
+									</table>
+								</div>
+							</section>
+							<section>
+								<h1><code>refresh()</code></h1>
+								<div>
+									<p>Refreshes the content of the window. This method does not care about the jWindow's <code>url</code> option and only reloads the location currently displayed.</p>
+									<table>
+										<tr>
+											<th colspan="6">Return</th>
+										</tr>
+										<tr>
+											<th>type</th>
+											<th colspan="5">description</th>
+										</tr>
+										<tr>
+											<td><code>jWindow</code></td>
+											<td colspan="5">The <code>jWindow</code> object the function has been called on. Provides a fluent interface.</td>
+										</tr>
+									</table>
+								</div>
+							</section>
+							<section>
+								<h1><code>focus([focus])</code></h1>
+								<div>
+									<p>Focuses or blurs a window. If a window is put in focus, all others are blurred.</p>
+									<table>
+										<tr>
+											<th colspan="6">Parametres</th>
+										</tr>
+										<tr>
+											<th>param</th>
+											<th>type</th>
+											<th>property</th>
+											<th>type</th>
+											<th>default value</th>
+											<th>description</th>
+										</tr>
+										<tr>
+											<td><code>focus</code></td>
+											<td colspan="3"><em>boolean</em></td>
+											<td><code>true</code></td>
+											<td><code>true</code> or no parametre to focus the window, <code>false</code> to blur it.</td>
+										</tr>
+										<tr>
+											<th colspan="6">Return</th>
+										</tr>
+										<tr>
+											<th>type</th>
+											<th colspan="5">description</th>
+										</tr>
+										<tr>
+											<td><code>jWindow</code></td>
+											<td colspan="5">The <code>jWindow</code> object the function has been called on. Provides a fluent interface.</td>
+										</tr>
+									</table>
+									<pre class="example">var w = $.jWindow("demo");
+w.focus(); // focus
+w.focus(false); // blur</pre>
+								</div>
+							</section>
+							<section>
+								<h1><code>hasFocus()</code></h1>
+								<div>
+									<p>Checks whether a window is focused or blurred.</p>
+									<table>
+										<tr>
+											<th colspan="6">Return</th>
+										</tr>
+										<tr>
+											<th>type</th>
+											<th colspan="5">description</th>
+										</tr>
+										<tr>
+											<td><em>boolean</em></td>
+											<td colspan="5"><code>true</code> if the window is in focus, <code>false</code> otherwise.</td>
+										</tr>
+									</table>
+									<pre class="example">var w = $.jWindow("demo");
+w.focus(); // focus
+alert(w.hasFocus());
+w.focus(false); // blur
+alert(w.hasFocus);</pre>
+								</div>
+							</section>
+							<section>
+								<h1><code>set(param[, value])</code></h1>
+								<div>
+									<p>Sets the value of an option or a number of options. The method can be called with either two parametres or a map of parametres and their values.</p>
+									<p>The following options can be set:</p>
+									<ul>
+										<li><code>title</code></li>
+										<li><code>posx</code></li>
+										<li><code>posy</code></li>
+										<li><code>width</code></li>
+										<li><code>height</code></li>
+										<li><code>resizeable</code></li>
+										<li><code>draggable</code></li>
+										<li><code>onDragStart</code></li>
+										<li><code>onDragEnd</code></li>
+										<li><code>onResizeStart</code></li>
+										<li><code>onResizeEnd</code></li>
+										<li><code>onUpdate</code></li>
+										<li><code>onClose</code></li>
+										<li><code>onMaximise</code></li>
+										<li><code>onRestore</code></li>
+										<li><code>onMinimise</code></li>
+										<li><code>url</code></li>
+										<li><code>tabs</code></li>
+									</ul>
+									<h2><code>set(param, value)</code></h2>
+									<table>
+										<tr>
+											<th colspan="6">Parametres</th>
+										</tr>
+										<tr>
+											<th>param</th>
+											<th>type</th>
+											<th>property</th>
+											<th>type</th>
+											<th>default value</th>
+											<th>description</th>
+										</tr>
+										<tr>
+											<td><code>param</code></td>
+											<td colspan="3"><em>string</em></td>
+											<td></td>
+											<td>The name of the option.</td>
+										</tr>
+										<tr>
+											<td><code>value</code></td>
+											<td colspan="3"><em>mixed</em></td>
+											<td></td>
+											<td>The value of the option.</td>
+										</tr>
+										<tr>
+											<th colspan="6">Return</th>
+										</tr>
+										<tr>
+											<th>type</th>
+											<th colspan="5">description</th>
+										</tr>
+										<tr>
+											<td><code>jWindow</code></td>
+											<td colspan="5">The <code>jWindow</code> object the function has been called on. Provides a fluent interface.</td>
+										</tr>
+									</table>
+									<pre class="example">var w = $.jWindow("demo");
+w.set('onDragEnd', function() { alert('dragged'); });</pre>
+									<h2><code>set(param)</code></h2>
+									<table>
+										<tr>
+											<th colspan="6">Parametres</th>
+										</tr>
+										<tr>
+											<th>param</th>
+											<th>type</th>
+											<th>property</th>
+											<th>type</th>
+											<th>default value</th>
+											<th>description</th>
+										</tr>
+										<tr>
+											<td><code>param</code></td>
+											<td colspan="3"><em>object</em></td>
+											<td></td>
+											<td>A map of the options and their values.</td>
+										</tr>
+										<tr>
+											<th colspan="6">Return</th>
+										</tr>
+										<tr>
+											<th>type</th>
+											<th colspan="5">description</th>
+										</tr>
+										<tr>
+											<td><code>jWindow</code></td>
+											<td colspan="5">The <code>jWindow</code> object the function has been called on. Provides a fluent interface.</td>
+										</tr>
+									</table>
+									<pre class="example">var w = $.jWindow("demo");
+w.set({
+    onDragEnd:   function() { alert('dragged'); },
+    onResizeEnd: function() { alert('resized'); ),
+    title:       'New title'
+});</pre>
+								</div>
+							</section>
+							<section>
+								<h1><code>get(param)</code></h1>
+								<div>
+									<p>Retrieves the value of any options variable.</p>
+									<table>
+										<tr>
+											<th colspan="6">Parametres</th>
+										</tr>
+										<tr>
+											<th>param</th>
+											<th>type</th>
+											<th>property</th>
+											<th>type</th>
+											<th>default value</th>
+											<th>description</th>
+										</tr>
+										<tr>
+											<td><code>param</code></td>
+											<td colspan="3"><em>string</em></td>
+											<td></td>
+											<td>The name of the option to retrieve.</td>
+										</tr>
+										<tr>
+											<th colspan="6">Return</th>
+										</tr>
+										<tr>
+											<th>type</th>
+											<th colspan="5">description</th>
+										</tr>
+										<tr>
+											<td><em>mixed</em></td>
+											<td colspan="5">The requested option's value.</td>
+										</tr>
+									</table>
+									<pre class="example">var w = $.jWindow({ id: 'demo', url: 'http://www.bing.com' });
+alert(w.get('url')); // alerts "http://www.bing.com"
+w.set({ url: 'http://www.google.com' });
+alert(w.get('url')); // alerts "http://www.google.com"</pre>
+								</div>
+							</section>
+							<section>
+								<h1><code>appendTab(params)</code></h1>
+								<div>
+									<p>Adds a window tab and places it at the end of the current tabs list.</p>
+									<table>
+										<tr>
+											<th colspan="6">Parametres</th>
+										</tr>
+										<tr>
+											<th>param</th>
+											<th>type</th>
+											<th>property</th>
+											<th>type</th>
+											<th>default value</th>
+											<th>description</th>
+										</tr>
+										<tr>
+											<td rowspan="3"><code>params</code></td>
+											<td rowspan="3"><em>object</em></td>
+											<td><code>href</code></td>
+											<td><em>string</em></td>
+											<td></td>
+											<td>Mandatory property. The URL the tab is going to link to.</td>
+										</tr>
+										<tr>
+											<td><code>title</code></td>
+											<td><em>string</em></td>
+											<td></td>
+											<td>Mandatory property. The text that is going to be displayed on the tab.</td>
+										</tr>
+										<tr>
+											<td><code>name</code></td>
+											<td><em>string</em></td>
+											<td></td>
+											<td>Optional property. The name that will be used to reference the tab.</td>
+										</tr>
+										<tr>
+											<th colspan="6">Return</th>
+										</tr>
+										<tr>
+											<th>type</th>
+											<th colspan="5">description</th>
+										</tr>
+										<tr>
+											<td><code>jWindow</code></td>
+											<td colspan="5">The <code>jWindow</code> object the function has been called on. Provides a fluent interface.</td>
+										</tr>
+									</table>
+									<pre class="example">var w = $.jWindow({ id: "demo", tabs: true });
+w.appendTab({
+    href: '/',
+    title: 'Main page'
+}).show();</pre>
+								</div>
+							</section>
+							<section>
+								<h1><code>prependTab(params)</code></h1>
+								<div>
+									<p>Adds a window tab and places it at the beginning of the current tabs list.</p>
+									<p>Accepts the same parametres as <code>appendTab()</code>.</p>
+									<pre class="example">var w = $.jWindow({ id: "demo", tabs: true });
+w.prependTab({
+    href: '/',
+    title: 'Main page'
+}).show();</pre>
+								</div>
+							</section>
+						</div>
+					</section>
+				</div>
+			</section>
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('h1 + div').hide();
+				$('section h1').css('cursor','pointer').on({
+					click: function() {
+						$(this).next('div').toggle();
+					}
+				});
+			});
+		</script>
+	</body>
+</html>

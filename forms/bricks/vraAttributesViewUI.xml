@@ -1,10 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
 This brick is used as include in all *Set Forms for the display of vraAttributes within the edit forms.
 Please note that not all common vra attributes (as defined by VRA Schema) are handled here as e.g. @pref is
 handled by the *Set forms themselves. Same is true for xml:lang which is not used for the Ziziphus project.
 -->
-<div xmlns="http://www.w3.org/1999/xhtml"
-     xmlns:xf="http://www.w3.org/2002/xforms">
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xf="http://www.w3.org/2002/xforms">
     <xf:output ref="@dataDate">
         <xf:label>dataDate</xf:label>
     </xf:output>

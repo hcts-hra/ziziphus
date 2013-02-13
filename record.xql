@@ -75,8 +75,10 @@ return
         <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css"/>
         <link rel="stylesheet" type="text/css" href="resources/css/layout.css"/>
         <link rel="stylesheet" type="text/css" href="resources/css/record.css"/>
+        <link rel="stylesheet" type="text/css" href="resources/script/mingos-uwindow/themes/ziziphus/style.css"/>
     </head>
-    <body id="ziziphusImageDB">
+    <!-- 'prefix' is used to declare the vra namespace. It's not strictly required but good style to put here -->
+    <body id="ziziphusImageDB" prefix="vra: http://www.vraweb.org/vracore4.htm">
         <div id="overlay" style="position:absolute;z-index:9999;width:100%;height:100%;background:#444444;">
             <span style="font-weight:bold; font-size:200% !important;position:absolute;top:50%;width:100%;text-align:center;">... loading Ziziphus Image Database</span>
         </div>
@@ -120,10 +122,19 @@ return
                     <div id="collapseImage" data-dojo-type="dijit.CheckedMenuItem" data-dojo-props="onClick:function(){{collapse(this,'image')}},checked:false">Image Record</div>
                 </div>
             </div>
+            <!-- <div dojoType="dijit.MenuBarItem" label="Heidicon Data"></div> -->
+            <button type="button" id="heidicon">Heidicon Data</button>
         </div>
+        <!-- window for heidicon data -->
+        <div id="heidiconWindow"></div>     
+        
         {local:createVraRecords($uuid)}
-
-
+        
+<!--
+        <bfc:dialog id="editDialog" style="width:600px;">
+            <div id="mountPoint"/>
+        </bfc:dialog>
+-->
 
         <script type="text/javascript" defer="defer">
            require(["dojo/parser",
@@ -134,13 +145,15 @@ return
                     "dijit/DropDownMenu",
                     "dijit/MenuItem",
                     "dijit/CheckedMenuItem",
-                    "dijit/TitlePane"]);
+                    "dijit/TitlePane",
+                    "dojox/layout/FloatingPane"]);
         </script>
 
         <script type="text/javascript" defer="defer" src="resources/script/ziziphus.js"/>
-        <script type="text/javascript" defer="defer" src="resources/script/jquery-1.8.0.min.js"/>
+        <script type="text/javascript" src="resources/script/jquery-1.8.0.min.js"/>
+        <script type="text/javascript" src="resources/script/mingos-uwindow/jWindow.js"></script>
         <script type="text/javascript">
-                        dojo.addOnLoad(function(){{
+                    dojo.addOnLoad(function(){{
                         dojo.addOnLoad(function(){{
                             var animation = dojo.fadeOut({{node: "overlay",duration: 1000}});
                             dojo.connect(animation, "onEnd", function(){{
@@ -158,6 +171,36 @@ return
                         $("#"+m).toggleClass("full");
 
                     }}
+                    
+                    
+                    jQuery(document).ready(function() {{
+                        var w = $.jWindow({{
+                            parentElement: '#heidiconWindow',
+                            id: 'heidiconData', 
+                            title: 'Heidicon Data',
+                            posx: 200, 
+                            posy: 100, 
+                            width: 600,
+                            height: 500, 
+                            type:'ajax',
+                            url:'modules/showHeidicon.xql?id={$uuid}',
+                            refreshButton: false }});
+    					
+                        
+                        jQuery('#heidicon').on({{
+    			        	click: function() {{
+						        w.show();
+                                w.update();
+                                return false;
+					        }}
+				        }});
+				
+                    }});
+                    
+                    function showWindow(){{
+                        w.show();
+                    }}
+                    
         </script>
 </body>
 </html>

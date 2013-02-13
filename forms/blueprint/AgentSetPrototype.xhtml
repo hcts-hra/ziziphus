@@ -1,11 +1,5 @@
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:vra="http://www.vraweb.org/vracore4.htm"
-      xmlns:xf="http://www.w3.org/2002/xforms"
-      xmlns:xi="http://www.w3.org/2001/XInclude"
-      xmlns:bf="http://betterform.sourceforge.net/xforms"
-      xmlns:bfc="http://betterform.sourceforge.net/xforms/controls"
-      xmlns:ev="http://www.w3.org/2001/xml-events"
-      bf:transform="/apps/ziziphus/resources/xsl/ziziphus.xsl">
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:bf="http://betterform.sourceforge.net/xforms" xmlns:vra="http://www.vraweb.org/vracore4.htm" xmlns:bfc="http://betterform.sourceforge.net/xforms/controls" xmlns:xf="http://www.w3.org/2002/xforms" bf:transform="/apps/ziziphus/resources/xsl/ziziphus.xsl">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <title>Ziziphus_Image_DB</title>
@@ -18,7 +12,7 @@
             .xfRequired .xfLabel:after{
                 content:'';
             }
-            .xfRequired > .xfLabel:after{
+            .xfRequired &gt; .xfLabel:after{
                 content:'*';
             }
 
@@ -31,14 +25,14 @@
             tbody {
                 font-size: 0.85em;
             }
-            tbody .xfGroup > .xfControl .xfLabel {
+            tbody .xfGroup &gt; .xfControl .xfLabel {
                 float: left;
                 padding: 0;
                 margin: 3px 3px 0 7px;
                 min-width: 80px;
                 text-align: right;
             }
-            tbody tr td > .xfGroup {
+            tbody tr td &gt; .xfGroup {
                 background: #fafafa;
                 border-top: thin solid;
                 border-bottom: thin solid #cdcdcd;
@@ -70,7 +64,7 @@
             .prefCol .xfLabel{
                 display: none;
             }
-            .contentCol > .xfGroup {
+            .contentCol &gt; .xfGroup {
                 width: 100%;
                 display: inline-block;
                 padding-bottom: 5px;
@@ -130,7 +124,6 @@
             }
 
         </style>
-
     </head>
     <body>
         <div id="xforms">
@@ -144,25 +137,23 @@
                             <display/>
                             <notes/>
                             <agent pref="false">
-                                <attribution></attribution>
-                                <culture vocab="ULAN" script="latn" refid="i_ac173206-a8c8-59a2-b9fb-201faf055357" source="EXC Priya Paul Collection"></culture>
+                                <attribution/>
+                                <culture vocab="ULAN" script="latn" refid="i_ac173206-a8c8-59a2-b9fb-201faf055357" source="EXC Priya Paul Collection"/>
                                 <dates type="">
-                                    <earliestDate circa="false"></earliestDate>
-                                    <latestDate circa="false"></latestDate>
+                                    <earliestDate circa="false"/>
+                                    <latestDate circa="false"/>
                                 </dates>
-                                <name type="" vocab="ULAN" script="latn" transliteration="aljksdlk" refid="i_ac173206-a8c8-59a2-b9fb-201faf055357" source="EXC Priya Paul Collection"></name>
-                                <role></role>
+                                <name type="" vocab="ULAN" script="latn" transliteration="aljksdlk" refid="i_ac173206-a8c8-59a2-b9fb-201faf055357" source="EXC Priya Paul Collection"/>
+                                <role/>
                             </agent>
                         </agentSet>
                     </xf:instance>
                     <xf:bind nodeset="instance()">
                         <xf:bind nodeset="vra:agent">
                             <xf:bind nodeset="@pref" type="boolean"/>
-
                             <xf:bind nodeset="vra:name" required="true()">
                                 <xf:bind nodeset="@type" type="vra:agentNameTypeType"/>
                             </xf:bind>
-
                             <xf:bind nodeset="vra:dates/*/@circa" type="boolean"/>
                         </xf:bind>
                     </xf:bind>
@@ -170,28 +161,25 @@
                         <templates xmlns="http://www.vraweb.org/vracore4.htm">
                             <!-- todo: clarify: are agent attributes required? They are present in the schema but are they use for ziziphus? -->
                             <agent pref="false">
-                                <attribution></attribution>
-                                <culture></culture>
+                                <attribution/>
+                                <culture/>
                                 <dates type="">
-                                    <earliestDate circa="false"></earliestDate>
-                                    <latestDate circa="false"></latestDate>
+                                    <earliestDate circa="false"/>
+                                    <latestDate circa="false"/>
                                 </dates>
-                                <name type=""></name>
-                                <role></role>
+                                <name type=""/>
+                                <role/>
                             </agent>
                             <notes/>
                             <display/>
                         </templates>
                     </xf:instance>
-
                     <xi:include href="../bricks/vraAttributesInstance.xml"/>
-
                     <xf:instance id="i-util">
                         <data xmlns="">
                             <currentElement/>
                         </data>
                     </xf:instance>
-
                 </xf:model>
             </div>
 
@@ -205,16 +193,12 @@
                 </xf:trigger>
                 <xf:trigger class="t-plus" model="m-child-model" title="Add Agent">
                     <xf:label>+</xf:label>
-                    <xf:insert nodeset="instance()/vra:agent[last()]" origin="instance('i-templates')/vra:agent"
-                               model="m-child-model"/>
+                    <xf:insert nodeset="instance()/vra:agent[last()]" origin="instance('i-templates')/vra:agent" model="m-child-model"/>
                 </xf:trigger>
             </div>
-
             <xf:group id="outerGroup" appearance="minimal" ref="instance('i-agentSet')" model="m-child-model">
                 <xf:label/>
-                <xf:action ev:event="reset-dialog">
-
-                </xf:action>
+                <xf:action ev:event="reset-dialog"/>
                 <xf:action ev:event="init-dialog">
                     <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@dataDate"/>
                     <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@extent"/>
@@ -225,12 +209,9 @@
                     <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@vocab"/>
                     <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@lang"/>
                     <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@transliteration"/>
-                    <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@script"/><xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]"
-                               origin="instance('i-agentSet')/vra:agent[index('r-vraAgent')]/*[local-name()=instance('i-util')/currentElement]/@*
-                                       [local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"/>
-
+                    <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@script"/>
+                    <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]" origin="instance('i-agentSet')/vra:agent[index('r-vraAgent')]/*[local-name()=instance('i-util')/currentElement]/@*                                        [local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"/>
                 </xf:action>
-                
                 <table>
                     <!--
                                         <thead>
@@ -242,7 +223,7 @@
                                             </tr>
                                         </thead>
                     -->
-                    <tbody  id="r-vraAgent" xf:repeat-nodeset="vra:agent" model="m-child-model">
+                    <tbody id="r-vraAgent" xf:repeat-nodeset="vra:agent" model="m-child-model">
                         <!-- ### the name element ### -->
                         <tr>
                             <td class="prefCol">
@@ -250,9 +231,7 @@
                                     <xf:label>pref</xf:label>
                                     <xf:hint>preferred</xf:hint>
                                 </xf:input>
-
                             </td>
-
                             <td class="contentCol">
                                 <xf:group appearance="minimal">
                                     <xf:input ref="vra:name" type="nodeValue" class="elementName">
@@ -319,7 +298,6 @@
                                         <bfc:show dialog="attrDialog" ev:event="DOMActivate"/>
                                     </xf:trigger>
                                 </xf:group>
-
                                 <xf:group appearance="minimal">
                                     <xf:input ref="vra:attribution">
                                         <xf:label>Attribution</xf:label>
@@ -336,7 +314,6 @@
                                         <bfc:show dialog="attrDialog" ev:event="DOMActivate"/>
                                     </xf:trigger>
                                 </xf:group>
-
                                 <xf:group appearance="minimal">
                                     <xf:input ref="vra:culture">
                                         <xf:label>Culture</xf:label>
@@ -353,7 +330,6 @@
                                         <bfc:show dialog="attrDialog" ev:event="DOMActivate"/>
                                     </xf:trigger>
                                 </xf:group>
-
                                 <xf:group appearance="minimal">
                                     <xf:input ref="vra:dates/@type">
                                         <xf:label>Dates</xf:label>
@@ -415,7 +391,6 @@
                     </xf:case>
                 </xf:switch>
             </xf:group>
-
             <bfc:dialog id="attrDialog">
                 <xf:label>Attributes</xf:label>
                 <xf:group appearance="minimal" ref="instance('i-vraAttributes')/vra:vraElement">
@@ -521,7 +496,6 @@
                             <xf:setvalue ref="@script"/>
                         </xf:trigger>
                     </xf:group>
-
                     <xf:group class="buttonBar">
                         <xf:trigger>
                             <xf:label>Ok</xf:label>
@@ -532,26 +506,18 @@
                             instance which represents all values deleted or inputted by the user in the dialog.
                             -->
                             <xf:action>
-                                <xf:delete
-                                        nodeset="instance('i-agentSet')/vra:agent/*[local-name()=instance('i-util')/currentElement]/@*
-                                        [local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]" />
-                                <xf:insert
-                                        context="instance('i-agentSet')/vra:agent[index('r-vraAgent')]/*[local-name()=instance('i-util')/currentElement]"
-                                        origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]"/>
+                                <xf:delete nodeset="instance('i-agentSet')/vra:agent/*[local-name()=instance('i-util')/currentElement]/@*                                         [local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"/>
+                                <xf:insert context="instance('i-agentSet')/vra:agent[index('r-vraAgent')]/*[local-name()=instance('i-util')/currentElement]" origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]"/>
                             </xf:action>
-                            <bfc:hide dialog="attrDialog"></bfc:hide>
+                            <bfc:hide dialog="attrDialog"/>
                         </xf:trigger>
                         <xf:trigger appearance="minimal">
                             <xf:label>Cancel</xf:label>
-                            <bfc:hide dialog="attrDialog"></bfc:hide>
+                            <bfc:hide dialog="attrDialog"/>
                         </xf:trigger>
-
                     </xf:group>
-
                 </xf:group>
-
             </bfc:dialog>
         </div>
     </body>
 </html>
-

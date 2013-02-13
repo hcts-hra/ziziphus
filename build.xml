@@ -76,5 +76,4 @@
         </copy>
         <zip basedir="${target.ziziphus.dir}" destfile="${target.dir}/${app.name}-${app.version}.xar" excludes="${build.excludes}"/>
     </target>
-
 </project>

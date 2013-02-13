@@ -197,3 +197,6 @@ body {
   background: #454545;
   color: #f5f5f5;
 }
+#editDialog {
+  width: 880px;
+}

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+    <head>
+        <title>jWindow: jQuery Windows Engine 2</title>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" href="style.css"/>
+        <link rel="stylesheet" href="themes/umbra/style.css" title="theme"/>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"/>
+        <script type="text/javascript" src="jWindow.js"/>
+    </head>
+    <body>
+        <div>jWindow: jQuery Windows Engine 2</div>
+        <ul>
+            <li>
+                <button class="open">Open window</button>
+            </li>
+            <li>
+                <button class="close">Close window (with callback)</button>
+            </li>
+            <li>
+                <button class="refresh">Load/refresh</button>
+            </li>
+            <li>
+                <button class="clear">Clear</button>
+            </li>
+            <li>
+                <input class="draggable" type="checkbox" checked="checked" id="draggable"/>
+                <label for="draggable">Draggable?</label>
+            </li>
+            <li>
+                <input class="resizeable" type="checkbox" checked="checked" id="resizeable"/>
+                <label for="resizeable">Resizeable?</label>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <button class="tabadd">Add tab</button>
+            </li>
+            <li>
+                <button class="tabopen">Open tab</button>
+            </li>
+            <li>
+                <button class="tabclose">Close tab</button>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <button class="new">Create new window</button>
+            </li>
+            <li>
+                <button class="modal">Open modal window</button>
+            </li>
+        </ul>
+        <p>Switch theme</p>
+        <ul>
+            <li>
+                <button class="theme" rel="umbra">Umbra (default)</button>
+            </li>
+            <li>
+                <button class="theme" rel="umbra-css2">Umbra (CSS2)</button>
+            </li>
+        </ul>
+        <div id="window-container"/>
+        <script type="text/javascript">
+			jQuery(document).ready(function() {
+				var w = $.jWindow({ parentElement: '#window-container', id: 'test', title: 'Iframe jWindow', posx: 200, posy: 100, width: 500, height: 300, type: 'iframe', url: 'http://en.wikipedia.org/wiki/Window_(computing)', refreshButton: true })
+						.show();
+				
+				var a = $.jWindow({ id: 'ajax', title: 'Ajax window', posx: 350, posy: 150, width: 400, height: 200, type: 'ajax', url: 'ajax.html' })
+						.show();
+
+				var t = $.jWindow({ id: "tabs", title: "Tabs demo", posx: 400, posy: 200, width: 1000, height: 500, type: 'iframe', tabs: true })
+						.appendTab({ href: "documentation.html", title: "jWindow documentation" })
+						.prependTab({ href: "http://en.wikipedia.org/wiki/Tab_%28GUI%29", title: "Wikipedia" })
+						.show();
+				
+				var modal = $.jWindow({ id: 'test-modal', title: 'Modal jWindow', posx: 200, posy: 100, width: 500, height: 300, type: 'iframe', url: 'http://en.wikipedia.org/wiki/Modal_window', modal: true });
+				
+				var windowCount = 0;
+				
+				jQuery('.open').on({
+					click: function() {
+						w.show();
+					}
+				});
+				
+				jQuery('.close').on({
+					click: function() {
+						w.hide(function() { alert('Window closed'); });
+					}
+				});
+				
+				jQuery('.refresh').on({
+					click: function() {
+						w.update();
+						a.update();
+					}
+				});
+				
+				jQuery('.clear').on({
+					click: function() {
+						w.update(null);
+						a.update(null);
+					}
+				});
+				
+				jQuery('.draggable').on({
+					change: function() {
+						w.set('draggable',jQuery(this).is(':checked'));
+					}
+				});
+				
+				jQuery('.resizeable').on({
+					change: function() {
+						w.set('resizeable',jQuery(this).is(':checked'));
+					}
+				});
+				
+				jQuery('.new').on({
+					click: function() {
+						++windowCount;
+						var w = $.jWindow({ id: 'test-'+windowCount, title: 'Modeless jWindow '+windowCount, posx: 200, posy: 100, width: 500, height: 300 }).show();
+					}
+				});
+				
+				jQuery('.modal').on({
+					click: function() {
+						modal.show();
+					}
+				});
+				
+				jQuery('.theme').on({
+					click: function() {
+						var theme = jQuery(this).attr('rel');
+						jQuery('link').each(function() {
+							if (jQuery(this).attr('title') == 'theme') {
+								jQuery(this).attr('href','themes/' + theme + '/style.css')
+							}
+						});
+					}
+				});
+				
+				jQuery('.tabadd').on({
+					click: function() {
+						t.appendTab({ href: "http://umbrarumregnum.net", title: "Umbrarum Regnum", name: "ur" });
+					}
+				});
+				
+				jQuery('.tabopen').on({
+					click: function() {
+						t.openTab("ur");
+					}
+				});
+				
+				jQuery('.tabclose').on({
+					click: function() {
+						t.closeTab("ur");
+					}
+				});
+			});
+		</script>
+    </body>
+</html>

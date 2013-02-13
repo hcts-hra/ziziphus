@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns="http://www.w3.org/1999/xhtml"
-        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-        xmlns:ev="http://www.w3.org/2001/xml-events"
-        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-        xmlns:vra="http://www.vraweb.org/vracore4.htm"
-        xmlns:xf="http://www.w3.org/2002/xforms"
-        xmlns:bfn="http://www.betterform.de/XSL/Functions"
-        xmlns:bfc="http://betterform.sourceforge.net/xforms/controls"
-        version="2.0" xpath-default-namespace="http://www.w3.org/2002/xforms"
-        exclude-result-prefixes="bfn">
+<xsl:stylesheet xmlns="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:vra="http://www.vraweb.org/vracore4.htm" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bfc="http://betterform.sourceforge.net/xforms/controls" xmlns:xf="http://www.w3.org/2002/xforms" xmlns:bfn="http://www.betterform.de/XSL/Functions" version="2.0" xpath-default-namespace="http://www.w3.org/2002/xforms" exclude-result-prefixes="bfn">
     <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"/>
     <xsl:strip-space elements="*"/>
 
@@ -47,7 +38,7 @@
     <xsl:template match="/vra:work |/vra:image">
         <xsl:variable name="side" select="if(local-name(.)='work') then 'leftPanel' else 'rightPanel'"/>
         <td id="{$side}" class="sidePanel">
-            <div class="panel">
+            <div class="panel" resource="vra:{local-name()}">
                 <div class="columntitle">
                     <xsl:value-of select="$title"/>
                 </div>
@@ -138,9 +129,7 @@
         <xsl:variable name="title" select="bfn:sectionTitle($vraSetName)"/>
         <xsl:variable name="id" select="concat($id_pref,$title)"/>
         <!--<xsl:variable name="formName" select="$vraSetName"/>-->
-
         <xsl:variable name="sectionWithData" select="if(string-length(string-join($vraSetNode//*/text(),'')) != 0) then 'true' else 'false'"/>
-
         <div id="{$id}" data-dojo-type="dijit.TitlePane" data-dojo-props="title: '{$title}',open:{$sectionWithData}">
             <xsl:variable name="mountPoint" select="concat($id,'_MountPoint')"/>
             <xsl:variable name="caseId" select="concat('c-',$id)"/>
@@ -247,7 +236,6 @@
                 </xf:group>
             </bfc:dialog>
 -->
-
         </div>
     </xsl:template>
 
@@ -334,7 +322,7 @@
     </xsl:template>
     <xsl:template match="vra:display" priority="40">
         <xsl:if test="text()">
-            <div class="display-container">
+            <div class="display-container" property="{name()}">
                 <xsl:value-of select="text()"/>
             </div>
         </xsl:if>
@@ -342,7 +330,7 @@
     <xsl:template match="vra:notes" priority="40">
         <xsl:if test="text()">
             <div class="notes-container detail">
-                <span class="notes">
+                <span class="notes" property="{name()}">
                     <xsl:value-of select="text()"/>
                 </span>
             </div>
