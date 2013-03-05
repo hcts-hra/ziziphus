@@ -1,31 +1,28 @@
 xquery version "3.0";
 
 import module namespace config="http://exist-db.org/xquery/apps/config" at "config.xqm";
+import module namespace main="http://exist-db.org/xquery/apps/ziziphus" at "main.xqm";
 
-declare namespace t="http://exist-db.org/xquery/apps/transform";
+import module namespace templates="http://exist-db.org/xquery/templates";
 
-declare option exist:serialize "method=html5 media-type=text/html";
+declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization";
 
-declare function t:transform($node as node()) {
-    typeswitch ($node)
-        (: should be a bugfix for index.html but does only work in source (but not in deployed) version :)
-        (: case document-node() return
-            <html>
-                {for $child in $node/node() return t:transform($child)}
-            </html>
-        :)
-        case element() return
-            switch ($node/@id)
-                case "app-info" return
-                    config:app-info($node)
-                default return
-                    element { node-name($node) } {
-                    $node/@*, for $child in $node/node() return t:transform($child)
-                }
-    default return
-        $node
-};
+declare option output:method "html5";
+declare option output:media-type "text/html";
 
-let $input := request:get-data()
+let $config := map {
+    $templates:CONFIG_APP_ROOT := $config:app-root,
+    $templates:CONFIG_STOP_ON_ERROR := true()
+}
+
+let $lookup := function($functionName as xs:string, $arity as xs:int) {
+    try {
+        function-lookup(xs:QName($functionName), $arity)
+    } catch * {
+        ()
+    }
+}
+
+let $content := request:get-data()
 return
-    t:transform($input)
+    templates:apply($content, $lookup, (), $config)

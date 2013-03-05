@@ -1,0 +1,141 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:vra="http://www.vraweb.org/vracore4.htm" xmlns:bf="http://betterform.sourceforge.net/xforms" xmlns:bfc="http://betterform.sourceforge.net/xforms/controls" xmlns:xf="http://www.w3.org/2002/xforms" xmlns:exist="http://exist.sourceforge.net/NS/exist" bf:transform="/apps/ziziphus/resources/xsl/ziziphus.xsl">
+    <head>
+        <title>Ziziphus Image DB</title>
+        <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="resources/css/layout.css"/>
+        <link rel="stylesheet" type="text/css" href="resources/css/record.css"/>
+        <link rel="stylesheet" type="text/css" href="resources/script/mingos-uwindow/themes/ziziphus/style.css"/>
+        <link rel="stylesheet" type="text/css" href="resources/script/layout-default-latest.css"/>
+    </head>
+    <body class="main:createVraRecord">
+        <!-- window for heidicon data -->
+        <div id="heidiconWindow"/>
+
+        <!-- ######################## main content area ################# -->
+        <!-- ######################## main content area ################# -->
+        <!-- ######################## main content area ################# -->
+        <div class="ui-layout-north">
+            <button type="button" id="heidicon">Heidicon Data</button>
+        </div>
+        <div class="ui-layout-south">Status</div>
+        <div class="ui-layout-east main:displayWorkRecord">Imagerecord</div>
+        <div class="ui-layout-west main:displayImageRecord">Workrecord</div>
+        <div class="ui-layout-center main:displayImageArea">ImageArea 2</div>
+
+
+        <!-- ######################################### -->
+        <!-- ######################################### -->
+        <!-- ######################################### -->
+        <script type="text/javascript" defer="defer">
+            require(["dojo/parser",
+                "dijit/TitlePane"
+            ]);
+        </script>
+        <script type="text/javascript" src="resources/script/jquery-1.8.0.min.js"/>
+        <script type="text/javascript" src="resources/script/jquery-ui-1-1.10.0.custom/js/jquery-ui-1.10.0.custom.min.js"/>
+        <script type="text/javascript" src="resources/script/mingos-uwindow/jWindow.js"/>
+        <script type="text/javascript" src="resources/script/jquery-layout-latest.min.js"/>
+        <script type="text/javascript" defer="defer">
+            $(document).ready(function () {
+                var layout = $('body').layout({
+                    defaults:{
+                        applyDefaultStyles:true
+                    },
+                    north:{
+                        resizable:false,
+                        closable:false,
+                        spacing_open:0
+                    },
+                    west:{
+                        resizable:true,
+                        closable:true,
+                        size:350
+                    },
+                    east:{
+                        resizable:true,
+                        closable:true,
+                        size:350
+                    },
+                    south:{
+                        resizable:false,
+                        closable:true,
+                        spacing_open:0,
+                        spacing_closed:6
+                    }
+                });
+            });
+        </script>
+        <script type="text/javascript" defer="defer">
+            jQuery(document).ready(function () {
+                var w = $.jWindow({
+                    parentElement:'#heidiconWindow',
+                    id:'heidiconData',
+                    title:'Heidicon Data',
+                    posx:200,
+                    posy:100,
+                    width:600,
+                    height:500,
+                    type:'ajax',
+                    url:'modules/showHeidicon.xql?id={$uuid}',
+                    refreshButton:false });
+
+
+                jQuery('#heidicon').on({
+                    click:function () {
+                        w.show();
+                        w.update();
+                        return false;
+                    }
+                });
+
+            });
+
+            dojo.addOnLoad(function () {
+                dojo.addOnLoad(function () {
+                    var animation = dojo.fadeOut({node:"overlay", duration:1000});
+                    dojo.connect(animation, "onEnd", function () {
+                        dojo.style("overlay", "display", "none");
+                    });
+                    animation.play();
+                });
+            });
+
+            function toggleDetail(n, m) {
+                console.debug("this: ", n, " ", m);
+                $(n).toggleClass("icon-zoom-out");
+                $(n).toggleClass("icon-zoom-in");
+                $("#" + m).toggleClass("simple");
+                $("#" + m).toggleClass("full");
+
+            }
+
+
+
+            function showWindow() {
+                w.show();
+            }
+
+        </script>
+        <div style="display:none">
+            <xf:model id="m-main">
+                <xf:instance id="i-control-center">
+                    <data xmlns="">
+                        <currentform/>
+                        <uuid></uuid>
+                    </data>
+                </xf:instance>
+            </xf:model>
+            <xf:group id="controlCenter" model="m-main">
+                <xf:action ev:event="unload-subform" model="m-main" if="string-length(instance('i-control-center')/currentform) &gt; 0">
+                    <xf:toggle>
+                        <xf:case value="concat('c-',instance('i-control-center')/currentform,'-view')"/>
+                    </xf:toggle>
+                    <xf:load show="none" targetid="{{concat(instance('i-control-center')/currentform,'_MountPoint')}}"/>
+                </xf:action>
+                <xf:action ev:event="clear-currentform" model="m-main">
+                    <xf:setvalue ref="instance('i-control-center')/currentform" value="''"/>
+                </xf:action>
+            </xf:group>
+        </div>
+    </body>
+</html>
