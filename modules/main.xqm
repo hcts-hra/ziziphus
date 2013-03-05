@@ -34,7 +34,8 @@ declare %templates:wrap function main:createVraRecord($node as node()*, $model a
 declare %templates:wrap function main:displayWorkRecord($node as node()*, $model as map(*)) {
     let $vraWorkRecord := $model("workRecord")
     let $uuid := $model("uuid")
-    return 
+    (: templates:process($node/node(),$resultMap) :)
+    return
         main:transformVraRecord($vraWorkRecord, $uuid, 'work')
 
 };
