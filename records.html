@@ -9,6 +9,9 @@
         <link rel="stylesheet" type="text/css" href="resources/script/layout-default-latest.css"/>
     </head>
     <body class="main:createVraRecord">
+        <div id="overlay" style="position:absolute;z-index:9999;width:100%;height:100%;background:#444444;">
+            <span style="font-weight:bold; font-size:200% !important;position:absolute;top:50%;width:100%;text-align:center;">... loading Ziziphus Image Database</span>
+        </div>
         <div style="display:none">
             <xf:model id="m-main">
                 <xf:instance id="i-control-center">
@@ -42,8 +45,8 @@
             <button type="button" id="heidicon">Heidicon Data</button>
         </div>
         <div class="ui-layout-south">Status</div>
-        <div class="ui-layout-east main:displayWorkRecord">Workrecord</div>
-        <div class="ui-layout-west main:displayImageRecord">Imagerecord</div>
+        <div class="ui-layout-west main:displayWorkRecord">Workrecord</div>
+        <div class="ui-layout-east main:displayImageRecord">Imagerecord</div>
         <div class="ui-layout-center main:displayImageArea">ImageArea 2</div>
 
 
@@ -113,17 +116,27 @@
                 });
 
             });
-
+            
             dojo.addOnLoad(function () {
                 dojo.addOnLoad(function () {
-                    var animation = dojo.fadeOut({node:"overlay", duration:1000});
-                    dojo.connect(animation, "onEnd", function () {
-                        dojo.style("overlay", "display", "none");
+                    // console.debug("onload");
+                    require(["dojo/dom","dojo/dom-style"], function(dom,domStyle) {
+                        var overlay = dom.byId("overlay");                        
+                        if(overlay) {
+                            var animation = dojo.fadeOut({node:overlay, duration:1000});
+                            dojo.connect(animation, "onEnd", function () {
+                                console.debug("hide overlay");
+                                domStyle.set(overlay, "display", "none");
+                                
+                            });
+                            animation.play();                        
+                        }else {
+                            console.debug("no overlay present");
+                        }
                     });
-                    animation.play();
                 });
             });
-
+          
             function toggleDetail(n, m) {
                 console.debug("this: n:", n, " m:", m);
                 $(n).toggleClass("icon-zoom-out");
