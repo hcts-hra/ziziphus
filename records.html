@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:vra="http://www.vraweb.org/vracore4.htm" xmlns:bf="http://betterform.sourceforge.net/xforms" xmlns:bfc="http://betterform.sourceforge.net/xforms/controls" xmlns:xf="http://www.w3.org/2002/xforms" xmlns:exist="http://exist.sourceforge.net/NS/exist" bf:transform="/apps/ziziphus/resources/xsl/ziziphus.xsl">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:vra="http://www.vraweb.org/vracore4.htm" xmlns:bf="http://betterform.sourceforge.net/xforms" xmlns:bfc="http://betterform.sourceforge.net/xforms/controls" xmlns:exist="http://exist.sourceforge.net/NS/exist" xmlns:xf="http://www.w3.org/2002/xforms" bf:transform="/apps/ziziphus/resources/xsl/ziziphus.xsl">
     <head>
         <title>Ziziphus Image DB</title>
         <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css"/>
@@ -9,6 +9,29 @@
         <link rel="stylesheet" type="text/css" href="resources/script/layout-default-latest.css"/>
     </head>
     <body class="main:createVraRecord">
+        <div style="display:none">
+            <xf:model id="m-main">
+                <xf:instance id="i-control-center">
+                    <data xmlns="">
+                        <currentform/>
+                        <uuid/>
+                    </data>
+                </xf:instance>
+                <xf:setvalue ref="instance('i-control-center')/uuid" value="bf:appContext('id')"/>
+            </xf:model>
+            <xf:group id="controlCenter" model="m-main">
+                <xf:action ev:event="unload-subform" model="m-main" if="string-length(instance('i-control-center')/currentform) &gt; 0">
+                    <xf:toggle>
+                        <xf:case value="concat('c-',instance('i-control-center')/currentform,'-view')"/>
+                    </xf:toggle>
+                    <xf:load show="none" targetid="{concat(instance('i-control-center')/currentform,'_MountPoint')}"/>
+                </xf:action>
+                <xf:action ev:event="clear-currentform" model="m-main">
+                    <xf:setvalue ref="instance('i-control-center')/currentform" value="''"/>
+                </xf:action>
+            </xf:group>
+        </div>
+
         <!-- window for heidicon data -->
         <div id="heidiconWindow"/>
 
@@ -19,8 +42,8 @@
             <button type="button" id="heidicon">Heidicon Data</button>
         </div>
         <div class="ui-layout-south">Status</div>
-        <div class="ui-layout-east main:displayWorkRecord">Imagerecord</div>
-        <div class="ui-layout-west main:displayImageRecord">Workrecord</div>
+        <div class="ui-layout-east main:displayWorkRecord">Workrecord</div>
+        <div class="ui-layout-west main:displayImageRecord">Imagerecord</div>
         <div class="ui-layout-center main:displayImageArea">ImageArea 2</div>
 
 
@@ -102,41 +125,16 @@
             });
 
             function toggleDetail(n, m) {
-                console.debug("this: ", n, " ", m);
+                console.debug("this: n:", n, " m:", m);
                 $(n).toggleClass("icon-zoom-out");
                 $(n).toggleClass("icon-zoom-in");
                 $("#" + m).toggleClass("simple");
                 $("#" + m).toggleClass("full");
-
             }
-
-
-
             function showWindow() {
                 w.show();
             }
 
         </script>
-        <div style="display:none">
-            <xf:model id="m-main">
-                <xf:instance id="i-control-center">
-                    <data xmlns="">
-                        <currentform/>
-                        <uuid/>
-                    </data>
-                </xf:instance>
-            </xf:model>
-            <xf:group id="controlCenter" model="m-main">
-                <xf:action ev:event="unload-subform" model="m-main" if="string-length(instance('i-control-center')/currentform) &gt; 0">
-                    <xf:toggle>
-                        <xf:case value="concat('c-',instance('i-control-center')/currentform,'-view')"/>
-                    </xf:toggle>
-                    <xf:load show="none" targetid="{{concat(instance('i-control-center')/currentform,'_MountPoint')}}"/>
-                </xf:action>
-                <xf:action ev:event="clear-currentform" model="m-main">
-                    <xf:setvalue ref="instance('i-control-center')/currentform" value="''"/>
-                </xf:action>
-            </xf:group>
-        </div>
     </body>
 </html>
