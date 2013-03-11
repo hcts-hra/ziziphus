@@ -65,7 +65,7 @@ return
             return
             <tr>
                 <td>{$counter}</td>
-                <td><a href="{$context}/apps/ziziphus/record.xql?id={$uuid}" target="_blank">{$uuid}</a></td>
+                <td><a href="{$context}/apps/ziziphus/record.html?id={$uuid}" target="_blank">{$uuid}</a></td>
                 <td><a href="{$context}/apps/ziziphusData/priyapaul/files/work/{$uuid}.xml" target="_blank">work</a></td>
                 <td><a href="{$context}/apps/ziziphusData/priyapaul/files/images/{$imageRecordId}.xml" target="_blank">image</a></td>
                 <td>{$heidiconId}</td>
