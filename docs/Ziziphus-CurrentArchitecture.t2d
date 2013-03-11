@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Drawing Units="cm" PPU="50.3936996459961" Major="1" Subdivisions="10" ViewPositionX="0" ViewPositionY="18.5011291503906" ActiveLayer="0" SnapToGrid="False" SnapToLines="False" PrintSize="8.5,11">
+  <Layer Name="Layer 1" Visible="True" Locked="False">
+    <Rectangle X="11.6054884214939" Y="5.88748315681826" Width="4.2664063466331" Height="2.9964063178679" FillColor="#FFFFFF" Text="[Name]Set XForms Subforms&#xA;(generated)" FigureId="0" />
+    <Rectangle X="11.5399415336844" Y="11.6515585282905" Width="4.2664063466331" Height="2.9964063178679" FillColor="#FFFFFF" Text="annotated HTML" FigureId="1" />
+    <LineConnection X1="13.7216545944165" Y1="8.88388947468616" X2="13.6901817073949" Y2="11.6515585282905" StrokeDashPattern="4,4" EndDecoration="ARROW" StartConnectionPointId="FIGURE_CENTER" StartFigureId="0" EndConnectionPointId="FIGURE_CENTER" EndFigureId="1" />
+    <Rectangle X="20.0604655608671" Y="6.0483510136009" Width="4.32593759798147" Height="2.77812506292388" FillColor="#FFFFFF" Text="VRA XSD&#xA;" FigureId="2" />
+    <LineConnection X1="20.0604655608671" Y1="7.42422700704332" X2="15.871894768127" Y2="7.39869138765219" EndDecoration="ARROW" StartConnectionPointId="FIGURE_CENTER" StartFigureId="2" EndConnectionPointId="FIGURE_CENTER" EndFigureId="0" />
+    <Rectangle X="3.41213369811005" Y="4.0766419316361" Width="4.16686438899659" Height="1.67498038709736" FillColor="#FFFFFF" Text="records.html&#xA;(static, hand edited)" FigureId="3" />
+    <Rectangle X="4.40649861429314" Y="7.75898356788169" Width="2.07182773268812" Height="1.18007246506805" FillColor="#FFFFFF" Text="vraRecords.xsl&#xA;(static, hand edited)" FigureId="4" />
+    <LineConnection X1="5.45154303799776" Y1="7.75898356788169" X2="5.48260609144789" Y2="5.75162231873346" Text="main.xqm&#xA;(calls XSL to create View)" StartDecoration="ARROW" StartConnectionPointId="FIGURE_CENTER" StartFigureId="4" EndConnectionPointId="FIGURE_CENTER" EndFigureId="3" />
+    <Oval X="4.13974792261706" Y="-0.121666187920464" Width="2.75828131247442" Height="2.61937505932823" FillColor="#FFFFFF" Text="Browser" FigureId="5" />
+    <Oval X="19.6727041126255" Y="-4.14699467286686" Width="0.0595312513483677" Height="0" FillColor="#FFFFFF" />
+    <LineConnection X1="5.51069105239467" Y1="2.49768573531248" X2="5.50080795924388" Y2="4.0766419316361" StartDecoration="ARROW" EndDecoration="ARROW" StartConnectionPointId="FIGURE_CENTER" StartFigureId="5" EndConnectionPointId="FIGURE_CENTER" EndFigureId="3" />
+    <Rectangle X="3.67871876501389" Y="9.95992740053497" Width="3.43296882775594" Height="3.67109383314941" FillColor="#FFFFFF" Text="[Name]Set.xsl&#xA;(hand drafted XSL Stylesheets)" FigureId="6" />
+    <LineConnection X1="5.43433020408097" Y1="8.93905603294974" X2="5.42034637687476" Y2="9.95992740053497" Text="&lt;&lt;includes&gt;&gt;" EndDecoration="ARROW" StartConnectionPointId="FIGURE_CENTER" StartFigureId="4" EndConnectionPointId="FIGURE_CENTER" EndFigureId="6" />
+    <LineConnection X1="6.47832634698126" Y1="8.22873328390115" X2="11.6054884214939" Y2="7.63338603970865" Text="&lt;&lt;runtime dependency&gt;&gt;" EndDecoration="ARROW" StartConnectionPointId="FIGURE_CENTER" StartFigureId="4" EndConnectionPointId="FIGURE_CENTER" EndFigureId="0" />
+    <RoundedRectangle X="2.81781256382279" Y="7.3736113787873" Width="1.68671878820378" Height="0.892968770225533" FillColor="#FFC4AE" Text="Master Form / Model" CornerRadius="0.25" />
+    <Rectangle X="14.175456164188" Y="7.98118115262786" Width="5.58323050762478" Height="1.82528689672349" FillColor="#FFFFFF" StrokeSize="0.25" Text="&lt;xf:input ref=&quot;some/node/with/@attributes&quot;&gt;&#xA;	&lt;xf:label ref=&quot;i/m/bound/too&quot;&gt;&#xA;	&lt;xf:help&gt;Hilfe&lt;/help&gt;&#xA;	&lt;xf:alert&gt;Insert valid value&lt;/xf:alert&gt;&#xA;&lt;/xf:input&gt;" HorizontalAlignment="LEFT" />
+    <Rectangle X="3.53637772910859" Y="16.3209851867649" Width="9.64339253713171" Height="2.06143391281688" FillColor="#FFFFFF" Stroked="False" Text="&lt;td property=&quot;vra:name&quot; data-xf-ref=&quot;{$ref}&quot; contenteditable=&quot;true&quot; subform=&quot;{$subform}&gt;&#xA;   &lt;xsl:if test=&quot;vra:name/@pref='true'&quot;&gt;&#xA;   	&lt;xsl:attribute name=&quot;class&quot;&gt;pref&lt;/xsl:attribute&gt;&#xA;    &lt;/xsl:if&gt;&#xA;    &lt;xsl:value-of select=&quot;bfn:upperCase(vra:name)&quot;/&gt;&#xA;&lt;/td&gt;&#xA;" HorizontalAlignment="LEFT" FigureId="7" />
+    <LineConnection X1="11.7780546146612" Y1="14.6479648461584" X2="9.66183676205554" Y2="16.3209851867649" StartDecoration="ARROW" StartConnectionPointId="FIGURE_CENTER" StartFigureId="1" EndConnectionPointId="FIGURE_CENTER" EndFigureId="7" />
+  </Layer>
+</Drawing>
