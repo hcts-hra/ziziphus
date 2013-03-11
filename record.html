@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:vra="http://www.vraweb.org/vracore4.htm" xmlns:bf="http://betterform.sourceforge.net/xforms" xmlns:bfc="http://betterform.sourceforge.net/xforms/controls" xmlns:exist="http://exist.sourceforge.net/NS/exist" xmlns:xf="http://www.w3.org/2002/xforms" bf:transform="/apps/ziziphus/resources/xsl/ziziphus.xsl">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:vra="http://www.vraweb.org/vracore4.htm" xmlns:bf="http://betterform.sourceforge.net/xforms" xmlns:bfc="http://betterform.sourceforge.net/xforms/controls" xmlns:xf="http://www.w3.org/2002/xforms" xmlns:exist="http://exist.sourceforge.net/NS/exist" bf:transform="/apps/ziziphus/resources/xsl/ziziphus.xsl">
     <head>
         <title>Ziziphus Image DB</title>
         <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css"/>
@@ -36,7 +35,7 @@
         </div>
 
         <!-- window for heidicon data -->
-        <div id="heidiconWindow"/>
+        <div id="heidiconWindow" class="main:getid"></div>
 
         <!-- ######################## main content area ################# -->
         <!-- ######################## main content area ################# -->
@@ -53,7 +52,7 @@
         <!-- ######################################### -->
         <!-- ######################################### -->
         <!-- ######################################### -->
-        <script type="text/javascript" defer="defer">
+        <script type="text/javascript">
             require(["dojo/parser",
                 "dijit/TitlePane"
             ]);
@@ -62,7 +61,7 @@
         <script type="text/javascript" src="resources/script/jquery-ui-1-1.10.0.custom/js/jquery-ui-1.10.0.custom.min.js"/>
         <script type="text/javascript" src="resources/script/mingos-uwindow/jWindow.js"/>
         <script type="text/javascript" src="resources/script/jquery.layout-latest.min.js"/>
-        <script type="text/javascript" defer="defer">
+        <script type="text/javascript">
             $(document).ready(function () {
                 var layout = $('body').layout({
                     defaults:{
@@ -92,7 +91,7 @@
                 });
             });
         </script>
-        <script type="text/javascript" defer="defer">
+        <script type="text/javascript">
             jQuery(document).ready(function () {
                 var w = $.jWindow({
                     parentElement:'#heidiconWindow',
@@ -103,12 +102,14 @@
                     width:600,
                     height:500,
                     type:'ajax',
-                    url:'modules/showHeidicon.xql?id={$uuid}',
                     refreshButton:false });
 
 
                 jQuery('#heidicon').on({
                     click:function () {
+                        console.debug("w ",w);
+                        var myUrl = 'modules/showHeidicon.xql?id=' + $('#heidiconWindow').attr('current');
+                        w.set({ url: myUrl });
                         w.show();
                         w.update();
                         return false;
@@ -116,27 +117,27 @@
                 });
 
             });
-            
+
             dojo.addOnLoad(function () {
                 dojo.addOnLoad(function () {
                     // console.debug("onload");
                     require(["dojo/dom","dojo/dom-style"], function(dom,domStyle) {
-                        var overlay = dom.byId("overlay");                        
+                        var overlay = dom.byId("overlay");
                         if(overlay) {
                             var animation = dojo.fadeOut({node:overlay, duration:1000});
                             dojo.connect(animation, "onEnd", function () {
                                 console.debug("hide overlay");
                                 domStyle.set(overlay, "display", "none");
-                                
+
                             });
-                            animation.play();                        
+                            animation.play();
                         }else {
                             console.debug("no overlay present");
                         }
                     });
                 });
             });
-          
+
             function toggleDetail(n, m) {
                 console.debug("this: n:", n, " m:", m);
                 $(n).toggleClass("icon-zoom-out");

@@ -31,6 +31,12 @@ declare %templates:wrap function main:createVraRecord($node as node()*, $model a
         
 };
 
+
+declare 
+function main:getid($node as node()*, $model as map(*)) {
+   <div id="heidiconWindow" current="{$model('uuid')}"></div>
+};
+
 declare %templates:wrap function main:displayWorkRecord($node as node()*, $model as map(*)) {
     let $vraWorkRecord := $model("workRecord")
     let $uuid := $model("uuid")
