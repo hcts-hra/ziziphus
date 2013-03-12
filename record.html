@@ -75,12 +75,12 @@
                     west:{
                         resizable:true,
                         closable:true,
-                        size:350
+                        size:420
                     },
                     east:{
                         resizable:true,
                         closable:true,
-                        size:350
+                        size:420
                     },
                     south:{
                         resizable:false,
@@ -107,7 +107,6 @@
 
                 jQuery('#heidicon').on({
                     click:function () {
-                        console.debug("w ",w);
                         var myUrl = 'modules/showHeidicon.xql?id=' + $('#heidiconWindow').attr('current');
                         w.set({ url: myUrl });
                         w.show();

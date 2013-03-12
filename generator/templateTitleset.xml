@@ -1,0 +1,41 @@
+<merge:data xmlns:merge="http://www.betterform.de/merge">
+    <merge:templateInstance>
+        <agentSet xmlns="http://www.vraweb.org/vracore4.htm">
+            <display/>
+            <notes foo="false"/>
+            <agent pref="false">
+                <attribution/>
+                <culture/>
+                <dates type="">
+                    <earliestDate circa="false"/>
+                    <latestDate circa="false"/>
+                </dates>
+                <name type=""/>
+                <role/>
+            </agent>
+        </agentSet>
+    </merge:templateInstance>
+
+    <merge:importInstance>
+        <agentSet xmlns="http://www.vraweb.org/vracore4.htm">
+            <display>yes</display>
+            <agent bar="baz">
+                <culture>asia</culture>
+                <dates type="lksdjf">
+                    <earliestDate circa="true">1000</earliestDate>
+                </dates>
+                <name vocab="local" type="personal" refid="uuid-65d331c8-aea5-564e-a372-b0b6cd6f30df">Gandhi, Mohandas Karamchand</name>
+                <role/>
+            </agent>
+            <agent pref="true">
+                <attribution>something</attribution>
+                <dates type="lksdjf">
+                    <earliestDate circa="false">2000</earliestDate>
+                    <latestDate circa="true">2012</latestDate>
+                </dates>
+                <name/>
+            </agent>
+        </agentSet>
+    </merge:importInstance>
+</merge:data>
+

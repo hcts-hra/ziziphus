@@ -5,12 +5,20 @@ body {
   margin: 0;
   font-size: 100%;
 }
-.tundra .dijitTitlePaneContentOuter {
-  overflow: auto;
-  max-height: 550px;
+/*
+.tundra .dijitTitlePaneContentOuter{
+    overflow: auto;
+    max-height: 550px;
 }
+*/
 .bf {
   font-size: 0.9em;
+  /*
+    input, select{
+        padding: 1px;
+    }
+*/
+
 }
 .bf .xfRepeatIndex {
   border-top: 3px solid #cccccc;
@@ -25,28 +33,20 @@ body {
 .bf .dialogControls .xfControl {
   margin: 0 3px;
 }
-.bf .panel {
-  background: whitesmoke;
-  padding: 0;
-}
-.bf .panel .columntitle {
+.bf .columntitle {
   padding: 8px;
   background: #555555;
   color: white;
   text-align: center;
   font-size: 1.2em;
 }
-.bf .panel input,
-.bf .panel select {
-  padding: 1px;
-}
-.bf .panel select {
+.bf select {
   width: auto;
 }
-.bf .panel .dijitTitlePane {
+.bf .dijitTitlePane {
   position: relative;
 }
-.bf .panel .t-edit {
+.bf .t-edit {
   position: absolute;
   top: -3px;
   right: 3px;
@@ -199,4 +199,11 @@ body {
 }
 #editDialog {
   width: 880px;
+}
+.ui-layout-content {
+  padding: 0 !important;
+}
+.ui-layout-north,
+.ui-layout-south {
+  background: #f5f5f5 !important;
 }

@@ -14,10 +14,12 @@ html, body {
     font-size: 100%;
 }
 
+/*
 .tundra .dijitTitlePaneContentOuter{
     overflow: auto;
     max-height: 550px;
 }
+*/
 .bf{
     font-size:0.9em;
 
@@ -36,31 +38,29 @@ html, body {
             margin: 0 3px;
         }
     }
-    .panel {
-        background:whitesmoke;
-        padding:0;
 
-        .columntitle {
-            padding: 8px;
-            background:#555555;
-            color:white;
-            text-align: center;
-            font-size: 1.2em;
-        }
-        input, select{
-            padding: 1px;
-        }
-        select{
-            width: auto;
-        }
-        .dijitTitlePane{
-            position:relative;
-        }
-        .t-edit{
-            position:absolute;
-            top:-3px;
-            right:3px;
-        }
+    .columntitle {
+        padding: 8px;
+        background:#555555;
+        color:white;
+        text-align: center;
+        font-size: 1.2em;
+    }
+/*
+    input, select{
+        padding: 1px;
+    }
+*/
+    select{
+        width: auto;
+    }
+    .dijitTitlePane{
+        position:relative;
+    }
+    .t-edit{
+        position:absolute;
+        top:-3px;
+        right:3px;
     }
 
     #sectionDialog{
@@ -243,4 +243,11 @@ html, body {
 }
 #editDialog{
     width: 880px;
+}
+
+.ui-layout-content{
+  padding: 0 !important;
+}
+.ui-layout-north, .ui-layout-south{
+  background: #f5f5f5 !important;
 }

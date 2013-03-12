@@ -53,7 +53,7 @@ declare %templates:wrap function main:displayImageArea($node as node()*, $model 
             for $image in $vraWorkRecord/vra:relationSet
             let $imageId := substring($image/vra:relation/@relids,3)
             return
-                <img src="https://kjc-fs1.kjc.uni-heidelberg.de/ImageService/api/get/priya_paul/{$imageId}.jpg" alt="" class="relatedImage"/>
+                <img src="http://kjc-ws2.kjc.uni-heidelberg.de:83/images/service/download_uuid/priya_paul/{$imageId}.jpg" alt="" class="relatedImage"/>
             
         }
     </div>

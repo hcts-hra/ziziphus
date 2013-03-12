@@ -78,23 +78,29 @@ table tr td .xfGroup:last-child {
   padding-bottom: 5px;
   border-top: none !important;
 }
+#attrDialog {
+  /*
+    .xfGroup {
+        margin-bottom: 10px;
+    }
+*/
+
+}
 #attrDialog .xfControl {
   float: none;
 }
 #attrDialog .xfLabel {
   float: left;
-  margin: 0px 10px;
+  margin: 2px 10px;
   width: 100px;
   text-align: right;
 }
 #attrDialog .xfInput .xfValue {
   width: 250px;
+  height: 20px;
 }
 #attrDialog .deleteAttribute {
   float: right !important;
-}
-#attrDialog .xfGroup {
-  margin-bottom: 10px;
 }
 .buttonBar .xfTrigger {
   display: inline-block !important;

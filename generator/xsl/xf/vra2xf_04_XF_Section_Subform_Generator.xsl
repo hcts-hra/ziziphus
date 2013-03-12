@@ -195,8 +195,8 @@
                                 <xf:input ref="@dataDate" id="first">
                                     <xf:label>dataDate</xf:label>
                                 </xf:input>
-                                <xf:trigger class="deleteAttribute">
-                                    <xf:label>delete</xf:label>
+                                <xf:trigger class="deleteAttribute input-append -btn">
+                                    <xf:label>clear</xf:label>
                                     <xf:setvalue ref="@dataDate"/>
                                 </xf:trigger>
                             </xf:group>
@@ -204,8 +204,8 @@
                                 <xf:input ref="@extent">
                                     <xf:label>extent</xf:label>
                                 </xf:input>
-                                <xf:trigger class="deleteAttribute">
-                                    <xf:label>delete</xf:label>
+                                <xf:trigger class="deleteAttribute input-append -btn">
+                                    <xf:label>clear</xf:label>
                                     <xf:setvalue ref="@extent"/>
                                 </xf:trigger>
                             </xf:group>
@@ -213,8 +213,8 @@
                                 <xf:input ref="@href">
                                     <xf:label>href</xf:label>
                                 </xf:input>
-                                <xf:trigger class="deleteAttribute">
-                                    <xf:label>delete</xf:label>
+                                <xf:trigger class="deleteAttribute input-append -btn">
+                                    <xf:label>clear</xf:label>
                                     <xf:setvalue ref="@href"/>
                                 </xf:trigger>
                             </xf:group>
@@ -222,8 +222,8 @@
                                 <xf:input ref="@refid">
                                     <xf:label>refid</xf:label>
                                 </xf:input>
-                                <xf:trigger class="deleteAttribute">
-                                    <xf:label>delete</xf:label>
+                                <xf:trigger class="deleteAttribute input-append -btn">
+                                    <xf:label>clear</xf:label>
                                     <xf:setvalue ref="@refid"/>
                                 </xf:trigger>
                             </xf:group>
@@ -231,8 +231,8 @@
                                 <xf:input ref="@rules">
                                     <xf:label>rules</xf:label>
                                 </xf:input>
-                                <xf:trigger class="deleteAttribute">
-                                    <xf:label>delete</xf:label>
+                                <xf:trigger class="deleteAttribute input-append -btn">
+                                    <xf:label>clear</xf:label>
                                     <xf:setvalue ref="@rules"/>
                                 </xf:trigger>
                             </xf:group>
@@ -240,8 +240,8 @@
                                 <xf:input ref="@source">
                                     <xf:label>source</xf:label>
                                 </xf:input>
-                                <xf:trigger class="deleteAttribute">
-                                    <xf:label>delete</xf:label>
+                                <xf:trigger class="deleteAttribute input-append -btn">
+                                    <xf:label>clear</xf:label>
                                     <xf:setvalue ref="@source"/>
                                 </xf:trigger>
                             </xf:group>
@@ -265,8 +265,8 @@
                                         <xf:value>(AKL)</xf:value>
                                     </xf:item>
                                 </xf:select1>
-                                <xf:trigger class="deleteAttribute">
-                                    <xf:label>delete</xf:label>
+                                <xf:trigger class="deleteAttribute input-append -btn">
+                                    <xf:label>clear</xf:label>
                                     <xf:setvalue ref="@vocab"/>
                                 </xf:trigger>
                             </xf:group>
@@ -274,8 +274,8 @@
                                 <xf:input ref="@lang">
                                     <xf:label>Language</xf:label>
                                 </xf:input>
-                                <xf:trigger class="deleteAttribute">
-                                    <xf:label>delete</xf:label>
+                                <xf:trigger class="deleteAttribute input-append -btn">
+                                    <xf:label>clear</xf:label>
                                     <xf:setvalue ref="@lang"/>
                                 </xf:trigger>
                             </xf:group>
@@ -283,8 +283,8 @@
                                 <xf:input ref="@transliteration">
                                     <xf:label>Transliteration</xf:label>
                                 </xf:input>
-                                <xf:trigger class="deleteAttribute">
-                                    <xf:label>delete</xf:label>
+                                <xf:trigger class="deleteAttribute input-append -btn">
+                                    <xf:label>clear</xf:label>
                                     <xf:setvalue ref="@transliteration"/>
                                 </xf:trigger>
                             </xf:group>
@@ -292,14 +292,14 @@
                                 <xf:input ref="@script">
                                     <xf:label>Script</xf:label>
                                 </xf:input>
-                                <xf:trigger class="deleteAttribute">
-                                    <xf:label>delete</xf:label>
+                                <xf:trigger class="deleteAttribute input-append -btn">
+                                    <xf:label>clear</xf:label>
                                     <xf:setvalue ref="@script"/>
                                 </xf:trigger>
                             </xf:group>
 
                             <xf:group class="buttonBar">
-                                <xf:trigger>
+                                <xf:trigger class="-btn">
                                     <xf:label>Ok</xf:label>
                                     <!--
                                     updating of the common vra attributes:

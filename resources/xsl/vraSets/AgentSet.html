@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Culture</th>
+            <th class="detail-cell">Period (life)</th>
+            <th>Period (activity)</th>
+            <th class="detail-cell">Period (other)</th>
+        </tr>
+    </thead>
+    <tbody resource="vra:agentSet">
+        <xsl:for-each select="vra:agent">
+            <tr property="vra:agent">
+                <xsl:variable name="ref">
+                    <xsl:call-template name="getRef"/>
+                </xsl:variable>
+                <td property="forms/AgentSet.xhtml#inputname" data-xf-template="x-input" contenteditable="true">
+                        <!-- todo: all to all sets -->
+                    <xsl:if test="vra:name/@pref='true'">
+                        <xsl:attribute name="class">pref</xsl:attribute>
+                    </xsl:if>
+                    <xsl:value-of select="bfn:upperCase(vra:name)"/>
+                </td>
+                <td property="vra:role" contenteditable="true">
+                    <xsl:value-of select="bfn:upperCase(vra:role)"/>
+                </td>
+                <td property="vra:culture" contenteditable="true">
+                    <xsl:value-of select="vra:culture"/>
+                </td>
+                <td class="detail-cell" property="vra:dates[@type='life']" contenteditable="true">
+                    <xsl:apply-templates select="vra:dates[@type='life']"/>
+                </td>
+                <td property="vra:dates[@type='activity']" contenteditable="true">
+                    <xsl:apply-templates select="vra:dates[@type='activity']"/>
+                </td>
+                <td class="detail-cell" property="vra:dates[@type='other']" contenteditable="true">
+                    <xsl:apply-templates select="vra:dates[@type='other']"/>
+                </td>
+            </tr>
+        </xsl:for-each>
+    </tbody>
+</table>

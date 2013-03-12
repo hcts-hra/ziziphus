@@ -37,11 +37,13 @@
     <!-- top level - entry template - handles a work or an image record -->
     <xsl:template match="/vra:work |/vra:image">
         <xsl:variable name="side" select="if(local-name(.)='work') then 'leftPanel' else 'rightPanel'"/>
-        <div id="{$side}" class="sidePanel">
-            <div class="panel" resource="vra:{local-name()}">
-                <div class="columntitle">
-                    <xsl:value-of select="$title"/>
-                </div>
+        <div class="columntitle">
+            <xsl:value-of select="$title"/>
+        </div>
+        <div id="{$side}" class="sidePanel ui-layout-content">
+        <!--
+                    <div class="panel" resource="vra:{local-name()}">
+        -->
                 <!--<xsl:apply-templates mode="titlePane"/>-->
                 <xsl:call-template name="titlePane">
                     <xsl:with-param name="vraSetName" select="'AgentSet'"/>
@@ -115,7 +117,9 @@
                     <xsl:with-param name="vraSetName" select="'WorktypeSet'"/>
                     <xsl:with-param name="vraSetNode" select="vra:worktypeSet"/>
                 </xsl:call-template>
+<!--
             </div>
+-->
         </div>
     </xsl:template>
     <xsl:template match="vra:work/vra:image" mode="titlePane" priority="40"/>
