@@ -2,11 +2,11 @@
 <root>
     <build>
         <dir>build</dir>
-        <excludes>build/*, generator, .svn, .git, ziziphus.xpr</excludes>
+        <excludes>build/*, generator, .svn, .git, ziziphus.xpr, resources/**/*.html</excludes>
     </build>
     <app>
         <name>ziziphus</name>
-        <version>0.8</version>
+        <version>0.9</version>
     </app>
     <transform>
         <classpath pathid="transform.class.path" description="classpath for saxon XPath and XSLT engine">
