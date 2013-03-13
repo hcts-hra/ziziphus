@@ -20,7 +20,9 @@
          <div style="display:none">
             <xf:model id="m-child-model" schema="resources/xsd/vra-types.xsd">
                <xf:send ev:event="xforms-model-construct-done" submission="s-loadSet"></xf:send>
-               <xf:submission id="s-loadSet" resource="modules/loadData.xql?id={$id}" method="post"
+               <xf:submission id="s-loadSet"
+                              resource="modules/loadData.xql?id={bf:instanceOfModel('m-main','i-control-center')/uuid}"
+                              method="post"
                               replace="instance"
                               validate="false">
                   <xf:header>
@@ -37,7 +39,8 @@
                   </xf:header>
                   <xf:message ev:event="xforms-submit-error">Loading of Set failed</xf:message>
                </xf:submission>
-               <xf:submission id="s-update" resource="modules/updateRecord.xql?id={$id}&amp;&amp;set=techniqueSet"
+               <xf:submission id="s-update"
+                              resource="modules/updateRecord.xql?id={bf:instanceOfModel('m-main','i-control-center')/uuid}&amp;&amp;set=techniqueSet"
                               method="post"
                               replace="none"
                               validate="false">

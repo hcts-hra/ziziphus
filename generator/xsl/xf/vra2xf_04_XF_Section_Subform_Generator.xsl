@@ -91,7 +91,7 @@
                         <xf:model id="m-child-model" schema="{$relativePath}resources/xsd/vra-types.xsd">
                             <xf:send ev:event="xforms-model-construct-done" submission="s-loadSet"/>
                             <xf:submission id="s-loadSet"
-                                    resource="{$relativePath}modules/loadData.xql?id={{$id}}"
+                                    resource="{$relativePath}modules/loadData.xql?id={{bf:instanceOfModel('m-main','i-control-center')/uuid}}"
                                     method="post" replace="instance" validate="false">
                                 <xf:header>
                                     <xf:name>username</xf:name>
@@ -107,7 +107,7 @@
                                 </xf:header>
                                 <xf:message ev:event="xforms-submit-error">Loading of Set failed</xf:message>
                             </xf:submission>
-                            <xf:submission id="s-update" resource="{$relativePath}modules/updateRecord.xql?id={{$id}}&amp;&amp;set={$vraSectionNode}" method="post" replace="none" validate="false">
+                            <xf:submission id="s-update" resource="{$relativePath}modules/updateRecord.xql?id={{bf:instanceOfModel('m-main','i-control-center')/uuid}}&amp;&amp;set={$vraSectionNode}" method="post" replace="none" validate="false">
                                 <xf:header>
                                     <xf:name>username</xf:name>
                                     <xf:value>admin</xf:value>
