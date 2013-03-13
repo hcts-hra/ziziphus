@@ -121,6 +121,11 @@
                                     <xf:value>exist</xf:value>
                                 </xf:header>
                                 <xf:message ev:event="xforms-submit-error">Sorry, updating of this record failed</xf:message>
+                                <xf:action ev:event="xforms-submit-done">
+                                    <xf:message level="ephemeral">Data have been stored.</xf:message>
+                                    <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/changed" value="'true'"/>
+                                    <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/setname" value="'{$vraSectionNode}'"></xf:setvalue>
+                                </xf:action>
                             </xf:submission>
 
                             <!-- todo: record is hardcoded here !!!-->

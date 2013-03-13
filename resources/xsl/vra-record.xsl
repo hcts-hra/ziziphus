@@ -28,9 +28,8 @@
     <xsl:include href="vraSets/TitleSet.xsl"/>
     <xsl:include href="vraSets/WorktypeSet.xsl"/>
     <xsl:param name="type" select="'GIVEN BY CALLER'"/>
-    <xsl:param name="recordId" select="'GIVEN BY CALLER'"/>
-    <xsl:variable name="root_id" select="if($type='work') then 'workrecord' else 'imagerecord'"/>
-    <xsl:variable name="region" select="if($type='work') then 'leading' else 'trailing'"/>
+    <!--<xsl:param name="recordId" select="'GIVEN BY CALLER'"/>-->
+    <!--<xsl:variable name="root_id" select="if($type='work') then 'workrecord' else 'imagerecord'"/>-->
     <xsl:variable name="title" select="if($type='work') then 'Work Record' else 'Image Record'"/>
     <xsl:variable name="id_pref" select="if($type='work') then 'w_' else 'i_'"/>
 
@@ -41,10 +40,6 @@
             <xsl:value-of select="$title"/>
         </div>
         <div id="{$side}" class="sidePanel ui-layout-content">
-        <!--
-                    <div class="panel" resource="vra:{local-name()}">
-        -->
-                <!--<xsl:apply-templates mode="titlePane"/>-->
                 <xsl:call-template name="titlePane">
                     <xsl:with-param name="vraSetName" select="'AgentSet'"/>
                     <xsl:with-param name="vraSetNode" select="vra:agentSet"/>
@@ -138,19 +133,12 @@
             <xsl:variable name="mountPoint" select="concat($id,'_MountPoint')"/>
             <xsl:variable name="caseId" select="concat('c-',$id)"/>
             <xsl:variable name="tableId" select="concat('table-',$id)"/>
-            <!--<xsl:value-of select="$recordId"/>-->
             <div class="t-edit">
                 <xf:trigger class="-icon -icon-edit">
                     <xf:label/>
-                    <!--<bfc:show dialog="sectionDialog" ev:event="DOMActivate"/>-->
                     <xf:action>
                         <xf:dispatch name="unload-subform" targetid="controlCenter"/>
 
-
-                        <!--                        <xf:message><xsl:value-of select="$type"/></xf:message>-->
-                        <!-- todo: do we still need record and recordid? -->
-                        <xf:setvariable name="record" select="'{$type}'"/>
-                        <!--<xf:setvariable name="recordId" select="bf:appContext('$recordId')"/>-->
                         <xf:load show="embed" targetid="{$mountPoint}">
                             <xf:resource value="'forms/{$vraSetName}.xhtml#xforms'"/>
                             <xf:extension includeCSS="true" includeScript="false"/>
@@ -169,11 +157,6 @@
                         </xf:load>
                         -->
                         <xf:toggle case="{$caseId}-edit"/>
-<!--
-                        <script type="text/javascript">
-                            document.getElementById("leftPanel").setAttribute("style","width:80% !important;");
-                        </script>
--->
                     </xf:action>
                 </xf:trigger>
                 <button type="button" onclick="toggleDetail(this, '{$tableId}');" class="icon icon-zoom-in"/>
@@ -224,22 +207,6 @@
                     <div id="{$mountPoint}"/>
                 </xf:case>
             </xf:switch>
-<!--
-            <bfc:dialog id="sectionDialog">
-                <xf:label><xsl:value-of select="$title"/></xf:label>
-                <div id="{$mountPoint}"/>
-                <xf:group class="dialogControls" >
-                    <xf:trigger>
-                        <xf:label>OK</xf:label>
-                        <bfc:hide dialog="sectionDialog"/>
-                    </xf:trigger>
-                    <xf:trigger appearance="minimal">
-                        <xf:label>Cancel</xf:label>
-                        <bfc:hide dialog="sectionDialog"/>
-                    </xf:trigger>
-                </xf:group>
-            </bfc:dialog>
--->
         </div>
     </xsl:template>
 
