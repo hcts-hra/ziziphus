@@ -27,11 +27,13 @@
     <xsl:include href="vraSets/TextrefSet.xsl"/>
     <xsl:include href="vraSets/TitleSet.xsl"/>
     <xsl:include href="vraSets/WorktypeSet.xsl"/>
-    <xsl:param name="type" select="'GIVEN BY CALLER'"/>
-    <!--<xsl:param name="recordId" select="'GIVEN BY CALLER'"/>-->
+    <!-- 'work' or 'image' -->
+    <xsl:param name="recordType" select="'GIVEN BY CALLER'"/>
+    <!-- UUID of Record e.g w_****** -->
+    <xsl:param name="recordId" select="'GIVEN BY CALLER'"/>
     <!--<xsl:variable name="root_id" select="if($type='work') then 'workrecord' else 'imagerecord'"/>-->
-    <xsl:variable name="title" select="if($type='work') then 'Work Record' else 'Image Record'"/>
-    <xsl:variable name="id_pref" select="if($type='work') then 'w_' else 'i_'"/>
+    <xsl:variable name="title" select="if($recordType='work') then 'Work Record' else 'Image Record'"/>
+    <xsl:variable name="id_pref" select="if($recordType='work') then 'w_' else 'i_'"/>
 
     <!-- top level - entry template - handles a work or an image record -->
     <xsl:template match="/vra:work |/vra:image">
@@ -138,12 +140,13 @@
                     <xf:label/>
                     <xf:action>
                         <xf:dispatch name="unload-subform" targetid="controlCenter"/>
-
+                        <xf:setvalue model="m-main" ref="instance('i-control-center')/currentform" value="'{$id}'"/>
+                        <xf:setvalue model="m-main" ref="instance('i-control-center')/uuid" value="'{$recordId}'"/>
+                        <!--<xf:setvalue model="m-main" ref="instance('i-control-center')/recordType" value="'{$recordType}'"/>-->
                         <xf:load show="embed" targetid="{$mountPoint}">
                             <xf:resource value="'forms/{$vraSetName}.xhtml#xforms'"/>
                             <xf:extension includeCSS="true" includeScript="false"/>
                         </xf:load>
-                        <xf:setvalue model="m-main" ref="instance('i-control-center')/currentform" value="'{$id}'"/>
                         <!--
                         This is not used for the time being. It was a test to use xquery to generate the
                         forms which might get interesting later again when it comes to optimization e.g.

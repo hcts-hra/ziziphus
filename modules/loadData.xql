@@ -16,7 +16,8 @@ declare namespace merge="http://www.betterform.de/merge";
 declare option exist:serialize "method=xml media-type=text/xml indent=yes";
 
 declare function local:getSetData($id as xs:string,$setName as xs:string) as node() * {
-    for $set in collection('/apps/ziziphusData/priyapaul/files/work')//*[@id=$id]/vra:*[local-name()=$setName]
+    let $record := collection('/db/apps/ziziphusData')//vra:vra/*[@id = $id]
+    for $set in $record//vra:*[local-name()=$setName]
     return $set
 };
 declare function local:mergeVraRecord($root as node()) as node() {
