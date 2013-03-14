@@ -73,8 +73,8 @@ function main:displayImageRecord($node as node()*, $model as map(*)) {
 
 declare %private function main:transformVraRecord($root as node(), $id as xs:string, $vraRecordType as xs:string) {
         let $parameters := <parameters>
-                                <param  name="type" value="{$vraRecordType}"/>
-                                (: <param  name="recordId" value="{$id}"/> :)
+                                <param  name="recordType" value="{$vraRecordType}"/>
+                                <param  name="recordId" value="{$id}"/>
                             </parameters>
         return
             transform:transform($root, doc("/db/apps/ziziphus/resources/xsl/vra-record.xsl"), $parameters)
