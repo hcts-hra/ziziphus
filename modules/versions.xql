@@ -1,6 +1,5 @@
 xquery version "3.0";
 
-declare default element namespace "http://www.w3.org/1999/xhtml";
 declare namespace vra = "http://www.vraweb.org/vracore4.htm";
 declare namespace xs = "http://www.w3.org/2001/XMLSchema";
 
@@ -8,47 +7,58 @@ import module namespace v = "http://exist-db.org/versioning";
 
 declare option exist:serialize "method=xhtml media-type=application/xhtml+xml";
 
-declare variable $uuid as xs:string := request:get-parameter("uuid", "NONE");
+declare variable $uuid as xs:string? := request:get-parameter("uuid", ());
 
 (: Change here location of collections to adjust to your installation layout. :)
 declare variable $ziziphusDataRoot as xs:string := "/db/apps/ziziphusData";
-declare variable $collectionPath as xs:string := $ziziphusDataRoot || "/priyapaul/files";
-declare variable $workPath as xs:string := $collectionPath || "/work";
-declare variable $imagesPath as xs:string := $collectionPath || "/images";
+declare variable $urlRoot as xs:string := "/exist/apps/ziziphusData";
+declare variable $filesPath as xs:string := "/priyapaul/files";
+declare variable $xsl as xs:string := "file:///home/patryk/praca/bf/ziziphus/ziziphus-git/resources/xsl/versions.xsl";
 
 declare function local:makeWorkPath($uuid as xs:string) {
-    $workPath || "/" || $uuid || ".xml"
+    $ziziphusDataRoot || $filesPath || "/work/" || $uuid || ".xml"
 };
 
 declare function local:makeImagePath($imageId as xs:string) {
-    $imagePath || "/" || $imageId || ".xml"
+    $ziziphusDataRoot || $filesPath || "/images/" || $imageId || ".xml"
 };
 
-declare function local:showHistory($uuid as xs:string) {
-    let $workDoc := doc($workPath || "/" || $uuid || ".xml") return
-    if ($workDoc) then (
-        <div> {
-        local:showFileHistory($workDoc)
-        } </div>,
-        for $imageId in $workDoc/vra:vra/vra:work/vra:relationSet/vra:relation[@type="imageIs"]/@relids
-        return <p style="color:red">{xs:string($imageId)}</p>
-    ) else
-        <p class="warning">No document for uuid <strong>{$uuid}</strong></p>
+declare function local:makeWorkURL($uuid as xs:string) {
+    $urlRoot || $filesPath || "/work/" || $uuid || ".xml"
 };
 
-declare function local:showFileHistory($doc as document-node()) {
-    v:history($doc)
+declare function local:makeImageURL($imageId as xs:string) {
+    $urlRoot || $filesPath || "/images/" || $imageId || ".xml"
+};
+
+declare function local:createXmlResult($uuid as xs:string?) {
+    <result uuid="{$uuid}"> {
+        if (not($uuid)) then
+            <error>No uuid given.</error>
+        else
+            let $wURL := local:makeWorkURL($uuid)
+            let $wPath := local:makeWorkPath($uuid)
+            let $wDoc := doc($wPath)
+            return
+            if (not($wDoc)) then
+                <error>No document for uuid {$uuid}.</error>
+            else (
+                <work id="{$uuid}" path="{$wPath}" url="{$wURL}"> {
+                    v:history($wDoc)
+                } </work>,
+                for $imageId in xs:string($wDoc/vra:vra/vra:work/vra:relationSet/vra:relation[@type="imageIs"]/@relids)
+                return
+                let $iURL := local:makeImageURL($imageId)
+                let $iPath := local:makeImagePath($imageId)
+                let $iDoc := doc($iPath)
+                return
+                    <image id="{$imageId}" path="{$iPath}" url="{$iURL}"> {
+                        v:history($iDoc)
+                    } </image>
+            )
+    } </result>
 };
 
 (: main :)
-<html>
-    <head>
-        <title>Versions listing for ...</title>
-    </head>
-    <body>
-        <h1>Versions listing for uuid {$uuid}</h1>
-        <div> {
-            local:showHistory($uuid)
-        } </div>
-    </body>
-</html>
+let $result := local:createXmlResult($uuid)
+return transform:transform($result, doc($xsl), ())
