@@ -10,10 +10,11 @@ declare option exist:serialize "method=xhtml media-type=application/xhtml+xml";
 declare variable $uuid as xs:string? := request:get-parameter("uuid", ());
 
 (: Change here location of collections to adjust to your installation layout. :)
+declare variable $ziziphusRoot as xs:string := "/db/apps/ziziphus";
 declare variable $ziziphusDataRoot as xs:string := "/db/apps/ziziphusData";
 declare variable $urlRoot as xs:string := "/exist/apps/ziziphusData";
 declare variable $filesPath as xs:string := "/priyapaul/files";
-declare variable $xsl as xs:string := "file:///home/patryk/praca/bf/ziziphus/ziziphus-git/resources/xsl/versions.xsl";
+declare variable $xsl as xs:string := $ziziphusRoot || "/resources/xsl/versions.xsl";
 
 declare function local:makeWorkPath($uuid as xs:string) {
     $ziziphusDataRoot || $filesPath || "/work/" || $uuid || ".xml"
