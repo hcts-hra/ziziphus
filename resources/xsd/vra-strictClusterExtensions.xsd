@@ -1,0 +1,19 @@
+<xsd:schema xmlns="http://www.vraweb.org/vracore4.htm"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.vraweb.org/vracore4.htm"
+        version="4.0.42"
+        xml:lang="en"
+        elementFormDefault="qualified"
+        attributeFormDefault="unqualified">
+    <xsd:annotation>
+        <xsd:documentation>
+      This schema contains extensions to the
+    </xsd:documentation>
+    </xsd:annotation>
+
+  <!-- include the restricted schema -->
+
+    <xsd:overrite schemaLocation="vra-strict.xsd">
+
+    </xsd:overrite>
+</xsd:schema>
