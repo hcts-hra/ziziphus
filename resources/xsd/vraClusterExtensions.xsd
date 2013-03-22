@@ -148,7 +148,7 @@
             </xsd:sequence>
             <xsd:attributeGroup ref="vraAttributes"/>
         </xsd:complexType>
-
+               
         <!-- todo: uncertain date notation -->
         <xsd:complexType name="dateType">
             <xsd:annotation>
