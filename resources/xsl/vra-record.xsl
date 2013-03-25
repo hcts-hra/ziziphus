@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:vra="http://www.vraweb.org/vracore4.htm" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bfc="http://betterform.sourceforge.net/xforms/controls" xmlns:xf="http://www.w3.org/2002/xforms" xmlns:bfn="http://www.betterform.de/XSL/Functions" version="2.0" xpath-default-namespace="http://www.w3.org/2002/xforms" exclude-result-prefixes="bfn">
+<xsl:stylesheet xmlns="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:vra="http://www.vraweb.org/vracore4.htm" xmlns:bfc="http://betterform.sourceforge.net/xforms/controls" xmlns:xf="http://www.w3.org/2002/xforms" xmlns:bfn="http://www.betterform.de/XSL/Functions" version="2.0" xpath-default-namespace="http://www.w3.org/2002/xforms" exclude-result-prefixes="bfn">
     <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"/>
     <xsl:strip-space elements="*"/>
 
@@ -42,78 +42,78 @@
             <xsl:value-of select="$title"/>
         </div>
         <div id="{$side}" class="sidePanel ui-layout-content">
-                <xsl:call-template name="titlePane">
-                    <xsl:with-param name="vraSetName" select="'AgentSet'"/>
-                    <xsl:with-param name="vraSetNode" select="vra:agentSet"/>
-                </xsl:call-template>
-                <xsl:call-template name="titlePane">
-                    <xsl:with-param name="vraSetName" select="'CulturalContextSet'"/>
-                    <xsl:with-param name="vraSetNode" select="vra:culturalContextSet"/>
-                </xsl:call-template>
-                <xsl:call-template name="titlePane">
-                    <xsl:with-param name="vraSetName" select="'DateSet'"/>
-                    <xsl:with-param name="vraSetNode" select="vra:dateSet"/>
-                </xsl:call-template>
-                <xsl:call-template name="titlePane">
-                    <xsl:with-param name="vraSetName" select="'DescriptionSet'"/>
-                    <xsl:with-param name="vraSetNode" select="vra:descriptionSet"/>
-                </xsl:call-template>
-                <xsl:call-template name="titlePane">
-                    <xsl:with-param name="vraSetName" select="'InscriptionSet'"/>
-                    <xsl:with-param name="vraSetNode" select="vra:inscriptionSet"/>
-                </xsl:call-template>
-                <xsl:call-template name="titlePane">
-                    <xsl:with-param name="vraSetName" select="'LocationSet'"/>
-                    <xsl:with-param name="vraSetNode" select="vra:locationSet"/>
-                </xsl:call-template>
-                <xsl:call-template name="titlePane">
-                    <xsl:with-param name="vraSetName" select="'MaterialSet'"/>
-                    <xsl:with-param name="vraSetNode" select="vra:materialSet"/>
-                </xsl:call-template>
-                <xsl:call-template name="titlePane">
-                    <xsl:with-param name="vraSetName" select="'MeasurementsSet'"/>
-                    <xsl:with-param name="vraSetNode" select="vra:measurementsSet"/>
-                </xsl:call-template>
-                <xsl:call-template name="titlePane">
-                    <xsl:with-param name="vraSetName" select="'RelationSet'"/>
-                    <xsl:with-param name="vraSetNode" select="vra:relationSet"/>
-                </xsl:call-template>
-                <xsl:call-template name="titlePane">
-                    <xsl:with-param name="vraSetName" select="'RightsSet'"/>
-                    <xsl:with-param name="vraSetNode" select="vra:rightsSet"/>
-                </xsl:call-template>
-                <xsl:call-template name="titlePane">
-                    <xsl:with-param name="vraSetName" select="'SourceSet'"/>
-                    <xsl:with-param name="vraSetNode" select="vra:sourceSet"/>
-                </xsl:call-template>
-                <xsl:call-template name="titlePane">
-                    <xsl:with-param name="vraSetName" select="'StateEditionSet'"/>
-                    <xsl:with-param name="vraSetNode" select="vra:stateEditionSet"/>
-                </xsl:call-template>
-                <xsl:call-template name="titlePane">
-                    <xsl:with-param name="vraSetName" select="'StylePeriodSet'"/>
-                    <xsl:with-param name="vraSetNode" select="vra:stylePeriodSet"/>
-                </xsl:call-template>
-                <xsl:call-template name="titlePane">
-                    <xsl:with-param name="vraSetName" select="'SubjectSet'"/>
-                    <xsl:with-param name="vraSetNode" select="vra:subjectSet"/>
-                </xsl:call-template>
-                <xsl:call-template name="titlePane">
-                    <xsl:with-param name="vraSetName" select="'TechniqueSet'"/>
-                    <xsl:with-param name="vraSetNode" select="vra:techniqueSet"/>
-                </xsl:call-template>
-                <xsl:call-template name="titlePane">
-                    <xsl:with-param name="vraSetName" select="'TextrefSet'"/>
-                    <xsl:with-param name="vraSetNode" select="vra:textrefSet"/>
-                </xsl:call-template>
-                <xsl:call-template name="titlePane">
-                    <xsl:with-param name="vraSetName" select="'TitleSet'"/>
-                    <xsl:with-param name="vraSetNode" select="vra:titleSet"/>
-                </xsl:call-template>
-                <xsl:call-template name="titlePane">
-                    <xsl:with-param name="vraSetName" select="'WorktypeSet'"/>
-                    <xsl:with-param name="vraSetNode" select="vra:worktypeSet"/>
-                </xsl:call-template>
+            <xsl:call-template name="titlePane">
+                <xsl:with-param name="vraSetName" select="'AgentSet'"/>
+                <xsl:with-param name="vraSetNode" select="vra:agentSet"/>
+            </xsl:call-template>
+            <xsl:call-template name="titlePane">
+                <xsl:with-param name="vraSetName" select="'CulturalContextSet'"/>
+                <xsl:with-param name="vraSetNode" select="vra:culturalContextSet"/>
+            </xsl:call-template>
+            <xsl:call-template name="titlePane">
+                <xsl:with-param name="vraSetName" select="'DateSet'"/>
+                <xsl:with-param name="vraSetNode" select="vra:dateSet"/>
+            </xsl:call-template>
+            <xsl:call-template name="titlePane">
+                <xsl:with-param name="vraSetName" select="'DescriptionSet'"/>
+                <xsl:with-param name="vraSetNode" select="vra:descriptionSet"/>
+            </xsl:call-template>
+            <xsl:call-template name="titlePane">
+                <xsl:with-param name="vraSetName" select="'InscriptionSet'"/>
+                <xsl:with-param name="vraSetNode" select="vra:inscriptionSet"/>
+            </xsl:call-template>
+            <xsl:call-template name="titlePane">
+                <xsl:with-param name="vraSetName" select="'LocationSet'"/>
+                <xsl:with-param name="vraSetNode" select="vra:locationSet"/>
+            </xsl:call-template>
+            <xsl:call-template name="titlePane">
+                <xsl:with-param name="vraSetName" select="'MaterialSet'"/>
+                <xsl:with-param name="vraSetNode" select="vra:materialSet"/>
+            </xsl:call-template>
+            <xsl:call-template name="titlePane">
+                <xsl:with-param name="vraSetName" select="'MeasurementsSet'"/>
+                <xsl:with-param name="vraSetNode" select="vra:measurementsSet"/>
+            </xsl:call-template>
+            <xsl:call-template name="titlePane">
+                <xsl:with-param name="vraSetName" select="'RelationSet'"/>
+                <xsl:with-param name="vraSetNode" select="vra:relationSet"/>
+            </xsl:call-template>
+            <xsl:call-template name="titlePane">
+                <xsl:with-param name="vraSetName" select="'RightsSet'"/>
+                <xsl:with-param name="vraSetNode" select="vra:rightsSet"/>
+            </xsl:call-template>
+            <xsl:call-template name="titlePane">
+                <xsl:with-param name="vraSetName" select="'SourceSet'"/>
+                <xsl:with-param name="vraSetNode" select="vra:sourceSet"/>
+            </xsl:call-template>
+            <xsl:call-template name="titlePane">
+                <xsl:with-param name="vraSetName" select="'StateEditionSet'"/>
+                <xsl:with-param name="vraSetNode" select="vra:stateEditionSet"/>
+            </xsl:call-template>
+            <xsl:call-template name="titlePane">
+                <xsl:with-param name="vraSetName" select="'StylePeriodSet'"/>
+                <xsl:with-param name="vraSetNode" select="vra:stylePeriodSet"/>
+            </xsl:call-template>
+            <xsl:call-template name="titlePane">
+                <xsl:with-param name="vraSetName" select="'SubjectSet'"/>
+                <xsl:with-param name="vraSetNode" select="vra:subjectSet"/>
+            </xsl:call-template>
+            <xsl:call-template name="titlePane">
+                <xsl:with-param name="vraSetName" select="'TechniqueSet'"/>
+                <xsl:with-param name="vraSetNode" select="vra:techniqueSet"/>
+            </xsl:call-template>
+            <xsl:call-template name="titlePane">
+                <xsl:with-param name="vraSetName" select="'TextrefSet'"/>
+                <xsl:with-param name="vraSetNode" select="vra:textrefSet"/>
+            </xsl:call-template>
+            <xsl:call-template name="titlePane">
+                <xsl:with-param name="vraSetName" select="'TitleSet'"/>
+                <xsl:with-param name="vraSetNode" select="vra:titleSet"/>
+            </xsl:call-template>
+            <xsl:call-template name="titlePane">
+                <xsl:with-param name="vraSetName" select="'WorktypeSet'"/>
+                <xsl:with-param name="vraSetNode" select="vra:worktypeSet"/>
+            </xsl:call-template>
 <!--
             </div>
 -->

@@ -1,15 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
     Extensions to vra
     Seite:127 inclusion.. 133 oben
 -->
-<xsd:schema xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsd="http://www.w3.org/2001/XMLSchema"    
-    targetNamespace="http://www.vraweb.org/vracore4.htm" version="4.0.42" xml:lang="en"
-    elementFormDefault="qualified" attributeFormDefault="unqualified" defaultAttributes="globalClusterAttributes">
+<xsd:schema xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.vraweb.org/vracore4.htm" version="4.0.42" xml:lang="en" elementFormDefault="qualified" attributeFormDefault="unqualified" defaultAttributes="globalClusterAttributes">
     
     <!-- ##### cluster overrides of vra core schema ##### -->
     <!-- todo: geolocation elements -->
     <!-- todo: integrate ISO lang code schemas -->
-    
     <xsd:override schemaLocation="vra.xsd" id="origin">
         <xsd:element name="description">
             <xsd:annotation>
@@ -28,7 +26,6 @@
                 </xsd:simpleContent>
             </xsd:complexType>
         </xsd:element>
-        
         <xsd:complexType name="recordType">
             <xsd:annotation>
                 <xsd:documentation>
@@ -41,28 +38,27 @@
                 </xsd:documentation>
             </xsd:annotation>
             <xsd:sequence>
-                <xsd:element ref="agentSet"           minOccurs="0"/>
+                <xsd:element ref="agentSet" minOccurs="0"/>
                 <xsd:element ref="culturalContextSet" minOccurs="0"/>
-                <xsd:element ref="dateSet"            minOccurs="0"/>
-                <xsd:element ref="descriptionSet"     minOccurs="0"/>
-                <xsd:element ref="inscriptionSet"     minOccurs="0"/>
-                <xsd:element ref="locationSet"        minOccurs="0"/>
-                <xsd:element ref="materialSet"        minOccurs="0"/>
-                <xsd:element ref="measurementsSet"    minOccurs="0"/>
-                <xsd:element ref="relationSet"        minOccurs="0"/>
-                <xsd:element ref="rightsSet"          minOccurs="0"/>
-                <xsd:element ref="sourceSet"          minOccurs="0"/>
-                <xsd:element ref="stateEditionSet"    minOccurs="0"/>
-                <xsd:element ref="stylePeriodSet"     minOccurs="0"/>
-                <xsd:element ref="subjectSet"         minOccurs="0"/>
-                <xsd:element ref="techniqueSet"       minOccurs="0"/>
-                <xsd:element ref="textrefSet"         minOccurs="0"/>
-                <xsd:element ref="titleSet"           minOccurs="0"/>
-                <xsd:element ref="worktypeSet"        minOccurs="0"/>     
+                <xsd:element ref="dateSet" minOccurs="0"/>
+                <xsd:element ref="descriptionSet" minOccurs="0"/>
+                <xsd:element ref="inscriptionSet" minOccurs="0"/>
+                <xsd:element ref="locationSet" minOccurs="0"/>
+                <xsd:element ref="materialSet" minOccurs="0"/>
+                <xsd:element ref="measurementsSet" minOccurs="0"/>
+                <xsd:element ref="relationSet" minOccurs="0"/>
+                <xsd:element ref="rightsSet" minOccurs="0"/>
+                <xsd:element ref="sourceSet" minOccurs="0"/>
+                <xsd:element ref="stateEditionSet" minOccurs="0"/>
+                <xsd:element ref="stylePeriodSet" minOccurs="0"/>
+                <xsd:element ref="subjectSet" minOccurs="0"/>
+                <xsd:element ref="techniqueSet" minOccurs="0"/>
+                <xsd:element ref="textrefSet" minOccurs="0"/>
+                <xsd:element ref="titleSet" minOccurs="0"/>
+                <xsd:element ref="worktypeSet" minOccurs="0"/>     
 
                 <!-- ##### allow heidicon elements for data migration ##### -->
                 <xsd:any namespace="http://cluster-schemas.uni-hd.de" minOccurs="0" maxOccurs="unbounded"/>
-                
             </xsd:sequence>
             <xsd:attributeGroup ref="vraAttributes"/>
             <xsd:attribute name="id" type="xsd:ID"/>
@@ -83,9 +79,7 @@
                 </xsd:simpleType>
             </xsd:attribute>
             <!-- ##### end: extension attributes ##### -->
-
         </xsd:complexType>
-        
         <xsd:attributeGroup name="vraAttributes">
             <xsd:annotation>
                 <xsd:documentation>
@@ -99,23 +93,21 @@
                 </xsd:documentation>
             </xsd:annotation>
             <xsd:attribute name="dataDate" type="dateValueType"/>
-            <xsd:attribute name="extent"   type="xsd:string"/>
-            <xsd:attribute name="href"     type="xsd:anyURI"/>
+            <xsd:attribute name="extent" type="xsd:string"/>
+            <xsd:attribute name="href" type="xsd:anyURI"/>
             <xsd:attribute ref="xml:lang"/>
-            <xsd:attribute name="pref"     type="xsd:boolean"/>
-            <xsd:attribute name="refid"    type="xsd:string"/>
-            <xsd:attribute name="rules"    type="xsd:string"/>
-            <xsd:attribute name="source"   type="xsd:string"/>
-            <xsd:attribute name="vocab"    type="xsd:string"/>
+            <xsd:attribute name="pref" type="xsd:boolean"/>
+            <xsd:attribute name="refid" type="xsd:string"/>
+            <xsd:attribute name="rules" type="xsd:string"/>
+            <xsd:attribute name="source" type="xsd:string"/>
+            <xsd:attribute name="vocab" type="xsd:string"/>
             
             <!-- ##### start: added attributes ##### -->
             <xsd:attribute name="lang" type="xsd:string"/>
             <xsd:attribute name="script" type="xsd:string"/>
             <xsd:attribute name="transliteration" type="xsd:string"/>
             <!-- ##### end: added attributes ##### -->
-
         </xsd:attributeGroup>
-
         <xsd:complexType name="agentType">
             <xsd:annotation>
                 <xsd:documentation>
@@ -124,10 +116,10 @@
                 </xsd:documentation>
             </xsd:annotation>
             <xsd:sequence minOccurs="1" maxOccurs="unbounded">
-                <xsd:element name="attribution"  type="basicString"   minOccurs="0"/>
-                <xsd:element name="culture"      type="basicString"   minOccurs="0"/>
-                <xsd:element name="dates"        type="agentDateType" minOccurs="0"/>
-                <xsd:element name="name"         type="agentNameType" minOccurs="0"/>
+                <xsd:element name="attribution" type="basicString" minOccurs="0"/>
+                <xsd:element name="culture" type="basicString" minOccurs="0"/>
+                <xsd:element name="dates" type="agentDateType" minOccurs="0"/>
+                <xsd:element name="name" type="agentNameType" minOccurs="0"/>
 
                 <!-- ##### start: role element extended to allow @code ##### -->
                 <xsd:element name="role">
@@ -144,7 +136,6 @@
                     </xsd:complexType>
                 </xsd:element>
                 <!-- ##### end: role element extended to allow @code ##### -->
-
             </xsd:sequence>
             <xsd:attributeGroup ref="vraAttributes"/>
         </xsd:complexType>
@@ -160,7 +151,7 @@
             </xsd:annotation>
             <xsd:sequence>
                 <xsd:element name="earliestDate" type="dateWrapperType" minOccurs="0"/>
-                <xsd:element name="latestDate"   type="dateWrapperType" minOccurs="0"/>
+                <xsd:element name="latestDate" type="dateWrapperType" minOccurs="0"/>
                 
                 <!--##### cluster extension ###### -->
                 <xsd:element name="alternativeNotation" type="alternativeNotationDateType"/>
@@ -168,8 +159,6 @@
             <xsd:attribute name="type" type="dateTypeType"/>
             <xsd:attributeGroup ref="vraAttributes"/>
         </xsd:complexType>
-
-
         <xsd:complexType name="locationType">
             <xsd:annotation>
                 <xsd:documentation>
@@ -189,7 +178,6 @@
             <xsd:attributeGroup ref="vraAttributes"/>
             <xsd:attribute name="type" type="locationTypeType"/>
         </xsd:complexType>
-
         <xsd:complexType name="measurementsType">
             <xsd:annotation>
                 <xsd:documentation>Measurement element.  Use unit attribute for units (cm, in, dpi, etc.).</xsd:documentation>
@@ -214,14 +202,13 @@
                     </xsd:attribute>
                 </xsd:extension>
             </xsd:simpleContent>
-        </xsd:complexType>        
+        </xsd:complexType>
     </xsd:override>
     
     <!-- ###### extension ##### -->
     <xsd:attributeGroup name="globalClusterAttributes">
-        <xsd:attribute name="lastAccessed" type="xsd:dateTimeStamp"></xsd:attribute>
+        <xsd:attribute name="lastAccessed" type="xsd:dateTimeStamp"/>
     </xsd:attributeGroup>
-
     <xsd:complexType name="alternativeNotationDateType">
         <xsd:simpleContent>
             <xsd:extension base="basicString">
@@ -238,8 +225,6 @@
             </xsd:extension>
         </xsd:simpleContent>
     </xsd:complexType>
-
-
     <xsd:complexType name="geoType">
         <xsd:annotation>
             <xsd:documentation>
@@ -253,5 +238,4 @@
         <xsd:attribute name="epsg" type="xsd:string"/>
         <xsd:attribute name="url" type="xsd:string"/>
     </xsd:complexType>
-
 </xsd:schema>

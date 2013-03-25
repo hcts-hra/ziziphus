@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:bf="http://betterform.sourceforge.net/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xf="http://www.w3.org/2002/xforms" version="2.0" exclude-result-prefixes="xf bf" xpath-default-namespace="http://www.w3.org/1999/xhtml">
+<xsl:stylesheet xmlns="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bf="http://betterform.sourceforge.net/xforms" xmlns:xf="http://www.w3.org/2002/xforms" version="2.0" exclude-result-prefixes="xf bf" xpath-default-namespace="http://www.w3.org/1999/xhtml">
     <xsl:import href="bfResources/xslt/xhtml.xsl"/>
 
     <!-- overwritten to set parseOnload=true and async=false -->
