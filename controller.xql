@@ -77,6 +77,7 @@ let $login := xmldb:login("/db", "admin", "admin")
 :)
 let $origin := request:get-parameter("origin", '')
 let $login := local:set-user()
+let $id_http_param := request:get-parameter("id", ())
 return
 if ($origin and $exist:path eq "") then
    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
@@ -105,7 +106,7 @@ else if ($login)
                         <set-attribute name="$exist:prefix" value="{$exist:prefix}"/>
                         <set-attribute name="$exist:controller" value="{$exist:controller}"/>
                         <set-attribute name="$exist:path" value="{$exist:path}"/>
-                        <set-attribute name="$exist:resource" value="{$exist:resource}"/>
+                        <set-attribute name="$exist:resource" value="{$exist:resource}"/>                        
                         <set-header name="CacheControl" value="no-cache"/>
                     </forward>
                 </view>
@@ -141,5 +142,7 @@ else
             <add-parameter name="path" value="{$exist:path}"/>
             <add-parameter name="controller" value="{$exist:controller}"/>
             <add-parameter name="prefix" value="{$exist:prefix}"/>
+            <set-attribute name="root" value="{$exist:root}"/>
+            <set-attribute name="id" value="{$id_http_param}"/>
         </forward>
     </dispatch>

@@ -2,30 +2,17 @@ xquery version "3.0";
 declare namespace functx = "http://www.functx.com";
 import module namespace request = "http://exist-db.org/xquery/request";
 
-declare function functx:substring-before-last  ( $arg as xs:string? , $delim as xs:string )  as xs:string {
-
-   if (fn:matches($arg, functx:escape-for-regex($delim)))
-   then fn:replace($arg,
-            fn:concat('^(.*)', functx:escape-for-regex($delim),'.*'),
-            '$1')
-   else ''
- };
-
- declare function functx:escape-for-regex( $arg as xs:string? )  as xs:string {
-
-   fn:replace($arg,
-           '(\.|\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\))','\\$1')
- };
-
 let $user := request:get-parameter("app.user",'guest')
 let $path := request:get-parameter('path', '')
 let $controller := request:get-parameter('controller', '')
 let $prefix := request:get-parameter('prefix', '')
+let $id := request:get-parameter('id', '')
 let $origin :=  concat('/exist', $prefix, $controller, $path)
+let $requestURL := concat($origin, if($id) then (concat('?id=',$id)) else ())
 return
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:exist="http://exist.sourceforge.net/NS/exist" xmlns:xf="http://www.w3.org/2002/xforms">
     <head>
-        <title>PSI Configuration Wizard {$origin}</title>
+        <title>Ziziphus Image Database</title>
         <link rel="stylesheet" href="{request:get-context-path()}/apps/configwizard/resources/css/psi.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
     </head>
     <body>
@@ -49,8 +36,36 @@ return
     <div class="container_12 container">
         <div class="grid_10" style="padding-left:120px;">
             <p>This resource is protected. Only registered users are allowed to login. To register an account please contact the <a href="mailto:ziziphus@betterform.de">database admin</a>.</p>
-            <form method="POST" class="login" action="{$origin}">
-                <input type="hidden" name="origin" value="{$origin}" autocomplete="off"/>
+            <form method="POST" class="login" action="{$requestURL}">
+                <input type="hidden" name="origin" value="{$requestURL}" autocomplete="off"/>
+                <div class="debug" style="display:none;">
+                    <table>
+                        <tr>
+                            <td>User</td>
+                            <td>{$user}</td>
+                        </tr>
+                        <tr>
+                            <td>Path</td>
+                            <td>{$path}</td>
+                        </tr>
+                        <tr>
+                            <td>Controll</td>
+                            <td>{$controller}</td>
+                        </tr>
+                        <tr>
+                            <td>Prefix</td>
+                            <td>{$prefix}</td>
+                        </tr>
+                        <tr>
+                            <td>Origin</td>
+                            <td>{$origin}</td>
+                        </tr>
+                        <tr>
+                            <td>requestURL</td>
+                            <td>{$requestURL}</td>
+                        </tr>
+                    </table>
+                </div>
                 <table class="login" cellpadding="5">
                     <tbody>
                         <tr>
