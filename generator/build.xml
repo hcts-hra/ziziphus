@@ -239,4 +239,23 @@
 
     </target>
 
+    <target name="generate-view-tmp">
+        <antcall target="vra-views">
+            <param name="subformName" value="AgentSet"/>
+        </antcall>
+    </target>
+
+    <target name="vra-views">
+        <echo>generate-subform ${subformName}</echo>
+        <mkdir dir="${target.dir}/views"/>
+        <xslt style="${xsl.dir}/view/xf_to_html.xsl"
+                in="${target.dir}/${subformName}.xhtml"
+                out="${target.dir}/views/${subformName}.xsl"
+                force="true">
+            <classpath refid="transform.class.path"/>
+            <param name="debug" expression="true"/>
+            <param name="vraSection" expression="${subformName}"/>
+        </xslt>
+    </target>
+
 </project>
