@@ -125,12 +125,12 @@
          <!-- ####################################### VISIBLE UI ####################################### -->
          <!-- ####################################### VISIBLE UI ####################################### -->
          <div class="toolbar">
-            <xf:trigger class="t-plus" model="m-child-model" title="Add Agent">
+            <xf:trigger class="t-plus" model="m-child-model" id="d3e1" title="Add Agent">
                <xf:label>+</xf:label>
                <xf:insert model="m-child-model" nodeset="instance()/vra:agent[last()]"
                           origin="instance('i-templates')/vra:agent"></xf:insert>
             </xf:trigger>
-            <xf:trigger>
+            <xf:trigger id="d3e1">
                <xf:label>Save changes</xf:label>
                <xf:send submission="s-update"></xf:send>
             </xf:trigger>
@@ -172,17 +172,17 @@
                   </tr>
                   <tr>
                      <td class="prefCol">
-                        <xf:input ref="@pref">
+                        <xf:input ref="@pref" id="d3e503">
                            <xf:label>pref</xf:label>
                            <xf:hint>preferred</xf:hint>
                         </xf:input>
                      </td>
                      <td class="contentCol">
                         <xf:group appearance="minimal">
-                           <xf:input ref="vra:name" class="elementName">
+                           <xf:input id="d3e512" ref="vra:name" class="elementName">
                               <xf:label>Name</xf:label>
                            </xf:input>
-                           <xf:select1 ref="vra:name/@type">
+                           <xf:select1 id="d6e36" ref="vra:name/@type">
                               <xf:label>Type</xf:label>
                               <xf:item>
                                  <xf:label>Personal</xf:label>
@@ -214,7 +214,7 @@
                            </xf:trigger>
                         </xf:group>
                         <xf:group appearance="minimal">
-                           <xf:input ref="vra:attribution">
+                           <xf:input id="d3e504" ref="vra:attribution">
                               <xf:label>Attribution</xf:label>
                            </xf:input>
                            <xf:group class="vraAttributes" appearance="minimal" ref="vra:attribution">
@@ -230,7 +230,7 @@
                            </xf:trigger>
                         </xf:group>
                         <xf:group appearance="minimal">
-                           <xf:input ref="vra:culture">
+                           <xf:input id="d3e505" ref="vra:culture">
                               <xf:label>Culture</xf:label>
                            </xf:input>
                            <xf:group class="vraAttributes" appearance="minimal" ref="vra:culture">
@@ -246,7 +246,7 @@
                            </xf:trigger>
                         </xf:group>
                         <xf:group appearance="minimal">
-                           <xf:select1 ref="vra:dates/@type">
+                           <xf:select1 id="d6e31" ref="vra:dates/@type">
                               <xf:label>Type</xf:label>
                               <xf:item>
                                  <xf:label>Activity</xf:label>
@@ -261,13 +261,13 @@
                                  <xf:value>other</xf:value>
                               </xf:item>
                            </xf:select1>
-                           <xf:input ref="vra:dates/vra:earliestDate">
+                           <xf:input id="d3e508" ref="vra:dates/vra:earliestDate">
                               <xf:label>EarliestDate</xf:label>
                            </xf:input>
                            <xf:input ref="vra:dates/vra:earliestDate/@circa">
                               <xf:label>circa</xf:label>
                            </xf:input>
-                           <xf:input ref="vra:dates/vra:latestDate">
+                           <xf:input id="d3e510" ref="vra:dates/vra:latestDate">
                               <xf:label>LatestDate</xf:label>
                            </xf:input>
                            <xf:input ref="vra:dates/vra:latestDate/@circa">
@@ -286,7 +286,7 @@
                            </xf:trigger>
                         </xf:group>
                         <xf:group appearance="minimal">
-                           <xf:input ref="vra:role">
+                           <xf:input id="d3e514" ref="vra:role">
                               <xf:label>Role</xf:label>
                            </xf:input>
                            <xf:group class="vraAttributes" appearance="minimal" ref="vra:role">
@@ -353,7 +353,7 @@
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:input ref="@extent">
+                  <xf:input ref="@extent" id="d3e1">
                      <xf:label>extent</xf:label>
                   </xf:input>
                   <xf:trigger class="deleteAttribute input-append -btn">
@@ -362,7 +362,7 @@
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:input ref="@href">
+                  <xf:input ref="@href" id="d3e1">
                      <xf:label>href</xf:label>
                   </xf:input>
                   <xf:trigger class="deleteAttribute input-append -btn">
@@ -371,7 +371,7 @@
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:input ref="@refid">
+                  <xf:input ref="@refid" id="d3e1">
                      <xf:label>refid</xf:label>
                   </xf:input>
                   <xf:trigger class="deleteAttribute input-append -btn">
@@ -380,7 +380,7 @@
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:input ref="@rules">
+                  <xf:input ref="@rules" id="d3e1">
                      <xf:label>rules</xf:label>
                   </xf:input>
                   <xf:trigger class="deleteAttribute input-append -btn">
@@ -389,7 +389,7 @@
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:input ref="@source">
+                  <xf:input ref="@source" id="d3e1">
                      <xf:label>source</xf:label>
                   </xf:input>
                   <xf:trigger class="deleteAttribute input-append -btn">
@@ -398,7 +398,7 @@
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:select1 ref="@vocab">
+                  <xf:select1 ref="@vocab" id="d3e1">
                      <xf:label>vocab</xf:label>
                      <xf:item>
                         <xf:label>local</xf:label>
@@ -423,7 +423,7 @@
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:input ref="@lang">
+                  <xf:input ref="@lang" id="d3e1">
                      <xf:label>Language</xf:label>
                   </xf:input>
                   <xf:trigger class="deleteAttribute input-append -btn">
@@ -432,7 +432,7 @@
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:input ref="@transliteration">
+                  <xf:input ref="@transliteration" id="d3e1">
                      <xf:label>Transliteration</xf:label>
                   </xf:input>
                   <xf:trigger class="deleteAttribute input-append -btn">
@@ -441,7 +441,7 @@
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:input ref="@script">
+                  <xf:input ref="@script" id="d3e1">
                      <xf:label>Script</xf:label>
                   </xf:input>
                   <xf:trigger class="deleteAttribute input-append -btn">

@@ -173,7 +173,7 @@
                             <xf:label>save</xf:label>
                         </xf:trigger>
 -->
-                        <xf:trigger class="t-plus" model="m-child-model">
+                        <xf:trigger class="t-plus" model="m-child-model" id="{generate-id()}">
                             <xsl:attribute name="title">Add <xsl:value-of select="$vraArtifact"/></xsl:attribute>
                             <xf:label>+</xf:label>
                             <xf:insert model="m-child-model">
@@ -181,11 +181,11 @@
                                 <xsl:attribute name="origin">instance('i-templates')/vra:<xsl:value-of select="$vraArtifactNode"/></xsl:attribute>
                             </xf:insert>
                         </xf:trigger>
-                        <xf:trigger>
+                        <xf:trigger id="{generate-id()}">
                             <xf:label>Save changes</xf:label>
                             <xf:send submission="s-update"/>
                         </xf:trigger>
-                        <xf:trigger id="closeEditor" class="-close">
+                        <xf:trigger id="closeEditor" class="-close" >
                             <xf:label>&#215;</xf:label>
                             <xf:dispatch name="unload-subform" targetid="controlCenter"/>
                         </xf:trigger>
@@ -206,7 +206,7 @@
                                 </xf:trigger>
                             </xf:group>
                             <xf:group appearance="minimal" class="attrDialogGroup">
-                                <xf:input ref="@extent">
+                                <xf:input ref="@extent" id="{generate-id()}">
                                     <xf:label>extent</xf:label>
                                 </xf:input>
                                 <xf:trigger class="deleteAttribute input-append -btn">
@@ -215,7 +215,7 @@
                                 </xf:trigger>
                             </xf:group>
                             <xf:group appearance="minimal" class="attrDialogGroup">
-                                <xf:input ref="@href">
+                                <xf:input ref="@href" id="{generate-id()}">
                                     <xf:label>href</xf:label>
                                 </xf:input>
                                 <xf:trigger class="deleteAttribute input-append -btn">
@@ -224,7 +224,7 @@
                                 </xf:trigger>
                             </xf:group>
                             <xf:group appearance="minimal" class="attrDialogGroup">
-                                <xf:input ref="@refid">
+                                <xf:input ref="@refid" id="{generate-id()}">
                                     <xf:label>refid</xf:label>
                                 </xf:input>
                                 <xf:trigger class="deleteAttribute input-append -btn">
@@ -233,7 +233,7 @@
                                 </xf:trigger>
                             </xf:group>
                             <xf:group appearance="minimal" class="attrDialogGroup">
-                                <xf:input ref="@rules">
+                                <xf:input ref="@rules" id="{generate-id()}">
                                     <xf:label>rules</xf:label>
                                 </xf:input>
                                 <xf:trigger class="deleteAttribute input-append -btn">
@@ -242,7 +242,7 @@
                                 </xf:trigger>
                             </xf:group>
                             <xf:group appearance="minimal" class="attrDialogGroup">
-                                <xf:input ref="@source">
+                                <xf:input ref="@source" id="{generate-id()}">
                                     <xf:label>source</xf:label>
                                 </xf:input>
                                 <xf:trigger class="deleteAttribute input-append -btn">
@@ -251,7 +251,7 @@
                                 </xf:trigger>
                             </xf:group>
                             <xf:group appearance="minimal" class="attrDialogGroup">
-                                <xf:select1 ref="@vocab">
+                                <xf:select1 ref="@vocab" id="{generate-id()}">
                                     <xf:label>vocab</xf:label>
                                     <xf:item>
                                         <xf:label>local</xf:label>
@@ -276,7 +276,7 @@
                                 </xf:trigger>
                             </xf:group>
                             <xf:group appearance="minimal" class="attrDialogGroup">
-                                <xf:input ref="@lang">
+                                <xf:input ref="@lang" id="{generate-id()}">
                                     <xf:label>Language</xf:label>
                                 </xf:input>
                                 <xf:trigger class="deleteAttribute input-append -btn">
@@ -285,7 +285,7 @@
                                 </xf:trigger>
                             </xf:group>
                             <xf:group appearance="minimal" class="attrDialogGroup">
-                                <xf:input ref="@transliteration">
+                                <xf:input ref="@transliteration" id="{generate-id()}">
                                     <xf:label>Transliteration</xf:label>
                                 </xf:input>
                                 <xf:trigger class="deleteAttribute input-append -btn">
@@ -294,7 +294,7 @@
                                 </xf:trigger>
                             </xf:group>
                             <xf:group appearance="minimal" class="attrDialogGroup">
-                                <xf:input ref="@script">
+                                <xf:input ref="@script" id="{generate-id()}">
                                     <xf:label>Script</xf:label>
                                 </xf:input>
                                 <xf:trigger class="deleteAttribute input-append -btn">
@@ -484,7 +484,7 @@
                         <xf:label>Hide Notes</xf:label>
                         <xf:toggle case="c-hidden"/>
                     </xf:trigger>
-                    <xf:textarea id="notes" ref="vra:notes" type="nodeValue" model="m-child-model">
+                    <xf:textarea id="notes" ref="vra:notes" type="nodeValue" model="m-child-model" >
                         <xf:label>Notes</xf:label>
                     </xf:textarea>
                 </xf:case>
@@ -503,7 +503,7 @@
 
         <tr>
             <td class="prefCol">
-                <xf:input ref="@pref">
+                <xf:input ref="@pref" id="{generate-id()}">
                     <xf:label>pref</xf:label>
                     <xf:hint>preferred</xf:hint>
                 </xf:input>
@@ -605,7 +605,7 @@
         </xsl:if>
 
         <xsl:if test="@xfType='simpleType'">
-            <xf:input>
+            <xf:input id="{generate-id()}">
                 <xsl:attribute name="ref"><xsl:value-of select="$currentPath"/></xsl:attribute>
                 <xsl:if test="not($isArtifactNode) and ('vra:name'=$vraNodeName)">
                     <xsl:attribute name="class">elementName</xsl:attribute>
@@ -648,7 +648,7 @@
             <xsl:message>UI-6a (type): xsd:string restriction (select1)</xsl:message>
         </xsl:if>
 
-        <xf:select1>
+        <xf:select1 id="{generate-id()}">
             <xsl:attribute name="ref"><xsl:value-of select="$pref"/></xsl:attribute>
             <xf:label><xsl:value-of select="$plabel"/></xf:label>
             <xsl:for-each select="xsd:enumeration">
@@ -668,7 +668,7 @@
             <xsl:message>UI-6b (type): xsd:string restriction (empty)</xsl:message>
         </xsl:if>
 
-        <xf:input>
+        <xf:input id="{generate-id()}">
             <xsl:attribute name="ref"><xsl:value-of select="$pref"/></xsl:attribute>
             <xf:label><xsl:value-of select="$plabel"/></xf:label>
         </xf:input>

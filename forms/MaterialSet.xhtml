@@ -96,12 +96,12 @@
          <!-- ####################################### VISIBLE UI ####################################### -->
          <!-- ####################################### VISIBLE UI ####################################### -->
          <div class="toolbar">
-            <xf:trigger class="t-plus" model="m-child-model" title="Add Material">
+            <xf:trigger class="t-plus" model="m-child-model" id="d3e1" title="Add Material">
                <xf:label>+</xf:label>
                <xf:insert model="m-child-model" nodeset="instance()/vra:material[last()]"
                           origin="instance('i-templates')/vra:material"></xf:insert>
             </xf:trigger>
-            <xf:trigger>
+            <xf:trigger id="d3e1">
                <xf:label>Save changes</xf:label>
                <xf:send submission="s-update"></xf:send>
             </xf:trigger>
@@ -143,15 +143,15 @@
                   </tr>
                   <tr>
                      <td class="prefCol">
-                        <xf:input ref="@pref">
+                        <xf:input ref="@pref" id="d3e552">
                            <xf:label>pref</xf:label>
                            <xf:hint>preferred</xf:hint>
                         </xf:input>
                      </td>
                      <td class="contentCol">
                         <xf:group appearance="minimal">
-                           <xf:input ref="."></xf:input>
-                           <xf:select1 ref="@type">
+                           <xf:input id="d3e552" ref="."></xf:input>
+                           <xf:select1 id="d6e99" ref="@type">
                               <xf:label>Type</xf:label>
                               <xf:item>
                                  <xf:label>Medium</xf:label>
@@ -219,7 +219,7 @@
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:input ref="@extent">
+                  <xf:input ref="@extent" id="d3e1">
                      <xf:label>extent</xf:label>
                   </xf:input>
                   <xf:trigger class="deleteAttribute input-append -btn">
@@ -228,7 +228,7 @@
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:input ref="@href">
+                  <xf:input ref="@href" id="d3e1">
                      <xf:label>href</xf:label>
                   </xf:input>
                   <xf:trigger class="deleteAttribute input-append -btn">
@@ -237,7 +237,7 @@
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:input ref="@refid">
+                  <xf:input ref="@refid" id="d3e1">
                      <xf:label>refid</xf:label>
                   </xf:input>
                   <xf:trigger class="deleteAttribute input-append -btn">
@@ -246,7 +246,7 @@
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:input ref="@rules">
+                  <xf:input ref="@rules" id="d3e1">
                      <xf:label>rules</xf:label>
                   </xf:input>
                   <xf:trigger class="deleteAttribute input-append -btn">
@@ -255,7 +255,7 @@
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:input ref="@source">
+                  <xf:input ref="@source" id="d3e1">
                      <xf:label>source</xf:label>
                   </xf:input>
                   <xf:trigger class="deleteAttribute input-append -btn">
@@ -264,7 +264,7 @@
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:select1 ref="@vocab">
+                  <xf:select1 ref="@vocab" id="d3e1">
                      <xf:label>vocab</xf:label>
                      <xf:item>
                         <xf:label>local</xf:label>
@@ -289,7 +289,7 @@
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:input ref="@lang">
+                  <xf:input ref="@lang" id="d3e1">
                      <xf:label>Language</xf:label>
                   </xf:input>
                   <xf:trigger class="deleteAttribute input-append -btn">
@@ -298,7 +298,7 @@
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:input ref="@transliteration">
+                  <xf:input ref="@transliteration" id="d3e1">
                      <xf:label>Transliteration</xf:label>
                   </xf:input>
                   <xf:trigger class="deleteAttribute input-append -btn">
@@ -307,7 +307,7 @@
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:input ref="@script">
+                  <xf:input ref="@script" id="d3e1">
                      <xf:label>Script</xf:label>
                   </xf:input>
                   <xf:trigger class="deleteAttribute input-append -btn">
