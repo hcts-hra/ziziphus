@@ -50,7 +50,7 @@
                 </xf:submission>
                 <xf:send ev:event="xforms-ready" submission="s-load-user-data"/>
             </xf:model>
-            <xf:group id="controlCenter" model="m-main">
+                <xf:group id="controlCenter" model="m-main">
                 <xf:action ev:event="unload-subform" model="m-main" if="string-length(instance('i-control-center')/currentform) &gt; 0">
                     <xf:send submission="s-refresh" if="changed='true'"/>
                     <xf:toggle>
