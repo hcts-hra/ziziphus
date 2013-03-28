@@ -35,6 +35,9 @@
     <xsl:variable name="title" select="if($recordType='work') then 'Work Record' else 'Image Record'"/>
     <xsl:variable name="id_pref" select="if($recordType='work') then 'w_' else 'i_'"/>
 
+    <!-- parameter is only used if a single section is rendered -->
+    <xsl:param name="setname" select="''"/>
+
     <!-- top level - entry template - handles a work or an image record -->
     <xsl:template match="/vra:work |/vra:image">
         <xsl:variable name="side" select="if(local-name(.)='work') then 'leftPanel' else 'rightPanel'"/>
@@ -170,18 +173,18 @@
                 <!-- ############ VIEW CASE ######### -->
                 <xf:case id="{$caseId}-view" selected="true">
                     <div class="vraSection" id="{concat($id,'_HtmlContent')}">
-                        <div class="simple" id="{$tableId}">
-                            <xsl:choose>
-                                <xsl:when test="exists($vraSetNode/vra:display/text())">
-                                    <xsl:apply-templates select="$vraSetNode/vra:display"/>
-                                </xsl:when>
-                                <xsl:otherwise>
+                        <xsl:choose>
+                            <xsl:when test="exists($vraSetNode/vra:display/text())">
+                                <xsl:apply-templates select="$vraSetNode/vra:display"/>
+                            </xsl:when>
+                            <xsl:otherwise>
                                     <!-- drill down into single stylesheets (the ones include at top of this file.-->
-                                    <xsl:apply-templates select="$vraSetNode"/>
-                                </xsl:otherwise>
-                            </xsl:choose>
-                            <xsl:apply-templates select="$vraSetNode/vra:notes"/>
-                        </div>
+                                <xsl:apply-templates select="$vraSetNode">
+                                    <xsl:with-param name="vraTableId" select="$tableId"/>
+                                </xsl:apply-templates>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                        <xsl:apply-templates select="$vraSetNode/vra:notes"/>
                     </div>
                 </xf:case>
                 <!-- ############ EDIT CASE ############### -->

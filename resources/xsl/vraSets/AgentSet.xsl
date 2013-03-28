@@ -9,49 +9,53 @@
         </xsl:if>
     </xsl:template>
     <xsl:template match="vra:agentSet" priority="40">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Role</th>
-                    <th>Culture</th>
-                    <th class="detail-cell">Period (life)</th>
-                    <th>Period (activity)</th>
-                    <th class="detail-cell">Period (other)</th>
-                </tr>
-            </thead>
-            <tbody resource="vra:agentSet">
-                <xsl:for-each select="vra:agent">
-                    <tr property="vra:agent">
-                        <xsl:variable name="ref">
-                            <xsl:call-template name="getRef"/>
-                        </xsl:variable>
-                        <td property="vra:name" data-xf-ref="{$ref}" contenteditable="true">
-                                <!-- todo: all to all sets -->
-                            <xsl:if test="vra:name/@pref='true'">
-                                <xsl:attribute name="class">pref</xsl:attribute>
-                            </xsl:if>
-                            <xsl:value-of select="bfn:upperCase(vra:name)"/>
-                        </td>
-                        <td property="vra:role" contenteditable="true">
-                            <xsl:value-of select="bfn:upperCase(vra:role)"/>
-                        </td>
-                        <td property="vra:culture" contenteditable="true">
-                            <xsl:value-of select="vra:culture"/>
-                        </td>
-                        <td class="detail-cell" property="vra:dates[@type='life']" contenteditable="true">
-                            <xsl:apply-templates select="vra:dates[@type='life']"/>
-                        </td>
-                        <td property="vra:dates[@type='activity']" contenteditable="true">
-                            <xsl:apply-templates select="vra:dates[@type='activity']"/>
-                        </td>
-                        <td class="detail-cell" property="vra:dates[@type='other']" contenteditable="true">
-                            <xsl:apply-templates select="vra:dates[@type='other']"/>
-                        </td>
+        <xsl:param name="vraTableId"/>
+        <xsl:variable name="setTableId" select="if($vraTableId) then ($vraTableId) else ($setname)"/>
+        <div class="simple" id="{$setTableId}">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Role</th>
+                        <th>Culture</th>
+                        <th class="detail-cell">Period (life)</th>
+                        <th>Period (activity)</th>
+                        <th class="detail-cell">Period (other)</th>
                     </tr>
-                </xsl:for-each>
-            </tbody>
-        </table>
+                </thead>
+                <tbody resource="vra:agentSet">
+                    <xsl:for-each select="vra:agent">
+                        <tr property="vra:agent">
+                            <xsl:variable name="ref">
+                                <xsl:call-template name="getRef"/>
+                            </xsl:variable>
+                            <td property="vra:name" data-xf-ref="{$ref}" contenteditable="true">
+                                    <!-- todo: all to all sets -->
+                                <xsl:if test="vra:name/@pref='true'">
+                                    <xsl:attribute name="class">pref</xsl:attribute>
+                                </xsl:if>
+                                <xsl:value-of select="bfn:upperCase(vra:name)"/>
+                            </td>
+                            <td property="vra:role" contenteditable="true">
+                                <xsl:value-of select="bfn:upperCase(vra:role)"/>
+                            </td>
+                            <td property="vra:culture" contenteditable="true">
+                                <xsl:value-of select="vra:culture"/>
+                            </td>
+                            <td class="detail-cell" property="vra:dates[@type='life']" contenteditable="true">
+                                <xsl:apply-templates select="vra:dates[@type='life']"/>
+                            </td>
+                            <td property="vra:dates[@type='activity']" contenteditable="true">
+                                <xsl:apply-templates select="vra:dates[@type='activity']"/>
+                            </td>
+                            <td class="detail-cell" property="vra:dates[@type='other']" contenteditable="true">
+                                <xsl:apply-templates select="vra:dates[@type='other']"/>
+                            </td>
+                        </tr>
+                    </xsl:for-each>
+                </tbody>
+            </table>
+        </div>
     </xsl:template>
     <xsl:template name="getRef">
         <xsl:for-each select="ancestor-or-self::node()[@property]">

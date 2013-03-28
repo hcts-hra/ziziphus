@@ -1,342 +1,318 @@
-<?xml version="1.0" encoding="UTF-8"?><html xmlns:ev="http://www.w3.org/2001/xml-events"
-      xmlns:bf="http://betterform.sourceforge.net/xforms"
-      xmlns:vra="http://www.vraweb.org/vracore4.htm"
-      xmlns:bfc="http://betterform.sourceforge.net/xforms/controls"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-      xmlns:xf="http://www.w3.org/2002/xforms"
-      xmlns:xi="http://www.w3.org/2001/XInclude"
-      bf:transform="/apps/ziziphus/resources/xsl/ziziphus.xsl">
-   <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-      <link href="resources/css/edit-form.css" rel="stylesheet" type="text/css" />
-      <title>Ziziphus_Image_DB</title>
-   </head>
-   <body>
-      <div id="xforms">
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:bf="http://betterform.sourceforge.net/xforms" xmlns:vra="http://www.vraweb.org/vracore4.htm" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bfc="http://betterform.sourceforge.net/xforms/controls" xmlns:xf="http://www.w3.org/2002/xforms" bf:transform="/apps/ziziphus/resources/xsl/ziziphus.xsl">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link href="resources/css/edit-form.css" rel="stylesheet" type="text/css"/>
+        <title>Ziziphus_Image_DB</title>
+    </head>
+    <body>
+        <div id="xforms">
          <!-- ###################### MODEL ################################## -->
          <!-- ###################### MODEL ################################## -->
          <!-- ###################### MODEL ################################## -->
-         <div style="display:none">
-            <xf:model id="m-child-model" schema="resources/xsd/vra-types.xsd">
-               <xf:send ev:event="xforms-model-construct-done" submission="s-loadSet"></xf:send>
-               <xf:submission id="s-loadSet"
-                              resource="modules/loadData.xql?id={bf:instanceOfModel('m-main','i-control-center')/uuid}"
-                              method="post"
-                              replace="instance"
-                              validate="false">
-                  <xf:header>
-                     <xf:name>username</xf:name>
-                     <xf:value>admin</xf:value>
-                  </xf:header>
-                  <xf:header>
-                     <xf:name>password</xf:name>
-                     <xf:value></xf:value>
-                  </xf:header>
-                  <xf:header>
-                     <xf:name>realm</xf:name>
-                     <xf:value>exist</xf:value>
-                  </xf:header>
-                  <xf:message ev:event="xforms-submit-error">Loading of Set failed</xf:message>
-               </xf:submission>
-               <xf:submission id="s-update"
-                              resource="modules/updateRecord.xql?id={bf:instanceOfModel('m-main','i-control-center')/uuid}&amp;&amp;set=materialSet"
-                              method="post"
-                              replace="none"
-                              validate="false">
-                  <xf:header>
-                     <xf:name>username</xf:name>
-                     <xf:value>admin</xf:value>
-                  </xf:header>
-                  <xf:header>
-                     <xf:name>password</xf:name>
-                     <xf:value></xf:value>
-                  </xf:header>
-                  <xf:header>
-                     <xf:name>realm</xf:name>
-                     <xf:value>exist</xf:value>
-                  </xf:header>
-                  <xf:message ev:event="xforms-submit-error">Sorry, updating of this record failed</xf:message>
-                  <xf:action ev:event="xforms-submit-done">
-                     <xf:message level="ephemeral">Data have been stored.</xf:message>
-                     <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/changed" value="'true'"></xf:setvalue>
-                     <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/setname"
-                                  value="'materialSet'"></xf:setvalue>
-                  </xf:action>
-               </xf:submission>
-               <xf:instance id="i-materialSet">
-                  <materialSet xmlns="http://www.vraweb.org/vracore4.htm">
-                     <display></display>
-                     <notes></notes>
-                     <material pref="false" type=""></material>
-                  </materialSet>
-               </xf:instance>
-               <xf:bind nodeset="instance()">
-                  <xf:bind nodeset="vra:material">
-                     <xf:bind nodeset="@pref" type="boolean"></xf:bind>
-                     <xf:bind nodeset="@type" type="vra:materialTypeType"></xf:bind>
-                  </xf:bind>
-               </xf:bind>
-               <xf:instance id="i-templates">
-                  <templates xmlns="http://www.vraweb.org/vracore4.htm">
-                     <material pref="false" type=""></material>
-                     <notes></notes>
-                     <display></display>
-                  </templates>
-               </xf:instance>
-               <xi:include href="bricks/vraAttributesInstance.xml"></xi:include>
-               <xf:instance id="i-util">
-                  <data xmlns="">
-                     <currentElement></currentElement>
-                  </data>
-               </xf:instance>
-            </xf:model>
-         </div>
+            <div style="display:none">
+                <xf:model id="m-child-model" schema="resources/xsd/vra-types.xsd">
+                    <xf:send ev:event="xforms-model-construct-done" submission="s-loadSet"/>
+                    <xf:submission id="s-loadSet" resource="modules/loadData.xql?id={bf:instanceOfModel('m-main','i-control-center')/uuid}" method="post" replace="instance" validate="false">
+                        <xf:header>
+                            <xf:name>username</xf:name>
+                            <xf:value>admin</xf:value>
+                        </xf:header>
+                        <xf:header>
+                            <xf:name>password</xf:name>
+                            <xf:value/>
+                        </xf:header>
+                        <xf:header>
+                            <xf:name>realm</xf:name>
+                            <xf:value>exist</xf:value>
+                        </xf:header>
+                        <xf:message ev:event="xforms-submit-error">Loading of Set failed</xf:message>
+                    </xf:submission>
+                    <xf:submission id="s-update" resource="modules/updateRecord.xql?id={bf:instanceOfModel('m-main','i-control-center')/uuid}&amp;&amp;set=materialSet" method="post" replace="none" validate="false">
+                        <xf:header>
+                            <xf:name>username</xf:name>
+                            <xf:value>admin</xf:value>
+                        </xf:header>
+                        <xf:header>
+                            <xf:name>password</xf:name>
+                            <xf:value/>
+                        </xf:header>
+                        <xf:header>
+                            <xf:name>realm</xf:name>
+                            <xf:value>exist</xf:value>
+                        </xf:header>
+                        <xf:message ev:event="xforms-submit-error">Sorry, updating of this record failed</xf:message>
+                        <xf:action ev:event="xforms-submit-done">
+                            <xf:message level="ephemeral">Data have been stored.</xf:message>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/changed" value="'true'"/>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/setname" value="'materialSet'"/>
+                        </xf:action>
+                    </xf:submission>
+                    <xf:instance id="i-materialSet">
+                        <materialSet xmlns="http://www.vraweb.org/vracore4.htm">
+                            <display/>
+                            <notes/>
+                            <material pref="false" type=""/>
+                        </materialSet>
+                    </xf:instance>
+                    <xf:bind nodeset="instance()">
+                        <xf:bind nodeset="vra:material">
+                            <xf:bind nodeset="@pref" type="boolean"/>
+                            <xf:bind nodeset="@type" type="vra:materialTypeType"/>
+                        </xf:bind>
+                    </xf:bind>
+                    <xf:instance id="i-templates">
+                        <templates xmlns="http://www.vraweb.org/vracore4.htm">
+                            <material pref="false" type=""/>
+                            <notes/>
+                            <display/>
+                        </templates>
+                    </xf:instance>
+                    <xi:include href="bricks/vraAttributesInstance.xml"/>
+                    <xf:instance id="i-util">
+                        <data xmlns="">
+                            <currentElement/>
+                        </data>
+                    </xf:instance>
+                </xf:model>
+            </div>
          <!-- ####################################### VISIBLE UI ####################################### -->
          <!-- ####################################### VISIBLE UI ####################################### -->
          <!-- ####################################### VISIBLE UI ####################################### -->
-         <div class="toolbar">
-            <xf:trigger class="t-plus" model="m-child-model" id="d3e1-add" title="Add Material">
-               <xf:label>+</xf:label>
-               <xf:insert model="m-child-model" nodeset="instance()/vra:material[last()]"
-                          origin="instance('i-templates')/vra:material"></xf:insert>
-            </xf:trigger>
-            <xf:trigger id="d3e1-save">
-               <xf:label>Save changes</xf:label>
-               <xf:send submission="s-update"></xf:send>
-            </xf:trigger>
-            <xf:trigger id="closeEditor" class="-close">
-               <xf:label>×</xf:label>
-               <xf:dispatch name="unload-subform" targetid="controlCenter"></xf:dispatch>
-            </xf:trigger>
-         </div>
-         <xf:group id="outerGroup" appearance="minimal" model="m-child-model"
-                   ref="instance('i-materialSet')">
-            <xf:label></xf:label>
-            <xf:action ev:event="reset-dialog"></xf:action>
-            <xf:action ev:event="init-dialog">
-               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@dataDate"></xf:setvalue>
-               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@extent"></xf:setvalue>
-               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@href"></xf:setvalue>
-               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@refid"></xf:setvalue>
-               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@rules"></xf:setvalue>
-               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@source"></xf:setvalue>
-               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@vocab"></xf:setvalue>
-               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@lang"></xf:setvalue>
-               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@transliteration"></xf:setvalue>
-               <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@script"></xf:setvalue>
-               <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]"
-                          if="'.'=instance('i-util')/currentElement"
-                          origin="instance('i-materialSet')/vra:material[index('r-vraMaterial')]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:insert>
-               <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]"
-                          if="not('.'=instance('i-util')/currentElement)"
-                          origin="instance('i-materialSet')/vra:material[index('r-vraMaterial')]/*[local-name()=instance('i-util')/currentElement]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:insert>
-            </xf:action>
-            <table>
-               <tbody model="m-child-model" id="r-vraMaterial" xf:repeat-nodeset="vra:material">
-                  <tr>
-                     <td colspan="3" class="globalAttrs">
-                        <xf:group class="vraAttributes" appearance="minimal" ref=".">
-                           <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
-                        </xf:group>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td class="prefCol">
-                        <xf:input ref="@pref" id="d3e552-pref">
-                           <xf:label>pref</xf:label>
-                           <xf:hint>preferred</xf:hint>
-                        </xf:input>
-                     </td>
-                     <td class="contentCol">
-                        <xf:group appearance="minimal">
-                           <xf:input id="d3e552-Material" ref="."></xf:input>
-                           <xf:select1 id="d6e99-Type" ref="@type">
-                              <xf:label>Type</xf:label>
-                              <xf:item>
-                                 <xf:label>Medium</xf:label>
-                                 <xf:value>medium</xf:value>
-                              </xf:item>
-                              <xf:item>
-                                 <xf:label>Support</xf:label>
-                                 <xf:value>support</xf:value>
-                              </xf:item>
-                              <xf:item>
-                                 <xf:label>Other</xf:label>
-                                 <xf:value>other</xf:value>
-                              </xf:item>
-                           </xf:select1>
-                        </xf:group>
-                     </td>
-                     <td class="triggerCol">
-                        <xf:trigger>
-                           <xf:label>x</xf:label>
-                           <xf:delete nodeset="instance('i-materialSet')/vra:material[index('r-vraMaterial')]"></xf:delete>
+            <div class="toolbar">
+                <xf:trigger class="t-plus" model="m-child-model" id="d3e1-add" title="Add Material">
+                    <xf:label>+</xf:label>
+                    <xf:insert model="m-child-model" nodeset="instance()/vra:material[last()]" origin="instance('i-templates')/vra:material"/>
+                </xf:trigger>
+                <xf:trigger id="d3e1-save">
+                    <xf:label>Save changes</xf:label>
+                    <xf:send submission="s-update"/>
+                </xf:trigger>
+                <xf:trigger id="closeEditor" class="-close">
+                    <xf:label>×</xf:label>
+                    <xf:dispatch name="unload-subform" targetid="controlCenter"/>
+                </xf:trigger>
+            </div>
+            <xf:group id="outerGroup" appearance="minimal" model="m-child-model" ref="instance('i-materialSet')">
+                <xf:label/>
+                <xf:action ev:event="reset-dialog"/>
+                <xf:action ev:event="init-dialog">
+                    <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@dataDate"/>
+                    <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@extent"/>
+                    <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@href"/>
+                    <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@refid"/>
+                    <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@rules"/>
+                    <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@source"/>
+                    <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@vocab"/>
+                    <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@lang"/>
+                    <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@transliteration"/>
+                    <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@script"/>
+                    <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]" if="'.'=instance('i-util')/currentElement" origin="instance('i-materialSet')/vra:material[index('r-vraMaterial')]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"/>
+                    <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]" if="not('.'=instance('i-util')/currentElement)" origin="instance('i-materialSet')/vra:material[index('r-vraMaterial')]/*[local-name()=instance('i-util')/currentElement]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"/>
+                </xf:action>
+                <table>
+                    <tbody model="m-child-model" id="r-vraMaterial" xf:repeat-nodeset="vra:material">
+                        <tr>
+                            <td colspan="3" class="globalAttrs">
+                                <xf:group class="vraAttributes" appearance="minimal" ref=".">
+                                    <xi:include href="bricks/vraAttributesViewUI.xml"/>
+                                </xf:group>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="prefCol">
+                                <xf:input ref="@pref" id="d3e552-pref">
+                                    <xf:label>pref</xf:label>
+                                    <xf:hint>preferred</xf:hint>
+                                </xf:input>
+                            </td>
+                            <td class="contentCol">
+                                <xf:group appearance="minimal">
+                                    <xf:input id="d3e552-Material" ref="."/>
+                                    <xf:select1 id="d6e99-Type" ref="@type">
+                                        <xf:label>Type</xf:label>
+                                        <xf:item>
+                                            <xf:label>Medium</xf:label>
+                                            <xf:value>medium</xf:value>
+                                        </xf:item>
+                                        <xf:item>
+                                            <xf:label>Support</xf:label>
+                                            <xf:value>support</xf:value>
+                                        </xf:item>
+                                        <xf:item>
+                                            <xf:label>Other</xf:label>
+                                            <xf:value>other</xf:value>
+                                        </xf:item>
+                                    </xf:select1>
+                                </xf:group>
+                            </td>
+                            <td class="triggerCol">
+                                <xf:trigger>
+                                    <xf:label>x</xf:label>
+                                    <xf:delete nodeset="instance('i-materialSet')/vra:material[index('r-vraMaterial')]"/>
+                                </xf:trigger>
+                                <xf:trigger class="vraAttributeTrigger">
+                                    <xf:label>...</xf:label>
+                                    <xf:action>
+                                        <xf:setvalue ref="instance('i-util')/currentElement">.</xf:setvalue>
+                                        <xf:dispatch name="init-dialog" targetid="outerGroup"/>
+                                    </xf:action>
+                                    <bfc:show dialog="attrDialog" ev:event="DOMActivate"/>
+                                </xf:trigger>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            <!-- ############################## NOTES ####################################### -->
+            <!-- ############################## NOTES ####################################### -->
+            <!-- ############################## NOTES ####################################### -->
+                <xf:switch>
+                    <xf:case id="c-hidden">
+                        <xf:trigger class="notesDisplayTrigger">
+                            <xf:label>Show Notes</xf:label>
+                            <xf:toggle case="c-showNotes"/>
                         </xf:trigger>
-                        <xf:trigger class="vraAttributeTrigger">
-                           <xf:label>...</xf:label>
-                           <xf:action>
-                              <xf:setvalue ref="instance('i-util')/currentElement">.</xf:setvalue>
-                              <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
-                           </xf:action>
-                           <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
+                    </xf:case>
+                    <xf:case id="c-showNotes">
+                        <xf:trigger class="notesDisplayTrigger">
+                            <xf:label>Hide Notes</xf:label>
+                            <xf:toggle case="c-hidden"/>
                         </xf:trigger>
-                     </td>
-                  </tr>
-               </tbody>
-            </table>
-            <!-- ############################## NOTES ####################################### -->
-            <!-- ############################## NOTES ####################################### -->
-            <!-- ############################## NOTES ####################################### -->
-            <xf:switch>
-               <xf:case id="c-hidden">
-                  <xf:trigger class="notesDisplayTrigger">
-                     <xf:label>Show Notes</xf:label>
-                     <xf:toggle case="c-showNotes"></xf:toggle>
-                  </xf:trigger>
-               </xf:case>
-               <xf:case id="c-showNotes">
-                  <xf:trigger class="notesDisplayTrigger">
-                     <xf:label>Hide Notes</xf:label>
-                     <xf:toggle case="c-hidden"></xf:toggle>
-                  </xf:trigger>
-                  <xf:textarea id="notes" ref="vra:notes" type="nodeValue" model="m-child-model">
-                     <xf:label>Notes</xf:label>
-                  </xf:textarea>
-               </xf:case>
-            </xf:switch>
-         </xf:group>
-         <bfc:dialog id="attrDialog">
-            <xf:label>Attributes</xf:label>
-            <xf:group appearance="minimal" ref="instance('i-vraAttributes')/vra:vraElement">
-               <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:input ref="@dataDate" id="first">
-                     <xf:label>dataDate</xf:label>
-                  </xf:input>
-                  <xf:trigger class="deleteAttribute input-append -btn">
-                     <xf:label>clear</xf:label>
-                     <xf:setvalue ref="@dataDate"></xf:setvalue>
-                  </xf:trigger>
-               </xf:group>
-               <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:input ref="@extent" id="d3e1-extent">
-                     <xf:label>extent</xf:label>
-                  </xf:input>
-                  <xf:trigger class="deleteAttribute input-append -btn">
-                     <xf:label>clear</xf:label>
-                     <xf:setvalue ref="@extent"></xf:setvalue>
-                  </xf:trigger>
-               </xf:group>
-               <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:input ref="@href" id="d3e1-href">
-                     <xf:label>href</xf:label>
-                  </xf:input>
-                  <xf:trigger class="deleteAttribute input-append -btn">
-                     <xf:label>clear</xf:label>
-                     <xf:setvalue ref="@href"></xf:setvalue>
-                  </xf:trigger>
-               </xf:group>
-               <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:input ref="@refid" id="d3e1-refid">
-                     <xf:label>refid</xf:label>
-                  </xf:input>
-                  <xf:trigger class="deleteAttribute input-append -btn">
-                     <xf:label>clear</xf:label>
-                     <xf:setvalue ref="@refid"></xf:setvalue>
-                  </xf:trigger>
-               </xf:group>
-               <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:input ref="@rules" id="d3e1-rules">
-                     <xf:label>rules</xf:label>
-                  </xf:input>
-                  <xf:trigger class="deleteAttribute input-append -btn">
-                     <xf:label>clear</xf:label>
-                     <xf:setvalue ref="@rules"></xf:setvalue>
-                  </xf:trigger>
-               </xf:group>
-               <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:input ref="@source" id="d3e1-source">
-                     <xf:label>source</xf:label>
-                  </xf:input>
-                  <xf:trigger class="deleteAttribute input-append -btn">
-                     <xf:label>clear</xf:label>
-                     <xf:setvalue ref="@source"></xf:setvalue>
-                  </xf:trigger>
-               </xf:group>
-               <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:select1 ref="@vocab" id="d3e1-vocab">
-                     <xf:label>vocab</xf:label>
-                     <xf:item>
-                        <xf:label>local</xf:label>
-                        <xf:value>local</xf:value>
-                     </xf:item>
-                     <xf:item>
-                        <xf:label>ULAN</xf:label>
-                        <xf:value>ULAN</xf:value>
-                     </xf:item>
-                     <xf:item>
-                        <xf:label>GND</xf:label>
-                        <xf:value>GND</xf:value>
-                     </xf:item>
-                     <xf:item>
-                        <xf:label>(AKL)</xf:label>
-                        <xf:value>(AKL)</xf:value>
-                     </xf:item>
-                  </xf:select1>
-                  <xf:trigger class="deleteAttribute input-append -btn">
-                     <xf:label>clear</xf:label>
-                     <xf:setvalue ref="@vocab"></xf:setvalue>
-                  </xf:trigger>
-               </xf:group>
-               <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:input ref="@lang" id="d3e1-lang">
-                     <xf:label>Language</xf:label>
-                  </xf:input>
-                  <xf:trigger class="deleteAttribute input-append -btn">
-                     <xf:label>clear</xf:label>
-                     <xf:setvalue ref="@lang"></xf:setvalue>
-                  </xf:trigger>
-               </xf:group>
-               <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:input ref="@transliteration" id="d3e1-transliteration">
-                     <xf:label>Transliteration</xf:label>
-                  </xf:input>
-                  <xf:trigger class="deleteAttribute input-append -btn">
-                     <xf:label>clear</xf:label>
-                     <xf:setvalue ref="@transliteration"></xf:setvalue>
-                  </xf:trigger>
-               </xf:group>
-               <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:input ref="@script" id="d3e1-script">
-                     <xf:label>Script</xf:label>
-                  </xf:input>
-                  <xf:trigger class="deleteAttribute input-append -btn">
-                     <xf:label>clear</xf:label>
-                     <xf:setvalue ref="@script"></xf:setvalue>
-                  </xf:trigger>
-               </xf:group>
-               <xf:group class="buttonBar">
-                  <xf:trigger class="-btn">
-                     <xf:label>Ok</xf:label>
-                     <xf:action if="'.'=instance('i-util')/currentElement">
-                        <xf:delete nodeset="instance('i-materialSet')/vra:material[index('r-vraMaterial')]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:delete>
-                        <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]"
-                                   context="instance('i-materialSet')/vra:material[index('r-vraMaterial')]"></xf:insert>
-                     </xf:action>
-                     <xf:action if="not('.'=instance('i-util')/currentElement)">
-                        <xf:delete nodeset="instance('i-materialSet')/vra:material[index('r-vraMaterial')]/*[local-name()=instance('i-util')/currentElement]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:delete>
-                        <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]"
-                                   context="instance('i-materialSet')/vra:material[index('r-vraMaterial')]/*[local-name()=instance('i-util')/currentElement]"></xf:insert>
-                     </xf:action>
-                     <bfc:hide dialog="attrDialog"></bfc:hide>
-                  </xf:trigger>
-                  <xf:trigger appearance="minimal">
-                     <xf:label>Cancel</xf:label>
-                     <bfc:hide dialog="attrDialog"></bfc:hide>
-                  </xf:trigger>
-               </xf:group>
+                        <xf:textarea id="notes" ref="vra:notes" type="nodeValue" model="m-child-model">
+                            <xf:label>Notes</xf:label>
+                        </xf:textarea>
+                    </xf:case>
+                </xf:switch>
             </xf:group>
-         </bfc:dialog>
-      </div>
-   </body>
+            <bfc:dialog id="attrDialog">
+                <xf:label>Attributes</xf:label>
+                <xf:group appearance="minimal" ref="instance('i-vraAttributes')/vra:vraElement">
+                    <xf:group appearance="minimal" class="attrDialogGroup">
+                        <xf:input ref="@dataDate" id="first">
+                            <xf:label>dataDate</xf:label>
+                        </xf:input>
+                        <xf:trigger class="deleteAttribute input-append -btn">
+                            <xf:label>clear</xf:label>
+                            <xf:setvalue ref="@dataDate"/>
+                        </xf:trigger>
+                    </xf:group>
+                    <xf:group appearance="minimal" class="attrDialogGroup">
+                        <xf:input ref="@extent" id="d3e1-extent">
+                            <xf:label>extent</xf:label>
+                        </xf:input>
+                        <xf:trigger class="deleteAttribute input-append -btn">
+                            <xf:label>clear</xf:label>
+                            <xf:setvalue ref="@extent"/>
+                        </xf:trigger>
+                    </xf:group>
+                    <xf:group appearance="minimal" class="attrDialogGroup">
+                        <xf:input ref="@href" id="d3e1-href">
+                            <xf:label>href</xf:label>
+                        </xf:input>
+                        <xf:trigger class="deleteAttribute input-append -btn">
+                            <xf:label>clear</xf:label>
+                            <xf:setvalue ref="@href"/>
+                        </xf:trigger>
+                    </xf:group>
+                    <xf:group appearance="minimal" class="attrDialogGroup">
+                        <xf:input ref="@refid" id="d3e1-refid">
+                            <xf:label>refid</xf:label>
+                        </xf:input>
+                        <xf:trigger class="deleteAttribute input-append -btn">
+                            <xf:label>clear</xf:label>
+                            <xf:setvalue ref="@refid"/>
+                        </xf:trigger>
+                    </xf:group>
+                    <xf:group appearance="minimal" class="attrDialogGroup">
+                        <xf:input ref="@rules" id="d3e1-rules">
+                            <xf:label>rules</xf:label>
+                        </xf:input>
+                        <xf:trigger class="deleteAttribute input-append -btn">
+                            <xf:label>clear</xf:label>
+                            <xf:setvalue ref="@rules"/>
+                        </xf:trigger>
+                    </xf:group>
+                    <xf:group appearance="minimal" class="attrDialogGroup">
+                        <xf:input ref="@source" id="d3e1-source">
+                            <xf:label>source</xf:label>
+                        </xf:input>
+                        <xf:trigger class="deleteAttribute input-append -btn">
+                            <xf:label>clear</xf:label>
+                            <xf:setvalue ref="@source"/>
+                        </xf:trigger>
+                    </xf:group>
+                    <xf:group appearance="minimal" class="attrDialogGroup">
+                        <xf:select1 ref="@vocab" id="d3e1-vocab">
+                            <xf:label>vocab</xf:label>
+                            <xf:item>
+                                <xf:label>local</xf:label>
+                                <xf:value>local</xf:value>
+                            </xf:item>
+                            <xf:item>
+                                <xf:label>ULAN</xf:label>
+                                <xf:value>ULAN</xf:value>
+                            </xf:item>
+                            <xf:item>
+                                <xf:label>GND</xf:label>
+                                <xf:value>GND</xf:value>
+                            </xf:item>
+                            <xf:item>
+                                <xf:label>(AKL)</xf:label>
+                                <xf:value>(AKL)</xf:value>
+                            </xf:item>
+                        </xf:select1>
+                        <xf:trigger class="deleteAttribute input-append -btn">
+                            <xf:label>clear</xf:label>
+                            <xf:setvalue ref="@vocab"/>
+                        </xf:trigger>
+                    </xf:group>
+                    <xf:group appearance="minimal" class="attrDialogGroup">
+                        <xf:input ref="@lang" id="d3e1-lang">
+                            <xf:label>Language</xf:label>
+                        </xf:input>
+                        <xf:trigger class="deleteAttribute input-append -btn">
+                            <xf:label>clear</xf:label>
+                            <xf:setvalue ref="@lang"/>
+                        </xf:trigger>
+                    </xf:group>
+                    <xf:group appearance="minimal" class="attrDialogGroup">
+                        <xf:input ref="@transliteration" id="d3e1-transliteration">
+                            <xf:label>Transliteration</xf:label>
+                        </xf:input>
+                        <xf:trigger class="deleteAttribute input-append -btn">
+                            <xf:label>clear</xf:label>
+                            <xf:setvalue ref="@transliteration"/>
+                        </xf:trigger>
+                    </xf:group>
+                    <xf:group appearance="minimal" class="attrDialogGroup">
+                        <xf:input ref="@script" id="d3e1-script">
+                            <xf:label>Script</xf:label>
+                        </xf:input>
+                        <xf:trigger class="deleteAttribute input-append -btn">
+                            <xf:label>clear</xf:label>
+                            <xf:setvalue ref="@script"/>
+                        </xf:trigger>
+                    </xf:group>
+                    <xf:group class="buttonBar">
+                        <xf:trigger class="-btn">
+                            <xf:label>Ok</xf:label>
+                            <xf:action if="'.'=instance('i-util')/currentElement">
+                                <xf:delete nodeset="instance('i-materialSet')/vra:material[index('r-vraMaterial')]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"/>
+                                <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]" context="instance('i-materialSet')/vra:material[index('r-vraMaterial')]"/>
+                            </xf:action>
+                            <xf:action if="not('.'=instance('i-util')/currentElement)">
+                                <xf:delete nodeset="instance('i-materialSet')/vra:material[index('r-vraMaterial')]/*[local-name()=instance('i-util')/currentElement]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"/>
+                                <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]" context="instance('i-materialSet')/vra:material[index('r-vraMaterial')]/*[local-name()=instance('i-util')/currentElement]"/>
+                            </xf:action>
+                            <bfc:hide dialog="attrDialog"/>
+                        </xf:trigger>
+                        <xf:trigger appearance="minimal">
+                            <xf:label>Cancel</xf:label>
+                            <bfc:hide dialog="attrDialog"/>
+                        </xf:trigger>
+                    </xf:group>
+                </xf:group>
+            </bfc:dialog>
+        </div>
+    </body>
 </html>
