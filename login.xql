@@ -1,44 +1,107 @@
 xquery version "3.0";
-declare namespace functx = "http://www.functx.com";
+
 import module namespace request = "http://exist-db.org/xquery/request";
+import module namespace config="http://exist-db.org/xquery/apps/config" at "modules/config.xqm";
+
+declare option exist:serialize "method=xhtml media-type=text/html";
+
 
 let $user := request:get-parameter("app.user",'guest')
 let $path := request:get-parameter('path', '')
 let $controller := request:get-parameter('controller', '')
 let $prefix := request:get-parameter('prefix', '')
 let $id := request:get-parameter('id', '')
-let $origin :=  concat('/exist', $prefix, $controller, $path)
+let $rootContext := '/exist'
+let $appPath := concat($rootContext, $prefix, $controller)
+
+let $origin :=  concat($appPath, $path)
 let $requestURL := concat($origin, if($id) then (concat('?id=',$id)) else ())
 return
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:exist="http://exist.sourceforge.net/NS/exist" xmlns:xf="http://www.w3.org/2002/xforms">
+<html>
     <head>
-        <title>Ziziphus Image Database</title>
-        <link rel="stylesheet" href="{request:get-context-path()}/apps/configwizard/resources/css/psi.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+        <title>Ziziphus Image DB</title>
+        <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="resources/css/layout.css"/>
+        <link rel="stylesheet" type="text/css" href="resources/css/record.css"/>
+        <link rel="stylesheet" type="text/css" href="resources/script/mingos-uwindow/themes/ziziphus/style.css"/>
+        <link rel="stylesheet" type="text/css" href="resources/script/layout-default-latest.css"/>
+        
+        <style type="text/css">
+            .login input {{
+                height: 30px;
+            }}
+        </style>
     </head>
-    <body>
-    <div class="container container_12" style="background-color:#fff;padding:15px 1em 60px 1em">
-        <div class="grid_12">
-            <table>
-                <tr>
-                    <td>
-                        <!-- a href="index.xql" >
-                            <img style="float:left;padding-right:15px"
-                                    src="{request:get-context-path()}/apps" width="153" height="55" title=""/></a-->
-                    </td>
-                    <td>
-                        <h1>Login</h1>
-                    </td>
-                </tr>
-            </table>
+    <body class="login">
+        <div class="ui-layout-north" style="overflow:hidden;">
+            <div class="row-fluid">
+                <div class="span7">
+                    <a href="index.xql" >
+                        <img style="border:0;height:80px;width: 500px;" src="resources/images/logo.jpg" height="10em" title="Ziziphus Home"/>                            
+                    </a>
+                    <!-- h1>Ziziphus Image Database</h1-->
+                </div>
+                <div class="span5">
+                    <form method="POST" class="form-search" action="{$requestURL}">
+                        <input type="hidden" name="origin" value="{$requestURL}" autocomplete="off"/>
+                        <input type="text" name="user"  required="required" placeholder="username"/>
+                        <input type="password" name="password" placeholder="password"/>
+                        <button type="submit" value="Login" class="btn btn-success">Login</button>
+                    </form>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="clear margintop"/>
-    <div class="container_12 container">
-        <div class="grid_10" style="padding-left:120px;">
-            <p>This resource is protected. Only registered users are allowed to login. To register an account please contact the <a href="mailto:ziziphus@betterform.de">database admin</a>.</p>
-            <form method="POST" class="login" action="{$requestURL}">
-                <input type="hidden" name="origin" value="{$requestURL}" autocomplete="off"/>
-                <div class="debug" style="display:none;">
+        <div class="ui-layout-south">Copyright</div>
+        <div class="ui-layout-center">
+            <div class="row-fluid">
+                <div class="span6">
+                    <p class="lead">The Ziziphus Image Database .... some text about Ziziphus</p>
+                    <ul>
+                        <li>vra support</li>
+                        <li>tamboti</li>
+                        <li>heidicon</li>
+                    </ul>
+                </div>
+                <div class="span6">
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <legend>Sign up for free</legend>
+                            <div class="control-group">
+                                <input type="text" name="username" required="required" placeholder="Username"/>
+                            </div>
+                            <div class="control-group">
+                                <input type="text" name="email" required="required" placeholder="Email"/>
+                            </div>
+                            <div class="control-group">
+                                <input type="text" name="email" required="required" placeholder="Re-enter Email"/>
+                            </div>
+                            <div class="control-group">
+                                <input type="password" name="password" required="required" placeholder="Password"/>                            
+                            </div>
+                            <div class="control-group">
+                                <button type="submit" value="Login" class="btn btn-primary">Register</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="span12">        
+                    <h3>Debug Information:</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="span6">        
+                    <p>Tested browsers:</p>
+                    <ul>
+                        <li><b><a href="http://www.mozilla.org/firefox" style="color:darkred">Firefox</a> (Version 18++)</b></li>
+                    </ul>
+                    <p>and resolutions:</p>
+                    <ul>
+                        <li><b style="color:darkred;"> 1440 x 900</b></li>
+                    </ul>
+                </div>
+                <div class="span6">        
                     <table>
                         <tr>
                             <td>User</td>
@@ -66,35 +129,41 @@ return
                         </tr>
                     </table>
                 </div>
-                <table class="login" cellpadding="5">
-                    <tbody>
-                        <tr>
-                            <td class="text" align="left">Username:</td>
-                            <td>
-                                <input type="text" name="user" size="20" required="required" placeholder="username"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text" align="left">Password:</td>
-                            <td>
-                                <input type="password" name="password" size="20" placeholder="password"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" align="left">
-                                <input type="submit" value="Login"/>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </form>
-        </div>
-        <div style="width:90%;margin:20px;padding:10px;background:lightyellow;border:1px solid darkred;">
-            <div style="font-size:24pt;font-weight:bold;padding-bottom:20px;">Please note!</div>
-            <div  style="font-size:14pt;">Currently Ziziphus is optimized for<b style="color:darkred;">
-                <a href="http://www.mozilla.org/firefox" style="color:darkred">Firefox</a> (Version 18 or higher)</b>
-                    and a display resolution of at least <b style="color:darkred;"> 1280 x 1024 pixel</b>.</div>
-        </div>
-    </div>
+            </div>        
+        </div>        
+        <script type="text/javascript" src="resources/script/jquery-1.8.0.min.js"/>
+        <script type="text/javascript" src="resources/script/jquery-ui-1-1.10.0.custom/js/jquery-ui-1.10.0.custom.min.js"/>
+        <script type="text/javascript" src="resources/script/mingos-uwindow/jWindow.js"/>
+        <script type="text/javascript" src="resources/script/jquery.layout-latest.min.js"/>
+        <script type="text/javascript">
+            $(document).ready(function () {{
+                var layout = $('body').layout({{
+                    defaults:{{
+                        applyDefaultStyles:true
+                    }},
+                    north:{{
+                        resizable:false,
+                        closable:false,
+                        spacing_open:0
+                    }},
+                    west:{{
+                        resizable:true,
+                        closable:true,
+                        size:420
+                    }},
+                    east:{{
+                        resizable:true,
+                        closable:true,
+                        size:420
+                    }},
+                    south:{{
+                        resizable:false,
+                        closable:true,
+                        spacing_open:0,
+                        spacing_closed:6
+                    }}
+                }});
+            }});
+        </script>    
 </body>
 </html>
