@@ -15,7 +15,7 @@
     <p:xslt name="inlineXsdExtension">
         <p:input port="source"/>
         <p:input port="stylesheet">
-            <p:document href="xsl/01_XSD_Inline_Extension.xsl"/>
+            <p:document href="xsl/inlineXSD/01_XSD_Inline_Extension.xsl"/>
         </p:input>
         <p:with-param name="debug" select="'false'"/>
     </p:xslt>
@@ -24,7 +24,7 @@
     <p:xslt name="inlineXSD">
         <p:input port="source"/>
         <p:input port="stylesheet">
-            <p:document href="xsl/02_InlineXSD.xsl"/>
+            <p:document href="xsl/inlineXSD/02_InlineXSD.xsl"/>
         </p:input>
         <p:with-param name="debug" select="'false'"/>
     </p:xslt>
@@ -32,20 +32,21 @@
     <p:xslt name="applySchemaRedifinition">
         <p:input port="source"/>
         <p:input port="stylesheet">
-            <p:document href="xsl/03_Apply_Schema_Redefintion.xsl"/>
+            <p:document href="xsl/inlineXSD/03_Apply_Schema_Redefintion.xsl"/>
         </p:input>
         <p:with-param name="debug" select="'false'"/>
-        <p:with-param name="path2schemaRedefinition" select="'../xsd/vra-strict.xsd'"/>
+        <p:with-param name="path2schemaRedefinition" select="'../../xsd/vra-strict.xsd'"/>
     </p:xslt>
     
     <p:xslt name="splitSchemaTypes">
         <p:input port="source"/>
         <p:input port="stylesheet">
-            <p:document href="xsl/04_Split_Schema.xsl"/>
+            <p:document href="xsl/inlineXSD/04_Split_Schema.xsl"/>
         </p:input>
         <p:with-param name="debug" select="'true'"/>
-        <p:with-param name="path2schemaDir" select="'/Users/windauer/dev/eXist/apps/ziziphus/generator/build/xsd'"/>
-        <p:with-param name="vraTypeSchemaName" select="'vra-types.xsd'"/>
+        <p:with-param name="path2schemaDir" select="'../../xsd'"/>
+        <p:with-param name="vraTypeSchemaName" select="'vra-types.xsd'"/>        
+        
     </p:xslt>
     
     <p:store href="build/xsd/vra-bf.xsd" name="vraWithInlinedExtension"/>

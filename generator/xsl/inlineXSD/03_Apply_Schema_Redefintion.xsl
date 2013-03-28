@@ -42,7 +42,7 @@
         </xsl:choose>
     </xsl:variable>
 
-    <xsl:variable name="schemaRedefinition" select="doc($path2schemaRedefinition)"/>
+    <xsl:variable name="schemaRedefinition" select="document($path2schemaRedefinition)"/>
 
 <!--
     ########################################################################################
@@ -53,7 +53,9 @@
 
     <xd:doc>Template rule to verify the external schema with redifinitions of types is present and contains only simple types</xd:doc>
     <xsl:template match="xsd:schema">
+        <xsl:message>Start tarnsformation</xsl:message>
         <xsl:if test="not(exists($schemaRedefinition))">
+            <xsl:message>ups..</xsl:message>
             <xsl:message terminate="yes">XSD with schema redefinition rules is missing</xsl:message>
             <xsl:for-each select="$schemaRedefinition/xsd:schema/xsd:redefine/*">
                 <xsl:if test="local-name(.) ne 'simpleType'">
@@ -61,6 +63,7 @@
                 </xsl:if>
             </xsl:for-each>
         </xsl:if>
+        <xsl:message>copy stuff</xsl:message>
         <xsl:copy>
             <xsl:copy-of select="@*"/>
             <xsl:apply-templates select="*"/>
@@ -69,6 +72,7 @@
 
     <xd:doc>Template rule to merge redefined simple simpleTypes with simpleTypes of the original xsd</xd:doc>
     <xsl:template match="xsd:simpleType">
+        <xsl:message>xsd:simpleType</xsl:message>
         <xsl:variable name="simpleTypeName" select="@name"/>
         <xsl:variable name="externalDefinition" select="$schemaRedefinition/xsd:schema/xsd:redefine/xsd:simpleType[@name eq $simpleTypeName]">
         </xsl:variable>

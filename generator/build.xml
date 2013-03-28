@@ -15,6 +15,7 @@
     <property name="deploy.schema.dir" value="${basedir}/../resources/xsd"/>
     <property name="form.dir" value="${basedir}/../forms"/>
 
+    <property name="debug" value="false"/>
     <property name="xsl.dir" value="${basedir}/xsl"/>
     <property name="xsl.xsd.dir" value="${xsl.dir}/inlineXSD"/>
     
@@ -74,7 +75,7 @@
               in="${deploy.schema.dir}/${vra.bf.schema.name}"
               out="${target.dir}/01_VRA_Instance.xml">
             <classpath refid="transform.class.path"/>
-            <param name="debug" expression="false"/>
+            <param name="debug" expression="${debug}"/>
         </xslt>
 
         <echo>Create generator resource: single file containing all binding information</echo>
@@ -83,7 +84,7 @@
               in="${deploy.schema.dir}/${vra.bf.schema.name}"
               out="${target.dir}/02_XF_Binds.xml">
             <classpath refid="transform.class.path"/>
-            <param name="debug" expression="true"/>
+            <param name="debug" expression="${debug}"/>
         </xslt>
     </target>
 
@@ -228,7 +229,7 @@
                 out="${target.dir}/${subformName}.xhtml"
                 force="true">
             <classpath refid="transform.class.path"/>
-            <param name="debug" expression="true"/>
+            <param name="debug" expression="${debug}"/>
             <param name="path_2_vra_types_schema" expression="${vra.types.schema.path}"/>
             <param name="path_2_xf_instance" expression="${target.dir}/01_VRA_Instance.xml"/>
             <param name="vraSection" expression="${subformName}"/>
@@ -253,9 +254,57 @@
                 out="${target.dir}/views/${subformName}.xsl"
                 force="true">
             <classpath refid="transform.class.path"/>
-            <param name="debug" expression="true"/>
+            <param name="debug" expression="${debug}"/>
             <param name="vraSection" expression="${subformName}"/>
         </xslt>
+    </target>
+
+
+    <target name="inline-instance">
+        <echo>generate inline instance of xsd</echo>
+
+        <mkdir dir="${target.dir}/xsd"/>
+        <xslt style="${xsl.dir}/inlineXSD/01_XSD_Inline_Extension.xsl"
+              in="xsd/vra.xsd"
+              out="${target.dir}/xsd/01_Inline_Extension.xml"
+              force="true">
+            <classpath refid="transform.class.path"/>
+            <param name="debug" expression="${debug}"/>
+        </xslt>
+
+        <xslt style="${xsl.dir}/inlineXSD/02_InlineXSD.xsl"
+              in="${target.dir}/xsd/01_Inline_Extension.xml"
+              out="${target.dir}/xsd/02_InlineXSD.xml"
+              force="true">
+            <classpath refid="transform.class.path"/>
+            <param name="debug" expression="${debug}"/>
+            <param name="path_2_vra_types_schema" expression="${vra.types.schema.path}"/>
+            <param name="path_2_xf_instance" expression="${target.dir}/01_VRA_Instance.xml"/>
+            <param name="vraSection" expression="${subformName}"/>
+        </xslt>
+
+        <xslt style="${xsl.dir}/inlineXSD/03_Apply_Schema_Redefintion.xsl"
+              in="${target.dir}/xsd/02_InlineXSD.xml"
+              out="${target.dir}/xsd/03_Apply_Schema_Redefintion.xml"
+              force="true">
+            <classpath refid="transform.class.path"/>
+            <param name="debug" expression="${debug}"/>
+            <param name="path2schemaRedefinition" expression="${basedir}/xsd/vra-strict.xsd"/>
+        </xslt>
+
+        <xslt style="${xsl.dir}/inlineXSD/04_Split_Schema.xsl"
+              in="${target.dir}/xsd/03_Apply_Schema_Redefintion.xml"
+              out="${target.dir}/xsd/vra-bf.xsd"
+              force="true">
+            <classpath refid="transform.class.path"/>
+            <param name="debug" expression="${debug}"/>
+            <param name="vraTypeSchemaName" expression="vra-types.xsd"/>
+        </xslt>
+
+        <copy file="${target.dir}/xsd/vra-bf.xsd" tofile="${basedir}/../resources/xsd/vra-bf.xsd" overwrite="true"/>
+        <copy file="${target.dir}/xsd/vra-types.xsd" tofile="${basedir}/../resources/xsd/vra-types.xsd" overwrite="true"/>
+
+
     </target>
 
 </project>

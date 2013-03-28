@@ -16,10 +16,8 @@
     ########################################################################################
 -->
 
-    <xsl:param name="path2schemaDir" select="'TAKEN FROM EXTERNAL'" as="xsd:string"/>
     <xsl:param name="vraTypeSchemaName" select="'TAKEN FROM EXTERNAL'" as="xsd:string"/>
-    <xsl:param name="vraTypeSchemaRef" select="'TAKEN FROM EXTERNAL'" as="xsd:string"/>
-    <xsl:param name="debug" select="'false'" as="xsd:string"/>
+    <xsl:param name="debug" select="'true'" as="xsd:string"/>
 
     <!--
         ########################################################################################
@@ -45,16 +43,13 @@
         <xsl:copy>
             <xsl:copy-of select="@*"/>
             <xsl:element name="xsd:include">
-                <xsl:attribute name="schemaLocation" select="$vraTypeSchemaRef"/>
+                <xsl:attribute name="schemaLocation" select="$vraTypeSchemaName"/>
             </xsl:element>
             <xsl:copy-of select="xsd:annotation | xsd:import | xsd:element"/>
         </xsl:copy>
 
         <!-- create schema containing all simple and complexTypes -->
-        <xsl:result-document href="{$path2schemaDir}/{$vraTypeSchemaName}" encoding="UTF-8">
-            <xsl:if test="$debugEnabled">
-                <xsl:message>Writing xsd:types to external schema at <xsl:value-of select="concat($path2schemaDir,'/',$vraTypeSchemaName)"/></xsl:message>                
-            </xsl:if>
+        <xsl:result-document href="{$vraTypeSchemaName}" encoding="UTF-8">
             <xsl:copy>
                 <xsl:copy-of select="@*"/>
                 <xsl:copy-of select="xsd:annotation | xsd:import | xsd:complexType | xsd:simpleType"/>
