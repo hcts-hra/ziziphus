@@ -87,9 +87,14 @@
 
     <xsl:template match="xf:input | xf:select1">
         <xsl:variable name="path"><xsl:call-template name="buildPath"/></xsl:variable>
-        <div id="{@id}" data-bf-type="{local-name(.)}" data-bf-bind="{@ref}">
-            <transform:value-of select="{@ref}"/>
-        </div>
+            <transform:choose>
+                <transform:when test="string-length({@ref}) != 0">
+                    <div id="{@id}" data-bf-type="{local-name(.)}" data-bf-bind="{@ref}" contenteditable="true">
+                        <transform:value-of select="{@ref}"/>
+                    </div>
+                </transform:when>
+                <transform:otherwise><div class="detail" data-bf-type="{local-name(.)}" data-bf-bind="{@ref}"><a href="#">+</a></div></transform:otherwise>
+            </transform:choose>
     </xsl:template>
 
     <xsl:template name="buildPath">
