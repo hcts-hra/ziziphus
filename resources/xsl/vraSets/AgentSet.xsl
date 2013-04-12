@@ -1,65 +1,61 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:vra="http://www.vraweb.org/vracore4.htm" xmlns:xf="http://www.w3.org/2002/xforms" xmlns:bfn="http://www.betterform.de/XSL/Functions" version="2.0" xpath-default-namespace="http://www.w3.org/2002/xforms" exclude-result-prefixes="bfn">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml" xmlns:vra="http://www.vraweb.org/vracore4.htm" version="2.0">
     <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"/>
-    <xsl:template match="vra:dates" priority="40">
-        <xsl:if test="(vra:earliestDate) or (vra:latestDate)">
-            <xsl:value-of select="vra:earliestDate"/>
-            <xsl:text>-</xsl:text>
-            <xsl:value-of select="vra:latestDate"/>
-        </xsl:if>
-    </xsl:template>
-    <xsl:template match="vra:agentSet" priority="40">
-        <xsl:param name="vraTableId"/>
-        <xsl:variable name="setTableId" select="if($vraTableId) then ($vraTableId) else ($setname)"/>
-        <div class="simple" id="{$setTableId}">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Role</th>
-                        <th>Culture</th>
-                        <th class="detail-cell">Period (life)</th>
-                        <th>Period (activity)</th>
-                        <th class="detail-cell">Period (other)</th>
-                    </tr>
-                </thead>
-                <tbody resource="vra:agentSet">
-                    <xsl:for-each select="vra:agent">
-                        <tr property="vra:agent">
-                            <xsl:variable name="ref">
-                                <xsl:call-template name="getRef"/>
-                            </xsl:variable>
-                            <td property="vra:name" data-xf-ref="{$ref}" contenteditable="true">
-                                    <!-- todo: all to all sets -->
-                                <xsl:if test="vra:name/@pref='true'">
-                                    <xsl:attribute name="class">pref</xsl:attribute>
-                                </xsl:if>
-                                <xsl:value-of select="bfn:upperCase(vra:name)"/>
-                            </td>
-                            <td property="vra:role" contenteditable="true">
-                                <xsl:value-of select="bfn:upperCase(vra:role)"/>
-                            </td>
-                            <td property="vra:culture" contenteditable="true">
-                                <xsl:value-of select="vra:culture"/>
-                            </td>
-                            <td class="detail-cell" property="vra:dates[@type='life']" contenteditable="true">
-                                <xsl:apply-templates select="vra:dates[@type='life']"/>
-                            </td>
-                            <td property="vra:dates[@type='activity']" contenteditable="true">
-                                <xsl:apply-templates select="vra:dates[@type='activity']"/>
-                            </td>
-                            <td class="detail-cell" property="vra:dates[@type='other']" contenteditable="true">
-                                <xsl:apply-templates select="vra:dates[@type='other']"/>
-                            </td>
-                        </tr>
-                    </xsl:for-each>
-                </tbody>
-            </table>
-        </div>
-    </xsl:template>
-    <xsl:template name="getRef">
-        <xsl:for-each select="ancestor-or-self::node()[@property]">
-            <xsl:value-of select="@property"/>/
-        </xsl:for-each>
+    <xsl:template match="vra:agentSet">
+        <html>
+            <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+                <title>Ziziphus_Image_DB</title>
+            </head>
+            <body>
+                <table class="vraSetView table table-striped">
+                    <tbody>
+                        <xsl:for-each select="vra:agent">
+                            <tr>
+                                <td>
+                                    <div id="d3e512-Name" data-bf-type="input" data-bf-bind="vra:name">
+                                        <xsl:value-of select="vra:name"></xsl:value-of>
+                                    </div>
+                                    <div id="d6e36-Type" data-bf-type="select1" data-bf-bind="vra:name/@type">
+                                        <xsl:value-of select="vra:name/@type"></xsl:value-of>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div id="d3e504-Attribution" data-bf-type="input" data-bf-bind="vra:attribution">
+                                        <xsl:value-of select="vra:attribution"></xsl:value-of>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div id="d3e505-Culture" data-bf-type="input" data-bf-bind="vra:culture">
+                                        <xsl:value-of select="vra:culture"></xsl:value-of>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div id="d6e31-Type" data-bf-type="select1" data-bf-bind="vra:dates/@type">
+                                        <xsl:value-of select="vra:dates/@type"></xsl:value-of>
+                                    </div>
+                                    <div id="d3e508-EarliestDate" data-bf-type="input" data-bf-bind="vra:dates/vra:earliestDate">
+                                        <xsl:value-of select="vra:dates/vra:earliestDate"></xsl:value-of>
+                                    </div>
+                                    <div id="" data-bf-type="input" data-bf-bind="vra:dates/vra:earliestDate/@circa">
+                                        <xsl:value-of select="vra:dates/vra:earliestDate/@circa"></xsl:value-of>
+                                    </div>
+                                    <div id="d3e510-LatestDate" data-bf-type="input" data-bf-bind="vra:dates/vra:latestDate">
+                                        <xsl:value-of select="vra:dates/vra:latestDate"></xsl:value-of>
+                                    </div>
+                                    <div id="" data-bf-type="input" data-bf-bind="vra:dates/vra:latestDate/@circa">
+                                        <xsl:value-of select="vra:dates/vra:latestDate/@circa"></xsl:value-of>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div id="d3e514-Role" data-bf-type="input" data-bf-bind="vra:role">
+                                        <xsl:value-of select="vra:role"></xsl:value-of>
+                                    </div>
+                                </td>
+                            </tr>
+                        </xsl:for-each>
+                    </tbody>
+                </table>
+            </body>
+        </html>
     </xsl:template>
 </xsl:stylesheet>

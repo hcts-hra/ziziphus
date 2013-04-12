@@ -49,6 +49,15 @@
         </xslt>
     </target>
 
+    <target name="createViewFragments" description="create html views from xforms">
+        <xslt style="${basedir}/../resources/xsl/createView.xsl"
+                in="${basedir}/../forms/AgentSet.xhtml"
+                out="${basedir}/../view/AgentSetView.xsl"
+                force="yes">
+            <classpath refid="transform.class.path"/>
+        </xslt>
+    </target>
+
     <target name="testMergeTitleSet">
         <xslt style="${basedir}/../resources/xsl/mergeData.xsl"
                 in="${basedir}/templateTitleSet.xml"
@@ -87,6 +96,8 @@
             <param name="debug" expression="${debug}"/>
         </xslt>
     </target>
+
+
 
     <target name="generate-forms" depends="prepare" description="generate XForms">
         <echo>Generate first chunk of VRA forms</echo>

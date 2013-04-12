@@ -56,6 +56,7 @@
         </xsl:if>
 
         <xsl:element name="bind" namespace="http://www.w3.org/2002/xforms">
+            <xsl:attribute name="id"><xsl:value-of select="concat('b-',generate-id())"/></xsl:attribute>
             <xsl:attribute name="nodeset" select="$nodesetName"/>
             <xsl:attribute name="maxOccurs" select="$maxOccurs"/>
             <xsl:attribute name="minOccurs" select="$minOccurs"/>
@@ -81,7 +82,7 @@
         </xsl:if>
 
         <xsl:element name="bind" namespace="http://www.w3.org/2002/xforms">
-            <xsl:attribute name="nodeset" select="$nodesetName"/>
+            <xsl:attribute name="id"><xsl:value-of select="concat('b-',generate-id())"/></xsl:attribute>
             <xsl:attribute name="maxOccurs" select="$maxOccurs"/>
             <xsl:attribute name="minOccurs" select="$minOccurs"/>
             <xsl:attribute name="xfType" select="'simpleType'"/>
@@ -112,7 +113,7 @@
         </xsl:if>
 
         <xsl:element name="bind" namespace="http://www.w3.org/2002/xforms">
-
+            <xsl:attribute name="id"><xsl:value-of select="concat('b-',generate-id())"/></xsl:attribute>
             <xsl:attribute name="nodeset" select="$nodesetName"/>
             <xsl:attribute name="type" select="@type"/>
             <xsl:attribute name="maxOccurs" select="$maxOccurs"/>
@@ -138,6 +139,7 @@
             </xsl:when>
             <xsl:when test="exists(@name)">
                 <xsl:element name="bind" namespace="http://www.w3.org/2002/xforms">
+                    <xsl:attribute name="id"><xsl:value-of select="concat('b-',generate-id())"/></xsl:attribute>
                     <xsl:attribute name="nodeset" select="concat('@',@name)"/>
                     <xsl:attribute name="attrName" select="@name"/>
                     <xsl:choose>
@@ -153,6 +155,7 @@
             </xsl:when>
             <xsl:when test="@ref='xml:lang'">
                 <xsl:element name="bind" namespace="http://www.w3.org/2002/xforms">
+                    <xsl:attribute name="id"><xsl:value-of select="concat('b-',generate-id())"/></xsl:attribute>
                     <xsl:attribute name="nodeset" select="concat('@',@ref)"/>
                     <xsl:attribute name="attrName" select="@ref"/>
                     <xsl:attribute name="xfType" select="'attribute'"/>
