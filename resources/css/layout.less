@@ -57,12 +57,18 @@ html, body {
     .dijitTitlePane{
         position:relative;
     }
+
     .t-edit{
+        display: none;
         position:absolute;
-        top:-3px;
+        top:3px;
         right:3px;
+        text-align: right;
     }
 
+    .dijitTitlePane:hover .t-edit{
+        display: inline-block;
+    }
     #sectionDialog{
         position: relative;
 
@@ -117,12 +123,12 @@ html, body {
     }
 
     .icon-zoom-in {
-        margin-top:3px;
+        margin-top:2px;
         background-position: -334px 2px;
     }
 
     .icon-zoom-out {
-        margin-top:3px;
+        margin-top:2px;
         background-position: -358px 2px;
     }
 
@@ -197,6 +203,8 @@ html, body {
     .full {
         .detail {
             display:block;
+            color:#999999;
+            font-size: 0.7em;
         }
         .detail-inline {
             display: inline;
@@ -228,6 +236,10 @@ html, body {
     }
     .close{
         border:none;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 2em;
     }
 }
 .tundra .dijitTitlePaneTitle{

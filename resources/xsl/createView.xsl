@@ -85,14 +85,14 @@
     <xsl:template match="xf:input | xf:select1">
         <xsl:variable name="path"><xsl:call-template name="buildPath"/></xsl:variable>
             <transform:choose>
-                <transform:when test="string-length({@ref}) != 0">
+                <transform:when test="string-length(string-join({@ref},'')) != 0">
                     <!--<div id="{@id}" data-bf-type="{local-name(.)}" data-bf-bind="{@ref}" contenteditable="true">-->
                     <div id="{@id}" data-bf-type="{local-name(.)}" data-bf-bind="{@ref}" tabindex="0" title="{xf:label}">
                         <transform:value-of select="{@ref}"/>
                     </div>
                 </transform:when>
 
-                <transform:otherwise><div class="detail" data-bf-type="{local-name(.)}" data-bf-bind="{@ref}" tabindex="0"><a href="#" title="Click to add element: {xf:label}" style="font-style: italic;font-size: 0.8em;">(<xsl:value-of select="xf:label"/>)</a></div></transform:otherwise>
+                <transform:otherwise><div class="detail" data-bf-type="{local-name(.)}" data-bf-bind="{@ref}" tabindex="0">(<xsl:value-of select="xf:label"/>)</div></transform:otherwise>
                 <!--<transform:otherwise><div class="detail" data-bf-type="{local-name(.)}" data-bf-bind="{@ref}" tabindex="0"><a href="#" title="Click to add element: {xf:label}">[+]</a></div></transform:otherwise>-->
             </transform:choose>
     </xsl:template>

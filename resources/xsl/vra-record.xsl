@@ -7,26 +7,27 @@
         VIEW GENERATION - includes embed actions for switching to forms
     -->
 
+    <!--<xsl:variable name="rootPath" select="'vraSets'"/>-->
 
     <!-- include transforms for sections in VRA dataset -->
-    <xsl:include href="vraSets/AgentSet.xsl"/>
-    <xsl:include href="vraSets/CulturalContextSet.xsl"/>
-    <xsl:include href="vraSets/DateSet.xsl"/>
-    <xsl:include href="vraSets/DescriptionSet.xsl"/>
-    <xsl:include href="vraSets/InscriptionSet.xsl"/>
-    <xsl:include href="vraSets/LocationSet.xsl"/>
-    <xsl:include href="vraSets/MaterialSet.xsl"/>
-    <xsl:include href="vraSets/MeasurementsSet.xsl"/>
-    <xsl:include href="vraSets/RelationSet.xsl"/>
-    <xsl:include href="vraSets/RightsSet.xsl"/>
-    <xsl:include href="vraSets/SourceSet.xsl"/>
-    <xsl:include href="vraSets/StateEditionSet.xsl"/>
-    <xsl:include href="vraSets/StylePeriodSet.xsl"/>
-    <xsl:include href="vraSets/SubjectSet.xsl"/>
-    <xsl:include href="vraSets/TechniqueSet.xsl"/>
-    <xsl:include href="vraSets/TextrefSet.xsl"/>
-    <xsl:include href="vraSets/TitleSet.xsl"/>
-    <xsl:include href="vraSets/WorktypeSet.xsl"/>
+    <xsl:include href="../../view/AgentSet.xsl"/>
+    <xsl:include href="../../view/CulturalContextSet.xsl"/>
+    <xsl:include href="../../view/DateSet.xsl"/>
+    <xsl:include href="../../view/DescriptionSet.xsl"/>
+    <xsl:include href="../../view/InscriptionSet.xsl"/>
+    <xsl:include href="../../view/LocationSet.xsl"/>
+    <xsl:include href="../../view/MaterialSet.xsl"/>
+    <xsl:include href="../../view/MeasurementsSet.xsl"/>
+    <xsl:include href="../../view/RelationSet.xsl"/>
+    <xsl:include href="../../view/RightsSet.xsl"/>
+    <xsl:include href="../../view/SourceSet.xsl"/>
+    <xsl:include href="../../view/StateEditionSet.xsl"/>
+    <xsl:include href="../../view/StylePeriodSet.xsl"/>
+    <xsl:include href="../../view/SubjectSet.xsl"/>
+    <xsl:include href="../../view/TechniqueSet.xsl"/>
+    <xsl:include href="../../view/TextrefSet.xsl"/>
+    <xsl:include href="../../view/TitleSet.xsl"/>
+    <xsl:include href="../../view/WorktypeSet.xsl"/>
     <!-- 'work' or 'image' -->
     <xsl:param name="recordType" select="'GIVEN BY CALLER'"/>
     <!-- UUID of Record e.g w_****** -->
@@ -167,7 +168,9 @@
                         <xf:toggle case="{$caseId}-edit"/>
                     </xf:action>
                 </xf:trigger>
-                <button type="button" onclick="toggleDetail(this, '{$tableId}');" class="icon icon-zoom-in"/>
+                <span>
+                    <button type="button" onclick="toggleDetail(this, '{$tableId}');" class="icon icon-zoom-in"/>
+                </span>
             </div>
             <xf:switch>
                 <!-- ############ VIEW CASE ######### -->

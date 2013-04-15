@@ -40,7 +40,8 @@
         </xslt>
     </target>
 
-    <target name="generateViewTransforms">
+
+    <target name="generateViewTransforms" description="testing target: used to test instance merging">
         <xslt style="${basedir}/../resources/xsl/mergeData.xsl"
                 in="${basedir}/template.xml"
                 out="${target.dir}/merged.xml"
@@ -251,10 +252,77 @@
 
     </target>
 
-    <target name="generate-view-tmp">
-        <antcall target="vra-views">
+    <target name="generate-all-views" description="generates XSLT transforms for VRA Section Views. Uses generated XForms as input.">
+        <antcall target="generate-section-view-transform">
             <param name="subformName" value="AgentSet"/>
         </antcall>
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="CulturalContextSet"/>
+        </antcall>
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="DateSet"/>
+        </antcall>
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="DescriptionSet"/>
+        </antcall>
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="InscriptionSet"/>
+        </antcall>
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="InscriptionSet"/>
+        </antcall>
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="LocationSet"/>
+        </antcall>
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="MaterialSet"/>
+        </antcall>
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="MeasurementsSet"/>
+        </antcall>
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="RelationSet"/>
+        </antcall>
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="RightsSet"/>
+        </antcall>
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="SourceSet"/>
+        </antcall>
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="StateEditionSet"/>
+        </antcall>
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="StylePeriodSet"/>
+        </antcall>
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="SubjectSet"/>
+        </antcall>
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="TechniqueSet"/>
+        </antcall>
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="TextrefSet"/>
+        </antcall>
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="TitleSet"/>
+        </antcall>
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="WorktypeSet"/>
+        </antcall>
+    </target>
+
+    <target name="generate-section-view-transform" description="generates a XSLT transform for a single VRA section">
+        <echo>generate-subform ${subformName}</echo>
+        <mkdir dir="${target.dir}/views"/>
+        <xslt style="${basedir}/../resources/xsl/createView.xsl"
+                in="${basedir}/../forms/${subformName}.xhtml"
+                out="${basedir}/../view/${subformName}.xsl"
+                force="true">
+            <classpath refid="transform.class.path"/>
+            <param name="debug" expression="${debug}"/>
+            <param name="vraSection" expression="${subformName}"/>
+        </xslt>
     </target>
 
     <target name="vra-views">
