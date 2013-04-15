@@ -1,3 +1,7 @@
+.bf .vraSection {
+  width: 100%;
+  overflow: auto;
+}
 .bf .vraSection .description {
   border: thin dashed black;
   padding: 1ex 1em;

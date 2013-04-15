@@ -7,10 +7,11 @@
         xmlns:transform="http://betterform.de/transform"
         exclude-result-prefixes="xf bf transform">
 
-    <xsl:output method="xhtml" omit-xml-declaration="yes"/>
+    <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"/>
     <xsl:namespace-alias stylesheet-prefix="transform" result-prefix="xsl"/>
 
     <xsl:strip-space elements="*"/>
+
 
     <!-- ATTENTION - FIRST INSTANCE MUST BE DEFAULT INSTANCE IN THE GENERATED FORM USED TO FEED THIS TRANSFORM -->
     <xsl:variable name="rootNodeName" select="name(//xf:instance[1]/*[1])"/>
@@ -22,16 +23,12 @@
                 xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:vra="http://www.vraweb.org/vracore4.htm">
-            <transform:output method="xhtml" omit-xml-declaration="yes"/>
+            <transform:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"/>
 
 
             <transform:template match="{$rootMatch}">
-                <html>
-                    <head>
-                        <title><xsl:value-of select="//html:title"/></title>
-                    </head>
-                    <xsl:apply-templates/>
-                </html>
+                <transform:param name="vraTableId"/>
+                <xsl:apply-templates/>
             </transform:template>
 
         </transform:stylesheet>
@@ -41,12 +38,12 @@
     <xsl:template match="html:title"/>
 
     <xsl:template match="html:body">
-        <xsl:element name="body">
-
+        <xsl:param name="vraTableId"/>
+        <div class="simple" id="{{$vraTableId}}">
             <table class="vraSetView table table-striped">
                 <xsl:apply-templates select=".//html:tbody[exists(@xf:repeat-nodeset)]"/>
             </table>
-        </xsl:element>
+        </div>
     </xsl:template>
 
     <xsl:template match="html:tbody">
@@ -89,11 +86,14 @@
         <xsl:variable name="path"><xsl:call-template name="buildPath"/></xsl:variable>
             <transform:choose>
                 <transform:when test="string-length({@ref}) != 0">
-                    <div id="{@id}" data-bf-type="{local-name(.)}" data-bf-bind="{@ref}" contenteditable="true">
+                    <!--<div id="{@id}" data-bf-type="{local-name(.)}" data-bf-bind="{@ref}" contenteditable="true">-->
+                    <div id="{@id}" data-bf-type="{local-name(.)}" data-bf-bind="{@ref}" tabindex="0" title="{xf:label}">
                         <transform:value-of select="{@ref}"/>
                     </div>
                 </transform:when>
-                <transform:otherwise><div class="detail" data-bf-type="{local-name(.)}" data-bf-bind="{@ref}"><a href="#">+</a></div></transform:otherwise>
+
+                <transform:otherwise><div class="detail" data-bf-type="{local-name(.)}" data-bf-bind="{@ref}" tabindex="0"><a href="#" title="Click to add element: {xf:label}" style="font-style: italic;font-size: 0.8em;">(<xsl:value-of select="xf:label"/>)</a></div></transform:otherwise>
+                <!--<transform:otherwise><div class="detail" data-bf-type="{local-name(.)}" data-bf-bind="{@ref}" tabindex="0"><a href="#" title="Click to add element: {xf:label}">[+]</a></div></transform:otherwise>-->
             </transform:choose>
     </xsl:template>
 

@@ -36,7 +36,7 @@
     <xsl:variable name="id_pref" select="if($recordType='work') then 'w_' else 'i_'"/>
 
     <!-- parameter is only used if a single section is rendered -->
-    <xsl:param name="setname" select="''"/>
+    <!--<xsl:param name="setname" select="''"/>-->
 
     <!-- top level - entry template - handles a work or an image record -->
     <xsl:template match="/vra:work |/vra:image">
