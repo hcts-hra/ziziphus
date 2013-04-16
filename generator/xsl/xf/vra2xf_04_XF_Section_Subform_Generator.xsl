@@ -14,16 +14,27 @@
                 xpath-default-namespace="http://www.w3.org/2002/xforms" exclude-result-prefixes="functx">
 
     <!--
+    ###########
+        Main stylesheet responsible for generating XForms for the subsections in a collection, work or image record.
+    ###########
+    -->
+
+    <!--
     This transform is used to tailor the subforms to the needs of the Ziziphus project. For efficiency
     reasons the subforms are kept as small as possible meaning that redundant parts as the attribute handling
     are put into their own subforms.
     -->
+
+    <!-- ##### -->
     <xsl:include href="ignores.xsl" />
     <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"/>
     <xsl:strip-space elements="*"/>
 
     <!-- NOTE: change this to '../' to run the generated forms standalone -->
     <xsl:variable name="relativePath" select="''"/>
+    
+    
+    <xsl:variable name="useTextarea" select="'vra:description vra:text'"/>
 
     <!-- must be '../' if testing forms standalone -->
     <!--<xsl:variable name="relativePath" select="'../'"/>-->
@@ -429,9 +440,6 @@
             </xsl:if>
 
             <xf:label/>
-            <xf:action ev:event="reset-dialog">
-
-            </xf:action>
             <xf:action ev:event="init-dialog">
                 <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@dataDate"/>
                 <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@extent"/>
@@ -600,22 +608,49 @@
             </xsl:choose>
         </xsl:variable>
 
+        <xsl:variable name="targetNode" select="@nodeset"/>
+
         <xsl:if test="$debugEnabled">
             <xsl:message>UI-4: <xsl:value-of select="$currentPath"/>#</xsl:message>
+            <xsl:message>UI-4: element name: <xsl:value-of select="name()"/></xsl:message>
+            <xsl:message>UI-4: element nodeset: <xsl:value-of select="@nodeset"/></xsl:message>
+            <xsl:message>UI-4: textarea elements: <xsl:value-of select="$useTextarea"/></xsl:message>
+            <xsl:message>UI-4: current targetNode: <xsl:value-of select="$targetNode"/></xsl:message>
         </xsl:if>
 
         <xsl:if test="@xfType='simpleType'">
-            <xf:input id="{concat(generate-id(),'-', functx:capitalize-first($vraNodeName))}">
-                <xsl:attribute name="ref"><xsl:value-of select="$currentPath"/></xsl:attribute>
-                <xsl:if test="not($isArtifactNode) and ('vra:name'=$vraNodeName)">
-                    <xsl:attribute name="class">elementName</xsl:attribute>
-                </xsl:if>
-                <xsl:if test="not($isArtifactNode)">
-                    <xf:label>
-                        <xsl:value-of select="functx:capitalize-first($vraNodeName)"/>
-                    </xf:label>
-                </xsl:if>
-            </xf:input>
+            <xsl:choose>
+                <xsl:when test="contains($useTextarea,$targetNode)">
+                    <xsl:if test="$debugEnabled">
+                        <xsl:message>UI-4.1:found element that shall use textarea</xsl:message>
+                    </xsl:if>
+                    <!-- ### should only differ in being a textarea instead of input text field ### -->
+                    <xf:textarea id="{concat(generate-id(),'-', functx:capitalize-first($vraNodeName))}">
+                        <xsl:attribute name="ref"><xsl:value-of select="$currentPath"/></xsl:attribute>
+                        <xsl:if test="not($isArtifactNode) and ('vra:name'=$vraNodeName)">
+                            <xsl:attribute name="class">elementName</xsl:attribute>
+                        </xsl:if>
+                        <xsl:if test="not($isArtifactNode)">
+                            <xf:label>
+                                <xsl:value-of select="functx:capitalize-first($vraNodeName)"/>
+                            </xf:label>
+                        </xsl:if>
+                    </xf:textarea>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xf:input id="{concat(generate-id(),'-', functx:capitalize-first($vraNodeName))}">
+                        <xsl:attribute name="ref"><xsl:value-of select="$currentPath"/></xsl:attribute>
+                        <xsl:if test="not($isArtifactNode) and ('vra:name'=$vraNodeName)">
+                            <xsl:attribute name="class">elementName</xsl:attribute>
+                        </xsl:if>
+                        <xsl:if test="not($isArtifactNode)">
+                            <xf:label>
+                                <xsl:value-of select="functx:capitalize-first($vraNodeName)"/>
+                            </xf:label>
+                        </xsl:if>
+                    </xf:input>
+                </xsl:otherwise>
+            </xsl:choose>
         </xsl:if>
 
         <xsl:apply-templates select="xf:bind" mode="ui">

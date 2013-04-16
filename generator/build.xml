@@ -31,6 +31,9 @@
         <delete dir="${target.dir}"/>
     </target>
 
+    <!-- #####
+        Start: Targets for testing various stylesheets standalone.
+    ##### -->
     <target name="testMerge">
         <xslt style="${basedir}/../resources/xsl/mergeData.xsl"
                 in="${basedir}/template.xml"
@@ -41,7 +44,7 @@
     </target>
 
 
-    <target name="generateViewTransforms" description="testing target: used to test instance merging">
+    <target name="testGenerateViewTransforms" description="testing target: used to test instance merging">
         <xslt style="${basedir}/../resources/xsl/mergeData.xsl"
                 in="${basedir}/template.xml"
                 out="${target.dir}/merged.xml"
@@ -50,7 +53,7 @@
         </xslt>
     </target>
 
-    <target name="createViewFragments" description="create html views from xforms">
+    <target name="testCreateViewFragments" description="create html views from xforms">
         <xslt style="${basedir}/../resources/xsl/createView.xsl"
                 in="${basedir}/../forms/AgentSet.xhtml"
                 out="${basedir}/../view/AgentSetView.xsl"
@@ -68,7 +71,7 @@
         </xslt>
     </target>
 
-    <target name="heidiconOutput">
+    <target name="testHeidiconOutput">
         <xslt style="${basedir}/../resources/xsl/heidicon.xsl"
                 in="${basedir}/../records/w_40ca74a3-3e6c-5749-b0a0-b42afbadff01.xml"
                 out="${target.dir}/heidicon.html"
@@ -76,6 +79,10 @@
             <classpath refid="transform.class.path"/>
         </xslt>
     </target>
+    <!-- #####
+        End: Targets for testing various stylesheets standalone.
+    ##### -->
+
 
 
     <target name="prepare">
@@ -211,6 +218,18 @@
     <target name="generate-DateSet-form" depends="prepare" description="generate the DateSet form">
         <antcall target="generate-subform">
             <param name="subformName" value="DateSet"/>
+        </antcall>
+    </target>
+    <target name="generate-Description-form" depends="prepare" description="generate the Description form">
+        <antcall target="generate-subform">
+            <param name="subformName" value="DescriptionSet"/>
+            <param name="debug" value="true"/>
+        </antcall>
+    </target>
+    <target name="generate-Incription-form" depends="prepare" description="generate the Inscription form">
+        <antcall target="generate-subform">
+            <param name="subformName" value="IncriptionSet"/>
+            <param name="debug" value="true"/>
         </antcall>
     </target>
     <target name="generate-LocationSet-form" depends="prepare" description="generate the LocationSet form">

@@ -72,11 +72,25 @@ table tr td .xfGroup:last-child {
 .prefCol .xfLabel {
   display: none !important;
 }
+.contentCol {
+  width: 100%;
+}
 .contentCol > .xfGroup {
   width: 100%;
   display: inline-block;
   padding-bottom: 5px;
   border-top: none !important;
+}
+.contentCol .xfControl {
+  width: 100%;
+}
+.contentCol .xfControl .widgetContainer {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+}
+.contentCol .xfControl input[type='text'] {
+  width: 90%;
 }
 #attrDialog {
   /*
@@ -125,4 +139,7 @@ table tr td .xfGroup:last-child {
   background: transparent;
   border: none;
   padding: 3px;
+}
+textarea {
+  width: 95% !important;
 }

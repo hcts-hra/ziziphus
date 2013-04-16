@@ -109,11 +109,26 @@ table {
 }
 
 .contentCol {
+    width: 100%;
+
     > .xfGroup {
         width: 100%;
         display: inline-block;
         padding-bottom: 5px;
         border-top: none !important;
+    }
+
+    .xfControl{
+      width: 100%;
+
+      .widgetContainer{
+        width: 100%;
+        display:inline-block;
+        text-align: center;
+      }
+      input[type='text']{
+        width: 90%;
+      }
     }
 }
 
@@ -172,3 +187,6 @@ table {
     padding: 3px;
 }
 
+textarea{
+  width: 95% !important;
+}
