@@ -7,7 +7,7 @@
                omit-xml-declaration="no"></xsl:output>
    <xsl:template match="vra:sourceSet">
       <xsl:param name="vraTableId"></xsl:param>
-      <div class="simple" id="{$vraTableId}">
+      <div class="simple SourceSet" id="{$vraTableId}">
          <table class="vraSetView table table-striped">
             <tbody>
                <xsl:for-each select="vra:source">

@@ -135,7 +135,7 @@
         <xsl:variable name="id" select="concat($id_pref,$title)"/>
         <!--<xsl:variable name="formName" select="$vraSetName"/>-->
         <xsl:variable name="sectionWithData" select="if(string-length(string-join($vraSetNode//*/text(),'')) != 0) then 'true' else 'false'"/>
-        <div id="{$id}" data-dojo-type="dijit.TitlePane" data-dojo-props="title: '{$title}',open:{$sectionWithData}">
+        <div id="{$id}" class="{$vraSetName}" data-dojo-type="dijit.TitlePane" data-dojo-props="title: '{$title}',open:{$sectionWithData}">
             <xsl:variable name="mountPoint" select="concat($id,'_MountPoint')"/>
             <xsl:variable name="caseId" select="concat('c-',$id)"/>
             <xsl:variable name="tableId" select="concat('table-',$id)"/>

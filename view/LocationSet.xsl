@@ -7,7 +7,7 @@
                omit-xml-declaration="no"></xsl:output>
    <xsl:template match="vra:locationSet">
       <xsl:param name="vraTableId"></xsl:param>
-      <div class="simple" id="{$vraTableId}">
+      <div class="simple LocationSet" id="{$vraTableId}">
          <table class="vraSetView table table-striped">
             <tbody>
                <xsl:for-each select="vra:location">

@@ -60,6 +60,9 @@ table tr td .xfGroup:last-child {
   border-bottom: thin solid #aaaaaa;
   width: 100%;
 }
+.contentCol .vraAttributes .xfControl {
+  width: auto;
+}
 .vraAttributeTrigger {
   float: right;
 }
@@ -81,15 +84,17 @@ table tr td .xfGroup:last-child {
   padding-bottom: 5px;
   border-top: none !important;
 }
-.contentCol .xfControl {
+.contentCol .xfControl .widgetContainer {
+  display: inline-block;
+}
+.WorktypeSet .contentCol .xfControl {
   width: 100%;
 }
-.contentCol .xfControl .widgetContainer {
+.WorktypeSet .contentCol .xfControl .widgetContainer {
   width: 100%;
-  display: inline-block;
   text-align: center;
 }
-.contentCol .xfControl input[type='text'] {
+.WorktypeSet .contentCol .xfControl input[type='text'] {
   width: 90%;
 }
 #attrDialog {

@@ -7,7 +7,7 @@
                omit-xml-declaration="no"></xsl:output>
    <xsl:template match="vra:inscriptionSet">
       <xsl:param name="vraTableId"></xsl:param>
-      <div class="simple" id="{$vraTableId}">
+      <div class="simple InscriptionSet" id="{$vraTableId}">
          <table class="vraSetView table table-striped">
             <tbody>
                <xsl:for-each select="vra:inscription">
@@ -39,18 +39,7 @@
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>
-                     <td>
-                        <xsl:choose>
-                           <xsl:when test="string-length(string-join(vra:text,'')) != 0">
-                              <div id="d3e538-Text" data-bf-type="input" data-bf-bind="vra:text" tabindex="0"
-                                   title="Text">
-                                 <xsl:value-of select="vra:text"></xsl:value-of>
-                              </div>
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <div class="detail" data-bf-type="input" data-bf-bind="vra:text" tabindex="0">(Text)</div>
-                           </xsl:otherwise>
-                        </xsl:choose>
+                     <td>Text
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:text/@type,'')) != 0">
                               <div id="d6e60-Type" data-bf-type="select1" data-bf-bind="vra:text/@type"

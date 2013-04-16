@@ -7,7 +7,7 @@
                omit-xml-declaration="no"></xsl:output>
    <xsl:template match="vra:stylePeriodSet">
       <xsl:param name="vraTableId"></xsl:param>
-      <div class="simple" id="{$vraTableId}">
+      <div class="simple StylePeriodSet" id="{$vraTableId}">
          <table class="vraSetView table table-striped">
             <tbody>
                <xsl:for-each select="vra:stylePeriod">
@@ -16,12 +16,12 @@
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(.,'')) != 0">
                               <div id="d3e594-StylePeriod" data-bf-type="input" data-bf-bind="." tabindex="0"
-                                   title="">
+                                   title="StylePeriod">
                                  <xsl:value-of select="."></xsl:value-of>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="detail" data-bf-type="input" data-bf-bind="." tabindex="0">()</div>
+                              <div class="detail" data-bf-type="input" data-bf-bind="." tabindex="0">(StylePeriod)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>

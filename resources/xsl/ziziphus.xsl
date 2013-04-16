@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bf="http://betterform.sourceforge.net/xforms" xmlns:xf="http://www.w3.org/2002/xforms" version="2.0" exclude-result-prefixes="xf bf" xpath-default-namespace="http://www.w3.org/1999/xhtml">
-    <xsl:import href="bfResources/xslt/xhtml.xsl"/>
+    <xsl:import href="xhtml.xsl"/>
 
     <!-- overwritten to set parseOnload=true and async=false -->
     <xsl:template name="addDojoImport">
@@ -299,4 +299,146 @@
             </xsl:for-each>
         </xsl:element>
     </xsl:template>
+
+<!--
+    <xsl:template match="xf:input|xf:secret|xf:textarea" priority="10">
+        <xsl:variable name="control-classes">
+            <xsl:call-template name="assemble-control-classes">
+                <xsl:with-param name="appearance" select="@appearance"/>
+            </xsl:call-template>
+        </xsl:variable>
+        <xsl:variable name="label-classes"><xsl:call-template name="assemble-label-classes"/></xsl:variable>
+
+        <span id="{@id}" class="{$control-classes}">
+
+            <xsl:call-template name="copy-style-attribute"/>
+            <xsl:if test="@bf:incremental-delay">
+                <xsl:attribute name="bf:incremental-delay" select="@bf:incremental-delay"/>
+            </xsl:if>
+
+            <xsl:if test="exists(@bf:name)">
+                <xsl:attribute name="data-bf-name" select="@bf:name"/>
+            </xsl:if>
+
+            <span class="widgetContainer">
+                <xsl:call-template name="z-buildControl"/>
+                <xsl:apply-templates select="xf:alert"/>
+                <xsl:apply-templates select="xf:hint"/>
+                <xsl:apply-templates select="xf:help"/>
+            </span>
+            <xsl:copy-of select="script"/>
+        </span>
+    </xsl:template>
+-->
+
+<!--
+    <xsl:template name="z-buildControl">
+        <xsl:choose>
+            <xsl:when test="local-name()='input'">
+                <xsl:call-template name="z-input"/>
+            </xsl:when>
+            <xsl:when test="local-name()='output'">
+                <xsl:call-template name="output"/>
+            </xsl:when>
+            <xsl:when test="local-name()='range'">
+                <xsl:call-template name="range"/>
+            </xsl:when>
+            <xsl:when test="local-name()='secret'">
+                <xsl:call-template name="secret"/>
+            </xsl:when>
+            <xsl:when test="local-name()='select'">
+                <xsl:call-template name="select"/>
+            </xsl:when>
+            <xsl:when test="local-name()='select1'">
+                <xsl:call-template name="select1"/>
+            </xsl:when>
+            <xsl:when test="local-name()='submit'">
+                <xsl:call-template name="trigger"/>
+
+            </xsl:when>
+            <xsl:when test="local-name()='trigger'">
+                <xsl:call-template name="trigger"/>
+            </xsl:when>
+            <xsl:when test="local-name()='textarea'">
+                <xsl:call-template name="textarea"/>
+            </xsl:when>
+            <xsl:when test="local-name()='upload'">
+            </xsl:when>
+        </xsl:choose>
+    </xsl:template>
+-->
+
+<!--
+    <xsl:template name="z-input">
+        <xsl:variable name="id" select="@id"/>
+        <xsl:variable name="name" select="concat($data-prefix,$id)"/>
+        <xsl:variable name="navindex" select="if (exists(@navindex)) then @navindex else '0'"/>
+        <xsl:variable name="type"><xsl:call-template name="getType"/></xsl:variable>
+
+        <xsl:variable name="authorClasses">
+            <xsl:call-template name="get-control-classes"/>
+        </xsl:variable>
+        <xsl:variable name="widgetClasses" select="normalize-space(concat($widgetClass,' ',$authorClasses))"/>
+        <xsl:choose>
+            <xsl:when test="$type='boolean'">
+                <input  id="{$id}-value"
+                        name="{$name}"
+                        type="checkbox"
+                        class="{$widgetClasses}"
+                        tabindex="{$navindex}"
+                        title="{xf:label/text()}">
+                    <xsl:if test="bf:data/@bf:readonly='true'">
+                        <xsl:attribute name="disabled">disabled</xsl:attribute>
+                    </xsl:if>
+                    <xsl:if test="bf:data/text()='true'">
+                        <xsl:attribute name="checked">true</xsl:attribute>
+                    </xsl:if>
+                    <xsl:apply-templates select="xf:hint"/>
+                </input>
+            </xsl:when>
+            <xsl:when test="$type='date' or $type='dateTime' or $type='time'">
+                <xsl:call-template name="InputDateAndTime">
+                    <xsl:with-param name="id" select="$id"/>
+                    <xsl:with-param name="name" select="$name"/>
+                    <xsl:with-param name="type" select="$type"/>
+                    <xsl:with-param name="navindex" select="$navindex"/>
+                    <xsl:with-param name="classes" select="$widgetClasses"/>
+                </xsl:call-template>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:call-template name="z-InputDefault">
+                    <xsl:with-param name="id" select="$id"/>
+                    <xsl:with-param name="name" select="$name"/>
+                    <xsl:with-param name="navindex" select="$navindex"/>
+                    <xsl:with-param name="classes" select="$widgetClasses"/>
+                </xsl:call-template>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+-->
+
+<!--
+    <xsl:template name="z-InputDefault">
+        <xsl:param name="id"/>
+        <xsl:param name="name"/>
+        <xsl:param name="navindex"/>
+        <xsl:param name="classes"/>
+        <input id="{$id}-value"
+                name="{$name}"
+                type="text"
+                class="{$classes}"
+                tabindex="{$navindex}"
+                placeholder="{xf:label}"
+                value="{bf:data/text()}"
+                title="{xf:label}">
+            <xsl:if test="bf:data/@bf:readonly='true'">
+                <xsl:attribute name="disabled">disabled</xsl:attribute>
+            </xsl:if>
+            <xsl:for-each select="@*[not(local-name(.) = 'ref' or local-name(.) = 'style' or local-name(.) = 'id' or local-name(.) = 'class' or local-name(.) = 'placeholder')]">
+                <xsl:copy/>
+            </xsl:for-each>
+        </input>
+    </xsl:template>
+-->
+
 </xsl:stylesheet>

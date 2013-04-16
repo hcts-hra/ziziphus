@@ -7,7 +7,7 @@
                omit-xml-declaration="no"></xsl:output>
    <xsl:template match="vra:rightsSet">
       <xsl:param name="vraTableId"></xsl:param>
-      <div class="simple" id="{$vraTableId}">
+      <div class="simple RightsSet" id="{$vraTableId}">
          <table class="vraSetView table table-striped">
             <tbody>
                <xsl:for-each select="vra:rights">
@@ -40,19 +40,7 @@
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>
-                     <td>
-                        <xsl:choose>
-                           <xsl:when test="string-length(string-join(vra:text,'')) != 0">
-                              <div id="d3e572-Text" data-bf-type="input" data-bf-bind="vra:text" tabindex="0"
-                                   title="Text">
-                                 <xsl:value-of select="vra:text"></xsl:value-of>
-                              </div>
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <div class="detail" data-bf-type="input" data-bf-bind="vra:text" tabindex="0">(Text)</div>
-                           </xsl:otherwise>
-                        </xsl:choose>
-                     </td>
+                     <td>Text</td>
                   </tr>
                </xsl:for-each>
             </tbody>

@@ -638,16 +638,22 @@
                     </xf:textarea>
                 </xsl:when>
                 <xsl:otherwise>
+                    <xsl:if test="$debugEnabled">
+                        <xsl:message>UI-4.2:found element that shall use input text (default)</xsl:message>
+                        <xsl:message>UI-4.2:ArtifactNode = <xsl:value-of select="$vraArtifactNode"/></xsl:message>
+                        <xsl:message>UI-4.2:isArtifactNode = <xsl:value-of select="$isArtifactNode"/></xsl:message>
+                    </xsl:if>
+
                     <xf:input id="{concat(generate-id(),'-', functx:capitalize-first($vraNodeName))}">
                         <xsl:attribute name="ref"><xsl:value-of select="$currentPath"/></xsl:attribute>
                         <xsl:if test="not($isArtifactNode) and ('vra:name'=$vraNodeName)">
                             <xsl:attribute name="class">elementName</xsl:attribute>
                         </xsl:if>
-                        <xsl:if test="not($isArtifactNode)">
+                        <!--<xsl:if test="not($isArtifactNode)">-->
                             <xf:label>
                                 <xsl:value-of select="functx:capitalize-first($vraNodeName)"/>
                             </xf:label>
-                        </xsl:if>
+                        <!--</xsl:if>-->
                     </xf:input>
                 </xsl:otherwise>
             </xsl:choose>

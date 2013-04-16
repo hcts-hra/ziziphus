@@ -7,24 +7,12 @@
                omit-xml-declaration="no"></xsl:output>
    <xsl:template match="vra:descriptionSet">
       <xsl:param name="vraTableId"></xsl:param>
-      <div class="simple" id="{$vraTableId}">
+      <div class="simple DescriptionSet" id="{$vraTableId}">
          <table class="vraSetView table table-striped">
             <tbody>
                <xsl:for-each select="vra:description">
                   <tr>
-                     <td>
-                        <xsl:choose>
-                           <xsl:when test="string-length(string-join(.,'')) != 0">
-                              <div id="d3e531-Description" data-bf-type="input" data-bf-bind="." tabindex="0"
-                                   title="">
-                                 <xsl:value-of select="."></xsl:value-of>
-                              </div>
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <div class="detail" data-bf-type="input" data-bf-bind="." tabindex="0">()</div>
-                           </xsl:otherwise>
-                        </xsl:choose>
-                     </td>
+                     <td></td>
                   </tr>
                </xsl:for-each>
             </tbody>
