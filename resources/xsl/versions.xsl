@@ -1,13 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:v="http://exist-db.org/versioning" version="1.0">
+<xsl:stylesheet version="1.0"
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:v="http://exist-db.org/versioning"
+	xmlns="http://www.w3.org/1999/xhtml">
     <xsl:output method="xml" version="1.0"/>
-    <xsl:variable name="uuid" select="/result/@uuid"/>
+    <xsl:variable name="path" select="/result/file/@path"/>
     <xsl:template match="/">
         <html>
             <head>
                 <title>
-                    <xsl:text>Record history for uuid </xsl:text>
-                    <xsl:value-of select="$uuid"/>
+                    <xsl:text>File history for </xsl:text>
+                    <xsl:value-of select="$path"/>
                 </title>
                 <xsl:call-template name="css"/>
             </head>
@@ -19,15 +21,12 @@
     <xsl:template match="result">
         <div id="hbody">
             <h1>
-                <xsl:text>Record history for uuid </xsl:text>
+                <xsl:text>File history for </xsl:text>
                 <span class="id">
-                    <xsl:value-of select="$uuid"/>
+                    <xsl:value-of select="$path"/>
                 </span>
             </h1>
-            <h2>Work</h2>
-            <xsl:apply-templates select="work"/>
-            <h2>Related images</h2>
-            <xsl:apply-templates select="image"/>
+            <xsl:apply-templates select="file"/>
         </div>
     </xsl:template>
     <xsl:template match="error">
@@ -35,21 +34,8 @@
             <xsl:apply-templates/>
         </p>
     </xsl:template>
-    <xsl:template match="work | image">
-        <xsl:variable name="what">
-            <xsl:choose>
-                <xsl:when test="local-name() = 'work'">Work</xsl:when>
-                <xsl:when test="local-name() = 'image'">Image</xsl:when>
-            </xsl:choose>
-        </xsl:variable>
-        <div class="history {local-name()}-history">
-            <h3>
-                <xsl:value-of select="$what"/>
-                <xsl:text> </xsl:text>
-                <span class="id">
-                    <xsl:value-of select="@id"/>
-                </span>
-            </h3>
+    <xsl:template match="file">
+        <div class="history">
             <p>Path = <a href="{@url}">
                     <xsl:value-of select="@path"/>
                 </a>
@@ -147,7 +133,7 @@ table.revisions th {
 
 table.revisions td {
 	background-color: #FFFFFF;
-}
-]]></style>
+}]]>
+</style>
     </xsl:template>
 </xsl:stylesheet>
