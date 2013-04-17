@@ -11,6 +11,9 @@ declare option exist:serialize "method=xhtml media-type=application/xhtml+xml";
 (: The file to be presented can be identified by one of the followinf methods,
  : for each there is a corresponding HTTP query parameter. :)
 
+(: Called in AJAX mode? (then raw HTML content to be pasted into a div returned) :)
+declare variable $ajax as xs:string := request:get-parameter("ajax", "no");
+
 (: Record id :)
 declare variable $rid as xs:string? := request:get-parameter("rid", ());
 
@@ -63,4 +66,5 @@ declare function local:createXmlResult($path as xs:string?) as element() {
 (: main :)
 let $path := local:makePathFromArgs()
 let $result := local:createXmlResult($path)
-return transform:transform($result, doc($xsl), ())
+let $xsltParameters := <parameters><param name="ajax" value="{$ajax}"/></parameters>
+return transform:transform($result, doc($xsl), $xsltParameters)

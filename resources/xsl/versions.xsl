@@ -1,10 +1,21 @@
-<xsl:stylesheet version="1.0"
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-	xmlns:v="http://exist-db.org/versioning"
-	xmlns="http://www.w3.org/1999/xhtml">
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet xmlns="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:v="http://exist-db.org/versioning" version="1.0">
     <xsl:output method="xml" version="1.0"/>
+    
+    <!-- Should result be a full HTML document ('yes') or only content to be placed into a div ('no'). -->
+    <xsl:param name="ajax" select="'no'"/>
     <xsl:variable name="path" select="/result/file/@path"/>
     <xsl:template match="/">
+        <xsl:choose>
+            <xsl:when test="$ajax = 'yes'">
+                <xsl:apply-templates select="result" mode="ajax"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:apply-templates select="result" mode="full-html"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    <xsl:template match="result" mode="full-html">
         <html>
             <head>
                 <title>
@@ -14,19 +25,16 @@
                 <xsl:call-template name="css"/>
             </head>
             <body>
+                <h1>File versions history</h1>
+                <p>Path = <xsl:value-of select="$path"/>
+                </p>
                 <xsl:apply-templates/>
             </body>
         </html>
     </xsl:template>
-    <xsl:template match="result">
-        <div id="hbody">
-            <h1>
-                <xsl:text>File history for </xsl:text>
-                <span class="id">
-                    <xsl:value-of select="$path"/>
-                </span>
-            </h1>
-            <xsl:apply-templates select="file"/>
+    <xsl:template match="result" mode="ajax">
+        <div id="versions-body">
+            <xsl:apply-templates/>
         </div>
     </xsl:template>
     <xsl:template match="error">
@@ -36,10 +44,6 @@
     </xsl:template>
     <xsl:template match="file">
         <div class="history">
-            <p>Path = <a href="{@url}">
-                    <xsl:value-of select="@path"/>
-                </a>
-            </p>
             <xsl:apply-templates>
                 <xsl:with-param name="path" select="@path"/>
             </xsl:apply-templates>
@@ -52,7 +56,7 @@
         <xsl:param name="path"/>
         <xsl:choose>
             <xsl:when test="v:revision">
-                <table class="revisions">
+                <table class="table table-stripped revisions">
                     <tr>
                         <th>Revision nr</th>
                         <th>Date</th>
@@ -81,7 +85,7 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-    <xsl:template match="v:revision">
+    <xsl:template match="v:revision" name="revision">
         <xsl:param name="path"/>
         <tr>
             <td>
@@ -105,9 +109,15 @@
     <xsl:template name="css">
         <style type="text/css">
 <![CDATA[
-#hbody {
-	font-size: 8pt;
+body {
+	font-size: 10pt;
 	background-color: #DDDDDD;
+}
+
+#versions-body {
+    font-size: 8pt;
+	background-color: #FFFFFF;
+    padding: 1em 2em;
 }
 
 .id {
@@ -128,12 +138,11 @@ table.revisions th, table.revisions td {
 }
 
 table.revisions th {
-	background-color: #FFCCFF;
+	background-color: #CCCCCC;
 }
 
 table.revisions td {
 	background-color: #FFFFFF;
-}]]>
-</style>
+}]]></style>
     </xsl:template>
 </xsl:stylesheet>
