@@ -4,7 +4,7 @@
 	xmlns="http://www.w3.org/1999/xhtml">
     <xsl:output method="xml" version="1.0"/>
     
-    <!-- Should result be a full HTML document ('yes') or only content to be placed into a div ('no'). -->
+    <!-- Is result to be pasted in a div in AJAX style ('yes') or should it be a regular HTML document ('no'). -->
     <xsl:param name="ajax" select="'no'"/>
     
     <xsl:variable name="path" select="/result/file/@path"/>
