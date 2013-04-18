@@ -67,6 +67,9 @@
         <!-- window for heidicon data -->
         <div id="heidiconWindow" class="main:getid"/>
 
+        <!-- window for versions history -->
+        <div id="versionsWindow"/> <!--TODO: something to do with templates, like here: class="main:getid" -->
+
         <!-- ######################## main content area ################# -->
         <!-- ######################## main content area ################# -->
         <!-- ######################## main content area ################# -->
@@ -75,6 +78,10 @@
                 <ul class="inline" style="list-style:none outside none;margin-left:0;padding:0">
                     <li>
                         <button type="button" id="heidicon">Heidicon Data</button>
+<!--            <button type="button" id="{$recordType}-versions-button" subject="{$recordId}"-->
+<!--                title="Versions history for {$recordType} {$recordId}">Work history</button>-->
+<!--            <button type="button" id="{$recordType}-versions-button" subject="{$recordId}"-->
+<!--                title="Versions history for {$recordType} {$recordId}">Image history</button>-->
                     </li>
                 </ul>
             </div>
@@ -166,6 +173,37 @@
                     }
                 });
 
+                var versionsw = $.jWindow({
+                    parentElement:'#versionsWindow',
+                    id:'versions',
+                    title:'Versions History',
+                    posx:200,
+                    posy:100,
+                    width:600,
+                    height:500,
+                    type:'ajax',
+                    refreshButton:false });
+
+
+                jQuery('#work-versions-button').on({
+                    click:function () {
+                        var myUrl = 'modules/versions.xql?ajax=yes\u0026rid=' + $('#work-versions-button').attr('subject');
+                        versionsw.set({ url: myUrl });
+                        versionsw.show();
+                        versionsw.update();
+                        return false;
+                    }
+                });
+
+                jQuery('#image-versions-button').on({
+                    click:function () {
+                        var myUrl = 'modules/versions.xql?ajax=yes\u0026iid=' + $('#image-versions-button').attr('subject');
+                        versionsw.set({ url: myUrl });
+                        versionsw.show();
+                        versionsw.update();
+                        return false;
+                    }
+                });
             });
 
             dojo.addOnLoad(function () {
@@ -198,7 +236,6 @@
             function showWindow() {
                 w.show();
             }
-
         </script>
     </body>
 </html>

@@ -7,27 +7,26 @@
         VIEW GENERATION - includes embed actions for switching to forms
     -->
 
-    <!--<xsl:variable name="rootPath" select="'vraSets'"/>-->
 
     <!-- include transforms for sections in VRA dataset -->
-    <xsl:include href="../../view/AgentSet.xsl"/>
-    <xsl:include href="../../view/CulturalContextSet.xsl"/>
-    <xsl:include href="../../view/DateSet.xsl"/>
-    <xsl:include href="../../view/DescriptionSet.xsl"/>
-    <xsl:include href="../../view/InscriptionSet.xsl"/>
-    <xsl:include href="../../view/LocationSet.xsl"/>
-    <xsl:include href="../../view/MaterialSet.xsl"/>
-    <xsl:include href="../../view/MeasurementsSet.xsl"/>
-    <xsl:include href="../../view/RelationSet.xsl"/>
-    <xsl:include href="../../view/RightsSet.xsl"/>
-    <xsl:include href="../../view/SourceSet.xsl"/>
-    <xsl:include href="../../view/StateEditionSet.xsl"/>
-    <xsl:include href="../../view/StylePeriodSet.xsl"/>
-    <xsl:include href="../../view/SubjectSet.xsl"/>
-    <xsl:include href="../../view/TechniqueSet.xsl"/>
-    <xsl:include href="../../view/TextrefSet.xsl"/>
-    <xsl:include href="../../view/TitleSet.xsl"/>
-    <xsl:include href="../../view/WorktypeSet.xsl"/>
+    <xsl:include href="vraSets/AgentSet.xsl"/>
+    <xsl:include href="vraSets/CulturalContextSet.xsl"/>
+    <xsl:include href="vraSets/DateSet.xsl"/>
+    <xsl:include href="vraSets/DescriptionSet.xsl"/>
+    <xsl:include href="vraSets/InscriptionSet.xsl"/>
+    <xsl:include href="vraSets/LocationSet.xsl"/>
+    <xsl:include href="vraSets/MaterialSet.xsl"/>
+    <xsl:include href="vraSets/MeasurementsSet.xsl"/>
+    <xsl:include href="vraSets/RelationSet.xsl"/>
+    <xsl:include href="vraSets/RightsSet.xsl"/>
+    <xsl:include href="vraSets/SourceSet.xsl"/>
+    <xsl:include href="vraSets/StateEditionSet.xsl"/>
+    <xsl:include href="vraSets/StylePeriodSet.xsl"/>
+    <xsl:include href="vraSets/SubjectSet.xsl"/>
+    <xsl:include href="vraSets/TechniqueSet.xsl"/>
+    <xsl:include href="vraSets/TextrefSet.xsl"/>
+    <xsl:include href="vraSets/TitleSet.xsl"/>
+    <xsl:include href="vraSets/WorktypeSet.xsl"/>
     <!-- 'work' or 'image' -->
     <xsl:param name="recordType" select="'GIVEN BY CALLER'"/>
     <!-- UUID of Record e.g w_****** -->
@@ -37,13 +36,15 @@
     <xsl:variable name="id_pref" select="if($recordType='work') then 'w_' else 'i_'"/>
 
     <!-- parameter is only used if a single section is rendered -->
-    <!--<xsl:param name="setname" select="''"/>-->
+    <xsl:param name="setname" select="''"/>
 
     <!-- top level - entry template - handles a work or an image record -->
     <xsl:template match="/vra:work |/vra:image">
         <xsl:variable name="side" select="if(local-name(.)='work') then 'leftPanel' else 'rightPanel'"/>
         <div class="columntitle">
             <xsl:value-of select="$title"/>
+            <xsl:text>&#160;</xsl:text>
+            <button type="button" id="{$recordType}-versions-button" subject="{$recordId}" title="Versions history for {$recordType} {$recordId}">H</button>
         </div>
         <div id="{$side}" class="sidePanel ui-layout-content">
             <xsl:call-template name="titlePane">
@@ -135,7 +136,7 @@
         <xsl:variable name="id" select="concat($id_pref,$title)"/>
         <!--<xsl:variable name="formName" select="$vraSetName"/>-->
         <xsl:variable name="sectionWithData" select="if(string-length(string-join($vraSetNode//*/text(),'')) != 0) then 'true' else 'false'"/>
-        <div id="{$id}" class="{$vraSetName}" data-dojo-type="dijit.TitlePane" data-dojo-props="title: '{$title}',open:{$sectionWithData}">
+        <div id="{$id}" data-dojo-type="dijit.TitlePane" data-dojo-props="title: '{$title}',open:{$sectionWithData}">
             <xsl:variable name="mountPoint" select="concat($id,'_MountPoint')"/>
             <xsl:variable name="caseId" select="concat('c-',$id)"/>
             <xsl:variable name="tableId" select="concat('table-',$id)"/>
@@ -148,10 +149,8 @@
                         <xf:setvalue model="m-main" ref="instance('i-control-center')/uuid" value="'{$recordId}'"/>
                         <!--<xf:setvalue model="m-main" ref="instance('i-control-center')/recordType" value="'{$recordType}'"/>-->
                         <xf:load show="embed" targetid="{$mountPoint}">
-                            <xf:resource value="'exist:/db/apps/ziziphus/forms/{$vraSetName}.xhtml#xforms'"/>
-                            <!-- new extension for load to be added -> if returnUI="false" this means that the subform is embedded and initialized on the server
-                            but no UI transformation takes place and therefore no UI is returned via the embed event. -->
-                            <xf:extension includeCSS="true" includeScript="false" returnUI="false"/>
+                            <xf:resource value="'forms/{$vraSetName}.xhtml#xforms'"/>
+                            <xf:extension includeCSS="true" includeScript="false"/>
                         </xf:load>
                         <!--
                         This is not used for the time being. It was a test to use xquery to generate the
@@ -168,17 +167,14 @@
                         <xf:toggle case="{$caseId}-edit"/>
                     </xf:action>
                 </xf:trigger>
-                <span>
-                    <button type="button" onclick="toggleDetail(this, '{$tableId}');" class="icon icon-zoom-in"/>
-                </span>
+                <button type="button" onclick="toggleDetail(this, '{$tableId}');" class="icon icon-zoom-in"/>
             </div>
             <xf:switch>
                 <!-- ############ VIEW CASE ######### -->
                 <!-- ############ VIEW CASE ######### -->
                 <!-- ############ VIEW CASE ######### -->
                 <xf:case id="{$caseId}-view" selected="true">
-                    <div class="vraSection" id="{concat($id,'_HtmlContent')}" data-bf-form="/db/apps/ziziphus/forms/{$vraSetName}.xhtml">
-                        <!-- all markup within this div must be generated by the specific Subforms stylesheets, e.q. AgentSet.xsl -->
+                    <div class="vraSection" id="{concat($id,'_HtmlContent')}">
                         <xsl:choose>
                             <xsl:when test="exists($vraSetNode/vra:display/text())">
                                 <xsl:apply-templates select="$vraSetNode/vra:display"/>

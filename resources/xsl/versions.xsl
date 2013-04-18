@@ -1,59 +1,56 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:v="http://exist-db.org/versioning" version="1.0">
+<xsl:stylesheet version="1.0"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:v="http://exist-db.org/versioning"
+	xmlns="http://www.w3.org/1999/xhtml">
     <xsl:output method="xml" version="1.0"/>
-    <xsl:variable name="uuid" select="/result/@uuid"/>
+    
+    <!-- Is result to be pasted in a div in AJAX style ('yes') or should it be a regular HTML document ('no'). -->
+    <xsl:param name="ajax" select="'no'"/>
+    
+    <xsl:variable name="path" select="/result/file/@path"/>
+    
     <xsl:template match="/">
+        <xsl:choose>
+            <xsl:when test="$ajax = 'yes'">
+                <xsl:apply-templates select="result" mode="ajax"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:apply-templates select="result" mode="full-html"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    
+    <xsl:template match="result" mode="full-html">
         <html>
             <head>
                 <title>
-                    <xsl:text>Record history for uuid </xsl:text>
-                    <xsl:value-of select="$uuid"/>
+                    <xsl:text>File history for </xsl:text>
+                    <xsl:value-of select="$path"/>
                 </title>
                 <xsl:call-template name="css"/>
             </head>
             <body>
-                <xsl:apply-templates/>
+                <h1>File versions history</h1>
+                <p>Path = <xsl:value-of select="$path"/></p>
+                <xsl:apply-templates />
             </body>
-        </html>
+        </html>    
     </xsl:template>
-    <xsl:template match="result">
-        <div id="hbody">
-            <h1>
-                <xsl:text>Record history for uuid </xsl:text>
-                <span class="id">
-                    <xsl:value-of select="$uuid"/>
-                </span>
-            </h1>
-            <h2>Work</h2>
-            <xsl:apply-templates select="work"/>
-            <h2>Related images</h2>
-            <xsl:apply-templates select="image"/>
+    
+    <xsl:template match="result" mode="ajax">
+        <div id="versions-body">
+            <xsl:apply-templates />
         </div>
     </xsl:template>
+    
     <xsl:template match="error">
         <p class="error">
             <xsl:apply-templates/>
         </p>
     </xsl:template>
-    <xsl:template match="work | image">
-        <xsl:variable name="what">
-            <xsl:choose>
-                <xsl:when test="local-name() = 'work'">Work</xsl:when>
-                <xsl:when test="local-name() = 'image'">Image</xsl:when>
-            </xsl:choose>
-        </xsl:variable>
-        <div class="history {local-name()}-history">
-            <h3>
-                <xsl:value-of select="$what"/>
-                <xsl:text> </xsl:text>
-                <span class="id">
-                    <xsl:value-of select="@id"/>
-                </span>
-            </h3>
-            <p>Path = <a href="{@url}">
-                    <xsl:value-of select="@path"/>
-                </a>
-            </p>
+
+    <xsl:template match="file">
+        <div class="history">
             <xsl:apply-templates>
                 <xsl:with-param name="path" select="@path"/>
             </xsl:apply-templates>
@@ -66,25 +63,17 @@
         <xsl:param name="path"/>
         <xsl:choose>
             <xsl:when test="v:revision">
-                <table class="revisions">
+                <table class="table table-stripped revisions">
                     <tr>
                         <th>Revision nr</th>
                         <th>Date</th>
                         <th>User</th>
                         <th>Resources</th>
                     </tr>
-                    <tr>
-                        <td>0</td>
-                        <td> </td>
-                        <td> </td>
-                        <td>
-                            <a href="/exist/admin/versions.xql?action=restore&amp;rev=0&amp;resource={$path}">content</a>
-                            <xsl:text>, </xsl:text>
-                            <a href="/exist/admin/versions.xql?action=diff&amp;rev=0&amp;resource={$path}">diff</a>
-                            <xsl:text>, </xsl:text>
-                            <a href="/exist/admin/versions.xql?action=annotate&amp;rev=0&amp;resource={$path}">annotation</a>
-                        </td>
-                    </tr>
+                    <xsl:call-template name="revision">
+                        <xsl:with-param name="path" select="$path"/>
+                        <xsl:with-param name="rev">0</xsl:with-param>
+                    </xsl:call-template>
                     <xsl:apply-templates select="v:revision">
                         <xsl:with-param name="path" select="$path"/>
                     </xsl:apply-templates>
@@ -95,11 +84,18 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-    <xsl:template match="v:revision">
+
+    <!-- Template creates one table row. It can be applied for 'v:revision' element
+         or called by name 'revision', in which case revision number should be given
+         by parameter $rev. -->
+    <xsl:template match="v:revision" name="revision">
         <xsl:param name="path"/>
+        <xsl:param name="rev" select="@rev"/>
+        <xsl:variable name="versions-xql">/exist/admin/versions.xql</xsl:variable>
+        
         <tr>
             <td>
-                <xsl:value-of select="@rev"/>
+                <xsl:value-of select="$rev"/>
             </td>
             <td>
                 <xsl:apply-templates select="v:date"/>
@@ -108,20 +104,26 @@
                 <xsl:apply-templates select="v:user"/>
             </td>
             <td>
-                <a href="/exist/admin/versions.xql?action=restore&amp;rev={@rev}&amp;resource={$path}">content</a>
+                <a href="{$versions-xql}?action=restore&amp;rev={$rev}&amp;resource={$path}">content</a>
                 <xsl:text>, </xsl:text>
-                <a href="/exist/admin/versions.xql?action=diff&amp;rev={@rev}&amp;resource={$path}">diff</a>
+                <a href="{$versions-xql}?action=diff&amp;rev={$rev}&amp;resource={$path}">diff</a>
                 <xsl:text>, </xsl:text>
-                <a href="/exist/admin/versions.xql?action=annotate&amp;rev={@rev}&amp;resource={$path}">annotation</a>
+                <a href="{$versions-xql}?action=annotate&amp;rev={$rev}&amp;resource={$path}">annotation</a>
             </td>
         </tr>
     </xsl:template>
     <xsl:template name="css">
         <style type="text/css">
 <![CDATA[
-#hbody {
-	font-size: 8pt;
+body {
+	font-size: 10pt;
 	background-color: #DDDDDD;
+}
+
+#versions-body {
+    font-size: 8pt;
+	background-color: #FFFFFF;
+    padding: 1em 2em;
 }
 
 .id {
@@ -142,12 +144,12 @@ table.revisions th, table.revisions td {
 }
 
 table.revisions th {
-	background-color: #FFCCFF;
+	background-color: #CCCCCC;
 }
 
 table.revisions td {
 	background-color: #FFFFFF;
-}
-]]></style>
+}]]>
+</style>
     </xsl:template>
 </xsl:stylesheet>
