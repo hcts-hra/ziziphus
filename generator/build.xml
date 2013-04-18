@@ -83,9 +83,12 @@
         End: Targets for testing various stylesheets standalone.
     ##### -->
 
-
+    <!-- ########################################################################################
+    Preparation targets
+    ######################################################################################## -->
 
     <target name="prepare">
+        <echo>Building Level 1 artifacts: preparing intermediate resources for further generation steps</echo>
         <echo>Create generator resource: single file holding all instance data structures</echo>
         <!-- generate an XML instance of vra-bf.xsd -->
         <xslt style="${xsl.dir}/xf/vra2xf_01_Instance_Generator.xsl"
@@ -106,10 +109,25 @@
     </target>
 
 
+    <!-- todo: integrate into generation chain -->
+    <target name="applyUIDefinition" depends="prepare" description="reorders and filters 02_XF_Binds.xml according to 'UIDefinition.xml'">
+        <echo>Re-ordering and filtering bind list according to UIDefinition</echo>
+        <xslt style="${xsl.dir}/xf/applyUIDefinition.xsl"
+                in="${basedir}/profile/UIDefinition.xml"
+                out="${target.dir}/02_XF_Binds_redefined.xml">
+            <classpath refid="transform.class.path"/>
+            <param name="debug" expression="${debug}"/>
+            <param name="vanillaBindings" expression="${target.dir}/02_XF_Binds.xml"/>
+        </xslt>
+    </target>
+
+    <!-- ########################################################################################
+    Form generation targets
+    ######################################################################################## -->
 
     <target name="generate-forms" depends="prepare" description="generate XForms">
-        <echo>Generate first chunk of VRA forms</echo>
-        <!-- VRA Section agentSection -->
+    <echo>Generate first chunk of VRA forms</echo>
+    <!-- VRA Section agentSection -->
         <antcall target="generate-subform">
             <param name="subformName" value="AgentSet"/>
         </antcall>
@@ -278,6 +296,10 @@
 
     </target>
 
+    <!-- ########################################################################################
+    View generation targets
+    ######################################################################################## -->
+
     <target name="generate-all-views" description="generates XSLT transforms for VRA Section Views. Uses generated XForms as input.">
         <antcall target="generate-section-view-transform">
             <param name="subformName" value="AgentSet"/>
@@ -409,6 +431,32 @@
         <copy file="${target.dir}/xsd/vra-bf.xsd" tofile="${basedir}/../resources/xsd/vra-bf.xsd" overwrite="true"/>
         <copy file="${target.dir}/xsd/vra-types.xsd" tofile="${basedir}/../resources/xsd/vra-types.xsd" overwrite="true"/>
 
+
+    </target>
+
+    <!-- this is just a helper transform to intially create the view definition file -->
+    <target name="generateInitialUIDefinition">
+        <echo>
+            WARNING - Utility target - needs manual intervention:
+            this target (re)creates a UI definition file. The target can be run manually to generate a plain-vanilla
+            UI file for editing by someone who is responsible for maintaining the order and appearance of certain
+            vra fields.
+        </echo>
+        <xslt style="${xsl.dir}/xf/createUIDefinition.xsl"
+                in="${target.dir}/02_XF_Binds.xml"
+                out="${target.dir}/UIDefinition.xml"
+                force="true">
+            <classpath refid="transform.class.path"/>
+            <param name="debug" expression="${debug}"/>
+        </xslt>
+
+        <echo>
+            New UI definition file created: ${target.dir}/UIDefintion.xml
+        </echo>
+        <echo>
+            ATTENTION: you have to manually move 'UIDefinition.xml' to directory 'profile' to take
+            effect in the generation process.
+        </echo>
 
     </target>
 

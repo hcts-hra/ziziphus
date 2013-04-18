@@ -202,6 +202,9 @@
                         </xf:trigger>
                     </div>
 
+                    <xsl:if test="$debugEnabled">
+                        <xsl:message>UI: vraSectionNode: <xsl:value-of select="$vraSectionNode"/></xsl:message>
+                    </xsl:if>
                     <xsl:apply-templates select="xf:bind[@nodeset='vra:work']/xf:bind[@nodeset=concat('vra:',$vraSectionNode)]" mode="ui"/>
 
                     <bfc:dialog id="attrDialog">
