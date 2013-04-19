@@ -15,8 +15,8 @@
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(@type,'')) != 0">
-                              <div id="b-d2e265" data-bf-type="select1" data-bf-bind="@type" tabindex="0"
-                                   title="Type">
+                              <div data-bf-type="select1" data-bf-bind="@type" tabindex="0" title="Type"
+                                   id="b-d2e265">
                                  <xsl:value-of select="@type"></xsl:value-of>
                               </div>
                            </xsl:when>
@@ -28,8 +28,9 @@
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:earliestDate,'')) != 0">
-                              <div id="b-d2e249" data-bf-type="input" data-bf-bind="vra:earliestDate" tabindex="0"
-                                   title="EarliestDate">
+                              <div data-bf-type="input" data-bf-bind="vra:earliestDate" tabindex="0"
+                                   title="EarliestDate"
+                                   id="b-d2e249">
                                  <xsl:value-of select="vra:earliestDate"></xsl:value-of>
                               </div>
                            </xsl:when>
@@ -40,7 +41,7 @@
                         </xsl:choose>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:earliestDate/@circa,'')) != 0">
-                              <div id="" data-bf-type="input" data-bf-bind="vra:earliestDate/@circa" tabindex="0"
+                              <div data-bf-type="input" data-bf-bind="vra:earliestDate/@circa" tabindex="0"
                                    title="circa">
                                  <xsl:value-of select="vra:earliestDate/@circa"></xsl:value-of>
                               </div>
@@ -54,8 +55,9 @@
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:latestDate,'')) != 0">
-                              <div id="b-d2e257" data-bf-type="input" data-bf-bind="vra:latestDate" tabindex="0"
-                                   title="LatestDate">
+                              <div data-bf-type="input" data-bf-bind="vra:latestDate" tabindex="0"
+                                   title="LatestDate"
+                                   id="b-d2e257">
                                  <xsl:value-of select="vra:latestDate"></xsl:value-of>
                               </div>
                            </xsl:when>
@@ -65,7 +67,7 @@
                         </xsl:choose>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:latestDate/@circa,'')) != 0">
-                              <div id="" data-bf-type="input" data-bf-bind="vra:latestDate/@circa" tabindex="0"
+                              <div data-bf-type="input" data-bf-bind="vra:latestDate/@circa" tabindex="0"
                                    title="circa">
                                  <xsl:value-of select="vra:latestDate/@circa"></xsl:value-of>
                               </div>

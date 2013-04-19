@@ -18,6 +18,9 @@
     - attribute and text values are copied to the template instance
     - for
     author: joern turner
+
+
+    todo: this version is newer and a refactoring attempt for merge.xsl - should be applied later on.
     -->
     <xsl:template match="/merge:data">
         <xsl:if test="not(exists($importData))">

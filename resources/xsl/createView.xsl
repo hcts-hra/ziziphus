@@ -84,10 +84,13 @@
 
     <xsl:template match="xf:input | xf:select1">
         <xsl:variable name="path"><xsl:call-template name="buildPath"/></xsl:variable>
+            <xsl:variable name="isDetail" select="if(@class='detail') then true() else false()"/>
+
             <transform:choose>
                 <transform:when test="string-length(string-join({@ref},'')) != 0">
                     <!--<div id="{@id}" data-bf-type="{local-name(.)}" data-bf-bind="{@ref}" contenteditable="true">-->
-                    <div id="{@id}" data-bf-type="{local-name(.)}" data-bf-bind="{@ref}" tabindex="0" title="{xf:label}">
+                    <div data-bf-type="{local-name(.)}" data-bf-bind="{@ref}" tabindex="0" title="{xf:label}">
+                        <xsl:copy-of select="@*[not(name()='ref')]"/>
                         <transform:value-of select="{@ref}"/>
                     </div>
                 </transform:when>

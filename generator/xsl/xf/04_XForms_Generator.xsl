@@ -762,6 +762,7 @@
             <xsl:with-param name="id"><xsl:value-of select="$id"/></xsl:with-param>
             <xsl:with-param name="pref"><xsl:value-of select="functx:concat-xpath($path,concat('@',$vraAttrName))"/></xsl:with-param>
             <xsl:with-param name="plabel"><xsl:value-of select="functx:capitalize-first($vraAttrName)"/></xsl:with-param>
+            <xsl:with-param name="detail" select="@detail"/>
         </xsl:apply-templates>
     </xsl:template>
 
@@ -769,13 +770,19 @@
         <xsl:param name="id" select="''"/>
         <xsl:param name="pref"   select="''" />
         <xsl:param name="plabel" select="''" />
+        <xsl:param name="detail" select="'false'"/>
 
         <xsl:if test="$debugEnabled">
             <xsl:message>UI-6a (type): xsd:string restriction (select1)</xsl:message>
+            <xsl:message>UI-6a detail:
+                <xsl:value-of select="$detail"/></xsl:message>
         </xsl:if>
 
         <xf:select1 id="{$id}">
             <xsl:attribute name="ref"><xsl:value-of select="$pref"/></xsl:attribute>
+            <xsl:if test="$detail='true'">
+                <xsl:attribute name="class" select="'detail'"/>
+            </xsl:if>
             <xf:label><xsl:value-of select="$plabel"/></xf:label>
             <xsl:for-each select="xsd:enumeration">
                 <xf:item>
@@ -790,6 +797,7 @@
         <xsl:param name="id" select="''"/>
         <xsl:param name="pref"   select="''" />
         <xsl:param name="plabel" select="''" />
+        <xsl:param name="detail" select="'false'"/>
 
         <xsl:if test="$debugEnabled">
             <xsl:message>UI-6b (type): xsd:string restriction (empty)</xsl:message>
@@ -797,6 +805,10 @@
 
         <xf:input id="{$id}">
             <xsl:attribute name="ref"><xsl:value-of select="$pref"/></xsl:attribute>
+            <xsl:if test="$detail='true'">
+                <xsl:attribute name="class" select="'detail'"/>
+            </xsl:if>
+
             <xf:label><xsl:value-of select="$plabel"/></xf:label>
         </xf:input>
     </xsl:template>

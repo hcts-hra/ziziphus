@@ -11,7 +11,7 @@
         <set idref="b-d2e22" name="vra:agentSet">
             <group idref="b-d2e57" name="vra:agent" repeated="true">
                 <group idref="b-d2e115" name="vra:name">
-                    <node idref="b-d2e122" name="@type" detail="false"/>
+                    <node idref="b-d2e122" name="@type" detail="true"/>
                     <textNode detail="false"/>
                 </group>
                 <node idref="b-d2e63" name="vra:attribution" detail="false"/>

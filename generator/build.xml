@@ -91,7 +91,7 @@
         <echo>Building Level 1 artifacts: preparing intermediate resources for further generation steps</echo>
         <echo>Create generator resource: single file holding all instance data structures</echo>
         <!-- generate an XML instance of vra-bf.xsd -->
-        <xslt style="${xsl.dir}/xf/vra2xf_01_Instance_Generator.xsl"
+        <xslt style="${xsl.dir}/xf/01_Instance_Generator.xsl"
               in="${deploy.schema.dir}/${vra.bf.schema.name}"
               out="${target.dir}/01_VRA_Instance.xml">
             <classpath refid="transform.class.path"/>
@@ -100,7 +100,7 @@
 
         <echo>Create generator resource: single file containing all binding information</echo>
         <!-- generate XForms Bindings of vra-bf.xsd -->
-        <xslt style="${xsl.dir}/xf/vra2xf_02_Bind_Generator.xsl"
+        <xslt style="${xsl.dir}/xf/02_Bind_Generator.xsl"
               in="${deploy.schema.dir}/${vra.bf.schema.name}"
               out="${target.dir}/02_XF_Binds.xml">
             <classpath refid="transform.class.path"/>
@@ -112,7 +112,7 @@
     <!-- todo: integrate into generation chain -->
     <target name="applyUIDefinition" depends="prepare" description="reorders and filters 02_XF_Binds.xml according to 'UIDefinition.xml'">
         <echo>Re-ordering and filtering bind list according to UIDefinition</echo>
-        <xslt style="${xsl.dir}/xf/applyUIDefinition.xsl"
+        <xslt style="${xsl.dir}/xf/03_applyUIDefinition.xsl"
                 in="${basedir}/profile/UIDefinition.xml"
                 out="${target.dir}/02_XF_Binds_redefined.xml">
             <classpath refid="transform.class.path"/>
@@ -281,7 +281,7 @@
 
     <target name="generate-subform">
         <echo>generate-subform ${subformName}</echo>
-        <xslt style="${xsl.dir}/xf/vra2xf_04_XF_Section_Subform_Generator.xsl"
+        <xslt style="${xsl.dir}/xf/04_XForms_Generator.xsl"
                 in="${target.dir}/02_XF_Binds_redefined.xml"
                 out="${target.dir}/${subformName}.xhtml"
                 force="true">

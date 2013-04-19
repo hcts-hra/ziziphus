@@ -34,6 +34,7 @@
             <xsl:attribute name="idref" select="@id"/>
             <xsl:attribute name="name" select="@nodeset"/>
             <xsl:apply-templates/>
+
         </xsl:element>
     </xsl:template>
 

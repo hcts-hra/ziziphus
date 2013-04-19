@@ -15,8 +15,8 @@
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:author,'')) != 0">
-                              <div id="b-d2e368" data-bf-type="input" data-bf-bind="vra:author" tabindex="0"
-                                   title="Author">
+                              <div data-bf-type="input" data-bf-bind="vra:author" tabindex="0" title="Author"
+                                   id="b-d2e368">
                                  <xsl:value-of select="vra:author"></xsl:value-of>
                               </div>
                            </xsl:when>
@@ -28,8 +28,8 @@
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:position,'')) != 0">
-                              <div id="b-d2e384" data-bf-type="input" data-bf-bind="vra:position" tabindex="0"
-                                   title="Position">
+                              <div data-bf-type="input" data-bf-bind="vra:position" tabindex="0" title="Position"
+                                   id="b-d2e384">
                                  <xsl:value-of select="vra:position"></xsl:value-of>
                               </div>
                            </xsl:when>
@@ -41,8 +41,8 @@
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:text,'')) != 0">
-                              <div id="b-d2e400" data-bf-type="input" data-bf-bind="vra:text" tabindex="0"
-                                   title="Text">
+                              <div data-bf-type="input" data-bf-bind="vra:text" tabindex="0" title="Text"
+                                   id="b-d2e400">
                                  <xsl:value-of select="vra:text"></xsl:value-of>
                               </div>
                            </xsl:when>
@@ -52,8 +52,8 @@
                         </xsl:choose>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:text/@type,'')) != 0">
-                              <div id="b-d2e407" data-bf-type="select1" data-bf-bind="vra:text/@type" tabindex="0"
-                                   title="Type">
+                              <div data-bf-type="select1" data-bf-bind="vra:text/@type" tabindex="0" title="Type"
+                                   id="b-d2e407">
                                  <xsl:value-of select="vra:text/@type"></xsl:value-of>
                               </div>
                            </xsl:when>
