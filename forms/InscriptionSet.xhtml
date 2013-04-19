@@ -152,19 +152,17 @@
                   </tr>
                   <tr>
                      <td class="prefCol">
-                        <xf:input ref="@pref" id="d3e535-pref">
+                        <xf:input ref="@pref" id="d3e37-pref">
                            <xf:label>pref</xf:label>
                            <xf:hint>preferred</xf:hint>
                         </xf:input>
                      </td>
                      <td class="contentCol">
                         <xf:group appearance="minimal">
-                           <xf:input id="d3e536-Author" ref="vra:author">
+                           <xf:input id="b-d2e368" ref="vra:author">
                               <xf:label>Author</xf:label>
                            </xf:input>
-                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:author">
-                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
-                           </xf:group>
+                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:author"></xf:group>
                            <xf:trigger class="vraAttributeTrigger">
                               <xf:label>...</xf:label>
                               <xf:action>
@@ -175,12 +173,10 @@
                            </xf:trigger>
                         </xf:group>
                         <xf:group appearance="minimal">
-                           <xf:input id="d3e537-Position" ref="vra:position">
+                           <xf:input id="b-d2e384" ref="vra:position">
                               <xf:label>Position</xf:label>
                            </xf:input>
-                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:position">
-                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
-                           </xf:group>
+                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:position"></xf:group>
                            <xf:trigger class="vraAttributeTrigger">
                               <xf:label>...</xf:label>
                               <xf:action>
@@ -191,10 +187,10 @@
                            </xf:trigger>
                         </xf:group>
                         <xf:group appearance="minimal">
-                           <xf:textarea id="d3e538-Text" ref="vra:text">
+                           <xf:input id="b-d2e400" ref="vra:text">
                               <xf:label>Text</xf:label>
-                           </xf:textarea>
-                           <xf:select1 id="d6e60-Type" ref="vra:text/@type">
+                           </xf:input>
+                           <xf:select1 id="b-d2e407" ref="vra:text/@type">
                               <xf:label>Type</xf:label>
                               <xf:item>
                                  <xf:label>Signature</xf:label>

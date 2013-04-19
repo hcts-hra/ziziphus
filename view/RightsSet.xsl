@@ -7,7 +7,7 @@
                omit-xml-declaration="no"></xsl:output>
    <xsl:template match="vra:rightsSet">
       <xsl:param name="vraTableId"></xsl:param>
-      <div class="simple RightsSet" id="{$vraTableId}">
+      <div class="simple" id="{$vraTableId}">
          <table class="vraSetView table table-striped">
             <tbody>
                <xsl:for-each select="vra:rights">
@@ -15,7 +15,7 @@
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(@type,'')) != 0">
-                              <div id="d6e184-Type" data-bf-type="select1" data-bf-bind="@type" tabindex="0"
+                              <div id="b-d2e753" data-bf-type="select1" data-bf-bind="@type" tabindex="0"
                                    title="Type">
                                  <xsl:value-of select="@type"></xsl:value-of>
                               </div>
@@ -28,8 +28,7 @@
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:rightsHolder,'')) != 0">
-                              <div id="d3e571-RightsHolder" data-bf-type="input" data-bf-bind="vra:rightsHolder"
-                                   tabindex="0"
+                              <div id="b-d2e711" data-bf-type="input" data-bf-bind="vra:rightsHolder" tabindex="0"
                                    title="RightsHolder">
                                  <xsl:value-of select="vra:rightsHolder"></xsl:value-of>
                               </div>

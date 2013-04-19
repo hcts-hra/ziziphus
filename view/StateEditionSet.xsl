@@ -7,7 +7,7 @@
                omit-xml-declaration="no"></xsl:output>
    <xsl:template match="vra:stateEditionSet">
       <xsl:param name="vraTableId"></xsl:param>
-      <div class="simple StateEditionSet" id="{$vraTableId}">
+      <div class="simple" id="{$vraTableId}">
          <table class="vraSetView table table-striped">
             <tbody>
                <xsl:for-each select="vra:stateEdition">
@@ -35,7 +35,7 @@
                         </xsl:choose>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(@type,'')) != 0">
-                              <div id="d6e207-Type" data-bf-type="select1" data-bf-bind="@type" tabindex="0"
+                              <div id="b-d2e924" data-bf-type="select1" data-bf-bind="@type" tabindex="0"
                                    title="Type">
                                  <xsl:value-of select="@type"></xsl:value-of>
                               </div>
@@ -45,10 +45,11 @@
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>
+                     <td>Description</td>
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:name,'')) != 0">
-                              <div id="d3e590-Name" data-bf-type="input" data-bf-bind="vra:name" tabindex="0"
+                              <div id="b-d2e896" data-bf-type="input" data-bf-bind="vra:name" tabindex="0"
                                    title="Name">
                                  <xsl:value-of select="vra:name"></xsl:value-of>
                               </div>
@@ -58,7 +59,6 @@
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>
-                     <td>Description</td>
                   </tr>
                </xsl:for-each>
             </tbody>

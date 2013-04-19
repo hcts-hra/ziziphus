@@ -35,6 +35,7 @@
 
         <xsl:element name="{name($originBind)}" namespace="http://www.w3.org/2002/xforms">
             <xsl:copy-of select="$originBind/@*"/>
+            <xsl:copy-of select="@*"/>
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
@@ -78,15 +79,6 @@
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
-
-<!--
-    <xsl:template match="xf:bind">
-        <xsl:copy>
-            <xsl:copy-of select="@*"/>
-            <xsl:apply-templates/>
-        </xsl:copy>
-    </xsl:template>
--->
 
 
 </xsl:stylesheet>

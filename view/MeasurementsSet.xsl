@@ -7,7 +7,7 @@
                omit-xml-declaration="no"></xsl:output>
    <xsl:template match="vra:measurementsSet">
       <xsl:param name="vraTableId"></xsl:param>
-      <div class="simple MeasurementsSet" id="{$vraTableId}">
+      <div class="simple" id="{$vraTableId}">
          <table class="vraSetView table table-striped">
             <tbody>
                <xsl:for-each select="vra:measurements">
@@ -15,7 +15,7 @@
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(.,'')) != 0">
-                              <div id="d3e557-Measurements" data-bf-type="input" data-bf-bind="." tabindex="0"
+                              <div id="b-d2e599" data-bf-type="input" data-bf-bind="." tabindex="0"
                                    title="Measurements">
                                  <xsl:value-of select="."></xsl:value-of>
                               </div>
@@ -26,7 +26,7 @@
                         </xsl:choose>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(@type,'')) != 0">
-                              <div id="d6e104-Type" data-bf-type="select1" data-bf-bind="@type" tabindex="0"
+                              <div id="b-d2e606" data-bf-type="select1" data-bf-bind="@type" tabindex="0"
                                    title="Type">
                                  <xsl:value-of select="@type"></xsl:value-of>
                               </div>
@@ -37,7 +37,7 @@
                         </xsl:choose>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(@unit,'')) != 0">
-                              <div id="d6e130-Unit" data-bf-type="input" data-bf-bind="@unit" tabindex="0"
+                              <div id="b-d2e607" data-bf-type="input" data-bf-bind="@unit" tabindex="0"
                                    title="Unit">
                                  <xsl:value-of select="@unit"></xsl:value-of>
                               </div>

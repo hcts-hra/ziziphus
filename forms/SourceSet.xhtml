@@ -153,60 +153,17 @@
                   </tr>
                   <tr>
                      <td class="prefCol">
-                        <xf:input ref="@pref" id="d3e577-pref">
+                        <xf:input ref="@pref" id="d3e75-pref">
                            <xf:label>pref</xf:label>
                            <xf:hint>preferred</xf:hint>
                         </xf:input>
                      </td>
                      <td class="contentCol">
                         <xf:group appearance="minimal">
-                           <xf:input id="d3e580-Name" ref="vra:name" class="elementName">
-                              <xf:label>Name</xf:label>
-                           </xf:input>
-                           <xf:select1 id="d6e199-Type" ref="vra:name/@type">
-                              <xf:label>Type</xf:label>
-                              <xf:item>
-                                 <xf:label>Book</xf:label>
-                                 <xf:value>book</xf:value>
-                              </xf:item>
-                              <xf:item>
-                                 <xf:label>Donor</xf:label>
-                                 <xf:value>donor</xf:value>
-                              </xf:item>
-                              <xf:item>
-                                 <xf:label>Electronic</xf:label>
-                                 <xf:value>electronic</xf:value>
-                              </xf:item>
-                              <xf:item>
-                                 <xf:label>Serial</xf:label>
-                                 <xf:value>serial</xf:value>
-                              </xf:item>
-                              <xf:item>
-                                 <xf:label>Vendor</xf:label>
-                                 <xf:value>vendor</xf:value>
-                              </xf:item>
-                              <xf:item>
-                                 <xf:label>Other</xf:label>
-                                 <xf:value>other</xf:value>
-                              </xf:item>
-                           </xf:select1>
-                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:name">
-                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
-                           </xf:group>
-                           <xf:trigger class="vraAttributeTrigger">
-                              <xf:label>...</xf:label>
-                              <xf:action>
-                                 <xf:setvalue ref="instance('i-util')/currentElement" value="'name'"></xf:setvalue>
-                                 <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
-                              </xf:action>
-                              <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
-                           </xf:trigger>
-                        </xf:group>
-                        <xf:group appearance="minimal">
-                           <xf:input id="d3e578-Refid" ref="vra:refid">
+                           <xf:input id="b-d2e795" ref="vra:refid">
                               <xf:label>Refid</xf:label>
                            </xf:input>
-                           <xf:select1 id="d6e190-Type" ref="vra:refid/@type">
+                           <xf:select1 id="b-d2e802" ref="vra:refid/@type">
                               <xf:label>Type</xf:label>
                               <xf:item>
                                  <xf:label>Citation</xf:label>
@@ -244,6 +201,49 @@
                               <xf:label>...</xf:label>
                               <xf:action>
                                  <xf:setvalue ref="instance('i-util')/currentElement" value="'refid'"></xf:setvalue>
+                                 <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
+                              </xf:action>
+                              <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
+                           </xf:trigger>
+                        </xf:group>
+                        <xf:group appearance="minimal">
+                           <xf:input id="b-d2e812" ref="vra:name" class="elementName">
+                              <xf:label>Name</xf:label>
+                           </xf:input>
+                           <xf:select1 id="b-d2e819" ref="vra:name/@type">
+                              <xf:label>Type</xf:label>
+                              <xf:item>
+                                 <xf:label>Book</xf:label>
+                                 <xf:value>book</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Donor</xf:label>
+                                 <xf:value>donor</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Electronic</xf:label>
+                                 <xf:value>electronic</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Serial</xf:label>
+                                 <xf:value>serial</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Vendor</xf:label>
+                                 <xf:value>vendor</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Other</xf:label>
+                                 <xf:value>other</xf:value>
+                              </xf:item>
+                           </xf:select1>
+                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:name">
+                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
+                           </xf:group>
+                           <xf:trigger class="vraAttributeTrigger">
+                              <xf:label>...</xf:label>
+                              <xf:action>
+                                 <xf:setvalue ref="instance('i-util')/currentElement" value="'name'"></xf:setvalue>
                                  <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
                               </xf:action>
                               <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>

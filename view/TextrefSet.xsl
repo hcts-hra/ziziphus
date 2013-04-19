@@ -7,7 +7,7 @@
                omit-xml-declaration="no"></xsl:output>
    <xsl:template match="vra:textrefSet">
       <xsl:param name="vraTableId"></xsl:param>
-      <div class="simple TextrefSet" id="{$vraTableId}">
+      <div class="simple" id="{$vraTableId}">
          <table class="vraSetView table table-striped">
             <tbody>
                <xsl:for-each select="vra:textref">
@@ -15,7 +15,7 @@
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:name,'')) != 0">
-                              <div id="d3e609-Name" data-bf-type="input" data-bf-bind="vra:name" tabindex="0"
+                              <div id="b-d2e1135" data-bf-type="input" data-bf-bind="vra:name" tabindex="0"
                                    title="Name">
                                  <xsl:value-of select="vra:name"></xsl:value-of>
                               </div>
@@ -26,7 +26,7 @@
                         </xsl:choose>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:name/@type,'')) != 0">
-                              <div id="d6e228-Type" data-bf-type="select1" data-bf-bind="vra:name/@type"
+                              <div id="b-d2e1142" data-bf-type="select1" data-bf-bind="vra:name/@type"
                                    tabindex="0"
                                    title="Type">
                                  <xsl:value-of select="vra:name/@type"></xsl:value-of>
@@ -41,7 +41,7 @@
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:refid,'')) != 0">
-                              <div id="d3e611-Refid" data-bf-type="input" data-bf-bind="vra:refid" tabindex="0"
+                              <div id="b-d2e1152" data-bf-type="input" data-bf-bind="vra:refid" tabindex="0"
                                    title="Refid">
                                  <xsl:value-of select="vra:refid"></xsl:value-of>
                               </div>
@@ -52,7 +52,7 @@
                         </xsl:choose>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:refid/@type,'')) != 0">
-                              <div id="d6e236-Type" data-bf-type="select1" data-bf-bind="vra:refid/@type"
+                              <div id="b-d2e1159" data-bf-type="select1" data-bf-bind="vra:refid/@type"
                                    tabindex="0"
                                    title="Type">
                                  <xsl:value-of select="vra:refid/@type"></xsl:value-of>

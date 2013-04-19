@@ -7,7 +7,7 @@
                omit-xml-declaration="no"></xsl:output>
    <xsl:template match="vra:materialSet">
       <xsl:param name="vraTableId"></xsl:param>
-      <div class="simple MaterialSet" id="{$vraTableId}">
+      <div class="simple" id="{$vraTableId}">
          <table class="vraSetView table table-striped">
             <tbody>
                <xsl:for-each select="vra:material">
@@ -15,7 +15,7 @@
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(.,'')) != 0">
-                              <div id="d3e552-Material" data-bf-type="input" data-bf-bind="." tabindex="0"
+                              <div id="b-d2e547" data-bf-type="input" data-bf-bind="." tabindex="0"
                                    title="Material">
                                  <xsl:value-of select="."></xsl:value-of>
                               </div>
@@ -26,7 +26,7 @@
                         </xsl:choose>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(@type,'')) != 0">
-                              <div id="d6e99-Type" data-bf-type="select1" data-bf-bind="@type" tabindex="0"
+                              <div id="b-d2e554" data-bf-type="select1" data-bf-bind="@type" tabindex="0"
                                    title="Type">
                                  <xsl:value-of select="@type"></xsl:value-of>
                               </div>

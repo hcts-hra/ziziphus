@@ -148,14 +148,14 @@
                   </tr>
                   <tr>
                      <td class="prefCol">
-                        <xf:input ref="@pref" id="d3e569-pref">
+                        <xf:input ref="@pref" id="d3e69-pref">
                            <xf:label>pref</xf:label>
                            <xf:hint>preferred</xf:hint>
                         </xf:input>
                      </td>
                      <td class="contentCol">
                         <xf:group appearance="minimal">
-                           <xf:select1 id="d6e184-Type" ref="@type">
+                           <xf:select1 id="b-d2e753" ref="@type">
                               <xf:label>Type</xf:label>
                               <xf:item>
                                  <xf:label>Copyrighted</xf:label>
@@ -176,12 +176,10 @@
                            </xf:select1>
                         </xf:group>
                         <xf:group appearance="minimal">
-                           <xf:input id="d3e571-RightsHolder" ref="vra:rightsHolder">
+                           <xf:input id="b-d2e711" ref="vra:rightsHolder">
                               <xf:label>RightsHolder</xf:label>
                            </xf:input>
-                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:rightsHolder">
-                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
-                           </xf:group>
+                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:rightsHolder"></xf:group>
                            <xf:trigger class="vraAttributeTrigger">
                               <xf:label>...</xf:label>
                               <xf:action>
@@ -192,12 +190,10 @@
                            </xf:trigger>
                         </xf:group>
                         <xf:group appearance="minimal">
-                           <xf:textarea id="d3e572-Text" ref="vra:text">
+                           <xf:textarea id="b-d2e727" ref="vra:text">
                               <xf:label>Text</xf:label>
                            </xf:textarea>
-                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:text">
-                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
-                           </xf:group>
+                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:text"></xf:group>
                            <xf:trigger class="vraAttributeTrigger">
                               <xf:label>...</xf:label>
                               <xf:action>

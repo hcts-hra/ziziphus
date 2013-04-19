@@ -7,7 +7,7 @@
                omit-xml-declaration="no"></xsl:output>
    <xsl:template match="vra:culturalContextSet">
       <xsl:param name="vraTableId"></xsl:param>
-      <div class="simple CulturalContextSet" id="{$vraTableId}">
+      <div class="simple" id="{$vraTableId}">
          <table class="vraSetView table table-striped">
             <tbody>
                <xsl:for-each select="vra:culturalContext">
@@ -15,7 +15,7 @@
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(.,'')) != 0">
-                              <div id="d3e518-CulturalContext" data-bf-type="input" data-bf-bind="." tabindex="0"
+                              <div id="b-d2e192" data-bf-type="input" data-bf-bind="." tabindex="0"
                                    title="CulturalContext">
                                  <xsl:value-of select="."></xsl:value-of>
                               </div>

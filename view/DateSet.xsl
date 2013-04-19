@@ -7,7 +7,7 @@
                omit-xml-declaration="no"></xsl:output>
    <xsl:template match="vra:dateSet">
       <xsl:param name="vraTableId"></xsl:param>
-      <div class="simple DateSet" id="{$vraTableId}">
+      <div class="simple" id="{$vraTableId}">
          <table class="vraSetView table table-striped">
             <tbody>
                <xsl:for-each select="vra:date">
@@ -15,7 +15,7 @@
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(@type,'')) != 0">
-                              <div id="d6e42-Type" data-bf-type="select1" data-bf-bind="@type" tabindex="0"
+                              <div id="b-d2e265" data-bf-type="select1" data-bf-bind="@type" tabindex="0"
                                    title="Type">
                                  <xsl:value-of select="@type"></xsl:value-of>
                               </div>
@@ -28,8 +28,7 @@
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:earliestDate,'')) != 0">
-                              <div id="d3e524-EarliestDate" data-bf-type="input" data-bf-bind="vra:earliestDate"
-                                   tabindex="0"
+                              <div id="b-d2e249" data-bf-type="input" data-bf-bind="vra:earliestDate" tabindex="0"
                                    title="EarliestDate">
                                  <xsl:value-of select="vra:earliestDate"></xsl:value-of>
                               </div>
@@ -55,8 +54,7 @@
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:latestDate,'')) != 0">
-                              <div id="d3e526-LatestDate" data-bf-type="input" data-bf-bind="vra:latestDate"
-                                   tabindex="0"
+                              <div id="b-d2e257" data-bf-type="input" data-bf-bind="vra:latestDate" tabindex="0"
                                    title="LatestDate">
                                  <xsl:value-of select="vra:latestDate"></xsl:value-of>
                               </div>

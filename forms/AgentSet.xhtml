@@ -83,6 +83,9 @@
                <xf:bind nodeset="instance()">
                   <xf:bind nodeset="vra:agent">
                      <xf:bind nodeset="@pref" type="boolean"></xf:bind>
+                     <xf:bind nodeset="vra:name">
+                        <xf:bind nodeset="@type" type="vra:agentNameTypeType"></xf:bind>
+                     </xf:bind>
                      <xf:bind nodeset="vra:dates">
                         <xf:bind nodeset="@type" type="vra:agentDateTypeType"></xf:bind>
                         <xf:bind nodeset="vra:earliestDate">
@@ -91,9 +94,6 @@
                         <xf:bind nodeset="vra:latestDate">
                            <xf:bind nodeset="@circa" type="xsd:boolean"></xf:bind>
                         </xf:bind>
-                     </xf:bind>
-                     <xf:bind nodeset="vra:name">
-                        <xf:bind nodeset="@type" type="vra:agentNameTypeType"></xf:bind>
                      </xf:bind>
                   </xf:bind>
                </xf:bind>
@@ -171,17 +171,14 @@
                   </tr>
                   <tr>
                      <td class="prefCol">
-                        <xf:input ref="@pref" id="d3e503-pref">
+                        <xf:input ref="@pref" id="d3e4-pref">
                            <xf:label>pref</xf:label>
                            <xf:hint>preferred</xf:hint>
                         </xf:input>
                      </td>
                      <td class="contentCol">
                         <xf:group appearance="minimal">
-                           <xf:input id="d3e512-Name" ref="vra:name" class="elementName">
-                              <xf:label>Name</xf:label>
-                           </xf:input>
-                           <xf:select1 id="d6e36-Type" ref="vra:name/@type">
+                           <xf:select1 id="b-d2e122" ref="vra:name/@type">
                               <xf:label>Type</xf:label>
                               <xf:item>
                                  <xf:label>Personal</xf:label>
@@ -200,6 +197,9 @@
                                  <xf:value>other</xf:value>
                               </xf:item>
                            </xf:select1>
+                           <xf:input id="b-d2e115" ref="vra:name" class="elementName">
+                              <xf:label>Name</xf:label>
+                           </xf:input>
                            <xf:group class="vraAttributes" appearance="minimal" ref="vra:name">
                               <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                            </xf:group>
@@ -213,12 +213,10 @@
                            </xf:trigger>
                         </xf:group>
                         <xf:group appearance="minimal">
-                           <xf:input id="d3e504-Attribution" ref="vra:attribution">
+                           <xf:input id="b-d2e63" ref="vra:attribution">
                               <xf:label>Attribution</xf:label>
                            </xf:input>
-                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:attribution">
-                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
-                           </xf:group>
+                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:attribution"></xf:group>
                            <xf:trigger class="vraAttributeTrigger">
                               <xf:label>...</xf:label>
                               <xf:action>
@@ -229,12 +227,10 @@
                            </xf:trigger>
                         </xf:group>
                         <xf:group appearance="minimal">
-                           <xf:input id="d3e505-Culture" ref="vra:culture">
+                           <xf:input id="b-d2e79" ref="vra:culture">
                               <xf:label>Culture</xf:label>
                            </xf:input>
-                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:culture">
-                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
-                           </xf:group>
+                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:culture"></xf:group>
                            <xf:trigger class="vraAttributeTrigger">
                               <xf:label>...</xf:label>
                               <xf:action>
@@ -245,7 +241,7 @@
                            </xf:trigger>
                         </xf:group>
                         <xf:group appearance="minimal">
-                           <xf:select1 id="d6e31-Type" ref="vra:dates/@type">
+                           <xf:select1 id="b-d2e114" ref="vra:dates/@type">
                               <xf:label>Type</xf:label>
                               <xf:item>
                                  <xf:label>Activity</xf:label>
@@ -260,21 +256,23 @@
                                  <xf:value>other</xf:value>
                               </xf:item>
                            </xf:select1>
-                           <xf:input id="d3e508-EarliestDate" ref="vra:dates/vra:earliestDate">
-                              <xf:label>EarliestDate</xf:label>
-                           </xf:input>
-                           <xf:input ref="vra:dates/vra:earliestDate/@circa">
-                              <xf:label>circa</xf:label>
-                           </xf:input>
-                           <xf:input id="d3e510-LatestDate" ref="vra:dates/vra:latestDate">
-                              <xf:label>LatestDate</xf:label>
-                           </xf:input>
-                           <xf:input ref="vra:dates/vra:latestDate/@circa">
-                              <xf:label>circa</xf:label>
-                           </xf:input>
-                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:dates">
-                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
+                           <xf:group appearance="minimal">
+                              <xf:input id="b-d2e98" ref="vra:dates/vra:earliestDate">
+                                 <xf:label>EarliestDate</xf:label>
+                              </xf:input>
+                              <xf:input ref="vra:dates/vra:earliestDate/@circa">
+                                 <xf:label>circa</xf:label>
+                              </xf:input>
                            </xf:group>
+                           <xf:group appearance="minimal">
+                              <xf:input id="b-d2e106" ref="vra:dates/vra:latestDate">
+                                 <xf:label>LatestDate</xf:label>
+                              </xf:input>
+                              <xf:input ref="vra:dates/vra:latestDate/@circa">
+                                 <xf:label>circa</xf:label>
+                              </xf:input>
+                           </xf:group>
+                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:dates"></xf:group>
                            <xf:trigger class="vraAttributeTrigger">
                               <xf:label>...</xf:label>
                               <xf:action>
@@ -285,12 +283,10 @@
                            </xf:trigger>
                         </xf:group>
                         <xf:group appearance="minimal">
-                           <xf:input id="d3e514-Role" ref="vra:role">
+                           <xf:input id="b-d2e132" ref="vra:role">
                               <xf:label>Role</xf:label>
                            </xf:input>
-                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:role">
-                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
-                           </xf:group>
+                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:role"></xf:group>
                            <xf:trigger class="vraAttributeTrigger">
                               <xf:label>...</xf:label>
                               <xf:action>

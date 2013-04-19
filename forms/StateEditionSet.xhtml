@@ -151,7 +151,7 @@
                   </tr>
                   <tr>
                      <td class="prefCol">
-                        <xf:input ref="@pref" id="d3e585-pref">
+                        <xf:input ref="@pref" id="d3e85-pref">
                            <xf:label>pref</xf:label>
                            <xf:hint>preferred</xf:hint>
                         </xf:input>
@@ -164,7 +164,7 @@
                            <xf:input ref="@num">
                               <xf:label>num</xf:label>
                            </xf:input>
-                           <xf:select1 id="d6e207-Type" ref="@type">
+                           <xf:select1 id="b-d2e924" ref="@type">
                               <xf:label>Type</xf:label>
                               <xf:item>
                                  <xf:label>Edition</xf:label>
@@ -185,32 +185,28 @@
                            </xf:select1>
                         </xf:group>
                         <xf:group appearance="minimal">
-                           <xf:input id="d3e590-Name" ref="vra:name" class="elementName">
-                              <xf:label>Name</xf:label>
-                           </xf:input>
-                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:name">
-                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
-                           </xf:group>
+                           <xf:textarea id="b-d2e880" ref="vra:description">
+                              <xf:label>Description</xf:label>
+                           </xf:textarea>
+                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:description"></xf:group>
                            <xf:trigger class="vraAttributeTrigger">
                               <xf:label>...</xf:label>
                               <xf:action>
-                                 <xf:setvalue ref="instance('i-util')/currentElement" value="'name'"></xf:setvalue>
+                                 <xf:setvalue ref="instance('i-util')/currentElement" value="'description'"></xf:setvalue>
                                  <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
                               </xf:action>
                               <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
                            </xf:trigger>
                         </xf:group>
                         <xf:group appearance="minimal">
-                           <xf:textarea id="d3e589-Description" ref="vra:description">
-                              <xf:label>Description</xf:label>
-                           </xf:textarea>
-                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:description">
-                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
-                           </xf:group>
+                           <xf:input id="b-d2e896" ref="vra:name" class="elementName">
+                              <xf:label>Name</xf:label>
+                           </xf:input>
+                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:name"></xf:group>
                            <xf:trigger class="vraAttributeTrigger">
                               <xf:label>...</xf:label>
                               <xf:action>
-                                 <xf:setvalue ref="instance('i-util')/currentElement" value="'description'"></xf:setvalue>
+                                 <xf:setvalue ref="instance('i-util')/currentElement" value="'name'"></xf:setvalue>
                                  <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
                               </xf:action>
                               <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>

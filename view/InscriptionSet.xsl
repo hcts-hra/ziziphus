@@ -7,7 +7,7 @@
                omit-xml-declaration="no"></xsl:output>
    <xsl:template match="vra:inscriptionSet">
       <xsl:param name="vraTableId"></xsl:param>
-      <div class="simple InscriptionSet" id="{$vraTableId}">
+      <div class="simple" id="{$vraTableId}">
          <table class="vraSetView table table-striped">
             <tbody>
                <xsl:for-each select="vra:inscription">
@@ -15,7 +15,7 @@
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:author,'')) != 0">
-                              <div id="d3e536-Author" data-bf-type="input" data-bf-bind="vra:author" tabindex="0"
+                              <div id="b-d2e368" data-bf-type="input" data-bf-bind="vra:author" tabindex="0"
                                    title="Author">
                                  <xsl:value-of select="vra:author"></xsl:value-of>
                               </div>
@@ -28,8 +28,7 @@
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:position,'')) != 0">
-                              <div id="d3e537-Position" data-bf-type="input" data-bf-bind="vra:position"
-                                   tabindex="0"
+                              <div id="b-d2e384" data-bf-type="input" data-bf-bind="vra:position" tabindex="0"
                                    title="Position">
                                  <xsl:value-of select="vra:position"></xsl:value-of>
                               </div>
@@ -39,11 +38,21 @@
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>
-                     <td>Text
+                     <td>
+                        <xsl:choose>
+                           <xsl:when test="string-length(string-join(vra:text,'')) != 0">
+                              <div id="b-d2e400" data-bf-type="input" data-bf-bind="vra:text" tabindex="0"
+                                   title="Text">
+                                 <xsl:value-of select="vra:text"></xsl:value-of>
+                              </div>
+                           </xsl:when>
+                           <xsl:otherwise>
+                              <div class="detail" data-bf-type="input" data-bf-bind="vra:text" tabindex="0">(Text)</div>
+                           </xsl:otherwise>
+                        </xsl:choose>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:text/@type,'')) != 0">
-                              <div id="d6e60-Type" data-bf-type="select1" data-bf-bind="vra:text/@type"
-                                   tabindex="0"
+                              <div id="b-d2e407" data-bf-type="select1" data-bf-bind="vra:text/@type" tabindex="0"
                                    title="Type">
                                  <xsl:value-of select="vra:text/@type"></xsl:value-of>
                               </div>

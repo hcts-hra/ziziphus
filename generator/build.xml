@@ -125,7 +125,7 @@
     Form generation targets
     ######################################################################################## -->
 
-    <target name="generate-forms" depends="prepare" description="generate XForms">
+    <target name="generate-forms" depends="applyUIDefinition" description="generate XForms">
     <echo>Generate first chunk of VRA forms</echo>
     <!-- VRA Section agentSection -->
         <antcall target="generate-subform">
@@ -226,6 +226,7 @@
     <target name="generate-Agentset-form" depends="prepare" description="generate the AgentSet form">
         <antcall target="generate-subform">
             <param name="subformName" value="AgentSet"/>
+            <param name="debug" value="true"/>
         </antcall>
     </target>
     <target name="generate-CulturalContextSet-form" depends="prepare" description="generate the CulturalContextSet form">
@@ -281,7 +282,7 @@
     <target name="generate-subform">
         <echo>generate-subform ${subformName}</echo>
         <xslt style="${xsl.dir}/xf/vra2xf_04_XF_Section_Subform_Generator.xsl"
-                in="${target.dir}/02_XF_Binds.xml"
+                in="${target.dir}/02_XF_Binds_redefined.xml"
                 out="${target.dir}/${subformName}.xhtml"
                 force="true">
             <classpath refid="transform.class.path"/>
@@ -300,7 +301,7 @@
     View generation targets
     ######################################################################################## -->
 
-    <target name="generate-all-views" description="generates XSLT transforms for VRA Section Views. Uses generated XForms as input.">
+    <target name="generate-all-views" depends="generate-forms" description="generates XSLT transforms for VRA Section Views. Uses generated XForms as input.">
         <antcall target="generate-section-view-transform">
             <param name="subformName" value="AgentSet"/>
         </antcall>

@@ -107,7 +107,7 @@
     <!-- vra:display is not handled at all and can be filtered out -->
     <xsl:template match="xf:bind[@nodeset='vra:display']"/>
     <!--vra:notes always appears at the end of a form or view and can be handled explicitly -->
-    <xsl:template match="xf:bind[@nodeset='vra:notes']"/>
+    <!--<xsl:template match="xf:bind[@nodeset='vra:notes']"/>-->
 
     <xsl:template match="xf:bind[@nodeset='vra:work']" priority="20"/>
     <xsl:template match="xf:bind[@nodeset='vra:image']" priority="20"/>
