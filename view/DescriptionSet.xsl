@@ -12,7 +12,18 @@
             <tbody>
                <xsl:for-each select="vra:description">
                   <tr>
-                     <td></td>
+                     <td>
+                        <xsl:choose>
+                           <xsl:when test="string-length(string-join(.,'')) != 0">
+                              <div data-bf-type="textarea" data-bf-bind="." tabindex="0" title="" id="b-d2e311">
+                                 <xsl:value-of select="."></xsl:value-of>
+                              </div>
+                           </xsl:when>
+                           <xsl:otherwise>
+                              <div class="detail" data-bf-type="textarea" data-bf-bind="." tabindex="0">()</div>
+                           </xsl:otherwise>
+                        </xsl:choose>
+                     </td>
                   </tr>
                </xsl:for-each>
             </tbody>

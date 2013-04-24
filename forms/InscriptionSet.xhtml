@@ -60,6 +60,7 @@
                   <xf:action ev:event="xforms-submit-done">
                      <xf:message level="ephemeral">Data have been stored.</xf:message>
                      <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/changed" value="'true'"></xf:setvalue>
+                     <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/isDirty" value="'false'"></xf:setvalue>
                      <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/setname"
                                   value="'inscriptionSet'"></xf:setvalue>
                   </xf:action>
@@ -97,6 +98,7 @@
                <xi:include href="bricks/vraAttributesInstance.xml"></xi:include>
                <xf:instance id="i-util">
                   <data xmlns="">
+                     <!--used to store the current element being used in attribute editing-->
                      <currentElement></currentElement>
                   </data>
                </xf:instance>
@@ -117,12 +119,25 @@
             </xf:trigger>
             <xf:trigger id="closeEditor" class="-close">
                <xf:label>×</xf:label>
+               <xf:hint>close editor</xf:hint>
+               <xf:action if="bf:instanceOfModel('m-main','i-control-center')/isDirty='true'"><script type="text/javascript">
+                                    closeForm();
+                                </script></xf:action>
+               <xf:action if="bf:instanceOfModel('m-main','i-control-center')/isDirty='false'">
+                  <xf:dispatch name="unload-subform" targetid="controlCenter"></xf:dispatch>
+               </xf:action>
+            </xf:trigger>
+            <xf:trigger id="close" class="hiddenControl">
+               <xf:label>close form</xf:label>
                <xf:dispatch name="unload-subform" targetid="controlCenter"></xf:dispatch>
             </xf:trigger>
          </div>
          <xf:group id="outerGroup" appearance="minimal" model="m-child-model"
                    ref="instance('i-inscriptionSet')">
             <xf:label></xf:label>
+            <xf:action ev:event="xforms-value-changed" ev:phase="capture">
+               <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/isDirty" value="'true'"></xf:setvalue>
+            </xf:action>
             <xf:action ev:event="init-dialog">
                <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@dataDate"></xf:setvalue>
                <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@extent"></xf:setvalue>
@@ -147,6 +162,15 @@
                      <td colspan="3" class="globalAttrs">
                         <xf:group class="vraAttributes" appearance="minimal" ref=".">
                            <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
+                           <xf:trigger class="vraAttributeTrigger -btn">
+                              <xf:label>A</xf:label>
+                              <xf:hint>Attributes...</xf:hint>
+                              <xf:action>
+                                 <xf:setvalue ref="instance('i-util')/currentElement">.</xf:setvalue>
+                                 <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
+                              </xf:action>
+                              <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
+                           </xf:trigger>
                         </xf:group>
                      </td>
                   </tr>
@@ -162,9 +186,12 @@
                            <xf:input id="b-d2e368" ref="vra:author">
                               <xf:label>Author</xf:label>
                            </xf:input>
-                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:author"></xf:group>
-                           <xf:trigger class="vraAttributeTrigger">
-                              <xf:label>...</xf:label>
+                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:author">
+                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
+                           </xf:group>
+                           <xf:trigger class="vraAttributeTrigger -btn">
+                              <xf:label>A</xf:label>
+                              <xf:hint>Attributes...</xf:hint>
                               <xf:action>
                                  <xf:setvalue ref="instance('i-util')/currentElement" value="'author'"></xf:setvalue>
                                  <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
@@ -176,9 +203,12 @@
                            <xf:input id="b-d2e384" ref="vra:position">
                               <xf:label>Position</xf:label>
                            </xf:input>
-                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:position"></xf:group>
-                           <xf:trigger class="vraAttributeTrigger">
-                              <xf:label>...</xf:label>
+                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:position">
+                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
+                           </xf:group>
+                           <xf:trigger class="vraAttributeTrigger -btn">
+                              <xf:label>A</xf:label>
+                              <xf:hint>Attributes...</xf:hint>
                               <xf:action>
                                  <xf:setvalue ref="instance('i-util')/currentElement" value="'position'"></xf:setvalue>
                                  <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
@@ -187,9 +217,9 @@
                            </xf:trigger>
                         </xf:group>
                         <xf:group appearance="minimal">
-                           <xf:input id="b-d2e400" ref="vra:text">
+                           <xf:textarea id="b-d2e400" ref="vra:text">
                               <xf:label>Text</xf:label>
-                           </xf:input>
+                           </xf:textarea>
                            <xf:select1 id="b-d2e407" ref="vra:text/@type">
                               <xf:label>Type</xf:label>
                               <xf:item>
@@ -224,8 +254,9 @@
                            <xf:group class="vraAttributes" appearance="minimal" ref="vra:text">
                               <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                            </xf:group>
-                           <xf:trigger class="vraAttributeTrigger">
-                              <xf:label>...</xf:label>
+                           <xf:trigger class="vraAttributeTrigger -btn">
+                              <xf:label>A</xf:label>
+                              <xf:hint>Attributes...</xf:hint>
                               <xf:action>
                                  <xf:setvalue ref="instance('i-util')/currentElement" value="'text'"></xf:setvalue>
                                  <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
@@ -235,18 +266,18 @@
                         </xf:group>
                      </td>
                      <td class="triggerCol">
-                        <xf:trigger>
-                           <xf:label>x</xf:label>
-                           <xf:delete nodeset="instance('i-inscriptionSet')/vra:inscription[index('r-vraInscription')]"></xf:delete>
-                        </xf:trigger>
-                        <xf:trigger class="vraAttributeTrigger">
-                           <xf:label>...</xf:label>
+                        <xf:trigger id="doDelete" class="hiddenControl">
+                           <xf:label>remove</xf:label>
                            <xf:action>
-                              <xf:setvalue ref="instance('i-util')/currentElement">.</xf:setvalue>
-                              <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
+                              <xf:delete nodeset="instance('i-inscriptionSet')/vra:inscription[index('r-vraInscription')]"></xf:delete>
+                              <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/isDirty" value="'true'"></xf:setvalue>
                            </xf:action>
-                           <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
                         </xf:trigger>
+                        <xf:trigger class="-btn -btn-danger">
+                           <xf:label>X</xf:label>
+                           <xf:hint>delete this entry</xf:hint><script type="text/javascript">
+                        removeEntry();
+                    </script></xf:trigger>
                      </td>
                   </tr>
                </tbody>

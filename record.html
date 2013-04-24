@@ -38,25 +38,41 @@
                         <uuid/>
                         <changed/>
                         <setname/>
+                        <isDirty>false</isDirty>
                     </data>
                 </xf:instance>
-                <xf:setvalue ev:event="xforms-model-construct-done" ref="instance('i-control-center')/uuid" value="bf:appContext('id')"/>
-                <xf:submission method="get" id="s-refresh" replace="embedHTML" resource="modules/refreshSection.xql" targetid="{concat(instance('i-control-center')/currentform,'_HtmlContent')}"/>
+                <xf:setvalue ev:event="xforms-model-construct-done" ref="instance('i-control-center')/uuid"
+                             value="bf:appContext('id')"/>
+                <xf:submission method="get"
+                               id="s-refresh"
+                               replace="embedHTML"
+                               resource="modules/refreshSection.xql"
+                               targetid="{concat(instance('i-control-center')/currentform,'_HtmlContent')}">
+                    <xf:action ev:event="xforms-submit-done">
+                        <!-- ##### reset 'changed' flag which is set whenever a section was updated in the db ###### -->
+                        <xf:setvalue ref="instance(i-control-center')/changed" value="'false'"/>
+                    </xf:action>
+                </xf:submission>
+
                 <xf:instance xmlns="" id="i-user">
                     <data/>
                 </xf:instance>
-                <xf:submission id="s-load-user-data" method="post" replace="instance" instance="i-user" resource="modules/getUserData.xql">
+                <xf:submission id="s-load-user-data" method="post" replace="instance" instance="i-user"
+                               resource="modules/getUserData.xql">
                     <xf:message ev:event="xforms-submit-error">error receiving the current user</xf:message>
                 </xf:submission>
                 <xf:send ev:event="xforms-ready" submission="s-load-user-data"/>
             </xf:model>
             <xf:group id="controlCenter" model="m-main">
-                <xf:action ev:event="unload-subform" model="m-main" if="string-length(instance('i-control-center')/currentform) &gt; 0">
+                <xf:action ev:event="unload-subform" model="m-main"
+                           if="string-length(instance('i-control-center')/currentform) &gt; 0">
                     <xf:send submission="s-refresh" if="changed='true'"/>
                     <xf:toggle>
                         <xf:case value="concat('c-',instance('i-control-center')/currentform,'-view')"/>
                     </xf:toggle>
                     <xf:load show="none" targetid="{concat(instance('i-control-center')/currentform,'_MountPoint')}"/>
+                    <!-- ##### reset isDirty flag ##### -->
+                    <xf:setvalue ref="instance('i-control-center')/isDirty" value="'false'"/>
                 </xf:action>
                 <xf:action ev:event="clear-currentform" model="m-main">
                     <xf:setvalue ref="instance('i-control-center')/currentform" value="''"/>
@@ -235,6 +251,23 @@
             }
             function showWindow() {
                 w.show();
+            }
+
+            // request to close the form and switch back to view
+            function closeForm(){
+                var doIt = confirm("There are unsaved changes - Really close?");
+                if(doIt == false){
+                    return;
+                }
+                $('#close-value').click();
+            }
+            // triggers deleltion of selected repeat entry
+            function removeEntry(){
+                var doIt = confirm("Really delete this entry?");
+                if(doIt == false){
+                    return;
+                }
+                $('#doDelete-value').click();
             }
         </script>
     </body>

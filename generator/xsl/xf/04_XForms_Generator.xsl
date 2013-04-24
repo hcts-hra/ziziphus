@@ -134,7 +134,10 @@
                                 <xf:message ev:event="xforms-submit-error">Sorry, updating of this record failed</xf:message>
                                 <xf:action ev:event="xforms-submit-done">
                                     <xf:message level="ephemeral">Data have been stored.</xf:message>
+                                    <!-- ##### use to signal that the UI needs re-generation by calling respective xsl e.g. AgentSet.xsl ##### -->
                                     <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/changed" value="'true'"/>
+                                    <!-- ##### reset isDirty flag ##### -->
+                                    <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/isDirty" value="'false'"/>
                                     <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/setname" value="'{$vraSectionNode}'"></xf:setvalue>
                                 </xf:action>
                             </xf:submission>
@@ -167,6 +170,7 @@
 
                             <xf:instance id="i-util">
                                 <data xmlns="">
+                                    <xsl:comment>used to store the current element being used in attribute editing</xsl:comment>
                                     <currentElement/>
                                 </data>
                             </xf:instance>
@@ -198,6 +202,19 @@
                         </xf:trigger>
                         <xf:trigger id="closeEditor" class="-close" >
                             <xf:label>&#215;</xf:label>
+                            <xf:hint>close editor</xf:hint>
+                            <!-- #### in case the instance was modified (isDirty) a confirmation will come up ##### -->
+                            <xf:action if="bf:instanceOfModel('m-main','i-control-center')/isDirty='true'">
+                                <script type="text/javascript">
+                                    closeForm();
+                                </script>
+                            </xf:action>
+                            <xf:action if="bf:instanceOfModel('m-main','i-control-center')/isDirty='false'">
+                                <xf:dispatch name="unload-subform" targetid="controlCenter"/>
+                            </xf:action>
+                        </xf:trigger>
+                        <xf:trigger id="close" class="hiddenControl">
+                            <xf:label>close form</xf:label>
                             <xf:dispatch name="unload-subform" targetid="controlCenter"/>
                         </xf:trigger>
                     </div>
@@ -446,6 +463,11 @@
             </xsl:if>
 
             <xf:label/>
+
+            <xf:action ev:event="xforms-value-changed" ev:phase="capture">
+                <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/isDirty" value="'true'"/>
+            </xf:action>
+
             <xf:action ev:event="init-dialog">
                 <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@dataDate"/>
                 <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@extent"/>
@@ -474,6 +496,15 @@
                         <td colspan="3" class="globalAttrs">
                             <xf:group class="vraAttributes" appearance="minimal" ref=".">
                                 <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
+                                <xf:trigger class="vraAttributeTrigger -btn">
+                                    <xf:label>A</xf:label>
+                                    <xf:hint>Attributes...</xf:hint>
+                                    <xf:action>
+                                        <xf:setvalue ref="instance('i-util')/currentElement">.</xf:setvalue>
+                                        <xf:dispatch name="init-dialog" targetid="outerGroup"/>
+                                    </xf:action>
+                                    <bfc:show dialog="attrDialog" ev:event="DOMActivate"/>
+                                </xf:trigger>
                             </xf:group>
                         </td>
                     </tr>
@@ -559,21 +590,33 @@
                 </xsl:choose>
             </td>
             <td class="triggerCol">
-                <xf:trigger>
-                    <xf:label>x</xf:label>
-                    <xf:delete>
-                        <xsl:attribute name="nodeset">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]</xsl:attribute>
-                    </xf:delete>
+                <xf:trigger id="doDelete" class="hiddenControl">
+                    <xf:label>remove</xf:label>
+                    <xf:action>
+                        <xf:delete>
+                            <xsl:attribute name="nodeset">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]</xsl:attribute>
+                        </xf:delete>
+                        <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/isDirty" value="'true'"/>
+                    </xf:action>
+                </xf:trigger>
+                <xf:trigger class="-btn -btn-danger">
+                    <xf:label>X</xf:label>
+                    <xf:hint>delete this entry</xf:hint>
+                    <script type="text/javascript">
+                        removeEntry();
+                    </script>
                 </xf:trigger>
 
-                <xf:trigger class="vraAttributeTrigger">
-                    <xf:label>...</xf:label>
+<!--
+                <xf:trigger class="vraAttributeTrigger -btn">
+                    <xf:label>A</xf:label>
                     <xf:action>
                         <xf:setvalue ref="instance('i-util')/currentElement">.</xf:setvalue>
                         <xf:dispatch name="init-dialog" targetid="outerGroup"/>
                     </xf:action>
                     <bfc:show dialog="attrDialog" ev:event="DOMActivate"/>
                 </xf:trigger>
+-->
             </td>
         </tr>
     </xsl:template>
@@ -609,8 +652,9 @@
                     <xi:include href="bricks/vraAttributesViewUI.xml"/>
                 </xf:group>
 
-                <xf:trigger class="vraAttributeTrigger">
-                    <xf:label>...</xf:label>
+                <xf:trigger class="vraAttributeTrigger -btn">
+                    <xf:label>A</xf:label>
+                    <xf:hint>Attributes...</xf:hint>
                     <xf:action>
                         <xf:setvalue ref="instance('i-util')/currentElement">
                             <xsl:attribute name="value">'<xsl:value-of select="functx:remove-vra-prefix($vraNodeName)"/>'</xsl:attribute>
@@ -653,11 +697,12 @@
 
             <xf:group class="vraAttributes" appearance="minimal">
                 <xsl:attribute name="ref" select="$vraNodeName"/>
-                <!--<xi:include href="bricks/vraAttributesViewUI.xml"/>-->
+                <xi:include href="bricks/vraAttributesViewUI.xml"/>
             </xf:group>
 
-            <xf:trigger class="vraAttributeTrigger">
-                <xf:label>...</xf:label>
+            <xf:trigger class="vraAttributeTrigger -btn">
+                <xf:label>A</xf:label>
+                <xf:hint>Attributes...</xf:hint>
                 <xf:action>
                     <xf:setvalue ref="instance('i-util')/currentElement">
                         <xsl:attribute name="value">'<xsl:value-of select="functx:remove-vra-prefix($vraNodeName)"/>'</xsl:attribute>
@@ -697,7 +742,8 @@
 
         <xsl:if test="@xfType='simpleType'">
             <xsl:choose>
-                <xsl:when test="contains($useTextarea,$targetNode)">
+                <!--<xsl:when test="contains($useTextarea,$targetNode)">-->
+                <xsl:when test="@control='textarea'">
                     <xsl:if test="$debugEnabled">
                         <xsl:message>UI-4.1:found element that shall use textarea</xsl:message>
                     </xsl:if>

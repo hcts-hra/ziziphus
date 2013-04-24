@@ -20,6 +20,9 @@ body {
 */
 
 }
+.bf .imagePanel {
+  text-align: center;
+}
 .bf .xfRepeatIndex {
   border-top: 3px solid #cccccc;
   border-bottom: 3px solid #cccccc;
@@ -77,18 +80,6 @@ body {
 }
 .bf table td {
   vertical-align: top;
-}
-.bf table .sidePanel {
-  min-width: 480px;
-  width: 480px;
-  background: #999999;
-}
-.bf table .imagePanel {
-  padding: 30px 10px;
-  text-align: center;
-}
-.bf table .imagePanel #vraImage {
-  width: 100%;
 }
 .bf .icon {
   border: thin solid #999999 !important;
@@ -202,6 +193,7 @@ body {
 }
 .relatedImage {
   width: 100%;
+  max-width: 530px;
 }
 .tundra .dijitMenu,
 .tundra .dijitMenuBar {

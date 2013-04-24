@@ -82,7 +82,7 @@
         </xsl:for-each>
     </xsl:template>
 
-    <xsl:template match="xf:input | xf:select1">
+    <xsl:template match="xf:input | xf:select1 | xf:textarea">
         <xsl:variable name="path"><xsl:call-template name="buildPath"/></xsl:variable>
             <xsl:variable name="isDetail" select="if(@class='detail') then true() else false()"/>
 

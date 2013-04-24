@@ -54,7 +54,7 @@
     </target>
 
     <target name="testCreateViewFragments" description="create html views from xforms">
-        <xslt style="${basedir}/../resources/xsl/createView.xsl"
+        <xslt style="${basedir}/xsl/view/createView.xsl"
                 in="${basedir}/../forms/AgentSet.xhtml"
                 out="${basedir}/../view/AgentSetView.xsl"
                 force="yes">
@@ -78,6 +78,13 @@
                 force="yes">
             <classpath refid="transform.class.path"/>
         </xslt>
+    </target>
+
+
+    <target name="testDescriptionView">
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="DescriptionSet"/>
+        </antcall>
     </target>
     <!-- #####
         End: Targets for testing various stylesheets standalone.
@@ -148,11 +155,6 @@
         </antcall>
 
         <!-- VRA Section descriptionSet -->
-        <antcall target="generate-subform">
-            <param name="subformName" value="InscriptionSet"/>
-        </antcall>
-
-        <!-- VRA Section inscriptionSet -->
         <antcall target="generate-subform">
             <param name="subformName" value="InscriptionSet"/>
         </antcall>
@@ -245,9 +247,9 @@
             <param name="debug" value="true"/>
         </antcall>
     </target>
-    <target name="generate-Incription-form" depends="prepare" description="generate the Inscription form">
+    <target name="generate-Inscription-form" depends="prepare" description="generate the Inscription form">
         <antcall target="generate-subform">
-            <param name="subformName" value="IncriptionSet"/>
+            <param name="subformName" value="InscriptionSet"/>
             <param name="debug" value="true"/>
         </antcall>
     </target>
@@ -364,7 +366,7 @@
     <target name="generate-section-view-transform" description="generates a XSLT transform for a single VRA section">
         <echo>generate-subform ${subformName}</echo>
         <mkdir dir="${target.dir}/views"/>
-        <xslt style="${basedir}/../resources/xsl/createView.xsl"
+        <xslt style="${basedir}/xsl/view/createView.xsl"
                 in="${basedir}/../forms/${subformName}.xhtml"
                 out="${basedir}/../view/${subformName}.xsl"
                 force="true">
@@ -373,20 +375,6 @@
             <param name="vraSection" expression="${subformName}"/>
         </xslt>
     </target>
-
-    <target name="vra-views">
-        <echo>generate-subform ${subformName}</echo>
-        <mkdir dir="${target.dir}/views"/>
-        <xslt style="${xsl.dir}/view/xf_to_html.xsl"
-                in="${target.dir}/${subformName}.xhtml"
-                out="${target.dir}/views/${subformName}.xsl"
-                force="true">
-            <classpath refid="transform.class.path"/>
-            <param name="debug" expression="${debug}"/>
-            <param name="vraSection" expression="${subformName}"/>
-        </xslt>
-    </target>
-
 
     <target name="inline-instance">
         <echo>generate inline instance of xsd</echo>

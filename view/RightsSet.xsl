@@ -40,7 +40,19 @@
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>
-                     <td>Text</td>
+                     <td>
+                        <xsl:choose>
+                           <xsl:when test="string-length(string-join(vra:text,'')) != 0">
+                              <div data-bf-type="textarea" data-bf-bind="vra:text" tabindex="0" title="Text"
+                                   id="b-d2e727">
+                                 <xsl:value-of select="vra:text"></xsl:value-of>
+                              </div>
+                           </xsl:when>
+                           <xsl:otherwise>
+                              <div class="detail" data-bf-type="textarea" data-bf-bind="vra:text" tabindex="0">(Text)</div>
+                           </xsl:otherwise>
+                        </xsl:choose>
+                     </td>
                   </tr>
                </xsl:for-each>
             </tbody>

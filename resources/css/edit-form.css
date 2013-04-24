@@ -60,14 +60,31 @@ table tr td .xfGroup:last-child {
   border-bottom: thin solid #aaaaaa;
   width: 100%;
 }
+.vraAttributes .xfOutput {
+  font-size: 0.7em;
+}
 .contentCol .vraAttributes .xfControl {
   width: auto;
 }
 .vraAttributeTrigger {
-  float: right;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.vraAttributeTrigger button {
+  width: 24px;
+  height: 24px;
+  font-size: 0.9em;
+  padding: 0;
 }
 .triggerCol {
   width: 10px;
+}
+.triggerCol button {
+  width: 24px;
+  height: 24px;
+  font-size: 0.9em;
+  padding: 0;
 }
 .prefCol {
   width: 10px;
@@ -83,9 +100,11 @@ table tr td .xfGroup:last-child {
   display: inline-block;
   padding-bottom: 5px;
   border-top: none !important;
+  position: relative;
 }
 .contentCol .xfControl .widgetContainer {
   display: inline-block;
+  width: 100%;
 }
 .WorktypeSet .contentCol .xfControl {
   width: 100%;
@@ -138,13 +157,32 @@ table tr td .xfGroup:last-child {
 #notes textarea {
   width: 100%;
 }
-.globalAttrs > .xfContainer {
-  width: 100%;
+.bf .globalAttrs .xfContainer {
   display: inline-block;
+  min-height: 12px;
+  position: relative;
+  width: 100%;
   background: transparent;
   border: none;
   padding: 3px;
 }
-textarea {
-  width: 95% !important;
+.globalAttrs .vraAttributes .xfTrigger {
+  border: none;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 0;
+}
+.xfTextarea {
+  width: 100%;
+}
+.xfTextarea .widgetContainer {
+  width: 100%;
+}
+.xfTextarea .widgetContainer textarea {
+  width: 100%;
+}
+.bf form .hiddenControl {
+  display: none;
 }

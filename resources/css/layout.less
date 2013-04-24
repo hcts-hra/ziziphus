@@ -5,7 +5,6 @@
 @imageColor:#898989;
 @sectionColor:#666666;
 
-@sidePanelWidth:480px;
 
 html, body {
     width: 100%;
@@ -23,6 +22,9 @@ html, body {
 .bf{
     font-size:0.9em;
 
+    .imagePanel{
+      text-align: center;
+    }
     .xfRepeatIndex{
         border-top:3px solid #cccccc;
         border-bottom: 3px solid #cccccc;
@@ -92,20 +94,6 @@ html, body {
 
         td{
             vertical-align: top;
-        }
-        .sidePanel{
-            min-width:@sidePanelWidth;
-            width:@sidePanelWidth;
-            background: #999999;
-        }
-        .imagePanel{
-            padding: 30px 10px;
-            text-align:center;
-
-
-            #vraImage{
-                width: 100%;
-            }
         }
     }
     //mixin used below
@@ -248,6 +236,7 @@ html, body {
 }
 .relatedImage{
     width: 100%;
+    max-width: 530px;
 }
 .tundra .dijitMenu, .tundra .dijitMenuBar {
     background: #454545;

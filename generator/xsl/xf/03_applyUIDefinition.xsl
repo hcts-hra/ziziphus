@@ -75,6 +75,7 @@
 
         <xsl:element name="{name($originBind)}" namespace="http://www.w3.org/2002/xforms">
             <xsl:copy-of select="$originBind/@*[not(name()='nodeset')]"/>
+            <xsl:copy-of select="@*"/>
             <xsl:attribute name="nodeset" select="'.'"/>
             <xsl:apply-templates/>
         </xsl:element>
