@@ -14,6 +14,13 @@ let $newData := request:get-data()
 let $record := collection('/db/apps/ziziphusData')//vra:vra/*[./@id=$id]
 
 (: update old data with new data :)
-let $update := update replace $record/*[local-name(.)=$vraSet] with $newData
+let $test1 := if(exists($record/*[local-name() eq $vraSet])) 
+              then ( update replace $record/*[local-name(.)=$vraSet] with $newData )
+              else ( 
+                  if(exists($record/*[local-name(.) > $vraSet][1]))
+                     then ( update insert $newData preceding $record/*[local-name(.) > $vraSet][1] )
+                     else ( update insert $newData following ($record/vra:*[local-name(.) < $vraSet])[last()])
+                )
+(:   :let $update := update replace $record/*[local-name(.)=$vraSet] with $newData :)
 
-return $record
+return ""
