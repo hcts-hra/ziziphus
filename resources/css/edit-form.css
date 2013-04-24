@@ -181,7 +181,7 @@ table tr td .xfGroup:last-child {
   width: 100%;
 }
 .xfTextarea .widgetContainer textarea {
-  width: 100%;
+  width: 95%;
 }
 .bf form .hiddenControl {
   display: none;

@@ -107,13 +107,14 @@
          <!-- ####################################### VISIBLE UI ####################################### -->
          <!-- ####################################### VISIBLE UI ####################################### -->
          <!-- ####################################### VISIBLE UI ####################################### -->
-         <div class="toolbar">
-            <xf:trigger class="t-plus" model="m-child-model" id="d3e1-add" title="Add Inscription">
+         <div class="toolbar btn-group">
+            <xf:trigger class="t-plus -btn-small" model="m-child-model" id="d3e1-add"
+                        title="Add Inscription">
                <xf:label>+</xf:label>
                <xf:insert model="m-child-model" nodeset="instance()/vra:inscription[last()]"
                           origin="instance('i-templates')/vra:inscription"></xf:insert>
             </xf:trigger>
-            <xf:trigger id="d3e1-save">
+            <xf:trigger id="d3e1-save" class="-btn-small">
                <xf:label>Save changes</xf:label>
                <xf:send submission="s-update"></xf:send>
             </xf:trigger>

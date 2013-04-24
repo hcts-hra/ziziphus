@@ -188,18 +188,22 @@
                             <xf:label>save</xf:label>
                         </xf:trigger>
 -->
-                        <xf:trigger class="t-plus" model="m-child-model" id="{concat(generate-id(),'-add')}">
+                        <xf:trigger class="t-plus -btn-small" model="m-child-model" id="{concat(generate-id(),'-add')}">
                             <xsl:attribute name="title">Add <xsl:value-of select="$vraArtifact"/></xsl:attribute>
                             <xf:label>+</xf:label>
+                            <xf:hint>add an entry</xf:hint>
                             <xf:insert model="m-child-model">
                                 <xsl:attribute name="nodeset">instance()/vra:<xsl:value-of select="$vraArtifactNode"/>[last()]</xsl:attribute>
                                 <xsl:attribute name="origin">instance('i-templates')/vra:<xsl:value-of select="$vraArtifactNode"/></xsl:attribute>
                             </xf:insert>
                         </xf:trigger>
-                        <xf:trigger id="{concat(generate-id(),'-save')}">
+                        <xf:trigger id="{concat(generate-id(),'-save')}" class="-btn-small">
                             <xf:label>Save changes</xf:label>
+                            <xf:hint>save changes</xf:hint>
                             <xf:send submission="s-update"/>
                         </xf:trigger>
+
+
                         <xf:trigger id="closeEditor" class="-close" >
                             <xf:label>&#215;</xf:label>
                             <xf:hint>close editor</xf:hint>
@@ -580,9 +584,14 @@
 
                     </xsl:when>
                     <xsl:when test="'simpleType'=$xfType">
+                        <xsl:if test="$debugEnabled">
+                            <xsl:message>UI-2.1: matched simple type: <xsl:value-of select="@nodeset"/></xsl:message>
+                        </xsl:if>
+
                         <xf:group appearance="minimal">
                             <xsl:call-template name="ui-nodeset-vra"/>
                         </xf:group>
+
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:message terminate="yes">This rule must never be matched!</xsl:message>
