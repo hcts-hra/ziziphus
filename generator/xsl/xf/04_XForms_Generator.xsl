@@ -188,20 +188,22 @@
                             <xf:label>save</xf:label>
                         </xf:trigger>
 -->
-                        <xf:trigger class="t-plus -btn-small" model="m-child-model" id="{concat(generate-id(),'-add')}">
-                            <xsl:attribute name="title">Add <xsl:value-of select="$vraArtifact"/></xsl:attribute>
-                            <xf:label>+</xf:label>
-                            <xf:hint>add an entry</xf:hint>
-                            <xf:insert model="m-child-model">
-                                <xsl:attribute name="nodeset">instance()/vra:<xsl:value-of select="$vraArtifactNode"/>[last()]</xsl:attribute>
-                                <xsl:attribute name="origin">instance('i-templates')/vra:<xsl:value-of select="$vraArtifactNode"/></xsl:attribute>
-                            </xf:insert>
-                        </xf:trigger>
-                        <xf:trigger id="{concat(generate-id(),'-save')}" class="-btn-small">
-                            <xf:label>Save changes</xf:label>
-                            <xf:hint>save changes</xf:hint>
-                            <xf:send submission="s-update"/>
-                        </xf:trigger>
+                        <div class="btn-group">
+                            <xf:trigger class="t-plus -btn-small" model="m-child-model" id="{concat(generate-id(),'-add')}">
+                                <xsl:attribute name="title">Add <xsl:value-of select="$vraArtifact"/></xsl:attribute>
+                                <xf:label>+</xf:label>
+                                <xf:hint>add an entry</xf:hint>
+                                <xf:insert model="m-child-model">
+                                    <xsl:attribute name="nodeset">instance()/vra:<xsl:value-of select="$vraArtifactNode"/>[last()]</xsl:attribute>
+                                    <xsl:attribute name="origin">instance('i-templates')/vra:<xsl:value-of select="$vraArtifactNode"/></xsl:attribute>
+                                </xf:insert>
+                            </xf:trigger>
+                            <xf:trigger id="{concat(generate-id(),'-save')}" class="-btn-small">
+                                <xf:label>Save changes</xf:label>
+                                <xf:hint>save changes</xf:hint>
+                                <xf:send submission="s-update"/>
+                            </xf:trigger>
+                        </div>
 
 
                         <xf:trigger id="closeEditor" class="-close" >

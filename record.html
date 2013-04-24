@@ -50,7 +50,7 @@
                                targetid="{concat(instance('i-control-center')/currentform,'_HtmlContent')}">
                     <xf:action ev:event="xforms-submit-done">
                         <!-- ##### reset 'changed' flag which is set whenever a section was updated in the db ###### -->
-                        <xf:setvalue ref="instance(i-control-center')/changed" value="'false'"/>
+                        <xf:setvalue ref="instance('i-control-center')/changed" value="'false'"/>
                     </xf:action>
                 </xf:submission>
 

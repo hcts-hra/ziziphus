@@ -103,17 +103,21 @@
          <!-- ####################################### VISIBLE UI ####################################### -->
          <!-- ####################################### VISIBLE UI ####################################### -->
          <!-- ####################################### VISIBLE UI ####################################### -->
-         <div class="toolbar btn-group">
-            <xf:trigger class="t-plus -btn-small" model="m-child-model" id="d3e1-add"
-                        title="Add Subject">
-               <xf:label>+</xf:label>
-               <xf:insert model="m-child-model" nodeset="instance()/vra:subject[last()]"
-                          origin="instance('i-templates')/vra:subject"></xf:insert>
-            </xf:trigger>
-            <xf:trigger id="d3e1-save" class="-btn-small">
-               <xf:label>Save changes</xf:label>
-               <xf:send submission="s-update"></xf:send>
-            </xf:trigger>
+         <div class="toolbar">
+            <div class="btn-group">
+               <xf:trigger class="t-plus -btn-small" model="m-child-model" id="d3e1-add"
+                           title="Add Subject">
+                  <xf:label>+</xf:label>
+                  <xf:hint>add an entry</xf:hint>
+                  <xf:insert model="m-child-model" nodeset="instance()/vra:subject[last()]"
+                             origin="instance('i-templates')/vra:subject"></xf:insert>
+               </xf:trigger>
+               <xf:trigger id="d3e1-save" class="-btn-small">
+                  <xf:label>Save changes</xf:label>
+                  <xf:hint>save changes</xf:hint>
+                  <xf:send submission="s-update"></xf:send>
+               </xf:trigger>
+            </div>
             <xf:trigger id="closeEditor" class="-close">
                <xf:label>×</xf:label>
                <xf:hint>close editor</xf:hint>

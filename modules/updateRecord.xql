@@ -14,6 +14,6 @@ let $newData := request:get-data()
 let $record := collection('/db/apps/ziziphusData')//vra:vra/*[./@id=$id]
 
 (: update old data with new data :)
-let $update := update replace $record/*[local-name(.)='agentSet'] with $newData
+let $update := update replace $record/*[local-name(.)=$vraSet] with $newData
 
 return $record
