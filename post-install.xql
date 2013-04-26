@@ -111,9 +111,9 @@ declare function local:setupUsersAndGroups() {
                                     <group name="admin" manager="admin"/>
                                 </groups>
     let $usersConfiguration :=  <users>
-                                    <user name="reader" password="reader" primarygroup="readers" groups=""  />
-                                    <user name="editor" password="editor" primarygroup="editors" groups="reader"/>
-                                    <user name="dbadmin" password="dbadmin" primarygroup="admins" groups="reader editor"/>
+                                    <user name="reader1" password="reader" primarygroup="readers" groups=""  />
+                                    <user name="editor1" password="editor" primarygroup="editors" groups="reader"/>
+                                    <user name="dbadmin1" password="dbadmin" primarygroup="admins" groups="reader editor"/>
                                 </users>
 
     return        

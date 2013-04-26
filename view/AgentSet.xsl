@@ -41,6 +41,19 @@
                      </td>
                      <td>
                         <xsl:choose>
+                           <xsl:when test="string-length(string-join(vra:role,'')) != 0">
+                              <div data-bf-type="input" data-bf-bind="vra:role" tabindex="0" title="Role"
+                                   id="b-d2e132">
+                                 <xsl:value-of select="vra:role"></xsl:value-of>
+                              </div>
+                           </xsl:when>
+                           <xsl:otherwise>
+                              <div class="detail" data-bf-type="input" data-bf-bind="vra:role" tabindex="0">(Role)</div>
+                           </xsl:otherwise>
+                        </xsl:choose>
+                     </td>
+                     <td>
+                        <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:attribution,'')) != 0">
                               <div data-bf-type="input" data-bf-bind="vra:attribution" tabindex="0"
                                    title="Attribution"
@@ -131,19 +144,6 @@
                               <div class="detail" data-bf-type="input"
                                    data-bf-bind="vra:dates/vra:latestDate/@circa"
                                    tabindex="0">(circa)</div>
-                           </xsl:otherwise>
-                        </xsl:choose>
-                     </td>
-                     <td>
-                        <xsl:choose>
-                           <xsl:when test="string-length(string-join(vra:role,'')) != 0">
-                              <div data-bf-type="input" data-bf-bind="vra:role" tabindex="0" title="Role"
-                                   id="b-d2e132">
-                                 <xsl:value-of select="vra:role"></xsl:value-of>
-                              </div>
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <div class="detail" data-bf-type="input" data-bf-bind="vra:role" tabindex="0">(Role)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>

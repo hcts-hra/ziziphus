@@ -33,6 +33,7 @@
         <xsl:element name="set">
             <xsl:attribute name="idref" select="@id"/>
             <xsl:attribute name="name" select="@nodeset"/>
+            <xsl:attribute name="visible" select="'true'"/>
             <xsl:apply-templates/>
 
         </xsl:element>

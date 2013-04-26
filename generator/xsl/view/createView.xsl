@@ -115,4 +115,6 @@
         <xsl:value-of select="normalize-space($tmp)"/>
     </xsl:template>
 
+    <xsl:template match="xf:hint"/>
+    <xsl:template match="xf:label"/>
 </xsl:stylesheet>

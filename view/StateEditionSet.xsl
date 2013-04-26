@@ -48,15 +48,14 @@
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:description,'')) != 0">
-                              <div data-bf-type="textarea" data-bf-bind="vra:description" tabindex="0"
+                              <div data-bf-type="input" data-bf-bind="vra:description" tabindex="0"
                                    title="Description"
                                    id="b-d2e880">
                                  <xsl:value-of select="vra:description"></xsl:value-of>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="detail" data-bf-type="textarea" data-bf-bind="vra:description"
-                                   tabindex="0">(Description)</div>
+                              <div class="detail" data-bf-type="input" data-bf-bind="vra:description" tabindex="0">(Description)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>

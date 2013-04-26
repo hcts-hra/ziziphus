@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="Ziziphus xsd2xforms Generator" id="ziziphus" default="generate-forms" basedir=".">
+<project name="Ziziphus xsd2xforms Generator" id="ziziphus" default="generate-all" basedir=".">
 
 
     <property name="generator.dir" value="${basedir}"/>
@@ -116,7 +116,6 @@
     </target>
 
 
-    <!-- todo: integrate into generation chain -->
     <target name="applyUIDefinition" depends="prepare" description="reorders and filters 02_XF_Binds.xml according to 'UIDefinition.xml'">
         <echo>Re-ordering and filtering bind list according to UIDefinition</echo>
         <xslt style="${xsl.dir}/xf/03_applyUIDefinition.xsl"
@@ -125,6 +124,16 @@
             <classpath refid="transform.class.path"/>
             <param name="debug" expression="${debug}"/>
             <param name="vanillaBindings" expression="${target.dir}/02_XF_Binds.xml"/>
+        </xslt>
+    </target>
+
+    <target name="createVRASectionTemplate" description="generates template rule for vra-record.xsl that controls order and existence of VRA Sets">
+
+        <xslt style="${xsl.dir}/view/createVRASectionTemplate.xsl"
+                in="${basedir}/profile/UIDefinition.xml"
+                out="${basedir}/../resources/xsl/vraSectionTemplate.xsl">
+            <classpath refid="transform.class.path"/>
+            <param name="debug" expression="${debug}"/>
         </xslt>
     </target>
 
@@ -303,7 +312,7 @@
     View generation targets
     ######################################################################################## -->
 
-    <target name="generate-all-views" depends="generate-forms" description="generates XSLT transforms for VRA Section Views. Uses generated XForms as input.">
+    <target name="generate-all" depends="generate-forms, createVRASectionTemplate" description="generates XSLT transforms for VRA Section Views. Uses generated XForms as input.">
         <antcall target="generate-section-view-transform">
             <param name="subformName" value="AgentSet"/>
         </antcall>

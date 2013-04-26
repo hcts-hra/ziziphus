@@ -88,6 +88,9 @@ body {
 }
 .bf .icon-edit {
   background-position: -94px -70px;
+  position: absolute;
+  top: -14px;
+  right: 0;
 }
 .bf .icon-remove {
   background-position: -310px 2px;
@@ -209,4 +212,11 @@ body {
 .ui-layout-north,
 .ui-layout-south {
   background: #f5f5f5 !important;
+}
+.ui-layout-south .xfOutput {
+  float: right;
+  font-size: 0.7em;
+}
+.ui-layout-south .xfLabel {
+  font-size: 1em;
 }
