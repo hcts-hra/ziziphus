@@ -20,7 +20,7 @@
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="detail" data-bf-type="textarea" data-bf-bind="." tabindex="0">()</div>
+                              <div class="nodata" data-bf-type="textarea" data-bf-bind="." tabindex="0">()</div>
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>

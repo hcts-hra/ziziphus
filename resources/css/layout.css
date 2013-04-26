@@ -155,10 +155,12 @@ body {
 .bf .simple .detail-li {
   display: none;
 }
+.bf .simple .nodata {
+  display: none;
+}
 .bf .full .detail {
   display: block;
-  color: #999999;
-  font-size: 0.7em;
+  font-size: 0.9em;
 }
 .bf .full .detail-inline {
   display: inline;
@@ -171,6 +173,11 @@ body {
 }
 .bf .full .detail-li {
   display: list-item;
+}
+.bf .full .nodata {
+  display: inline-block;
+  font-size: 0.7em;
+  color: #999999;
 }
 .bf .pref {
   font-weight: bold;

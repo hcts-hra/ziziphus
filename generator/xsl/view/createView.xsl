@@ -95,7 +95,7 @@
                     </div>
                 </transform:when>
 
-                <transform:otherwise><div class="detail" data-bf-type="{local-name(.)}" data-bf-bind="{@ref}" tabindex="0">(<xsl:value-of select="xf:label"/>)</div></transform:otherwise>
+                <transform:otherwise><div class="nodata" data-bf-type="{local-name(.)}" data-bf-bind="{@ref}" tabindex="0">(<xsl:value-of select="xf:label"/>)</div></transform:otherwise>
                 <!--<transform:otherwise><div class="detail" data-bf-type="{local-name(.)}" data-bf-bind="{@ref}" tabindex="0"><a href="#" title="Click to add element: {xf:label}">[+]</a></div></transform:otherwise>-->
             </transform:choose>
     </xsl:template>

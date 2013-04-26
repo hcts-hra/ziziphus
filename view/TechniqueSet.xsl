@@ -21,7 +21,7 @@
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="detail" data-bf-type="input" data-bf-bind="." tabindex="0">(Technique)</div>
+                              <div class="nodata" data-bf-type="input" data-bf-bind="." tabindex="0">(Technique)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>

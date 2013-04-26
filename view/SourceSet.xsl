@@ -21,7 +21,7 @@
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="detail" data-bf-type="input" data-bf-bind="vra:refid" tabindex="0">(Refid)</div>
+                              <div class="nodata" data-bf-type="input" data-bf-bind="vra:refid" tabindex="0">(Refid)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                         <xsl:choose>
@@ -32,7 +32,7 @@
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="detail" data-bf-type="select1" data-bf-bind="vra:refid/@type"
+                              <div class="nodata" data-bf-type="select1" data-bf-bind="vra:refid/@type"
                                    tabindex="0">(Type)</div>
                            </xsl:otherwise>
                         </xsl:choose>
@@ -47,7 +47,7 @@
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="detail" data-bf-type="input" data-bf-bind="vra:name" tabindex="0">(Name)</div>
+                              <div class="nodata" data-bf-type="input" data-bf-bind="vra:name" tabindex="0">(Name)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                         <xsl:choose>
@@ -58,7 +58,7 @@
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="detail" data-bf-type="select1" data-bf-bind="vra:name/@type"
+                              <div class="nodata" data-bf-type="select1" data-bf-bind="vra:name/@type"
                                    tabindex="0">(Type)</div>
                            </xsl:otherwise>
                         </xsl:choose>

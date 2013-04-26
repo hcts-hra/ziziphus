@@ -21,7 +21,7 @@
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="detail" data-bf-type="select1" data-bf-bind="@type" tabindex="0">(Type)</div>
+                              <div class="nodata" data-bf-type="select1" data-bf-bind="@type" tabindex="0">(Type)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>
@@ -35,7 +35,7 @@
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="detail" data-bf-type="input" data-bf-bind="vra:earliestDate"
+                              <div class="nodata" data-bf-type="input" data-bf-bind="vra:earliestDate"
                                    tabindex="0">(EarliestDate)</div>
                            </xsl:otherwise>
                         </xsl:choose>
@@ -47,7 +47,7 @@
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="detail" data-bf-type="input" data-bf-bind="vra:earliestDate/@circa"
+                              <div class="nodata" data-bf-type="input" data-bf-bind="vra:earliestDate/@circa"
                                    tabindex="0">(circa)</div>
                            </xsl:otherwise>
                         </xsl:choose>
@@ -62,7 +62,7 @@
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="detail" data-bf-type="input" data-bf-bind="vra:latestDate" tabindex="0">(LatestDate)</div>
+                              <div class="nodata" data-bf-type="input" data-bf-bind="vra:latestDate" tabindex="0">(LatestDate)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                         <xsl:choose>
@@ -73,7 +73,7 @@
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="detail" data-bf-type="input" data-bf-bind="vra:latestDate/@circa"
+                              <div class="nodata" data-bf-type="input" data-bf-bind="vra:latestDate/@circa"
                                    tabindex="0">(circa)</div>
                            </xsl:otherwise>
                         </xsl:choose>
