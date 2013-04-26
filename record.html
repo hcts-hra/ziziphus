@@ -120,6 +120,15 @@
 <!--            <button type="button" id="{$recordType}-versions-button" subject="{$recordId}"-->
 <!--                title="Versions history for {$recordType} {$recordId}">Image history</button>-->
                     </li>
+                    <li>
+                        <button type="button" onclick="leftCenter();">L | C</button>
+                    </li>
+                    <li>
+                        <button type="button" onclick="allCols();">L | C | R</button>
+                    </li>
+                    <li>
+                        <button type="button" onclick="centerRight();">C | R</button>
+                    </li>
                 </ul>
             </div>
             <div class="headerMenu" style="position:absolute;display:block;right:40px;">
@@ -162,7 +171,7 @@
         <script type="text/javascript" src="resources/script/jquery.layout-latest.min.js"/>
         <script type="text/javascript">
             $(document).ready(function () {
-                var layout = $('body').layout({
+                ziziphusLayout = $('body').layout({
                     defaults:{
                         applyDefaultStyles:true
                     },
@@ -174,12 +183,14 @@
                     west:{
                         resizable:true,
                         closable:true,
-                        size:420
+                        size:'33%',
+                        minSize:250
                     },
                     east:{
                         resizable:true,
                         closable:true,
-                        size:420
+                        size:'33%',
+                        minSize:250
                     },
                     south:{
                         resizable:false,
@@ -293,6 +304,22 @@
                     return;
                 }
                 $('#doDelete-value').click();
+            }
+            function leftCenter(){
+                ziziphusLayout.open('west');
+                ziziphusLayout.close('east');
+                ziziphusLayout.sizePane("west","50%");
+            }
+            function allCols(){
+                ziziphusLayout.open("west");
+                ziziphusLayout.sizePane("west","33%");
+                ziziphusLayout.open("east");
+                ziziphusLayout.sizePane("east","33%");
+            }
+            function centerRight(){
+                ziziphusLayout.close('west');
+                ziziphusLayout.open('east');
+                ziziphusLayout.sizePane("east","50%");
             }
         </script>
     </body>
