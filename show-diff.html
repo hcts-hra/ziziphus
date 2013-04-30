@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title/>
+        <!-- <link rel="stylesheet" type="text/css" href="resources/css/ziziphus.css"/> -->
+        <style type="text/css"><![CDATA[
+           .content {
+            display: none;
+           }
+           
+           .diff {
+               display: block;
+               border-style: solid;
+               border-width: 2px;
+               border-color: blue;
+               padding: 0.5em;
+               margin: 5px 10px;
+           }
+        ]]></style>
+        <script type="text/javascript" language="JavaScript" src="resources/script/jquery-1.8.0.min.js"/>
+        <script type="text/javascript" language="JavaScript" src="resources/script/purl.js"/>
+        <script type="text/javascript" language="JavaScript" src="resources/script/diff_match_patch.js"/>
+        <script>
+            function compose_url(resource, rev) {
+                return "http://localhost:8080/exist/admin/versions.xql?action=restore"
+                    + "\u0026resource=" + encodeURIComponent(resource)
+                    + "\u0026rev=" + encodeURIComponent(rev);
+            }
+            
+            function load_documents() {
+                var url = $.url();
+                var resource = url.param('resource');
+                var rev1 = url.param('rev1');
+                var rev2 = url.param('rev2');
+                var query1 = compose_url(resource, rev1);
+                $.get(query1, null, null, "text")
+                    .done(function(data) {
+                        $("#div1").text(data);
+                        if($("#div2").text()) compute_diff();})
+                    .fail(function() {
+                        alert("error 1");});
+    
+                var query2 = compose_url(resource, rev2);
+                $.get(query2, null, null, "text")
+                    .done(function(data) {
+                        $("#div2").text(data);
+                        if($("#div1").text()) compute_diff();})
+                    .fail(function() {
+                        alert("error 2");});
+            }
+
+            function compute_diff() {
+                var dmp = new diff_match_patch();
+                
+                dmp.Diff_Timeout = 2.0;
+                dmp.Diff_EditCost = parseFloat(document.getElementById('editcost').value);
+                
+                var text1 = $("#div1").text();
+                var text2 = $("#div2").text();
+                var d = dmp.diff_main(text1, text2);
+                
+                if (document.getElementById('semantic').checked) {
+                dmp.diff_cleanupSemantic(d);
+                }
+                if (document.getElementById('efficiency').checked) {
+                dmp.diff_cleanupEfficiency(d);
+                }
+                var ds = dmp.diff_prettyHtml(d);
+                $("#outputdiv").html(ds);
+            }
+    
+            jQuery(document).ready(function () {
+                load_documents();
+                compute_diff();
+                
+                jQuery('#recompute').on({
+                    click:function () {
+                        compute_diff();
+                    }});
+            });
+</script>
+    </head>
+    <body>
+        <h1>Differences between versions</h1>
+        <h3>post-diff cleanup:</h3>
+        <form>
+            <dl>
+                <dt>
+                    <input type="radio" name="cleanup" id="semantic" checked="checked"/>
+                    <label for="semantic">semantic cleanup</label>
+                </dt>
+                <dd>increase human readability by factoring out commonalities which are likely to be
+coincidental.</dd>
+                <dt>
+                    <input type="radio" name="cleanup" id="efficiency"/>
+                    <label for="efficiency">efficiency cleanup</label>,
+edit cost: <input type="text" size="3" maxlength="5" value="4" id="editcost"/>
+                </dt>
+                <dd>increase computational efficiency by factoring out short commonalities which are
+not worth the overhead.  the larger the edit cost, the more agressive the cleanup.</dd>
+                <dt>
+                    <input type="radio" name="cleanup" id="raw"/>
+                    <label for="raw">no cleanup</label>
+                </dt>
+                <dd>raw output.</dd>
+            </dl>
+            <p>
+                <input type="button" id="recompute" value="recompute diff"/>
+            </p>
+        </form>
+        <div id="div1" class="content"/>
+        <div id="div2" class="content"/>
+        <div id="outputdiv" class="diff"/>
+    </body>
+</html>
