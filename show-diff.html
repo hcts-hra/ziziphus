@@ -3,6 +3,11 @@
         <title/>
         <!-- <link rel="stylesheet" type="text/css" href="resources/css/ziziphus.css"/> -->
         <style type="text/css">
+            h1 {
+                font-size: 1.2em;
+                margin: 0 0 0.75em 0;
+            }
+
             .content {
                 display: none;
             }
@@ -13,14 +18,24 @@
                border-width: 2px;
                border-color: blue;
                padding: 0.5em;
-               margin: 5px 10px;
+               margin: 1em;
+            }
+            #info {
+                font-size: 0.8em;
+            }
+            #options {
+                font-size: 0.7em;
+                margin: 1em 2em;
             }
         </style>
         <script type="text/javascript" src="resources/script/jquery-1.8.0.min.js"/>
         <script type="text/javascript" src="resources/script/purl.js"/>
         <script type="text/javascript" src="resources/script/diff_match_patch.js"/>
-        <script type="text/javascript">//
-            done = 0;
+        <script type="text/javascript">//<![CDATA[
+            function fill_info(res, rev1, rev2) {
+                $("#info").html("Resource: <a href='/exist/rest/"+res+"'>"+res+"</a>.<br/>"+
+                    "Changes from revision <b>"+rev2+"</b> to revision <b>"+rev1+"</b>.");
+            }
 
             function compose_current_url(resource) {
                 return "/exist/rest"+resource;
@@ -34,8 +49,9 @@
 
             function obtain_data(resource, rev, idx) {
                 var query;
-                if(!rev || rev === "") {
+                if(!rev || rev === "" || rev == "empty") {
                     $("#div"+idx).text("");
+                    done += 1;
                 } else {
                     if(rev == "last")
                         query = compose_current_url(resource);
@@ -53,10 +69,6 @@
 
             function load_documents() {
                 done = 0;
-                var url = $.url();
-                var resource = url.param('resource');
-                var rev1 = url.param('rev1');
-                var rev2 = url.param('rev2');
                 obtain_data(resource, rev1, 1);
                 obtain_data(resource, rev2, 2);
             }
@@ -82,6 +94,12 @@
             }
     
             jQuery(document).ready(function () {
+                url = $.url();
+                resource = url.param('resource');
+                rev1 = url.param('rev1');
+                rev2 = url.param('rev2');
+                
+                fill_info(resource, rev1, rev2);
                 load_documents();
                 compute_diff();
                 
@@ -90,36 +108,35 @@
                         compute_diff();
                     }});
             });
-//</script>
+//]]></script>
     </head>
     <body>
-        <h1>Differences between versions</h1>
-        <h3>post-diff cleanup:</h3>
+        <h1>Diff presentation</h1>
+        <div id="info"/>
+        <div id="options">
+        Text diff computation by <a href="http://code.google.com/p/google-diff-match-patch/">google-diff-match-patch</a>.<br/>
         <form>
-            <dl>
-                <dt>
-                    <input type="radio" name="cleanup" id="semantic" checked="checked"/>
-                    <label for="semantic">semantic cleanup</label>
-                </dt>
-                <dd>increase human readability by factoring out commonalities which are likely to be
-coincidental.</dd>
-                <dt>
-                    <input type="radio" name="cleanup" id="efficiency"/>
-                    <label for="efficiency">efficiency cleanup</label>,
-edit cost: <input type="text" size="3" maxlength="5" value="4" id="editcost"/>
-                </dt>
-                <dd>increase computational efficiency by factoring out short commonalities which are
-not worth the overhead.  the larger the edit cost, the more agressive the cleanup.</dd>
-                <dt>
-                    <input type="radio" name="cleanup" id="raw"/>
-                    <label for="raw">no cleanup</label>
-                </dt>
-                <dd>raw output.</dd>
-            </dl>
-            <p>
-                <input type="button" id="recompute" value="recompute diff"/>
-            </p>
+            post-diff cleanup options:
+            <span title="No cleanup">
+                <input type="radio" name="cleanup" id="raw"/><label for="raw">none</label>&#xA0;
+            </span>
+                    
+            <span title="Increase human readability by factoring out commonalities which are likely to be
+coincidental.">
+                <input type="radio" name="cleanup" id="semantic" selected="selected"/><label for="semantic">semantic</label>&#xA0;
+            </span>
+
+            <span title="Increase computational efficiency by factoring out short commonalities which are
+not worth the overhead. The larger the edit cost, the more agressive the cleanup.">
+                <input type="radio" name="cleanup" id="efficiency"/><label for="efficiency">efficiency</label>(<input type="text" size="2" maxlength="5" value="4" id="editcost"/>)
+            </span>
+
+            <input type="button" id="recompute" value="recompute"
+                title="Recompute diffs using given settings."/>
+            <input type="button" id="reload" value="reload"
+                title="Reload documents from server and compute diffs."/>
         </form>
+        </div>
         <div id="div1" class="content"/>
         <div id="div2" class="content"/>
         <div id="outputdiv" class="diff"/>
