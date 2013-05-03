@@ -31,6 +31,9 @@
             .rev {
             	font-weight: bold;
             }
+            input[type='text'] {
+            	width: 3em;
+            }
         </style>
         <script type="text/javascript" src="resources/script/jquery-1.8.0.min.js"/>
         <script type="text/javascript" src="resources/script/purl.js"/>
@@ -38,8 +41,8 @@
         <script type="text/javascript">//<![CDATA[
             function fill_info(res, rev1, rev2) {
                 $("#resource-link").text(resource).attr("href", resource);
-                $("#rev1").text(rev1);
-                $("#rev2").text(rev2);
+                $("#rev1").val(rev1);
+                $("#rev2").val(rev2);
             }
 
             function compose_current_url(resource) {
@@ -53,29 +56,29 @@
             }
 
             function obtain_data(resource, rev, idx) {
-                var query;
                 if(!rev || rev === "" || rev == "empty") {
                     $("#div"+idx).text("");
                     done += 1;
                 } else {
+                    var query;
                     if(rev == "last")
                         query = compose_current_url(resource);
                     else
-                        query = compose_url(resource, rev);    
-                    $.get(query, null, null, "text")
-                        .done(function(data) {
-                            $("#div"+idx).text(data);
-                            done += 1;
-                            if(done == 2) compute_diff();})
-                        .fail(function() {
-                            alert("error "+idx);});
+                        query = compose_url(resource, rev);
+                    	$.get(query, null, null, "text")
+                        	.done(function(data) {
+                            	$("#div"+idx).text(data);
+                            	done += 1;
+                            	if(done == 2) compute_diff();})
+                        	.fail(function() {
+	                            alert("error "+idx);});
                 }
             }
 
             function load_documents() {
                 done = 0;
-                obtain_data(resource, rev1, 1);
-                obtain_data(resource, rev2, 2);
+                obtain_data(resource, $("#rev1").val(), 1);
+                obtain_data(resource, $("#rev2").val(), 2);
             }
 
             function compute_diff() {
@@ -101,8 +104,8 @@
             jQuery(document).ready(function () {
                 url = $.url();
                 resource = url.param('resource');
-                rev1 = url.param('rev1');
-                rev2 = url.param('rev2');
+                var rev1 = url.param('rev1');
+                var rev2 = url.param('rev2');
                 
                 fill_info(resource, rev1, rev2);
                 load_documents();
@@ -112,13 +115,18 @@
                     click:function () {
                         compute_diff();
                     }});
+                jQuery('#reload').on({
+                    click:function () {
+                    	load_documents();
+                    }});
             });
 ]]></script>
     </head>
     <body>
         <div id="info">
         	Resource: <a id="resource-link"/>.<br/>
-            Changes from revision <span id="rev2" class="rev"/> to revision <span id="rev1" class="rev"/>.
+            Changes from revision <input type="text" id="rev2" class="rev" size="3" maxlength="8"/>
+            to revision <input type="text" id="rev1" class="rev" size="3" maxlength="8"/>.
         </div>
         <div id="options">
         Diffs computed by <a href="http://code.google.com/p/google-diff-match-patch/">google-diff-match-patch</a>.<br/>
@@ -137,9 +145,9 @@
             </span>
 
             <input type="button" id="recompute" value="recompute"
-                title="Recompute diffs using given settings."/>
+                title="Recompute diffs in place using given settings."/>
             <input type="button" id="reload" value="reload"
-                title="Reload documents from server and compute diffs."/>
+                title="Reload documents from server and compute diffs again."/>
         </form>
         </div>
         <div id="div1" class="content"/>
