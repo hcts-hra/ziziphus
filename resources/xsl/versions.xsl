@@ -66,6 +66,7 @@
                     <xsl:call-template name="revision">
                         <xsl:with-param name="path" select="$path"/>
                         <xsl:with-param name="rev">0</xsl:with-param>
+                        <xsl:with-param name="prev-rev" select="'empty'"/>
                         <xsl:with-param name="last-rev" select="$last-rev"/>
                     </xsl:call-template>
                     <xsl:apply-templates select="v:revision">
@@ -86,7 +87,7 @@
     <xsl:template match="v:revision" name="revision">
         <xsl:param name="path"/>
         <xsl:param name="rev" select="@rev"/>
-        <xsl:param name="prev">
+        <xsl:param name="prev-rev">
             <xsl:choose>
             <xsl:when test="preceding-sibling::v:revision[1]/@rev">
                 <xsl:value-of select="preceding-sibling::v:revision[1]/@rev"/>
@@ -101,12 +102,19 @@
             <td>
                 <xsl:value-of select="$rev"/>
             </td>
-            <td>
-                <xsl:apply-templates select="v:date"/>
-            </td>
-            <td>
-                <xsl:apply-templates select="v:user"/>
-            </td>
+            <xsl:choose>
+            <xsl:when test="self::v:revision">
+	            <td>
+	                <xsl:apply-templates select="v:date"/>
+	            </td>
+	            <td>
+	                <xsl:apply-templates select="v:user"/>
+	            </td>
+            </xsl:when>
+            <xsl:otherwise>
+            	<td colspan="2" title="First recorded revision or last version known before versioning was configured in eXist-DB.">Initial version</td>
+            </xsl:otherwise>
+            </xsl:choose>
             <td>
                 <a href="{$versions-xql}?action=restore&amp;rev={$rev}&amp;resource={$path}"
                     target="_blank" title="XML content of that revision.">content</a>
@@ -114,7 +122,7 @@
                 <a href="{$versions-xql}?action=diff&amp;rev={$rev}&amp;resource={$path}"
                     target="_blank" title="eXistsDB-provided diffs recorded in that revision.">diff (eXistsDB)</a>
                 <xsl:text>, </xsl:text>
-                <a href="{$diff}?resource={$path}&amp;rev1={$rev}&amp;rev2={$prev}"
+                <a href="{$diff}?resource={$path}&amp;rev1={$rev}&amp;rev2={$prev-rev}"
                     target="_blank" title="Presetation of XML-source changes recorded in that revision.">changes</a>
                 <xsl:text>, </xsl:text>
                 <a href="{$diff}?resource={$path}&amp;rev1={$last-rev}&amp;rev2={$rev}"
