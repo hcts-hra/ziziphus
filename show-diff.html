@@ -1,6 +1,7 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title/>
+        <title>Diff presentation</title>
         <!-- <link rel="stylesheet" type="text/css" href="resources/css/ziziphus.css"/> -->
         <style type="text/css">
             h1 {
@@ -27,14 +28,18 @@
                 font-size: 0.7em;
                 margin: 1em 2em;
             }
+            .rev {
+            	font-weight: bold;
+            }
         </style>
         <script type="text/javascript" src="resources/script/jquery-1.8.0.min.js"/>
         <script type="text/javascript" src="resources/script/purl.js"/>
         <script type="text/javascript" src="resources/script/diff_match_patch.js"/>
         <script type="text/javascript">//<![CDATA[
             function fill_info(res, rev1, rev2) {
-                $("#info").html("Resource: <a href='/exist/rest/"+res+"'>"+res+"</a>.<br/>"+
-                    "Changes from revision <b>"+rev2+"</b> to revision <b>"+rev1+"</b>.");
+                $("#resource-link").text(resource).attr("href", resource);
+                $("#rev1").text(rev1);
+                $("#rev2").text(rev2);
             }
 
             function compose_current_url(resource) {
@@ -108,26 +113,26 @@
                         compute_diff();
                     }});
             });
-//]]></script>
+]]></script>
     </head>
     <body>
-        <h1>Diff presentation</h1>
-        <div id="info"/>
+        <div id="info">
+        	Resource: <a id="resource-link"/>.<br/>
+            Changes from revision <span id="rev2" class="rev"/> to revision <span id="rev1" class="rev"/>.
+        </div>
         <div id="options">
-        Text diff computation by <a href="http://code.google.com/p/google-diff-match-patch/">google-diff-match-patch</a>.<br/>
+        Diffs computed by <a href="http://code.google.com/p/google-diff-match-patch/">google-diff-match-patch</a>.<br/>
         <form>
             post-diff cleanup options:
             <span title="No cleanup">
                 <input type="radio" name="cleanup" id="raw"/><label for="raw">none</label>&#xA0;
             </span>
                     
-            <span title="Increase human readability by factoring out commonalities which are likely to be
-coincidental.">
-                <input type="radio" name="cleanup" id="semantic" selected="selected"/><label for="semantic">semantic</label>&#xA0;
+            <span title="Increase human readability by factoring out commonalities which are likely to be coincidental.">
+                <input type="radio" name="cleanup" id="semantic" checked="checked"/><label for="semantic">semantic</label>&#xA0;
             </span>
 
-            <span title="Increase computational efficiency by factoring out short commonalities which are
-not worth the overhead. The larger the edit cost, the more agressive the cleanup.">
+            <span title="Increase computational efficiency by factoring out short commonalities which are not worth the overhead. The larger the edit cost, the more agressive the cleanup.">
                 <input type="radio" name="cleanup" id="efficiency"/><label for="efficiency">efficiency</label>(<input type="text" size="2" maxlength="5" value="4" id="editcost"/>)
             </span>
 
