@@ -185,6 +185,13 @@
                         <xf:input ref="@pref" id="d3e45-pref">
                            <xf:label>pref</xf:label>
                            <xf:hint>preferred</xf:hint>
+                           <xf:action ev:event="xforms-value-changed">
+                               <xf:message>Value changed.</xf:message>
+                               <xf:message>Where am I? <xf:output value="local-name()"/> <xf:output value="../local-name()"/>.</xf:message>
+                               <xf:message>Current value is <xf:output value="."/></xf:message>
+                               <xf:message>Other prefs: number=<xf:output value="count((../preceding-sibling::* | ../following-sibling::*)/@pref)"/>, disjuntion value=<xf:output value="(../preceding-sibling::* | ../following-sibling::*)/@pref = ('true', 1)"/></xf:message>
+                               <xf:setvalue ref="../@type" value="'other'"/>
+                           </xf:action>
                         </xf:input>
                      </td>
                      <td class="contentCol">
