@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:vra="http://www.vraweb.org/vracore4.htm" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bf="http://betterform.sourceforge.net/xforms" xmlns:bfc="http://betterform.sourceforge.net/xforms/controls" xmlns:xf="http://www.w3.org/2002/xforms" bf:transform="/apps/ziziphus/resources/xsl/ziziphus.xsl">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>Ziziphus_Image_DB</title>
+        <style type="text/css">
+           <!-- this matcher does only exist due to an error in thea generic xforms.css-->
+            .xfRequired .xfLabel:after{
+               content:'';
+           }
+           .xfRequired &gt; .xfLabel:after{
+               content:'*';
+           }
+
+           table, td {
+               border: thin solid #999999;
+               border-collapse: collapse;
+               padding: 3px;
+           }
+
+           tbody {
+               font-size: 0.85em;
+           }
+           tbody .xfGroup &gt; .xfControl .xfLabel {
+               float: left;
+               padding: 0;
+               margin: 3px 3px 0 7px;
+               min-width: 80px;
+               text-align: right;
+           }
+           tbody tr td &gt; .xfGroup {
+               background: #fafafa;
+               border-top: thin solid;
+               border-bottom: thin solid #cdcdcd;
+               padding: 5px 0;
+           }
+           tbody tr td .xfGroup:last-child {
+               border-bottom: none;
+           }
+           .xfRepeatItem {
+               background: whitesmoke;
+           }
+
+           .xfRepeatIndex .contentCol {
+               background-color: whitesmoke;
+           }
+           .bf .xfRepeatIndex {
+               background: #dddddd !important;
+           }
+           td{
+               vertical-align: top;
+           }
+           .vraAttributes .xfControl{
+               float:left;
+           }
+
+           .prefCol, .triggerCol {
+               width: 10px;
+           }
+           .prefCol .xfLabel{
+               display: none;
+           }
+           .contentCol &gt; .xfGroup {
+               width: 100%;
+               display: inline-block;
+               padding-bottom: 5px;
+               border-top: none !important;
+           }
+           .vraAttributes .xfControl {
+               border: thin solid #aaaaaa;
+               border-radius: 3px;
+               margin: 5px 5px 5px 0;
+               padding: 3px;
+               background: #eeeeee;
+               text-align: center;
+           }
+           .vraAttributes .xfLabel, .vraAttributes .xfValue{
+               font-size: 0.85em;
+           }
+           .vraAttributes .xfLabel {
+               margin: 0 !important;
+               padding: 0 !important;
+               border-bottom: thin solid #aaaaaa;
+           }
+
+           .prefCol .xfLabel {
+               display: none !important;
+           }
+           .vraAttributeTrigger {
+               float: right;
+           }
+           #attrDialog .xfControl {
+               float: none;
+           }
+           .buttonBar .xfTrigger{
+               display: inline-block !important;
+               font-size: 0.85em;
+               margin: 5px;
+           }
+           .notesDisplayTrigger {
+               float: right;
+           }
+           #notes, #notes .widgetContainer, #notes textarea{
+               width: 100%;
+           }
+           #attrDialog .xfLabel {
+               float: left;
+               margin: 0px 10px;
+               width: 100px;
+               text-align: right;
+           }
+           #attrDialog .xfInput .xfValue {
+               width: 250px;
+           }
+           #attrDialog .deleteAttribute {
+               float: right !important;
+           }
+           #attrDialog .xfGroup {
+               margin-bottom: 10px;
+           }
+
+       </style>
+    </head>
+    <body>
+        <div id="xforms">
+         <!-- ###################### MODEL ################################## -->
+         <!-- ###################### MODEL ################################## -->
+         <!-- ###################### MODEL ################################## -->
+            <div style="display:none">
+                <xf:model id="m-child-model" schema="../resources/xsd/vra-types.xsd">
+                    <xf:instance id="i-culturalContextSet">
+                        <culturalContextSet xmlns="http://www.vraweb.org/vracore4.htm">
+                            <display/>
+                            <notes/>
+                            <culturalContext pref="false"/>
+                        </culturalContextSet>
+                    </xf:instance>
+                    <xf:bind nodeset="instance()">
+                        <xf:bind nodeset="vra:culturalContext">
+                            <xf:bind nodeset="@pref" type="boolean"/>
+                        </xf:bind>
+                    </xf:bind>
+                    <xf:instance id="i-templates">
+                        <templates xmlns="http://www.vraweb.org/vracore4.htm">
+                            <culturalContext pref="false"/>
+                            <notes/>
+                            <display/>
+                        </templates>
+                    </xf:instance>
+                    <xi:include href="bricks/vraAttributesInstance.xml"/>
+                    <xf:instance id="i-util">
+                        <data xmlns="">
+                            <currentElement/>
+                        </data>
+                    </xf:instance>
+                </xf:model>
+            </div>
+         <!-- ####################################### VISIBLE UI ####################################### -->
+         <!-- ####################################### VISIBLE UI ####################################### -->
+         <!-- ####################################### VISIBLE UI ####################################### -->
+            <div class="toolbar">
+                <xf:trigger class="t-save" model="m-child-model" title="Save">
+                    <xf:label>save</xf:label>
+                </xf:trigger>
+                <xf:trigger class="t-plus" model="m-child-model" title="Add CulturalContext">
+                    <xf:label>+</xf:label>
+                    <xf:insert model="m-child-model" nodeset="instance()/vra:culturalContext[last()]" origin="instance('i-templates')/vra:culturalContext"/>
+                </xf:trigger>
+            </div>
+            <xf:group id="outerGroup" appearance="minimal" model="m-child-model" ref="instance('i-culturalContextSet')">
+                <xf:label/>
+                <xf:action ev:event="reset-dialog"/>
+                <xf:action ev:event="init-dialog">
+                    <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@dataDate"/>
+                    <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@extent"/>
+                    <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@href"/>
+                    <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@refid"/>
+                    <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@rules"/>
+                    <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@source"/>
+                    <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@vocab"/>
+                    <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@lang"/>
+                    <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@transliteration"/>
+                    <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@script"/>
+                    <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]" origin="instance('i-culturalContextSet')/vra:culturalContext[index('r-vraCulturalContext')]/*[local-name()=instance('i-util')/currentElement]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"/>
+                </xf:action>
+                <table>
+                    <tbody model="m-child-model" id="r-vraCulturalContext" xf:repeat-nodeset="vra:culturalContext">
+                        <tr>
+                            <td class="prefCol">
+                                <xf:input ref="@pref">
+                                    <xf:label>pref</xf:label>
+                                    <xf:hint>preferred</xf:hint>
+                                </xf:input>
+                            </td>
+                            <td class="contentCol">
+                                <xf:group appearance="minimal">
+                                    <xf:input ref=".">
+                                        <xf:label>CulturalContext</xf:label>
+                                    </xf:input>
+                                    <xf:group class="vraAttributes" appearance="minimal" ref=".">
+                                        <xi:include href="bricks/vraAttributesViewUI.xml"/>
+                                    </xf:group>
+                                    <xf:trigger class="vraAttributeTrigger">
+                                        <xf:label>...</xf:label>
+                                        <xf:action>
+                                            <xf:setvalue ref="instance('i-util')/currentElement" value="."/>
+                                            <xf:dispatch name="init-dialog" targetid="outerGroup"/>
+                                        </xf:action>
+                                        <bfc:show dialog="attrDialog" ev:event="DOMActivate"/>
+                                    </xf:trigger>
+                                </xf:group>
+                            </td>
+                            <td class="triggerCol">
+                                <xf:trigger>
+                                    <xf:label>x</xf:label>
+                                    <xf:delete nodeset="instance('i-culturalContextSet')/vra:culturalContext[index('r-vraCulturalContext')]"/>
+                                </xf:trigger>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <xf:group class="showNotesDisplay">
+                    <xf:trigger class="notesDisplayTrigger">
+                        <xf:label>Show/Hide Notes and Display</xf:label>
+                        <xf:setvalue ref="instance('i-culturalContextSetController')/showNotesDisplay" value="not(boolean-from-string(instance('i-culturalContextSetController')/showNotesDisplay))"/>
+                    </xf:trigger>
+                    <xf:group ref="instance('i-culturalContextSetController')/showNotesDisplay">
+                        <xf:group appearance="minimal" class="elementGroup" ref="instance('i-culturalContextSet')">
+                            <xf:label/>
+                            <xf:textarea ref="vra:display" model="m-child-model">
+                                <xf:label>Display:</xf:label>
+                            </xf:textarea>
+                        </xf:group>
+                        <xf:group appearance="minimal" class="elementGroup" ref="instance('i-culturalContextSet')">
+                            <xf:label/>
+                            <xf:textarea ref="vra:notes" model="m-child-model">
+                                <xf:label>Notes</xf:label>
+                            </xf:textarea>
+                        </xf:group>
+                    </xf:group>
+                </xf:group>
+            </xf:group>
+            <bfc:dialog id="attrDialog">
+                <xf:label>Attributes</xf:label>
+                <xf:group appearance="full" ref="instance('i-vraAttributes')/vra:vraElement">
+                    <xf:label/>
+                    <xf:input ref="@dataDate" id="first">
+                        <xf:label>dataDate</xf:label>
+                    </xf:input>
+                    <xf:input ref="@extent">
+                        <xf:label>extent</xf:label>
+                    </xf:input>
+                    <xf:input ref="@href">
+                        <xf:label>href</xf:label>
+                    </xf:input>
+                    <xf:input ref="@refid">
+                        <xf:label>refid</xf:label>
+                    </xf:input>
+                    <xf:input ref="@rules">
+                        <xf:label>rules</xf:label>
+                    </xf:input>
+                    <xf:input ref="@source">
+                        <xf:label>source</xf:label>
+                    </xf:input>
+                    <xf:select1 ref="@vocab">
+                        <xf:label>vocab</xf:label>
+                        <xf:item>
+                            <xf:label>ULAN</xf:label>
+                            <xf:value>ULAN</xf:value>
+                        </xf:item>
+                        <xf:item>
+                            <xf:label>GND</xf:label>
+                            <xf:value>GND</xf:value>
+                        </xf:item>
+                        <xf:item>
+                            <xf:label>(AKL)</xf:label>
+                            <xf:value>(AKL)</xf:value>
+                        </xf:item>
+                    </xf:select1>
+                    <xf:input ref="@lang">
+                        <xf:label>Language</xf:label>
+                    </xf:input>
+                    <xf:input ref="@transliteration">
+                        <xf:label>Transliteration</xf:label>
+                    </xf:input>
+                    <xf:input ref="@script">
+                        <xf:label>Script</xf:label>
+                    </xf:input>
+                    <xf:group class="buttonBar">
+                        <xf:trigger>
+                            <xf:label>Ok</xf:label>
+                            <xf:action>
+                                <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]" context="instance('i-culturalContextSet')/vra:culturalContext[index('r-vraCulturalContext')]/*[local-name()=instance('i-util')/currentElement]"/>
+                            </xf:action>
+                            <bfc:hide dialog="attrDialog"/>
+                        </xf:trigger>
+                        <xf:trigger appearance="minimal">
+                            <xf:label>Cancel</xf:label>
+                            <bfc:hide dialog="attrDialog"/>
+                        </xf:trigger>
+                    </xf:group>
+                </xf:group>
+            </bfc:dialog>
+        </div>
+    </body>
+</html>

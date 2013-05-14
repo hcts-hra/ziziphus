@@ -182,6 +182,11 @@
                         <xf:input ref="@pref" id="d3e85-pref">
                            <xf:label>pref</xf:label>
                            <xf:hint>preferred</xf:hint>
+                           <xf:action ev:event="xforms-value-changed" if=".=('true',1)"
+                                      while="(../preceding-sibling::*|../following-sibling::*)/@pref=('true',1)">
+                              <xf:setvalue ref="(../preceding-sibling::*|../following-sibling::*)[@pref=('true',1)][1]/@pref"
+                                           value="'false'"></xf:setvalue>
+                           </xf:action>
                         </xf:input>
                      </td>
                      <td class="contentCol">

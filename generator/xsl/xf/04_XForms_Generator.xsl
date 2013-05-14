@@ -558,6 +558,12 @@
                 <xf:input ref="@pref" id="{concat(generate-id(),'-pref')}">
                     <xf:label>pref</xf:label>
                     <xf:hint>preferred</xf:hint>
+                    <!-- Action ensures that at most one 'preferred' is selected within a _Set. -->
+                    <xf:action ev:event="xforms-value-changed"
+                    		if=".=('true',1)"
+                    		while="(../preceding-sibling::*|../following-sibling::*)/@pref=('true',1)">
+                        <xf:setvalue ref="(../preceding-sibling::*|../following-sibling::*)[@pref=('true',1)][1]/@pref" value="'false'"/>
+                    </xf:action>
                 </xf:input>
             </td>
             <td class="contentCol">
