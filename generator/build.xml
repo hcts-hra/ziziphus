@@ -440,7 +440,7 @@
             UI file for editing by someone who is responsible for maintaining the order and appearance of certain
             vra fields.
         </echo>
-        <xslt style="${xsl.dir}/xf/createUIDefinition.xsl"
+        <xslt style="${xsl.dir}/helper/createInitialUIDefinition.xsl"
                 in="${target.dir}/02_XF_Binds.xml"
                 out="${target.dir}/UIDefinition.xml"
                 force="true">
