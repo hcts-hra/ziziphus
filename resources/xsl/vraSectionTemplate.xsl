@@ -18,74 +18,92 @@
          <xsl:call-template name="titlePane">
             <xsl:with-param name="vraSetName" select="'AgentSet'"></xsl:with-param>
             <xsl:with-param name="vraSetNode" select="vra:agentSet"></xsl:with-param>
+            <xsl:with-param name="visible" select="'true'"></xsl:with-param>
          </xsl:call-template>
          <xsl:call-template name="titlePane">
             <xsl:with-param name="vraSetName" select="'CulturalContextSet'"></xsl:with-param>
             <xsl:with-param name="vraSetNode" select="vra:culturalContextSet"></xsl:with-param>
+            <xsl:with-param name="visible" select="'false'"></xsl:with-param>
          </xsl:call-template>
          <xsl:call-template name="titlePane">
             <xsl:with-param name="vraSetName" select="'DateSet'"></xsl:with-param>
             <xsl:with-param name="vraSetNode" select="vra:dateSet"></xsl:with-param>
+            <xsl:with-param name="visible" select="'true'"></xsl:with-param>
          </xsl:call-template>
          <xsl:call-template name="titlePane">
             <xsl:with-param name="vraSetName" select="'DescriptionSet'"></xsl:with-param>
             <xsl:with-param name="vraSetNode" select="vra:descriptionSet"></xsl:with-param>
+            <xsl:with-param name="visible" select="'true'"></xsl:with-param>
          </xsl:call-template>
          <xsl:call-template name="titlePane">
             <xsl:with-param name="vraSetName" select="'InscriptionSet'"></xsl:with-param>
             <xsl:with-param name="vraSetNode" select="vra:inscriptionSet"></xsl:with-param>
+            <xsl:with-param name="visible" select="'false'"></xsl:with-param>
          </xsl:call-template>
          <xsl:call-template name="titlePane">
             <xsl:with-param name="vraSetName" select="'LocationSet'"></xsl:with-param>
             <xsl:with-param name="vraSetNode" select="vra:locationSet"></xsl:with-param>
+            <xsl:with-param name="visible" select="'true'"></xsl:with-param>
          </xsl:call-template>
          <xsl:call-template name="titlePane">
             <xsl:with-param name="vraSetName" select="'MaterialSet'"></xsl:with-param>
             <xsl:with-param name="vraSetNode" select="vra:materialSet"></xsl:with-param>
+            <xsl:with-param name="visible" select="'false'"></xsl:with-param>
          </xsl:call-template>
          <xsl:call-template name="titlePane">
             <xsl:with-param name="vraSetName" select="'MeasurementsSet'"></xsl:with-param>
             <xsl:with-param name="vraSetNode" select="vra:measurementsSet"></xsl:with-param>
+            <xsl:with-param name="visible" select="'false'"></xsl:with-param>
          </xsl:call-template>
          <xsl:call-template name="titlePane">
             <xsl:with-param name="vraSetName" select="'RelationSet'"></xsl:with-param>
             <xsl:with-param name="vraSetNode" select="vra:relationSet"></xsl:with-param>
+            <xsl:with-param name="visible" select="'false'"></xsl:with-param>
          </xsl:call-template>
          <xsl:call-template name="titlePane">
             <xsl:with-param name="vraSetName" select="'RightsSet'"></xsl:with-param>
             <xsl:with-param name="vraSetNode" select="vra:rightsSet"></xsl:with-param>
+            <xsl:with-param name="visible" select="'true'"></xsl:with-param>
          </xsl:call-template>
          <xsl:call-template name="titlePane">
             <xsl:with-param name="vraSetName" select="'SourceSet'"></xsl:with-param>
             <xsl:with-param name="vraSetNode" select="vra:sourceSet"></xsl:with-param>
+            <xsl:with-param name="visible" select="'false'"></xsl:with-param>
          </xsl:call-template>
          <xsl:call-template name="titlePane">
             <xsl:with-param name="vraSetName" select="'StateEditionSet'"></xsl:with-param>
             <xsl:with-param name="vraSetNode" select="vra:stateEditionSet"></xsl:with-param>
+            <xsl:with-param name="visible" select="'false'"></xsl:with-param>
          </xsl:call-template>
          <xsl:call-template name="titlePane">
             <xsl:with-param name="vraSetName" select="'StylePeriodSet'"></xsl:with-param>
             <xsl:with-param name="vraSetNode" select="vra:stylePeriodSet"></xsl:with-param>
+            <xsl:with-param name="visible" select="'false'"></xsl:with-param>
          </xsl:call-template>
          <xsl:call-template name="titlePane">
             <xsl:with-param name="vraSetName" select="'SubjectSet'"></xsl:with-param>
             <xsl:with-param name="vraSetNode" select="vra:subjectSet"></xsl:with-param>
+            <xsl:with-param name="visible" select="'true'"></xsl:with-param>
          </xsl:call-template>
          <xsl:call-template name="titlePane">
             <xsl:with-param name="vraSetName" select="'TechniqueSet'"></xsl:with-param>
             <xsl:with-param name="vraSetNode" select="vra:techniqueSet"></xsl:with-param>
+            <xsl:with-param name="visible" select="'false'"></xsl:with-param>
          </xsl:call-template>
          <xsl:call-template name="titlePane">
             <xsl:with-param name="vraSetName" select="'TextrefSet'"></xsl:with-param>
             <xsl:with-param name="vraSetNode" select="vra:textrefSet"></xsl:with-param>
+            <xsl:with-param name="visible" select="'false'"></xsl:with-param>
          </xsl:call-template>
          <xsl:call-template name="titlePane">
             <xsl:with-param name="vraSetName" select="'TitleSet'"></xsl:with-param>
             <xsl:with-param name="vraSetNode" select="vra:titleSet"></xsl:with-param>
+            <xsl:with-param name="visible" select="'true'"></xsl:with-param>
          </xsl:call-template>
          <xsl:call-template name="titlePane">
             <xsl:with-param name="vraSetName" select="'WorktypeSet'"></xsl:with-param>
             <xsl:with-param name="vraSetNode" select="vra:worktypeSet"></xsl:with-param>
+            <xsl:with-param name="visible" select="'true'"></xsl:with-param>
          </xsl:call-template>
       </div>
    </xsl:template>

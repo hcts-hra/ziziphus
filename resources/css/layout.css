@@ -227,3 +227,7 @@ body {
 .ui-layout-south .xfLabel {
   font-size: 1em;
 }
+.forceVisible .hidden {
+  display: block;
+  visibility: inherit;
+}

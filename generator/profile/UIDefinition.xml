@@ -6,15 +6,17 @@
 <group idref="b-d2e10" name="vra:vra">
     <!--
         Structure of collection, image and work records are the same - just using collection here
+		REDUCED SET - "MINIMAL RECORD" for Class Summer Term 2013 ("Ethnographic Photography", C. Bublatzky)
     -->
     <group idref="b-d2e16" name="vra:collection">
         <set idref="b-d2e22" name="vra:agentSet" visible="true">
             <group idref="b-d2e57" name="vra:agent" repeated="true">
                 <group idref="b-d2e115" name="vra:name">
-                    <node idref="b-d2e122" name="@type" detail="true"/>
                     <textNode detail="false"/>
+                    <node idref="b-d2e122" name="@type" detail="true"/>
                 </group>
                 <node idref="b-d2e132" name="vra:role" detail="false"/>
+<!--
                 <node idref="b-d2e63" name="vra:attribution" detail="false"/>
                 <node idref="b-d2e79" name="vra:culture" detail="false"/>
                 <group idref="b-d2e95" name="vra:dates">
@@ -28,10 +30,11 @@
                         <node idref="b-d2e113" name="@circa" detail="false"/>
                     </group>
                 </group>
+-->
             </group>
             <node idref="b-d2e41" name="vra:notes" detail="false"/>
         </set>
-        <set idref="b-d2e157" name="vra:culturalContextSet" visible="true">
+        <set idref="b-d2e157" name="vra:culturalContextSet" visible="false">
             <group idref="b-d2e192" name="vra:culturalContext" repeated="true"/>
             <node idref="b-d2e176" name="vra:notes" detail="false"/>
         </set>
@@ -53,7 +56,7 @@
             <group idref="b-d2e311" name="vra:description" repeated="true" control="textarea"/>
             <node idref="b-d2e295" name="vra:notes" detail="false"/>
         </set>
-        <set idref="b-d2e327" name="vra:inscriptionSet" visible="true">
+        <set idref="b-d2e327" name="vra:inscriptionSet" visible="false">
             <group idref="b-d2e362" name="vra:inscription" repeated="true">
                 <node idref="b-d2e368" name="vra:author" detail="false"/>
                 <node idref="b-d2e384" name="vra:position" detail="false"/>
@@ -78,20 +81,20 @@
             </group>
             <node idref="b-d2e445" name="vra:notes" detail="false"/>
         </set>
-        <set idref="b-d2e512" name="vra:materialSet" visible="true">
+        <set idref="b-d2e512" name="vra:materialSet" visible="false">
             <group idref="b-d2e547" name="vra:material" repeated="true">
                 <node idref="b-d2e554" name="@type" detail="false"/>
             </group>
             <node idref="b-d2e531" name="vra:notes" detail="false"/>
         </set>
-        <set idref="b-d2e564" name="vra:measurementsSet" visible="true">
+        <set idref="b-d2e564" name="vra:measurementsSet" visible="false">
             <group idref="b-d2e599" name="vra:measurements" repeated="true">
                 <node idref="b-d2e606" name="@type" detail="false"/>
                 <node idref="b-d2e607" name="@unit" detail="false"/>
             </group>
             <node idref="b-d2e583" name="vra:notes" detail="false"/>
         </set>
-        <set idref="b-d2e617" name="vra:relationSet" visible="true">
+        <set idref="b-d2e617" name="vra:relationSet" visible="false">
             <group idref="b-d2e652" name="vra:relation" repeated="true">
                 <node idref="b-d2e659" name="@relids" detail="false"/>
                 <node idref="b-d2e660" name="@type" detail="false"/>
@@ -106,7 +109,7 @@
             </group>
             <node idref="b-d2e689" name="vra:notes" detail="false"/>
         </set>
-        <set idref="b-d2e754" name="vra:sourceSet" visible="true">
+        <set idref="b-d2e754" name="vra:sourceSet" visible="false">
             <group idref="b-d2e789" name="vra:source" repeated="true">
                 <group idref="b-d2e795" name="vra:refid">
                     <textNode detail="false"/>
@@ -119,7 +122,7 @@
             </group>
             <node idref="b-d2e773" name="vra:notes" detail="false"/>
         </set>
-        <set idref="b-d2e839" name="vra:stateEditionSet" visible="true">
+        <set idref="b-d2e839" name="vra:stateEditionSet" visible="false">
             <group idref="b-d2e874" name="vra:stateEdition" repeated="true">
                 <node idref="b-d2e922" name="@count" detail="false"/>
                 <node idref="b-d2e923" name="@num" detail="false"/>
@@ -129,7 +132,7 @@
             </group>
             <node idref="b-d2e858" name="vra:notes" detail="false"/>
         </set>
-        <set idref="b-d2e925" name="vra:stylePeriodSet" visible="true">
+        <set idref="b-d2e925" name="vra:stylePeriodSet" visible="false">
             <group idref="b-d2e960" name="vra:stylePeriod" repeated="true"/>
             <node idref="b-d2e944" name="vra:notes" detail="false"/>
         </set>
@@ -142,11 +145,11 @@
             </group>
             <node idref="b-d2e995" name="vra:notes" detail="false"/>
         </set>
-        <set idref="b-d2e1043" name="vra:techniqueSet" visible="true">
+        <set idref="b-d2e1043" name="vra:techniqueSet" visible="false">
             <group idref="b-d2e1078" name="vra:technique" repeated="true"/>
             <node idref="b-d2e1062" name="vra:notes" detail="false"/>
         </set>
-        <set idref="b-d2e1094" name="vra:textrefSet" visible="true">
+        <set idref="b-d2e1094" name="vra:textrefSet" visible="false">
             <group idref="b-d2e1129" name="vra:textref" repeated="true">
                 <group idref="b-d2e1135" name="vra:name">
                     <textNode detail="false"/>

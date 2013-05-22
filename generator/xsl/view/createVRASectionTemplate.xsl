@@ -30,13 +30,15 @@
                 </div>
 
                 <div id="{{$side}}" class="sidePanel ui-layout-content">
-                    <xsl:for-each select="//set[@visible='true']">
+                    <!--<xsl:for-each select="//set[@visible='true']">-->
+                    <xsl:for-each select="//set">
                         <xsl:variable name="setName" select="bfn:upperCase(substring-after(@name,':'))"/>
                         <xsl:message>setname: <xsl:value-of select="$setName"/></xsl:message>
 
                         <transform:call-template name="titlePane">
                             <transform:with-param name="vraSetName" select="'{$setName}'"/>
                             <transform:with-param name="vraSetNode" select="{@name}"/>
+                            <transform:with-param name="visible" select="'{@visible}'"/>
                         </transform:call-template>
                     </xsl:for-each>
                 </div>

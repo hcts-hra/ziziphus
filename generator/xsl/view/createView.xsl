@@ -12,7 +12,10 @@
 
     <xsl:strip-space elements="*"/>
 
-
+    <!--
+    generates a stylesheet for transforming a single Set Element (e.g. AgentSet) at runtime. The resulting
+    stylesheet will be found in folder 'view'.
+    -->
     <!-- ATTENTION - FIRST INSTANCE MUST BE DEFAULT INSTANCE IN THE GENERATED FORM USED TO FEED THIS TRANSFORM -->
     <xsl:variable name="rootNodeName" select="name(//xf:instance[1]/*[1])"/>
     <xsl:variable name="rootMatch" select="concat('vra:',$rootNodeName)"/>
