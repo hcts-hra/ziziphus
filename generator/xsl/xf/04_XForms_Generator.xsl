@@ -497,6 +497,8 @@
                     <xsl:attribute name="id">r-vra<xsl:value-of select="$vraArtifact"/></xsl:attribute>
                     <xsl:attribute name="xf:repeat-nodeset">vra:<xsl:value-of select="$vraArtifactNode"/></xsl:attribute>
 
+
+                    <xsl:apply-templates mode="ui" select="*[starts-with(@nodeset,'vra:')]"/>
                     <tr>
                         <td colspan="3" class="globalAttrs">
                             <xf:group class="vraAttributes" appearance="minimal" ref=".">
@@ -513,8 +515,6 @@
                             </xf:group>
                         </td>
                     </tr>
-
-                    <xsl:apply-templates mode="ui" select="*[starts-with(@nodeset,'vra:')]"/>
                 </tbody>
             </table>
 

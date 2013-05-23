@@ -164,22 +164,6 @@
             <table>
                <tbody model="m-child-model" id="r-vraTextref" xf:repeat-nodeset="vra:textref">
                   <tr>
-                     <td colspan="3" class="globalAttrs">
-                        <xf:group class="vraAttributes" appearance="minimal" ref=".">
-                           <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
-                           <xf:trigger class="vraAttributeTrigger -btn">
-                              <xf:label>A</xf:label>
-                              <xf:hint>Attributes...</xf:hint>
-                              <xf:action>
-                                 <xf:setvalue ref="instance('i-util')/currentElement">.</xf:setvalue>
-                                 <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
-                              </xf:action>
-                              <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
-                           </xf:trigger>
-                        </xf:group>
-                     </td>
-                  </tr>
-                  <tr>
                      <td class="prefCol">
                         <xf:input ref="@pref" id="d3e95-pref">
                            <xf:label>pref</xf:label>
@@ -298,6 +282,22 @@
                            <xf:hint>delete this entry</xf:hint><script type="text/javascript">
                         removeEntry();
                     </script></xf:trigger>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td colspan="3" class="globalAttrs">
+                        <xf:group class="vraAttributes" appearance="minimal" ref=".">
+                           <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
+                           <xf:trigger class="vraAttributeTrigger -btn">
+                              <xf:label>A</xf:label>
+                              <xf:hint>Attributes...</xf:hint>
+                              <xf:action>
+                                 <xf:setvalue ref="instance('i-util')/currentElement">.</xf:setvalue>
+                                 <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
+                              </xf:action>
+                              <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
+                           </xf:trigger>
+                        </xf:group>
                      </td>
                   </tr>
                </tbody>
