@@ -1,7 +1,7 @@
 xquery version "3.0";
 declare namespace xmldb="http://exist-db.org/xquery/xmldb";
 declare namespace vra="http://www.vraweb.org/vracore4.htm";
-declare namespace hra="http://cluster-schemas.uni-hd.de";
+declare namespace ext="http://exist-db.org/vra/extension";
 
 declare option exist:serialize "method=xhtml media-type=text/html";
 let $start := xs:integer(request:get-parameter("start", "1"))
@@ -59,7 +59,7 @@ return
             let $imageRecordId  := if(exists($vraWorkRecord/vra:relationSet/vra:relation/@pref[.='true']))
                                 then $vraWorkRecord/vra:relationSet/vra:relation[@pref='true']/@relids
                                 else $vraWorkRecord/vra:relationSet/vra:relation[1]/@relids
-            let $heidiconId := $vraWorkRecord//hra:heidicon/hra:item[@type='f_id_heidicon']/hra:value[2]
+            let $heidiconId := $vraWorkRecord//ext:heidicon/ext:item[@type='f_id_heidicon']/ext:value[2]
             
             let $counter := if($start gt ($num)) then $start+$count -1 else $count
             return
