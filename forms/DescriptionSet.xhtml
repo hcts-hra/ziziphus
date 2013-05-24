@@ -101,8 +101,9 @@
                            title="Add Description">
                   <xf:label>+</xf:label>
                   <xf:hint>add an entry</xf:hint>
-                  <xf:insert model="m-child-model" nodeset="instance()/vra:description[last()]"
-                             origin="instance('i-templates')/vra:description"></xf:insert>
+                  <xf:insert model="m-child-model" nodeset="instance()/vra:description[1]"
+                             origin="instance('i-templates')/vra:description"
+                             position="before"></xf:insert>
                </xf:trigger>
                <xf:trigger id="d3e1-save" class="-btn-small">
                   <xf:label>Save changes</xf:label>

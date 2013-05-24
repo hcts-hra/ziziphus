@@ -130,8 +130,9 @@
                <xf:trigger class="t-plus -btn-small" model="m-child-model" id="d3e1-add" title="Add Agent">
                   <xf:label>+</xf:label>
                   <xf:hint>add an entry</xf:hint>
-                  <xf:insert model="m-child-model" nodeset="instance()/vra:agent[last()]"
-                             origin="instance('i-templates')/vra:agent"></xf:insert>
+                  <xf:insert model="m-child-model" nodeset="instance()/vra:agent[1]"
+                             origin="instance('i-templates')/vra:agent"
+                             position="before"></xf:insert>
                </xf:trigger>
                <xf:trigger id="d3e1-save" class="-btn-small">
                   <xf:label>Save changes</xf:label>

@@ -193,8 +193,9 @@
                                 <xf:label>+</xf:label>
                                 <xf:hint>add an entry</xf:hint>
                                 <xf:insert model="m-child-model">
-                                    <xsl:attribute name="nodeset">instance()/vra:<xsl:value-of select="$vraArtifactNode"/>[last()]</xsl:attribute>
+                                    <xsl:attribute name="nodeset">instance()/vra:<xsl:value-of select="$vraArtifactNode"/>[1]</xsl:attribute>
                                     <xsl:attribute name="origin">instance('i-templates')/vra:<xsl:value-of select="$vraArtifactNode"/></xsl:attribute>
+                                    <xsl:attribute name="position">before</xsl:attribute>
                                 </xf:insert>
                             </xf:trigger>
                             <xf:trigger id="{concat(generate-id(),'-save')}" class="-btn-small">

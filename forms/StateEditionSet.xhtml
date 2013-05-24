@@ -110,8 +110,9 @@
                            title="Add StateEdition">
                   <xf:label>+</xf:label>
                   <xf:hint>add an entry</xf:hint>
-                  <xf:insert model="m-child-model" nodeset="instance()/vra:stateEdition[last()]"
-                             origin="instance('i-templates')/vra:stateEdition"></xf:insert>
+                  <xf:insert model="m-child-model" nodeset="instance()/vra:stateEdition[1]"
+                             origin="instance('i-templates')/vra:stateEdition"
+                             position="before"></xf:insert>
                </xf:trigger>
                <xf:trigger id="d3e1-save" class="-btn-small">
                   <xf:label>Save changes</xf:label>

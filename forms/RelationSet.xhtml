@@ -103,8 +103,9 @@
                            title="Add Relation">
                   <xf:label>+</xf:label>
                   <xf:hint>add an entry</xf:hint>
-                  <xf:insert model="m-child-model" nodeset="instance()/vra:relation[last()]"
-                             origin="instance('i-templates')/vra:relation"></xf:insert>
+                  <xf:insert model="m-child-model" nodeset="instance()/vra:relation[1]"
+                             origin="instance('i-templates')/vra:relation"
+                             position="before"></xf:insert>
                </xf:trigger>
                <xf:trigger id="d3e1-save" class="-btn-small">
                   <xf:label>Save changes</xf:label>

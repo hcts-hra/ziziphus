@@ -101,8 +101,9 @@
                            title="Add Technique">
                   <xf:label>+</xf:label>
                   <xf:hint>add an entry</xf:hint>
-                  <xf:insert model="m-child-model" nodeset="instance()/vra:technique[last()]"
-                             origin="instance('i-templates')/vra:technique"></xf:insert>
+                  <xf:insert model="m-child-model" nodeset="instance()/vra:technique[1]"
+                             origin="instance('i-templates')/vra:technique"
+                             position="before"></xf:insert>
                </xf:trigger>
                <xf:trigger id="d3e1-save" class="-btn-small">
                   <xf:label>Save changes</xf:label>

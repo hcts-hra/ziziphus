@@ -52,11 +52,11 @@
         </set>
         <set idref="b-d2e426" name="vra:locationSet">
             <!-- name an den anfang -->
-            <group idref="b-d2e484" name="vra:name">
-                <textNode detail="false"/>
-                <node idref="b-d2e491" name="@type" detail="false"/>
-            </group>
             <group idref="b-d2e461" name="vra:location" repeated="true">
+                <group idref="b-d2e484" name="vra:name">
+                    <textNode detail="false"/>
+                    <node idref="b-d2e491" name="@type" detail="false"/>
+                </group>
                 <node idref="b-d2e511" name="@type" detail="false"/>
                 <group idref="b-d2e467" name="vra:refid">
                     <textNode detail="false"/>
