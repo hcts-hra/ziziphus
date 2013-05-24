@@ -165,7 +165,7 @@
                <tbody model="m-child-model" id="r-vraSource" xf:repeat-nodeset="vra:source">
                   <tr>
                      <td class="prefCol">
-                        <xf:input ref="@pref" id="d3e65-pref">
+                        <xf:input ref="@pref" id="d3e90-pref">
                            <xf:label>pref</xf:label>
                            <xf:hint>preferred</xf:hint>
                            <xf:action ev:event="xforms-value-changed" if=".=('true',1)"
@@ -177,9 +177,6 @@
                      </td>
                      <td class="contentCol">
                         <xf:group appearance="minimal">
-                           <xf:input id="b-d2e795" ref="vra:refid">
-                              <xf:label>Refid</xf:label>
-                           </xf:input>
                            <xf:select1 id="b-d2e802" ref="vra:refid/@type">
                               <xf:label>Type</xf:label>
                               <xf:item>
@@ -211,6 +208,9 @@
                                  <xf:value>other</xf:value>
                               </xf:item>
                            </xf:select1>
+                           <xf:input id="b-d2e795" ref="vra:refid">
+                              <xf:label>Refid</xf:label>
+                           </xf:input>
                            <xf:group class="vraAttributes" appearance="minimal" ref="vra:refid">
                               <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                            </xf:group>
@@ -225,9 +225,6 @@
                            </xf:trigger>
                         </xf:group>
                         <xf:group appearance="minimal">
-                           <xf:input id="b-d2e812" ref="vra:name" class="elementName">
-                              <xf:label>Name</xf:label>
-                           </xf:input>
                            <xf:select1 id="b-d2e819" ref="vra:name/@type">
                               <xf:label>Type</xf:label>
                               <xf:item>
@@ -255,6 +252,9 @@
                                  <xf:value>other</xf:value>
                               </xf:item>
                            </xf:select1>
+                           <xf:input id="b-d2e812" ref="vra:name" class="elementName">
+                              <xf:label>Name</xf:label>
+                           </xf:input>
                            <xf:group class="vraAttributes" appearance="minimal" ref="vra:name">
                               <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                            </xf:group>

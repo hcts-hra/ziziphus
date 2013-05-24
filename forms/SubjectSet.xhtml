@@ -160,7 +160,7 @@
                <tbody model="m-child-model" id="r-vraSubject" xf:repeat-nodeset="vra:subject">
                   <tr>
                      <td class="prefCol">
-                        <xf:input ref="@pref" id="d3e86-pref">
+                        <xf:input ref="@pref" id="d3e50-pref">
                            <xf:label>pref</xf:label>
                            <xf:hint>preferred</xf:hint>
                            <xf:action ev:event="xforms-value-changed" if=".=('true',1)"
@@ -172,9 +172,6 @@
                      </td>
                      <td class="contentCol">
                         <xf:group appearance="minimal">
-                           <xf:input id="b-d2e1017" ref="vra:term">
-                              <xf:label>Term</xf:label>
-                           </xf:input>
                            <xf:select1 id="b-d2e1024" ref="vra:term/@type">
                               <xf:label>Type</xf:label>
                               <xf:item>
@@ -226,6 +223,9 @@
                                  <xf:value>otherName</xf:value>
                               </xf:item>
                            </xf:select1>
+                           <xf:input id="b-d2e1017" ref="vra:term">
+                              <xf:label>Term</xf:label>
+                           </xf:input>
                            <xf:group class="vraAttributes" appearance="minimal" ref="vra:term">
                               <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                            </xf:group>

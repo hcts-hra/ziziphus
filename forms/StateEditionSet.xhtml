@@ -77,9 +77,9 @@
                <xf:bind nodeset="instance()">
                   <xf:bind nodeset="vra:stateEdition">
                      <xf:bind nodeset="@pref" type="boolean"></xf:bind>
+                     <xf:bind nodeset="@type" type="vra:stateEditionTypeType"></xf:bind>
                      <xf:bind nodeset="@count"></xf:bind>
                      <xf:bind nodeset="@num"></xf:bind>
-                     <xf:bind nodeset="@type" type="vra:stateEditionTypeType"></xf:bind>
                   </xf:bind>
                </xf:bind>
                <xf:instance id="i-templates">
@@ -163,7 +163,7 @@
                       xf:repeat-nodeset="vra:stateEdition">
                   <tr>
                      <td class="prefCol">
-                        <xf:input ref="@pref" id="d3e75-pref">
+                        <xf:input ref="@pref" id="d3e99-pref">
                            <xf:label>pref</xf:label>
                            <xf:hint>preferred</xf:hint>
                            <xf:action ev:event="xforms-value-changed" if=".=('true',1)"
@@ -175,12 +175,6 @@
                      </td>
                      <td class="contentCol">
                         <xf:group appearance="minimal">
-                           <xf:input ref="@count">
-                              <xf:label>count</xf:label>
-                           </xf:input>
-                           <xf:input ref="@num">
-                              <xf:label>num</xf:label>
-                           </xf:input>
                            <xf:select1 id="b-d2e924" ref="@type">
                               <xf:label>Type</xf:label>
                               <xf:item>
@@ -200,6 +194,12 @@
                                  <xf:value>other</xf:value>
                               </xf:item>
                            </xf:select1>
+                           <xf:input ref="@count">
+                              <xf:label>count</xf:label>
+                           </xf:input>
+                           <xf:input ref="@num">
+                              <xf:label>num</xf:label>
+                           </xf:input>
                         </xf:group>
                         <xf:group appearance="minimal">
                            <xf:input id="b-d2e880" ref="vra:description">

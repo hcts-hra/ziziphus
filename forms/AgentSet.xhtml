@@ -86,6 +86,15 @@
                      <xf:bind nodeset="vra:name">
                         <xf:bind nodeset="@type" type="vra:agentNameTypeType"></xf:bind>
                      </xf:bind>
+                     <xf:bind nodeset="vra:dates">
+                        <xf:bind nodeset="@type" type="vra:agentDateTypeType"></xf:bind>
+                        <xf:bind nodeset="vra:earliestDate">
+                           <xf:bind nodeset="@circa" type="xsd:boolean"></xf:bind>
+                        </xf:bind>
+                        <xf:bind nodeset="vra:latestDate">
+                           <xf:bind nodeset="@circa" type="xsd:boolean"></xf:bind>
+                        </xf:bind>
+                     </xf:bind>
                   </xf:bind>
                </xf:bind>
                <xf:instance id="i-templates">
@@ -185,9 +194,6 @@
                      </td>
                      <td class="contentCol">
                         <xf:group appearance="minimal">
-                           <xf:input id="b-d2e115" ref="vra:name" class="elementName">
-                              <xf:label>Name</xf:label>
-                           </xf:input>
                            <xf:select1 id="b-d2e122" ref="vra:name/@type" class="detail">
                               <xf:label>Type</xf:label>
                               <xf:item>
@@ -207,6 +213,9 @@
                                  <xf:value>other</xf:value>
                               </xf:item>
                            </xf:select1>
+                           <xf:input id="b-d2e115" ref="vra:name" class="elementName">
+                              <xf:label>Name</xf:label>
+                           </xf:input>
                            <xf:group class="vraAttributes" appearance="minimal" ref="vra:name">
                               <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                            </xf:group>
@@ -232,6 +241,85 @@
                               <xf:hint>Attributes...</xf:hint>
                               <xf:action>
                                  <xf:setvalue ref="instance('i-util')/currentElement" value="'role'"></xf:setvalue>
+                                 <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
+                              </xf:action>
+                              <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
+                           </xf:trigger>
+                        </xf:group>
+                        <xf:group appearance="minimal">
+                           <xf:input id="b-d2e63" ref="vra:attribution">
+                              <xf:label>Attribution</xf:label>
+                           </xf:input>
+                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:attribution">
+                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
+                           </xf:group>
+                           <xf:trigger class="vraAttributeTrigger -btn">
+                              <xf:label>A</xf:label>
+                              <xf:hint>Attributes...</xf:hint>
+                              <xf:action>
+                                 <xf:setvalue ref="instance('i-util')/currentElement" value="'attribution'"></xf:setvalue>
+                                 <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
+                              </xf:action>
+                              <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
+                           </xf:trigger>
+                        </xf:group>
+                        <xf:group appearance="minimal">
+                           <xf:input id="b-d2e79" ref="vra:culture">
+                              <xf:label>Culture</xf:label>
+                           </xf:input>
+                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:culture">
+                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
+                           </xf:group>
+                           <xf:trigger class="vraAttributeTrigger -btn">
+                              <xf:label>A</xf:label>
+                              <xf:hint>Attributes...</xf:hint>
+                              <xf:action>
+                                 <xf:setvalue ref="instance('i-util')/currentElement" value="'culture'"></xf:setvalue>
+                                 <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
+                              </xf:action>
+                              <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
+                           </xf:trigger>
+                        </xf:group>
+                        <xf:group appearance="minimal">
+                           <xf:select1 id="b-d2e114" ref="vra:dates/@type" class="detail">
+                              <xf:label>Type</xf:label>
+                              <xf:item>
+                                 <xf:label>Activity</xf:label>
+                                 <xf:value>activity</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Life</xf:label>
+                                 <xf:value>life</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Other</xf:label>
+                                 <xf:value>other</xf:value>
+                              </xf:item>
+                           </xf:select1>
+                           <xf:group appearance="minimal">
+                              <xf:input id="b-d2e98" ref="vra:dates/vra:earliestDate">
+                                 <xf:label>EarliestDate</xf:label>
+                              </xf:input>
+                              <xf:input ref="vra:dates/vra:earliestDate/@circa">
+                                 <xf:label>circa</xf:label>
+                              </xf:input>
+                           </xf:group>
+                           <xf:group appearance="minimal">
+                              <xf:input id="b-d2e106" ref="vra:dates/vra:latestDate">
+                                 <xf:label>LatestDate</xf:label>
+                              </xf:input>
+                              <xf:input ref="vra:dates/vra:latestDate/@circa">
+                                 <xf:label>circa</xf:label>
+                              </xf:input>
+                           </xf:group>
+                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:dates">
+                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
+                           </xf:group>
+                           <xf:trigger class="vraAttributeTrigger -btn">
+                              <xf:label>A</xf:label>
+                              <xf:hint>Attributes...</xf:hint>
+                              <xf:action>
+                                 <xf:setvalue ref="instance('i-util')/currentElement" value="'dates'"></xf:setvalue>
                                  <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
                               </xf:action>
                               <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>

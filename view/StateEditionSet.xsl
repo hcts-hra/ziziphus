@@ -14,6 +14,17 @@
                   <tr>
                      <td>
                         <xsl:choose>
+                           <xsl:when test="string-length(string-join(@type,'')) != 0">
+                              <div data-bf-type="select1" data-bf-bind="@type" tabindex="0" title="Type"
+                                   id="b-d2e924">
+                                 <xsl:value-of select="@type"></xsl:value-of>
+                              </div>
+                           </xsl:when>
+                           <xsl:otherwise>
+                              <div class="nodata" data-bf-type="select1" data-bf-bind="@type" tabindex="0">(Type)</div>
+                           </xsl:otherwise>
+                        </xsl:choose>
+                        <xsl:choose>
                            <xsl:when test="string-length(string-join(@count,'')) != 0">
                               <div data-bf-type="input" data-bf-bind="@count" tabindex="0" title="count">
                                  <xsl:value-of select="@count"></xsl:value-of>
@@ -31,17 +42,6 @@
                            </xsl:when>
                            <xsl:otherwise>
                               <div class="nodata" data-bf-type="input" data-bf-bind="@num" tabindex="0">(num)</div>
-                           </xsl:otherwise>
-                        </xsl:choose>
-                        <xsl:choose>
-                           <xsl:when test="string-length(string-join(@type,'')) != 0">
-                              <div data-bf-type="select1" data-bf-bind="@type" tabindex="0" title="Type"
-                                   id="b-d2e924">
-                                 <xsl:value-of select="@type"></xsl:value-of>
-                              </div>
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <div class="nodata" data-bf-type="select1" data-bf-bind="@type" tabindex="0">(Type)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>
