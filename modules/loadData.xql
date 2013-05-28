@@ -13,10 +13,12 @@ declare namespace request="http://exist-db.org/xquery/request";
 declare namespace vra="http://www.vraweb.org/vracore4.htm";
 declare namespace merge="http://www.betterform.de/merge";
 
+import module namespace app="http://www.betterform.de/projects/ziziphus/xquery/app" at "app.xqm";
+
 declare option exist:serialize "method=xml media-type=text/xml indent=yes";
 
 declare function local:getSetData($id as xs:string,$setName as xs:string) as node() * {
-    let $record := collection('/db/apps/ziziphusData')//vra:vra/*[@id = $id]
+    let $record := collection( $app:record-dir)//vra:vra/*[@id = $id]
     for $set in $record//vra:*[local-name()=$setName]
     return $set
 };

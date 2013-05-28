@@ -1,7 +1,10 @@
 xquery version "3.0";
+
 declare namespace xmldb="http://exist-db.org/xquery/xmldb";
 declare namespace vra="http://www.vraweb.org/vracore4.htm";
 declare namespace ext="http://exist-db.org/vra/extension";
+
+import module namespace app="http://www.betterform.de/projects/ziziphus/xquery/app" at "modules/app.xqm";
 
 declare option exist:serialize "method=xhtml media-type=text/html";
 let $start := xs:integer(request:get-parameter("start", "1"))
@@ -52,10 +55,10 @@ return
           </thead>
           <tbody>
           {
-          for $record  at $count in subsequence(collection('/db/apps/ziziphusData/priyapaul/files/work'), $start, $num )//vra:vra/vra:work
+          for $record  at $count in subsequence(collection($app:work-record-dir), $start, $num )//vra:vra/vra:work
             let $uuid := string($record/@id)
             let $agent := string($record/vra:agentSet/vra:agent[1]/vra:name)
-            let $vraWorkRecord  := collection('/db/apps/ziziphusData/priyapaul/files/work')/vra:vra/vra:work[@id = $uuid]
+            let $vraWorkRecord  := collection($app:work-record-dir)/vra:vra/vra:work[@id = $uuid]
             let $imageRecordId  := if(exists($vraWorkRecord/vra:relationSet/vra:relation/@pref[.='true']))
                                 then $vraWorkRecord/vra:relationSet/vra:relation[@pref='true']/@relids
                                 else $vraWorkRecord/vra:relationSet/vra:relation[1]/@relids
@@ -66,8 +69,8 @@ return
             <tr>
                 <td>{$counter}</td>
                 <td><a href="{$context}/apps/ziziphus/record.html?id={$uuid}" target="_blank">{$uuid}</a></td>
-                <td><a href="{$context}/apps/ziziphusData/priyapaul/files/work/{$uuid}.xml" target="_blank">work</a></td>
-                <td><a href="{$context}/apps/ziziphusData/priyapaul/files/images/{$imageRecordId}.xml" target="_blank">image</a></td>
+                <td><a href="{$context}/rest/{$app:work-record-dir}/{$uuid}.xml" target="_blank">work</a></td>
+                <td><a href="{$context}/rest/{$app:image-record-dir}/{$imageRecordId}.xml" target="_blank">image</a></td>
                 <td>{$heidiconId}</td>
                 <td>{$agent}</td>
             </tr>

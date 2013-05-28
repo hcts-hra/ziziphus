@@ -1,6 +1,9 @@
 xquery version "3.0";
-import module namespace request="http://exist-db.org/xquery/request";
+
 declare namespace vra = "http://www.vraweb.org/vracore4.htm";
+
+import module namespace request="http://exist-db.org/xquery/request";
+import module namespace app="http://www.betterform.de/projects/ziziphus/xquery/app" at "app.xqm";
 
 let $id := request:get-parameter('id','')
 let $vraSet := request:get-parameter('set','')
@@ -11,7 +14,7 @@ let $foo := util:log('info',concat('id=',$id,' vraSet=',$vraSet))
 let $newData := request:get-data()
 
 (: fetch original record from database :)
-let $record := collection('/db/apps/ziziphusData')//vra:vra/*[./@id=$id]
+let $record := collection($app:record-dir)//vra:vra/*[./@id=$id]
 
 (: update old data with new data :)
 let $test1 := if(exists($record/*[local-name() eq $vraSet])) 

@@ -3,17 +3,18 @@ xquery version "3.0";
 declare namespace exist = "http://exist.sourceforge.net/NS/exist";
 declare namespace vra = "http://www.vraweb.org/vracore4.htm";
 
+import module namespace app="http://www.betterform.de/projects/ziziphus/xquery/app" at "modules/app.xqm";
 import module namespace request="http://exist-db.org/xquery/request";
 import module namespace transform = "http://exist-db.org/xquery/transform";
 
 declare option exist:serialize "method=xhtml media-type=application/xhtml+xml";
 
 declare function local:createVraRecords($uuid as xs:string?) {
-     let $vraWorkRecord  := collection('/db/apps/ziziphusData/priyapaul/files/work')/vra:vra/vra:work[@id = $uuid]
+     let $vraWorkRecord  := collection($app:work-record-dir)/vra:vra/vra:work[@id = $uuid]
      let $imageRecordId  := if(exists($vraWorkRecord/vra:relationSet/vra:relation/@pref[.='true']))
                                 then $vraWorkRecord/vra:relationSet/vra:relation[@pref='true']/@relids
                                 else $vraWorkRecord/vra:relationSet/vra:relation[1]/@relids
-     let $vraImageRecord := collection('/db/apps/ziziphusData/priyapaul/files/images')/vra:vra/vra:image[@id = $imageRecordId]
+     let $vraImageRecord := collection($app:image-record-dir)/vra:vra/vra:image[@id = $imageRecordId]
      let $vraImageId    := $vraImageRecord/@refid
      let $id := substring($uuid,3)
 (:     let $imageTitle := $vraWorkRecord//vra:titleSet/vra:title/text():)

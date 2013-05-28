@@ -1,7 +1,10 @@
 xquery version "3.0";
+
 declare namespace xmldb="http://exist-db.org/xquery/xmldb";
 declare namespace vra="http://www.vraweb.org/vracore4.htm";
 declare namespace hra="http://cluster-schemas.uni-hd.de";
+
+import module namespace app="http://www.betterform.de/projects/ziziphus/xquery/app" at "modules/app.xqm";
 
 declare option exist:serialize "method=xhtml media-type=text/html";
 let $query-base := request:get-url()
@@ -28,7 +31,7 @@ return
       <div>
       {
          
-      for $record in collection('/db/apps/ziziphusData/priyapaul/files/work')//vra:vra[.//hra:heidicon/hra:item[@type='f_id_heidicon']/hra:value=$searchId]
+      for $record in collection($app:work-record-dir)//vra:vra[.//hra:heidicon/hra:item[@type='f_id_heidicon']/hra:value=$searchId]
         let $theId := $record//hra:item[@type="f_id_heidicon" ]/hra:value[2]/text()
         let $workid := string($record/vra:work/@id)
         let $title := string($record/vra:work/vra:titleSet/vra:title)
