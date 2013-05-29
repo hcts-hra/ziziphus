@@ -5,9 +5,10 @@
 :)
 xquery version "3.0";
 
-declare namespace xmldb = "http://exist-db.org/xquery/xmldb";
 
-let $username := session:get-attribute("app.user")
+import module namespace security="http://exist-db.org/mods/security" at "/apps/cluster-shared/modules/search/security.xqm";
+
+let $username := security:get-user-credential-from-session()[1]
 return
     <data>
         <user name="{$username}"/>

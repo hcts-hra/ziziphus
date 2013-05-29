@@ -5,12 +5,14 @@ declare namespace vra="http://www.vraweb.org/vracore4.htm";
 declare namespace ext="http://exist-db.org/vra/extension";
 
 import module namespace app="http://www.betterform.de/projects/ziziphus/xquery/app" at "modules/app.xqm";
+import module namespace security="http://exist-db.org/mods/security" at "/apps/cluster-shared/modules/search/security.xqm";
 
-declare option exist:serialize "method=xhtml media-type=text/html";
+declare option exist:serialize "method=html5 media-type=text/html";
 let $start := xs:integer(request:get-parameter("start", "1"))
 let $num := xs:integer(request:get-parameter("num", "20"))
 let $query-base := request:get-url()
 let $context := request:get-context-path()
+let $user := request:get-attribute("xquery.user")
 
 let $cnt := if($start gt ($num)) then $start + $num -1 else $num
 return
@@ -18,23 +20,47 @@ return
    <head>
         <title>Priya Paul Collection</title>
        <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css"/>
-       
    </head>
-
    <body style="padding:30px;">
       <h1>Priya Paul Collection</h1>
 
-      <form action="HeidiconSearch.xql" class="form-search">
-        <label class="control-label" for="idSearch">Heidicon Id:</label>
-        <input id="idSearch" type="search" name="heidiconId"/>
-        <button type="submit" class="btn">Search</button>
-      </form>
 
-      <form action="WorkrecordSearch.xql" class="form-search">
-        <label class="control-label" for="idSearch">Work Record Id:</label>
-        <input id="idSearch" type="search" name="workrecord"/>
-        <button type="submit" class="btn">Search</button>
-      </form>
+                <!--
+                if ($user eq 'guest')
+                then(
+                    <div class="login"><a href="#" id="login-link">Login</a></div>
+                )
+                else
+                    if ($user eq 'admin')
+                    then
+                        (
+                            <div class="login">Logged in as <span class="username">{let $human-name := security:get-human-name-for-user($user) return if (not(empty($human-name))) then $human-name else $user}                                             </span>. <a href="?logout=1">Logout</a></div>
+                        )
+                        else
+                        (
+                            <div class="login">Logged in as <span class="username">{let $human-name := security:get-human-name-for-user($user) return if (not(empty($human-name))) then $human-name else $user}    </span>. <a href="?logout=1">Logout</a></div>
+                        )
+
+                -->
+
+
+
+    {
+        if ($user ne 'guest')
+        then (
+          <form action="HeidiconSearch.xql" class="form-search">
+            <label class="control-label" for="idSearch">Heidicon Id:</label>
+            <input id="idSearch" type="search" name="heidiconId"/>
+            <button type="submit" class="btn">Search</button>
+          </form>,
+
+          <form action="WorkrecordSearch.xql" class="form-search">
+            <label class="control-label" for="idSearch">Work Record Id:</label>
+            <input id="idSearch" type="search" name="workrecord"/>
+            <button type="submit" class="btn">Search</button>
+          </form>
+        ) else ()
+    }
 
 
       <h2>Work Records from {$start} to {$cnt}</h2>

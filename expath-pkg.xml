@@ -2,4 +2,5 @@
 <package xmlns="http://expath.org/ns/pkg" name="http://exist-db.org/apps/ziziphus" abbrev="ziziphus" version="0.20" spec="1.0">
     <title>Ziziphus Image DB</title>
     <dependency package="http://exist-db.org/apps/shared"/>
+    <dependency package=" http://exist-db.org/apps/cluster-shared"/>
 </package>
