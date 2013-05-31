@@ -85,6 +85,12 @@
                     <xf:send submission="s-load-metadata"/>
                 </xf:action>
             </xf:model>
+            <xf:model id="m-code-tables">
+                <xf:instance id="i-codes-lang" src="{$relativePath}modules/code-tables.xql?table=lang" xmlns=""/>
+                <xf:instance id="i-codes-script" src="{$relativePath}modules/code-tables.xql?table=script" xmlns=""/>
+                <xf:instance id="i-codes-transliteration" src="{$relativePath}modules/code-tables.xql?table=transliteration" xmlns=""/>
+                <xf:instance id="i-codes-role" src="{$relativePath}modules/code-tables.xql?table=role" xmlns=""/>
+            </xf:model>
             <xf:group id="controlCenter" model="m-main">
                 <xf:action ev:event="unload-subform" model="m-main"
                            if="string-length(instance('i-control-center')/currentform) &gt; 0">
@@ -137,6 +143,11 @@
             </div>
             <div class="headerMenu" style="position:absolute;display:block;right:40px;">
                 <ul class="inline" style="list-style:none outside none;margin-left:0;padding:0">
+                    <li>
+                        <xf:output ref="instance('i-user')/user/@edit">
+                            <xf:label>Edit: </xf:label>
+                        </xf:output>
+                    </li>
                     <li>
                         <xf:output ref="instance('i-user')/user/@name">
                             <xf:label>User:</xf:label>

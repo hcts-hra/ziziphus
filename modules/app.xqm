@@ -5,10 +5,13 @@ module namespace app="http://www.betterform.de/projects/ziziphus/xquery/app";
 declare %private  variable $app:collection-name := encode-for-uri("Priya Paul Collection");
 
 declare  %private  variable $app:app-dir := " /exist/apps/ziziphus";
+declare  %private  variable $app:shared-dir := "/apps/cluster-shared";
 
 declare  %private  variable $app:data-dir := "/db/resources/";
 declare   %private variable $app:common-data-dir := $app:data-dir || "commons/";
 declare   %private variable $app:users-data-dir := $app:data-dir || "users/";
+
+declare  variable $app:code-tables := $app:shared-dir || "/modules/edit/code-tables/";
 
 declare  variable $app:record-dir := $app:common-data-dir || $app:collection-name || "/";
 declare  variable $app:work-record-dir := $app:common-data-dir || $app:collection-name || "/work/";

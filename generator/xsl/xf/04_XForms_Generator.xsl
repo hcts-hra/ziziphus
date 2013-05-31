@@ -174,6 +174,14 @@
                                 </data>
                             </xf:instance>
 
+                            <!--
+                            <xf:instance id="i-codes-lang" src="{$relativePath}modules/code-tables.xql?table=lang" xmlns=""/>
+                            <xf:instance id="i-codes-script" src="{$relativePath}modules/code-tables.xql?table=script" xmlns=""/>
+                            <xf:instance id="i-codes-transliteration" src="{$relativePath}modules/code-tables.xql?table=transliteration" xmlns=""/>
+                            <xf:instance id="i-codes-role" src="{$relativePath}modules/code-tables.xql?table=role" xmlns=""/>
+                            -->
+
+
                         </xf:model>
                     </div>
 
@@ -315,27 +323,39 @@
                                 </xf:trigger>
                             </xf:group>
                             <xf:group appearance="minimal" class="attrDialogGroup">
-                                <xf:input ref="@lang" id="{concat(generate-id(),'-lang')}">
-                                    <xf:label>Language</xf:label>
-                                </xf:input>
+                                <xf:select1 ref="@lang"  id="{concat(generate-id(),'-lang')}">
+                                        <xf:label>Language</xf:label>
+                                        <xf:itemset nodeset="bf:instanceOfModel('m-code-tables', 'i-codes-lang')/items/item">
+                                            <xf:label ref="label"/>
+                                            <xf:value ref="value"/>
+                                        </xf:itemset>
+                                </xf:select1>
                                 <xf:trigger class="deleteAttribute input-append -btn">
                                     <xf:label>clear</xf:label>
                                     <xf:setvalue ref="@lang"/>
                                 </xf:trigger>
                             </xf:group>
                             <xf:group appearance="minimal" class="attrDialogGroup">
-                                <xf:input ref="@transliteration" id="{concat(generate-id(),'-transliteration')}">
+                                <xf:select1 ref="@transliteration" id="{concat(generate-id(),'-transliteration')}">
                                     <xf:label>Transliteration</xf:label>
-                                </xf:input>
+                                    <xf:itemset nodeset="bf:instanceOfModel('m-code-tables', 'i-codes-transliteration')/items/item">
+                                        <xf:label ref="label"/>
+                                        <xf:value ref="value"/>
+                                    </xf:itemset>
+                                </xf:select1>
                                 <xf:trigger class="deleteAttribute input-append -btn">
                                     <xf:label>clear</xf:label>
                                     <xf:setvalue ref="@transliteration"/>
                                 </xf:trigger>
                             </xf:group>
                             <xf:group appearance="minimal" class="attrDialogGroup">
-                                <xf:input ref="@script" id="{concat(generate-id(),'-script')}">
+                                <xf:select1 ref="@script" id="{concat(generate-id(),'-script')}">
                                     <xf:label>Script</xf:label>
-                                </xf:input>
+                                    <xf:itemset nodeset="bf:instanceOfModel('m-code-tables', 'i-codes-script')/items/item">
+                                        <xf:label ref="label"/>
+                                        <xf:value ref="value"/>
+                                    </xf:itemset>
+                                </xf:select1>
                                 <xf:trigger class="deleteAttribute input-append -btn">
                                     <xf:label>clear</xf:label>
                                     <xf:setvalue ref="@script"/>
@@ -760,6 +780,23 @@
         <xsl:if test="@xfType='simpleType'">
             <xsl:choose>
                 <!--<xsl:when test="contains($useTextarea,$targetNode)">-->
+                <xsl:when test="@control='select1' and exists(@code-table)">
+                    <xsl:variable name="code-table-name"><xsl:value-of select="concat('i-codes-', @code-table)" /></xsl:variable>
+                    <xf:select1>
+                        <xsl:attribute name="ref"><xsl:value-of select="$currentPath"/></xsl:attribute>
+                        <xsl:if test="not($isArtifactNode) and ('vra:name'=$vraNodeName)">
+                            <xsl:attribute name="class">elementName</xsl:attribute>
+                        </xsl:if>
+                        <!--<xsl:if test="not($isArtifactNode)">-->
+                        <xf:label>
+                            <xsl:value-of select="functx:capitalize-first($vraNodeName)"/>
+                        </xf:label>
+                        <xf:itemset nodeset="bf:instanceOfModel('m-code-tables', '{$code-table-name}')/items/item">
+                            <xf:label ref="label"/>
+                            <xf:value ref="value"/>
+                        </xf:itemset>
+                    </xf:select1>
+                </xsl:when>
                 <xsl:when test="@control='textarea'">
                     <xsl:if test="$debugEnabled">
                         <xsl:message>UI-4.1:found element that shall use textarea</xsl:message>
