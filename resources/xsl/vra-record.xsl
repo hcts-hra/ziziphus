@@ -63,7 +63,7 @@
             <xsl:variable name="caseId" select="concat('c-',$id)"/>
             <xsl:variable name="tableId" select="concat('table-',$id)"/>
             <div class="t-edit">
-                <xf:trigger class="-icon -icon-edit">
+                <xf:trigger class="-icon -icon-edit" ref="instance('i-user')/user/@edit">
                     <xf:label/>
                     <xf:action>
                         <xf:dispatch name="unload-subform" targetid="controlCenter"/>

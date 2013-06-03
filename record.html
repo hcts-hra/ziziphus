@@ -66,6 +66,12 @@
                 <xf:instance xmlns="" id="i-user">
                     <data/>
                 </xf:instance>
+                <xf:bind nodeset="instance('i-user')">
+                    <xf:bind nodeset="user">
+                        <xf:bind nodeset="@edit" relevant="boolean-from-string(.)"/>
+                    </xf:bind>
+                </xf:bind>
+
                 <xf:submission id="s-load-user-data" method="post" replace="instance" instance="i-user"
                                resource="modules/getUserData.xql">
                     <xf:message ev:event="xforms-submit-error">error receiving the current user</xf:message>
