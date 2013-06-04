@@ -6,7 +6,7 @@
     </build>
     <app>
         <name>ziziphus</name>
-        <version>0.19</version>
+        <version>0.20</version>
     </app>
     <transform>
         <classpath pathid="transform.class.path" description="classpath for saxon XPath and XSLT engine">
