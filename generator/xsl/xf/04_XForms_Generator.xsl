@@ -32,8 +32,8 @@
 
     <!-- NOTE: change this to '../' to run the generated forms standalone -->
     <xsl:variable name="relativePath" select="''"/>
-    
-    
+
+
     <xsl:variable name="useTextarea" select="'vra:description vra:text'"/>
 
     <!-- must be '../' if testing forms standalone -->
@@ -77,7 +77,7 @@
         TEMPLATE RULES
     ########################################################################################
 -->
-    <xsl:template match="xf:bind[@nodeset='vra:vra']">
+    <xsl:template match="/xf:bind[@nodeset='vra:vra']">
         <!-- Check if referenced resources are available -->
 
         <xsl:if test="not(exists($vraInstance))">
@@ -187,7 +187,7 @@
                             <xf:label>save</xf:label>
                         </xf:trigger>
 -->
-                        <div class="btn-group">
+                        <!--<div class="btn-group">-->
                             <xf:trigger class="t-plus -btn-small" model="m-child-model" id="{concat(generate-id(),'-add')}">
                                 <xsl:attribute name="title">Add <xsl:value-of select="$vraArtifact"/></xsl:attribute>
                                 <xf:label>+</xf:label>
@@ -199,11 +199,11 @@
                                 </xf:insert>
                             </xf:trigger>
                             <xf:trigger id="{concat(generate-id(),'-save')}" class="-btn-small">
-                                <xf:label>Save changes</xf:label>
+                                <xf:label>Save</xf:label>
                                 <xf:hint>save changes</xf:hint>
                                 <xf:send submission="s-update"/>
                             </xf:trigger>
-                        </div>
+                        <!--</div>-->
 
 
                         <xf:trigger id="closeEditor" class="-close" >
@@ -227,10 +227,11 @@
 
                     <xsl:if test="$debugEnabled">
                         <xsl:message>############################################################</xsl:message>
-                        <xsl:message>UI: vraSectionNode: <xsl:value-of select="$vraSectionNode"/></xsl:message>
+                        <xsl:message>UI: UI mode: vraSectionNode: <xsl:value-of select="$vraSectionNode"/></xsl:message>
                         <xsl:message>############################################################</xsl:message>
                     </xsl:if>
                     <xsl:apply-templates select="xf:bind[@nodeset='vra:collection']/xf:bind[@nodeset=concat('vra:',$vraSectionNode)]" mode="ui"/>
+
 
                     <bfc:dialog id="attrDialog">
                         <xf:label>Attributes</xf:label>
@@ -239,7 +240,7 @@
                                 <xf:input ref="@dataDate" id="first">
                                     <xf:label>dataDate</xf:label>
                                 </xf:input>
-                                <xf:trigger class="deleteAttribute input-append -btn">
+                                <xf:trigger class="deleteAttribute">
                                     <xf:label>clear</xf:label>
                                     <xf:setvalue ref="@dataDate"/>
                                 </xf:trigger>
@@ -248,7 +249,7 @@
                                 <xf:input ref="@extent" id="{concat(generate-id(),'-extent')}">
                                     <xf:label>extent</xf:label>
                                 </xf:input>
-                                <xf:trigger class="deleteAttribute input-append -btn">
+                                <xf:trigger class="deleteAttribute">
                                     <xf:label>clear</xf:label>
                                     <xf:setvalue ref="@extent"/>
                                 </xf:trigger>
@@ -257,7 +258,7 @@
                                 <xf:input ref="@href" id="{concat(generate-id(),'-href')}">
                                     <xf:label>href</xf:label>
                                 </xf:input>
-                                <xf:trigger class="deleteAttribute input-append -btn">
+                                <xf:trigger class="deleteAttribute">
                                     <xf:label>clear</xf:label>
                                     <xf:setvalue ref="@href"/>
                                 </xf:trigger>
@@ -266,7 +267,7 @@
                                 <xf:input ref="@refid" id="{concat(generate-id(),'-refid')}">
                                     <xf:label>refid</xf:label>
                                 </xf:input>
-                                <xf:trigger class="deleteAttribute input-append -btn">
+                                <xf:trigger class="deleteAttribute">
                                     <xf:label>clear</xf:label>
                                     <xf:setvalue ref="@refid"/>
                                 </xf:trigger>
@@ -275,7 +276,7 @@
                                 <xf:input ref="@rules" id="{concat(generate-id(),'-rules')}">
                                     <xf:label>rules</xf:label>
                                 </xf:input>
-                                <xf:trigger class="deleteAttribute input-append -btn">
+                                <xf:trigger class="deleteAttribute">
                                     <xf:label>clear</xf:label>
                                     <xf:setvalue ref="@rules"/>
                                 </xf:trigger>
@@ -284,7 +285,7 @@
                                 <xf:input ref="@source" id="{concat(generate-id(),'-source')}">
                                     <xf:label>source</xf:label>
                                 </xf:input>
-                                <xf:trigger class="deleteAttribute input-append -btn">
+                                <xf:trigger class="deleteAttribute">
                                     <xf:label>clear</xf:label>
                                     <xf:setvalue ref="@source"/>
                                 </xf:trigger>
@@ -309,7 +310,7 @@
                                         <xf:value>(AKL)</xf:value>
                                     </xf:item>
                                 </xf:select1>
-                                <xf:trigger class="deleteAttribute input-append -btn">
+                                <xf:trigger class="deleteAttribute">
                                     <xf:label>clear</xf:label>
                                     <xf:setvalue ref="@vocab"/>
                                 </xf:trigger>
@@ -318,7 +319,7 @@
                                 <xf:input ref="@lang" id="{concat(generate-id(),'-lang')}">
                                     <xf:label>Language</xf:label>
                                 </xf:input>
-                                <xf:trigger class="deleteAttribute input-append -btn">
+                                <xf:trigger class="deleteAttribute">
                                     <xf:label>clear</xf:label>
                                     <xf:setvalue ref="@lang"/>
                                 </xf:trigger>
@@ -327,7 +328,7 @@
                                 <xf:input ref="@transliteration" id="{concat(generate-id(),'-transliteration')}">
                                     <xf:label>Transliteration</xf:label>
                                 </xf:input>
-                                <xf:trigger class="deleteAttribute input-append -btn">
+                                <xf:trigger class="deleteAttribute">
                                     <xf:label>clear</xf:label>
                                     <xf:setvalue ref="@transliteration"/>
                                 </xf:trigger>
@@ -336,7 +337,7 @@
                                 <xf:input ref="@script" id="{concat(generate-id(),'-script')}">
                                     <xf:label>Script</xf:label>
                                 </xf:input>
-                                <xf:trigger class="deleteAttribute input-append -btn">
+                                <xf:trigger class="deleteAttribute">
                                     <xf:label>clear</xf:label>
                                     <xf:setvalue ref="@script"/>
                                 </xf:trigger>
@@ -427,7 +428,7 @@
         <xsl:variable name="isArtifactNode" select="boolean((@nodeset=concat('vra:',$vraArtifactNode)) and (../local-name()='bind') and (../@nodeset=concat('vra:',$vraSectionNode)))"/>
 
         <xsl:if test="$debugEnabled">
-            <xsl:message>Bind: <xsl:value-of select="functx:concat-xpath($path,$vraNodeName)"/></xsl:message>
+            <xsl:message>matching Bind in bind mode: <xsl:value-of select="functx:concat-xpath($path,$vraNodeName)"/></xsl:message>
         </xsl:if>
 
         <xf:bind>
@@ -459,7 +460,7 @@
     <!-- section (like AgentSet, DescriptionSet or CultureSet etc.) -->
     <xsl:template match="/xf:bind/xf:bind/xf:bind[@nodeset=concat('vra:',$vraSectionNode)]" mode="ui" priority="50">
         <xsl:variable name="vraNodeName" select="@nodeset"/>
-        
+
         <xf:group id="outerGroup" appearance="minimal" model="m-child-model">
             <xsl:attribute name="ref">instance('i-<xsl:value-of select="$vraSectionNode"/>')</xsl:attribute>
 
@@ -493,6 +494,16 @@
                 </xf:insert>
             </xf:action>
 
+            <xf:trigger id="doDelete" class="hiddenControl">
+                <xf:label>remove</xf:label>
+                <xf:action>
+                    <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/isDirty" value="'true'"/>
+                    <xf:delete>
+                        <xsl:attribute name="nodeset">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]</xsl:attribute>
+                    </xf:delete>
+                </xf:action>
+            </xf:trigger>
+
             <table>
                 <tbody model="m-child-model">
                     <xsl:attribute name="id">r-vra<xsl:value-of select="$vraArtifact"/></xsl:attribute>
@@ -504,8 +515,8 @@
                         <td colspan="3" class="globalAttrs">
                             <xf:group class="vraAttributes" appearance="minimal" ref=".">
                                 <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
-                                <xf:trigger class="vraAttributeTrigger -btn">
-                                    <xf:label>A</xf:label>
+                                <xf:trigger class="vraAttributeTrigger">
+                                    <xf:label/>
                                     <xf:hint>Attributes...</xf:hint>
                                     <xf:action>
                                         <xf:setvalue ref="instance('i-util')/currentElement">.</xf:setvalue>
@@ -598,6 +609,25 @@
 
                         <xf:group appearance="minimal">
                             <xsl:call-template name="ui-nodeset-vra"/>
+
+                            <xsl:if test="./bind[@nodeset='.']">
+                                <xf:group class="vraAttributes" appearance="minimal">
+                                    <xsl:attribute name="ref" select="'.'"/>
+                                    <xi:include href="bricks/vraAttributesViewUI.xml"/>
+                                </xf:group>
+
+                                <xf:trigger class="vraAttributeTrigger">
+                                    <xf:label>A</xf:label>
+                                    <xf:hint>Attributes...</xf:hint>
+                                    <xf:action>
+                                        <xf:setvalue ref="instance('i-util')/currentElement">
+                                            <xsl:attribute name="value">'<xsl:value-of select="functx:remove-vra-prefix($vraNodeName)"/>'</xsl:attribute>
+                                        </xf:setvalue>
+                                        <xf:dispatch name="init-dialog" targetid="outerGroup"/>
+                                    </xf:action>
+                                    <bfc:show dialog="attrDialog" ev:event="DOMActivate"/>
+                                </xf:trigger>
+                            </xsl:if>
                         </xf:group>
 
                     </xsl:when>
@@ -607,6 +637,7 @@
                 </xsl:choose>
             </td>
             <td class="triggerCol">
+<!--
                 <xf:trigger id="doDelete" class="hiddenControl">
                     <xf:label>remove</xf:label>
                     <xf:action>
@@ -616,6 +647,7 @@
                         <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/isDirty" value="'true'"/>
                     </xf:action>
                 </xf:trigger>
+-->
                 <xf:trigger class="-btn -btn-danger">
                     <xf:label>X</xf:label>
                     <xf:hint>delete this entry</xf:hint>
@@ -639,19 +671,16 @@
     </xsl:template>
 
     <!-- match binds that have a '.' reference. This will mostly be the case when re-ordering childs -->
+<!--
     <xsl:template match="xf:bind[xf:bind[@nodeset='.']]" mode="ui" priority="50">
         <xsl:param name="path"/>
         <xsl:variable name="vraNodeName" select="@nodeset"/>
 
-<!--        <xsl:variable name="currentPath" select="if(string-length($path)=0)
-                                                 then ../@nodeset
-                                                 else functx:concat-xpath($path, $vraNodeName)
-                                                 "/> -->
         <xsl:if test="$debugEnabled">
             <xsl:message>### matched a DOT nodeset ###</xsl:message>
             <xsl:message>UI-3.1: <xsl:value-of select="$vraNodeName"/></xsl:message>
             <xsl:message>UI-3.1: path:<xsl:value-of select="$path"/></xsl:message>
-            <!--xsl:message>UI-3.1: currentpath:<xsl:value-of select="$currentPath"/></xsl:message-->
+            &lt;!&ndash;xsl:message>UI-3.1: currentpath:<xsl:value-of select="$currentPath"/></xsl:message&ndash;&gt;
             <xsl:message></xsl:message>
         </xsl:if>
 
@@ -661,7 +690,7 @@
                     <xsl:with-param name="path" select="if(@nodeset eq '.') then $path else functx:concat-xpath($path, $vraNodeName)"/>
                 </xsl:apply-templates>
 
-                <!-- ##### path is empty for each direct child element (attribution, dates, name etc.) of an artifact e.g. 'agent' ### -->
+                &lt;!&ndash; ##### path is empty for each direct child element (attribution, dates, name etc.) of an artifact e.g. 'agent' ### &ndash;&gt;
             </xsl:for-each>
             <xsl:if test="$path = ''">
                 <xf:group class="vraAttributes" appearance="minimal">
@@ -669,7 +698,7 @@
                     <xi:include href="bricks/vraAttributesViewUI.xml"/>
                 </xf:group>
 
-                <xf:trigger class="vraAttributeTrigger -btn">
+                <xf:trigger class="vraAttributeTrigger">
                     <xf:label>A</xf:label>
                     <xf:hint>Attributes...</xf:hint>
                     <xf:action>
@@ -683,6 +712,7 @@
             </xsl:if>
         </xf:group>
     </xsl:template>
+-->
 
 
 
@@ -717,7 +747,7 @@
                 <xi:include href="bricks/vraAttributesViewUI.xml"/>
             </xf:group>
 
-            <xf:trigger class="vraAttributeTrigger -btn">
+            <xf:trigger class="vraAttributeTrigger">
                 <xf:label>A</xf:label>
                 <xf:hint>Attributes...</xf:hint>
                 <xf:action>
@@ -736,12 +766,14 @@
         <xsl:param name="path"/>
 
         <xsl:variable name="id" select="@id"/>
-        <xsl:variable name="vraNodeName" select="if(@nodeset='.') then ../@nodeset else @nodeset"/>
+        <!--<xsl:variable name="vraNodeName" select="if(@nodeset='.') then ../@nodeset else @nodeset"/>-->
+        <xsl:variable name="vraNodeName" select="@nodeset"/>
         <xsl:variable name="isArtifactNode" select="boolean((@nodeset=concat('vra:',$vraArtifactNode)) and (../local-name()='bind') and (../@nodeset=concat('vra:',$vraSectionNode)))"/>
 
         <xsl:variable name="currentPath">
             <xsl:choose>
                 <xsl:when test="$isArtifactNode">.</xsl:when>
+                <xsl:when test="$vraNodeName='.'"><xsl:value-of select="$path"/></xsl:when>
                 <xsl:otherwise><xsl:value-of select="functx:concat-xpath($path, $vraNodeName)"/></xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
@@ -752,6 +784,7 @@
             <xsl:message>UI-4: currentPath : <xsl:value-of select="$currentPath"/>#</xsl:message>
             <xsl:message>UI-4: element name : <xsl:value-of select="name()"/></xsl:message>
             <xsl:message>UI-4: element nodeset : <xsl:value-of select="@nodeset"/></xsl:message>
+            <xsl:message>UI-4: element vraNodeName : <xsl:value-of select="$vraNodeName"/></xsl:message>
             <!--<xsl:message>UI-4: textarea elements : <xsl:value-of select="$useTextarea"/></xsl:message>-->
             <!--<xsl:message>UI-4: current targetNode : <xsl:value-of select="$targetNode"/></xsl:message>-->
             <xsl:message></xsl:message>
@@ -775,16 +808,33 @@
                                 <xsl:value-of select="functx:capitalize-first($vraNodeName)"/>
                             </xf:label>
                         </xsl:if>
+                        <xf:hint>
+                            <xsl:value-of select="functx:capitalize-first($vraNodeName)"/>
+                        </xf:hint>
                     </xf:textarea>
+                </xsl:when>
+                <xsl:when test="./bind[@nodeset='.']">
+                      <!-- irgnore elements which have a bind child with nodeset="." -->
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:if test="$debugEnabled">
                         <xsl:message>UI-4.2:found element that shall use input text (default)</xsl:message>
                         <xsl:message>UI-4.2:ArtifactNode = <xsl:value-of select="$vraArtifactNode"/></xsl:message>
                         <xsl:message>UI-4.2:isArtifactNode = <xsl:value-of select="$isArtifactNode"/></xsl:message>
+                        <xsl:message>UI-4.2:currentPath = <xsl:value-of select="$currentPath"/></xsl:message>
                         <xsl:message></xsl:message>
                     </xsl:if>
 
+                    <xsl:variable name="label">
+                        <xsl:choose>
+                            <xsl:when test="$vraNodeName eq '.'">
+                                <xsl:value-of select="../@nodeset"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:value-of select="$vraNodeName"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:variable>
                     <!--<xf:input id="{concat(generate-id(),'-', functx:capitalize-first($vraNodeName))}">-->
                     <xf:input id="{$id}">
                         <xsl:attribute name="ref"><xsl:value-of select="$currentPath"/></xsl:attribute>
@@ -793,8 +843,11 @@
                         </xsl:if>
                         <!--<xsl:if test="not($isArtifactNode)">-->
                             <xf:label>
-                                <xsl:value-of select="functx:capitalize-first($vraNodeName)"/>
+                                <xsl:value-of select="functx:capitalize-first($label)"/>
                             </xf:label>
+                            <xf:hint>
+                                <xsl:value-of select="functx:capitalize-first($label)"/>
+                            </xf:hint>
                         <!--</xsl:if>-->
                     </xf:input>
                 </xsl:otherwise>
@@ -834,6 +887,7 @@
         <xsl:param name="pref"   select="''" />
         <xsl:param name="plabel" select="''" />
         <xsl:param name="detail" select="'false'"/>
+        <xsl:param name="vraNodeName"/>
 
         <xsl:if test="$debugEnabled">
             <xsl:message>UI-6a (type): xsd:string restriction (select1)</xsl:message>
@@ -847,6 +901,10 @@
                 <xsl:attribute name="class" select="'detail'"/>
             </xsl:if>
             <xf:label><xsl:value-of select="$plabel"/></xf:label>
+            <xf:hint>
+                <xsl:value-of select="functx:capitalize-first($vraNodeName)"/>
+            </xf:hint>
+
             <xsl:for-each select="xsd:enumeration">
                 <xf:item>
                     <xf:label><xsl:value-of select="functx:capitalize-first(@value)"/></xf:label>
@@ -861,6 +919,7 @@
         <xsl:param name="pref"   select="''" />
         <xsl:param name="plabel" select="''" />
         <xsl:param name="detail" select="'false'"/>
+        <xsl:param name="vraNodeName"/>
 
         <xsl:if test="$debugEnabled">
             <xsl:message>UI-6b (type): xsd:string restriction (empty)</xsl:message>
@@ -873,13 +932,15 @@
             </xsl:if>
 
             <xf:label><xsl:value-of select="$plabel"/></xf:label>
+            <xf:hint>
+                <xsl:value-of select="functx:capitalize-first($vraNodeName)"/>
+            </xf:hint>
         </xf:input>
     </xsl:template>
 
     <!-- priority=15 because ignores have 20 -->
     <xsl:template match="xf:bind[starts-with(@nodeset,'@') and (@xfType='attribute')]" mode="ui" priority="15">
         <xsl:param name="path" />
-
         <xsl:variable name="vraNodeName" select="@nodeset"/>
         <xsl:variable name="currentPath" select="functx:concat-xpath($path,$vraNodeName)"></xsl:variable>
 
@@ -891,6 +952,9 @@
 
         <xf:input ref="{$currentPath}">
             <xf:label><xsl:value-of select="substring-after($vraNodeName,'@')"/></xf:label>
+            <xf:hint>
+                <xsl:value-of select="functx:capitalize-first($vraNodeName)"/>
+            </xf:hint>
         </xf:input>
     </xsl:template>
 

@@ -126,20 +126,18 @@
          <!-- ####################################### VISIBLE UI ####################################### -->
          <!-- ####################################### VISIBLE UI ####################################### -->
          <div class="toolbar">
-            <div class="btn-group">
-               <xf:trigger class="t-plus -btn-small" model="m-child-model" id="d3e1-add" title="Add Agent">
-                  <xf:label>+</xf:label>
-                  <xf:hint>add an entry</xf:hint>
-                  <xf:insert model="m-child-model" nodeset="instance()/vra:agent[1]"
-                             origin="instance('i-templates')/vra:agent"
-                             position="before"></xf:insert>
-               </xf:trigger>
-               <xf:trigger id="d3e1-save" class="-btn-small">
-                  <xf:label>Save changes</xf:label>
-                  <xf:hint>save changes</xf:hint>
-                  <xf:send submission="s-update"></xf:send>
-               </xf:trigger>
-            </div>
+            <xf:trigger class="t-plus -btn-small" model="m-child-model" id="d3e1-add" title="Add Agent">
+               <xf:label>+</xf:label>
+               <xf:hint>add an entry</xf:hint>
+               <xf:insert model="m-child-model" nodeset="instance()/vra:agent[1]"
+                          origin="instance('i-templates')/vra:agent"
+                          position="before"></xf:insert>
+            </xf:trigger>
+            <xf:trigger id="d3e1-save" class="-btn-small">
+               <xf:label>Save</xf:label>
+               <xf:hint>save changes</xf:hint>
+               <xf:send submission="s-update"></xf:send>
+            </xf:trigger>
             <xf:trigger id="closeEditor" class="-close">
                <xf:label>×</xf:label>
                <xf:hint>close editor</xf:hint>
@@ -179,6 +177,13 @@
                           if="not('.'=instance('i-util')/currentElement)"
                           origin="instance('i-agentSet')/vra:agent[index('r-vraAgent')]/*[local-name()=instance('i-util')/currentElement]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:insert>
             </xf:action>
+            <xf:trigger id="doDelete" class="hiddenControl">
+               <xf:label>remove</xf:label>
+               <xf:action>
+                  <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/isDirty" value="'true'"></xf:setvalue>
+                  <xf:delete nodeset="instance('i-agentSet')/vra:agent[index('r-vraAgent')]"></xf:delete>
+               </xf:action>
+            </xf:trigger>
             <table>
                <tbody model="m-child-model" id="r-vraAgent" xf:repeat-nodeset="vra:agent">
                   <tr>
@@ -197,6 +202,7 @@
                         <xf:group appearance="minimal">
                            <xf:select1 id="b-d2e122" ref="vra:name/@type" class="detail">
                               <xf:label>Type</xf:label>
+                              <xf:hint></xf:hint>
                               <xf:item>
                                  <xf:label>Personal</xf:label>
                                  <xf:value>personal</xf:value>
@@ -214,13 +220,14 @@
                                  <xf:value>other</xf:value>
                               </xf:item>
                            </xf:select1>
-                           <xf:input id="b-d2e115" ref="vra:name" class="elementName">
+                           <xf:input id="b-d2e115" ref="vra:name">
                               <xf:label>Name</xf:label>
+                              <xf:hint>Name</xf:hint>
                            </xf:input>
                            <xf:group class="vraAttributes" appearance="minimal" ref="vra:name">
                               <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                            </xf:group>
-                           <xf:trigger class="vraAttributeTrigger -btn">
+                           <xf:trigger class="vraAttributeTrigger">
                               <xf:label>A</xf:label>
                               <xf:hint>Attributes...</xf:hint>
                               <xf:action>
@@ -233,11 +240,12 @@
                         <xf:group appearance="minimal">
                            <xf:input id="b-d2e132" ref="vra:role">
                               <xf:label>Role</xf:label>
+                              <xf:hint>Role</xf:hint>
                            </xf:input>
                            <xf:group class="vraAttributes" appearance="minimal" ref="vra:role">
                               <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                            </xf:group>
-                           <xf:trigger class="vraAttributeTrigger -btn">
+                           <xf:trigger class="vraAttributeTrigger">
                               <xf:label>A</xf:label>
                               <xf:hint>Attributes...</xf:hint>
                               <xf:action>
@@ -250,11 +258,12 @@
                         <xf:group appearance="minimal">
                            <xf:input id="b-d2e63" ref="vra:attribution">
                               <xf:label>Attribution</xf:label>
+                              <xf:hint>Attribution</xf:hint>
                            </xf:input>
                            <xf:group class="vraAttributes" appearance="minimal" ref="vra:attribution">
                               <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                            </xf:group>
-                           <xf:trigger class="vraAttributeTrigger -btn">
+                           <xf:trigger class="vraAttributeTrigger">
                               <xf:label>A</xf:label>
                               <xf:hint>Attributes...</xf:hint>
                               <xf:action>
@@ -267,11 +276,12 @@
                         <xf:group appearance="minimal">
                            <xf:input id="b-d2e79" ref="vra:culture">
                               <xf:label>Culture</xf:label>
+                              <xf:hint>Culture</xf:hint>
                            </xf:input>
                            <xf:group class="vraAttributes" appearance="minimal" ref="vra:culture">
                               <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                            </xf:group>
-                           <xf:trigger class="vraAttributeTrigger -btn">
+                           <xf:trigger class="vraAttributeTrigger">
                               <xf:label>A</xf:label>
                               <xf:hint>Attributes...</xf:hint>
                               <xf:action>
@@ -284,6 +294,7 @@
                         <xf:group appearance="minimal">
                            <xf:select1 id="b-d2e114" ref="vra:dates/@type" class="detail">
                               <xf:label>Type</xf:label>
+                              <xf:hint></xf:hint>
                               <xf:item>
                                  <xf:label>Activity</xf:label>
                                  <xf:value>activity</xf:value>
@@ -297,26 +308,26 @@
                                  <xf:value>other</xf:value>
                               </xf:item>
                            </xf:select1>
-                           <xf:group appearance="minimal">
-                              <xf:input id="b-d2e98" ref="vra:dates/vra:earliestDate">
-                                 <xf:label>EarliestDate</xf:label>
-                              </xf:input>
-                              <xf:input ref="vra:dates/vra:earliestDate/@circa">
-                                 <xf:label>circa</xf:label>
-                              </xf:input>
-                           </xf:group>
-                           <xf:group appearance="minimal">
-                              <xf:input id="b-d2e106" ref="vra:dates/vra:latestDate">
-                                 <xf:label>LatestDate</xf:label>
-                              </xf:input>
-                              <xf:input ref="vra:dates/vra:latestDate/@circa">
-                                 <xf:label>circa</xf:label>
-                              </xf:input>
-                           </xf:group>
+                           <xf:input id="b-d2e98" ref="vra:dates/vra:earliestDate">
+                              <xf:label>EarliestDate</xf:label>
+                              <xf:hint>EarliestDate</xf:hint>
+                           </xf:input>
+                           <xf:input ref="vra:dates/vra:earliestDate/@circa">
+                              <xf:label>circa</xf:label>
+                              <xf:hint>@circa</xf:hint>
+                           </xf:input>
+                           <xf:input id="b-d2e106" ref="vra:dates/vra:latestDate">
+                              <xf:label>LatestDate</xf:label>
+                              <xf:hint>LatestDate</xf:hint>
+                           </xf:input>
+                           <xf:input ref="vra:dates/vra:latestDate/@circa">
+                              <xf:label>circa</xf:label>
+                              <xf:hint>@circa</xf:hint>
+                           </xf:input>
                            <xf:group class="vraAttributes" appearance="minimal" ref="vra:dates">
                               <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                            </xf:group>
-                           <xf:trigger class="vraAttributeTrigger -btn">
+                           <xf:trigger class="vraAttributeTrigger">
                               <xf:label>A</xf:label>
                               <xf:hint>Attributes...</xf:hint>
                               <xf:action>
@@ -328,13 +339,6 @@
                         </xf:group>
                      </td>
                      <td class="triggerCol">
-                        <xf:trigger id="doDelete" class="hiddenControl">
-                           <xf:label>remove</xf:label>
-                           <xf:action>
-                              <xf:delete nodeset="instance('i-agentSet')/vra:agent[index('r-vraAgent')]"></xf:delete>
-                              <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/isDirty" value="'true'"></xf:setvalue>
-                           </xf:action>
-                        </xf:trigger>
                         <xf:trigger class="-btn -btn-danger">
                            <xf:label>X</xf:label>
                            <xf:hint>delete this entry</xf:hint><script type="text/javascript">
@@ -346,8 +350,8 @@
                      <td colspan="3" class="globalAttrs">
                         <xf:group class="vraAttributes" appearance="minimal" ref=".">
                            <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
-                           <xf:trigger class="vraAttributeTrigger -btn">
-                              <xf:label>A</xf:label>
+                           <xf:trigger class="vraAttributeTrigger">
+                              <xf:label></xf:label>
                               <xf:hint>Attributes...</xf:hint>
                               <xf:action>
                                  <xf:setvalue ref="instance('i-util')/currentElement">.</xf:setvalue>
@@ -388,7 +392,7 @@
                   <xf:input ref="@dataDate" id="first">
                      <xf:label>dataDate</xf:label>
                   </xf:input>
-                  <xf:trigger class="deleteAttribute input-append -btn">
+                  <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@dataDate"></xf:setvalue>
                   </xf:trigger>
@@ -397,7 +401,7 @@
                   <xf:input ref="@extent" id="d3e1-extent">
                      <xf:label>extent</xf:label>
                   </xf:input>
-                  <xf:trigger class="deleteAttribute input-append -btn">
+                  <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@extent"></xf:setvalue>
                   </xf:trigger>
@@ -406,7 +410,7 @@
                   <xf:input ref="@href" id="d3e1-href">
                      <xf:label>href</xf:label>
                   </xf:input>
-                  <xf:trigger class="deleteAttribute input-append -btn">
+                  <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@href"></xf:setvalue>
                   </xf:trigger>
@@ -415,7 +419,7 @@
                   <xf:input ref="@refid" id="d3e1-refid">
                      <xf:label>refid</xf:label>
                   </xf:input>
-                  <xf:trigger class="deleteAttribute input-append -btn">
+                  <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@refid"></xf:setvalue>
                   </xf:trigger>
@@ -424,7 +428,7 @@
                   <xf:input ref="@rules" id="d3e1-rules">
                      <xf:label>rules</xf:label>
                   </xf:input>
-                  <xf:trigger class="deleteAttribute input-append -btn">
+                  <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@rules"></xf:setvalue>
                   </xf:trigger>
@@ -433,7 +437,7 @@
                   <xf:input ref="@source" id="d3e1-source">
                      <xf:label>source</xf:label>
                   </xf:input>
-                  <xf:trigger class="deleteAttribute input-append -btn">
+                  <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@source"></xf:setvalue>
                   </xf:trigger>
@@ -458,7 +462,7 @@
                         <xf:value>(AKL)</xf:value>
                      </xf:item>
                   </xf:select1>
-                  <xf:trigger class="deleteAttribute input-append -btn">
+                  <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@vocab"></xf:setvalue>
                   </xf:trigger>
@@ -467,7 +471,7 @@
                   <xf:input ref="@lang" id="d3e1-lang">
                      <xf:label>Language</xf:label>
                   </xf:input>
-                  <xf:trigger class="deleteAttribute input-append -btn">
+                  <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@lang"></xf:setvalue>
                   </xf:trigger>
@@ -476,7 +480,7 @@
                   <xf:input ref="@transliteration" id="d3e1-transliteration">
                      <xf:label>Transliteration</xf:label>
                   </xf:input>
-                  <xf:trigger class="deleteAttribute input-append -btn">
+                  <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@transliteration"></xf:setvalue>
                   </xf:trigger>
@@ -485,7 +489,7 @@
                   <xf:input ref="@script" id="d3e1-script">
                      <xf:label>Script</xf:label>
                   </xf:input>
-                  <xf:trigger class="deleteAttribute input-append -btn">
+                  <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@script"></xf:setvalue>
                   </xf:trigger>

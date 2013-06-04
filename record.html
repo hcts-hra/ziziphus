@@ -133,6 +133,9 @@
                     <li>
                         <button type="button" onclick="toggleSetVisibility();" title="show all Sets">all Sets</button>
                     </li>
+                    <li>
+                        <button type="button" id="save-button" onclick="toggleSetVisibility();" title="save changes"></button>
+                    </li>
                 </ul>
             </div>
             <div class="headerMenu" style="position:absolute;display:block;right:40px;">
@@ -170,11 +173,10 @@
             ]);
         </script>
         <script type="text/javascript" src="resources/script/jquery-1.9.1.js"/>
-        <script type="text/javascript" src="resources/script/jquery-ui-1-1.10.0.custom/js/jquery-ui-1.10.0.custom.min.js"/>
-        <!--<script type="text/javascript" src="resources/script/jquery-ui-1.10.2.custom.min.js"/>-->
+        <!--<script type="text/javascript" src="resources/script/jquery-ui-1-1.10.0.custom/js/jquery-ui-1.10.0.custom.min.js"/>-->
+        <script type="text/javascript" src="resources/script/jquery-ui-1.10.2.custom.min.js"/>
         <script type="text/javascript" src="resources/script/mingos-uwindow/jWindow.js"/>
         <script type="text/javascript" src="resources/script/jquery.layout-latest.min.js"/>
-        <script type="text/javascript" src="resources/script/jquery.scrollto.js"/>
         <script type="text/javascript">
             $(document).ready(function () {
                 ziziphusLayout = $('body').layout({
@@ -286,8 +288,8 @@
 
             function toggleDetail(n, m) {
                 console.debug("this: n:", n, " m:", m);
-                $(n).toggleClass("icon-zoom-out");
-                $(n).toggleClass("icon-zoom-in");
+                $(n).toggleClass("button-zoom-out");
+                $(n).toggleClass("button-zoom-in");
                 $("#" + m).toggleClass("simple");
                 $("#" + m).toggleClass("full");
             }
@@ -329,6 +331,14 @@
             }
             function toggleSetVisibility(){
                 $("body").toggleClass("forceVisible");
+            }
+            function goToByScroll(id){
+                // Remove "link" from the ID
+                id = id.replace("link", "");
+                // Scroll
+                $('#leftPanel').animate({
+                            scrollTop: $("#"+id).offset().top+50},
+                        'slow');
             }
         </script>
     </body>

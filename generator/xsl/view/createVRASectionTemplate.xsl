@@ -31,7 +31,7 @@
 
                 <div id="{{$side}}" class="sidePanel ui-layout-content">
                     <!--<xsl:for-each select="//set[@visible='true']">-->
-                    <xsl:for-each select="//set| //separator">
+                    <xsl:for-each select="//set | //separator">
 
                         <xsl:choose>
                             <xsl:when test="local-name() = 'set'">

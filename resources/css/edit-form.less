@@ -23,9 +23,6 @@
 }
 
 table {
-    border: thin solid #999999;
-    border-collapse: collapse;
-    padding: 3px;
 
     tbody {
         font-size: 0.85em;
@@ -35,8 +32,9 @@ table {
                 .xfLabel {
                     float: left;
                     padding: 0;
-                    margin: 3px 3px 0 7px;
-                    min-width: 80px;
+                    margin: 3px 3px 0 2px;
+                    min-width: 60px;
+                    font-size: 0.9em;
                 }
             }
         }
@@ -89,6 +87,7 @@ table {
         padding: 0 !important;
         border-bottom: thin solid #aaaaaa;
         width: 100%;
+        display: none; // for now - need user feedback
     }
     .xfOutput {
       font-size: 0.7em;
@@ -104,10 +103,13 @@ table {
   right: 0;
 
   button{
-    width: 24px;
-    height: 24px;
+    width: 16px;
+    height: 16px;
     font-size: 0.9em;
     padding: 0;
+    background: url(../images/icons/attributes.png);
+    border: none;
+    color: transparent !important;
   }
 }
 
@@ -145,7 +147,8 @@ table {
 
       .widgetContainer{
         display:inline-block;
-        width: 100%;
+        width: auto;
+        float: left;
       }
     }
 }
@@ -167,8 +170,10 @@ table {
 }
 
 #attrDialog {
+
+  .attrDialogGroup{
     .xfControl {
-        float: none;
+        float: left;
     }
     .xfLabel {
         float: left;
@@ -176,21 +181,30 @@ table {
         width: 100px;
         text-align: right;
     }
-    .xfInput {
+
+    .xfSelect1, .xfInput{
+      .xfValue{
+        height: 22px;
+       }
+    }
+    .xfInput{
         .xfValue {
             width: 250px;
-            height: 20px;
+            margin-bottom: 5px;
         }
     }
 
     .deleteAttribute {
-        float: right !important;
+      display: block;
+      float: right !important;
+
+      button {
+        font-size: 10px;
+        margin: 0 0 0 -1px;
+        padding: 0 4px;
+      }
     }
-/*
-    .xfGroup {
-        margin-bottom: 10px;
-    }
-*/
+  }
 }
 
 .buttonBar {
@@ -248,4 +262,29 @@ table {
 .bf form .hiddenControl{
   display: none;
 
+}
+
+.toolbar > .btn-group {
+  background: none repeat scroll 0 0 #444444;
+  left: 0;
+  opacity: 0.5;
+  position: fixed;
+  top: 50%;
+  width: 50px;
+}
+.toolbar span {
+  display: block;
+  float: none;
+}
+
+.tundra .dijitTitlePaneContentInner{
+  padding: 0;
+}
+
+.xfInput .xfSecret .xfValue, .xfTextarea .xfValue, .xfSelect1 .xfValue, .xfSelect .xfValue{
+  width: auto;
+}
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input{
+  padding: 0;
+  margin: 0;
 }

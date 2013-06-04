@@ -98,21 +98,19 @@
          <!-- ####################################### VISIBLE UI ####################################### -->
          <!-- ####################################### VISIBLE UI ####################################### -->
          <div class="toolbar">
-            <div class="btn-group">
-               <xf:trigger class="t-plus -btn-small" model="m-child-model" id="d3e1-add"
-                           title="Add Relation">
-                  <xf:label>+</xf:label>
-                  <xf:hint>add an entry</xf:hint>
-                  <xf:insert model="m-child-model" nodeset="instance()/vra:relation[1]"
-                             origin="instance('i-templates')/vra:relation"
-                             position="before"></xf:insert>
-               </xf:trigger>
-               <xf:trigger id="d3e1-save" class="-btn-small">
-                  <xf:label>Save changes</xf:label>
-                  <xf:hint>save changes</xf:hint>
-                  <xf:send submission="s-update"></xf:send>
-               </xf:trigger>
-            </div>
+            <xf:trigger class="t-plus -btn-small" model="m-child-model" id="d3e1-add"
+                        title="Add Relation">
+               <xf:label>+</xf:label>
+               <xf:hint>add an entry</xf:hint>
+               <xf:insert model="m-child-model" nodeset="instance()/vra:relation[1]"
+                          origin="instance('i-templates')/vra:relation"
+                          position="before"></xf:insert>
+            </xf:trigger>
+            <xf:trigger id="d3e1-save" class="-btn-small">
+               <xf:label>Save</xf:label>
+               <xf:hint>save changes</xf:hint>
+               <xf:send submission="s-update"></xf:send>
+            </xf:trigger>
             <xf:trigger id="closeEditor" class="-close">
                <xf:label>×</xf:label>
                <xf:hint>close editor</xf:hint>
@@ -152,221 +150,253 @@
                           if="not('.'=instance('i-util')/currentElement)"
                           origin="instance('i-relationSet')/vra:relation[index('r-vraRelation')]/*[local-name()=instance('i-util')/currentElement]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:insert>
             </xf:action>
+            <xf:trigger id="doDelete" class="hiddenControl">
+               <xf:label>remove</xf:label>
+               <xf:action>
+                  <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/isDirty" value="'true'"></xf:setvalue>
+                  <xf:delete nodeset="instance('i-relationSet')/vra:relation[index('r-vraRelation')]"></xf:delete>
+               </xf:action>
+            </xf:trigger>
             <table>
                <tbody model="m-child-model" id="r-vraRelation" xf:repeat-nodeset="vra:relation">
-                  <xf:group appearance="minimal">
-                     <xf:select1 id="b-d2e660" ref="vra:relation/@type">
-                        <xf:label>Type</xf:label>
-                        <xf:item>
-                           <xf:label>CartoonFor</xf:label>
-                           <xf:value>cartoonFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>CartoonIs</xf:label>
-                           <xf:value>cartoonIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>ComponentOf</xf:label>
-                           <xf:value>componentOf</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>ComponentIs</xf:label>
-                           <xf:value>componentIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>CopyAfter</xf:label>
-                           <xf:value>copyAfter</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>CopyIs</xf:label>
-                           <xf:value>copyIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>CounterProofFor</xf:label>
-                           <xf:value>counterProofFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>CounterProofIs</xf:label>
-                           <xf:value>counterProofIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>Depicts</xf:label>
-                           <xf:value>depicts</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>DepictedIn</xf:label>
-                           <xf:value>depictedIn</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>DerivedFrom</xf:label>
-                           <xf:value>derivedFrom</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>SourceFor</xf:label>
-                           <xf:value>sourceFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>DesignedFor</xf:label>
-                           <xf:value>designedFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>ContextIs</xf:label>
-                           <xf:value>contextIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>ExhibitedAt</xf:label>
-                           <xf:value>exhibitedAt</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>VenueFor</xf:label>
-                           <xf:value>venueFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>FacsimileOf</xf:label>
-                           <xf:value>facsimileOf</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>FacsimileIs</xf:label>
-                           <xf:value>facsimileIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>FormerlyPartOf</xf:label>
-                           <xf:value>formerlyPartOf</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>FormerlyLargerContextFor</xf:label>
-                           <xf:value>formerlyLargerContextFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>ImageOf</xf:label>
-                           <xf:value>imageOf</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>ImageIs</xf:label>
-                           <xf:value>imageIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>MateOf</xf:label>
-                           <xf:value>mateOf</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>ModelFor</xf:label>
-                           <xf:value>modelFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>ModelIs</xf:label>
-                           <xf:value>modelIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>PartOf</xf:label>
-                           <xf:value>partOf</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>LargerContextFor</xf:label>
-                           <xf:value>largerContextFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>PartnerInSetWith</xf:label>
-                           <xf:value>partnerInSetWith</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>PendantOf</xf:label>
-                           <xf:value>pendantOf</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>PlanFor</xf:label>
-                           <xf:value>planFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>PlanIs</xf:label>
-                           <xf:value>planIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>PrepatoryFor</xf:label>
-                           <xf:value>prepatoryFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>BasedOn</xf:label>
-                           <xf:value>basedOn</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>PrintingPlateFor</xf:label>
-                           <xf:value>printingPlateFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>PrintingPlateIs</xf:label>
-                           <xf:value>printingPlateIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>PrototypeFor</xf:label>
-                           <xf:value>prototypeFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>PrototypeIs</xf:label>
-                           <xf:value>prototypeIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>RelatedTo</xf:label>
-                           <xf:value>relatedTo</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>ReliefFor</xf:label>
-                           <xf:value>reliefFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>ImpressionIs</xf:label>
-                           <xf:value>impressionIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>ReplicaOf</xf:label>
-                           <xf:value>replicaOf</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>ReplicaIs</xf:label>
-                           <xf:value>replicaIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>StudyFor</xf:label>
-                           <xf:value>studyFor</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>StudyIs</xf:label>
-                           <xf:value>studyIs</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>VersionOf</xf:label>
-                           <xf:value>versionOf</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>VersionIs</xf:label>
-                           <xf:value>versionIs</xf:value>
-                        </xf:item>
-                     </xf:select1>
-                     <xf:input id="b-d2e652" ref="vra:relation">
-                        <xf:label>Relation</xf:label>
-                     </xf:input>
-                     <xf:input ref="vra:relation/@relids">
-                        <xf:label>relids</xf:label>
-                     </xf:input>
-                     <xf:group class="vraAttributes" appearance="minimal" ref="vra:relation">
-                        <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
-                     </xf:group>
-                     <xf:trigger class="vraAttributeTrigger -btn">
-                        <xf:label>A</xf:label>
-                        <xf:hint>Attributes...</xf:hint>
-                        <xf:action>
-                           <xf:setvalue ref="instance('i-util')/currentElement" value="'relation'"></xf:setvalue>
-                           <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
-                        </xf:action>
-                        <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
-                     </xf:trigger>
-                  </xf:group>
+                  <tr>
+                     <td class="prefCol">
+                        <xf:input ref="@pref" id="d3e84-pref">
+                           <xf:label>pref</xf:label>
+                           <xf:hint>preferred</xf:hint>
+                           <xf:action ev:event="xforms-value-changed" if=".=('true',1)"
+                                      while="(../preceding-sibling::*|../following-sibling::*)/@pref=('true',1)">
+                              <xf:setvalue ref="(../preceding-sibling::*|../following-sibling::*)[@pref=('true',1)][1]/@pref"
+                                           value="'false'"></xf:setvalue>
+                           </xf:action>
+                        </xf:input>
+                     </td>
+                     <td class="contentCol">
+                        <xf:group appearance="minimal">
+                           <xf:select1 id="b-d2e660" ref="@type">
+                              <xf:label>Type</xf:label>
+                              <xf:hint></xf:hint>
+                              <xf:item>
+                                 <xf:label>CartoonFor</xf:label>
+                                 <xf:value>cartoonFor</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>CartoonIs</xf:label>
+                                 <xf:value>cartoonIs</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>ComponentOf</xf:label>
+                                 <xf:value>componentOf</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>ComponentIs</xf:label>
+                                 <xf:value>componentIs</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>CopyAfter</xf:label>
+                                 <xf:value>copyAfter</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>CopyIs</xf:label>
+                                 <xf:value>copyIs</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>CounterProofFor</xf:label>
+                                 <xf:value>counterProofFor</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>CounterProofIs</xf:label>
+                                 <xf:value>counterProofIs</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Depicts</xf:label>
+                                 <xf:value>depicts</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>DepictedIn</xf:label>
+                                 <xf:value>depictedIn</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>DerivedFrom</xf:label>
+                                 <xf:value>derivedFrom</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>SourceFor</xf:label>
+                                 <xf:value>sourceFor</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>DesignedFor</xf:label>
+                                 <xf:value>designedFor</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>ContextIs</xf:label>
+                                 <xf:value>contextIs</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>ExhibitedAt</xf:label>
+                                 <xf:value>exhibitedAt</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>VenueFor</xf:label>
+                                 <xf:value>venueFor</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>FacsimileOf</xf:label>
+                                 <xf:value>facsimileOf</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>FacsimileIs</xf:label>
+                                 <xf:value>facsimileIs</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>FormerlyPartOf</xf:label>
+                                 <xf:value>formerlyPartOf</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>FormerlyLargerContextFor</xf:label>
+                                 <xf:value>formerlyLargerContextFor</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>ImageOf</xf:label>
+                                 <xf:value>imageOf</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>ImageIs</xf:label>
+                                 <xf:value>imageIs</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>MateOf</xf:label>
+                                 <xf:value>mateOf</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>ModelFor</xf:label>
+                                 <xf:value>modelFor</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>ModelIs</xf:label>
+                                 <xf:value>modelIs</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>PartOf</xf:label>
+                                 <xf:value>partOf</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>LargerContextFor</xf:label>
+                                 <xf:value>largerContextFor</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>PartnerInSetWith</xf:label>
+                                 <xf:value>partnerInSetWith</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>PendantOf</xf:label>
+                                 <xf:value>pendantOf</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>PlanFor</xf:label>
+                                 <xf:value>planFor</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>PlanIs</xf:label>
+                                 <xf:value>planIs</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>PrepatoryFor</xf:label>
+                                 <xf:value>prepatoryFor</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>BasedOn</xf:label>
+                                 <xf:value>basedOn</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>PrintingPlateFor</xf:label>
+                                 <xf:value>printingPlateFor</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>PrintingPlateIs</xf:label>
+                                 <xf:value>printingPlateIs</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>PrototypeFor</xf:label>
+                                 <xf:value>prototypeFor</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>PrototypeIs</xf:label>
+                                 <xf:value>prototypeIs</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>RelatedTo</xf:label>
+                                 <xf:value>relatedTo</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>ReliefFor</xf:label>
+                                 <xf:value>reliefFor</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>ImpressionIs</xf:label>
+                                 <xf:value>impressionIs</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>ReplicaOf</xf:label>
+                                 <xf:value>replicaOf</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>ReplicaIs</xf:label>
+                                 <xf:value>replicaIs</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>StudyFor</xf:label>
+                                 <xf:value>studyFor</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>StudyIs</xf:label>
+                                 <xf:value>studyIs</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>VersionOf</xf:label>
+                                 <xf:value>versionOf</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>VersionIs</xf:label>
+                                 <xf:value>versionIs</xf:value>
+                              </xf:item>
+                           </xf:select1>
+                           <xf:input id="b-d2e652" ref=".">
+                              <xf:label>Relation</xf:label>
+                              <xf:hint>Relation</xf:hint>
+                           </xf:input>
+                           <xf:input ref="@relids">
+                              <xf:label>relids</xf:label>
+                              <xf:hint>@relids</xf:hint>
+                           </xf:input>
+                           <xf:group class="vraAttributes" appearance="minimal" ref=".">
+                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
+                           </xf:group>
+                           <xf:trigger class="vraAttributeTrigger">
+                              <xf:label>A</xf:label>
+                              <xf:hint>Attributes...</xf:hint>
+                              <xf:action>
+                                 <xf:setvalue ref="instance('i-util')/currentElement" value="'relation'"></xf:setvalue>
+                                 <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
+                              </xf:action>
+                              <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
+                           </xf:trigger>
+                        </xf:group>
+                     </td>
+                     <td class="triggerCol">
+                        <xf:trigger class="-btn -btn-danger">
+                           <xf:label>X</xf:label>
+                           <xf:hint>delete this entry</xf:hint><script type="text/javascript">
+                        removeEntry();
+                    </script></xf:trigger>
+                     </td>
+                  </tr>
                   <tr>
                      <td colspan="3" class="globalAttrs">
                         <xf:group class="vraAttributes" appearance="minimal" ref=".">
                            <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
-                           <xf:trigger class="vraAttributeTrigger -btn">
-                              <xf:label>A</xf:label>
+                           <xf:trigger class="vraAttributeTrigger">
+                              <xf:label></xf:label>
                               <xf:hint>Attributes...</xf:hint>
                               <xf:action>
                                  <xf:setvalue ref="instance('i-util')/currentElement">.</xf:setvalue>
@@ -407,7 +437,7 @@
                   <xf:input ref="@dataDate" id="first">
                      <xf:label>dataDate</xf:label>
                   </xf:input>
-                  <xf:trigger class="deleteAttribute input-append -btn">
+                  <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@dataDate"></xf:setvalue>
                   </xf:trigger>
@@ -416,7 +446,7 @@
                   <xf:input ref="@extent" id="d3e1-extent">
                      <xf:label>extent</xf:label>
                   </xf:input>
-                  <xf:trigger class="deleteAttribute input-append -btn">
+                  <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@extent"></xf:setvalue>
                   </xf:trigger>
@@ -425,7 +455,7 @@
                   <xf:input ref="@href" id="d3e1-href">
                      <xf:label>href</xf:label>
                   </xf:input>
-                  <xf:trigger class="deleteAttribute input-append -btn">
+                  <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@href"></xf:setvalue>
                   </xf:trigger>
@@ -434,7 +464,7 @@
                   <xf:input ref="@refid" id="d3e1-refid">
                      <xf:label>refid</xf:label>
                   </xf:input>
-                  <xf:trigger class="deleteAttribute input-append -btn">
+                  <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@refid"></xf:setvalue>
                   </xf:trigger>
@@ -443,7 +473,7 @@
                   <xf:input ref="@rules" id="d3e1-rules">
                      <xf:label>rules</xf:label>
                   </xf:input>
-                  <xf:trigger class="deleteAttribute input-append -btn">
+                  <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@rules"></xf:setvalue>
                   </xf:trigger>
@@ -452,7 +482,7 @@
                   <xf:input ref="@source" id="d3e1-source">
                      <xf:label>source</xf:label>
                   </xf:input>
-                  <xf:trigger class="deleteAttribute input-append -btn">
+                  <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@source"></xf:setvalue>
                   </xf:trigger>
@@ -477,7 +507,7 @@
                         <xf:value>(AKL)</xf:value>
                      </xf:item>
                   </xf:select1>
-                  <xf:trigger class="deleteAttribute input-append -btn">
+                  <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@vocab"></xf:setvalue>
                   </xf:trigger>
@@ -486,7 +516,7 @@
                   <xf:input ref="@lang" id="d3e1-lang">
                      <xf:label>Language</xf:label>
                   </xf:input>
-                  <xf:trigger class="deleteAttribute input-append -btn">
+                  <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@lang"></xf:setvalue>
                   </xf:trigger>
@@ -495,7 +525,7 @@
                   <xf:input ref="@transliteration" id="d3e1-transliteration">
                      <xf:label>Transliteration</xf:label>
                   </xf:input>
-                  <xf:trigger class="deleteAttribute input-append -btn">
+                  <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@transliteration"></xf:setvalue>
                   </xf:trigger>
@@ -504,7 +534,7 @@
                   <xf:input ref="@script" id="d3e1-script">
                      <xf:label>Script</xf:label>
                   </xf:input>
-                  <xf:trigger class="deleteAttribute input-append -btn">
+                  <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@script"></xf:setvalue>
                   </xf:trigger>
