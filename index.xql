@@ -13,6 +13,8 @@ let $num := xs:integer(request:get-parameter("num", "20"))
 let $query-base := request:get-url()
 let $context := request:get-context-path()
 let $user := request:get-attribute("xquery.user")
+let $workdir :=  request:get-parameter('workdir','')
+let $workdir := if($workdir eq "") then ($app:record-dir) else ($workdir)
 
 let $cnt := if($start gt ($num)) then $start + $num -1 else $num
 return
@@ -23,40 +25,20 @@ return
    </head>
    <body style="padding:30px;">
       <h1>Priya Paul Collection</h1>
-
-
-                <!--
-                if ($user eq 'guest')
-                then(
-                    <div class="login"><a href="#" id="login-link">Login</a></div>
-                )
-                else
-                    if ($user eq 'admin')
-                    then
-                        (
-                            <div class="login">Logged in as <span class="username">{let $human-name := security:get-human-name-for-user($user) return if (not(empty($human-name))) then $human-name else $user}                                             </span>. <a href="?logout=1">Logout</a></div>
-                        )
-                        else
-                        (
-                            <div class="login">Logged in as <span class="username">{let $human-name := security:get-human-name-for-user($user) return if (not(empty($human-name))) then $human-name else $user}    </span>. <a href="?logout=1">Logout</a></div>
-                        )
-
-                -->
-
-
-
     {
         if ($user ne 'guest')
         then (
           <form action="HeidiconSearch.xql" class="form-search">
             <label class="control-label" for="idSearch">Heidicon Id:</label>
             <input id="idSearch" type="search" name="heidiconId"/>
+            <input  type="hidden" name="workdir" value="{$workdir}"/>
             <button type="submit" class="btn">Search</button>
           </form>,
 
           <form action="WorkrecordSearch.xql" class="form-search">
             <label class="control-label" for="idSearch">Work Record Id:</label>
             <input id="idSearch" type="search" name="workrecord"/>
+            <input  type="hidden" name="workdir" value="{$workdir}"/>
             <button type="submit" class="btn">Search</button>
           </form>
         ) else ()
@@ -81,10 +63,10 @@ return
           </thead>
           <tbody>
           {
-          for $record  at $count in subsequence(collection($app:work-record-dir), $start, $num )//vra:vra/vra:work
+          for $record  at $count in subsequence(collection($workdir), $start, $num )//vra:vra/vra:work
             let $uuid := string($record/@id)
             let $agent := string($record/vra:agentSet/vra:agent[1]/vra:name)
-            let $vraWorkRecord  := collection($app:work-record-dir)/vra:vra/vra:work[@id = $uuid]
+            let $vraWorkRecord  := collection($workdir)/vra:vra/vra:work[@id = $uuid]
             let $imageRecordId  := if(exists($vraWorkRecord/vra:relationSet/vra:relation/@pref[.='true']))
                                 then $vraWorkRecord/vra:relationSet/vra:relation[@pref='true']/@relids
                                 else $vraWorkRecord/vra:relationSet/vra:relation[1]/@relids
@@ -94,9 +76,9 @@ return
             return
             <tr>
                 <td>{$counter}</td>
-                <td><a href="{$context}/apps/ziziphus/record.html?id={$uuid}" target="_blank">{$uuid}</a></td>
-                <td><a href="{$context}/rest/{$app:work-record-dir}/{$uuid}.xml" target="_blank">work</a></td>
-                <td><a href="{$context}/rest/{$app:image-record-dir}/{$imageRecordId}.xml" target="_blank">image</a></td>
+                <td><a href="{$context}/apps/ziziphus/record.html?id={$uuid}&amp;workdir={$workdir}" target="_blank">{$uuid}</a></td>
+                <td><a href="{$context}/rest/{$workdir || $uuid}.xml" target="_blank">work</a></td>
+                <td><a href="{$context}/rest/{$workdir || $app:image-record-dir-name || $imageRecordId}.xml" target="_blank">image</a></td>
                 <td>{$heidiconId}</td>
                 <td>{$agent}</td>
             </tr>

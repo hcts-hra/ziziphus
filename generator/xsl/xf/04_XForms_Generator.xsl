@@ -102,7 +102,7 @@
                         <xf:model id="m-child-model" schema="{$relativePath}resources/xsd/vra-types.xsd">
                             <xf:send ev:event="xforms-model-construct-done" submission="s-loadSet"/>
                             <xf:submission id="s-loadSet"
-                                    resource="{$relativePath}modules/loadData.xql?id={{bf:instanceOfModel('m-main','i-control-center')/uuid}}"
+                                    resource="{$relativePath}modules/loadData.xql?id={{bf:instanceOfModel('m-main','i-control-center')/uuid}}&amp;workdir={{bf:instanceOfModel('m-main','i-control-center')/workdir}}"
                                     method="post" replace="instance" validate="false">
                                 <xf:header>
                                     <xf:name>username</xf:name>
@@ -117,7 +117,7 @@
                                     <xf:value>exist</xf:value>
                                 </xf:header>
                             </xf:submission>
-                            <xf:submission id="s-update" resource="{$relativePath}modules/updateRecord.xql?id={{bf:instanceOfModel('m-main','i-control-center')/uuid}}&amp;&amp;set={$vraSectionNode}" method="post" replace="none" validate="false">
+                            <xf:submission id="s-update" resource="{$relativePath}modules/updateRecord.xql?id={{bf:instanceOfModel('m-main','i-control-center')/uuid}}&amp;workdir={{bf:instanceOfModel('m-main','i-control-center')/workdir}}&amp;set={$vraSectionNode}" method="post" replace="none" validate="false">
                                 <xf:header>
                                     <xf:name>username</xf:name>
                                     <xf:value>admin</xf:value>

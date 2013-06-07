@@ -6,7 +6,10 @@ import module namespace app="http://www.betterform.de/projects/ziziphus/xquery/a
 let $uuid := request:get-parameter('uuid', 'w_000197f8-4f11-5c63-9967-678e75fa6e41')
 let $setname := request:get-parameter('setname', 'agentSet')
 
-let $record := collection( $app:record-dir)//vra:vra/*[@id = $uuid]
+let $workdir :=  request:get-parameter('workdir','')
+let $workdir := if($workdir eq "") then ($app:record-dir) else ($workdir)
+
+let $record := collection($workdir)//vra:vra/*[@id = $uuid]
 (: Only the part of the record we are interested in :)
 let $snippet := $record//*[local-name() eq $setname]
 let $stylesheet := doc('/db/apps/ziziphus/resources/xsl/vra-record.xsl')

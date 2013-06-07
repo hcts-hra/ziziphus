@@ -45,13 +45,14 @@
                         <currentform/>
                         <!-- Which record to save/load, used by subform -->
                         <uuid/>
+                        <workdir/>
                         <changed/>
                         <setname/>
                         <isDirty>false</isDirty>
                     </data>
                 </xf:instance>
-                <xf:setvalue ev:event="xforms-model-construct-done" ref="instance('i-control-center')/uuid"
-                             value="bf:appContext('id')"/>
+                <xf:setvalue ev:event="xforms-model-construct-done" ref="instance('i-control-center')/uuid"  value="bf:appContext('id')"/>
+                <xf:setvalue ev:event="xforms-model-construct-done" ref="instance('i-control-center')/workdir" value="bf:appContext('workdir')"/>
                 <xf:submission method="get"
                                id="s-refresh"
                                replace="embedHTML"
@@ -72,8 +73,8 @@
                     </xf:bind>
                 </xf:bind>
 
-                <xf:submission id="s-load-user-data" method="post" replace="instance" instance="i-user"
-                               resource="modules/getUserData.xql">
+                <xf:submission id="s-load-user-data" method="post" replace="instance" instance="i-user">
+                    <xf:resource value="IF(instance('i-control-center')/workdir eq '', 'modules/getUserData.xql', concat('modules/getUserData.xql?workdir=', instance('i-control-center')/workdir))" />
                     <xf:message ev:event="xforms-submit-error">error receiving the current user</xf:message>
                 </xf:submission>
 
@@ -92,10 +93,10 @@
                 </xf:action>
             </xf:model>
             <xf:model id="m-code-tables">
-                <xf:instance id="i-codes-lang" src="{$relativePath}modules/code-tables.xql?table=lang" xmlns=""/>
-                <xf:instance id="i-codes-script" src="{$relativePath}modules/code-tables.xql?table=script" xmlns=""/>
-                <xf:instance id="i-codes-transliteration" src="{$relativePath}modules/code-tables.xql?table=transliteration" xmlns=""/>
-                <xf:instance id="i-codes-role" src="{$relativePath}modules/code-tables.xql?table=role" xmlns=""/>
+                <xf:instance id="i-codes-lang" src="modules/code-tables.xql?table=lang" xmlns=""/>
+                <xf:instance id="i-codes-script" src="modules/code-tables.xql?table=script" xmlns=""/>
+                <xf:instance id="i-codes-transliteration" src="modules/code-tables.xql?table=transliteration" xmlns=""/>
+                <xf:instance id="i-codes-role" src="modules/code-tables.xql?table=role" xmlns=""/>
             </xf:model>
             <xf:group id="controlCenter" model="m-main">
                 <xf:action ev:event="unload-subform" model="m-main"
@@ -172,6 +173,7 @@
             <xf:output ref="instance('i-meta')/@version">
                 <xf:label>Version: </xf:label>
             </xf:output>
+
         </div>
         <div class="ui-layout-west main:displayWorkRecord">Workrecord</div>
         <div class="ui-layout-east main:displayImageRecord">Imagerecord</div>

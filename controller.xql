@@ -87,6 +87,7 @@ let $username := if(request:get-parameter("username",()))
                  else(),
     $password := request:get-parameter("password",())
 let $login := local:login($username, $password)
+
 return
     if (request:get-parameter("logout",()))then
     (

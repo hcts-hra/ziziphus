@@ -1,3 +1,4 @@
+xquery version "3.0";
 (:~
  : Templating functions for the main page of Ziziphus
  :)
@@ -13,13 +14,15 @@ import module namespace config="http://exist-db.org/xquery/apps/config" at "conf
 import module namespace app="http://www.betterform.de/projects/ziziphus/xquery/app" at "app.xqm";
 import module namespace templates="http://exist-db.org/xquery/templates";
 
-declare %templates:wrap function main:createVraRecord($node as node()*, $model as map(*), $id as xs:string?) {
+declare %templates:wrap %templates:default("workdir", "") function main:createVraRecord($node as node()*, $model as map(*), $id as xs:string?, $workdir as xs:string) {
     let $uuid := $id
-    let $vraWorkRecord  := collection( $app:work-record-dir)/vra:vra/vra:work[@id = $uuid]
+    let $workRecordDir as xs:string := if($workdir eq "") then ($app:record-dir) else ($workdir)
+    let $imageDir as xs:string := $workRecordDir || $app:image-record-dir-name
+    let $vraWorkRecord  := collection($workRecordDir)/vra:vra/vra:work[@id = $uuid]
     let $imageRecordId  := if(exists($vraWorkRecord/vra:relationSet/vra:relation/@pref[.='true']))
                                 then $vraWorkRecord/vra:relationSet/vra:relation[@pref='true']/@relids
                                 else $vraWorkRecord/vra:relationSet/vra:relation[1]/@relids
-     let $vraImageRecord := collection( $app:image-record-dir)/vra:vra/vra:image[@id = $imageRecordId]
+     let $vraImageRecord := collection($imageDir)/vra:vra/vra:image[@id = $imageRecordId]
      let $resultMap := map:new(($model,map{
                             "workRecord":= $vraWorkRecord,
                             "uuid":= $uuid,
