@@ -7,12 +7,15 @@ handled by the *Set forms themselves. Same is true for xml:lang which is not use
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xf="http://www.w3.org/2002/xforms">
     <xf:output ref="@dataDate">
         <xf:label>dataDate</xf:label>
+        <xf:hint>dataDate</xf:hint>
     </xf:output>
     <xf:output ref="@extent">
         <xf:label>extent</xf:label>
+        <xf:hint>extent</xf:hint>
     </xf:output>
     <xf:output ref="@href">
         <xf:label>href</xf:label>
+        <xf:hint>href</xf:hint>
     </xf:output>
     <!--
     not used?
@@ -28,24 +31,31 @@ handled by the *Set forms themselves. Same is true for xml:lang which is not use
     -->
     <xf:output ref="@refid">
         <xf:label>refid</xf:label>
+        <xf:hint>refid</xf:hint>
     </xf:output>
     <xf:output ref="@rules">
         <xf:label>rules</xf:label>
+        <xf:hint>rules</xf:hint>
     </xf:output>
     <xf:output ref="@source">
         <xf:label>source</xf:label>
+        <xf:hint>source</xf:hint>
     </xf:output>
     <xf:output ref="@vocab">
         <xf:label>vocab</xf:label>
+        <xf:hint>vocab</xf:hint>
     </xf:output>
     <!-- todo: must probably be a select1 ? where do we get the list? -->
     <xf:output ref="@lang">
         <xf:label>Language Code</xf:label>
+        <xf:hint>Language Code</xf:hint>
     </xf:output>
     <xf:output ref="@transliteration">
         <xf:label>transliteration</xf:label>
+        <xf:hint>transliteration</xf:hint>
     </xf:output>
     <xf:output ref="@script">
         <xf:label>Script</xf:label>
+        <xf:hint>Script</xf:hint>
     </xf:output>
 </div>

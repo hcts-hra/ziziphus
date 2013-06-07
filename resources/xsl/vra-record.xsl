@@ -63,8 +63,9 @@
             <xsl:variable name="caseId" select="concat('c-',$id)"/>
             <xsl:variable name="tableId" select="concat('table-',$id)"/>
             <div class="t-edit">
-                <xf:trigger class="-icon -icon-edit" ref="instance('i-user')/user/@edit">
+                <xf:trigger class="button button-edit">
                     <xf:label/>
+                    <xf:hint>edit</xf:hint>
                     <xf:action>
                         <xf:dispatch name="unload-subform" targetid="controlCenter"/>
                         <xf:setvalue model="m-main" ref="instance('i-control-center')/currentform" value="'{$id}'"/>
@@ -89,11 +90,12 @@
                         </xf:load>
                         -->
                         <xf:toggle case="{$caseId}-edit"/>
+                        <script type="text/javascript">scrollToPanel('<xsl:value-of select="$id"/>');</script>
                     </xf:action>
                 </xf:trigger>
                 <span>
                     <!--<button type="button" onclick="toggleDetail(this, '{$tableId}');" class="icon icon-zoom-in"/>-->
-                    <button type="button" onclick="toggleDetail(this, '{concat($id,'_HtmlContent')}');" class="icon icon-zoom-in"/>
+                    <button type="button" title="view details" onclick="toggleDetail(this, '{concat($id,'_HtmlContent')}');" class="button button-zoom-in"/>
                 </span>
             </div>
             <xf:switch>

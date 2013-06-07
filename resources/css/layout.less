@@ -43,7 +43,7 @@ html, body {
 
     .columntitle {
         padding: 8px;
-        background:#555555;
+        background:#777777;
         color:white;
         text-align: center;
         font-size: 1.2em;
@@ -58,14 +58,6 @@ html, body {
     }
     .dijitTitlePane{
         position:relative;
-    }
-
-    .t-edit{
-        display: none;
-        position:absolute;
-        top:3px;
-        right:3px;
-        text-align: right;
     }
 
     .dijitTitlePane:hover .t-edit{
@@ -97,17 +89,19 @@ html, body {
         }
     }
     //mixin used below
-    .icon{
+/*
+    .button{
         border: thin solid #999999 !important;
         height: 20px;
         width: 20px;
     }
-    .icon-edit {
+    .button-edit {
         background-position: -94px -70px;
         position: absolute;
         top: -14px;
         right: 0;
     }
+*/
 
     .icon-remove {
         background-position: -310px 2px;
@@ -228,15 +222,17 @@ html, body {
     }
 
     #closeEditor{
-        position: absolute;
-        right: 14px;
-        top:24px;
+      height: 50px;
+      position: absolute;
+      right: -2px;
+      top: -9px;
+      width: 50px;
     }
     .close{
         border:none;
         position: absolute;
         top: 10px;
-        right: 10px;
+        right: 60px;
         font-size: 2em;
     }
 }
@@ -287,3 +283,57 @@ html, body {
   color: white;
   opacity: 0.5;
 }
+.btn-small{
+  font-size:9px;
+}
+
+
+
+.historyButton {
+  background: url("../images/icons/history.png") no-repeat scroll 0 0 transparent;
+  border: medium none;
+  float: right;
+  height: 24px;
+  padding: 2px;
+  width: 24px;
+  color:transparent !important;
+}
+
+.t-edit{
+  display: none;
+  position:absolute;
+  top:3px;
+  right:4px;
+  text-align: right;
+  z-index: 300;
+
+  button{
+    width: 24px;
+    height: 24px;
+    border:none;
+    padding: 2px;
+    border-radius: 3px;
+    opacity: 0.5;
+  }
+  button:hover{
+    opacity: 0.9;
+  }
+  .button-edit button{
+    background: url(../images/icons/keyboard_down.png) no-repeat;
+  }
+
+  .button-zoom-in {
+    background: url("../images/icons/zoom_in.png") no-repeat scroll 0 0 transparent;
+  }
+  .button-zoom-out {
+    background: url("../images/icons/zoom_out.png") no-repeat scroll 0 0 transparent;
+  }
+}
+
+#save-button button{
+  width: 24px;
+  height: 24px;
+  background: url(../images/icons/database_add.png) no-repeat;
+}
+
+

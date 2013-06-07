@@ -441,4 +441,107 @@
     </xsl:template>
 -->
 
+    <xsl:template name="input">
+        <xsl:variable name="id" select="@id"/>
+        <xsl:variable name="name" select="concat($data-prefix,$id)"/>
+        <xsl:variable name="navindex" select="if (exists(@navindex)) then @navindex else '0'"/>
+        <xsl:variable name="type"><xsl:call-template name="getType"/></xsl:variable>
+
+        <xsl:variable name="authorClasses">
+            <xsl:call-template name="get-control-classes"/>
+        </xsl:variable>
+        <xsl:variable name="widgetClasses" select="normalize-space(concat($widgetClass,' ',$authorClasses))"/>
+        <!--
+        >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        For input only the datatypes 'boolean' and 'string' are supported in the basic
+        layer. Other datatypes are supported by progressive enhancement through JS.
+        <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+        -->
+        <xsl:choose>
+            <xsl:when test="$type='boolean'">
+                <input  id="{$id}-value"
+                        name="{$name}"
+                        type="checkbox"
+                        class="{$widgetClasses}"
+                        tabindex="{$navindex}"
+                        title="{xf:hint/text()}">
+                    <xsl:if test="bf:data/@bf:readonly='true'">
+                        <xsl:attribute name="disabled">disabled</xsl:attribute>
+                    </xsl:if>
+                    <xsl:if test="bf:data/text()='true'">
+                        <xsl:attribute name="checked">true</xsl:attribute>
+                    </xsl:if>
+                    <!--
+                    >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                    the hint will be applied as html title attribute and additionally output
+                    as a span
+                    <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+                    -->
+                    <xsl:apply-templates select="xf:hint"/>
+                </input>
+            </xsl:when>
+            <xsl:when test="$type='date' or $type='dateTime' or $type='time'">
+                <xsl:call-template name="InputDateAndTime">
+                    <xsl:with-param name="id" select="$id"/>
+                    <xsl:with-param name="name" select="$name"/>
+                    <xsl:with-param name="type" select="$type"/>
+                    <xsl:with-param name="navindex" select="$navindex"/>
+                    <xsl:with-param name="classes" select="$widgetClasses"/>
+                </xsl:call-template>
+            </xsl:when>
+            <!-- TODO: Fix bug in validity handling for input type="integer" (Chrome/Safari) -->
+            <!--
+            xsl:when test="$type='byte' or $type='decimal'
+                            or $type='int' or $type='integer'
+                            or $type='float' or $type='double'
+                            or $type='long' or $type='negativeInteger'
+                            or $type='nonNegativeInteger' or $type='nonPositiveInteger'
+                            or $type='positiveInteger' or $type='short'
+                            or $type='unsignedLong' or $type='unsignedInt'
+                            or $type='unsignedShort' or $type='unsignedByte'">
+                <input  id="{$id}-value"
+                        name="{$name}"
+                        type="number"
+                        class="{$widgetClasses}"
+                        tabindex="{$navindex}"
+                        placeholder="{xf:hint}"
+                        value="{bf:data/text()}">
+                    <xsl:if test="bf:data/@bf:readonly='true'">
+                        <xsl:attribute name="disabled">disabled</xsl:attribute>
+                    </xsl:if>
+                    <xsl:apply-templates select="@*" mode="copy-foreign-attributes"/>
+                </input>
+            </xsl:when-->
+            <xsl:otherwise>
+                <xsl:call-template name="InputDefault">
+                    <xsl:with-param name="id" select="$id"/>
+                    <xsl:with-param name="name" select="$name"/>
+                    <xsl:with-param name="navindex" select="$navindex"/>
+                    <xsl:with-param name="classes" select="$widgetClasses"/>
+                </xsl:call-template>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+
+    <xsl:template name="InputDefault">
+        <xsl:param name="id"/>
+        <xsl:param name="name"/>
+        <xsl:param name="navindex"/>
+        <xsl:param name="classes"/>
+        <input id="{$id}-value"
+                name="{$name}"
+                type="text"
+                class="{$classes}"
+                tabindex="{$navindex}"
+                placeholder="{xf:hint}"
+                value="{bf:data/text()}">
+            <xsl:if test="bf:data/@bf:readonly='true'">
+                <xsl:attribute name="disabled">disabled</xsl:attribute>
+            </xsl:if>
+            <xsl:for-each select="@*[not(local-name(.) = 'ref' or local-name(.) = 'style' or local-name(.) = 'id' or local-name(.) = 'class' or local-name(.) = 'placeholder')]">
+                <xsl:copy/>
+            </xsl:for-each>
+        </input>
+    </xsl:template>
+
 </xsl:stylesheet>

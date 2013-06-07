@@ -143,9 +143,16 @@
                     <li>
                         <button type="button" onclick="centerRight();" title="show Picture + Imagerecord">P | I</button>
                     </li>
+<!--
                     <li>
                         <button type="button" onclick="toggleSetVisibility();" title="show all Sets">all Sets</button>
                     </li>
+-->
+<!--
+                    <li>
+                        <button type="button" id="save-button" onclick="toggleSetVisibility();" title="save changes"></button>
+                    </li>
+-->
                 </ul>
             </div>
             <div class="headerMenu" style="position:absolute;display:block;right:40px;">
@@ -189,8 +196,8 @@
             ]);
         </script>
         <script type="text/javascript" src="resources/script/jquery-1.9.1.js"/>
-        <script type="text/javascript" src="resources/script/jquery-ui-1-1.10.0.custom/js/jquery-ui-1.10.0.custom.min.js"/>
-        <!--<script type="text/javascript" src="resources/script/jquery-ui-1.10.2.custom.min.js"/>-->
+        <!--<script type="text/javascript" src="resources/script/jquery-ui-1-1.10.0.custom/js/jquery-ui-1.10.0.custom.min.js"/>-->
+        <script type="text/javascript" src="resources/script/jquery-ui-1.10.2.custom.min.js"/>
         <script type="text/javascript" src="resources/script/mingos-uwindow/jWindow.js"/>
         <script type="text/javascript" src="resources/script/jquery.layout-latest.min.js"/>
         <script type="text/javascript">
@@ -304,8 +311,8 @@
 
             function toggleDetail(n, m) {
                 console.debug("this: n:", n, " m:", m);
-                $(n).toggleClass("icon-zoom-out");
-                $(n).toggleClass("icon-zoom-in");
+                $(n).toggleClass("button-zoom-out");
+                $(n).toggleClass("button-zoom-in");
                 $("#" + m).toggleClass("simple");
                 $("#" + m).toggleClass("full");
             }
@@ -345,8 +352,13 @@
                 ziziphusLayout.open('east');
                 ziziphusLayout.sizePane("east","50%");
             }
-            function toggleSetVisibility(){
-                $("body").toggleClass("forceVisible");
+            function toggleSetVisibility(side){
+                $("#"+side).toggleClass("forceVisible");
+                $('#'+ side + 'Separator')[0].scrollIntoView();
+            }
+            function scrollToPanel(id){
+                $('#' + id + ' .dijitTitlePaneTitle').effect("highlight", {color:'lightsteelblue'}, 1500);
+                $('#' + id)[0].scrollIntoView();
             }
         </script>
     </body>

@@ -19,6 +19,20 @@ body {
     }
 */
 
+  /*
+    .button{
+        border: thin solid #999999 !important;
+        height: 20px;
+        width: 20px;
+    }
+    .button-edit {
+        background-position: -94px -70px;
+        position: absolute;
+        top: -14px;
+        right: 0;
+    }
+*/
+
 }
 .bf .imagePanel {
   text-align: center;
@@ -38,7 +52,7 @@ body {
 }
 .bf .columntitle {
   padding: 8px;
-  background: #555555;
+  background: #777777;
   color: white;
   text-align: center;
   font-size: 1.2em;
@@ -48,13 +62,6 @@ body {
 }
 .bf .dijitTitlePane {
   position: relative;
-}
-.bf .t-edit {
-  display: none;
-  position: absolute;
-  top: 3px;
-  right: 3px;
-  text-align: right;
 }
 .bf .dijitTitlePane:hover .t-edit {
   display: inline-block;
@@ -80,17 +87,6 @@ body {
 }
 .bf table td {
   vertical-align: top;
-}
-.bf .icon {
-  border: thin solid #999999 !important;
-  height: 20px;
-  width: 20px;
-}
-.bf .icon-edit {
-  background-position: -94px -70px;
-  position: absolute;
-  top: -14px;
-  right: 0;
 }
 .bf .icon-remove {
   background-position: -310px 2px;
@@ -186,15 +182,17 @@ body {
   display: none;
 }
 .bf #closeEditor {
+  height: 50px;
   position: absolute;
-  right: 14px;
-  top: 24px;
+  right: -2px;
+  top: -9px;
+  width: 50px;
 }
 .bf .close {
   border: none;
   position: absolute;
   top: 10px;
-  right: 10px;
+  right: 60px;
   font-size: 2em;
 }
 .tundra .dijitTitlePaneTitle {
@@ -240,4 +238,49 @@ body {
   border-bottom: thin solid #bbb;
   color: white;
   opacity: 0.5;
+}
+.btn-small {
+  font-size: 9px;
+}
+.historyButton {
+  background: url("../images/icons/history.png") no-repeat scroll 0 0 transparent;
+  border: medium none;
+  float: right;
+  height: 24px;
+  padding: 2px;
+  width: 24px;
+  color: transparent !important;
+}
+.t-edit {
+  display: none;
+  position: absolute;
+  top: 3px;
+  right: 4px;
+  text-align: right;
+  z-index: 300;
+}
+.t-edit button {
+  width: 24px;
+  height: 24px;
+  border: none;
+  padding: 2px;
+  border-radius: 3px;
+  opacity: 0.5;
+}
+.t-edit button:hover {
+  opacity: 0.9;
+}
+.t-edit .button-edit button {
+  background: url(../images/icons/keyboard_down.png) no-repeat;
+}
+.t-edit .button-zoom-in {
+  background: url("../images/icons/zoom_in.png") no-repeat scroll 0 0 transparent;
+}
+.t-edit .button-zoom-out {
+  background: url("../images/icons/zoom_out.png") no-repeat scroll 0 0 transparent;
+}
+#save-button button {
+  width: 24px;
+  height: 24px;
+  background: url(../images/icons/database_add.png) no-repeat;
 }

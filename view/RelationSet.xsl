@@ -11,7 +11,42 @@
          <table class="vraSetView table table-striped">
             <tbody>
                <xsl:for-each select="vra:relation">
-                  <tr></tr>
+                  <tr>
+                     <td>
+                        <xsl:choose>
+                           <xsl:when test="string-length(string-join(@type,'')) != 0">
+                              <div data-bf-type="select1" data-bf-bind="@type" tabindex="0" title="Type"
+                                   id="b-d2e660">
+                                 <xsl:value-of select="@type"></xsl:value-of>
+                              </div>
+                           </xsl:when>
+                           <xsl:otherwise>
+                              <div class="nodata" data-bf-type="select1" data-bf-bind="@type" tabindex="0">(Type)</div>
+                           </xsl:otherwise>
+                        </xsl:choose>
+                        <xsl:choose>
+                           <xsl:when test="string-length(string-join(.,'')) != 0">
+                              <div data-bf-type="input" data-bf-bind="." tabindex="0" title="Relation"
+                                   id="b-d2e652">
+                                 <xsl:value-of select="."></xsl:value-of>
+                              </div>
+                           </xsl:when>
+                           <xsl:otherwise>
+                              <div class="nodata" data-bf-type="input" data-bf-bind="." tabindex="0">(Relation)</div>
+                           </xsl:otherwise>
+                        </xsl:choose>
+                        <xsl:choose>
+                           <xsl:when test="string-length(string-join(@relids,'')) != 0">
+                              <div data-bf-type="input" data-bf-bind="@relids" tabindex="0" title="relids">
+                                 <xsl:value-of select="@relids"></xsl:value-of>
+                              </div>
+                           </xsl:when>
+                           <xsl:otherwise>
+                              <div class="nodata" data-bf-type="input" data-bf-bind="@relids" tabindex="0">(relids)</div>
+                           </xsl:otherwise>
+                        </xsl:choose>
+                     </td>
+                  </tr>
                </xsl:for-each>
             </tbody>
          </table>

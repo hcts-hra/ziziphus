@@ -12,7 +12,8 @@
                     select="if(local-name(.)='work') then 'leftPanel' else 'rightPanel'"></xsl:variable>
       <div class="columntitle">
          <xsl:value-of select="$title"></xsl:value-of>
-         <xsl:text> </xsl:text><button type="button" id="{$recordType}-versions-button" subject="{$recordId}"
+         <xsl:text> </xsl:text><button type="button" class="historyButton" id="{$recordType}-versions-button"
+                 subject="{$recordId}"
                  title="Versions history for {$recordType} {$recordId}">H</button></div>
       <div id="{$side}" class="sidePanel ui-layout-content">
          <xsl:call-template name="titlePane">
@@ -49,9 +50,8 @@
             <xsl:with-param name="vraSetName" select="'TitleSet'"></xsl:with-param>
             <xsl:with-param name="vraSetNode" select="vra:titleSet"></xsl:with-param>
             <xsl:with-param name="visible" select="''"></xsl:with-param>
-         </xsl:call-template>
-         <div class="separator">Further VRA Sets</div>
-         <xsl:call-template name="titlePane">
+         </xsl:call-template><a href="#" id="{$side}Separator" onclick="toggleSetVisibility('{$side}');">
+            <div class="separator">more VRA Sets...</div></a><xsl:call-template name="titlePane">
             <xsl:with-param name="vraSetName" select="'CulturalContextSet'"></xsl:with-param>
             <xsl:with-param name="vraSetNode" select="vra:culturalContextSet"></xsl:with-param>
             <xsl:with-param name="visible" select="'false'"></xsl:with-param>
