@@ -26,7 +26,7 @@
                 <div class="columntitle">
                     <transform:value-of select="$title"/>
                     <transform:text>&#160;</transform:text>
-                    <button type="button" id="{{$recordType}}-versions-button" subject="{{$recordId}}" title="Versions history for {{$recordType}} {{$recordId}}">H</button>
+                    <button type="button" class="historyButton" id="{{$recordType}}-versions-button" subject="{{$recordId}}" title="Versions history for {{$recordType}} {{$recordId}}">H</button>
                 </div>
 
                 <div id="{{$side}}" class="sidePanel ui-layout-content">
@@ -45,7 +45,7 @@
                                 </transform:call-template>
                             </xsl:when>
                             <xsl:otherwise>
-                                <div class="separator">Further VRA Sets</div>
+                                <a href="#" id="{{$side}}Separator" onclick="toggleSetVisibility('{{$side}}');"><div class="separator">more VRA Sets...</div></a>
                             </xsl:otherwise>
                         </xsl:choose>
 

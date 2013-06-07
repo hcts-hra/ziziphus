@@ -90,7 +90,7 @@
                         </xf:load>
                         -->
                         <xf:toggle case="{$caseId}-edit"/>
-                        <script type="text/javascript">setFocusToPane('<xsl:value-of select="$id"/>');</script>
+                        <script type="text/javascript">scrollToPanel('<xsl:value-of select="$id"/>');</script>
                     </xf:action>
                 </xf:trigger>
                 <span>
