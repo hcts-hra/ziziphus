@@ -21,7 +21,7 @@
             <xf:model id="m-child-model" schema="resources/xsd/vra-types.xsd">
                <xf:send ev:event="xforms-model-construct-done" submission="s-loadSet"></xf:send>
                <xf:submission id="s-loadSet"
-                              resource="modules/loadData.xql?id={bf:instanceOfModel('m-main','i-control-center')/uuid}"
+                              resource="modules/loadData.xql?id={bf:instanceOfModel('m-main','i-control-center')/uuid}&amp;workdir={bf:instanceOfModel('m-main','i-control-center')/workdir}"
                               method="post"
                               replace="instance"
                               validate="false">
@@ -39,7 +39,7 @@
                   </xf:header>
                </xf:submission>
                <xf:submission id="s-update"
-                              resource="modules/updateRecord.xql?id={bf:instanceOfModel('m-main','i-control-center')/uuid}&amp;&amp;set=measurementsSet"
+                              resource="modules/updateRecord.xql?id={bf:instanceOfModel('m-main','i-control-center')/uuid}&amp;workdir={bf:instanceOfModel('m-main','i-control-center')/workdir}&amp;set=measurementsSet"
                               method="post"
                               replace="none"
                               validate="false">
@@ -410,27 +410,39 @@
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:input ref="@lang" id="d3e1-lang">
+                  <xf:select1 ref="@lang" id="d3e1-lang">
                      <xf:label>Language</xf:label>
-                  </xf:input>
+                     <xf:itemset nodeset="bf:instanceOfModel('m-code-tables', 'i-codes-lang')/items/item">
+                        <xf:label ref="label"></xf:label>
+                        <xf:value ref="value"></xf:value>
+                     </xf:itemset>
+                  </xf:select1>
                   <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@lang"></xf:setvalue>
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:input ref="@transliteration" id="d3e1-transliteration">
+                  <xf:select1 ref="@transliteration" id="d3e1-transliteration">
                      <xf:label>Transliteration</xf:label>
-                  </xf:input>
+                     <xf:itemset nodeset="bf:instanceOfModel('m-code-tables', 'i-codes-transliteration')/items/item">
+                        <xf:label ref="label"></xf:label>
+                        <xf:value ref="value"></xf:value>
+                     </xf:itemset>
+                  </xf:select1>
                   <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@transliteration"></xf:setvalue>
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:input ref="@script" id="d3e1-script">
+                  <xf:select1 ref="@script" id="d3e1-script">
                      <xf:label>Script</xf:label>
-                  </xf:input>
+                     <xf:itemset nodeset="bf:instanceOfModel('m-code-tables', 'i-codes-script')/items/item">
+                        <xf:label ref="label"></xf:label>
+                        <xf:value ref="value"></xf:value>
+                     </xf:itemset>
+                  </xf:select1>
                   <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@script"></xf:setvalue>
