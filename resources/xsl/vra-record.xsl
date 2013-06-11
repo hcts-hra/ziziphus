@@ -63,7 +63,7 @@
             <xsl:variable name="caseId" select="concat('c-',$id)"/>
             <xsl:variable name="tableId" select="concat('table-',$id)"/>
             <div class="t-edit">
-                <xf:trigger class="button-edit -toolbarbutton" model="m-main" ref="editbtn">
+                <xf:trigger class="button-edit -toolbarbutton">
                     <xf:label/>
                     <xf:hint>edit</xf:hint>
                     <xf:action>

@@ -217,6 +217,12 @@ table tr td .xfGroup:last-child {
   font-size: 30px;
   margin-top: -2px;
 }
+.bf .dijitTitlePane .t-edit .xfReadOnly {
+  opacity: 0.5 !important;
+}
+.bf .dijitTitlePane:hover .t-edit .xfReadOnly .toolbarbutton:hover {
+  opacity: 0.5 !important;
+}
 .tundra .dijitTitlePaneContentInner {
   padding: 0;
 }

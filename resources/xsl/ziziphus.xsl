@@ -70,13 +70,7 @@
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
-        <xsl:variable name="alert">
-            <xsl:choose>
-                <xsl:when test="contains(@class,'ToolTipAlert')">ToolTipAlert</xsl:when>
-                <xsl:otherwise>InlineAlert</xsl:otherwise>
-            </xsl:choose>
-        </xsl:variable>
-        <body class="{$theme} bf {$client-device} {$alert}">
+        <body class="{$theme} bf {$client-device}">
             <!-- TODO: Lars: keep original CSS classes on body-->
             <xsl:copy-of select="@*[name() != 'class']"/>
             <!-- <xsl:message>Useragent is <xsl:value-of select="$user-agent"/></xsl:message>-->
