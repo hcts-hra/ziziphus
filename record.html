@@ -95,6 +95,7 @@
                     <xf:load show="none" targetid="{concat(instance('i-control-center')/currentform,'_MountPoint')}"/>
                     <!-- ##### reset isDirty flag ##### -->
                     <xf:setvalue ref="instance('i-control-center')/isDirty" value="'false'"/>
+                    <xf:setvalue ref="instance('i-control-center')/currentform"/>
                 </xf:action>
                 <xf:action ev:event="clear-currentform" model="m-main">
                     <xf:setvalue ref="instance('i-control-center')/currentform" value="''"/>

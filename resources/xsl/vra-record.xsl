@@ -66,7 +66,7 @@
                 <xf:trigger class="button-edit -toolbarbutton">
                     <xf:label/>
                     <xf:hint>edit</xf:hint>
-                    <xf:action>
+                    <xf:action if="instance('i-control-center')/currentform != '{$id}'">
                         <xf:dispatch name="unload-subform" targetid="controlCenter"/>
                         <xf:setvalue model="m-main" ref="instance('i-control-center')/currentform" value="'{$id}'"/>
                         <xf:setvalue model="m-main" ref="instance('i-control-center')/uuid" value="'{$recordId}'"/>
