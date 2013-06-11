@@ -63,7 +63,7 @@
             <xsl:variable name="caseId" select="concat('c-',$id)"/>
             <xsl:variable name="tableId" select="concat('table-',$id)"/>
             <div class="t-edit">
-                <xf:trigger class="button button-edit">
+                <xf:trigger class="button-edit -toolbarbutton" model="m-main" ref="editbtn">
                     <xf:label/>
                     <xf:hint>edit</xf:hint>
                     <xf:action>
@@ -90,12 +90,11 @@
                         </xf:load>
                         -->
                         <xf:toggle case="{$caseId}-edit"/>
-                        <script type="text/javascript">scrollToPanel('<xsl:value-of select="$id"/>');</script>
                     </xf:action>
                 </xf:trigger>
                 <span>
                     <!--<button type="button" onclick="toggleDetail(this, '{$tableId}');" class="icon icon-zoom-in"/>-->
-                    <button type="button" title="view details" onclick="toggleDetail(this, '{concat($id,'_HtmlContent')}');" class="button button-zoom-in"/>
+                    <button type="button" title="view details" onclick="toggleDetail(this, '{concat($id,'_HtmlContent')}');" class="toolbarbutton button-zoom-in"/>
                 </span>
             </div>
             <xf:switch>
@@ -123,25 +122,9 @@
                 <!-- ############ EDIT CASE ############### -->
                 <!-- ############ EDIT CASE ############### -->
                 <xf:case id="{$caseId}-edit">
-<!--
-                    <xf:group appearance="minimal" class="dialogControls">
-                        <xf:trigger>
-                            <xf:label>Save changes</xf:label>
-                            <xf:action>
-                                <xf:toggle case="{$caseId}-view"/>
-                                &lt;!&ndash;todo: not enough - form must be unloaded &ndash;&gt;
-                                <xf:setvalue ref="instance('i-control-center')/currentform" model="m-main"/>
-                            </xf:action>
-                        </xf:trigger>
-                        <xf:trigger appearance="minimal">
-                            <xf:label>Close</xf:label>
-                            <xf:toggle case="{$caseId}-view"/>
-
-                            &lt;!&ndash;todo: not enough - form must be unloaded &ndash;&gt;
-                            <xf:setvalue ref="instance('i-control-center')/currentform" model="m-main"/>
-                        </xf:trigger>
-                    </xf:group>
--->
+                    <xf:action ev:event="xforms-select">
+                        <script type="text/javascript">scrollToPanel('<xsl:value-of select="$id"/>');</script>
+                    </xf:action>
                     <div id="{$mountPoint}"/>
                 </xf:case>
             </xf:switch>

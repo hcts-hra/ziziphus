@@ -49,8 +49,10 @@
                         <changed/>
                         <setname/>
                         <isDirty>false</isDirty>
+                        <editbtn>true</editbtn>
                     </data>
                 </xf:instance>
+                <xf:bind nodeset="editbtn" relevant="boolean-from-string(.)"/>
                 <xf:setvalue ev:event="xforms-model-construct-done" ref="instance('i-control-center')/uuid"  value="bf:appContext('id')"/>
                 <xf:setvalue ev:event="xforms-model-construct-done" ref="instance('i-control-center')/workdir" value="bf:appContext('workdir')"/>
                 <xf:submission method="get"
@@ -180,7 +182,6 @@
             <xf:output ref="instance('i-meta')/@version">
                 <xf:label>Version: </xf:label>
             </xf:output>
-
         </div>
         <div class="ui-layout-west main:displayWorkRecord">Workrecord</div>
         <div class="ui-layout-east main:displayImageRecord">Imagerecord</div>
@@ -200,6 +201,7 @@
         <script type="text/javascript" src="resources/script/jquery-ui-1.10.2.custom.min.js"/>
         <script type="text/javascript" src="resources/script/mingos-uwindow/jWindow.js"/>
         <script type="text/javascript" src="resources/script/jquery.layout-latest.min.js"/>
+        <script type="text/javascript" src="resources/script/jquery.scrollto.js"/>
         <script type="text/javascript">
             $(document).ready(function () {
                 ziziphusLayout = $('body').layout({

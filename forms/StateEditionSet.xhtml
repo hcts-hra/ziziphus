@@ -105,7 +105,7 @@
          <!-- ####################################### VISIBLE UI ####################################### -->
          <!-- ####################################### VISIBLE UI ####################################### -->
          <div class="toolbar">
-            <xf:trigger class="t-plus -btn-small" model="m-child-model" id="d3e1-add"
+            <xf:trigger class="t-plus -toolbarbutton" model="m-child-model" id="d3e1-add"
                         title="Add StateEdition">
                <xf:label>+</xf:label>
                <xf:hint>add an entry</xf:hint>
@@ -113,12 +113,12 @@
                           origin="instance('i-templates')/vra:stateEdition"
                           position="before"></xf:insert>
             </xf:trigger>
-            <xf:trigger id="d3e1-save" class="-btn-small">
+            <xf:trigger id="d3e1-save" class="t-save -toolbarbutton">
                <xf:label>Save</xf:label>
                <xf:hint>save changes</xf:hint>
                <xf:send submission="s-update"></xf:send>
             </xf:trigger>
-            <xf:trigger id="closeEditor" class="-close">
+            <xf:trigger id="t-close" class="-toolbarbutton">
                <xf:label>×</xf:label>
                <xf:hint>close editor</xf:hint>
                <xf:action if="bf:instanceOfModel('m-main','i-control-center')/isDirty='true'"><script type="text/javascript">
