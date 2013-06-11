@@ -62,24 +62,23 @@ declare %templates:wrap function main:displayImageArea($node as node()*, $model 
     </div>
 };
 
-declare 
-%templates:wrap 
-function main:displayImageRecord($node as node()*, $model as map(*)) {
-        let $vraImageRecord := $model("vraImageRecord")            
-        let $imageRecordId := $model("imageRecordId")            
-        return 
-            main:transformVraRecord($vraImageRecord, $imageRecordId, 'image')
+declare %templates:wrap function main:displayImageRecord($node as node()*, $model as map(*)) {
+    let $vraImageRecord := $model("vraImageRecord")
+    let $imageRecordId := $model("imageRecordId")
+    return
+        main:transformVraRecord($vraImageRecord, $imageRecordId, 'image')
 };
 
 
 
 
 declare %private function main:transformVraRecord($root as node(), $id as xs:string, $vraRecordType as xs:string) {
-        let $parameters := <parameters>
-                                <param  name="recordType" value="{$vraRecordType}"/>
-                                <param  name="recordId" value="{$id}"/>
-                            </parameters>
-        return
-            transform:transform($root, doc("/db/apps/ziziphus/resources/xsl/vra-record.xsl"), $parameters)
+    let $parameters := <parameters>
+                        <param  name="recordType" value="{$vraRecordType}"/>
+                        <param name="recordId" value="{$id}"/>
+                    </parameters>
+    let $transform := transform:transform($root, doc($app:app-resources-dir ||  "/xsl/vra-record.xsl"), $parameters)
+    return
+        $transform
 };
 

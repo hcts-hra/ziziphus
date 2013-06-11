@@ -39,9 +39,9 @@ declare function local:makePathFromArgs() as xs:string ? {
     else if($relPath)
       then $ziziphusDataRoot || $relPath
     else if($rid)
-      then $ziziphusDataRoot || $filesPath || "/work/" || $rid || ".xml"
+      then $ziziphusDataRoot || $filesPath || $rid || ".xml"
     else if($iid)
-      then $ziziphusDataRoot || $filesPath || "/images/" || $iid || ".xml"
+      then $ziziphusDataRoot || $filesPath || "/VRA_images/" || $iid || ".xml"
     else ()
 };
 
