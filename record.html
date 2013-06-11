@@ -48,8 +48,10 @@
                         <changed/>
                         <setname/>
                         <isDirty>false</isDirty>
+                        <editbtn>true</editbtn>
                     </data>
                 </xf:instance>
+                <xf:bind nodeset="editbtn" relevant="boolean-from-string(.)"/>
                 <xf:setvalue ev:event="xforms-model-construct-done" ref="instance('i-control-center')/uuid"
                              value="bf:appContext('id')"/>
                 <xf:submission method="get"

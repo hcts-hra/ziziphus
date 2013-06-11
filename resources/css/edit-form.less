@@ -1,100 +1,100 @@
 // this matcher does only exist due to an error in thea generic xforms.css
 .xfRequired {
-    .xfLabel {
-        &:after {
-            content:'';
-        }
+  .xfLabel {
+    &:after {
+      content:'';
     }
-    > .xfLabel {
-        &:after {
-            content:'*';
-        }
+  }
+  > .xfLabel {
+    &:after {
+      content:'*';
     }
+  }
 }
 
 .xfRepeatItem {
-    background: whitesmoke;
+  background: whitesmoke;
 }
 
 .xfRepeatIndex {
-    .contentCol {
-        background-color: whitesmoke;
-    }
+  .contentCol {
+    background-color: whitesmoke;
+  }
 }
 
 table {
 
-    tbody {
-        font-size: 0.85em;
+  tbody {
+    font-size: 0.85em;
 
-        .xfGroup {
-            > .xfControl {
-                .xfLabel {
-                    float: left;
-                    padding: 0;
-                    margin: 3px 3px 0 2px;
-                    min-width: 60px;
-                    font-size: 0.9em;
-                }
-            }
+    .xfGroup {
+      > .xfControl {
+        .xfLabel {
+          float: left;
+          padding: 0;
+          margin: 3px 3px 0 2px;
+          min-width: 60px;
+          font-size: 0.9em;
         }
+      }
     }
+  }
 
-    tr {
-        td {
-            vertical-align: top;
-            border: thin solid #999999;
-            border-collapse: collapse;
-            padding: 3px;
+  tr {
+    td {
+      vertical-align: top;
+      border: thin solid #999999;
+      border-collapse: collapse;
+      padding: 3px;
 
-            > .xfGroup {
-                background: #fafafa;
-                border-top: thin solid;
-                border-bottom: thin solid #cdcdcd;
-                padding: 5px 0;
-            }
+      > .xfGroup {
+        background: #fafafa;
+        border-top: thin solid;
+        border-bottom: thin solid #cdcdcd;
+        padding: 5px 0;
+      }
 
-            .xfGroup {
-                &:last-child {
-                    border-bottom: none;
-                }
-            }
+      .xfGroup {
+        &:last-child {
+          border-bottom: none;
         }
+      }
     }
+  }
 }
 
 .bf {
-    .xfRepeatIndex {
-        background: #dddddd !important;
-    }
+  .xfRepeatIndex {
+    background: #dddddd !important;
+  }
 }
 
 .vraAttributes {
-    .xfControl {
-        float:left;
-        border: thin solid #aaaaaa;
-        border-radius: 3px;
-        margin: 5px 5px 5px 0;
-        padding: 0 3px;
-        background: #eeeeee;
-        text-align: center;
-        line-height: 1.5;
-    }
-    .xfLabel {
-        line-height: 1.5;
-        font-size: 1em;
-        margin: 0 !important;
-        padding: 0 !important;
-        border-bottom: thin solid #aaaaaa;
-        width: 100%;
-        display: none; // for now - need user feedback
-    }
-    .xfOutput {
-      font-size: 0.7em;
-    }
+  .xfControl {
+    float:left;
+    border: thin solid #aaaaaa;
+    border-radius: 3px;
+    margin: 5px 5px 5px 0;
+    padding: 0 3px;
+    background: #eeeeee;
+    text-align: center;
+    line-height: 1.5;
+  }
+  .xfLabel {
+    line-height: 1.5;
+    font-size: 1em;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-bottom: thin solid #aaaaaa;
+    width: 100%;
+    display: none; // for now - need user feedback
+  }
+  .xfOutput {
+    font-size: 0.7em;
+  }
 }
 .contentCol .vraAttributes .xfControl{
-    width: auto;
+  width: auto;
 }
 
 .vraAttributeTrigger {
@@ -125,47 +125,47 @@ table {
 }
 
 .prefCol {
-    width: 10px;
+  width: 10px;
 
-    .xfLabel {
-        display: none !important;
-    }
+  .xfLabel {
+    display: none !important;
+  }
 }
 
 .contentCol {
+  width: 100%;
+
+  > .xfGroup {
     width: 100%;
+    display: inline-block;
+    padding-bottom: 5px;
+    border-top: none !important;
+    position: relative;
+  }
 
-    > .xfGroup {
-        width: 100%;
-        display: inline-block;
-        padding-bottom: 5px;
-        border-top: none !important;
-        position: relative;
+  .xfControl{
+
+    .widgetContainer{
+      display:inline-block;
+      width: auto;
+      float: left;
     }
-
-    .xfControl{
-
-      .widgetContainer{
-        display:inline-block;
-        width: auto;
-        float: left;
-      }
-    }
+  }
 }
 
 .WorktypeSet .contentCol{
-   .xfControl{
+  .xfControl{
+    width: 100%;
+
+    .widgetContainer{
       width: 100%;
+      text-align: center;
+    }
 
-       .widgetContainer{
-         width: 100%;
-         text-align: center;
-       }
-
-       input[type='text']{
-        width: 90%;
-       }
-   }
+    input[type='text']{
+      width: 90%;
+    }
+  }
 
 }
 
@@ -173,25 +173,25 @@ table {
 
   .attrDialogGroup{
     .xfControl {
-        float: left;
+      float: left;
     }
     .xfLabel {
-        float: left;
-        margin: 2px 10px;
-        width: 100px;
-        text-align: right;
+      float: left;
+      margin: 2px 10px;
+      width: 100px;
+      text-align: right;
     }
 
     .xfSelect1, .xfInput{
       .xfValue{
         height: 22px;
-       }
+      }
     }
     .xfInput{
-        .xfValue {
-            width: 250px;
-            margin-bottom: 5px;
-        }
+      .xfValue {
+        width: 250px;
+        margin-bottom: 5px;
+      }
     }
 
     .deleteAttribute {
@@ -208,24 +208,24 @@ table {
 }
 
 .buttonBar {
-    .xfTrigger {
-        display: inline-block !important;
-        font-size: 0.85em;
-        margin: 5px;
-    }
+  .xfTrigger {
+    display: inline-block !important;
+    font-size: 0.85em;
+    margin: 5px;
+  }
 }
 .notesDisplayTrigger {
-    float: right;
+  float: right;
 }
 #notes {
-    width: 100%;
+  width: 100%;
 
-    .widgetContainer {
-        width: 100%;
-    }
-    textarea {
-        width: 100%;
-    }
+  .widgetContainer {
+    width: 100%;
+  }
+  textarea {
+    width: 100%;
+  }
 }
 
 .bf .globalAttrs .xfContainer{
@@ -264,17 +264,42 @@ table {
 
 }
 
-.toolbar > .btn-group {
-  background: none repeat scroll 0 0 #444444;
-  left: 0;
-  opacity: 0.5;
-  position: fixed;
-  top: 50%;
-  width: 50px;
-}
-.toolbar span {
-  display: block;
-  float: none;
+.toolbar{
+  display: none;
+  position: absolute;
+  top:3px;
+  right: 52px;
+
+  button{
+    background: transparent;
+    color:#333333;
+  }
+
+  span {
+    display: block;
+    float: left;
+  }
+
+  .t-plus{
+    button{
+      border: none;
+      font-size: 30px;
+      margin-top: -2px;
+    }
+  }
+
+  .t-save{
+    button{
+      background: url(../images/icons/database_add.png) no-repeat;
+      color: transparent;
+      border: none;
+    }
+  }
+
+  #t-close-value{
+    font-size: 30px;
+    margin-top: -2px;
+  }
 }
 
 .tundra .dijitTitlePaneContentInner{

@@ -189,17 +189,33 @@ table tr td .xfGroup:last-child {
 .bf form .hiddenControl {
   display: none;
 }
-.toolbar > .btn-group {
-  background: none repeat scroll 0 0 #444444;
-  left: 0;
-  opacity: 0.5;
-  position: fixed;
-  top: 50%;
-  width: 50px;
+.toolbar {
+  display: none;
+  position: absolute;
+  top: 3px;
+  right: 52px;
+}
+.toolbar button {
+  background: transparent;
+  color: #333333;
 }
 .toolbar span {
   display: block;
-  float: none;
+  float: left;
+}
+.toolbar .t-plus button {
+  border: none;
+  font-size: 30px;
+  margin-top: -2px;
+}
+.toolbar .t-save button {
+  background: url(../images/icons/database_add.png) no-repeat;
+  color: transparent;
+  border: none;
+}
+.toolbar #t-close-value {
+  font-size: 30px;
+  margin-top: -2px;
 }
 .tundra .dijitTitlePaneContentInner {
   padding: 0;

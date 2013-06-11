@@ -182,35 +182,27 @@
 <xsl:comment> ####################################### VISIBLE UI ####################################### </xsl:comment>
 
                     <div class="toolbar">
-<!--
-                        <xf:trigger class="t-save" model="m-child-model" title="Save">
-                            <xf:label>save</xf:label>
+                        <xf:trigger class="t-plus -toolbarbutton" model="m-child-model" id="{concat(generate-id(),'-add')}">
+                            <xsl:attribute name="title">Add <xsl:value-of select="$vraArtifact"/></xsl:attribute>
+                            <xf:label>+</xf:label>
+                            <xf:hint>add an entry</xf:hint>
+                            <xf:insert model="m-child-model">
+                                <xsl:attribute name="nodeset">instance()/vra:<xsl:value-of select="$vraArtifactNode"/>[1]</xsl:attribute>
+                                <xsl:attribute name="origin">instance('i-templates')/vra:<xsl:value-of select="$vraArtifactNode"/></xsl:attribute>
+                                <xsl:attribute name="position">before</xsl:attribute>
+                            </xf:insert>
                         </xf:trigger>
--->
-                        <!--<div class="btn-group">-->
-                            <xf:trigger class="t-plus -btn-small" model="m-child-model" id="{concat(generate-id(),'-add')}">
-                                <xsl:attribute name="title">Add <xsl:value-of select="$vraArtifact"/></xsl:attribute>
-                                <xf:label>+</xf:label>
-                                <xf:hint>add an entry</xf:hint>
-                                <xf:insert model="m-child-model">
-                                    <xsl:attribute name="nodeset">instance()/vra:<xsl:value-of select="$vraArtifactNode"/>[1]</xsl:attribute>
-                                    <xsl:attribute name="origin">instance('i-templates')/vra:<xsl:value-of select="$vraArtifactNode"/></xsl:attribute>
-                                    <xsl:attribute name="position">before</xsl:attribute>
-                                </xf:insert>
-                            </xf:trigger>
-                            <xf:trigger id="{concat(generate-id(),'-save')}" class="-btn-small">
-                                <xf:label>Save</xf:label>
-                                <xf:hint>save changes</xf:hint>
-                                <xf:send submission="s-update"/>
-                            </xf:trigger>
-                        <!--</div>-->
-
-
-                        <xf:trigger id="closeEditor" class="-close" >
+                        <xf:trigger id="{concat(generate-id(),'-save')}" class="t-save -toolbarbutton">
+                            <xf:label>Save</xf:label>
+                            <xf:hint>save changes to database</xf:hint>
+                            <xf:send submission="s-update"/>
+                        </xf:trigger>
+                        <xf:trigger id="t-close" class="-toolbarbutton">
                             <xf:label>&#215;</xf:label>
                             <xf:hint>close editor</xf:hint>
                             <!-- #### in case the instance was modified (isDirty) a confirmation will come up ##### -->
                             <xf:action if="bf:instanceOfModel('m-main','i-control-center')/isDirty='true'">
+
                                 <script type="text/javascript">
                                     closeForm();
                                 </script>
