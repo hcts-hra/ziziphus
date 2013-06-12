@@ -35,9 +35,6 @@ table tr td > .xfGroup {
 table tr td .xfGroup:last-child {
   border-bottom: none;
 }
-.bf .xfRepeatIndex {
-  background: #dddddd !important;
-}
 .vraAttributes .xfControl {
   float: left;
   border: thin solid #aaaaaa;
