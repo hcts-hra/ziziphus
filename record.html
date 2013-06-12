@@ -283,6 +283,15 @@
                 }
                 $('#close-value').click();
             }
+
+            function editOtherForm(id){
+                var doIt = confirm("There are unsaved changes - Really close?");
+                if(doIt == false){
+                    return;
+                }
+                fluxProcessor.dispatchEventType(id,'load-form');
+            }
+
             // triggers deleltion of selected repeat entry
             function removeEntry(){
                 var doIt = confirm("Really delete this entry?");

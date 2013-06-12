@@ -63,10 +63,8 @@
             <xsl:variable name="caseId" select="concat('c-',$id)"/>
             <xsl:variable name="tableId" select="concat('table-',$id)"/>
             <div class="t-edit">
-                <xf:trigger class="button-edit -toolbarbutton">
-                    <xf:label/>
-                    <xf:hint>edit</xf:hint>
-                    <xf:action if="instance('i-control-center')/currentform != '{$id}'">
+                <xf:group id="handler-{$id}" style="display: none;">
+                    <xf:action ev:event="load-form">
                         <xf:dispatch name="unload-subform" targetid="controlCenter"/>
                         <xf:setvalue model="m-main" ref="instance('i-control-center')/currentform" value="'{$id}'"/>
                         <xf:setvalue model="m-main" ref="instance('i-control-center')/uuid" value="'{$recordId}'"/>
@@ -93,6 +91,18 @@
                             $('.editHighlight').removeClass('editHighlight');
                             $('#'+ '<xsl:value-of select="$id"/>' + ' > .dijitTitlePaneTitle').addClass('editHighlight');</script>
                         <xf:toggle case="{$caseId}-edit"/>
+                    </xf:action>
+                </xf:group>
+                <xf:trigger class="button-edit -toolbarbutton">
+                    <xf:label/>
+                    <xf:hint>edit</xf:hint>
+                    <!-- prevent subform from loading twice (when already in edit mode) -->
+                    <xf:action if="instance('i-control-center')/currentform != '{$id}' and instance('i-control-center')/isDirty='false'">
+                        <xf:dispatch name="load-form" targetid="handler-{$id}"/>
+                    </xf:action>
+                    <!-- this fires when one subform has been changed and another is requested for editing -->
+                    <xf:action if="instance('i-control-center')/currentform != '{$id}' and instance('i-control-center')/isDirty='true'">
+                        <script type="text/javascript">editOtherForm('handler-<xsl:value-of select="$id"/>');</script>
                     </xf:action>
                 </xf:trigger>
                 <span>
