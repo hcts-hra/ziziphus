@@ -16,23 +16,6 @@
         <link rel="stylesheet" type="text/css" href="resources/script/mingos-uwindow/themes/ziziphus/style.css"/>
         <link rel="stylesheet" type="text/css" href="resources/script/layout-default-latest.css"/>
         <!--<link rel="stylesheet" type="text/css" href="resources/css/ui-lightness/jquery-ui-1.10.2.custom.min.css"/>-->
-        <style type="text/css">
-            ul.inline &gt; li, ol.inline &gt; li {
-                display: inline-block;
-                padding-left: 0px;
-                padding-right: 0px;
-            }
-            .xfLabel {
-                 display: inline-block;                
-                padding-top: 0;
-                vertical-align: baseline;
-                
-            }
-            .xfOutput .xfValue {
-                display: inline-block;
-                padding-top: 1px;
-            }
-        </style>
     </head>
     <body class="main:createVraRecord">
         <div id="overlay" style="position:absolute;z-index:9999;width:100%;height:100%;background:#444444;">
@@ -95,6 +78,7 @@
                     <xf:load show="none" targetid="{concat(instance('i-control-center')/currentform,'_MountPoint')}"/>
                     <!-- ##### reset isDirty flag ##### -->
                     <xf:setvalue ref="instance('i-control-center')/isDirty" value="'false'"/>
+                    <xf:setvalue ref="instance('i-control-center')/currentform"/>
                 </xf:action>
                 <xf:action ev:event="clear-currentform" model="m-main">
                     <xf:setvalue ref="instance('i-control-center')/currentform" value="''"/>
@@ -115,35 +99,28 @@
             <div id="headerTitle" style="float:left;display:block;">
                 <ul class="inline" style="list-style:none outside none;margin-left:0;padding:0">
                     <li>
-                        <button type="button" id="heidicon">Heidicon Data</button>
-<!--            <button type="button" id="{$recordType}-versions-button" subject="{$recordId}"-->
-<!--                title="Versions history for {$recordType} {$recordId}">Work history</button>-->
-<!--            <button type="button" id="{$recordType}-versions-button" subject="{$recordId}"-->
-<!--                title="Versions history for {$recordType} {$recordId}">Image history</button>-->
+                        <div class="btn-group">
+                            <button type="button" class="btn" id="heidicon">Heidicon Data</button>
+                        </div>
                     </li>
                     <li>
-                        <button type="button" onclick="leftCenter();" title="show Workrecord+Picture">W | P</button>
-                    </li>
-                    <li>
-                        <button type="button" onclick="allCols();" title="show Workrecord, Picture + Imagerecord">W | P | I</button>
-                    </li>
-                    <li>
-                        <button type="button" onclick="centerRight();" title="show Picture + Imagerecord">P | I</button>
-                    </li>
-                    <li>
-                        <button type="button" onclick="toggleSetVisibility();" title="show all Sets">all Sets</button>
+                        <div class="btn-group">
+                            <button id="workpicture" class="btn icon" type="button" onclick="leftCenter();" title="show Workrecord+Picture">W | P</button>
+                            <button id="workpictureimage" class="btn icon" type="button" onclick="allCols();" title="show Workrecord, Picture + Imagerecord">W | P | I</button>
+                            <button id="pictureimage" class="btn icon" type="button" onclick="centerRight();" title="show Picture + Imagerecord">P | I</button>
+                        </div>
                     </li>
                 </ul>
             </div>
             <div class="headerMenu" style="position:absolute;display:block;right:40px;">
                 <ul class="inline" style="list-style:none outside none;margin-left:0;padding:0">
                     <li>
-                        <xf:output ref="instance('i-user')/user/@name">
+                        <xf:output id="user" ref="instance('i-user')/user/@name">
                             <xf:label>User:</xf:label>
                         </xf:output>
                     </li>
                     <li>
-                        <xf:trigger>
+                        <xf:trigger class="btn-group -btn">
                             <xf:label>Logout</xf:label>
                             <xf:load resource="index.xql?logout=true" show="replace"/>
                         </xf:trigger>
@@ -170,11 +147,10 @@
             ]);
         </script>
         <script type="text/javascript" src="resources/script/jquery-1.9.1.js"/>
-        <script type="text/javascript" src="resources/script/jquery-ui-1-1.10.0.custom/js/jquery-ui-1.10.0.custom.min.js"/>
-        <!--<script type="text/javascript" src="resources/script/jquery-ui-1.10.2.custom.min.js"/>-->
+        <!--<script type="text/javascript" src="resources/script/jquery-ui-1-1.10.0.custom/js/jquery-ui-1.10.0.custom.min.js"/>-->
+        <script type="text/javascript" src="resources/script/jquery-ui-1.10.2.custom.min.js"/>
         <script type="text/javascript" src="resources/script/mingos-uwindow/jWindow.js"/>
         <script type="text/javascript" src="resources/script/jquery.layout-latest.min.js"/>
-        <script type="text/javascript" src="resources/script/jquery.scrollto.js"/>
         <script type="text/javascript">
             $(document).ready(function () {
                 ziziphusLayout = $('body').layout({
@@ -182,9 +158,12 @@
                         applyDefaultStyles:true
                     },
                     north:{
+                        applyDefaultStyles:false,
                         resizable:false,
                         closable:false,
-                        spacing_open:0
+                        spacing_open:0,
+                        size:40,
+                        minSize:0
                     },
                     west:{
                         resizable:true,
@@ -205,6 +184,7 @@
                         spacing_closed:6
                     }
                 });
+                leftCenter();
             });
         </script>
         <script type="text/javascript">
@@ -286,8 +266,8 @@
 
             function toggleDetail(n, m) {
                 console.debug("this: n:", n, " m:", m);
-                $(n).toggleClass("icon-zoom-out");
-                $(n).toggleClass("icon-zoom-in");
+                $(n).toggleClass("button-zoom-out");
+                $(n).toggleClass("button-zoom-in");
                 $("#" + m).toggleClass("simple");
                 $("#" + m).toggleClass("full");
             }
@@ -303,6 +283,15 @@
                 }
                 $('#close-value').click();
             }
+
+            function editOtherForm(id){
+                var doIt = confirm("There are unsaved changes - Really close?");
+                if(doIt == false){
+                    return;
+                }
+                fluxProcessor.dispatchEventType(id,'load-form');
+            }
+
             // triggers deleltion of selected repeat entry
             function removeEntry(){
                 var doIt = confirm("Really delete this entry?");
@@ -327,8 +316,19 @@
                 ziziphusLayout.open('east');
                 ziziphusLayout.sizePane("east","50%");
             }
-            function toggleSetVisibility(){
-                $("body").toggleClass("forceVisible");
+            function toggleSetVisibility(side){
+                $("#"+side).toggleClass("forceVisible");
+                $('#'+ side + 'Separator')[0].scrollIntoView();
+                var inner = $(".separator").html();
+                if(inner == "more VRA Sets..."){
+                    $(".separator").html("less VRA Sets...");
+                }else {
+                    $(".separator").html("more VRA Sets...");
+                }
+            }
+            function scrollToPanel(id){
+                $('#' + id + ' .dijitTitlePaneTitle').effect("highlight", {color:'lightsteelblue'}, 1500);
+                $('#' + id)[0].scrollIntoView();
             }
         </script>
     </body>

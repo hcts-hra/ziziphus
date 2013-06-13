@@ -12,6 +12,34 @@ html, body {
     margin: 0;
     font-size: 100%;
 }
+ul.inline{
+  margin: 4px !important;
+}
+ul.inline > li, ol.inline > li {
+  display: inline-block;
+  padding-left: 0px;
+  padding-right: 0px;
+  float: left;
+}
+.xfLabel {
+  display: inline-block;
+  padding-top: 0;
+  vertical-align: baseline;
+
+}
+.xfOutput .xfValue {
+  display: inline-block;
+  padding-top: 1px;
+}
+
+.xfHint{
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.bf .sidePanel .editHighlight{
+  background-color: steelblue;
+}
 
 /*
 .tundra .dijitTitlePaneContentOuter{
@@ -19,6 +47,24 @@ html, body {
     max-height: 550px;
 }
 */
+.inline .icon{
+  color:transparent;
+}
+#workpicture{
+  background: url(../images/icons/work-picture.png) no-repeat center center transparent;
+}
+#workpictureimage{
+  background: url(../images/icons/work-picture-image.png) no-repeat center center transparent;
+
+}
+#pictureimage{
+  background: url(../images/icons/picture-imagerec.png) no-repeat center center transparent;
+}
+
+#user{
+  padding-top: 5px;
+  margin-right: 3px;
+}
 .bf{
     font-size:0.9em;
 
@@ -28,6 +74,7 @@ html, body {
     .xfRepeatIndex{
         border-top:3px solid #cccccc;
         border-bottom: 3px solid #cccccc;
+        background: #dddddd !important;
     }
 
     .dialogControls{
@@ -43,7 +90,7 @@ html, body {
 
     .columntitle {
         padding: 8px;
-        background:#555555;
+        background:#777777;
         color:white;
         text-align: center;
         font-size: 1.2em;
@@ -60,16 +107,12 @@ html, body {
         position:relative;
     }
 
-    .t-edit{
-        display: none;
-        position:absolute;
-        top:3px;
-        right:3px;
-        text-align: right;
-    }
-
     .dijitTitlePane:hover .t-edit{
         display: inline-block;
+    }
+
+    .dijitTitlePane:hover .toolbar{
+      display: inline-block;
     }
     #sectionDialog{
         position: relative;
@@ -97,17 +140,19 @@ html, body {
         }
     }
     //mixin used below
-    .icon{
+/*
+    .button{
         border: thin solid #999999 !important;
         height: 20px;
         width: 20px;
     }
-    .icon-edit {
+    .button-edit {
         background-position: -94px -70px;
         position: absolute;
         top: -14px;
         right: 0;
     }
+*/
 
     .icon-remove {
         background-position: -310px 2px;
@@ -227,18 +272,6 @@ html, body {
         display: none;
     }
 
-    #closeEditor{
-        position: absolute;
-        right: 14px;
-        top:24px;
-    }
-    .close{
-        border:none;
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        font-size: 2em;
-    }
 }
 .tundra .dijitTitlePaneTitle{
     background:#999999;
@@ -287,3 +320,56 @@ html, body {
   color: white;
   opacity: 0.5;
 }
+.btn-small{
+  font-size:9px;
+}
+
+.historyButton {
+  background: url("../images/icons/history.png") no-repeat scroll 0 0 transparent;
+  border: medium none;
+  float: right;
+  height: 24px;
+  padding: 2px;
+  width: 24px;
+  color:transparent !important;
+}
+
+.toolbarbutton{
+  width: 24px;
+  height: 24px;
+  border:none;
+  padding: 2px;
+  border-radius: 3px;
+  opacity: 0.5;
+}
+.toolbarbutton:hover{
+  opacity: 1.0;
+}
+
+.t-edit{
+  display: none;
+  position:absolute;
+  top:5px;
+  right:4px;
+  text-align: right;
+  z-index: 300;
+
+  .button-edit button{
+    background: url(../images/icons/keyboard_down.png) no-repeat;
+  }
+
+  .button-zoom-in {
+    background: url("../images/icons/zoom_in.png") no-repeat scroll 0 0 transparent;
+  }
+  .button-zoom-out {
+    background: url("../images/icons/zoom_out.png") no-repeat scroll 0 0 transparent;
+  }
+}
+
+#save-button button{
+  width: 24px;
+  height: 24px;
+  background: url(../images/icons/database_add.png) no-repeat;
+}
+
+

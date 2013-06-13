@@ -277,6 +277,13 @@
             <param name="subformName" value="RelationSet"/>
         </antcall>
     </target>
+    <target name="generate-TitleSet-form" depends="prepare" description="generate the StateEditionSet form">
+        <antcall target="generate-subform">
+            <param name="subformName" value="TitleSet"/>
+            <param name="debug" value="true"/>
+        </antcall>
+    </target>
+
     <target name="generate-StateEditionSet-form" depends="prepare" description="generate the StateEditionSet form">
         <antcall target="generate-subform">
             <param name="subformName" value="StateEditionSet"/>

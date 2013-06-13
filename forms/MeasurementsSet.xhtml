@@ -98,22 +98,20 @@
          <!-- ####################################### VISIBLE UI ####################################### -->
          <!-- ####################################### VISIBLE UI ####################################### -->
          <div class="toolbar">
-            <div class="btn-group">
-               <xf:trigger class="t-plus -btn-small" model="m-child-model" id="d3e1-add"
-                           title="Add Measurements">
-                  <xf:label>+</xf:label>
-                  <xf:hint>add an entry</xf:hint>
-                  <xf:insert model="m-child-model" nodeset="instance()/vra:measurements[1]"
-                             origin="instance('i-templates')/vra:measurements"
-                             position="before"></xf:insert>
-               </xf:trigger>
-               <xf:trigger id="d3e1-save" class="-btn-small">
-                  <xf:label>Save changes</xf:label>
-                  <xf:hint>save changes</xf:hint>
-                  <xf:send submission="s-update"></xf:send>
-               </xf:trigger>
-            </div>
-            <xf:trigger id="closeEditor" class="-close">
+            <xf:trigger class="t-plus -toolbarbutton" model="m-child-model" id="d3e1-add"
+                        title="Add Measurements">
+               <xf:label>+</xf:label>
+               <xf:hint>add an entry</xf:hint>
+               <xf:insert model="m-child-model" nodeset="instance()/vra:measurements[1]"
+                          origin="instance('i-templates')/vra:measurements"
+                          position="before"></xf:insert>
+            </xf:trigger>
+            <xf:trigger id="d3e1-save" class="t-save -toolbarbutton">
+               <xf:label>Save</xf:label>
+               <xf:hint>save changes to database</xf:hint>
+               <xf:send submission="s-update"></xf:send>
+            </xf:trigger>
+            <xf:trigger id="t-close" class="-toolbarbutton">
                <xf:label>×</xf:label>
                <xf:hint>close editor</xf:hint>
                <xf:action if="bf:instanceOfModel('m-main','i-control-center')/isDirty='true'"><script type="text/javascript">
@@ -152,118 +150,150 @@
                           if="not('.'=instance('i-util')/currentElement)"
                           origin="instance('i-measurementsSet')/vra:measurements[index('r-vraMeasurements')]/*[local-name()=instance('i-util')/currentElement]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:insert>
             </xf:action>
+            <xf:trigger id="doDelete" class="hiddenControl">
+               <xf:label>remove</xf:label>
+               <xf:action>
+                  <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/isDirty" value="'true'"></xf:setvalue>
+                  <xf:delete nodeset="instance('i-measurementsSet')/vra:measurements[index('r-vraMeasurements')]"></xf:delete>
+               </xf:action>
+            </xf:trigger>
             <table>
                <tbody model="m-child-model" id="r-vraMeasurements"
                       xf:repeat-nodeset="vra:measurements">
-                  <xf:group appearance="minimal">
-                     <xf:select1 id="b-d2e606" ref="vra:measurements/@type">
-                        <xf:label>Type</xf:label>
-                        <xf:item>
-                           <xf:label>Area</xf:label>
-                           <xf:value>area</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>Base</xf:label>
-                           <xf:value>base</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>BitDepth</xf:label>
-                           <xf:value>bitDepth</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>Circumfrence</xf:label>
-                           <xf:value>circumfrence</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>Count</xf:label>
-                           <xf:value>count</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>Depth</xf:label>
-                           <xf:value>depth</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>Diameter</xf:label>
-                           <xf:value>diameter</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>DistanceBetween</xf:label>
-                           <xf:value>distanceBetween</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>Duration</xf:label>
-                           <xf:value>duration</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>FileSize</xf:label>
-                           <xf:value>fileSize</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>Height</xf:label>
-                           <xf:value>height</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>Length</xf:label>
-                           <xf:value>length</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>Resolution</xf:label>
-                           <xf:value>resolution</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>RunningTime</xf:label>
-                           <xf:value>runningTime</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>Scale</xf:label>
-                           <xf:value>scale</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>Size</xf:label>
-                           <xf:value>size</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>Target</xf:label>
-                           <xf:value>target</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>Weight</xf:label>
-                           <xf:value>weight</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>Width</xf:label>
-                           <xf:value>width</xf:value>
-                        </xf:item>
-                        <xf:item>
-                           <xf:label>Other</xf:label>
-                           <xf:value>other</xf:value>
-                        </xf:item>
-                     </xf:select1>
-                     <xf:input id="b-d2e599" ref="vra:measurements">
-                        <xf:label>Measurements</xf:label>
-                     </xf:input>
-                     <xf:input id="b-d2e607" ref="vra:measurements/@unit">
-                        <xf:label>Unit</xf:label>
-                     </xf:input>
-                     <xf:group class="vraAttributes" appearance="minimal" ref="vra:measurements">
-                        <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
-                     </xf:group>
-                     <xf:trigger class="vraAttributeTrigger -btn">
-                        <xf:label>A</xf:label>
-                        <xf:hint>Attributes...</xf:hint>
-                        <xf:action>
-                           <xf:setvalue ref="instance('i-util')/currentElement" value="'measurements'"></xf:setvalue>
-                           <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
-                        </xf:action>
-                        <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
-                     </xf:trigger>
-                  </xf:group>
+                  <tr>
+                     <td class="prefCol">
+                        <xf:input ref="@pref" id="d3e77-pref">
+                           <xf:label>pref</xf:label>
+                           <xf:hint>preferred</xf:hint>
+                           <xf:action ev:event="xforms-value-changed" if=".=('true',1)"
+                                      while="(../preceding-sibling::*|../following-sibling::*)/@pref=('true',1)">
+                              <xf:setvalue ref="(../preceding-sibling::*|../following-sibling::*)[@pref=('true',1)][1]/@pref"
+                                           value="'false'"></xf:setvalue>
+                           </xf:action>
+                        </xf:input>
+                     </td>
+                     <td class="contentCol">
+                        <xf:group appearance="minimal">
+                           <xf:select1 id="b-d2e606" ref="@type">
+                              <xf:label>Type</xf:label>
+                              <xf:hint></xf:hint>
+                              <xf:item>
+                                 <xf:label>Area</xf:label>
+                                 <xf:value>area</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Base</xf:label>
+                                 <xf:value>base</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>BitDepth</xf:label>
+                                 <xf:value>bitDepth</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Circumfrence</xf:label>
+                                 <xf:value>circumfrence</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Count</xf:label>
+                                 <xf:value>count</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Depth</xf:label>
+                                 <xf:value>depth</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Diameter</xf:label>
+                                 <xf:value>diameter</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>DistanceBetween</xf:label>
+                                 <xf:value>distanceBetween</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Duration</xf:label>
+                                 <xf:value>duration</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>FileSize</xf:label>
+                                 <xf:value>fileSize</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Height</xf:label>
+                                 <xf:value>height</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Length</xf:label>
+                                 <xf:value>length</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Resolution</xf:label>
+                                 <xf:value>resolution</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>RunningTime</xf:label>
+                                 <xf:value>runningTime</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Scale</xf:label>
+                                 <xf:value>scale</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Size</xf:label>
+                                 <xf:value>size</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Target</xf:label>
+                                 <xf:value>target</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Weight</xf:label>
+                                 <xf:value>weight</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Width</xf:label>
+                                 <xf:value>width</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Other</xf:label>
+                                 <xf:value>other</xf:value>
+                              </xf:item>
+                           </xf:select1>
+                           <xf:input id="b-d2e599" ref=".">
+                              <xf:label>Measurements</xf:label>
+                              <xf:hint>Measurements</xf:hint>
+                           </xf:input>
+                           <xf:input id="b-d2e607" ref="@unit">
+                              <xf:label>Unit</xf:label>
+                              <xf:hint></xf:hint>
+                           </xf:input>
+                           <xf:group class="vraAttributes" appearance="minimal" ref=".">
+                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
+                           </xf:group>
+                           <xf:trigger class="vraAttributeTrigger">
+                              <xf:label>A</xf:label>
+                              <xf:hint>Attributes...</xf:hint>
+                              <xf:action>
+                                 <xf:setvalue ref="instance('i-util')/currentElement" value="'measurements'"></xf:setvalue>
+                                 <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
+                              </xf:action>
+                              <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
+                           </xf:trigger>
+                        </xf:group>
+                     </td>
+                     <td class="triggerCol">
+                        <xf:trigger class="-btn -btn-danger">
+                           <xf:label>X</xf:label>
+                           <xf:hint>delete this entry</xf:hint><script type="text/javascript">
+                        removeEntry();
+                    </script></xf:trigger>
+                     </td>
+                  </tr>
                   <tr>
                      <td colspan="3" class="globalAttrs">
                         <xf:group class="vraAttributes" appearance="minimal" ref=".">
                            <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
-                           <xf:trigger class="vraAttributeTrigger -btn">
-                              <xf:label>A</xf:label>
+                           <xf:trigger class="vraAttributeTrigger">
+                              <xf:label></xf:label>
                               <xf:hint>Attributes...</xf:hint>
                               <xf:action>
                                  <xf:setvalue ref="instance('i-util')/currentElement">.</xf:setvalue>
@@ -304,7 +334,7 @@
                   <xf:input ref="@dataDate" id="first">
                      <xf:label>dataDate</xf:label>
                   </xf:input>
-                  <xf:trigger class="deleteAttribute input-append -btn">
+                  <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@dataDate"></xf:setvalue>
                   </xf:trigger>
@@ -313,7 +343,7 @@
                   <xf:input ref="@extent" id="d3e1-extent">
                      <xf:label>extent</xf:label>
                   </xf:input>
-                  <xf:trigger class="deleteAttribute input-append -btn">
+                  <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@extent"></xf:setvalue>
                   </xf:trigger>
@@ -322,7 +352,7 @@
                   <xf:input ref="@href" id="d3e1-href">
                      <xf:label>href</xf:label>
                   </xf:input>
-                  <xf:trigger class="deleteAttribute input-append -btn">
+                  <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@href"></xf:setvalue>
                   </xf:trigger>
@@ -331,7 +361,7 @@
                   <xf:input ref="@refid" id="d3e1-refid">
                      <xf:label>refid</xf:label>
                   </xf:input>
-                  <xf:trigger class="deleteAttribute input-append -btn">
+                  <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@refid"></xf:setvalue>
                   </xf:trigger>
@@ -340,7 +370,7 @@
                   <xf:input ref="@rules" id="d3e1-rules">
                      <xf:label>rules</xf:label>
                   </xf:input>
-                  <xf:trigger class="deleteAttribute input-append -btn">
+                  <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@rules"></xf:setvalue>
                   </xf:trigger>
@@ -349,7 +379,7 @@
                   <xf:input ref="@source" id="d3e1-source">
                      <xf:label>source</xf:label>
                   </xf:input>
-                  <xf:trigger class="deleteAttribute input-append -btn">
+                  <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@source"></xf:setvalue>
                   </xf:trigger>
@@ -374,7 +404,7 @@
                         <xf:value>(AKL)</xf:value>
                      </xf:item>
                   </xf:select1>
-                  <xf:trigger class="deleteAttribute input-append -btn">
+                  <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@vocab"></xf:setvalue>
                   </xf:trigger>
@@ -383,7 +413,7 @@
                   <xf:input ref="@lang" id="d3e1-lang">
                      <xf:label>Language</xf:label>
                   </xf:input>
-                  <xf:trigger class="deleteAttribute input-append -btn">
+                  <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@lang"></xf:setvalue>
                   </xf:trigger>
@@ -392,7 +422,7 @@
                   <xf:input ref="@transliteration" id="d3e1-transliteration">
                      <xf:label>Transliteration</xf:label>
                   </xf:input>
-                  <xf:trigger class="deleteAttribute input-append -btn">
+                  <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@transliteration"></xf:setvalue>
                   </xf:trigger>
@@ -401,7 +431,7 @@
                   <xf:input ref="@script" id="d3e1-script">
                      <xf:label>Script</xf:label>
                   </xf:input>
-                  <xf:trigger class="deleteAttribute input-append -btn">
+                  <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@script"></xf:setvalue>
                   </xf:trigger>
