@@ -63,7 +63,7 @@ return
           </thead>
           <tbody>
           {
-          for $record  at $count in subsequence(collection($workdir), $start, $num )//vra:vra/vra:work
+          for $record  at $count in subsequence(collection($workdir)//vra:vra/vra:work, $start, $num )
             let $uuid := string($record/@id)
             let $agent := string($record/vra:agentSet/vra:agent[1]/vra:name)
             let $vraWorkRecord  := collection($workdir)/vra:vra/vra:work[@id = $uuid]

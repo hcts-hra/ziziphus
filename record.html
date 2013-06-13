@@ -64,6 +64,12 @@
                     </xf:action>
                 </xf:submission>
 
+                <xf:submission id="s-delete" method="post" replace="none"
+                               resource="modules/deleteRecord.xql?id={instance('i-control-center')/uuid}&amp;workdir={instance('i-control-center')/workdir}">
+                    <xf:load ev:event="xforms-submit-done" show="replace">
+                        <xf:resource value="bf:appContext('http-headers/referer')"/>
+                    </xf:load>
+                </xf:submission>
                 <xf:instance xmlns="" id="i-user">
                     <data/>
                 </xf:instance>
@@ -143,6 +149,12 @@
                     </li>
                     <li>
                         <button type="button" onclick="centerRight();" title="show Picture + Imagerecord">P | I</button>
+                    </li>
+                    <li>
+                        <xf:trigger>
+                            <xf:label>Delete</xf:label>
+                            <xf:send submission="s-delete"/>
+                        </xf:trigger>
                     </li>
 <!--
                     <li>

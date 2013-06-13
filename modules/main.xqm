@@ -45,19 +45,26 @@ declare %templates:wrap function main:displayWorkRecord($node as node()*, $model
     let $uuid := $model("uuid")
     (: templates:process($node/node(),$resultMap) :)
     return
-        main:transformVraRecord($vraWorkRecord, $uuid, 'work')
-
+        if (exists($vraWorkRecord))
+        then (
+            main:transformVraRecord($vraWorkRecord, $uuid, 'work')
+            ) else (
+            <div/>
+        )
 };
 
 declare %templates:wrap function main:displayImageArea($node as node()*, $model as map(*)) {
     <div class="imagePanel">
         {
-            let $vraWorkRecord := $model("workRecord")            
-            for $image in $vraWorkRecord/vra:relationSet
-            let $imageId := substring($image/vra:relation/@relids,3)
+            let $vraWorkRecord := $model("workRecord")
             return
-                <img src="http://kjc-ws2.kjc.uni-heidelberg.de:83/images/service/download_uuid/priya_paul/{$imageId}.jpg" alt="" class="relatedImage"/>
-            
+                if (exists($vraWorkRecord))
+                then (
+                    for $image in $vraWorkRecord/vra:relationSet
+                    let $imageId := substring($image/vra:relation/@relids,3)
+                    return
+                        <img src="http://kjc-ws2.kjc.uni-heidelberg.de:83/images/service/download_uuid/priya_paul/{$imageId}.jpg" alt="" class="relatedImage"/>
+                    ) else ()
         }
     </div>
 };
@@ -66,10 +73,13 @@ declare %templates:wrap function main:displayImageRecord($node as node()*, $mode
     let $vraImageRecord := $model("vraImageRecord")
     let $imageRecordId := $model("imageRecordId")
     return
+    if (exists($vraImageRecord))
+    then (
         main:transformVraRecord($vraImageRecord, $imageRecordId, 'image')
+    ) else (
+        <div/>
+    )
 };
-
-
 
 
 declare %private function main:transformVraRecord($root as node(), $id as xs:string, $vraRecordType as xs:string) {

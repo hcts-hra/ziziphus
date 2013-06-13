@@ -45,7 +45,7 @@ return
             </tr>
             <tr>
                 <td>Workrecord id</td>
-                <td><a href="{$context}/apps/ziziphus/record.html?id={$workid}">{$workid}</a></td>
+                <td><a href="{$context}/apps/ziziphus/record.html?id={$workid}&amp;workdir={$workdir}">{$workid}</a></td>
             </tr>
             <tr>
                 <td>Title</td>
