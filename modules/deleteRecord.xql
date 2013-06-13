@@ -12,7 +12,8 @@ let $imagerecordIds := data($workrecord//vra:relationSet//vra:relation[@type = "
 return
     for $imagerecordId in $imagerecordIds
     let $imagerecord := util:document-name(collection($imageDir)//vra:vra/*[./@id=$imagerecordId])
-    return 
+    let $log := util:log("ERROR", "imagerecordId: " || $imagerecordId || " imageDir: " || $imageDir)
+    return
         xmldb:remove($imageDir, $imagerecord)
 };
 
@@ -21,13 +22,16 @@ let $id := request:get-parameter('id','')
 let $workdir :=  request:get-parameter('workdir','')
 let $workdir := if($workdir eq "") then ($app:record-dir) else ($workdir)
 let $workrecord := collection($workdir)//vra:vra/*[./@id=$id]
+let $log := util:log("ERROR", "id: " || $id || " workdir: " || $workdir)
 return
     if(exists($workrecord))
     then (
         let $imageRecords := local:deleteImageRecords($id, $workdir, $workrecord)
         return
             xmldb:remove($workdir, util:document-name($workrecord))
-    ) else ()
+    ) else (
+        response:set-status-code( 500 )
+    )
 
 
 
