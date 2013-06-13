@@ -26,12 +26,19 @@ declare variable $rev2 as xs:string :=  request:get-parameter("rev2", "last");
  :)
 declare variable $showMissingElements := false();
 
+(: Format of result.
+ : Available values:
+ : * html (default) - use XSLT to convert result to HTML,
+ : * xml - return raw XML result (with diff annotations).
+ :)
+declare variable $format := request:get-parameter("format", "html");
+
 (: Change here location of collections to adjust to your installation layout. :)
 declare variable $ziziphusRoot as xs:string := "/db/apps/ziziphus";
 declare variable $ziziphusDataRoot as xs:string := "/db/apps/ziziphusData";
 declare variable $urlRoot as xs:string := "/exist/apps/ziziphusData";
 declare variable $filesPath as xs:string := "/priyapaul/files";
-declare variable $xsl as xs:string := $ziziphusRoot || "/resources/xsl/versions.xsl";
+declare variable $xsl as xs:string := $ziziphusRoot || "/view-diff/root.xsl";
 
 declare variable $instance-path as xs:string := '../resources/xsd/vra-instance.xml';
 
@@ -122,6 +129,10 @@ declare function local:xmlResult($instance-path as xs:string, $resource-path as 
 
 (: main :)
 let $result := local:xmlResult($instance-path, $resource, $rev1, $rev2)
-(:let $xsltParameters := <parameters><param name="a" value="{$a}"/></parameters>:)
-return $result
-(:  return transform:transform($result, doc($xsl), $xsltParameters) :)
+return
+switch ($format)
+    case "xml" return $result
+    case "html" return
+        let $xsltParameters := <parameters><param name="a" value="'a'"/></parameters>
+        return transform:transform($result, doc($xsl), $xsltParameters) 
+   default return ()
