@@ -52,8 +52,6 @@ declare function local:obtain-document($resource-path as xs:string, $rev as xs:s
 };
 
 declare function local:insertDiffAttributes($doc1-node as node()?, $doc2-node as node()?) as attribute()* {
-    attribute diffs:v1 {boolean($doc1-node)},
-    attribute diffs:v2 {boolean($doc2-node)},
     attribute diffs:element-change {
         let $n1 as xs:integer := count($doc1-node)
         let $n2 as xs:integer := count($doc2-node)
@@ -86,6 +84,7 @@ declare function local:text-diff($doc1-nodes as node()*, $doc2-nodes as node()*)
 declare function local:element-diff($template-node as node(), $doc1-node as node()?, $doc2-node as node()?) as node() {
     element {node-name($template-node)} {
         local:insertDiffAttributes($doc1-node, $doc2-node),
+        $doc2-node/@*,
     let $subelements := $template-node/*
     return
         if(count($subelements) = 0) (: leaf; may contain text data :)
@@ -133,6 +132,7 @@ return
 switch ($format)
     case "xml" return $result
     case "html" return
+        (:FIXME Just to remember how to pass a param ti XSLT. :)
         let $xsltParameters := <parameters><param name="a" value="'a'"/></parameters>
         return transform:transform($result, doc($xsl), $xsltParameters) 
    default return ()
