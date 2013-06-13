@@ -15,7 +15,7 @@
                     <textNode detail="false"/>
                 </group>
                 <!-- role möglichst noch näher an den namen -->
-                <node idref="b-d2e132" name="vra:role" detail="true"/>
+                <node idref="b-d2e132" name="vra:role" detail="true" control="select1" code-table="role"/>
                 <node idref="b-d2e63" name="vra:attribution" detail="true"/>
                 <node idref="b-d2e79" name="vra:culture" detail="true"/>
                 <group idref="b-d2e95" name="vra:dates">

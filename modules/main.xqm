@@ -1,25 +1,28 @@
+xquery version "3.0";
 (:~
  : Templating functions for the main page of Ziziphus
  :)
 module namespace main="http://exist-db.org/xquery/apps/ziziphus";
 
-import module namespace config="http://exist-db.org/xquery/apps/config" at "config.xqm";
-
-import module namespace templates="http://exist-db.org/xquery/templates";
 declare namespace ev="http://www.w3.org/2001/xml-events";
 declare namespace vra="http://www.vraweb.org/vracore4.htm";
 declare namespace bf="http://betterform.sourceforge.net/xforms";
 declare namespace bfc="http://betterform.sourceforge.net/xforms/controls";
 declare namespace xf="http://www.w3.org/2002/xforms"; 
 
+import module namespace config="http://exist-db.org/xquery/apps/config" at "config.xqm";
+import module namespace app="http://www.betterform.de/projects/ziziphus/xquery/app" at "app.xqm";
+import module namespace templates="http://exist-db.org/xquery/templates";
 
-declare %templates:wrap function main:createVraRecord($node as node()*, $model as map(*), $id as xs:string?) {
+declare %templates:wrap %templates:default("workdir", "") function main:createVraRecord($node as node()*, $model as map(*), $id as xs:string?, $workdir as xs:string) {
     let $uuid := $id
-    let $vraWorkRecord  := collection('/db/apps/ziziphusData/priyapaul/files/work')/vra:vra/vra:work[@id = $uuid]
+    let $workRecordDir as xs:string := if($workdir eq "") then ($app:record-dir) else ($workdir)
+    let $imageDir as xs:string := $workRecordDir || $app:image-record-dir-name
+    let $vraWorkRecord  := collection($workRecordDir)/vra:vra/vra:work[@id = $uuid]
     let $imageRecordId  := if(exists($vraWorkRecord/vra:relationSet/vra:relation/@pref[.='true']))
                                 then $vraWorkRecord/vra:relationSet/vra:relation[@pref='true']/@relids
                                 else $vraWorkRecord/vra:relationSet/vra:relation[1]/@relids
-     let $vraImageRecord := collection('/db/apps/ziziphusData/priyapaul/files/images')/vra:vra/vra:image[@id = $imageRecordId]
+     let $vraImageRecord := collection($imageDir)/vra:vra/vra:image[@id = $imageRecordId]
      let $resultMap := map:new(($model,map{
                             "workRecord":= $vraWorkRecord,
                             "uuid":= $uuid,
@@ -42,41 +45,50 @@ declare %templates:wrap function main:displayWorkRecord($node as node()*, $model
     let $uuid := $model("uuid")
     (: templates:process($node/node(),$resultMap) :)
     return
-        main:transformVraRecord($vraWorkRecord, $uuid, 'work')
-
+        if (exists($vraWorkRecord))
+        then (
+            main:transformVraRecord($vraWorkRecord, $uuid, 'work')
+            ) else (
+            <div/>
+        )
 };
 
 declare %templates:wrap function main:displayImageArea($node as node()*, $model as map(*)) {
     <div class="imagePanel">
         {
-            let $vraWorkRecord := $model("workRecord")            
-            for $image in $vraWorkRecord/vra:relationSet
-            let $imageId := substring($image/vra:relation/@relids,3)
+            let $vraWorkRecord := $model("workRecord")
             return
-                <img src="http://kjc-ws2.kjc.uni-heidelberg.de:83/images/service/download_uuid/priya_paul/{$imageId}.jpg" alt="" class="relatedImage"/>
-            
+                if (exists($vraWorkRecord))
+                then (
+                    for $image in $vraWorkRecord/vra:relationSet
+                    let $imageId := substring($image/vra:relation/@relids,3)
+                    return
+                        <img src="http://kjc-ws2.kjc.uni-heidelberg.de:83/images/service/download_uuid/priya_paul/{$imageId}.jpg" alt="" class="relatedImage"/>
+                    ) else ()
         }
     </div>
 };
 
-declare 
-%templates:wrap 
-function main:displayImageRecord($node as node()*, $model as map(*)) {
-        let $vraImageRecord := $model("vraImageRecord")            
-        let $imageRecordId := $model("imageRecordId")            
-        return 
-            main:transformVraRecord($vraImageRecord, $imageRecordId, 'image')
+declare %templates:wrap function main:displayImageRecord($node as node()*, $model as map(*)) {
+    let $vraImageRecord := $model("vraImageRecord")
+    let $imageRecordId := $model("imageRecordId")
+    return
+    if (exists($vraImageRecord))
+    then (
+        main:transformVraRecord($vraImageRecord, $imageRecordId, 'image')
+    ) else (
+        <div/>
+    )
 };
 
 
-
-
 declare %private function main:transformVraRecord($root as node(), $id as xs:string, $vraRecordType as xs:string) {
-        let $parameters := <parameters>
-                                <param  name="recordType" value="{$vraRecordType}"/>
-                                <param  name="recordId" value="{$id}"/>
-                            </parameters>
-        return
-            transform:transform($root, doc("/db/apps/ziziphus/resources/xsl/vra-record.xsl"), $parameters)
+    let $parameters := <parameters>
+                        <param  name="recordType" value="{$vraRecordType}"/>
+                        <param name="recordId" value="{$id}"/>
+                    </parameters>
+    let $transform := transform:transform($root, doc($app:app-resources-dir ||  "/xsl/vra-record.xsl"), $parameters)
+    return
+        $transform
 };
 

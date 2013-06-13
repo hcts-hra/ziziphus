@@ -15,7 +15,6 @@
         <link rel="stylesheet" type="text/css" href="resources/css/record.css"/>
         <link rel="stylesheet" type="text/css" href="resources/script/mingos-uwindow/themes/ziziphus/style.css"/>
         <link rel="stylesheet" type="text/css" href="resources/script/layout-default-latest.css"/>
-        <link rel="stylesheet" type="text/css" href="resources/css/jquery-ui.css"/>
         <!--<link rel="stylesheet" type="text/css" href="resources/css/ui-lightness/jquery-ui-1.10.2.custom.min.css"/>-->
     </head>
     <body class="main:createVraRecord">
@@ -28,6 +27,7 @@
                     <data xmlns="">
                         <currentform/>
                         <!-- Which record to save/load, used by subform -->
+                        <workdir/>
                         <uuid/>
                         <changed/>
                         <setname/>
@@ -36,6 +36,7 @@
                 </xf:instance>
                 <xf:setvalue ev:event="xforms-model-construct-done" ref="instance('i-control-center')/uuid"
                              value="bf:appContext('id')"/>
+                <xf:setvalue ev:event="xforms-model-construct-done" ref="instance('i-control-center')/workdir" value="bf:appContext('workdir')"/>
                 <xf:submission method="get"
                                id="s-refresh"
                                replace="embedHTML"
@@ -47,11 +48,25 @@
                     </xf:action>
                 </xf:submission>
 
+                <xf:submission id="s-delete" method="post" replace="none" resource="modules/deleteRecord.xql?id={instance('i-control-center')/uuid}&amp;workdir={instance('i-control-center')/workdir}">
+                    <xf:load ev:event="xforms-submit-done" show="replace">
+                        <xf:resource value="bf:appContext('http-headers/referer')"/>
+                    </xf:load>
+                    <xf:message ev:event="xforms-submit-error">Could not delete workrecord</xf:message>
+                </xf:submission>
+                
                 <xf:instance xmlns="" id="i-user">
                     <data/>
                 </xf:instance>
-                <xf:submission id="s-load-user-data" method="post" replace="instance" instance="i-user"
-                               resource="modules/getUserData.xql">
+
+                <xf:bind nodeset="instance('i-user')">
+                    <xf:bind nodeset="user">
+                        <xf:bind nodeset="@edit" relevant="boolean-from-string(.)"/>
+                    </xf:bind>
+                </xf:bind>
+
+                <xf:submission id="s-load-user-data" method="post" replace="instance" instance="i-user">
+                    <xf:resource value="IF(instance('i-control-center')/workdir eq '', 'modules/getUserData.xql', concat('modules/getUserData.xql?workdir=', instance('i-control-center')/workdir))"/>
                     <xf:message ev:event="xforms-submit-error">error receiving the current user</xf:message>
                 </xf:submission>
 
@@ -69,6 +84,15 @@
                     <xf:send submission="s-load-metadata"/>
                 </xf:action>
             </xf:model>
+            <xf:model id="m-code-tables">
+                <xf:instance xmlns="" id="i-codes-lang" src="modules/code-tables.xql?table=lang"/>
+                <xf:instance xmlns="" id="i-codes-script" src="modules/code-tables.xql?table=script"/>
+                <xf:instance xmlns="" id="i-codes-transliteration" src="modules/code-tables.xql?table=transliteration"/>
+                <xf:instance xmlns="" id="i-codes-role" src="modules/code-tables.xql?table=role"/>
+            </xf:model>
+            <xf:submit id="t-delete-workrecord" submission="s-delete">
+                <xf:label/>
+            </xf:submit>
             <xf:group id="controlCenter" model="m-main">
                 <xf:action ev:event="unload-subform" model="m-main"
                            if="string-length(instance('i-control-center')/currentform) &gt; 0">
@@ -116,6 +140,11 @@
                             <button id="showXML" class="btn icon" type="button" title="show raw XML" onclick="showXML();">XML</button>
                         </div>
                     </li>
+                    <li>
+                        <div class="btn-group">
+                            <button id="delete-workrecord" class="btn icon" type="button" onclick="deleteRecord();" title="Delete current workrecord and related imagerecords">Delete</button>
+                        </div>
+                    </li>
                 </ul>
             </div>
             <div class="headerMenu" style="position:absolute;display:block;right:40px;">
@@ -131,6 +160,7 @@
                             <xf:load resource="index.xql?logout=true" show="replace"/>
                         </xf:trigger>
                     </li>
+                    
                 </ul>
             </div>
         </div>
@@ -248,8 +278,6 @@
                         return false;
                     }
                 });
-
-                $(document).tooltip();
             });
 
             dojo.addOnLoad(function () {
@@ -308,6 +336,15 @@
                 }
                 $('#doDelete-value').click();
             }
+
+            function deleteRecord(){
+                var doIt = confirm("Really delete this workrecord and related imagerecords?");
+                if(doIt == false){
+                    return;
+                }
+                $('#t-delete-workrecord-value').click();
+            }
+            
             function leftCenter(){
                 ziziphusLayout.open('west');
                 ziziphusLayout.close('east');
