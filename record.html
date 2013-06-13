@@ -15,6 +15,7 @@
         <link rel="stylesheet" type="text/css" href="resources/css/record.css"/>
         <link rel="stylesheet" type="text/css" href="resources/script/mingos-uwindow/themes/ziziphus/style.css"/>
         <link rel="stylesheet" type="text/css" href="resources/script/layout-default-latest.css"/>
+        <link rel="stylesheet" type="text/css" href="resources/css/jquery-ui.css"/>
         <!--<link rel="stylesheet" type="text/css" href="resources/css/ui-lightness/jquery-ui-1.10.2.custom.min.css"/>-->
     </head>
     <body class="main:createVraRecord">
@@ -108,6 +109,11 @@
                             <button id="workpicture" class="btn icon" type="button" onclick="leftCenter();" title="show Workrecord+Picture">W | P</button>
                             <button id="workpictureimage" class="btn icon" type="button" onclick="allCols();" title="show Workrecord, Picture + Imagerecord">W | P | I</button>
                             <button id="pictureimage" class="btn icon" type="button" onclick="centerRight();" title="show Picture + Imagerecord">P | I</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="btn-group">
+                            <button id="showXML" class="btn icon" type="button" title="show raw XML" onclick="showXML();">XML</button>
                         </div>
                     </li>
                 </ul>
@@ -242,6 +248,8 @@
                         return false;
                     }
                 });
+
+                $(document).tooltip();
             });
 
             dojo.addOnLoad(function () {
@@ -329,6 +337,9 @@
             function scrollToPanel(id){
                 $('#' + id + ' .dijitTitlePaneTitle').effect("highlight", {color:'lightsteelblue'}, 1500);
                 $('#' + id)[0].scrollIntoView();
+            }
+            function showXML(){
+                alert("this is not yet implemented");
             }
         </script>
     </body>

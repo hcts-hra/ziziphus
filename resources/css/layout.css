@@ -265,11 +265,11 @@ ol.inline > li {
   text-align: center;
   font-style: italic;
   font-size: 0.6em;
-  background: darkblue;
+  background: steelblue;
   margin: 10px 0;
   border-bottom: thin solid #bbb;
   color: white;
-  opacity: 0.5;
+  opacity: 0.8;
 }
 .btn-small {
   font-size: 9px;
@@ -315,4 +315,7 @@ ol.inline > li {
   width: 24px;
   height: 24px;
   background: url(../images/icons/database_add.png) no-repeat;
+}
+#showXML {
+  background: url(../images/icons/xml_document.png) no-repeat center center;
 }
