@@ -15,6 +15,7 @@
         <link rel="stylesheet" type="text/css" href="resources/css/record.css"/>
         <link rel="stylesheet" type="text/css" href="resources/script/mingos-uwindow/themes/ziziphus/style.css"/>
         <link rel="stylesheet" type="text/css" href="resources/script/layout-default-latest.css"/>
+        <link rel="stylesheet" type="text/css" href="resources/css/jquery-ui.css"/>
         <!--<link rel="stylesheet" type="text/css" href="resources/css/ui-lightness/jquery-ui-1.10.2.custom.min.css"/>-->
     </head>
     <body class="main:createVraRecord">
@@ -48,7 +49,11 @@
                     </xf:action>
                 </xf:submission>
 
-                <xf:submission id="s-delete" method="post" replace="none" resource="modules/deleteRecord.xql?id={instance('i-control-center')/uuid}&amp;workdir={instance('i-control-center')/workdir}">
+                <xf:submission id="s-delete" method="put" replace="none" resource="modules/deleteRecord.xql?id={instance('i-control-center')/uuid}&amp;workdir={instance('i-control-center')/workdir}">
+                    <xf:header>
+                        <xf:name>username</xf:name>
+                        <xf:value>admin</xf:value>
+                    </xf:header>
                     <xf:load ev:event="xforms-submit-done" show="replace">
                         <xf:resource value="bf:appContext('http-headers/referer')"/>
                     </xf:load>
@@ -93,6 +98,11 @@
             <xf:submit id="t-delete-workrecord" submission="s-delete">
                 <xf:label/>
             </xf:submit>
+            <xf:trigger id="t-load-xml">
+                <xf:load show="new">
+                    <xf:resource value="concat('/exist/rest/', instance('i-control-center')/workdir, '/' , instance('i-control-center')/uuid, '.xml')"/>
+                </xf:load>
+            </xf:trigger>
             <xf:group id="controlCenter" model="m-main">
                 <xf:action ev:event="unload-subform" model="m-main"
                            if="string-length(instance('i-control-center')/currentform) &gt; 0">
@@ -137,7 +147,7 @@
                     </li>
                     <li>
                         <div class="btn-group">
-                            <button id="showXML" class="btn icon" type="button" title="show raw XML" onclick="showXML();">XML</button>
+                            <button id="showXML" class="btn icon" type="button" title="show raw XML" onclick="showWorkXML();">XML</button>
                         </div>
                     </li>
                     <li>
@@ -160,7 +170,6 @@
                             <xf:load resource="index.xql?logout=true" show="replace"/>
                         </xf:trigger>
                     </li>
-                    
                 </ul>
             </div>
         </div>
@@ -278,6 +287,8 @@
                         return false;
                     }
                 });
+
+                $(document).tooltip();
             });
 
             dojo.addOnLoad(function () {
@@ -375,8 +386,8 @@
                 $('#' + id + ' .dijitTitlePaneTitle').effect("highlight", {color:'lightsteelblue'}, 1500);
                 $('#' + id)[0].scrollIntoView();
             }
-            function showXML(){
-                alert("this is not yet implemented");
+            function showWorkXML(){
+                $('#t-load-xml-value').click();
             }
         </script>
     </body>

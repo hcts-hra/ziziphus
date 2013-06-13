@@ -18,7 +18,7 @@ return
 };
 
 
-let $id := request:get-parameter('id','')
+let $id := request:get-parameter('uuid','')
 let $workdir :=  request:get-parameter('workdir','')
 let $workdir := if($workdir eq "") then ($app:record-dir) else ($workdir)
 let $workrecord := collection($workdir)//vra:vra/*[./@id=$id]

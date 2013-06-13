@@ -1,35 +1,35 @@
 html,
 body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    font-size: 100%;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-size: 100%;
 }
 ul.inline {
-    margin: 4px !important;
+  margin: 4px !important;
 }
 ul.inline > li,
 ol.inline > li {
-    display: inline-block;
-    padding-left: 0px;
-    padding-right: 0px;
-    float: left;
+  display: inline-block;
+  padding-left: 0px;
+  padding-right: 0px;
+  float: left;
 }
 .xfLabel {
-    display: inline-block;
-    padding-top: 0;
-    vertical-align: baseline;
+  display: inline-block;
+  padding-top: 0;
+  vertical-align: baseline;
 }
 .xfOutput .xfValue {
-    display: inline-block;
-    padding-top: 1px;
+  display: inline-block;
+  padding-top: 1px;
 }
 .xfHint {
-    display: none !important;
-    visibility: hidden !important;
+  display: none !important;
+  visibility: hidden !important;
 }
 .bf .sidePanel .editHighlight {
-    background-color: steelblue;
+  background-color: steelblue;
 }
 /*
 .tundra .dijitTitlePaneContentOuter{
@@ -38,289 +38,292 @@ ol.inline > li {
 }
 */
 .inline .icon {
-    color: transparent;
+  color: transparent;
 }
 #workpicture {
-    background: url(/exist/apps/ziziphus/resources/css/../images/icons/work-picture.png) no-repeat center center transparent;
+  background: url(../images/icons/work-picture.png) no-repeat center center transparent;
 }
 #workpictureimage {
-    background: url(/exist/apps/ziziphus/resources/css/../images/icons/work-picture-image.png) no-repeat center center transparent;
+  background: url(../images/icons/work-picture-image.png) no-repeat center center transparent;
 }
 #pictureimage {
-    background: url(/exist/apps/ziziphus/resources/css/../images/icons/picture-imagerec.png) no-repeat center center transparent;
+  background: url(../images/icons/picture-imagerec.png) no-repeat center center transparent;
 }
 #delete-workrecord {
-    background: url(/exist/apps/ziziphus/resources/css/../images/icons/database_delete.png) no-repeat center center transparent;
-    border-bottom-left-radius: 4px;
-    border-top-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-right-radius: 4px;
-    min-height: 24px;
+  background: url(/exist/apps/ziziphus/resources/css/../images/icons/database_delete.png) no-repeat center center transparent;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+  min-height: 24px;
 }
 #user {
-    padding-top: 5px;
-    margin-right: 3px;
+  padding-top: 5px;
+  margin-right: 3px;
 }
 .bf {
-    font-size: 0.9em;
-    /*
-      input, select{
-          padding: 1px;
-      }
-  */
+  font-size: 0.9em;
+  /*
+    input, select{
+        padding: 1px;
+    }
+*/
 
-    /*
-      .button{
-          border: thin solid #999999 !important;
-          height: 20px;
-          width: 20px;
-      }
-      .button-edit {
-          background-position: -94px -70px;
-          position: absolute;
-          top: -14px;
-          right: 0;
-      }
-  */
+  /*
+    .button{
+        border: thin solid #999999 !important;
+        height: 20px;
+        width: 20px;
+    }
+    .button-edit {
+        background-position: -94px -70px;
+        position: absolute;
+        top: -14px;
+        right: 0;
+    }
+*/
 
 }
 .bf .imagePanel {
-    text-align: center;
+  text-align: center;
 }
 .bf .xfRepeatIndex {
-    border-top: 3px solid #cccccc;
-    border-bottom: 3px solid #cccccc;
-    background: #dddddd !important;
+  border-top: 3px solid #cccccc;
+  border-bottom: 3px solid #cccccc;
+  background: #dddddd !important;
 }
 .bf .dialogControls {
-    width: 100%;
-    display: block;
-    text-align: center;
-    border-bottom: thin solid #cccccc;
+  width: 100%;
+  display: block;
+  text-align: center;
+  border-bottom: thin solid #cccccc;
 }
 .bf .dialogControls .xfControl {
-    margin: 0 3px;
+  margin: 0 3px;
 }
 .bf .columntitle {
-    padding: 8px;
-    background: #777777;
-    color: white;
-    text-align: center;
-    font-size: 1.2em;
+  padding: 8px;
+  background: #777777;
+  color: white;
+  text-align: center;
+  font-size: 1.2em;
 }
 .bf select {
-    width: auto;
+  width: auto;
 }
 .bf .dijitTitlePane {
-    position: relative;
+  position: relative;
 }
 .bf .dijitTitlePane:hover .t-edit {
-    display: inline-block;
+  display: inline-block;
 }
 .bf .dijitTitlePane:hover .toolbar {
-    display: inline-block;
+  display: inline-block;
 }
 .bf #sectionDialog {
-    position: relative;
+  position: relative;
 }
 .bf #sectionDialog .dialogControls {
-    top: 0;
-    height: 24px;
-    background: whitesmoke;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    left: 0px;
+  top: 0;
+  height: 24px;
+  background: whitesmoke;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  left: 0px;
 }
 .bf .xfInput .xfValue {
-    height: 18px;
+  height: 18px;
 }
 .bf table {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 .bf table td {
-    vertical-align: top;
+  vertical-align: top;
 }
 .bf .icon-remove {
-    background-position: -310px 2px;
+  background-position: -310px 2px;
 }
 .bf .icon-zoom-in {
-    margin-top: 2px;
-    background-position: -334px 2px;
+  margin-top: 2px;
+  background-position: -334px 2px;
 }
 .bf .icon-zoom-out {
-    margin-top: 2px;
-    background-position: -358px 2px;
+  margin-top: 2px;
+  background-position: -358px 2px;
 }
 .bf .xfSwitch {
-    display: inline-block !important;
-    width: 100% !important;
+  display: inline-block !important;
+  width: 100% !important;
 }
 .bf .xfSwitch .xfSelectedCase {
-    display: inherit;
-    width: 100%;
+  display: inherit;
+  width: 100%;
 }
 .bf .vraSection div.display-container {
-    clear: both;
+  clear: both;
 }
 .bf .vraSection .simple .notes-container {
-    display: none;
+  display: none;
 }
 .bf .vraSection .full .notes-container {
-    display: block;
-    clear: both;
+  display: block;
+  clear: both;
 }
 .bf .vraSection .full .notes-container .notes {
-    font-size: smaller;
+  font-size: smaller;
 }
 .bf .vraSection .full .notes-container .notes:before {
-    content: 'Notes';
-    font-weight: bold;
-    display: block;
-    text-decoration: underline;
+  content: 'Notes';
+  font-weight: bold;
+  display: block;
+  text-decoration: underline;
 }
 .bf .vraSection .vraAttr {
-    white-space: nowrap;
-    display: inline-block;
+  white-space: nowrap;
+  display: inline-block;
 }
 .bf .vraSection .vraAttrName {
-    font-weight: bold;
+  font-weight: bold;
 }
 .bf .vraSection .vraAttrName:after {
-    content: ": ";
+  content: ": ";
 }
 .bf .simple .detail {
-    display: none;
+  display: none;
 }
 .bf .simple .detail-inline {
-    display: none;
+  display: none;
 }
 .bf .simple .detail-cell {
-    display: none;
+  display: none;
 }
 .bf .simple .simple-inline:after {
-    content: '...';
+  content: '...';
 }
 .bf .simple .detail-li {
-    display: none;
+  display: none;
 }
 .bf .simple .nodata {
-    display: none;
+  display: none;
 }
 .bf .full .detail {
-    display: block;
-    font-size: 0.9em;
+  display: block;
+  font-size: 0.9em;
 }
 .bf .full .detail-inline {
-    display: inline;
+  display: inline;
 }
 .bf .full .detail-cell {
-    display: table-cell;
+  display: table-cell;
 }
 .bf .full .simple-inline:after {
-    content: none;
+  content: none;
 }
 .bf .full .detail-li {
-    display: list-item;
+  display: list-item;
 }
 .bf .full .nodata {
-    display: inline-block;
-    font-size: 0.7em;
-    color: #999999;
+  display: inline-block;
+  font-size: 0.7em;
+  color: #999999;
 }
 .bf .pref {
-    font-weight: bold;
+  font-weight: bold;
 }
 .bf .dijitDialogCloseIcon {
-    display: none;
+  display: none;
 }
 .tundra .dijitTitlePaneTitle {
-    background: #999999;
-    color: white;
+  background: #999999;
+  color: white;
 }
 .relatedImage {
-    width: 100%;
-    max-width: 530px;
+  width: 100%;
+  max-width: 530px;
 }
 .tundra .dijitMenu,
 .tundra .dijitMenuBar {
-    background: #454545;
-    color: #f5f5f5;
+  background: #454545;
+  color: #f5f5f5;
 }
 #editDialog {
-    width: 880px;
+  width: 880px;
 }
 .ui-layout-content {
-    padding: 0 !important;
+  padding: 0 !important;
 }
 .ui-layout-north,
 .ui-layout-south {
-    background: #f5f5f5 !important;
+  background: #f5f5f5 !important;
 }
 .ui-layout-south .xfOutput {
-    float: right;
-    font-size: 0.7em;
+  float: right;
+  font-size: 0.7em;
 }
 .ui-layout-south .xfLabel {
-    font-size: 1em;
+  font-size: 1em;
 }
 .forceVisible .hidden {
-    display: block;
-    visibility: inherit;
+  display: block;
+  visibility: inherit;
 }
 .separator {
-    text-align: center;
-    font-style: italic;
-    font-size: 0.6em;
-    background: steelblue;
-    margin: 10px 0;
-    border-bottom: thin solid #bbb;
-    color: white;
-    opacity: 0.8;
+  text-align: center;
+  font-style: italic;
+  font-size: 0.6em;
+  background: steelblue;
+  margin: 10px 0;
+  border-bottom: thin solid #bbb;
+  color: white;
+  opacity: 0.8;
 }
 .btn-small {
-    font-size: 9px;
+  font-size: 9px;
 }
 .historyButton {
-    background: url("/exist/apps/ziziphus/resources/css/../images/icons/history.png") no-repeat scroll 0 0 transparent;
-    border: medium none;
-    float: right;
-    height: 24px;
-    padding: 2px;
-    width: 24px;
-    color: transparent !important;
+  background: url("../images/icons/history.png") no-repeat scroll 0 0 transparent;
+  border: medium none;
+  float: right;
+  height: 24px;
+  padding: 2px;
+  width: 24px;
+  color: transparent !important;
 }
 .toolbarbutton {
-    width: 24px;
-    height: 24px;
-    border: none;
-    padding: 2px;
-    border-radius: 3px;
-    opacity: 0.5;
+  width: 24px;
+  height: 24px;
+  border: none;
+  padding: 2px;
+  border-radius: 3px;
+  opacity: 0.5;
 }
 .toolbarbutton:hover {
-    opacity: 1.0;
+  opacity: 1.0;
 }
 .t-edit {
-    display: none;
-    position: absolute;
-    top: 5px;
-    right: 4px;
-    text-align: right;
-    z-index: 300;
+  display: none;
+  position: absolute;
+  top: 5px;
+  right: 4px;
+  text-align: right;
+  z-index: 300;
 }
 .t-edit .button-edit button {
-    background: url(/exist/apps/ziziphus/resources/css/../images/icons/keyboard_down.png) no-repeat;
+  background: url(../images/icons/keyboard_down.png) no-repeat;
 }
 .t-edit .button-zoom-in {
-    background: url("/exist/apps/ziziphus/resources/css/../images/icons/zoom_in.png") no-repeat scroll 0 0 transparent;
+  background: url("../images/icons/zoom_in.png") no-repeat scroll 0 0 transparent;
 }
 .t-edit .button-zoom-out {
-    background: url("/exist/apps/ziziphus/resources/css/../images/icons/zoom_out.png") no-repeat scroll 0 0 transparent;
+  background: url("../images/icons/zoom_out.png") no-repeat scroll 0 0 transparent;
 }
 #save-button button {
-    width: 24px;
-    height: 24px;
-    background: url(/exist/apps/ziziphus/resources/css/../images/icons/database_add.png) no-repeat;
+  width: 24px;
+  height: 24px;
+  background: url(../images/icons/database_add.png) no-repeat;
+}
+#showXML {
+  background: url(../images/icons/xml_document.png) no-repeat center center;
 }
