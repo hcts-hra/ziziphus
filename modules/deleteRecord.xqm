@@ -1,12 +1,13 @@
 xquery version "3.0";
 
+module namespace deleteRedcord="http://www.betterform.de/projects/ziziphus/xquery/deleteRedcord";
+
 declare namespace vra = "http://www.vraweb.org/vracore4.htm";
 
 import module namespace request="http://exist-db.org/xquery/request";
-import module namespace app="http://www.betterform.de/projects/ziziphus/xquery/app" at "/apps/ziziphus/modules/app.xqm";
 
-declare function local:deleteImageRecords($id as xs:string, $workdir as xs:string, $workrecord) {
-let $imageDir as xs:string := $workdir || $app:image-record-dir-name
+declare function deleteRedcord:deleteImageRecords($id as xs:string, $workdir as xs:string, $workrecord) {
+let $imageDir as xs:string := $workdir || "VRA_images"
 let $workrecord := collection($workdir)//vra:vra/*[./@id=$id]
 let $imagerecordIds := data($workrecord//vra:relationSet//vra:relation[@type = "imageIs"]//@relids)
 return
@@ -17,21 +18,21 @@ return
         xmldb:remove($imageDir, $imagerecord)
 };
 
-
-let $id := request:get-parameter('uuid','')
-let $workdir :=  request:get-parameter('workdir','')
-let $workdir := if($workdir eq "") then ($app:record-dir) else ($workdir)
+declare function deleteRedcord:deleteWorkRecord($id as xs:string, $workdir as xs:string) {
+let $log := util:log("ERROR", "Id: " || $id || " imageDir: " || $workdir)
 let $workrecord := collection($workdir)//vra:vra/*[./@id=$id]
-let $log := util:log("ERROR", "id: " || $id || " workdir: " || $workdir)
 return
     if(exists($workrecord))
     then (
-        let $imageRecords := local:deleteImageRecords($id, $workdir, $workrecord)
+        let $imageRecords := deleteRedcord:deleteImageRecords($id, $workdir, $workrecord)
         return
             xmldb:remove($workdir, util:document-name($workrecord))
-    ) else (
-        response:set-status-code( 500 )
-    )
+    ) else ()
+};
+
+
+
+
 
 
 

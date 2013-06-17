@@ -48,33 +48,27 @@
                         <xf:setvalue ref="instance('i-control-center')/changed" value="'false'"/>
                     </xf:action>
                 </xf:submission>
-
-                <xf:submission id="s-delete" method="put" replace="none" resource="modules/deleteRecord.xql?id={instance('i-control-center')/uuid}&amp;workdir={instance('i-control-center')/workdir}">
-                    <xf:header>
-                        <xf:name>username</xf:name>
-                        <xf:value>admin</xf:value>
-                    </xf:header>
-                    <xf:load ev:event="xforms-submit-done" show="replace">
-                        <xf:resource value="bf:appContext('http-headers/referer')"/>
-                    </xf:load>
+                <xf:submission id="s-delete" method="get" replace="none">
+                    <xf:resource value="concat('exist:/db/apps/ziziphus/modules/deleteRecord.xqm?function=deleteWorkRecord&amp;id=', instance('i-control-center')/uuid, '&amp;workdir=', instance('i-control-center')/workdir)"/>
                     <xf:message ev:event="xforms-submit-error">Could not delete workrecord</xf:message>
+                    <xf:action ev:event="xforms-submit-done">
+                        <xf:load show="replace">
+                            <xf:resource value="bf:appContext('http-headers/referer')"/>
+                        </xf:load>
+                    </xf:action>
                 </xf:submission>
-                
                 <xf:instance xmlns="" id="i-user">
                     <data/>
                 </xf:instance>
-
                 <xf:bind nodeset="instance('i-user')">
                     <xf:bind nodeset="user">
                         <xf:bind nodeset="@edit" relevant="boolean-from-string(.)"/>
                     </xf:bind>
                 </xf:bind>
-
                 <xf:submission id="s-load-user-data" method="post" replace="instance" instance="i-user">
                     <xf:resource value="IF(instance('i-control-center')/workdir eq '', 'modules/getUserData.xql', concat('modules/getUserData.xql?workdir=', instance('i-control-center')/workdir))"/>
                     <xf:message ev:event="xforms-submit-error">error receiving the current user</xf:message>
                 </xf:submission>
-
                 <xf:instance id="i-meta">
                     <data xmlns=""/>
                 </xf:instance>
