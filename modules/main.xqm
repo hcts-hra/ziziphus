@@ -61,9 +61,11 @@ declare %templates:wrap function main:displayImageArea($node as node()*, $model 
                 if (exists($vraWorkRecord))
                 then (
                     for $image in $vraWorkRecord/vra:relationSet
-                    let $imageId := substring($image/vra:relation/@relids,3)
+                    let $imageId  := if(exists($vraWorkRecord/vra:relationSet/vra:relation/@pref[.='true']))
+                                     then $vraWorkRecord/vra:relationSet/vra:relation[@pref='true'][1]/@relids
+                                     else $vraWorkRecord/vra:relationSet/vra:relation[1]/@relids
                     return
-                        <img src="http://kjc-ws2.kjc.uni-heidelberg.de:83/images/service/download_uuid/priya_paul/{$imageId}.jpg" alt="" class="relatedImage"/>
+                        <img src="http://kjc-ws2.kjc.uni-heidelberg.de:83/images/service/download_uuid/{$imageId}" alt="" class="relatedImage"/>
                     ) else ()
         }
     </div>
