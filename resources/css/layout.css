@@ -117,8 +117,11 @@ ol.inline > li {
 .bf .dijitTitlePane:hover .t-edit {
   display: inline-block;
 }
-.bf .dijitTitlePane:hover .toolbar {
+.bf .editHighlight ~ .dijitTitlePaneContentOuter .t-edit {
   display: inline-block;
+}
+.bf .editHighlight ~ .dijitTitlePaneContentOuter .t-edit .button-edit button {
+  background: url(../images/icons/keyboard_up.png) no-repeat;
 }
 .bf #sectionDialog {
   position: relative;
@@ -313,6 +316,11 @@ ol.inline > li {
 .t-edit .button-edit button {
   background: url(../images/icons/keyboard_down.png) no-repeat;
 }
+
+.t-edit .button-edit button {
+    background: url(../images/icons/keyboard_down.png) no-repeat;
+}
+
 .t-edit .button-zoom-in {
   background: url("../images/icons/zoom_in.png") no-repeat scroll 0 0 transparent;
 }

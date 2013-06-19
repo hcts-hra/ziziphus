@@ -120,9 +120,20 @@ ul.inline > li, ol.inline > li {
         display: inline-block;
     }
 
+    /*
     .dijitTitlePane:hover .toolbar{
       display: inline-block;
     }
+    */
+
+    .editHighlight~.dijitTitlePaneContentOuter .t-edit {
+      display: inline-block;
+
+      .button-edit button {
+        background: url(../images/icons/keyboard_up.png) no-repeat;
+      }
+    }
+
     #sectionDialog{
         position: relative;
 

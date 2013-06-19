@@ -652,8 +652,8 @@
                     </xf:action>
                 </xf:trigger>
 -->
-                <xf:trigger class="-btn -btn-danger">
-                    <xf:label>X</xf:label>
+                <xf:trigger class="-btn -btn-trashcan">
+                    <xf:label/>
                     <xf:hint>delete this entry</xf:hint>
                     <script type="text/javascript">
                         removeEntry();
