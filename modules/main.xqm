@@ -65,7 +65,7 @@ declare %templates:wrap function main:displayImageArea($node as node()*, $model 
                                      then $vraWorkRecord/vra:relationSet/vra:relation[@pref='true'][1]/@relids
                                      else $vraWorkRecord/vra:relationSet/vra:relation[1]/@relids
                     return
-                        <img src="http://kjc-ws2.kjc.uni-heidelberg.de:83/images/service/download_uuid/{$imageId}" alt="" class="relatedImage"/>
+                        <img src="http://kjc-ws2.kjc.uni-heidelberg.de/images/service/download_uuid/{$imageId}" alt="" class="relatedImage"/>
                     ) else ()
         }
     </div>
