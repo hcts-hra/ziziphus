@@ -195,7 +195,8 @@ table tr td .xfGroup:last-child {
 .toolbar {
     position: absolute;
     top: 3px;
-    right: 52px;
+    right: 26px;
+    padding: 2px 0;
 }
 .toolbar button {
     background: transparent;
@@ -208,7 +209,8 @@ table tr td .xfGroup:last-child {
 .toolbar .t-plus button {
     border: none;
     font-size: 30px;
-    margin-top: -2px;
+    margin-top: 0;
+    margin-right: -5px;
 }
 .toolbar .t-save button {
     background: url(../images/icons/database_add.png) no-repeat;
@@ -217,7 +219,9 @@ table tr td .xfGroup:last-child {
 }
 .toolbar #t-close-value {
     font-size: 30px;
-    margin-top: -2px;
+    margin-top: 0px;
+    background: url(../images/icons/keyboard_up.png) no-repeat;
+    color: transparent;
 }
 .bf .dijitTitlePane .t-edit .xfReadOnly {
     opacity: 0.5 !important;
