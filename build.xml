@@ -77,6 +77,9 @@
         <copy todir="${target.ziziphus.dir}/view">
             <fileset dir="${basedir}/view" />
         </copy>
+        <copy todir="${target.ziziphus.dir}/view-diff">
+            <fileset dir="${basedir}/view-diff" />
+        </copy>
         <zip basedir="${target.ziziphus.dir}" destfile="${target.dir}/${app.name}-${app.version}.xar" excludes="${build.excludes}"/>
     </target>
 </project>
