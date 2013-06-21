@@ -25,6 +25,7 @@ declare variable $rev2 as xs:string :=  request:get-parameter("rev2", "last");
  : Change to true() to allow missing optional elements (but specified in schema and template instance) in the result.
  :)
 declare variable $showMissingElements := false();
+declare variable $showMissingAttributes := false();
 
 (: Format of result.
  : Available values:
@@ -84,7 +85,7 @@ declare function local:text-diff($doc1-nodes as node()*, $doc2-nodes as node()*)
 declare function local:element-diff($template-node as node(), $doc1-node as node()?, $doc2-node as node()?) as node() {
     element {node-name($template-node)} {
         local:insertDiffAttributes($doc1-node, $doc2-node),
-        $doc2-node/@*,
+        local:attr-diff($template-node, $doc1-node, $doc2-node),
     let $subelements := $template-node/*
     return
         if(count($subelements) = 0) (: leaf; may contain text data :)
@@ -105,11 +106,37 @@ declare function local:element-diff($template-node as node(), $doc1-node as node
 
 (: TODOs:
  : * whether to indicate changes recursively (so is now), or only at topmost level of a change
- : * attributes
  : * heidicon extensions
  : * error handling
  :   - missing document or revision
  :)
+
+declare function local:attr-diff($template as element(), $elem1 as element()?, $elem2 as element()?) as node()* {
+    let $attrs1 := $elem1/@*
+    let $attrs2 := $elem2/@*
+    (: let $all-names := (for $a in $attrs1 | $attrs2 return node-name($a)) :)
+    let $all-names := (for $a in $template/@* return node-name($a))
+    let $names := distinct-values($all-names)
+    for $name in $names
+    let $attr1 := $attrs1[node-name(.) = $name]
+    let $attr2 := $attrs2[node-name(.) = $name]
+    let $val1 := string($attr1)
+    let $val2 := string($attr2)
+    return
+        if($showMissingAttributes or $attr1 or $attr2)
+        then
+            <diffs:attr name="{$name}">{
+                if(not($attr1 or $attr2)) then
+                    attribute none {""}
+                else if($val1 eq $val2) then
+                    attribute both {string($attr1)}
+                else (
+                    if($attr1) then attribute before {$val1} else (),
+                    if($attr2) then attribute after  {$val2} else ()
+                )
+            }</diffs:attr>
+        else ()
+};
 
 declare function local:document-diff($template as document-node(), $doc1 as document-node(), $doc2 as document-node()) as document-node() {
     document {
