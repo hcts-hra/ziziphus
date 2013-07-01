@@ -245,7 +245,7 @@ ol.inline > li {
 }
 .relatedImage {
   width: 100%;
-  max-width: 530px;
+  /*max-width: 530px;*/
 }
 .tundra .dijitMenu,
 .tundra .dijitMenuBar {
