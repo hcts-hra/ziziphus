@@ -23,9 +23,11 @@
 
             <transform:template match="/vra:work |/vra:image">
                 <transform:variable name="side" select="if(local-name(.)='work') then 'leftPanel' else 'rightPanel'"/>
+                <transform:variable name="script" select="if(local-name(.)='work') then 'showWorkXML();' else 'showImageXML();'"/>
                 <div class="columntitle">
                     <transform:value-of select="$title"/>
                     <transform:text>&#160;</transform:text>
+                    <button type="button" class="showXML" id="{{$recordType}}-showXML" title="show raw XML" onclick="{{$script}}">XML</button>
                     <button type="button" class="historyButton" id="{{$recordType}}-versions-button" subject="{{$recordId}}" title="Versions history for {{$recordType}} {{$recordId}}">H</button>
                 </div>
 

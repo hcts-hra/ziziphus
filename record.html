@@ -29,6 +29,7 @@
                         <currentform/>
                         <!-- Which record to save/load, used by subform -->
                         <workdir/>
+                        <imagepath/>
                         <uuid/>
                         <changed/>
                         <setname/>
@@ -38,6 +39,7 @@
                 <xf:setvalue ev:event="xforms-model-construct-done" ref="instance('i-control-center')/uuid"
                              value="bf:appContext('id')"/>
                 <xf:setvalue ev:event="xforms-model-construct-done" ref="instance('i-control-center')/workdir" value="bf:appContext('workdir')"/>
+                <xf:setvalue ev:event="xforms-model-construct-done" ref="instance('i-control-center')/imagepath" value="bf:appContext('imagepath')"/>
                 <xf:submission method="get"
                                id="s-refresh"
                                replace="embedHTML"
@@ -97,6 +99,11 @@
                     <xf:resource value="concat('/exist/rest/', instance('i-control-center')/workdir, '/' , instance('i-control-center')/uuid, '.xml')"/>
                 </xf:load>
             </xf:trigger>
+            <xf:trigger id="t-load-xml-image">
+                <xf:load show="new">
+                    <xf:resource value="concat('/exist/rest/', instance('i-control-center')/imagepath)"/>
+                </xf:load>
+            </xf:trigger>
             <xf:group id="controlCenter" model="m-main">
                 <xf:action ev:event="unload-subform" model="m-main"
                            if="string-length(instance('i-control-center')/currentform) &gt; 0">
@@ -141,7 +148,7 @@
                     </li>
                     <li>
                         <div class="btn-group">
-                            <button id="showXML" class="btn icon" type="button" title="show raw XML" onclick="showWorkXML();">XML</button>
+                            <!-- button id="showXML" class="btn icon" type="button" title="show raw XML" onclick="showWorkXML();">XML</button-->
                         </div>
                     </li>
                     <li>
@@ -382,6 +389,9 @@
             }
             function showWorkXML(){
                 $('#t-load-xml-value').click();
+            }
+            function showImageXML(){
+                $('#t-load-xml-image-value').click();
             }
         </script>
     </body>

@@ -105,12 +105,11 @@
                            </xsl:otherwise>
                         </xsl:choose>
                         <xsl:choose>
-                           <xsl:when test="string-length(string-join(vra:dates/vra:earliestDate/@circa,'')) != 0">
-                              <div data-bf-type="input" data-bf-bind="vra:dates/vra:earliestDate/@circa"
+                           <xsl:when test="string-length(string-join(vra:dates/vra:earliestDate/@circa,'')) != 0 and vra:dates/vra:earliestDate/@circa eq 'true'">
+                              <div class="subtitle" data-bf-type="input"
+                                   data-bf-bind="vra:dates/vra:earliestDate/@circa"
                                    tabindex="0"
-                                   title="circa">
-                                 <xsl:value-of select="vra:dates/vra:earliestDate/@circa"></xsl:value-of>
-                              </div>
+                                   title="circa">circa</div>
                            </xsl:when>
                            <xsl:otherwise>
                               <div class="nodata" data-bf-type="input"
@@ -132,12 +131,11 @@
                            </xsl:otherwise>
                         </xsl:choose>
                         <xsl:choose>
-                           <xsl:when test="string-length(string-join(vra:dates/vra:latestDate/@circa,'')) != 0">
-                              <div data-bf-type="input" data-bf-bind="vra:dates/vra:latestDate/@circa"
+                           <xsl:when test="string-length(string-join(vra:dates/vra:latestDate/@circa,'')) != 0 and vra:dates/vra:latestDate/@circa eq 'true'">
+                              <div class="subtitle" data-bf-type="input"
+                                   data-bf-bind="vra:dates/vra:latestDate/@circa"
                                    tabindex="0"
-                                   title="circa">
-                                 <xsl:value-of select="vra:dates/vra:latestDate/@circa"></xsl:value-of>
-                              </div>
+                                   title="circa">circa</div>
                            </xsl:when>
                            <xsl:otherwise>
                               <div class="nodata" data-bf-type="input"

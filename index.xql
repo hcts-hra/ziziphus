@@ -76,7 +76,7 @@ return
             return
             <tr>
                 <td>{$counter}</td>
-                <td><a href="{$context}/apps/ziziphus/record.html?id={$uuid}&amp;workdir={$workdir}" target="_blank">{$uuid}</a></td>
+                <td><a href="{$context}/apps/ziziphus/record.html?id={$uuid}&amp;workdir={$workdir}&amp;imagepath={$workdir || $app:image-record-dir-name || $imageRecordId || ".xml"}" target="_blank">{$uuid}</a></td>
                 <td><a href="{$context}/rest/{$workdir || $uuid}.xml" target="_blank">work</a></td>
                 <td><a href="{$context}/rest/{$workdir || $app:image-record-dir-name || $imageRecordId}.xml" target="_blank">image</a></td>
                 <td>{$heidiconId}</td>
