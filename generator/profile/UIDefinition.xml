@@ -21,12 +21,12 @@
                 <group idref="b-d2e95" name="vra:dates">
                     <node idref="b-d2e114" name="@type" detail="true"/>
                     <group idref="b-d2e98" name="vra:earliestDate">
+                        <node idref="b-d2e105" name="@circa" detail="true"/>1
                         <textNode detail="true"/>
-                        <node idref="b-d2e105" name="@circa" detail="true"/>
                     </group>
                     <group idref="b-d2e106" name="vra:latestDate">
-                        <textNode detail="true"/>
                         <node idref="b-d2e113" name="@circa" detail="true"/>
+                        <textNode detail="true"/>
                     </group>
                 </group>
             </group>
@@ -36,12 +36,12 @@
             <group idref="b-d2e243" name="vra:date" repeated="true">
                 <node idref="b-d2e265" name="@type" detail="false"/>
                 <group idref="b-d2e249" name="vra:earliestDate">
-                    <textNode detail="false"/>
                     <node idref="b-d2e256" name="@circa" detail="false"/>
+                    <textNode detail="false"/>
                 </group>
                 <group idref="b-d2e257" name="vra:latestDate">
-                    <textNode detail="false"/>
                     <node idref="b-d2e264" name="@circa" detail="false"/>
+                    <textNode detail="false"/>
                 </group>
             </group>
             <node idref="b-d2e227" name="vra:notes" detail="false"/>

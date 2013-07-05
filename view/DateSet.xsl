@@ -27,6 +27,17 @@
                      </td>
                      <td>
                         <xsl:choose>
+                           <xsl:when test="string-length(string-join(vra:earliestDate/@circa,'')) != 0 and vra:earliestDate/@circa eq 'true'">
+                              <div class="subtitle" data-bf-type="input" data-bf-bind="vra:earliestDate/@circa"
+                                   tabindex="0"
+                                   title="circa">circa</div>
+                           </xsl:when>
+                           <xsl:otherwise>
+                              <div class="nodata" data-bf-type="input" data-bf-bind="vra:earliestDate/@circa"
+                                   tabindex="0">(circa)</div>
+                           </xsl:otherwise>
+                        </xsl:choose>
+                        <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:earliestDate,'')) != 0">
                               <div data-bf-type="input" data-bf-bind="vra:earliestDate" tabindex="0"
                                    title="EarliestDate"
@@ -39,19 +50,19 @@
                                    tabindex="0">(EarliestDate)</div>
                            </xsl:otherwise>
                         </xsl:choose>
+                     </td>
+                     <td>
                         <xsl:choose>
-                           <xsl:when test="string-length(string-join(vra:earliestDate/@circa,'')) != 0 and vra:earliestDate/@circa eq 'true'">
-                              <div class="subtitle" data-bf-type="input" data-bf-bind="vra:earliestDate/@circa"
+                           <xsl:when test="string-length(string-join(vra:latestDate/@circa,'')) != 0 and vra:latestDate/@circa eq 'true'">
+                              <div class="subtitle" data-bf-type="input" data-bf-bind="vra:latestDate/@circa"
                                    tabindex="0"
                                    title="circa">circa</div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="nodata" data-bf-type="input" data-bf-bind="vra:earliestDate/@circa"
+                              <div class="nodata" data-bf-type="input" data-bf-bind="vra:latestDate/@circa"
                                    tabindex="0">(circa)</div>
                            </xsl:otherwise>
                         </xsl:choose>
-                     </td>
-                     <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:latestDate,'')) != 0">
                               <div data-bf-type="input" data-bf-bind="vra:latestDate" tabindex="0"
@@ -62,17 +73,6 @@
                            </xsl:when>
                            <xsl:otherwise>
                               <div class="nodata" data-bf-type="input" data-bf-bind="vra:latestDate" tabindex="0">(LatestDate)</div>
-                           </xsl:otherwise>
-                        </xsl:choose>
-                        <xsl:choose>
-                           <xsl:when test="string-length(string-join(vra:latestDate/@circa,'')) != 0 and vra:latestDate/@circa eq 'true'">
-                              <div class="subtitle" data-bf-type="input" data-bf-bind="vra:latestDate/@circa"
-                                   tabindex="0"
-                                   title="circa">circa</div>
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <div class="nodata" data-bf-type="input" data-bf-bind="vra:latestDate/@circa"
-                                   tabindex="0">(circa)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>

@@ -14,7 +14,8 @@
                     select="if(local-name(.)='work') then 'showWorkXML();' else 'showImageXML();'"></xsl:variable>
       <div class="columntitle">
          <xsl:value-of select="$title"></xsl:value-of>
-         <xsl:text> </xsl:text><button type="button" class="showXML" title="show raw XML" onclick="{$script}">XML</button><button type="button" class="historyButton" id="{$recordType}-versions-button"
+         <xsl:text> </xsl:text><button type="button" class="showXML" id="{$recordType}-showXML" title="show raw XML"
+                 onclick="{$script}">XML</button><button type="button" class="historyButton" id="{$recordType}-versions-button"
                  subject="{$recordId}"
                  title="Versions history for {$recordType} {$recordId}">H</button></div>
       <div id="{$side}" class="sidePanel ui-layout-content">
