@@ -70,7 +70,7 @@ table tr td .xfGroup:last-child {
     height: 16px;
     font-size: 0.9em;
     padding: 0;
-    background: url(../images/icons/attributes.png);
+    background: url(/exist/apps/ziziphus/resources/css/../images/icons/attributes.png);
     border: none;
     color: transparent !important;
 }
@@ -84,9 +84,9 @@ table tr td .xfGroup:last-child {
     padding: 0;
 }
 .triggerCol .btn-trashcan {
-  background: url(../images/icons/trash_can.png) no-repeat;
-  color: transparent;
-  border: none;
+    background: url(/exist/apps/ziziphus/resources/css/../images/icons/trash_can.png) no-repeat;
+    color: transparent;
+    border: none;
 }
 .prefCol {
     width: 10px;
@@ -108,6 +108,12 @@ table tr td .xfGroup:last-child {
     display: inline-block;
     width: auto;
     float: left;
+}
+.contentCol .xfTextarea .widgetContainer {
+    width: 90%;
+}
+.contentCol .xfTextarea .widgetContainer textarea {
+    width: 100%;
 }
 .WorktypeSet .contentCol .xfControl {
     width: 100%;
@@ -213,14 +219,14 @@ table tr td .xfGroup:last-child {
     margin-right: -5px;
 }
 .toolbar .t-save button {
-    background: url(../images/icons/database_add.png) no-repeat;
+    background: url(/exist/apps/ziziphus/resources/css/../images/icons/database_add.png) no-repeat;
     color: transparent;
     border: none;
 }
 .toolbar #t-close-value {
     font-size: 30px;
-    margin-top: 0px;
-    background: url(../images/icons/keyboard_up.png) no-repeat;
+    margin-top: 0;
+    background: url(/exist/apps/ziziphus/resources/css/../images/icons/keyboard_up.png) no-repeat;
     color: transparent;
 }
 .bf .dijitTitlePane .t-edit .xfReadOnly {
