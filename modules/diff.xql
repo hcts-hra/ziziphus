@@ -14,18 +14,20 @@ import module namespace v = "http://exist-db.org/versioning";
 (: Resource path :)
 declare variable $resource as xs:string? := request:get-parameter("resource", ());
   
- (: Version number of older document :)
+(: Version number of older document :)
 declare variable $rev1 as xs:string := request:get-parameter("rev1", "0");
 
 (: Version number of newer document :)
 declare variable $rev2 as xs:string :=  request:get-parameter("rev2", "last");
 
 (:** Settings **:)
-(: By default (false()) elements that are missing in both compared documents are not presented.
+(: By default (false()) elements/attributes that are missing in both compared documents are not presented.
  : Change to true() to allow missing optional elements (but specified in schema and template instance) in the result.
  :)
 declare variable $showMissingElements := false();
 declare variable $showMissingAttributes := false();
+
+declare variable $recursiveDiff := false();
 
 (: Format of result.
  : Available values:
@@ -52,17 +54,15 @@ declare function local:obtain-document($resource-path as xs:string, $rev as xs:s
         return document {v:doc(doc($resource-path), $rev-no)}
 };
 
-declare function local:insertDiffAttributes($doc1-node as node()?, $doc2-node as node()?) as attribute()* {
-    attribute diffs:element-change {
-        let $n1 as xs:integer := count($doc1-node)
-        let $n2 as xs:integer := count($doc2-node)
-        return
-            if($n1 = 0 and $n2 = 0) then 'missing'
-            else if($n1 = 1 and $n2 = 0) then 'deleted'
-            else if($n1 = 0 and $n2 = 1) then 'inserted'
-            else if($n1 = 1 and $n2 = 1) then 'both'
-            else 'shouldNeverHappen'
-    }
+declare function local:elementDiffStatus($doc1-node as node()?, $doc2-node as node()?) as xs:string {
+    let $n1 as xs:integer := count($doc1-node)
+    let $n2 as xs:integer := count($doc2-node)
+    return
+        if($n1 = 0 and $n2 = 0) then 'missing'
+        else if($n1 = 1 and $n2 = 0) then 'deleted'
+        else if($n1 = 0 and $n2 = 1) then 'inserted'
+        else if($n1 = 1 and $n2 = 1) then 'both'
+        else 'shouldNeverHappen'
 };
 
 declare function local:text-diff($doc1-nodes as node()*, $doc2-nodes as node()*) as node()* {
@@ -79,33 +79,40 @@ declare function local:text-diff($doc1-nodes as node()*, $doc2-nodes as node()*)
                 <diffs:ins>{text {$txt2}}</diffs:ins>
             else ()
         )
-    
 };
 
 declare function local:element-diff($template-node as node(), $doc1-node as node()?, $doc2-node as node()?) as node() {
+    let $status := local:elementDiffStatus($doc1-node, $doc2-node) return
     element {node-name($template-node)} {
-        local:insertDiffAttributes($doc1-node, $doc2-node),
-        local:attr-diff($template-node, $doc1-node, $doc2-node),
-    let $subelements := $template-node/*
-    return
-        if(count($subelements) = 0) (: leaf; may contain text data :)
-        then local:text-diff($doc1-node/node(), $doc2-node/node())
-        else (: element content :)
-            for $subelement in $subelements
-            let $name := node-name($subelement)
-            let $doc1-children := $doc1-node/*[node-name(.) = $name]
-            let $doc2-children := $doc2-node/*[node-name(.) = $name]
-            let $minimalN := if($showMissingElements) then 1 else 0
-            let $n := max(($minimalN, count($doc1-children), count($doc2-children)))
-            for $i in (1 to $n)
-                let $doc1-child := $doc1-children[$i]
-                let $doc2-child := $doc2-children[$i]
-                return (local:element-diff($subelement, $doc1-child, $doc2-child))
+        attribute diffs:element-change { $status },
+        if ($status = 'both' or $recursiveDiff)
+        then (
+            local:attr-diff($template-node, $doc1-node, $doc2-node),
+            let $subelements := $template-node/* return
+            if(count($subelements) = 0) (: leaf; may contain text data :)
+            then local:text-diff($doc1-node/node(), $doc2-node/node())
+            else (: element content :)
+                for $subelement in $subelements
+                let $name := node-name($subelement)
+                let $doc1-children := $doc1-node/*[node-name(.) = $name]
+                let $doc2-children := $doc2-node/*[node-name(.) = $name]
+                let $minimalN := if($showMissingElements) then 1 else 0
+                let $n := max(($minimalN, count($doc1-children), count($doc2-children)))
+                for $i in (1 to $n)
+                    let $doc1-child := $doc1-children[$i]
+                    let $doc2-child := $doc2-children[$i]
+                    return (local:element-diff($subelement, $doc1-child, $doc2-child))
+        ) else if($status = 'deleted') then (
+            $doc1-node/node()
+        ) else if($status = 'inserted') then (
+            $doc2-node/node()
+        ) else if($showMissingElements) then (
+            $template-node/node()
+        ) else ()
     }
 };
 
 (: TODOs:
- : * whether to indicate changes recursively (so is now), or only at topmost level of a change
  : * heidicon extensions
  : * error handling
  :   - missing document or revision
@@ -144,19 +151,13 @@ declare function local:document-diff($template as document-node(), $doc1 as docu
     }
 };
 
-
-declare function local:xmlResult($instance-path as xs:string, $resource-path as xs:string, $rev1 as xs:string, $rev2 as xs:string) as document-node() {
-    let $template := doc($instance-path)
-    let $doc1 := local:obtain-document($resource-path, $rev1)
-    let $doc2 := local:obtain-document($resource-path, $rev2)
-    return (:$doc2:) (:$template:)
-        local:document-diff($template, $doc1, $doc2)
-};
-
 (: main :)
-let $result := local:xmlResult($instance-path, $resource, $rev1, $rev2)
+let $template := doc($instance-path)
+let $doc1 := local:obtain-document($resource, $rev1)
+let $doc2 := local:obtain-document($resource, $rev2)
+let $result := local:document-diff($template, $doc1, $doc2)
 return
-switch ($format)
+    switch ($format)
     case "xml" return $result
     case "html" return
         (:FIXME Just to remember how to pass a param ti XSLT. :)
