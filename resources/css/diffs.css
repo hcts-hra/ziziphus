@@ -56,3 +56,37 @@ body {
 
 .table-striped tbody tr:nth-child(odd) td,.table-striped tbody tr:nth-child(odd) th{background-color:#f9f9f9;}
 .table-striped tbody tr:nth-child(even) td,.table-striped tbody tr:nth-child(even) th{background-color:#ffffff;}
+
+tr.diffs-element-missing, .diffs-subelement-missing {
+	background-color: #DDDDDD;
+	color: #888888;
+}
+
+tr.diffs-element-both {
+	/*default style*/
+}
+
+tr.diffs-element-deleted {
+	border-style: solid;
+	border-color: #BB2222;
+	border-width: 2pt;
+	color: #990000;
+}
+
+tr.diffs-element-inserted {
+	border-style: solid;
+	border-color: #119911;
+	border-width: 2pt;
+	color: #008800;
+}
+
+.diffs-subelement-deleted, del, .diffs-attr-before {
+	color: #990000;
+	text-decoration: line-through;
+}
+
+.diffs-subelement-inserted, ins, .diffs-attr-after {
+	color: #008800;
+	text-decoration: underline;
+}
+

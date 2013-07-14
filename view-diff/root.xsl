@@ -8,7 +8,7 @@
 	xmlns:bfc="http://betterform.sourceforge.net/xforms/controls"
 	xmlns:xf="http://www.w3.org/2002/xforms"
 	xmlns:bfn="http://www.betterform.de/XSL/Functions"
-	xmlns:diffs="http://betterform.de/ziziphus/diff"
+	xmlns:diff="http://betterform.de/ziziphus/diff"
 	xpath-default-namespace="http://www.w3.org/2002/xforms"
 	exclude-result-prefixes="bfn">
     <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"/>
@@ -53,12 +53,12 @@
 	<xsl:template match="/">
 		<html>
 			<head>
-				<link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css"/>
-				<link rel="stylesheet" type="text/css" href="resources/css/layout.css" />
-				<link rel="stylesheet" type="text/css" href="resources/css/record.css" />
-				<link rel="stylesheet" type="text/css" href="resources/css/diffs.css" />
-				<link rel="stylesheet" type="text/css" href="resources/script/mingos-uwindow/themes/ziziphus/style.css" />
-				<link rel="stylesheet" type="text/css" href="resources/script/layout-default-latest.css" />
+				<link rel="stylesheet" type="text/css" href="../resources/css/bootstrap.min.css"/>
+				<link rel="stylesheet" type="text/css" href="../resources/css/layout.css" />
+				<link rel="stylesheet" type="text/css" href="../resources/css/record.css" />
+				<link rel="stylesheet" type="text/css" href="../resources/css/diffs.css" />
+				<link rel="stylesheet" type="text/css" href="../resources/script/mingos-uwindow/themes/ziziphus/style.css" />
+				<link rel="stylesheet" type="text/css" href="../resources/script/layout-default-latest.css" />
 			</head>
 			<body>
 				<xsl:apply-templates />
@@ -74,8 +74,8 @@
         <xsl:variable name="sectionWithData" select="if(string-length(string-join($vraSetNode//*/text(),'')) != 0) then 'true' else 'false'"/>
         <xsl:variable name="classes">
         	<xsl:choose>
-        	<xsl:when test="$vraSetNode/@diffs:element-change">
-        		<xsl:value-of select="concat('diffs-set-',$vraSetNode/@diffs:element-change, ' ')"/>
+        	<xsl:when test="$vraSetNode/@diff:element-change">
+        		<xsl:value-of select="concat('diffs-set-',$vraSetNode/@diff:element-change, ' ')"/>
         	</xsl:when>
         	<xsl:otherwise>diffs-set-missing</xsl:otherwise>
         	</xsl:choose>
@@ -110,9 +110,7 @@
                     select="if(local-name(.)='work') then 'leftPanel' else 'rightPanel'"></xsl:variable>
       <div>
          <xsl:value-of select="$title"></xsl:value-of>
-         <xsl:text> </xsl:text><button type="button" class="historyButton" id="{$recordType}-versions-button"
-                 subject="{$recordId}"
-                 title="Versions history for {$recordType} {$recordId}">H</button></div>
+       </div>
       <div id="{$side}" class="sidePanel">
          <xsl:call-template name="titlePane">
             <xsl:with-param name="vraSetName" select="'AgentSet'"></xsl:with-param>
@@ -207,6 +205,45 @@
         </xsl:if>
     </xsl:template>
     
+    <xsl:template match="diff:del">
+    	<del>
+    		<xsl:apply-templates/>
+    	</del>
+    </xsl:template>
+
+    <xsl:template match="diff:ins">
+    	<ins>
+    		<xsl:apply-templates/>
+    	</ins>
+    </xsl:template>
+
+	<xsl:template name="diff:insert-element-diff-class">
+		<xsl:if test="@diff:element-change">
+			<xsl:attribute name="class">
+			<xsl:choose>
+				<xsl:when test="@diff:element-change = 'missing'">diffs-element-missing</xsl:when>
+				<xsl:when test="@diff:element-change = 'both'">diffs-element-both</xsl:when>
+				<xsl:when test="@diff:element-change = 'inserted'">diffs-element-inserted</xsl:when>
+				<xsl:when test="@diff:element-change = 'deleted'">diffs-element-deleted</xsl:when>
+			</xsl:choose>
+			</xsl:attribute>
+		</xsl:if>
+	</xsl:template>
+	
+	<xsl:template match="*[@diff:*][not(*)]">
+		<span>
+			<xsl:attribute name="class">
+				<xsl:choose>
+					<xsl:when test="@diff:element-change = 'missing'">diffs-subelement-missing</xsl:when>
+					<xsl:when test="@diff:element-change = 'both'">diffs-subelement-both</xsl:when>
+					<xsl:when test="@diff:element-change = 'inserted'">diffs-subelement-inserted</xsl:when>
+					<xsl:when test="@diff:element-change = 'deleted'">diffs-subelement-deleted</xsl:when>
+				</xsl:choose>
+			</xsl:attribute>
+			<xsl:apply-templates />
+		</span>
+	</xsl:template>
+
     <xsl:function name="bfn:sectionTitle" as="xsd:string?">
         <xsl:param name="arg" as="xsd:string?"/>
         <xsl:sequence select="substring-before(bfn:upperCase($arg),'Set')"/>

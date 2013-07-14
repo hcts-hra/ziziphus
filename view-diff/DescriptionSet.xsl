@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+<?xml version="1.0" encoding="UTF-8"?><xsl:stylesheet xmlns:vra="http://www.vraweb.org/vracore4.htm"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:html="http://www.w3.org/1999/xhtml"
                 xmlns="http://www.w3.org/1999/xhtml"
-                xmlns:vra="http://www.vraweb.org/vracore4.htm"
+                xmlns:diff="http://betterform.de/ziziphus/diff"
                 version="2.0">
    <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes"
                omit-xml-declaration="no"></xsl:output>
@@ -12,11 +13,12 @@
             <tbody>
                <xsl:for-each select="vra:description">
                   <tr>
+                     <xsl:call-template name="diff:insert-element-diff-class"></xsl:call-template>
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(.,'')) != 0">
                               <div data-bf-type="textarea" data-bf-bind="." tabindex="0" title="" id="b-d2e311">
-                                 <xsl:value-of select="."></xsl:value-of>
+                                 <xsl:apply-templates select="."></xsl:apply-templates>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
