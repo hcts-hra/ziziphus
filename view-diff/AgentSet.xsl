@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+<?xml version="1.0" encoding="UTF-8"?><xsl:stylesheet xmlns:vra="http://www.vraweb.org/vracore4.htm"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:html="http://www.w3.org/1999/xhtml"
                 xmlns="http://www.w3.org/1999/xhtml"
-                xmlns:vra="http://www.vraweb.org/vracore4.htm"
+                xmlns:diff="http://betterform.de/ziziphus/diff"
                 version="2.0">
    <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes"
                omit-xml-declaration="no"></xsl:output>
@@ -12,13 +13,14 @@
             <tbody>
                <xsl:for-each select="vra:agent">
                   <tr>
+                     <xsl:call-template name="diff:insert-element-diff-class"></xsl:call-template>
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:name/@type,'')) != 0">
                               <div data-bf-type="select1" data-bf-bind="vra:name/@type" tabindex="0" title="Type"
                                    id="b-d2e122"
                                    class="detail">
-                                 <xsl:value-of select="vra:name/@type"></xsl:value-of>
+                                 <xsl:apply-templates select="vra:name/@type"></xsl:apply-templates>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
@@ -29,9 +31,8 @@
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:name,'')) != 0">
                               <div data-bf-type="input" data-bf-bind="vra:name" tabindex="0" title="Name"
-                                   id="b-d2e115"
-                                   class="elementName">
-                                 <xsl:value-of select="vra:name"></xsl:value-of>
+                                   id="b-d2e115">
+                                 <xsl:apply-templates select="vra:name"></xsl:apply-templates>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
@@ -44,7 +45,7 @@
                            <xsl:when test="string-length(string-join(vra:role,'')) != 0">
                               <div data-bf-type="input" data-bf-bind="vra:role" tabindex="0" title="Role"
                                    id="b-d2e132">
-                                 <xsl:value-of select="vra:role"></xsl:value-of>
+                                 <xsl:apply-templates select="vra:role"></xsl:apply-templates>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
@@ -58,7 +59,7 @@
                               <div data-bf-type="input" data-bf-bind="vra:attribution" tabindex="0"
                                    title="Attribution"
                                    id="b-d2e63">
-                                 <xsl:value-of select="vra:attribution"></xsl:value-of>
+                                 <xsl:apply-templates select="vra:attribution"></xsl:apply-templates>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
@@ -71,7 +72,7 @@
                            <xsl:when test="string-length(string-join(vra:culture,'')) != 0">
                               <div data-bf-type="input" data-bf-bind="vra:culture" tabindex="0" title="Culture"
                                    id="b-d2e79">
-                                 <xsl:value-of select="vra:culture"></xsl:value-of>
+                                 <xsl:apply-templates select="vra:culture"></xsl:apply-templates>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
@@ -85,7 +86,7 @@
                               <div data-bf-type="select1" data-bf-bind="vra:dates/@type" tabindex="0" title="Type"
                                    id="b-d2e114"
                                    class="detail">
-                                 <xsl:value-of select="vra:dates/@type"></xsl:value-of>
+                                 <xsl:apply-templates select="vra:dates/@type"></xsl:apply-templates>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
@@ -98,7 +99,7 @@
                               <div data-bf-type="input" data-bf-bind="vra:dates/vra:earliestDate" tabindex="0"
                                    title="EarliestDate"
                                    id="b-d2e98">
-                                 <xsl:value-of select="vra:dates/vra:earliestDate"></xsl:value-of>
+                                 <xsl:apply-templates select="vra:dates/vra:earliestDate"></xsl:apply-templates>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
@@ -111,7 +112,7 @@
                               <div data-bf-type="input" data-bf-bind="vra:dates/vra:earliestDate/@circa"
                                    tabindex="0"
                                    title="circa">
-                                 <xsl:value-of select="vra:dates/vra:earliestDate/@circa"></xsl:value-of>
+                                 <xsl:apply-templates select="vra:dates/vra:earliestDate/@circa"></xsl:apply-templates>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
@@ -125,7 +126,7 @@
                               <div data-bf-type="input" data-bf-bind="vra:dates/vra:latestDate" tabindex="0"
                                    title="LatestDate"
                                    id="b-d2e106">
-                                 <xsl:value-of select="vra:dates/vra:latestDate"></xsl:value-of>
+                                 <xsl:apply-templates select="vra:dates/vra:latestDate"></xsl:apply-templates>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
@@ -138,7 +139,7 @@
                               <div data-bf-type="input" data-bf-bind="vra:dates/vra:latestDate/@circa"
                                    tabindex="0"
                                    title="circa">
-                                 <xsl:value-of select="vra:dates/vra:latestDate/@circa"></xsl:value-of>
+                                 <xsl:apply-templates select="vra:dates/vra:latestDate/@circa"></xsl:apply-templates>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>

@@ -81,6 +81,31 @@ declare function local:text-diff($doc1-nodes as node()*, $doc2-nodes as node()*)
         )
 };
 
+declare function local:attr-diff($template as element(), $elem1 as element()?, $elem2 as element()?) as node()* {
+    let $attrs1 := $elem1/@*
+    let $attrs2 := $elem2/@*
+    let $all-names := (for $a in $template/@* return node-name($a))
+    let $names := distinct-values($all-names)
+    for $name in $names
+    let $attr1 := $attrs1[node-name(.) = $name]
+    let $attr2 := $attrs2[node-name(.) = $name]
+    let $val1 := string($attr1)
+    let $val2 := string($attr2)
+    return
+        if($showMissingAttributes or $attr1 or $attr2)
+        then (
+                if(not($attr1 or $attr2)) then
+                    attribute {concat("diffs:attr-none-", $name)} {""}
+                else if($val1 eq $val2) then
+                    attribute {$name} {$val1}
+                else (
+                    if($attr1) then attribute {concat("diffs:attr-before-", $name)} {$val1} else (),
+                    if($attr2) then attribute {concat("diffs:attr-after-", $name)}  {$val2} else ()
+                )
+        )
+        else ()
+};
+
 declare function local:element-diff($template-node as node(), $doc1-node as node()?, $doc2-node as node()?) as node() {
     let $status := local:elementDiffStatus($doc1-node, $doc2-node) return
     element {node-name($template-node)} {
@@ -94,14 +119,16 @@ declare function local:element-diff($template-node as node(), $doc1-node as node
             else (: element content :)
                 for $subelement in $subelements
                 let $name := node-name($subelement)
-                let $doc1-children := $doc1-node/*[node-name(.) = $name]
-                let $doc2-children := $doc2-node/*[node-name(.) = $name]
+                let $doc1-children := reverse($doc1-node/*[node-name(.) = $name])
+                let $doc2-children := reverse($doc2-node/*[node-name(.) = $name])
                 let $minimalN := if($showMissingElements) then 1 else 0
                 let $n := max(($minimalN, count($doc1-children), count($doc2-children)))
-                for $i in (1 to $n)
-                    let $doc1-child := $doc1-children[$i]
-                    let $doc2-child := $doc2-children[$i]
-                    return (local:element-diff($subelement, $doc1-child, $doc2-child))
+                return reverse (
+                    for $i in 1 to $n
+                    	let $doc1-child := $doc1-children[$i]
+                    	let $doc2-child := $doc2-children[$i]
+                    	return (local:element-diff($subelement, $doc1-child, $doc2-child))
+                    )
         ) else if($status = 'deleted') then (
             $doc1-node/node()
         ) else if($status = 'inserted') then (
@@ -110,39 +137,6 @@ declare function local:element-diff($template-node as node(), $doc1-node as node
             $template-node/node()
         ) else ()
     }
-};
-
-(: TODOs:
- : * heidicon extensions
- : * error handling
- :   - missing document or revision
- :)
-
-declare function local:attr-diff($template as element(), $elem1 as element()?, $elem2 as element()?) as node()* {
-    let $attrs1 := $elem1/@*
-    let $attrs2 := $elem2/@*
-    (: let $all-names := (for $a in $attrs1 | $attrs2 return node-name($a)) :)
-    let $all-names := (for $a in $template/@* return node-name($a))
-    let $names := distinct-values($all-names)
-    for $name in $names
-    let $attr1 := $attrs1[node-name(.) = $name]
-    let $attr2 := $attrs2[node-name(.) = $name]
-    let $val1 := string($attr1)
-    let $val2 := string($attr2)
-    return
-        if($showMissingAttributes or $attr1 or $attr2)
-        then
-            <diffs:attr name="{$name}">{
-                if(not($attr1 or $attr2)) then
-                    attribute none {""}
-                else if($val1 eq $val2) then
-                    attribute both {string($attr1)}
-                else (
-                    if($attr1) then attribute before {$val1} else (),
-                    if($attr2) then attribute after  {$val2} else ()
-                )
-            }</diffs:attr>
-        else ()
 };
 
 declare function local:document-diff($template as document-node(), $doc1 as document-node(), $doc2 as document-node()) as document-node() {
@@ -164,3 +158,9 @@ return
         let $xsltParameters := <parameters><param name="a" value="'a'"/></parameters>
         return transform:transform($result, doc($xsl), $xsltParameters) 
    default return ()
+
+(: TODOs:
+ : * heidicon extensions
+ : * error handling
+ :   - missing document or revision
+ :)
