@@ -399,7 +399,7 @@
     </target>
 
     <!-- ########################################################################################
-    View generation targets
+    Diff presentation stylesheets generation targets
     ######################################################################################## -->
 
     <target name="generate-diff-view" depends="generate-forms, createVRASectionTemplate" description="generates XSLT transforms for VRA Section Views. Uses generated XForms as input.">

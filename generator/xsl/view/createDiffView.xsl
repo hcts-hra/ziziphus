@@ -15,10 +15,10 @@
     <xsl:strip-space elements="*"/>
 
     <!--
-    generates a stylesheet for transforming a single Set Element (e.g. AgentSet) at runtime. The resulting
-    stylesheet will be found in folder 'view'.
+    	generates a stylesheet for transforming a single Set Element (e.g. AgentSet) during diff presentation.
+    	The resulting stylesheet will be found in folder 'view-diff'.
     -->
-    <!-- ATTENTION - FIRST INSTANCE MUST BE DEFAULT INSTANCE IN THE GENERATED FORM USED TO FEED THIS TRANSFORM -->
+    <!--? ATTENTION - FIRST INSTANCE MUST BE DEFAULT INSTANCE IN THE GENERATED FORM USED TO FEED THIS TRANSFORM -->
     <xsl:variable name="rootNodeName" select="name(//xf:instance[1]/*[1])"/>
     <xsl:variable name="rootMatch" select="concat('vra:',$rootNodeName)"/>
 
@@ -88,18 +88,17 @@
     </xsl:template>
 
 	<xsl:template name="oneEntryBlock">
-		<xsl:param name="attr-name" as="xs:string" required="yes"/>
-		<xsl:param name="prefix" as="xs:string?" select="'@'"/>
+		<xsl:param name="path" as="xs:string" required="yes"/>
 		<xsl:param name="class" as="xs:string?"/>
 
 		<transform:choose>
-			<transform:when test="string-length(string-join({$prefix}{$attr-name},'')) != 0">
+			<transform:when test="string-length(string-join({$path},'')) != 0">
 				<div title="{xf:label}">
 					<xsl:if test="$class">
 						<xsl:attribute name="class" select="$class"/>
 					</xsl:if>
 					<xsl:copy-of select="@*[not(name()='ref')]" />
-					<transform:value-of select="{$prefix}{$attr-name}" />
+					<transform:apply-templates select="{$path}" />
 				</div>
 			</transform:when>
 			<transform:otherwise>
@@ -116,43 +115,35 @@
 			select="if(@class='detail') then true() else false()" />
 
 		<xsl:choose>
-			<xsl:when test="starts-with(@ref,'@')">
-				<xsl:variable name="attr-name" select="substring(@ref,2)"/>
+			<xsl:when test="contains(@ref,'@')">
 				<!-- atribute - handle changed attributes -->
+				<xsl:variable name="attr-path-before" select="replace(@ref,'@','@diff:attr-before-')"/>
+				<xsl:variable name="attr-path-after" select="replace(@ref,'@','@diff:attr-after-')"/>
 				<transform:choose>
-					<transform:when test="@diff:attr-before-{$attr-name} or @diff:attr-after-{$attr-name}">
+					<transform:when test="{$attr-path-before} or {$attr-path-after}">
+						<!--  there were changes -->
 						<xsl:call-template name="oneEntryBlock">
-							<xsl:with-param name="attr-name" select="$attr-name"/>
-							<xsl:with-param name="prefix" select="'@diff:attr-before-'"/>
+							<xsl:with-param name="path" select="$attr-path-before"/>
 							<xsl:with-param name="class" select="'diffs-attr-before'"/>
 						</xsl:call-template>
 						<xsl:call-template name="oneEntryBlock">
-							<xsl:with-param name="attr-name" select="$attr-name"/>
-							<xsl:with-param name="prefix" select="'@diff:attr-after-'"/>
+							<xsl:with-param name="path" select="$attr-path-after"/>
 							<xsl:with-param name="class" select="'diffs-attr-after'"/>
 						</xsl:call-template>
 					</transform:when>
 					<transform:otherwise>
+						<!--  no changes -->
 						<xsl:call-template name="oneEntryBlock">
-							<xsl:with-param name="attr-name" select="$attr-name"/>
+							<xsl:with-param name="path" select="@ref"/>
 						</xsl:call-template>
 					</transform:otherwise>
 				</transform:choose>
-
 			</xsl:when>
-			<xsl:otherwise> <!-- element - only default behaviour -->
-				<transform:choose>
-					<transform:when test="string-length(string-join({@ref},'')) != 0">
-						<div title="{xf:label}">
-							<xsl:copy-of select="@*[not(name()='ref')]" />
-							<transform:apply-templates select="{@ref}" />
-						</div>
-					</transform:when>
-
-					<transform:otherwise>
-						<div class="nodata">(<xsl:value-of select="xf:label" />)</div>
-					</transform:otherwise>
-				</transform:choose>
+			<xsl:otherwise>
+				<!-- element - only default behaviour -->
+				<xsl:call-template name="oneEntryBlock">
+					<xsl:with-param name="path" select="@ref"/>
+				</xsl:call-template>
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
