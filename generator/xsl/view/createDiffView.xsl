@@ -1,5 +1,6 @@
 <xsl:stylesheet version="2.0"
         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
         xmlns="http://www.w3.org/1999/xhtml"
         xmlns:html="http://www.w3.org/1999/xhtml"
         xmlns:xf="http://www.w3.org/2002/xforms"
@@ -86,6 +87,29 @@
         </xsl:for-each>
     </xsl:template>
 
+	<xsl:template name="oneEntryBlock">
+		<xsl:param name="attr-name" as="xs:string" required="yes"/>
+		<xsl:param name="prefix" as="xs:string?" select="'@'"/>
+		<xsl:param name="class" as="xs:string?"/>
+
+		<transform:choose>
+			<transform:when test="string-length(string-join({$prefix}{$attr-name},'')) != 0">
+				<div data-bf-type="{local-name(.)}" data-bf-bind="{@ref}"
+					tabindex="0" title="{xf:label}">
+					<xsl:if test="$class">
+						<xsl:attribute name="class" select="$class"/>
+					</xsl:if>
+					<xsl:copy-of select="@*[not(name()='ref')]" />
+					<transform:value-of select="{$prefix}{$attr-name}" />
+				</div>
+			</transform:when>
+			<transform:otherwise>
+				<div class="{'nodata',$class}" data-bf-type="{local-name(.)}"
+					data-bf-bind="{@ref}" tabindex="0">(<xsl:value-of select="xf:label" />)</div>
+			</transform:otherwise>
+		</transform:choose>
+	</xsl:template>
+
 	<xsl:template match="xf:input | xf:select1 | xf:textarea">
 		<xsl:variable name="path">
 			<xsl:call-template name="buildPath" />
@@ -99,52 +123,21 @@
 				<!-- atribute - handle changed attributes -->
 				<transform:choose>
 					<transform:when test="@diff:attr-before-{$attr-name} or @diff:attr-after-{$attr-name}">
-						<div class="diffs-attr-before">
-							<transform:choose>
-								<transform:when test="string-length(string-join(@diff:attr-before-{$attr-name},'')) != 0">
-									<div data-bf-type="{local-name(.)}" data-bf-bind="{@ref}"
-										tabindex="0" title="{xf:label}">
-										<xsl:copy-of select="@*[not(name()='ref')]" />
-										<transform:value-of select="@diff:attr-before-{$attr-name}" />
-									</div>
-								</transform:when>
-								<transform:otherwise>
-									<div class="nodata" data-bf-type="{local-name(.)}"
-										data-bf-bind="{@ref}" tabindex="0">(<xsl:value-of select="xf:label" />)</div>
-								</transform:otherwise>
-							</transform:choose>
-						</div>
-						<div class="diffs-attr-after">
-							<transform:choose>
-								<transform:when test="string-length(string-join(@diff:attr-after-{$attr-name},'')) != 0">
-									<div data-bf-type="{local-name(.)}" data-bf-bind="{@ref}"
-										tabindex="0" title="{xf:label}">
-										<xsl:copy-of select="@*[not(name()='ref')]" />
-										<transform:value-of select="@diff:attr-after-{$attr-name}" />
-									</div>
-								</transform:when>
-								<transform:otherwise>
-									<div class="nodata" data-bf-type="{local-name(.)}"
-										data-bf-bind="{@ref}" tabindex="0">(<xsl:value-of select="xf:label" />)</div>
-								</transform:otherwise>
-							</transform:choose>
-						</div>
+						<xsl:call-template name="oneEntryBlock">
+							<xsl:with-param name="attr-name" select="$attr-name"/>
+							<xsl:with-param name="prefix" select="'@diff:attr-before-'"/>
+							<xsl:with-param name="class" select="'diffs-attr-before'"/>
+						</xsl:call-template>
+						<xsl:call-template name="oneEntryBlock">
+							<xsl:with-param name="attr-name" select="$attr-name"/>
+							<xsl:with-param name="prefix" select="'@diff:attr-after-'"/>
+							<xsl:with-param name="class" select="'diffs-attr-after'"/>
+						</xsl:call-template>
 					</transform:when>
 					<transform:otherwise>
-						<transform:choose>
-							<transform:when test="string-length(string-join({@ref},'')) != 0">
-								<div data-bf-type="{local-name(.)}" data-bf-bind="{@ref}"
-									tabindex="0" title="{xf:label}">
-									<xsl:copy-of select="@*[not(name()='ref')]" />
-									<transform:value-of select="{@ref}" />
-								</div>
-							</transform:when>
-		
-							<transform:otherwise>
-								<div class="nodata" data-bf-type="{local-name(.)}"
-									data-bf-bind="{@ref}" tabindex="0">(<xsl:value-of select="xf:label" />)</div>
-							</transform:otherwise>
-						</transform:choose>
+						<xsl:call-template name="oneEntryBlock">
+							<xsl:with-param name="attr-name" select="$attr-name"/>
+						</xsl:call-template>
 					</transform:otherwise>
 				</transform:choose>
 
