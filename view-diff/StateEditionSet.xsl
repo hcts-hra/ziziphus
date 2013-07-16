@@ -21,7 +21,7 @@
                               <xsl:choose>
                                  <xsl:when test="string-length(string-join(@diff:attr-before-type,'')) != 0">
                                     <div title="Type" class="diffs-attr-before" id="b-d2e924">
-                                       <xsl:value-of select="@diff:attr-before-type"></xsl:value-of>
+                                       <xsl:apply-templates select="@diff:attr-before-type"></xsl:apply-templates>
                                     </div>
                                  </xsl:when>
                                  <xsl:otherwise>
@@ -31,7 +31,7 @@
                               <xsl:choose>
                                  <xsl:when test="string-length(string-join(@diff:attr-after-type,'')) != 0">
                                     <div title="Type" class="diffs-attr-after" id="b-d2e924">
-                                       <xsl:value-of select="@diff:attr-after-type"></xsl:value-of>
+                                       <xsl:apply-templates select="@diff:attr-after-type"></xsl:apply-templates>
                                     </div>
                                  </xsl:when>
                                  <xsl:otherwise>
@@ -43,7 +43,7 @@
                               <xsl:choose>
                                  <xsl:when test="string-length(string-join(@type,'')) != 0">
                                     <div title="Type" id="b-d2e924">
-                                       <xsl:value-of select="@type"></xsl:value-of>
+                                       <xsl:apply-templates select="@type"></xsl:apply-templates>
                                     </div>
                                  </xsl:when>
                                  <xsl:otherwise>
@@ -57,7 +57,7 @@
                               <xsl:choose>
                                  <xsl:when test="string-length(string-join(@diff:attr-before-count,'')) != 0">
                                     <div title="count" class="diffs-attr-before">
-                                       <xsl:value-of select="@diff:attr-before-count"></xsl:value-of>
+                                       <xsl:apply-templates select="@diff:attr-before-count"></xsl:apply-templates>
                                     </div>
                                  </xsl:when>
                                  <xsl:otherwise>
@@ -67,7 +67,7 @@
                               <xsl:choose>
                                  <xsl:when test="string-length(string-join(@diff:attr-after-count,'')) != 0">
                                     <div title="count" class="diffs-attr-after">
-                                       <xsl:value-of select="@diff:attr-after-count"></xsl:value-of>
+                                       <xsl:apply-templates select="@diff:attr-after-count"></xsl:apply-templates>
                                     </div>
                                  </xsl:when>
                                  <xsl:otherwise>
@@ -79,7 +79,7 @@
                               <xsl:choose>
                                  <xsl:when test="string-length(string-join(@count,'')) != 0">
                                     <div title="count">
-                                       <xsl:value-of select="@count"></xsl:value-of>
+                                       <xsl:apply-templates select="@count"></xsl:apply-templates>
                                     </div>
                                  </xsl:when>
                                  <xsl:otherwise>
@@ -93,7 +93,7 @@
                               <xsl:choose>
                                  <xsl:when test="string-length(string-join(@diff:attr-before-num,'')) != 0">
                                     <div title="num" class="diffs-attr-before">
-                                       <xsl:value-of select="@diff:attr-before-num"></xsl:value-of>
+                                       <xsl:apply-templates select="@diff:attr-before-num"></xsl:apply-templates>
                                     </div>
                                  </xsl:when>
                                  <xsl:otherwise>
@@ -103,7 +103,7 @@
                               <xsl:choose>
                                  <xsl:when test="string-length(string-join(@diff:attr-after-num,'')) != 0">
                                     <div title="num" class="diffs-attr-after">
-                                       <xsl:value-of select="@diff:attr-after-num"></xsl:value-of>
+                                       <xsl:apply-templates select="@diff:attr-after-num"></xsl:apply-templates>
                                     </div>
                                  </xsl:when>
                                  <xsl:otherwise>
@@ -115,7 +115,7 @@
                               <xsl:choose>
                                  <xsl:when test="string-length(string-join(@num,'')) != 0">
                                     <div title="num">
-                                       <xsl:value-of select="@num"></xsl:value-of>
+                                       <xsl:apply-templates select="@num"></xsl:apply-templates>
                                     </div>
                                  </xsl:when>
                                  <xsl:otherwise>

@@ -17,13 +17,39 @@
                      <xsl:call-template name="diff:insert-element-diff-class"></xsl:call-template>
                      <td>
                         <xsl:choose>
-                           <xsl:when test="string-length(string-join(vra:term/@type,'')) != 0">
-                              <div title="Type" id="b-d2e1024">
-                                 <xsl:apply-templates select="vra:term/@type"></xsl:apply-templates>
-                              </div>
+                           <xsl:when test="vra:term/@diff:attr-before-type or vra:term/@diff:attr-after-type">
+                              <xsl:choose>
+                                 <xsl:when test="string-length(string-join(vra:term/@diff:attr-before-type,'')) != 0">
+                                    <div title="Type" class="diffs-attr-before" id="b-d2e1024">
+                                       <xsl:apply-templates select="vra:term/@diff:attr-before-type"></xsl:apply-templates>
+                                    </div>
+                                 </xsl:when>
+                                 <xsl:otherwise>
+                                    <div class="nodata diffs-attr-before">(Type)</div>
+                                 </xsl:otherwise>
+                              </xsl:choose>
+                              <xsl:choose>
+                                 <xsl:when test="string-length(string-join(vra:term/@diff:attr-after-type,'')) != 0">
+                                    <div title="Type" class="diffs-attr-after" id="b-d2e1024">
+                                       <xsl:apply-templates select="vra:term/@diff:attr-after-type"></xsl:apply-templates>
+                                    </div>
+                                 </xsl:when>
+                                 <xsl:otherwise>
+                                    <div class="nodata diffs-attr-after">(Type)</div>
+                                 </xsl:otherwise>
+                              </xsl:choose>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="nodata">(Type)</div>
+                              <xsl:choose>
+                                 <xsl:when test="string-length(string-join(vra:term/@type,'')) != 0">
+                                    <div title="Type" id="b-d2e1024">
+                                       <xsl:apply-templates select="vra:term/@type"></xsl:apply-templates>
+                                    </div>
+                                 </xsl:when>
+                                 <xsl:otherwise>
+                                    <div class="nodata">(Type)</div>
+                                 </xsl:otherwise>
+                              </xsl:choose>
                            </xsl:otherwise>
                         </xsl:choose>
                         <xsl:choose>
