@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><xsl:stylesheet xmlns:vra="http://www.vraweb.org/vracore4.htm"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:html="http://www.w3.org/1999/xhtml"
                 xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:diff="http://betterform.de/ziziphus/diff"
@@ -17,43 +18,36 @@
                      <td>
                         <xsl:choose>
                            <xsl:when test="@diff:attr-before-type or @diff:attr-after-type">
-                              <div class="diffs-attr-before">
-                                 <xsl:choose>
-                                    <xsl:when test="string-length(string-join(@diff:attr-before-type,'')) != 0">
-                                       <div data-bf-type="select1" data-bf-bind="@type" tabindex="0" title="Type"
-                                            id="b-d2e265">
-                                          <xsl:value-of select="@diff:attr-before-type"></xsl:value-of>
-                                       </div>
-                                    </xsl:when>
-                                    <xsl:otherwise>
-                                       <div class="nodata" data-bf-type="select1" data-bf-bind="@type" tabindex="0">(Type)</div>
-                                    </xsl:otherwise>
-                                 </xsl:choose>
-                              </div>
-                              <div class="diffs-attr-after">
-                                 <xsl:choose>
-                                    <xsl:when test="string-length(string-join(@diff:attr-after-type,'')) != 0">
-                                       <div data-bf-type="select1" data-bf-bind="@type" tabindex="0" title="Type"
-                                            id="b-d2e265">
-                                          <xsl:value-of select="@diff:attr-after-type"></xsl:value-of>
-                                       </div>
-                                    </xsl:when>
-                                    <xsl:otherwise>
-                                       <div class="nodata" data-bf-type="select1" data-bf-bind="@type" tabindex="0">(Type)</div>
-                                    </xsl:otherwise>
-                                 </xsl:choose>
-                              </div>
+                              <xsl:choose>
+                                 <xsl:when test="string-length(string-join(@diff:attr-before-type,'')) != 0">
+                                    <div title="Type" class="diffs-attr-before" id="b-d2e265">
+                                       <xsl:value-of select="@diff:attr-before-type"></xsl:value-of>
+                                    </div>
+                                 </xsl:when>
+                                 <xsl:otherwise>
+                                    <div class="nodata diffs-attr-before">(Type)</div>
+                                 </xsl:otherwise>
+                              </xsl:choose>
+                              <xsl:choose>
+                                 <xsl:when test="string-length(string-join(@diff:attr-after-type,'')) != 0">
+                                    <div title="Type" class="diffs-attr-after" id="b-d2e265">
+                                       <xsl:value-of select="@diff:attr-after-type"></xsl:value-of>
+                                    </div>
+                                 </xsl:when>
+                                 <xsl:otherwise>
+                                    <div class="nodata diffs-attr-after">(Type)</div>
+                                 </xsl:otherwise>
+                              </xsl:choose>
                            </xsl:when>
                            <xsl:otherwise>
                               <xsl:choose>
                                  <xsl:when test="string-length(string-join(@type,'')) != 0">
-                                    <div data-bf-type="select1" data-bf-bind="@type" tabindex="0" title="Type"
-                                         id="b-d2e265">
+                                    <div title="Type" id="b-d2e265">
                                        <xsl:value-of select="@type"></xsl:value-of>
                                     </div>
                                  </xsl:when>
                                  <xsl:otherwise>
-                                    <div class="nodata" data-bf-type="select1" data-bf-bind="@type" tabindex="0">(Type)</div>
+                                    <div class="nodata">(Type)</div>
                                  </xsl:otherwise>
                               </xsl:choose>
                            </xsl:otherwise>
@@ -62,53 +56,44 @@
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:earliestDate,'')) != 0">
-                              <div data-bf-type="input" data-bf-bind="vra:earliestDate" tabindex="0"
-                                   title="EarliestDate"
-                                   id="b-d2e249">
+                              <div title="EarliestDate" id="b-d2e249">
                                  <xsl:apply-templates select="vra:earliestDate"></xsl:apply-templates>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="nodata" data-bf-type="input" data-bf-bind="vra:earliestDate"
-                                   tabindex="0">(EarliestDate)</div>
+                              <div class="nodata">(EarliestDate)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:earliestDate/@circa,'')) != 0">
-                              <div data-bf-type="input" data-bf-bind="vra:earliestDate/@circa" tabindex="0"
-                                   title="circa">
+                              <div title="circa">
                                  <xsl:apply-templates select="vra:earliestDate/@circa"></xsl:apply-templates>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="nodata" data-bf-type="input" data-bf-bind="vra:earliestDate/@circa"
-                                   tabindex="0">(circa)</div>
+                              <div class="nodata">(circa)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:latestDate,'')) != 0">
-                              <div data-bf-type="input" data-bf-bind="vra:latestDate" tabindex="0"
-                                   title="LatestDate"
-                                   id="b-d2e257">
+                              <div title="LatestDate" id="b-d2e257">
                                  <xsl:apply-templates select="vra:latestDate"></xsl:apply-templates>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="nodata" data-bf-type="input" data-bf-bind="vra:latestDate" tabindex="0">(LatestDate)</div>
+                              <div class="nodata">(LatestDate)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:latestDate/@circa,'')) != 0">
-                              <div data-bf-type="input" data-bf-bind="vra:latestDate/@circa" tabindex="0"
-                                   title="circa">
+                              <div title="circa">
                                  <xsl:apply-templates select="vra:latestDate/@circa"></xsl:apply-templates>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="nodata" data-bf-type="input" data-bf-bind="vra:latestDate/@circa"
-                                   tabindex="0">(circa)</div>
+                              <div class="nodata">(circa)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>

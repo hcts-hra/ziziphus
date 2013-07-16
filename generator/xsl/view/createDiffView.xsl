@@ -94,8 +94,7 @@
 
 		<transform:choose>
 			<transform:when test="string-length(string-join({$prefix}{$attr-name},'')) != 0">
-				<div data-bf-type="{local-name(.)}" data-bf-bind="{@ref}"
-					tabindex="0" title="{xf:label}">
+				<div title="{xf:label}">
 					<xsl:if test="$class">
 						<xsl:attribute name="class" select="$class"/>
 					</xsl:if>
@@ -104,8 +103,7 @@
 				</div>
 			</transform:when>
 			<transform:otherwise>
-				<div class="{'nodata',$class}" data-bf-type="{local-name(.)}"
-					data-bf-bind="{@ref}" tabindex="0">(<xsl:value-of select="xf:label" />)</div>
+				<div class="{'nodata',$class}">(<xsl:value-of select="xf:label" />)</div>
 			</transform:otherwise>
 		</transform:choose>
 	</xsl:template>
@@ -145,16 +143,14 @@
 			<xsl:otherwise> <!-- element - only default behaviour -->
 				<transform:choose>
 					<transform:when test="string-length(string-join({@ref},'')) != 0">
-						<div data-bf-type="{local-name(.)}" data-bf-bind="{@ref}"
-							tabindex="0" title="{xf:label}">
+						<div title="{xf:label}">
 							<xsl:copy-of select="@*[not(name()='ref')]" />
 							<transform:apply-templates select="{@ref}" />
 						</div>
 					</transform:when>
 
 					<transform:otherwise>
-						<div class="nodata" data-bf-type="{local-name(.)}"
-							data-bf-bind="{@ref}" tabindex="0">(<xsl:value-of select="xf:label" />)</div>
+						<div class="nodata">(<xsl:value-of select="xf:label" />)</div>
 					</transform:otherwise>
 				</transform:choose>
 			</xsl:otherwise>
