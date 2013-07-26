@@ -44,7 +44,7 @@ return
                 <div class="span5">
                     <form method="POST" class="form-search" action="{$requestURL}">
                         <input type="hidden" name="origin" value="{$requestURL}" autocomplete="off"/>
-                        <input type="text" name="user"  required="required" placeholder="username"/>
+                        <input type="text" name="username"  required="required" placeholder="username"/>
                         <input type="password" name="password" placeholder="password"/>
                         <button type="submit" value="Login" class="btn btn-success">Login</button>
                     </form>

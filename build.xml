@@ -56,6 +56,7 @@
     <target name="xar">
         <delete dir="${target.dir}"/>
         <mkdir dir="${target.dir}"/>
+        <copy todir="${target.ziziphus.dir}" file="${basedir}/icon.png"/>
         <copy todir="${target.ziziphus.dir}/modules">
             <fileset dir="${basedir}/modules"/>
         </copy>
@@ -64,9 +65,6 @@
         </copy>
         <copy todir="${target.ziziphus.dir}/data">
             <fileset dir="${basedir}/data"/>
-        </copy>
-        <copy todir="${target.ziziphus.dir}/records">
-            <fileset dir="${basedir}/records" excludes="priyapaul/**"/>
         </copy>
         <copy todir="${target.ziziphus.dir}/forms">
             <fileset dir="${basedir}/forms"/>

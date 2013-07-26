@@ -4,6 +4,7 @@ declare namespace vra = "http://www.vraweb.org/vracore4.htm";
 declare namespace xs = "http://www.w3.org/2001/XMLSchema";
 
 import module namespace v = "http://exist-db.org/versioning";
+import module namespace app="http://www.betterform.de/projects/ziziphus/xquery/app" at "app.xqm";
 
 declare option exist:serialize "method=xhtml media-type=application/xhtml+xml";
 
@@ -27,10 +28,9 @@ declare variable $relPath as xs:string? := request:get-parameter("rel_path", ())
 declare variable $absPath as xs:string? := request:get-parameter("path", ());
 
 (: Change here location of collections to adjust to your installation layout. :)
-declare variable $ziziphusRoot as xs:string := "/db/apps/ziziphus";
-declare variable $ziziphusDataRoot as xs:string := "/db/apps/ziziphusData";
-declare variable $urlRoot as xs:string := "/exist/apps/ziziphusData";
-declare variable $filesPath as xs:string := "/priyapaul/files";
+declare variable $ziziphusRoot as xs:string := $app:app-dir;
+declare variable $ziziphusDataRoot as xs:string := $app:data-dir;
+declare variable $filesPath as xs:string := "$app:record-dir";
 declare variable $xsl as xs:string := $ziziphusRoot || "/resources/xsl/versions.xsl";
 
 declare function local:makePathFromArgs() as xs:string ? {
@@ -39,9 +39,9 @@ declare function local:makePathFromArgs() as xs:string ? {
     else if($relPath)
       then $ziziphusDataRoot || $relPath
     else if($rid)
-      then $ziziphusDataRoot || $filesPath || "/work/" || $rid || ".xml"
+      then $ziziphusDataRoot || $filesPath || $rid || ".xml"
     else if($iid)
-      then $ziziphusDataRoot || $filesPath || "/images/" || $iid || ".xml"
+      then $ziziphusDataRoot || $filesPath || "/VRA_images/" || $iid || ".xml"
     else ()
 };
 

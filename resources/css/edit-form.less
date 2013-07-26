@@ -111,11 +111,17 @@ table {
 .triggerCol {
   width: 10px;
 
-  button{
+  button {
     width: 24px;
     height: 24px;
     font-size: 0.9em;
     padding: 0;
+  }
+
+  .btn-trashcan {
+    background: url(../images/icons/trash_can.png) no-repeat;
+    color: transparent;
+    border: none;
   }
 }
 
@@ -145,6 +151,13 @@ table {
       width: auto;
       float: left;
     }
+  }
+
+  .xfTextarea .widgetContainer {
+    width: 90%;
+  }
+  .xfTextarea .widgetContainer textarea {
+    width: 100%;
   }
 }
 
@@ -182,6 +195,7 @@ table {
         height: 22px;
       }
     }
+    .xfSelect1,
     .xfInput{
       .xfValue {
         width: 250px;
@@ -260,10 +274,11 @@ table {
 }
 
 .toolbar{
-  display: none;
+  //display: none;
   position: absolute;
   top:3px;
-  right: 52px;
+  right: 26px;
+  padding: 2px 0;
 
   button{
     background: transparent;
@@ -279,7 +294,8 @@ table {
     button{
       border: none;
       font-size: 30px;
-      margin-top: -2px;
+      margin-top: 0;
+      margin-right: -5px;
     }
   }
 
@@ -293,7 +309,9 @@ table {
 
   #t-close-value{
     font-size: 30px;
-    margin-top: -2px;
+    margin-top: 0;
+    background: url(../images/icons/keyboard_up.png) no-repeat;
+    color: transparent;
   }
 }
 .bf .dijitTitlePane .t-edit .xfReadOnly {

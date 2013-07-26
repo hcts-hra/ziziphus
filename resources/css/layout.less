@@ -61,6 +61,15 @@ ul.inline > li, ol.inline > li {
   background: url(../images/icons/picture-imagerec.png) no-repeat center center transparent;
 }
 
+#delete-workrecord {
+  background: url(/exist/apps/ziziphus/resources/css/../images/icons/database_delete.png) no-repeat center center transparent;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+  min-height: 24px;
+}
+
 #user{
   padding-top: 5px;
   margin-right: 3px;
@@ -94,6 +103,16 @@ ul.inline > li, ol.inline > li {
         color:white;
         text-align: center;
         font-size: 1.2em;
+
+      .showXML {
+        background: url(../images/icons/xml_document.png) no-repeat center center;
+        border: medium none;
+        float: right;
+        height: 24px;
+        padding: 2px;
+        width: 24px;
+        color:transparent !important;
+      }
     }
 /*
     input, select{
@@ -111,9 +130,20 @@ ul.inline > li, ol.inline > li {
         display: inline-block;
     }
 
+    /*
     .dijitTitlePane:hover .toolbar{
       display: inline-block;
     }
+    */
+
+    .editHighlight~.dijitTitlePaneContentOuter .t-edit {
+      display: inline-block;
+
+      .button-edit button {
+        display:none;
+      }
+    }
+
     #sectionDialog{
         position: relative;
 
@@ -276,10 +306,11 @@ ul.inline > li, ol.inline > li {
 .tundra .dijitTitlePaneTitle{
     background:#999999;
     color:white;
+    padding: 5px 4px;
 }
 .relatedImage{
     width: 100%;
-    max-width: 530px;
+    /*max-width: 530px;*/
 }
 .tundra .dijitMenu, .tundra .dijitMenuBar {
     background: #454545;
@@ -314,11 +345,11 @@ ul.inline > li, ol.inline > li {
   text-align: center;
   font-style: italic;
   font-size: 0.6em;
-  background: darkblue;
+  background: steelblue;
   margin: 10px 0;
   border-bottom: thin solid #bbb;
   color: white;
-  opacity: 0.5;
+  opacity: 0.8;
 }
 .btn-small{
   font-size:9px;
@@ -353,6 +384,7 @@ ul.inline > li, ol.inline > li {
   right:4px;
   text-align: right;
   z-index: 300;
+  padding: 2px 0;
 
   .button-edit button{
     background: url(../images/icons/keyboard_down.png) no-repeat;
@@ -372,4 +404,8 @@ ul.inline > li, ol.inline > li {
   background: url(../images/icons/database_add.png) no-repeat;
 }
 
+.subtitle {
+  float:left;
+  padding: 0 2px;
+}
 

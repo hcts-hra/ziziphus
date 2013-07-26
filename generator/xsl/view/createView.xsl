@@ -89,18 +89,31 @@
         <xsl:variable name="path"><xsl:call-template name="buildPath"/></xsl:variable>
             <xsl:variable name="isDetail" select="if(@class='detail') then true() else false()"/>
 
-            <transform:choose>
-                <transform:when test="string-length(string-join({@ref},'')) != 0">
-                    <!--<div id="{@id}" data-bf-type="{local-name(.)}" data-bf-bind="{@ref}" contenteditable="true">-->
-                    <div data-bf-type="{local-name(.)}" data-bf-bind="{@ref}" tabindex="0" title="{xf:label}">
-                        <xsl:copy-of select="@*[not(name()='ref')]"/>
-                        <transform:value-of select="{@ref}"/>
-                    </div>
-                </transform:when>
+        <xsl:choose>
+            <xsl:when test="contains(@ref, '@circa')">
+                <transform:choose>
+                    <transform:when test="string-length(string-join({@ref},'')) != 0 and {@ref} eq 'true'">
+                        <div class="subtitle" data-bf-type="{local-name(.)}" data-bf-bind="{@ref}" tabindex="0" title="{xf:label}">circa</div>
+                    </transform:when>
+                    <transform:otherwise><div class="nodata" data-bf-type="{local-name(.)}" data-bf-bind="{@ref}" tabindex="0">(<xsl:value-of select="xf:label"/>)</div></transform:otherwise>
+                    <!--<transform:otherwise><div class="detail" data-bf-type="{local-name(.)}" data-bf-bind="{@ref}" tabindex="0"><a href="#" title="Click to add element: {xf:label}">[+]</a></div></transform:otherwise>-->
+                </transform:choose>
+            </xsl:when>
+            <xsl:otherwise>
+                <transform:choose>
+                    <transform:when test="string-length(string-join({@ref},'')) != 0">
+                        <!--<div id="{@id}" data-bf-type="{local-name(.)}" data-bf-bind="{@ref}" contenteditable="true">-->
+                        <div data-bf-type="{local-name(.)}" data-bf-bind="{@ref}" tabindex="0" title="{xf:label}">
+                            <xsl:copy-of select="@*[not(name()='ref')]"/>
+                            <transform:value-of select="{@ref}"/>
+                        </div>
+                    </transform:when>
 
-                <transform:otherwise><div class="nodata" data-bf-type="{local-name(.)}" data-bf-bind="{@ref}" tabindex="0">(<xsl:value-of select="xf:label"/>)</div></transform:otherwise>
-                <!--<transform:otherwise><div class="detail" data-bf-type="{local-name(.)}" data-bf-bind="{@ref}" tabindex="0"><a href="#" title="Click to add element: {xf:label}">[+]</a></div></transform:otherwise>-->
-            </transform:choose>
+                    <transform:otherwise><div class="nodata" data-bf-type="{local-name(.)}" data-bf-bind="{@ref}" tabindex="0">(<xsl:value-of select="xf:label"/>)</div></transform:otherwise>
+                    <!--<transform:otherwise><div class="detail" data-bf-type="{local-name(.)}" data-bf-bind="{@ref}" tabindex="0"><a href="#" title="Click to add element: {xf:label}">[+]</a></div></transform:otherwise>-->
+                </transform:choose>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
 
     <xsl:template name="buildPath">
