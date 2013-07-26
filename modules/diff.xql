@@ -7,6 +7,7 @@ xquery version "3.0";
 declare namespace diffs = "http://betterform.de/ziziphus/diff";
 declare namespace vra = "http://www.vraweb.org/vracore4.htm";
 declare namespace xs = "http://www.w3.org/2001/XMLSchema";
+declare namespace html = "http://www.w3.org/1999/xhtml";
 
 import module namespace v = "http://exist-db.org/versioning";
 
@@ -36,24 +37,28 @@ declare variable $recursiveDiff := false();
  :)
 declare variable $format := request:get-parameter("format", "html");
 
-(: Change here location of collections to adjust to your installation layout. :)
+(: Change here location of collections to adjust to your installation layout.
+ : Note that path to data files is not given here - it should be provided in actual parameter.
+ :)
 declare variable $ziziphusRoot as xs:string := "/db/apps/ziziphus";
-declare variable $ziziphusDataRoot as xs:string := "/db/apps/ziziphusData";
-declare variable $urlRoot as xs:string := "/exist/apps/ziziphusData";
-declare variable $filesPath as xs:string := "/priyapaul/files";
 declare variable $xsl as xs:string := $ziziphusRoot || "/view-diff/root.xsl";
+declare variable $instance-path as xs:string := $ziziphusRoot || "/resources/xsd/vra-instance.xml";
 
-declare variable $instance-path as xs:string := '../resources/xsd/vra-instance.xml';
-
-declare function local:obtain-document($resource-path as xs:string, $rev as xs:string) as document-node() {
-    if($rev = 'last')
-    then
-        doc($resource-path)
+(: Obtains document of the given path and revision number.
+ : Beside actual revision numbers, 'last' and '0' are supported. :)
+declare function local:obtain-document($resource-path as xs:string, $rev as xs:string) as document-node()? {
+    let $doc := doc($resource-path) return
+    if(not($doc))
+    then ()
+    else if($rev = 'last')
+    then $doc
     else
         let $rev-no := xs:integer($rev)
-        return document {v:doc(doc($resource-path), $rev-no)}
+        return document { v:doc($doc, $rev-no) }
 };
 
+(: Returns a keyword indicating if and how an element changed.
+ : Element is treated as a whole - the content is not checked here. :)
 declare function local:elementDiffStatus($doc1-node as node()?, $doc2-node as node()?) as xs:string {
     let $n1 as xs:integer := count($doc1-node)
     let $n2 as xs:integer := count($doc2-node)
@@ -65,6 +70,9 @@ declare function local:elementDiffStatus($doc1-node as node()?, $doc2-node as no
         else 'shouldNeverHappen'
 };
 
+(: Performs diff calculation at text node level.
+ : If the content did not change it returned as plain text.
+ : If the content differs, both versions are returned inside appropriate elements diffs:del and diffs:ins. :)
 declare function local:text-diff($doc1-nodes as node()*, $doc2-nodes as node()*) as node()* {
     let $txt1 := string($doc1-nodes)
     let $txt2 := string($doc2-nodes)
@@ -81,6 +89,11 @@ declare function local:text-diff($doc1-nodes as node()*, $doc2-nodes as node()*)
         )
 };
 
+(: Performs diff calculation for attributes of a given element.
+ : For each attribute from template istance,
+ : if the attribute did not change, it is returned normally;
+ : if the attribute changed, its old value (if present) is returned in attribute with prefix diffs:attr-before-
+ : and ith new value (if present) is returned in attribute with prefix diffs:attr-after- :)
 declare function local:attr-diff($template as element(), $elem1 as element()?, $elem2 as element()?) as node()* {
     let $attrs1 := $elem1/@*
     let $attrs2 := $elem2/@*
@@ -106,6 +119,8 @@ declare function local:attr-diff($template as element(), $elem1 as element()?, $
         else ()
 };
 
+(: Performs diff calculation recursively for elements.
+ : Adds attributes indicating changes to elements and invokes diff calculation for text content and attributes. :)
 declare function local:element-diff($template-node as node(), $doc1-node as node()?, $doc2-node as node()?) as node() {
     let $status := local:elementDiffStatus($doc1-node, $doc2-node) return
     element {node-name($template-node)} {
@@ -125,7 +140,7 @@ declare function local:element-diff($template-node as node(), $doc1-node as node
                 let $n := max(($minimalN, count($doc1-children), count($doc2-children)))
                 return reverse (
                     for $i in 1 to $n
-                    	let $doc1-child := $doc1-children[$i]
+                        let $doc1-child := $doc1-children[$i]
                     	let $doc2-child := $doc2-children[$i]
                     	return (local:element-diff($subelement, $doc1-child, $doc2-child))
                     )
@@ -139,6 +154,7 @@ declare function local:element-diff($template-node as node(), $doc1-node as node
     }
 };
 
+(: Performs diff calculation for whole documents. :)
 declare function local:document-diff($template as document-node(), $doc1 as document-node(), $doc2 as document-node()) as document-node() {
     document {
     local:element-diff($template/*, $doc1/*, $doc2/*)
@@ -146,21 +162,40 @@ declare function local:document-diff($template as document-node(), $doc1 as docu
 };
 
 (: main :)
-let $template := doc($instance-path)
-let $doc1 := local:obtain-document($resource, $rev1)
-let $doc2 := local:obtain-document($resource, $rev2)
-let $result := local:document-diff($template, $doc1, $doc2)
+let $result := 
+if(empty($resource))
+then
+    <error>Mandatory parameter <html:var>resource</html:var> was not given.</error>
+else
+let $template := doc($instance-path) return
+if(not($template))
+then
+    <error>Instance template could not be read from <html:code>{$instance-path}</html:code>.</error>
+else
+let $doc1 := local:obtain-document($resource, $rev1) return
+if(not($doc1))
+then
+    <error>Document could not be read. <html:br/>
+        Path: <html:code>{$resource}</html:code><html:br/>
+        Revision no: <html:code>{$rev1}</html:code>
+    </error>
+else
+let $doc2 := local:obtain-document($resource, $rev2) return
+if(not($doc2))
+then
+    <error>Document could not be read. <html:br/>
+        Path: <html:code>{$resource}</html:code><html:br/>
+        Revision no: <html:code>{$rev2}</html:code>
+    </error>
+else
+    local:document-diff($template, $doc1, $doc2)
 return
     switch ($format)
     case "xml" return $result
     case "html" return
-        (:FIXME Just to remember how to pass a param ti XSLT. :)
-        let $xsltParameters := <parameters><param name="a" value="'a'"/></parameters>
-        return transform:transform($result, doc($xsl), $xsltParameters) 
+        transform:transform($result, doc($xsl), ()) 
    default return ()
 
 (: TODOs:
  : * heidicon extensions
- : * error handling
- :   - missing document or revision
  :)

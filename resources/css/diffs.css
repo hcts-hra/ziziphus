@@ -2,6 +2,14 @@ body {
 	background-color: #DDDDDD;
 }
 
+.error {
+	color: #440000;
+	border-style: solid;
+	border-color: #BB2222;
+	border-width: 2pt;
+	padding: 2pt;
+}
+
 .sidePanel {
 	width: 800px;
 	margin: 1em auto;
