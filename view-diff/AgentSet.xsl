@@ -66,7 +66,7 @@
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:role,'')) != 0">
-                              <div title="Role" id="b-d2e132">
+                              <div title="Role">
                                  <xsl:apply-templates select="vra:role"></xsl:apply-templates>
                               </div>
                            </xsl:when>
@@ -137,16 +137,6 @@
                            </xsl:otherwise>
                         </xsl:choose>
                         <xsl:choose>
-                           <xsl:when test="string-length(string-join(vra:dates/vra:earliestDate,'')) != 0">
-                              <div title="EarliestDate" id="b-d2e98">
-                                 <xsl:apply-templates select="vra:dates/vra:earliestDate"></xsl:apply-templates>
-                              </div>
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <div class="nodata">(EarliestDate)</div>
-                           </xsl:otherwise>
-                        </xsl:choose>
-                        <xsl:choose>
                            <xsl:when test="vra:dates/vra:earliestDate/@diff:attr-before-circa or vra:dates/vra:earliestDate/@diff:attr-after-circa">
                               <xsl:choose>
                                  <xsl:when test="string-length(string-join(vra:dates/vra:earliestDate/@diff:attr-before-circa,'')) != 0">
@@ -183,13 +173,13 @@
                            </xsl:otherwise>
                         </xsl:choose>
                         <xsl:choose>
-                           <xsl:when test="string-length(string-join(vra:dates/vra:latestDate,'')) != 0">
-                              <div title="LatestDate" id="b-d2e106">
-                                 <xsl:apply-templates select="vra:dates/vra:latestDate"></xsl:apply-templates>
+                           <xsl:when test="string-length(string-join(vra:dates/vra:earliestDate,'')) != 0">
+                              <div title="EarliestDate" id="b-d2e98">
+                                 <xsl:apply-templates select="vra:dates/vra:earliestDate"></xsl:apply-templates>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="nodata">(LatestDate)</div>
+                              <div class="nodata">(EarliestDate)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                         <xsl:choose>
@@ -226,6 +216,16 @@
                                     <div class="nodata">(circa)</div>
                                  </xsl:otherwise>
                               </xsl:choose>
+                           </xsl:otherwise>
+                        </xsl:choose>
+                        <xsl:choose>
+                           <xsl:when test="string-length(string-join(vra:dates/vra:latestDate,'')) != 0">
+                              <div title="LatestDate" id="b-d2e106">
+                                 <xsl:apply-templates select="vra:dates/vra:latestDate"></xsl:apply-templates>
+                              </div>
+                           </xsl:when>
+                           <xsl:otherwise>
+                              <div class="nodata">(LatestDate)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>
