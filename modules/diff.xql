@@ -89,8 +89,33 @@ declare function local:text-diff($doc1-nodes as node()*, $doc2-nodes as node()*)
         )
 };
 
+declare function local:attr-diff($template as element(), $elem1 as element()?, $elem2 as element()?) as node()* {
+    let $attrs1 := $elem1/@*
+    let $attrs2 := $elem2/@*
+    let $all-names := (for $a in $template/@* return node-name($a))
+    let $names := distinct-values($all-names)
+    for $name in $names
+    let $attr1 := $attrs1[node-name(.) = $name]
+    let $attr2 := $attrs2[node-name(.) = $name]
+    let $val1 := string($attr1)
+    let $val2 := string($attr2)
+    return
+        if($showMissingAttributes or $attr1 or $attr2)
+        then (
+                if(not($attr1 or $attr2)) then
+                    attribute {concat("diffs:attr-none-", $name)} {""}
+                else if($val1 eq $val2) then
+                    attribute {$name} {$val1}
+                else (
+                    if($attr1) then attribute {concat("diffs:attr-before-", $name)} {$val1} else (),
+                    if($attr2) then attribute {concat("diffs:attr-after-", $name)}  {$val2} else ()
+                )
+        )
+        else ()
+};
+
 (: Performs diff calculation for attributes of a given element.
- : For each attribute from template istance,
+ : For each attribute from template instance,
  : if the attribute did not change, it is returned normally;
  : if the attribute changed, its old value (if present) is returned in attribute with prefix diffs:attr-before-
  : and ith new value (if present) is returned in attribute with prefix diffs:attr-after- :)
