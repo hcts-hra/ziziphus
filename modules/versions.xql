@@ -34,15 +34,16 @@ declare variable $absPath as xs:string? := request:get-parameter("resource", ())
 declare variable $ziziphusRoot as xs:string := $app:app-dir;
 declare variable $ziziphusDataRoot as xs:string := $app:data-dir;
 declare variable $filesPath as xs:string := $app:record-dir;
+declare variable $urlBase as xs:string := "/exist/rest/";
 declare variable $xsl as xs:string := $app:app-resources-dir || "xsl/versions.xsl";
 
 declare function local:makePathFromArgs() as xs:string ? {
     if($absPath)
       then $absPath
     else if($rid)
-      then $ziziphusDataRoot || $filesPath || $rid || ".xml"
+      then $filesPath || $rid || ".xml"
     else if($iid)
-      then $ziziphusDataRoot || $filesPath || "/VRA_images/" || $iid || ".xml"
+      then $filesPath || $app:image-record-dir-name || $iid || ".xml"
     else ()
 };
 
@@ -52,7 +53,7 @@ declare function local:createXmlResult($path as xs:string?) as element() {
             <error>No path given.</error>
         else
             let $doc := doc($path)
-            let $url := $path (:FIXME:)
+            let $url := $urlBase || $path
             return
             if (not($doc)) then
                 <error>No document for path {$path}.</error>
