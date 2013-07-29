@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>Diff presentation</title>
@@ -38,7 +37,7 @@
         <script type="text/javascript" src="resources/script/jquery-1.9.1.js"/>
         <script type="text/javascript" src="resources/script/purl.js"/>
         <script type="text/javascript" src="resources/script/diff_match_patch.js"/>
-        <script type="text/javascript">//<![CDATA[
+        <script type="text/javascript">//
             function fill_info(res, rev1, rev2) {
                 $("#resource-link").text(resource).attr("href", resource);
                 $("#rev1").val(rev1);
@@ -89,7 +88,7 @@
                 
                 var text1 = $("#div1").text();
                 var text2 = $("#div2").text();
-                var d = dmp.diff_main(text2, text1);
+                var d = dmp.diff_main(text1, text2);
                 
                 if (document.getElementById('semantic').checked) {
                 dmp.diff_cleanupSemantic(d);
@@ -120,35 +119,33 @@
                     	load_documents();
                     }});
             });
-]]></script>
+</script>
     </head>
     <body>
         <div id="info">
         	Resource: <a id="resource-link"/>.<br/>
-            Changes from revision <input type="text" id="rev2" class="rev" size="3" maxlength="8"/>
-            to revision <input type="text" id="rev1" class="rev" size="3" maxlength="8"/>.
+            Changes from revision <input type="text" id="rev1" class="rev" size="3" maxlength="8"/>
+            to revision <input type="text" id="rev2" class="rev" size="3" maxlength="8"/>.
         </div>
         <div id="options">
         Diffs computed by <a href="http://code.google.com/p/google-diff-match-patch/">google-diff-match-patch</a>.<br/>
-        <form>
+            <form>
             post-diff cleanup options:
             <span title="No cleanup">
-                <input type="radio" name="cleanup" id="raw"/><label for="raw">none</label>&#xA0;
+                    <input type="radio" name="cleanup" id="raw"/>
+                    <label for="raw">none</label>&#160;
             </span>
-                    
-            <span title="Increase human readability by factoring out commonalities which are likely to be coincidental.">
-                <input type="radio" name="cleanup" id="semantic" checked="checked"/><label for="semantic">semantic</label>&#xA0;
+                <span title="Increase human readability by factoring out commonalities which are likely to be coincidental.">
+                    <input type="radio" name="cleanup" id="semantic" checked="checked"/>
+                    <label for="semantic">semantic</label>&#160;
             </span>
-
-            <span title="Increase computational efficiency by factoring out short commonalities which are not worth the overhead. The larger the edit cost, the more agressive the cleanup.">
-                <input type="radio" name="cleanup" id="efficiency"/><label for="efficiency">efficiency</label>(<input type="text" size="2" maxlength="5" value="4" id="editcost"/>)
+                <span title="Increase computational efficiency by factoring out short commonalities which are not worth the overhead. The larger the edit cost, the more agressive the cleanup.">
+                    <input type="radio" name="cleanup" id="efficiency"/>
+                    <label for="efficiency">efficiency</label>(<input type="text" size="2" maxlength="5" value="4" id="editcost"/>)
             </span>
-
-            <input type="button" id="recompute" value="recompute"
-                title="Recompute diffs in place using given settings."/>
-            <input type="button" id="reload" value="reload"
-                title="Reload documents from server and compute diffs again."/>
-        </form>
+                <input type="button" id="recompute" value="recompute" title="Recompute diffs in place using given settings."/>
+                <input type="button" id="reload" value="reload" title="Reload documents from server and compute diffs again."/>
+            </form>
         </div>
         <div id="div1" class="content"/>
         <div id="div2" class="content"/>
