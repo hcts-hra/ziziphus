@@ -1,0 +1,877 @@
+<vra xmlns="http://www.vraweb.org/vracore4.htm">
+    <collection dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="" id="d1e5119">
+        <agentSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <agent dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                <attribution dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <culture dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <dates type="">
+                    <earliestDate circa="false"/>
+                    <latestDate circa="false"/>
+                </dates>
+                <name type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <role dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </agent>
+        </agentSet>
+        <culturalContextSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <culturalContext dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+        </culturalContextSet>
+        <dateSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <date type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                <earliestDate circa="false"/>
+                <latestDate circa="false"/>
+            </date>
+        </dateSet>
+        <descriptionSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <description dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+        </descriptionSet>
+        <inscriptionSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <inscription dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                <author dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <position dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <text type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </inscription>
+        </inscriptionSet>
+        <locationSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <location dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="" type="">
+                <refid type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <name type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </location>
+        </locationSet>
+        <materialSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <material type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+        </materialSet>
+        <measurementsSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <measurements type="" unit="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+        </measurementsSet>
+        <relationSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <relation relids="d1" type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+        </relationSet>
+        <rightsSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <rights dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="" type="">
+                <rightsHolder dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <text dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </rights>
+        </rightsSet>
+        <sourceSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <source dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                <refid type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <name type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </source>
+        </sourceSet>
+        <stateEditionSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <stateEdition dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="" count="" num="" type="">
+                <description dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <name dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </stateEdition>
+        </stateEditionSet>
+        <stylePeriodSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <stylePeriod dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+        </stylePeriodSet>
+        <subjectSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <subject dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                <term type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </subject>
+        </subjectSet>
+        <techniqueSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <technique dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+        </techniqueSet>
+        <textrefSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <textref dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                <name type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <refid type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </textref>
+        </textrefSet>
+        <titleSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <title type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+        </titleSet>
+        <worktypeSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <worktype dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+        </worktypeSet>
+        <work dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="" id="d1e3832">
+            <agentSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <agent dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                    <attribution dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <culture dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <dates type="">
+                        <earliestDate circa="false"/>
+                        <latestDate circa="false"/>
+                    </dates>
+                    <name type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <role dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                </agent>
+            </agentSet>
+            <culturalContextSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <culturalContext dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </culturalContextSet>
+            <dateSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <date type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                    <earliestDate circa="false"/>
+                    <latestDate circa="false"/>
+                </date>
+            </dateSet>
+            <descriptionSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <description dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </descriptionSet>
+            <inscriptionSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <inscription dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                    <author dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <position dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <text type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                </inscription>
+            </inscriptionSet>
+            <locationSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <location dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="" type="">
+                    <refid type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <name type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                </location>
+            </locationSet>
+            <materialSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <material type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </materialSet>
+            <measurementsSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <measurements type="" unit="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </measurementsSet>
+            <relationSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <relation relids="d1" type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </relationSet>
+            <rightsSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <rights dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="" type="">
+                    <rightsHolder dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <text dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                </rights>
+            </rightsSet>
+            <sourceSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <source dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                    <refid type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <name type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                </source>
+            </sourceSet>
+            <stateEditionSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <stateEdition dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="" count="" num="" type="">
+                    <description dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <name dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                </stateEdition>
+            </stateEditionSet>
+            <stylePeriodSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <stylePeriod dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </stylePeriodSet>
+            <subjectSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <subject dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                    <term type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                </subject>
+            </subjectSet>
+            <techniqueSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <technique dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </techniqueSet>
+            <textrefSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <textref dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                    <name type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <refid type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                </textref>
+            </textrefSet>
+            <titleSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <title type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </titleSet>
+            <worktypeSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <worktype dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </worktypeSet>
+            <image dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="" id="d1e3821">
+                <agentSet>
+                    <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <agent dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                        <attribution dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                        <culture dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                        <dates type="">
+                            <earliestDate circa="false"/>
+                            <latestDate circa="false"/>
+                        </dates>
+                        <name type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                        <role dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    </agent>
+                </agentSet>
+                <culturalContextSet>
+                    <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <culturalContext dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                </culturalContextSet>
+                <dateSet>
+                    <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <date type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                        <earliestDate circa="false"/>
+                        <latestDate circa="false"/>
+                    </date>
+                </dateSet>
+                <descriptionSet>
+                    <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <description dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                </descriptionSet>
+                <inscriptionSet>
+                    <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <inscription dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                        <author dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                        <position dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                        <text type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    </inscription>
+                </inscriptionSet>
+                <locationSet>
+                    <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <location dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="" type="">
+                        <refid type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                        <name type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    </location>
+                </locationSet>
+                <materialSet>
+                    <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <material type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                </materialSet>
+                <measurementsSet>
+                    <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <measurements type="" unit="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                </measurementsSet>
+                <relationSet>
+                    <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <relation relids="d1" type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                </relationSet>
+                <rightsSet>
+                    <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <rights dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="" type="">
+                        <rightsHolder dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                        <text dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    </rights>
+                </rightsSet>
+                <sourceSet>
+                    <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <source dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                        <refid type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                        <name type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    </source>
+                </sourceSet>
+                <stateEditionSet>
+                    <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <stateEdition dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="" count="" num="" type="">
+                        <description dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                        <name dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    </stateEdition>
+                </stateEditionSet>
+                <stylePeriodSet>
+                    <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <stylePeriod dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                </stylePeriodSet>
+                <subjectSet>
+                    <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <subject dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                        <term type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    </subject>
+                </subjectSet>
+                <techniqueSet>
+                    <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <technique dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                </techniqueSet>
+                <textrefSet>
+                    <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <textref dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                        <name type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                        <refid type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    </textref>
+                </textrefSet>
+                <titleSet>
+                    <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <title type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                </titleSet>
+                <worktypeSet>
+                    <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <worktype dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                </worktypeSet>
+            </image>
+        </work>
+        <image dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="" id="d1e5108">
+            <agentSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <agent dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                    <attribution dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <culture dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <dates type="">
+                        <earliestDate circa="false"/>
+                        <latestDate circa="false"/>
+                    </dates>
+                    <name type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <role dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                </agent>
+            </agentSet>
+            <culturalContextSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <culturalContext dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </culturalContextSet>
+            <dateSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <date type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                    <earliestDate circa="false"/>
+                    <latestDate circa="false"/>
+                </date>
+            </dateSet>
+            <descriptionSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <description dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </descriptionSet>
+            <inscriptionSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <inscription dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                    <author dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <position dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <text type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                </inscription>
+            </inscriptionSet>
+            <locationSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <location dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="" type="">
+                    <refid type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <name type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                </location>
+            </locationSet>
+            <materialSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <material type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </materialSet>
+            <measurementsSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <measurements type="" unit="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </measurementsSet>
+            <relationSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <relation relids="d1" type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </relationSet>
+            <rightsSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <rights dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="" type="">
+                    <rightsHolder dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <text dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                </rights>
+            </rightsSet>
+            <sourceSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <source dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                    <refid type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <name type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                </source>
+            </sourceSet>
+            <stateEditionSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <stateEdition dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="" count="" num="" type="">
+                    <description dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <name dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                </stateEdition>
+            </stateEditionSet>
+            <stylePeriodSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <stylePeriod dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </stylePeriodSet>
+            <subjectSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <subject dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                    <term type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                </subject>
+            </subjectSet>
+            <techniqueSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <technique dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </techniqueSet>
+            <textrefSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <textref dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                    <name type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <refid type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                </textref>
+            </textrefSet>
+            <titleSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <title type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </titleSet>
+            <worktypeSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <worktype dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </worktypeSet>
+        </image>
+    </collection>
+    <work dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="" id="d1e7671">
+        <agentSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <agent dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                <attribution dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <culture dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <dates type="">
+                    <earliestDate circa="false"/>
+                    <latestDate circa="false"/>
+                </dates>
+                <name type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <role dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </agent>
+        </agentSet>
+        <culturalContextSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <culturalContext dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+        </culturalContextSet>
+        <dateSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <date type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                <earliestDate circa="false"/>
+                <latestDate circa="false"/>
+            </date>
+        </dateSet>
+        <descriptionSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <description dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+        </descriptionSet>
+        <inscriptionSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <inscription dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                <author dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <position dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <text type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </inscription>
+        </inscriptionSet>
+        <locationSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <location dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="" type="">
+                <refid type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <name type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </location>
+        </locationSet>
+        <materialSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <material type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+        </materialSet>
+        <measurementsSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <measurements type="" unit="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+        </measurementsSet>
+        <relationSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <relation relids="d1" type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+        </relationSet>
+        <rightsSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <rights dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="" type="">
+                <rightsHolder dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <text dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </rights>
+        </rightsSet>
+        <sourceSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <source dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                <refid type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <name type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </source>
+        </sourceSet>
+        <stateEditionSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <stateEdition dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="" count="" num="" type="">
+                <description dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <name dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </stateEdition>
+        </stateEditionSet>
+        <stylePeriodSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <stylePeriod dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+        </stylePeriodSet>
+        <subjectSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <subject dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                <term type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </subject>
+        </subjectSet>
+        <techniqueSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <technique dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+        </techniqueSet>
+        <textrefSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <textref dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                <name type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <refid type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </textref>
+        </textrefSet>
+        <titleSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <title type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+        </titleSet>
+        <worktypeSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <worktype dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+        </worktypeSet>
+        <image dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="" id="d1e7660">
+            <agentSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <agent dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                    <attribution dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <culture dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <dates type="">
+                        <earliestDate circa="false"/>
+                        <latestDate circa="false"/>
+                    </dates>
+                    <name type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <role dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                </agent>
+            </agentSet>
+            <culturalContextSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <culturalContext dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </culturalContextSet>
+            <dateSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <date type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                    <earliestDate circa="false"/>
+                    <latestDate circa="false"/>
+                </date>
+            </dateSet>
+            <descriptionSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <description dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </descriptionSet>
+            <inscriptionSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <inscription dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                    <author dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <position dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <text type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                </inscription>
+            </inscriptionSet>
+            <locationSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <location dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="" type="">
+                    <refid type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <name type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                </location>
+            </locationSet>
+            <materialSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <material type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </materialSet>
+            <measurementsSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <measurements type="" unit="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </measurementsSet>
+            <relationSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <relation relids="d1" type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </relationSet>
+            <rightsSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <rights dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="" type="">
+                    <rightsHolder dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <text dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                </rights>
+            </rightsSet>
+            <sourceSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <source dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                    <refid type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <name type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                </source>
+            </sourceSet>
+            <stateEditionSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <stateEdition dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="" count="" num="" type="">
+                    <description dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <name dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                </stateEdition>
+            </stateEditionSet>
+            <stylePeriodSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <stylePeriod dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </stylePeriodSet>
+            <subjectSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <subject dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                    <term type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                </subject>
+            </subjectSet>
+            <techniqueSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <technique dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </techniqueSet>
+            <textrefSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <textref dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                    <name type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                    <refid type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                </textref>
+            </textrefSet>
+            <titleSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <title type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </titleSet>
+            <worktypeSet>
+                <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <worktype dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </worktypeSet>
+        </image>
+    </work>
+    <image id="d1" dataDate="2012-01-01" extent="" href="" pref="false" refid="" rules="" source="" vocab="">
+        <agentSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <agent dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                <attribution dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <culture dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <dates type="">
+                    <earliestDate circa="false"/>
+                    <latestDate circa="false"/>
+                </dates>
+                <name type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <role dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </agent>
+        </agentSet>
+        <culturalContextSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <culturalContext dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+        </culturalContextSet>
+        <dateSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <date type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                <earliestDate circa="false"/>
+                <latestDate circa="false"/>
+            </date>
+        </dateSet>
+        <descriptionSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <description dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+        </descriptionSet>
+        <inscriptionSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <inscription dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                <author dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <position dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <text type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </inscription>
+        </inscriptionSet>
+        <locationSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <location dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="" type="">
+                <refid type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <name type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </location>
+        </locationSet>
+        <materialSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <material type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+        </materialSet>
+        <measurementsSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <measurements type="" unit="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+        </measurementsSet>
+        <relationSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <relation relids="d1" type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+        </relationSet>
+        <rightsSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <rights dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="" type="">
+                <rightsHolder dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <text dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </rights>
+        </rightsSet>
+        <sourceSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <source dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                <refid type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <name type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </source>
+        </sourceSet>
+        <stateEditionSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <stateEdition dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="" count="" num="" type="">
+                <description dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <name dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </stateEdition>
+        </stateEditionSet>
+        <stylePeriodSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <stylePeriod dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+        </stylePeriodSet>
+        <subjectSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <subject dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                <term type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </subject>
+        </subjectSet>
+        <techniqueSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <technique dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+        </techniqueSet>
+        <textrefSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <textref dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab="">
+                <name type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+                <refid type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            </textref>
+        </textrefSet>
+        <titleSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <title type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+        </titleSet>
+        <worktypeSet>
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+            <worktype dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid="" rules="" source="" vocab=""/>
+        </worktypeSet>
+    </image>
+</vra>
