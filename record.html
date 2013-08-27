@@ -253,6 +253,7 @@
             click:function () {
                 var myUrl = 'modules/versions.xql?ajax=yes\u0026rid=' + $('#work-versions-button').attr('subject');
                 versionsw.set({ url: myUrl });
+                versionsw.set({ title: 'Work Versions History' });
                 versionsw.show();
                 versionsw.update();
                 return false;
@@ -263,6 +264,7 @@
             click:function () {
                 var myUrl = 'modules/versions.xql?ajax=yes\u0026iid=' + $('#image-versions-button').attr('subject');
                 versionsw.set({ url: myUrl });
+                versionsw.set({ title: 'Image Versions History' });
                 versionsw.show();
                 versionsw.update();
                 return false;
