@@ -100,6 +100,9 @@
             <xf:setvalue ref="instance('i-control-center')/currentform" value="''"/>
         </xf:action>
     </xf:group>
+    <xf:input id="workdir" ref="instance('i-control-center')/workdir">
+        <xf:label>Hidden Control</xf:label>
+    </xf:input>
 </div>
 
 <!-- window for heidicon data -->
@@ -251,7 +254,7 @@
 
         jQuery('#work-versions-button').on({
             click:function () {
-                var myUrl = 'modules/versions.xql?ajax=yes\u0026rid=' + $('#work-versions-button').attr('subject');
+                var myUrl = 'modules/versions.xql?ajax=yes\u0026workdir=' + "${'#workdir'}".val(); + '\u0026rid=' + $('#work-versions-button').attr('subject');
                 versionsw.set({ url: myUrl });
                 versionsw.set({ title: 'Work Versions History' });
                 versionsw.show();
@@ -262,7 +265,7 @@
 
         jQuery('#image-versions-button').on({
             click:function () {
-                var myUrl = 'modules/versions.xql?ajax=yes\u0026iid=' + $('#image-versions-button').attr('subject');
+                var myUrl = 'modules/versions.xql?ajax=yes\u0026workdir=' + "${'#workdir'}".val(); + '\u0026iid=' + $('#image-versions-button').attr('subject');
                 versionsw.set({ url: myUrl });
                 versionsw.set({ title: 'Image Versions History' });
                 versionsw.show();

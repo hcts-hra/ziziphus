@@ -27,15 +27,16 @@ declare variable $rid as xs:string? := request:get-parameter("rid", ());
 (: Image id :)
 declare variable $iid as xs:string? := request:get-parameter("iid", ());
 
-(: Absolute path of resource on server :)
-declare variable $absPath as xs:string? := request:get-parameter("resource", ());
-
 (: Change here location of collections to adjust to your installation layout. :)
 declare variable $ziziphusRoot as xs:string := $app:app-dir;
 declare variable $ziziphusDataRoot as xs:string := $app:data-dir;
-declare variable $filesPath as xs:string := $app:record-dir;
+declare variable $defaultPath as xs:string := $app:record-dir;
 declare variable $urlBase as xs:string := "/exist/rest/";
 declare variable $xsl as xs:string := $app:app-resources-dir || "xsl/versions.xsl";
+
+(: Absolute path of resource on server :)
+declare variable $absPath as xs:string? := request:get-parameter("resource", ());
+declare variable $filesPath as xs:string? := request:get-parameter("workdir", $defaultPath);
 
 declare function local:makePathFromArgs() as xs:string ? {
     if($absPath)
