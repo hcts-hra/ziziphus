@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://cluster-schemas.uni-hd.de" xmlns:hra="http://cluster-schemas.uni-hd.de">
+  <xs:element name="heidicon">
+    <xs:complexType>
+      <xs:choice>
+        <xs:element ref="hra:administrative"/>
+        <xs:element maxOccurs="unbounded" ref="hra:item"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="administrative">
+    <xs:complexType>
+      <xs:attribute name="date" use="required"/>
+      <xs:attribute name="type" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="item" type="hra:itemType">
+  </xs:element>
+  <xs:complexType name="itemType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" ref="hra:value"/>
+    </xs:sequence>
+    <xs:attribute name="display" use="required" type="xs:anyURI"/>
+    <xs:attribute name="status" use="required" type="xs:integer"/>
+    <xs:attribute name="type" use="required" type="xs:NCName"/>
+  </xs:complexType>
+  
+  <xs:element name="value" type="xs:string"/>
+</xs:schema>

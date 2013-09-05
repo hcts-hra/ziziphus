@@ -11,8 +11,9 @@
     <!--<property name="target.resources.dir" value="${target.dir}/resources" description="directory holding dynamic resources used by the generator"/>-->
 
     <!--<property name="resource.dir" value="${basedir}/resources"/>-->
-    <property name="schema.dir" value="${basedir}/xsd"/>
-    <property name="deploy.schema.dir" value="${basedir}/../resources/xsd"/>
+    <property name="vra.schema.dir" value="${basedir}/../resources/xsd/vra"/>
+    <property name="cluster.schema.dir" value="${basedir}/../resources/xsd/cluster"/>
+    <property name="deploy.schema.dir" value="${basedir}/../resources/xsd/generator"/>
     <property name="form.dir" value="${basedir}/../forms"/>
 
     <property name="debug" value="false"/>
@@ -480,12 +481,23 @@
 
         <mkdir dir="${target.dir}/xsd"/>
         <xslt style="${xsl.dir}/inlineXSD/01_XSD_Inline_Extension.xsl"
-              in="xsd/vra.xsd"
+              in="${vra.schema.dir}/vra.xsd"
               out="${target.dir}/xsd/01_Inline_Extension.xml"
               force="true">
             <classpath refid="transform.class.path"/>
             <param name="debug" expression="${debug}"/>
         </xslt>
+
+        <!-- CLuster -->
+        <!--
+        <xslt style="${xsl.dir}/inlineXSD/01_XSD_Inline_Extension.xsl"
+                in="${cluster.schema.dir}/vraCluster.xsd"
+                out="${target.dir}/xsd/01_Inline_Extension.xml"
+                force="true">
+            <classpath refid="transform.class.path"/>
+            <param name="debug" expression="${debug}"/>
+        </xslt>
+        -->
 
         <xslt style="${xsl.dir}/inlineXSD/02_InlineXSD.xsl"
               in="${target.dir}/xsd/01_Inline_Extension.xml"
@@ -504,7 +516,7 @@
               force="true">
             <classpath refid="transform.class.path"/>
             <param name="debug" expression="${debug}"/>
-            <param name="path2schemaRedefinition" expression="${basedir}/xsd/vra-strict.xsd"/>
+            <param name="path2schemaRedefinition" expression="${vra.schema.dir}/vra-strict.xsd"/>
         </xslt>
 
         <xslt style="${xsl.dir}/inlineXSD/04_Split_Schema.xsl"
@@ -516,8 +528,8 @@
             <param name="vraTypeSchemaName" expression="vra-types.xsd"/>
         </xslt>
 
-        <copy file="${target.dir}/xsd/vra-bf.xsd" tofile="${basedir}/../resources/xsd/vra-bf.xsd" overwrite="true"/>
-        <copy file="${target.dir}/xsd/vra-types.xsd" tofile="${basedir}/../resources/xsd/vra-types.xsd" overwrite="true"/>
+        <copy file="${target.dir}/xsd/vra-bf.xsd" tofile="${deploy.schema.dir}/vra-bf.xsd" overwrite="true"/>
+        <copy file="${target.dir}/xsd/vra-types.xsd" tofile="${deploy.schema.dir}/vra-types.xsd" overwrite="true"/>
 
 
     </target>

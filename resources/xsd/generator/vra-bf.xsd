@@ -521,7 +521,7 @@
                                              </xsd:annotation>
                                              <xsd:simpleContent xmlns="http://www.w3.org/2001/XMLSchema">
                                                 <xsd:extension base="xsd:string">
-                                                   <xsd:attribute  name="type"    xmlns="http://www.vraweb.org/vracore4.htm"
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="type"
                                                                   type="inscriptionTextTypeType"/>
                                                    <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="dataDate" type="dateValueType"/>
                                                    <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="extent" type="xsd:string"/>

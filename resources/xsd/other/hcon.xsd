@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.vraweb.org/vracore4.htm" xmlns:v="http://www.vraweb.org/vracore4.htm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:hra="http://cluster-schemas.uni-hd.de">
+  <xs:import namespace="http://cluster-schemas.uni-hd.de" schemaLocation="hra.xsd"/>
+  <xs:import namespace="http://www.w3.org/2001/XMLSchema-instance" schemaLocation="xsi.xsd"/>
+  <xs:element name="vra">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="v:work"/>
+      </xs:sequence>
+      <xs:attribute ref="xsi:schemaLocation" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="work">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="v:agentSet"/>
+        <xs:element ref="v:descriptionSet"/>
+        <xs:element ref="v:inscriptionSet"/>
+        <xs:element ref="v:locationSet"/>
+        <xs:element ref="v:measurementsSet"/>
+        <xs:element ref="v:relationSet"/>
+        <xs:element ref="v:rightsSet"/>
+        <xs:element ref="v:subjectSet"/>
+        <xs:element ref="v:techniqueSet"/>
+        <xs:element ref="v:titleSet"/>
+        <xs:element ref="v:worktypeSet"/>
+        <xs:element maxOccurs="unbounded" ref="hra:heidicon"/>
+      </xs:sequence>
+      <xs:attribute name="catalogingLanguage" use="required" type="xs:NCName"/>
+      <xs:attribute name="id" use="required"/>
+      <xs:attribute name="refid" use="required"/>
+      <xs:attribute name="source" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="agentSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="v:agent"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="agent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="v:culture"/>
+        <xs:element ref="v:name"/>
+        <xs:element ref="v:role"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="culture">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="role">
+    <xs:complexType mixed="true">
+      <xs:attribute name="code" type="xs:NCName"/>
+      <xs:attribute name="vocab" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="descriptionSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="v:description"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="description">
+    <xs:complexType mixed="true">
+      <xs:attribute name="lang" use="required" type="xs:NCName"/>
+      <xs:attribute name="script" use="required" type="xs:NCName"/>
+      <xs:attribute name="source" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="inscriptionSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="v:inscription"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="inscription">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="v:text"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="locationSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="v:location"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="location">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="v:name"/>
+        <xs:element minOccurs="0" ref="v:refid"/>
+      </xs:sequence>
+      <xs:attribute name="source" type="xs:NCName"/>
+      <xs:attribute name="type" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="refid">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="measurementsSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="v:notes"/>
+        <xs:element maxOccurs="unbounded" ref="v:measurements"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="notes" type="xs:string"/>
+  <xs:element name="measurements">
+    <xs:complexType mixed="true">
+      <xs:attribute name="shape" type="xs:NCName"/>
+      <xs:attribute name="type" type="xs:NCName"/>
+      <xs:attribute name="unit" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="relationSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="v:relation"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="relation">
+    <xs:complexType>
+      <xs:attribute name="pref" use="required" type="xs:boolean"/>
+      <xs:attribute name="refid" use="required" type="xs:integer"/>
+      <xs:attribute name="relids" use="required"/>
+      <xs:attribute name="source" use="required"/>
+      <xs:attribute name="type" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="rightsSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="v:rights"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="rights">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="v:rightsHolder"/>
+        <xs:element ref="v:text"/>
+      </xs:sequence>
+      <xs:attribute name="type" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="rightsHolder">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="subjectSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="v:subject"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="subject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="v:term"/>
+      </xs:sequence>
+      <xs:attribute name="refid" use="required"/>
+      <xs:attribute name="source" use="required" type="xs:NCName"/>
+      <xs:attribute name="vocab" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="term" type="xs:string"/>
+  <xs:element name="techniqueSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="v:technique"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="technique">
+    <xs:complexType mixed="true">
+      <xs:attribute name="refid" use="required"/>
+      <xs:attribute name="vocab" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="titleSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="v:title"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="title">
+    <xs:complexType mixed="true">
+      <xs:attribute name="lang" use="required"/>
+      <xs:attribute name="pref" use="required" type="xs:boolean"/>
+      <xs:attribute name="script" use="required"/>
+      <xs:attribute name="type" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="worktypeSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="v:worktype"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="worktype" type="xs:string"/>
+  <xs:element name="name">
+    <xs:complexType mixed="true">
+      <xs:attribute name="refid" type="xs:NMTOKEN"/>
+      <xs:attribute name="type" use="required" type="xs:NCName"/>
+      <xs:attribute name="vocab" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="text">
+    <xs:complexType mixed="true">
+      <xs:attribute name="lang" type="xs:NCName"/>
+      <xs:attribute name="type" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
