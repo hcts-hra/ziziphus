@@ -571,6 +571,7 @@
 
         <tr>
             <td class="prefCol">
+            	<xsl:if test="functx:prefAttributePolicy($vraSectionNode) != 'forbidden'">
                 <xf:input ref="@pref" id="{concat(generate-id(),'-pref')}">
                     <xf:label>pref</xf:label>
                     <xf:hint>preferred</xf:hint>
@@ -581,6 +582,7 @@
                         <xf:setvalue ref="(../preceding-sibling::*|../following-sibling::*)[@pref=('true',1)][1]/@pref" value="'false'"/>
                     </xf:action>
                 </xf:input>
+                </xsl:if>
             </td>
             <td class="contentCol">
                 <xsl:choose>
@@ -1034,6 +1036,23 @@
         <xsl:param name="arg" as="xsd:string?"/>
         <xsl:variable name="string2lowercase" select="functx:remove-vra-prefix($arg)"/>
         <xsl:sequence select="concat(lower-case(substring($string2lowercase,1,1)),substring($string2lowercase,2))"/>
+    </xsl:function>
+    
+	<!-- Here you can define the policy of treatment of 'pref' attribute
+		depending on element set.
+		Return values:
+		- 'forbidden' - no element can be chosen; pref checkbox is not even rendered,
+		- 'optional' - at most one element from a set can be chosen (default policy),
+		- 'role-required' - elements can have different roles (@role attribute);
+			exactly one element must be chosen for each role (this is desired behaviour for agentSet).
+	-->
+    <xsl:function name="functx:prefAttributePolicy" as="xsd:string">
+        <xsl:param name="setName" as="xsd:string?"/>
+        <xsl:choose>
+        	<xsl:when test="$setName = 'agentSet'">role-required</xsl:when>
+        	<xsl:when test="$setName = 'subjectSet'">forbidden</xsl:when>
+        	<xsl:otherwise>optional</xsl:otherwise>
+        </xsl:choose>
     </xsl:function>
 
 </xsl:stylesheet>
