@@ -92,7 +92,8 @@ table tr td .xfGroup:last-child {
     width: 10px;
 }
 .prefCol .xfLabel {
-    display: none !important;
+    font-size: 0.9em;
+    margin-bottom: 3px;
 }
 .contentCol {
     width: 100%;
