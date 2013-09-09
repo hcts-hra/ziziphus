@@ -55,6 +55,9 @@
                      <xf:name>realm</xf:name>
                      <xf:value>exist</xf:value>
                   </xf:header>
+                  <xf:action ev:event="xforms-submit" if="count(vra:textref[@pref = ('true','1')]) &gt; 1">
+                     <xf:message>Warning: At most one preferred textref can be selected.</xf:message>
+                  </xf:action>
                   <xf:message ev:event="xforms-submit-error">Sorry, updating of this record failed</xf:message>
                   <xf:action ev:event="xforms-submit-done">
                      <xf:message level="ephemeral">Data have been stored.</xf:message>

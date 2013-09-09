@@ -130,6 +130,10 @@
                                     <xf:name>realm</xf:name>
                                     <xf:value>exist</xf:value>
                                 </xf:header>
+                                <xsl:call-template name="checkPrefOnSubmission">
+                                	<xsl:with-param name="sectionNode" select="$vraSectionNode"/>
+                                	<xsl:with-param name="artifactNode" select="$vraArtifactNode"/>
+                                </xsl:call-template>
                                 <xf:message ev:event="xforms-submit-error">Sorry, updating of this record failed</xf:message>
                                 <xf:action ev:event="xforms-submit-done">
                                     <xf:message level="ephemeral">Data have been stored.</xf:message>
@@ -562,6 +566,7 @@
     <xsl:template match="/xf:bind/xf:bind/xf:bind[@nodeset=concat('vra:',$vraSectionNode)]/xf:bind[@nodeset=concat('vra:',$vraArtifactNode)]" mode="ui" priority="45">
         <xsl:variable name="vraNodeName" select="@nodeset"/>
         <xsl:variable name="xfType" select="@xfType"/>
+        <xsl:variable name="prefPolicy" select="functx:prefAttributePolicy($vraSectionNode)"/>
 
         <xsl:if test="$debugEnabled">
             <xsl:message>UI-2: <xsl:value-of select="$vraNodeName"/></xsl:message>
@@ -571,16 +576,27 @@
 
         <tr>
             <td class="prefCol">
-            	<xsl:if test="functx:prefAttributePolicy($vraSectionNode) != 'forbidden'">
+            	<xsl:if test="$prefPolicy != 'forbidden'">
                 <xf:input ref="@pref" id="{concat(generate-id(),'-pref')}">
                     <xf:label>pref</xf:label>
                     <xf:hint>preferred</xf:hint>
                     <!-- Action ensures that at most one 'preferred' is selected within a _Set. -->
-                    <xf:action ev:event="xforms-value-changed"
-                    		if=".=('true',1)"
-                    		while="(../preceding-sibling::*|../following-sibling::*)/@pref=('true',1)">
-                        <xf:setvalue ref="(../preceding-sibling::*|../following-sibling::*)[@pref=('true',1)][1]/@pref" value="'false'"/>
-                    </xf:action>
+                    <xsl:choose>
+                   	<xsl:when test="$prefPolicy = 'optional'">
+	                    <xf:action ev:event="xforms-value-changed"
+	                    		if=".=('true',1)"
+	                    		while="(../preceding-sibling::*|../following-sibling::*)/@pref=('true',1)">
+	                        <xf:setvalue ref="(../preceding-sibling::*|../following-sibling::*)[@pref=('true',1)][1]/@pref" value="'false'"/>
+	                    </xf:action>
+                   	</xsl:when>
+                   	<xsl:when test="$prefPolicy = 'role-required'">
+	                    <xf:action ev:event="xforms-value-changed"
+	                    		if=".=('true',1)"
+	                    		while="(../preceding-sibling::*|../following-sibling::*)[vra:role = current()/../vra:role]/@pref=('true',1)">
+	                        <xf:setvalue ref="(../preceding-sibling::*|../following-sibling::*)[vra:role = current()/../vra:role][@pref=('true',1)][1]/@pref" value="'false'"/>
+	                    </xf:action>
+                   	</xsl:when>
+                    </xsl:choose>
                 </xf:input>
                 </xsl:if>
             </td>
@@ -985,6 +1001,34 @@
         <xsl:message>Matched xf:bind with nodeset='<xsl:value-of select="@nodeset"/>'</xsl:message>
         <xsl:message terminate="yes">This rule must never be matched</xsl:message>
     </xsl:template>
+
+	<!-- Provide here actions (or other staff) that should be inserted into 
+		xf:submission and is related to pref attibute. -->
+	<xsl:template name="checkPrefOnSubmission">
+		<xsl:param name="sectionNode"  required="yes" />
+		<xsl:param name="artifactNode" required="yes" />
+		<xsl:variable name="policy" select="functx:prefAttributePolicy($sectionNode)"/>
+		<xsl:choose>
+			<xsl:when test="$policy = 'role-required'">
+				<xf:action ev:event="xforms-submit"
+					if="some $role in distinct-values(vra:{$artifactNode}/vra:role/text()) satisfies count(vra:{$artifactNode}[vra:role = $role][@pref = ('true','1')]) != 1">
+					<xf:message>Warning: Exactly one preferred <xsl:value-of select="$artifactNode"/> should be selected for each different role.</xf:message>
+				</xf:action>
+			</xsl:when>
+			<xsl:when test="$policy = 'optional'">
+				<xf:action ev:event="xforms-submit"
+					if="count(vra:{$artifactNode}[@pref = ('true','1')]) &gt; 1">
+					<xf:message>Warning: At most one preferred <xsl:value-of select="$artifactNode"/> can be selected.</xf:message>
+				</xf:action>
+			</xsl:when>
+			<xsl:when test="$policy = 'forbidden'">
+				<xf:action ev:event="xforms-submit"
+					if="count(vra:{$artifactNode}[@pref = ('true','1')]) &gt; 0">
+					<xf:message>Warning: No <xsl:value-of select="$artifactNode"/> can be selected as preferred.</xf:message>
+				</xf:action>
+			</xsl:when>
+		</xsl:choose>
+	</xsl:template>
 
     <!--
         ########################################################################################
