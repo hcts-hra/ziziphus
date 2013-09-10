@@ -158,6 +158,11 @@
                                 </xsl:apply-templates>
                             </xf:bind>
 
+                            <xsl:call-template name="prefConstraint">
+                            	<xsl:with-param name="sectionNode" select="$vraSectionNode"/>
+                            	<xsl:with-param name="artifactNode" select="$vraArtifactNode"/>
+                            </xsl:call-template>
+
                             <xf:instance id="i-templates">
                                 <templates xmlns="http://www.vraweb.org/vracore4.htm">
                                     <xsl:apply-templates select="$vraInstance/vra:vra/vra:collection/*[local-name()=$vraSectionNode]/*[local-name()=$vraArtifactNode]" mode="instance">
@@ -1008,24 +1013,38 @@
 		<xsl:param name="sectionNode"  required="yes" />
 		<xsl:param name="artifactNode" required="yes" />
 		<xsl:variable name="policy" select="functx:prefAttributePolicy($sectionNode)"/>
+
+		<xf:action ev:event="xforms-submit" if="not({functx:prefConstraint($artifactNode, $policy)})">
+			<xsl:call-template name="prefMessage">
+				<xsl:with-param name="artifactNode" select="$artifactNode"/>
+				<xsl:with-param name="policy" select="$policy"/>
+			</xsl:call-template>
+		</xf:action>
+	</xsl:template>
+
+	<!-- Creates xf:bind element with constraint related to pref attibutes. -->
+	<xsl:template name="prefConstraint">
+		<xsl:param name="sectionNode"  required="yes" />
+		<xsl:param name="artifactNode" required="yes" />
+		<xsl:variable name="policy" select="functx:prefAttributePolicy($sectionNode)"/>
+
+		<xf:bind nodeset="instance()" constraint="{functx:prefConstraint($artifactNode, $policy)}"/>
+	</xsl:template>
+
+	<!-- Creates xf:message with message to be printed when pref attributes in a set do not obey the constraint. -->
+	<xsl:template name="prefMessage">
+		<xsl:param name="artifactNode" required="yes"/>
+		<xsl:param name="policy" required="yes"/>
+
 		<xsl:choose>
 			<xsl:when test="$policy = 'role-required'">
-				<xf:action ev:event="xforms-submit"
-					if="some $role in distinct-values(vra:{$artifactNode}/vra:role/text()) satisfies count(vra:{$artifactNode}[vra:role = $role][@pref = ('true','1')]) != 1">
-					<xf:message>Warning: Exactly one preferred <xsl:value-of select="$artifactNode"/> should be selected for each different role.</xf:message>
-				</xf:action>
+				<xf:message>Warning: Exactly one preferred <xsl:value-of select="$artifactNode"/> should be selected for each role.</xf:message>
 			</xsl:when>
 			<xsl:when test="$policy = 'optional'">
-				<xf:action ev:event="xforms-submit"
-					if="count(vra:{$artifactNode}[@pref = ('true','1')]) &gt; 1">
-					<xf:message>Warning: At most one preferred <xsl:value-of select="$artifactNode"/> can be selected.</xf:message>
-				</xf:action>
+				<xf:message>Warning: At most one preferred <xsl:value-of select="$artifactNode"/> can be selected.</xf:message>
 			</xsl:when>
 			<xsl:when test="$policy = 'forbidden'">
-				<xf:action ev:event="xforms-submit"
-					if="count(vra:{$artifactNode}[@pref = ('true','1')]) &gt; 0">
-					<xf:message>Warning: No <xsl:value-of select="$artifactNode"/> can be selected as preferred.</xf:message>
-				</xf:action>
+				<xf:message>Warning: No <xsl:value-of select="$artifactNode"/> can be selected as preferred.</xf:message>
 			</xsl:when>
 		</xsl:choose>
 	</xsl:template>
@@ -1082,6 +1101,32 @@
         <xsl:sequence select="concat(lower-case(substring($string2lowercase,1,1)),substring($string2lowercase,2))"/>
     </xsl:function>
     
+    <!-- Returns the actual constraint expression (XPath) that checks if pref attributes are set correctly. -->
+    <xsl:function name="functx:prefConstraint" as="xsd:string">
+		<xsl:param name="artifactNode" as="xsd:string"/>
+		<xsl:param name="policy" as="xsd:string"/>
+		<xsl:choose>
+			<xsl:when test="$policy = 'role-required'">
+				<xsl:sequence select="normalize-space(concat(
+					'every $role in distinct-values(vra:', $artifactNode, '/vra:role/text()) ', 
+					'satisfies count(vra:', $artifactNode, '[vra:role = $role][@pref = ',
+					'(''true'', ''1'')]) = 1'))"/>
+			</xsl:when>
+			<xsl:when test="$policy = 'optional'">
+				<xsl:sequence select="normalize-space(concat(
+					'count(vra:', $artifactNode, '[@pref = ',
+					'(''true'', ''1'')]) &lt;= 1'))"/>
+			</xsl:when>
+			<xsl:when test="$policy = 'forbidden'">
+				<xsl:sequence select="normalize-space(concat(
+					'not(vra:', $artifactNode, '[@pref = (''true'', ''1'')])'))"/>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:sequence select="'true()'"/>				
+			</xsl:otherwise>
+		</xsl:choose>
+    </xsl:function>
+
 	<!-- Here you can define the policy of treatment of 'pref' attribute
 		depending on element set.
 		Return values:
@@ -1091,13 +1136,12 @@
 			exactly one element must be chosen for each role (this is desired behaviour for agentSet).
 	-->
     <xsl:function name="functx:prefAttributePolicy" as="xsd:string">
-        <xsl:param name="setName" as="xsd:string?"/>
+        <xsl:param name="sectionNode" as="xsd:string?"/>
         <xsl:choose>
-        	<xsl:when test="$setName = 'agentSet'">role-required</xsl:when>
-        	<xsl:when test="$setName = 'subjectSet'">forbidden</xsl:when>
+        	<xsl:when test="$sectionNode = 'agentSet'">role-required</xsl:when>
+        	<xsl:when test="$sectionNode = 'subjectSet'">forbidden</xsl:when>
         	<xsl:otherwise>optional</xsl:otherwise>
         </xsl:choose>
     </xsl:function>
-
 </xsl:stylesheet>
 
