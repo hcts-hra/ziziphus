@@ -582,27 +582,27 @@
         <tr>
             <td class="prefCol">
             	<xsl:if test="$prefPolicy != 'forbidden'">
-                <xf:input ref="@pref" id="{concat(generate-id(),'-pref')}">
-                    <xf:label>pref</xf:label>
-                    <xf:hint>preferred</xf:hint>
-                    <!-- Action ensures that at most one 'preferred' is selected within a _Set. -->
-                    <xsl:choose>
-                   	<xsl:when test="$prefPolicy = 'optional'">
-	                    <xf:action ev:event="xforms-value-changed"
-	                    		if=".=('true',1)"
-	                    		while="(../preceding-sibling::*|../following-sibling::*)/@pref=('true',1)">
-	                        <xf:setvalue ref="(../preceding-sibling::*|../following-sibling::*)[@pref=('true',1)][1]/@pref" value="'false'"/>
-	                    </xf:action>
-                   	</xsl:when>
-                   	<xsl:when test="$prefPolicy = 'role-required'">
-	                    <xf:action ev:event="xforms-value-changed"
-	                    		if=".=('true',1)"
-	                    		while="(../preceding-sibling::*|../following-sibling::*)[vra:role = current()/../vra:role]/@pref=('true',1)">
-	                        <xf:setvalue ref="(../preceding-sibling::*|../following-sibling::*)[vra:role = current()/../vra:role][@pref=('true',1)][1]/@pref" value="'false'"/>
-	                    </xf:action>
-                   	</xsl:when>
-                    </xsl:choose>
-                </xf:input>
+	                <xf:input ref="@pref" id="{concat(generate-id(),'-pref')}">
+	                    <xf:label>pref</xf:label>
+	                    <xf:hint>preferred</xf:hint>
+	                    <!-- Action ensures that at most one 'preferred' is selected within a _Set. -->
+	                    <xsl:choose>
+	                   	<xsl:when test="$prefPolicy = 'optional'">
+		                    <xf:action ev:event="xforms-value-changed"
+		                    		if=".=('true',1)"
+		                    		while="(../preceding-sibling::*|../following-sibling::*)/@pref=('true',1)">
+		                        <xf:setvalue ref="(../preceding-sibling::*|../following-sibling::*)[@pref=('true',1)][1]/@pref" value="'false'"/>
+		                    </xf:action>
+	                   	</xsl:when>
+	                   	<xsl:when test="$prefPolicy = 'role-required'">
+		                    <xf:action ev:event="xforms-value-changed"
+		                    		if=".=('true',1)"
+		                    		while="(../preceding-sibling::*|../following-sibling::*)[vra:role = current()/../vra:role]/@pref=('true',1)">
+		                        <xf:setvalue ref="(../preceding-sibling::*|../following-sibling::*)[vra:role = current()/../vra:role][@pref=('true',1)][1]/@pref" value="'false'"/>
+		                    </xf:action>
+	                   	</xsl:when>
+	                    </xsl:choose>
+	                </xf:input>
                 </xsl:if>
             </td>
             <td class="contentCol">
@@ -1014,12 +1014,14 @@
 		<xsl:param name="artifactNode" required="yes" />
 		<xsl:variable name="policy" select="functx:prefAttributePolicy($sectionNode)"/>
 
-		<xf:action ev:event="xforms-submit" if="not({functx:prefConstraint($artifactNode, $policy)})">
-			<xsl:call-template name="prefMessage">
-				<xsl:with-param name="artifactNode" select="$artifactNode"/>
-				<xsl:with-param name="policy" select="$policy"/>
-			</xsl:call-template>
-		</xf:action>
+       	<xsl:if test="$policy != 'forbidden'">
+			<xf:action ev:event="xforms-submit" if="not({functx:prefConstraint($artifactNode, $policy)})">
+				<xsl:call-template name="prefMessage">
+					<xsl:with-param name="artifactNode" select="$artifactNode"/>
+					<xsl:with-param name="policy" select="$policy"/>
+				</xsl:call-template>
+			</xf:action>
+		</xsl:if>
 	</xsl:template>
 
 	<!-- Creates xf:bind element with constraint related to pref attibutes. -->
@@ -1028,7 +1030,9 @@
 		<xsl:param name="artifactNode" required="yes" />
 		<xsl:variable name="policy" select="functx:prefAttributePolicy($sectionNode)"/>
 
-		<xf:bind nodeset="instance()" constraint="{functx:prefConstraint($artifactNode, $policy)}"/>
+       	<xsl:if test="$policy != 'forbidden'">
+			<xf:bind nodeset="instance()" constraint="{functx:prefConstraint($artifactNode, $policy)}"/>
+		</xsl:if>
 	</xsl:template>
 
 	<!-- Creates xf:message with message to be printed when pref attributes in a set do not obey the constraint. -->

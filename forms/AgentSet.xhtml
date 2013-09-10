@@ -56,8 +56,8 @@
                      <xf:value>exist</xf:value>
                   </xf:header>
                   <xf:action ev:event="xforms-submit"
-                             if="some $role in distinct-values(vra:agent/vra:role/text()) satisfies count(vra:agent[vra:role = $role][@pref = ('true','1')]) != 1">
-                     <xf:message>Warning: Exactly one preferred agent should be selected for each different role.</xf:message>
+                             if="not(every $role in distinct-values(vra:agent/vra:role/text()) satisfies count(vra:agent[vra:role = $role][@pref = ('true', '1')]) = 1)">
+                     <xf:message>Warning: Exactly one preferred agent should be selected for each role.</xf:message>
                   </xf:action>
                   <xf:message ev:event="xforms-submit-error">Sorry, updating of this record failed</xf:message>
                   <xf:action ev:event="xforms-submit-done">
@@ -101,6 +101,8 @@
                      </xf:bind>
                   </xf:bind>
                </xf:bind>
+               <xf:bind nodeset="instance()"
+                        constraint="every $role in distinct-values(vra:agent/vra:role/text()) satisfies count(vra:agent[vra:role = $role][@pref = ('true', '1')]) = 1"></xf:bind>
                <xf:instance id="i-templates">
                   <templates xmlns="http://www.vraweb.org/vracore4.htm">
                      <agent pref="false">
