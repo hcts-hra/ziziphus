@@ -1144,6 +1144,7 @@
         <xsl:choose>
         	<xsl:when test="$sectionNode = 'agentSet'">role-required</xsl:when>
         	<xsl:when test="$sectionNode = 'subjectSet'">forbidden</xsl:when>
+        	<xsl:when test="$sectionNode = 'techniqueSet'">forbidden</xsl:when>
         	<xsl:otherwise>optional</xsl:otherwise>
         </xsl:choose>
     </xsl:function>

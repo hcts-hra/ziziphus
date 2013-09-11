@@ -55,10 +55,6 @@
                      <xf:name>realm</xf:name>
                      <xf:value>exist</xf:value>
                   </xf:header>
-                  <xf:action ev:event="xforms-submit"
-                             if="not(count(vra:technique[@pref = ('true', '1')]) &lt;= 1)">
-                     <xf:message>Warning: At most one preferred technique can be selected.</xf:message>
-                  </xf:action>
                   <xf:message ev:event="xforms-submit-error">Sorry, updating of this record failed</xf:message>
                   <xf:action ev:event="xforms-submit-done">
                      <xf:message level="ephemeral">Data have been stored.</xf:message>
@@ -80,8 +76,6 @@
                      <xf:bind nodeset="@pref" type="boolean"></xf:bind>
                   </xf:bind>
                </xf:bind>
-               <xf:bind nodeset="instance()"
-                        constraint="count(vra:technique[@pref = ('true', '1')]) &lt;= 1"></xf:bind>
                <xf:instance id="i-templates">
                   <templates xmlns="http://www.vraweb.org/vracore4.htm">
                      <technique pref="false"></technique>
@@ -164,17 +158,7 @@
             <table>
                <tbody model="m-child-model" id="r-vraTechnique" xf:repeat-nodeset="vra:technique">
                   <tr>
-                     <td class="prefCol">
-                        <xf:input ref="@pref" id="d3e110-pref">
-                           <xf:label>pref</xf:label>
-                           <xf:hint>preferred</xf:hint>
-                           <xf:action ev:event="xforms-value-changed" if=".=('true',1)"
-                                      while="(../preceding-sibling::*|../following-sibling::*)/@pref=('true',1)">
-                              <xf:setvalue ref="(../preceding-sibling::*|../following-sibling::*)[@pref=('true',1)][1]/@pref"
-                                           value="'false'"></xf:setvalue>
-                           </xf:action>
-                        </xf:input>
-                     </td>
+                     <td class="prefCol"></td>
                      <td class="contentCol">
                         <xf:group appearance="minimal">
                            <xf:input id="b-d2e1078" ref=".">
