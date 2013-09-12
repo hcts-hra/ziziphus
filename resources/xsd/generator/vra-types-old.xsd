@@ -7,7 +7,7 @@
             elementFormDefault="qualified"
             attributeFormDefault="unqualified">
    <xsd:annotation>
-      <xsd:documentation>This schema is an extension (patched version) of the VRA Core version 4.0 used at the University of Heidelberg for the implementation of Ziziphus, an implementation of an VRA editor. We use a patched version rather than a Schema overwrite or extension version for pragmatic reasons: - handling of the schema is easier within common tools such as Oxygen - some extensions are hard to do with pure extensions (not allowing overwrites) as known in XML Schema 1.0 and are either hard to do with pure 'overwride" mechanism of XML Schema 1.1. Further tool support for XML Schema 1.1 is still incomplete and requires specific configuration. Extensions (patches) in this schema are marked with "EXTENSION START" for the start and "EXTENSION END" to simplify the manual merging process that will be needed when migrating to a newer VRA version. Further documentation can be found as a Googledoc at https://docs.google.com/document/d/1ZXVCOuZLg6-FlYaQaBTVw2OsKNn4dr1KfqJgw25I0zA/edit#heading=h.vj515vkolvh7</xsd:documentation>
+      <xsd:documentation>This schema is an implementation of the VRA Core Categories, Version 4.0. It defines a wrapper element (vra), which can hold any number of record-level elements (collection, work, image). These elements can be nested to indicate collection-work-image hierarchies.</xsd:documentation>
    </xsd:annotation>
    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"
                schemaLocation="http://www.w3.org/2001/xml.xsd">
@@ -15,32 +15,6 @@
          <xsd:documentation>Get access to the xml: attribute groups for xml:lang as declared below.</xsd:documentation>
       </xsd:annotation>
    </xsd:import>
-   <xsd:simpleType name="langType">
-      <xsd:annotation>
-         <xsd:documentation>
-                    three-character code according to ISO 639-2b (e.g. eng, ger, chi, hin)
-                </xsd:documentation>
-      </xsd:annotation>
-      <xsd:restriction base="xsd:string">
-         <xsd:pattern value="[a-z][a-z][a-z]"/>
-      </xsd:restriction>
-   </xsd:simpleType>
-   <xsd:simpleType name="scriptType">
-      <xsd:annotation>
-         <xsd:documentation>
-                    four-character code according to ISO 15924 (e.g. Latn, Arab, Hans, Deva)
-                </xsd:documentation>
-      </xsd:annotation>
-      <xsd:restriction base="xsd:string">
-         <xsd:pattern value="[A-Z][a-z][a-z][a-z]"/>
-      </xsd:restriction>
-   </xsd:simpleType>
-   <xsd:simpleType name="transliterationType">
-      <xsd:annotation>
-         <xsd:documentation>values as in the “transliteration scheme” dropdown for the Tamboti MODS-editor, using an expanded ALA-LC list (e.g. “Arabic/ALA-LC”, “Chinese/modified Wade-Giles”)</xsd:documentation>
-      </xsd:annotation>
-      <xsd:restriction base="xsd:string"/>
-   </xsd:simpleType>
    <xsd:complexType name="basicString">
       <xsd:annotation>
          <xsd:documentation>Basic datatype for all freetext values. Allows assignment of source, vocabulary, refid and language attributes to virtually any value.</xsd:documentation>
@@ -56,10 +30,6 @@
             <xsd:attribute name="rules" type="xsd:string"/>
             <xsd:attribute name="source" type="xsd:string"/>
             <xsd:attribute name="vocab" type="xsd:string"/>
-            <xsd:attribute name="lang" type="langType"/>
-            <xsd:attribute name="transliteration" type="xsd:string"/>
-            <xsd:attribute name="script" type="scriptType"/>
-            <xsd:attribute name="lastAccessed" type="xsd:date"/>
          </xsd:extension>
       </xsd:simpleContent>
    </xsd:complexType>

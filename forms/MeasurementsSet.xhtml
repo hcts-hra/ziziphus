@@ -70,9 +70,10 @@
                </xf:submission>
                <xf:instance id="i-measurementsSet">
                   <measurementsSet xmlns="http://www.vraweb.org/vracore4.htm">
-                     <display></display>
-                     <notes></notes>
-                     <measurements pref="false" type="" unit=""></measurements>
+                     <display transliteration="" script="" lastAccessed=""></display>
+                     <notes transliteration="" script="" lastAccessed=""></notes>
+                     <measurements pref="false" type="" unit="" shape="" transliteration="" script=""
+                                   lastAccessed=""></measurements>
                   </measurementsSet>
                </xf:instance>
                <xf:bind nodeset="instance()">
@@ -86,7 +87,8 @@
                         constraint="count(vra:measurements[@pref = ('true', '1')]) &lt;= 1"></xf:bind>
                <xf:instance id="i-templates">
                   <templates xmlns="http://www.vraweb.org/vracore4.htm">
-                     <measurements pref="false" type="" unit=""></measurements>
+                     <measurements pref="false" type="" unit="" shape="" transliteration="" script=""
+                                   lastAccessed=""></measurements>
                      <notes></notes>
                      <display></display>
                   </templates>

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="2.0"
         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-        xmlns:xf="http://www.w3.org/2002/xforms">
+        xmlns:xf="http://www.w3.org/2002/xforms"
+        xmlns:bffn="http://www.betterform.de/Functions"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <xsl:output method="xml" version="1.0"/>
     <!--
     ##############################################################################################
@@ -20,6 +22,7 @@
             <xsl:element name="group">
                 <xsl:attribute name="idref"><xsl:value-of select="./*[1]/@id"/></xsl:attribute>
                 <xsl:attribute name="name"><xsl:value-of select="./*[1]/@nodeset"/></xsl:attribute>
+                <xsl:attribute name="xpath"><xsl:call-template name="generate-xpath"/></xsl:attribute>
                 <xsl:apply-templates select=".//xf:bind[@nodeset='vra:collection']"/>
             </xsl:element>
     </xsl:template>
@@ -34,6 +37,7 @@
             <xsl:attribute name="idref" select="@id"/>
             <xsl:attribute name="name" select="@nodeset"/>
             <xsl:attribute name="visible" select="'true'"/>
+            <xsl:attribute name="xpath"><xsl:call-template name="generate-xpath"/></xsl:attribute>
             <xsl:apply-templates/>
 
         </xsl:element>
@@ -50,6 +54,7 @@
         <xsl:element name="group">
             <xsl:attribute name="idref"><xsl:value-of select="@id"/></xsl:attribute>
             <xsl:attribute name="name"><xsl:value-of select="@nodeset"/></xsl:attribute>
+            <xsl:attribute name="xpath"><xsl:call-template name="generate-xpath"/></xsl:attribute>
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
@@ -60,6 +65,7 @@
             <xsl:attribute name="idref"><xsl:value-of select="@id"/></xsl:attribute>
             <xsl:attribute name="name"><xsl:value-of select="@nodeset"/></xsl:attribute>
             <xsl:attribute name="repeated">true</xsl:attribute>
+            <xsl:attribute name="xpath"><xsl:call-template name="generate-xpath"/></xsl:attribute>
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
@@ -69,6 +75,7 @@
             <xsl:attribute name="idref"><xsl:value-of select="@id"/></xsl:attribute>
             <xsl:attribute name="name"><xsl:value-of select="@nodeset"/></xsl:attribute>
             <xsl:attribute name="detail">false</xsl:attribute>
+            <xsl:attribute name="xpath"><xsl:call-template name="generate-xpath"/></xsl:attribute>
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
@@ -79,6 +86,7 @@
         <xsl:element name="group">
             <xsl:attribute name="idref"><xsl:value-of select="@id"/></xsl:attribute>
             <xsl:attribute name="name"><xsl:value-of select="@nodeset"/></xsl:attribute>
+            <xsl:attribute name="xpath"><xsl:call-template name="generate-xpath"/></xsl:attribute>
 
             <xsl:if test="@xfType='simpleType'">
                 <xsl:element name="textNode">
@@ -114,5 +122,25 @@
     <xsl:template match="xf:bind[@nodeset='vra:work']" priority="20"/>
     <xsl:template match="xf:bind[@nodeset='vra:image']" priority="20"/>
     <xsl:template match="//xf:bind[@nodeset='@id']" priority="10"/>
+
+
+    <xsl:function name="bffn:concat-xpath" as="xsd:string?">
+        <xsl:param name="arg1" as="xsd:string?"/>
+        <xsl:param name="arg2" as="xsd:string?"/>
+        <xsl:choose>
+            <xsl:when test="0=string-length($arg1)"><xsl:value-of select="$arg2"/></xsl:when>
+            <xsl:when test="0=string-length($arg2)"><xsl:value-of select="$arg1"/></xsl:when>
+            <xsl:when test="'.'=$arg1"><xsl:value-of select="$arg2"/></xsl:when>
+            <xsl:when test="ends-with($arg1,'/')"><xsl:value-of select="concat($arg1,$arg2)"/></xsl:when>
+            <xsl:otherwise><xsl:value-of select="concat($arg1,concat('/',$arg2))"/></xsl:otherwise>
+        </xsl:choose>
+    </xsl:function>
+
+    <xsl:template name="generate-xpath">
+        <xsl:for-each select="ancestor-or-self::*">
+            <xsl:value-of select="concat('/',  ./@nodeset)"/>
+        </xsl:for-each>
+    </xsl:template>
+
 
 </xsl:stylesheet>

@@ -92,39 +92,51 @@
         </xsl:element>
     </xsl:template>
     
-    <xsl:template name="inlineComplexType"  match="xsd:element[@type]" priority="10">        
+    <xsl:template name="inlineComplexType"  match="xsd:element[@type]" priority="10">
+        <xsl:message>inlineComplextType: <xsl:value-of select="name(..)"/></xsl:message>
+        <xsl:message>inlineComplextType: <xsl:value-of select="@type"/></xsl:message>
         <xsl:variable name="referencedType" select="key('xsdComplexType', @type)"/>
+        <xsl:message>inlineComplextType: <xsl:value-of select="$referencedType"/></xsl:message>
+
         <xsl:if test="$debugEnabled">
             <xsl:message select="concat('inlineComplexType: ComplexType: ', @type)"/>
         </xsl:if>
-        <xsl:copy>            
-            <xsl:choose>
-                <xsl:when test="$debugEnabled">
-                    <xsl:attribute name="lasse2"/>
-                    <xsl:copy-of select="@*"/>        
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:copy-of select="@*[name(.) != 'type']"/>                    
-                </xsl:otherwise>
-            </xsl:choose>
-                        
-            <xsl:element name="{name($referencedType)}">                
-                <xsl:choose>
-                    <xsl:when test="$debugEnabled">
-                        <xsl:attribute name="lasse3"/>
-                        <xsl:copy-of select="@*"/>        
-                    </xsl:when>
-                    <xsl:otherwise/>
-                </xsl:choose>
-                <xsl:apply-templates select="$referencedType/*"/>
-            </xsl:element>            
-        </xsl:copy>
+
+        <xsl:choose>
+            <xsl:when test="name(..)='xsd:all'">
+                <xsl:copy-of select="."/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:copy>
+                    <xsl:choose>
+                        <xsl:when test="$debugEnabled">
+                            <xsl:attribute name="lasse2"/>
+                            <xsl:copy-of select="@*"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:copy-of select="@*[name(.) != 'type']"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+
+                    <xsl:element name="{name($referencedType)}">
+                        <xsl:choose>
+                            <xsl:when test="$debugEnabled">
+                                <xsl:attribute name="lasse3"/>
+                                <xsl:copy-of select="@*"/>
+                            </xsl:when>
+                            <xsl:otherwise/>
+                        </xsl:choose>
+                        <xsl:apply-templates select="$referencedType/*"/>
+                    </xsl:element>
+                </xsl:copy>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
         
         
 
     <!-- inline attributeGroups -->
-        <xsl:template name="inlineAttributeGroups" match="xsd:attributeGroup[@ref]">
+    <xsl:template name="inlineAttributeGroups" match="xsd:attributeGroup[@ref]">
         <xsl:variable name="attributeGroupName" select="@ref"/>
         <xsl:variable name="attributeGroup" select="//xsd:attributeGroup[@name=$attributeGroupName]"/>          
         <xsl:for-each select="$attributeGroup/xsd:attribute">

@@ -5,25 +5,19 @@
     <property name="generator.dir" value="${basedir}"/>
 
     <xmlproperty file="../build.properties.xml" semanticAttributes="true" keepRoot="false"/>
-    <property name="target.dir" value="${basedir}/${build.dir}"/>
+    <property name="target.dir" value="${basedir}/build"/>
     <property name="target.schema.dir" value="${target.dir}/xsd"/>
     <!--<property name="target.forms.dir" value="${target.dir}/forms"/>-->
     <!--<property name="target.resources.dir" value="${target.dir}/resources" description="directory holding dynamic resources used by the generator"/>-->
 
     <!--<property name="resource.dir" value="${basedir}/resources"/>-->
-    <property name="vra.schema.dir" value="${basedir}/../resources/xsd/vra"/>
     <property name="cluster.schema.dir" value="${basedir}/../resources/xsd/cluster"/>
-    <property name="deploy.schema.dir" value="${basedir}/../resources/xsd/generator"/>
+    <property name="generator.schema.dir" value="${basedir}/../resources/xsd/generator"/>
     <property name="form.dir" value="${basedir}/../forms"/>
 
     <property name="debug" value="false"/>
     <property name="xsl.dir" value="${basedir}/xsl"/>
     <property name="xsl.xsd.dir" value="${xsl.dir}/inlineXSD"/>
-    
-    
-    <property name="vra.bf.schema.name" value="vra-bf.xsd"/>
-    <property name="vra.types.schema.name" value="vra-types.xsd"/>
-    <property name="vra.types.schema.path" value="${deploy.schema.dir}/${vra.types.schema.name}"/>
 
     <!-- **************************************** HOUSEKEEPING **************************************** -->
     <!-- **************************************** HOUSEKEEPING **************************************** -->
@@ -106,7 +100,7 @@
         <echo>Create generator resource: single file holding all instance data structures</echo>
         <!-- generate an XML instance of vra-bf.xsd -->
         <xslt style="${xsl.dir}/xf/01_Instance_Generator.xsl"
-              in="${deploy.schema.dir}/${vra.bf.schema.name}"
+              in="${generator.schema.dir}/vra-bf.xsd"
               out="${target.dir}/01_VRA_Instance.xml">
             <classpath refid="transform.class.path"/>
             <param name="debug" expression="${debug}"/>
@@ -115,7 +109,7 @@
         <echo>Create generator resource: single file containing all binding information</echo>
         <!-- generate XForms Bindings of vra-bf.xsd -->
         <xslt style="${xsl.dir}/xf/02_Bind_Generator.xsl"
-              in="${deploy.schema.dir}/${vra.bf.schema.name}"
+              in="${generator.schema.dir}/vra-bf.xsd"
               out="${target.dir}/02_XF_Binds.xml">
             <classpath refid="transform.class.path"/>
             <param name="debug" expression="${debug}"/>
@@ -312,7 +306,7 @@
                 force="true">
             <classpath refid="transform.class.path"/>
             <param name="debug" expression="${debug}"/>
-            <param name="path_2_vra_types_schema" expression="${vra.types.schema.path}"/>
+            <param name="path_2_vra_types_schema" expression="${generator.schema.dir}/vra-types.xsd"/>
             <param name="path_2_xf_instance" expression="${target.dir}/01_VRA_Instance.xml"/>
             <param name="vraSection" expression="${subformName}"/>
         </xslt>
@@ -476,28 +470,17 @@
         </xslt>
     </target>
 
-    <target name="inline-instance">
-        <echo>generate inline instance of xsd</echo>
+    <target name="inline-schemas">
+        <echo>generate inline instance of vra xsd</echo>
 
         <mkdir dir="${target.dir}/xsd"/>
         <xslt style="${xsl.dir}/inlineXSD/01_XSD_Inline_Extension.xsl"
-              in="${vra.schema.dir}/vra.xsd"
+              in="${cluster.schema.dir}/vraCluster.xsd"
               out="${target.dir}/xsd/01_Inline_Extension.xml"
               force="true">
             <classpath refid="transform.class.path"/>
             <param name="debug" expression="${debug}"/>
         </xslt>
-
-        <!-- CLuster -->
-        <!--
-        <xslt style="${xsl.dir}/inlineXSD/01_XSD_Inline_Extension.xsl"
-                in="${cluster.schema.dir}/vraCluster.xsd"
-                out="${target.dir}/xsd/01_Inline_Extension.xml"
-                force="true">
-            <classpath refid="transform.class.path"/>
-            <param name="debug" expression="${debug}"/>
-        </xslt>
-        -->
 
         <xslt style="${xsl.dir}/inlineXSD/02_InlineXSD.xsl"
               in="${target.dir}/xsd/01_Inline_Extension.xml"
@@ -505,18 +488,17 @@
               force="true">
             <classpath refid="transform.class.path"/>
             <param name="debug" expression="${debug}"/>
-            <param name="path_2_vra_types_schema" expression="${vra.types.schema.path}"/>
+            <param name="path_2_vra_types_schema" expression="${generator.schema.dir}/vra-types.xsd"/>
             <param name="path_2_xf_instance" expression="${target.dir}/01_VRA_Instance.xml"/>
             <param name="vraSection" expression="${subformName}"/>
         </xslt>
-
         <xslt style="${xsl.dir}/inlineXSD/03_Apply_Schema_Redefintion.xsl"
               in="${target.dir}/xsd/02_InlineXSD.xml"
               out="${target.dir}/xsd/03_Apply_Schema_Redefintion.xml"
               force="true">
             <classpath refid="transform.class.path"/>
             <param name="debug" expression="${debug}"/>
-            <param name="path2schemaRedefinition" expression="${vra.schema.dir}/vra-strict.xsd"/>
+            <param name="path2schemaRedefinition" expression="${cluster.schema.dir}/vra-strictCluster.xsd"/>
         </xslt>
 
         <xslt style="${xsl.dir}/inlineXSD/04_Split_Schema.xsl"
@@ -527,10 +509,8 @@
             <param name="debug" expression="${debug}"/>
             <param name="vraTypeSchemaName" expression="vra-types.xsd"/>
         </xslt>
-
-        <copy file="${target.dir}/xsd/vra-bf.xsd" tofile="${deploy.schema.dir}/vra-bf.xsd" overwrite="true"/>
-        <copy file="${target.dir}/xsd/vra-types.xsd" tofile="${deploy.schema.dir}/vra-types.xsd" overwrite="true"/>
-
+        <copy file="${target.dir}/xsd/vra-bf.xsd" tofile="${generator.schema.dir}/vra-bf.xsd" overwrite="true"/>
+        <copy file="${target.dir}/xsd/vra-types.xsd" tofile="${generator.schema.dir}/vra-types.xsd" overwrite="true"/>
 
     </target>
 
@@ -542,11 +522,30 @@
             UI file for editing by someone who is responsible for maintaining the order and appearance of certain
             vra fields.
         </echo>
+        <!--
         <xslt style="${xsl.dir}/helper/createInitialUIDefinition.xsl"
                 in="${target.dir}/02_XF_Binds.xml"
                 out="${target.dir}/UIDefinition.xml"
                 force="true">
             <classpath refid="transform.class.path"/>
+            <param name="debug" expression="${debug}"/>
+        </xslt>
+        -->
+        <xslt style="${xsl.dir}/helper/sortUIDefinition.xsl"
+                in="${basedir}/profile/UIDefinition.xml"
+                out="${target.dir}/UIDefinition-Updated.xml"
+                force="true">
+            <classpath refid="transform.class.path"/>
+            <param name="generatedUIDefinition" expression="${target.dir}/UIDefinition.xml"/>
+            <param name="debug" expression="${debug}"/>
+        </xslt>
+
+        <xslt style="${xsl.dir}/helper/mergeUIDefinition.xsl"
+                in="${target.dir}/UIDefinition-Updated.xml"
+                out="${target.dir}/UIDefinition-Final.xml"
+                force="true">
+            <classpath refid="transform.class.path"/>
+            <param name="generatedUIDefinition" expression="${target.dir}/UIDefinition.xml"/>
             <param name="debug" expression="${debug}"/>
         </xslt>
 
@@ -560,4 +559,13 @@
 
     </target>
 
+    <target name="mergeUIDefinition" depends="generateInitialUIDefinition">
+        <xslt style="../resources/xsl/mergeData.xsl"
+                in="${target.dir}/02_XF_Binds.xml"
+                out="${target.dir}/UIDefinition.xml"
+                force="true">
+            <classpath refid="transform.class.path"/>
+            <param name="debug" expression="${debug}"/>
+        </xslt>
+    </target>
 </project>

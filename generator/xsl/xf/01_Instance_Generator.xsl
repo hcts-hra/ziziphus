@@ -72,6 +72,21 @@
         </xsl:element>
     </xsl:template>
 
+    <xsl:template match="xsd:element[xsd:complexType/xsd:all]">
+
+        <xsl:if test="$debugEnabled">
+            <xsl:message>create complex element with all'<xsl:value-of  select="@name"/>' with [type='<xsl:value-of  select="@type"/>', maxOccurs='<xsl:value-of  select="@maxOccurs"/>',  minOccurs='<xsl:value-of  select="@minOccurs"/>']</xsl:message>
+        </xsl:if>
+
+
+        <xsl:element name="{@name}" namespace="http://www.vraweb.org/vracore4.htm">
+            <xsl:for-each select="xsd:complexType/xsd:attribute">
+                <xsl:apply-templates select="."/>
+            </xsl:for-each>
+            <xsl:apply-templates select="xsd:complexType/xsd:all"/>
+        </xsl:element>
+    </xsl:template>
+
     <xsl:template match="xsd:element[xsd:complexType/xsd:simpleContent/xsd:extension]">
 
         <xsl:if test="$debugEnabled">
@@ -151,6 +166,10 @@
 
     <!-- handle xsd:sequence -->
     <xsl:template match="xsd:sequence">
+        <xsl:apply-templates/>
+    </xsl:template>
+
+    <xsl:template match="xsd:all">
         <xsl:apply-templates/>
     </xsl:template>
 

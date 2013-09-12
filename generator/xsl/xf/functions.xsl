@@ -16,6 +16,9 @@
             <xsl:when test="$arg='rules'"><xsl:value-of select="true()"/></xsl:when>
             <xsl:when test="$arg='source'"><xsl:value-of select="true()"/></xsl:when>
             <xsl:when test="$arg='vocab'"><xsl:value-of select="true()"/></xsl:when>
+            <xsl:when test="$arg='transliteration'"><xsl:value-of select="true()"/></xsl:when>
+            <xsl:when test="$arg='script'"><xsl:value-of select="true()"/></xsl:when>
+            <xsl:when test="$arg='lastAccessed'"><xsl:value-of select="true()"/></xsl:when>
             <xsl:otherwise><xsl:value-of select="false()"/></xsl:otherwise>
         </xsl:choose>
     </xsl:function>

@@ -8,20 +8,24 @@
         2) the rest
     -->
     <group idref="b-d2e16" name="vra:collection">
+        <!-- node idref="b-d2e6736" name="@languageOfCataloging" detail="false"/ -->
+        <!-- node idref="b-d2e6740" name="@catalogingScript" detail="false"/ -->
         <set idref="b-d2e22" name="vra:agentSet">
             <group idref="b-d2e57" name="vra:agent" repeated="true">
                 <group idref="b-d2e115" name="vra:name">
                     <node idref="b-d2e122" name="@type" detail="true"/>
                     <textNode detail="false"/>
                 </group>
-                <!-- role möglichst noch näher an den namen -->
-                <node idref="b-d2e132" name="vra:role" detail="true" control="select1" code-table="role"/>
+                <group idref="b-d2e157" name="vra:role" control="select1" code-table="role">
+                    <node idref="b-d2e164" name="@type" detail="false"/>
+                    <textNode detail="true"/>
+                </group>
                 <node idref="b-d2e63" name="vra:attribution" detail="true"/>
                 <node idref="b-d2e79" name="vra:culture" detail="true"/>
                 <group idref="b-d2e95" name="vra:dates">
                     <node idref="b-d2e114" name="@type" detail="true"/>
                     <group idref="b-d2e98" name="vra:earliestDate">
-                        <node idref="b-d2e105" name="@circa" detail="true"/>1
+                        <node idref="b-d2e105" name="@circa" detail="true"/>
                         <textNode detail="true"/>
                     </group>
                     <group idref="b-d2e106" name="vra:latestDate">
@@ -43,11 +47,17 @@
                     <node idref="b-d2e264" name="@circa" detail="false"/>
                     <textNode detail="false"/>
                 </group>
+                <group idref="b-d2e316" name="vra:alternativeNotation">
+                    <node idref="b-d2e320" name="@type" detail="false"/>
+                    <textNode detail="false"/>
+                </group>
             </group>
             <node idref="b-d2e227" name="vra:notes" detail="false"/>
         </set>
         <set idref="b-d2e276" name="vra:descriptionSet">
-            <group idref="b-d2e311" name="vra:description" repeated="true" control="textarea"/>
+            <group idref="b-d2e401" name="vra:description" repeated="true" control="textarea">
+                <node idref="b-d2e408" name="@stateOfPreservation" detail="false"/>
+            </group>
             <node idref="b-d2e295" name="vra:notes" detail="false"/>
         </set>
         <set idref="b-d2e426" name="vra:locationSet">
@@ -61,6 +71,12 @@
                 <group idref="b-d2e467" name="vra:refid">
                     <textNode detail="false"/>
                     <node idref="b-d2e474" name="@type" detail="false"/>
+                </group>
+                <group idref="b-d2e647" name="vra:point">
+                    <node idref="b-d2e653" name="vra:lat" detail="false"/>
+                    <node idref="b-d2e654" name="vra:long" detail="false"/>
+                    <node idref="b-d2e655" name="@epsg" detail="false"/>
+                    <node idref="b-d2e656" name="@url" detail="false"/>
                 </group>
             </group>
             <node idref="b-d2e445" name="vra:notes" detail="false"/>
@@ -93,6 +109,7 @@
             </group>
             <node idref="b-d2e1197" name="vra:notes" detail="false"/>
         </set>
+
         <separator/>
         <!-- can there be a separator betwenn the two blocks, like a simple <hr/> or so? -->
         <set idref="b-d2e157" name="vra:culturalContextSet" visible="false">
@@ -132,6 +149,7 @@
                 <node idref="b-d2e606" name="@type" detail="false"/>
                 <textNode detail="false" />
                 <node idref="b-d2e607" name="@unit" detail="false"/>
+                <node idref="b-d2e793" name="@shape" detail="false"/>
             </group>
             <node idref="b-d2e583" name="vra:notes" detail="false"/>
         </set>

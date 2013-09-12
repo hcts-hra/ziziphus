@@ -1,56 +1,43 @@
-<!-- VRA (Visual Resources Association) Core 4 XML Schema, version 0.42
-     This schema implements the final VRA Core 4.0 guidelines, 2007-04-09.
-
-     This is the unrestricted version of the schema.  All attributes are
-     uncontrolled.
-
-     Developed by Esme Cowles (UC San Diego) with input from:
-
-       Howard Batchelor (UCLA)
-       Rick Beaubien (UC Berkeley)
-       Matt Benzing (RPI)
-       Karim Boughida (Getty Research Institute)
-       Sherman Clarke (NYU)
-       Jan Eklund (UC Berkeley)
-       Mary Elings (UC Berkeley)
-       Fae Hamilton (RLG)
-       Ben Kessler
-       Oleg Kreymer (Metropolitan Museum of Art)
-       Emerson Morgan (ARTStor)
-       Merrilee Proffitt (RLG)
-       Trish Rose (UC San Diego)
-       Eric Stedfeld (NYU)
-       Guenter Waibel (RLG)
-       Robin Wendler (Harvard)
-       Brad Westbrook (UC San Diego)
-       Ann Whiteside (Univ. of Virginia)
--->
-<xsd:schema xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.vraweb.org/vracore4.htm" version="4.0.42" xml:lang="en" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xsd:schema xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.vraweb.org/vracore4.htm" version="4.0.42" xml:lang="en"
+    elementFormDefault="qualified" attributeFormDefault="unqualified">
     <xsd:annotation>
         <xsd:documentation>
-      This schema is an implementation of the VRA Core Categories, Version 4.0.
-      It defines a wrapper element (vra), which can hold any number of
-      record-level elements (collection, work, image).  These elements can be
-      nested to indicate collection-work-image hierarchies.
+            This schema is an extension (patched version) of the VRA Core version 4.0 used at the University of Heidelberg for
+            the implementation of Ziziphus, an implementation of an VRA editor.
+
+            We use a patched version rather than a Schema overwrite or extension version for pragmatic reasons:
+            - handling of the schema is easier within common tools such as Oxygen
+            - some extensions are hard to do with pure extensions (not allowing overwrites) as known in XML Schema 1.0
+              and are either hard to do with pure 'overwride" mechanism of XML Schema 1.1. Further tool support
+              for XML Schema 1.1 is still incomplete and requires specific configuration.
+
+            Extensions (patches) in this schema are marked with "EXTENSION START" for the start and "EXTENSION END"
+            to simplify the manual merging process that will be needed when migrating to a newer VRA version.
+
+
+            Further documentation can be found as a Googledoc at https://docs.google.com/document/d/1ZXVCOuZLg6-FlYaQaBTVw2OsKNn4dr1KfqJgw25I0zA/edit#heading=h.vj515vkolvh7
+
     </xsd:documentation>
     </xsd:annotation>
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"
+        schemaLocation="http://www.w3.org/2001/xml.xsd">
         <xsd:annotation>
             <xsd:documentation>
-        Get access to the xml: attribute groups for xml:lang as declared below.
-      </xsd:documentation>
+                Get access to the xml: attribute groups for xml:lang as declared below.
+            </xsd:documentation>
         </xsd:annotation>
     </xsd:import>
 
 
-  <!--== Top-level elements ================================================-->
+    <!--== Top-level elements ================================================-->
     <xsd:element name="vra" type="vraType"/>
     <xsd:element name="collection" type="collectionRecordType"/>
     <xsd:element name="work" type="workRecordType"/>
     <xsd:element name="image" type="recordType"/>
 
 
-  <!--== VRA Element Sets ==================================================-->
+    <!--== VRA Element Sets ==================================================-->
     <xsd:element name="agentSet" type="agentSetType"/>
     <xsd:element name="culturalContextSet" type="culturalContextSetType"/>
     <xsd:element name="dateSet" type="dateSetType"/>
@@ -72,7 +59,9 @@
     <xsd:element name="agent" type="agentType"/>
     <xsd:element name="culturalContext" type="basicString"/>
     <xsd:element name="date" type="dateType"/>
+    <!-- >>> EXTENSION START >>> -->
     <xsd:element name="description" type="descriptionType"/>
+    <!-- <<< EXTENSION END <<< -->
     <xsd:element name="inscription" type="inscriptionType"/>
     <xsd:element name="location" type="locationType"/>
     <xsd:element name="material" type="materialType"/>
@@ -89,7 +78,7 @@
     <xsd:element name="worktype" type="basicString"/>
 
 
-  <!--== Structure =========================================================-->
+    <!--== Structure =========================================================-->
     <xsd:complexType name="vraType">
         <xsd:annotation>
             <xsd:documentation>
@@ -167,10 +156,12 @@
             <xsd:element ref="textrefSet" minOccurs="0"/>
             <xsd:element ref="titleSet" minOccurs="0"/>
             <xsd:element ref="worktypeSet" minOccurs="0"/>
+            <!--<xsd:element ref="languageOfCatalogingSet" minOccurs="0"/>-->
         </xsd:sequence>
         <xsd:attributeGroup ref="vraAttributes"/>
         <xsd:attribute name="id" type="xsd:ID"/>
-        <xsd:attribute name="catalogingLanguage">
+        <!-- >>> EXTENSION START >>> -->
+        <xsd:attribute name="languageOfCataloging">
             <xsd:simpleType>
                 <xsd:restriction base="xsd:string">
                     <xsd:pattern value="[a-z]{3}"/>
@@ -184,6 +175,7 @@
                 </xsd:restriction>
             </xsd:simpleType>
         </xsd:attribute>
+        <!-- <<< EXTENSION END <<< -->
     </xsd:complexType>
     <xsd:complexType name="setType">
         <xsd:annotation>
@@ -223,6 +215,7 @@
             </xsd:extension>
         </xsd:complexContent>
     </xsd:complexType>
+    <!--<xsd:element name="newElement"/>-->
     <xsd:complexType name="descriptionSetType">
         <xsd:complexContent>
             <xsd:extension base="setType">
@@ -360,7 +353,8 @@
     </xsd:complexType>
 
 
-  <!--== Common Datatypes  =================================================-->
+    <!--== Common Datatypes  =================================================-->
+    <!-- >>> EXTENSION START >>> -->
     <xsd:complexType name="roleType">
         <xsd:annotation>
             <xsd:documentation>
@@ -380,6 +374,27 @@
             </xsd:extension>
         </xsd:simpleContent>
     </xsd:complexType>
+    <!-- <<< EXTENSION END <<< -->
+
+    <!-- >>> EXTENSION START >>> -->
+    <xsd:simpleType name="langType">
+        <xsd:restriction base="xsd:string"/>
+    </xsd:simpleType>
+    <xsd:simpleType name="scriptType">
+        <xsd:restriction base="xsd:string"/>
+    </xsd:simpleType>
+    <xsd:simpleType name="transliterationType">
+        <xsd:annotation>
+            <xsd:documentation>
+                values as in the “transliteration scheme” dropdown for the Tamboti MODS-editor,
+                using an expanded ALA-LC list (e.g. “Arabic/ALA-LC”, “Chinese/modified Wade-Giles”)
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string"/>
+    </xsd:simpleType>
+
+    <!-- <<< EXTENSION END <<< -->
+
     <xsd:complexType name="basicString">
         <xsd:annotation>
             <xsd:documentation>
@@ -393,6 +408,7 @@
             </xsd:extension>
         </xsd:simpleContent>
     </xsd:complexType>
+    <!-- >>> EXTENSION START >>> -->
     <xsd:complexType name="descriptionType">
         <xsd:annotation>
             <xsd:documentation>
@@ -406,6 +422,7 @@
             </xsd:extension>
         </xsd:simpleContent>
     </xsd:complexType>
+    <!-- <<< EXTENSION END <<< -->
     <xsd:simpleType name="dateValueType">
         <xsd:annotation>
             <xsd:documentation>
@@ -446,17 +463,18 @@
         <xsd:attribute name="rules" type="xsd:string"/>
         <xsd:attribute name="source" type="xsd:string"/>
         <xsd:attribute name="vocab" type="xsd:string"/>
-    <!-- NB! Cluster additions. Move to strict! -->
-        <xsd:attribute name="lang" type="xsd:string"/>
+        <!-- NB! Cluster additions. Move to strict! -->
+        <!-- >>> EXTENSION START >>> -->
+        <xsd:attribute name="lang" type="langType"/>
         <xsd:attribute name="transliteration" type="xsd:string"/>
-        <xsd:attribute name="script" type="xsd:string"/>
+        <xsd:attribute name="script" type="scriptType"/>
         <xsd:attribute name="lastAccessed" type="xsd:date"/>
+        <!-- <<< EXTENSION END <<< -->
     </xsd:attributeGroup>
 
+    <!--== VRA Core Elements =================================================-->
 
-  <!--== VRA Core Elements =================================================-->
-
-  <!-- Element: Agent -->
+    <!-- Element: Agent -->
     <xsd:complexType name="agentType">
         <xsd:annotation>
             <xsd:documentation>
@@ -469,7 +487,9 @@
             <xsd:element name="culture" type="basicString" minOccurs="0"/>
             <xsd:element name="dates" type="agentDateType" minOccurs="0"/>
             <xsd:element name="name" type="agentNameType" minOccurs="0"/>
+            <!-- >>> EXTENSION START >>> -->
             <xsd:element name="role" type="roleType" minOccurs="0"/>
+            <!-- <<< EXTENSION END <<< -->
         </xsd:sequence>
         <xsd:attributeGroup ref="vraAttributes"/>
     </xsd:complexType>
@@ -501,10 +521,10 @@
     </xsd:simpleType>
 
 
-  <!-- Element: Cultural Context (See basicString) -->
+    <!-- Element: Cultural Context (See basicString) -->
 
 
-  <!-- Element: Date -->
+    <!-- Element: Date -->
     <xsd:complexType name="dateType">
         <xsd:annotation>
             <xsd:documentation>
@@ -516,7 +536,9 @@
         <xsd:sequence>
             <xsd:element name="earliestDate" type="dateWrapperType" minOccurs="0"/>
             <xsd:element name="latestDate" type="dateWrapperType" minOccurs="0"/>
+            <!-- >>> EXTENSION START >>> -->
             <xsd:element name="alternativeNotation" type="alternativeNotationDateType" minOccurs="0"/>
+            <!-- <<< EXTENSION END <<< -->
         </xsd:sequence>
         <xsd:attribute name="type" type="dateTypeType"/>
         <xsd:attributeGroup ref="vraAttributes"/>
@@ -524,6 +546,7 @@
     <xsd:simpleType name="dateTypeType">
         <xsd:restriction base="xsd:string"/>
     </xsd:simpleType>
+    <!-- >>> EXTENSION START >>> -->
     <xsd:complexType name="alternativeNotationDateType">
         <xsd:simpleContent>
             <xsd:extension base="basicString">
@@ -540,10 +563,11 @@
             </xsd:extension>
         </xsd:simpleContent>
     </xsd:complexType>
-  <!-- Element: Description (See basicString) -->
+    <!-- <<< EXTENSION END <<< -->
+    <!-- Element: Description (See basicString) -->
 
 
-  <!-- Element: Inscription -->
+    <!-- Element: Inscription -->
     <xsd:complexType name="inscriptionType">
         <xsd:annotation>
             <xsd:documentation>
@@ -577,7 +601,7 @@
     </xsd:simpleType>
 
 
-  <!-- Element: Location -->
+    <!-- Element: Location -->
     <xsd:complexType name="locationType">
         <xsd:annotation>
             <xsd:documentation>
@@ -589,11 +613,14 @@
         <xsd:sequence minOccurs="1" maxOccurs="unbounded">
             <xsd:element name="refid" type="locationRefidType" minOccurs="0"/>
             <xsd:element name="name" type="locationNameType" minOccurs="0"/>
+            <!-- >>> EXTENSION START >>> -->
             <xsd:element name="point" type="geoType" minOccurs="0"/>
+            <!-- <<< EXTENSION END <<< -->
         </xsd:sequence>
         <xsd:attributeGroup ref="vraAttributes"/>
         <xsd:attribute name="type" type="locationTypeType"/>
     </xsd:complexType>
+    <!-- >>> EXTENSION START >>> -->
     <xsd:complexType name="geoType">
         <xsd:annotation>
             <xsd:documentation> 
@@ -607,6 +634,7 @@
         <xsd:attribute name="epsg" type="xsd:string"/>
         <xsd:attribute name="url" type="xsd:string"/>
     </xsd:complexType>
+    <!-- <<< EXTENSION END <<< -->
     <xsd:simpleType name="locationTypeType">
         <xsd:restriction base="xsd:string"/>
     </xsd:simpleType>
@@ -644,7 +672,7 @@
     </xsd:simpleType>
 
 
-  <!-- Element: Material -->
+    <!-- Element: Material -->
     <xsd:complexType name="materialType">
         <xsd:annotation>
             <xsd:documentation>
@@ -662,7 +690,7 @@
     </xsd:simpleType>
 
 
-  <!-- Element: Measurements -->
+    <!-- Element: Measurements -->
     <xsd:complexType name="measurementsType">
         <xsd:annotation>
             <xsd:documentation>
@@ -673,6 +701,7 @@
             <xsd:extension base="basicString">
                 <xsd:attribute name="type" type="measurementsTypeType"/>
                 <xsd:attribute name="unit" type="measurementsUnitType"/>
+                <!-- >>> EXTENSION START >>> -->
                 <xsd:attribute name="shape">
                     <xsd:simpleType>
                         <xsd:restriction base="xsd:string">
@@ -687,6 +716,7 @@
                         </xsd:restriction>
                     </xsd:simpleType>
                 </xsd:attribute>
+                <!-- <<< EXTENSION END <<< -->
             </xsd:extension>
         </xsd:simpleContent>
     </xsd:complexType>
@@ -704,7 +734,7 @@
     </xsd:simpleType>
 
 
-  <!-- Element: Relation -->
+    <!-- Element: Relation -->
     <xsd:complexType name="relationType">
         <xsd:annotation>
             <xsd:documentation>
@@ -725,7 +755,7 @@
     </xsd:simpleType>
 
 
-  <!-- Element: Rights -->
+    <!-- Element: Rights -->
     <xsd:complexType name="rightsType">
         <xsd:annotation>
             <xsd:documentation>
@@ -746,7 +776,7 @@
     </xsd:simpleType>
 
 
-  <!-- Element: Source -->
+    <!-- Element: Source -->
     <xsd:complexType name="sourceType">
         <xsd:annotation>
             <xsd:documentation>
@@ -795,7 +825,7 @@
     </xsd:simpleType>
 
 
-  <!-- Element: State/Edition -->
+    <!-- Element: State/Edition -->
     <xsd:complexType name="stateEditionType">
         <xsd:annotation>
             <xsd:documentation>
@@ -817,10 +847,10 @@
     </xsd:simpleType>
 
 
-  <!-- Element: Style/Period (See basicString) -->
+    <!-- Element: Style/Period (See basicString) -->
 
 
-  <!-- Element: Subject -->
+    <!-- Element: Subject -->
     <xsd:complexType name="subjectType">
         <xsd:annotation>
             <xsd:documentation>
@@ -851,10 +881,10 @@
     </xsd:simpleType>
 
 
-  <!-- Element: Technique (See basicString) -->
+    <!-- Element: Technique (See basicString) -->
 
 
-  <!-- Element: Textref -->
+    <!-- Element: Textref -->
     <xsd:complexType name="textrefType">
         <xsd:annotation>
             <xsd:documentation>
@@ -903,7 +933,7 @@
     </xsd:simpleType>
 
 
-  <!-- Element: Title -->
+    <!-- Element: Title -->
     <xsd:complexType name="titleType">
         <xsd:annotation>
             <xsd:documentation>
@@ -920,6 +950,15 @@
         <xsd:restriction base="xsd:string"/>
     </xsd:simpleType>
 
-
-  <!-- Element: Work Type (See basicString) -->
+    <xsd:complexType name="languageOfCatalogingSet">
+        <xsd:sequence minOccurs="1" maxOccurs="unbounded">
+             <xsd:element name="languageTerm" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="scriptTerm" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="transliterationTerm" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="languageTerm">
+        <!-- todo: continue... -->
+    </xsd:complexType>    
 </xsd:schema>
