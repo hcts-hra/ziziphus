@@ -15,6 +15,22 @@
          <xsd:documentation>Get access to the xml: attribute groups for xml:lang as declared below.</xsd:documentation>
       </xsd:annotation>
    </xsd:import>
+   <xsd:simpleType name="languageOfCatalogingType">
+      <xsd:restriction base="xsd:string">
+         <xsd:pattern value="[a-z]{3}"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="catalogingScriptType">
+      <xsd:restriction base="xsd:string">
+         <xsd:pattern value="[a-z]{4}"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="roleString">
+      <xsd:restriction base="xsd:string">
+         <xsd:enumeration value="code"/>
+         <xsd:enumeration value="term"/>
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="langType">
       <xsd:annotation>
          <xsd:documentation>
@@ -120,6 +136,14 @@
          <xsd:enumeration value="other"/>
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="alternativeNotationDateAttributeType">
+      <xsd:restriction base="xsd:string">
+         <xsd:enumeration value="before"/>
+         <xsd:enumeration value="after"/>
+         <xsd:enumeration value="about"/>
+         <xsd:enumeration value="probably"/>
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="inscriptionTextTypeType">
       <xsd:restriction base="xsd:string">
          <xsd:enumeration value="signature"/>
@@ -170,6 +194,18 @@
          <xsd:enumeration value="medium"/>
          <xsd:enumeration value="support"/>
          <xsd:enumeration value="other"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="shapeType">
+      <xsd:restriction base="xsd:string">
+         <xsd:enumeration value="oval"/>
+         <xsd:enumeration value="cube"/>
+         <xsd:enumeration value="sphere"/>
+         <xsd:enumeration value="rectangle"/>
+         <xsd:enumeration value="circle"/>
+         <xsd:enumeration value="irregular"/>
+         <xsd:enumeration value="landscape"/>
+         <xsd:enumeration value="portrait"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="measurementsTypeType">

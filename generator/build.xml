@@ -31,9 +31,10 @@
     ##### -->
     <target name="testMerge">
         <xslt style="${basedir}/../resources/xsl/mergeData.xsl"
-                in="${basedir}/template.xml"
-                out="${target.dir}/merged.xml"
-                force="yes">
+              in="${basedir}/template.xml"
+              out="${target.dir}/merged.xml"
+              force="yes">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath refid="transform.class.path"/>
         </xslt>
     </target>
@@ -41,36 +42,40 @@
 
     <target name="testGenerateViewTransforms" description="testing target: used to test instance merging">
         <xslt style="${basedir}/../resources/xsl/mergeData.xsl"
-                in="${basedir}/template.xml"
-                out="${target.dir}/merged.xml"
-                force="yes">
+              in="${basedir}/template.xml"
+              out="${target.dir}/merged.xml"
+              force="yes">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath refid="transform.class.path"/>
         </xslt>
     </target>
 
     <target name="testCreateViewFragments" description="create html views from xforms">
         <xslt style="${basedir}/xsl/view/createView.xsl"
-                in="${basedir}/../forms/AgentSet.xhtml"
-                out="${basedir}/../view/AgentSetView.xsl"
-                force="yes">
+              in="${basedir}/../forms/AgentSet.xhtml"
+              out="${basedir}/../view/AgentSetView.xsl"
+              force="yes">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath refid="transform.class.path"/>
         </xslt>
     </target>
 
     <target name="testMergeTitleSet">
         <xslt style="${basedir}/../resources/xsl/mergeData.xsl"
-                in="${basedir}/templateTitleSet.xml"
-                out="${target.dir}/heidicon.html"
-                force="yes">
+              in="${basedir}/templateTitleSet.xml"
+              out="${target.dir}/heidicon.html"
+              force="yes">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath refid="transform.class.path"/>
         </xslt>
     </target>
 
     <target name="testHeidiconOutput">
         <xslt style="${basedir}/../resources/xsl/heidicon.xsl"
-                in="${basedir}/../records/w_40ca74a3-3e6c-5749-b0a0-b42afbadff01.xml"
-                out="${target.dir}/heidicon.html"
-                force="yes">
+              in="${basedir}/../records/w_40ca74a3-3e6c-5749-b0a0-b42afbadff01.xml"
+              out="${target.dir}/heidicon.html"
+              force="yes">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath refid="transform.class.path"/>
         </xslt>
     </target>
@@ -82,7 +87,7 @@
         </antcall>
     </target>
 
-	<target name="testDiffView">
+    <target name="testDiffView">
         <antcall target="generate-section-diff-view-transform">
             <param name="subformName" value="LocationSet"/>
         </antcall>
@@ -95,13 +100,14 @@
     Preparation targets
     ######################################################################################## -->
 
-    <target name="prepare">
+    <target name="prepare" depends="inline-schemas">
         <echo>Building Level 1 artifacts: preparing intermediate resources for further generation steps</echo>
         <echo>Create generator resource: single file holding all instance data structures</echo>
         <!-- generate an XML instance of vra-bf.xsd -->
         <xslt style="${xsl.dir}/xf/01_Instance_Generator.xsl"
               in="${generator.schema.dir}/vra-bf.xsd"
               out="${target.dir}/01_VRA_Instance.xml">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath refid="transform.class.path"/>
             <param name="debug" expression="${debug}"/>
         </xslt>
@@ -111,6 +117,7 @@
         <xslt style="${xsl.dir}/xf/02_Bind_Generator.xsl"
               in="${generator.schema.dir}/vra-bf.xsd"
               out="${target.dir}/02_XF_Binds.xml">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath refid="transform.class.path"/>
             <param name="debug" expression="${debug}"/>
         </xslt>
@@ -120,8 +127,9 @@
     <target name="applyUIDefinition" depends="prepare" description="reorders and filters 02_XF_Binds.xml according to 'UIDefinition.xml'">
         <echo>Re-ordering and filtering bind list according to UIDefinition</echo>
         <xslt style="${xsl.dir}/xf/03_applyUIDefinition.xsl"
-                in="${basedir}/profile/UIDefinition.xml"
-                out="${target.dir}/02_XF_Binds_redefined.xml">
+              in="${basedir}/profile/UIDefinition.xml"
+              out="${target.dir}/02_XF_Binds_redefined.xml">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath refid="transform.class.path"/>
             <param name="debug" expression="${debug}"/>
             <param name="vanillaBindings" expression="${target.dir}/02_XF_Binds.xml"/>
@@ -131,8 +139,9 @@
     <target name="createVRASectionTemplate" description="generates template rule for vra-record.xsl that controls order and existence of VRA Sets">
 
         <xslt style="${xsl.dir}/view/createVRASectionTemplate.xsl"
-                in="${basedir}/profile/UIDefinition.xml"
-                out="${basedir}/../resources/xsl/vraSectionTemplate.xsl">
+              in="${basedir}/profile/UIDefinition.xml"
+              out="${basedir}/../resources/xsl/vraSectionTemplate.xsl">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath refid="transform.class.path"/>
             <param name="debug" expression="${debug}"/>
         </xslt>
@@ -143,8 +152,8 @@
     ######################################################################################## -->
 
     <target name="generate-forms" depends="applyUIDefinition" description="generate XForms">
-    <echo>Generate first chunk of VRA forms</echo>
-    <!-- VRA Section agentSection -->
+        <echo>Generate first chunk of VRA forms</echo>
+        <!-- VRA Section agentSection -->
         <antcall target="generate-subform">
             <param name="subformName" value="AgentSet"/>
         </antcall>
@@ -301,9 +310,10 @@
     <target name="generate-subform">
         <echo>generate-subform ${subformName}</echo>
         <xslt style="${xsl.dir}/xf/04_XForms_Generator.xsl"
-                in="${target.dir}/02_XF_Binds_redefined.xml"
-                out="${target.dir}/${subformName}.xhtml"
-                force="true">
+              in="${target.dir}/02_XF_Binds_redefined.xml"
+              out="${target.dir}/${subformName}.xhtml"
+              force="true">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath refid="transform.class.path"/>
             <param name="debug" expression="${debug}"/>
             <param name="path_2_vra_types_schema" expression="${generator.schema.dir}/vra-types.xsd"/>
@@ -384,9 +394,10 @@
         <echo>generate-subform ${subformName}</echo>
         <mkdir dir="${target.dir}/views"/>
         <xslt style="${basedir}/xsl/view/createView.xsl"
-                in="${basedir}/../forms/${subformName}.xhtml"
-                out="${basedir}/../view/${subformName}.xsl"
-                force="true">
+              in="${basedir}/../forms/${subformName}.xhtml"
+              out="${basedir}/../view/${subformName}.xsl"
+              force="true">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath refid="transform.class.path"/>
             <param name="debug" expression="${debug}"/>
             <param name="vraSection" expression="${subformName}"/>
@@ -457,13 +468,14 @@
         </antcall>
     </target>
 
-	<target name="generate-section-diff-view-transform" description="generates a XSLT transform for diff presentation of a single VRA section">
+    <target name="generate-section-diff-view-transform" description="generates a XSLT transform for diff presentation of a single VRA section">
         <echo>generate-subform ${subformName}</echo>
         <mkdir dir="${target.dir}/views"/>
         <xslt style="${basedir}/xsl/view/createDiffView.xsl"
-                in="${basedir}/../forms/${subformName}.xhtml"
-                out="${basedir}/../view-diff/${subformName}.xsl"
-                force="true">
+              in="${basedir}/../forms/${subformName}.xhtml"
+              out="${basedir}/../view-diff/${subformName}.xsl"
+              force="true">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath refid="transform.class.path"/>
             <param name="debug" expression="${debug}"/>
             <param name="vraSection" expression="${subformName}"/>
@@ -478,6 +490,7 @@
               in="${cluster.schema.dir}/vraCluster.xsd"
               out="${target.dir}/xsd/01_Inline_Extension.xml"
               force="true">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath refid="transform.class.path"/>
             <param name="debug" expression="${debug}"/>
         </xslt>
@@ -486,6 +499,7 @@
               in="${target.dir}/xsd/01_Inline_Extension.xml"
               out="${target.dir}/xsd/02_InlineXSD.xml"
               force="true">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath refid="transform.class.path"/>
             <param name="debug" expression="${debug}"/>
             <param name="path_2_vra_types_schema" expression="${generator.schema.dir}/vra-types.xsd"/>
@@ -496,6 +510,7 @@
               in="${target.dir}/xsd/02_InlineXSD.xml"
               out="${target.dir}/xsd/03_Apply_Schema_Redefintion.xml"
               force="true">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath refid="transform.class.path"/>
             <param name="debug" expression="${debug}"/>
             <param name="path2schemaRedefinition" expression="${cluster.schema.dir}/vra-strictCluster.xsd"/>
@@ -505,6 +520,7 @@
               in="${target.dir}/xsd/03_Apply_Schema_Redefintion.xml"
               out="${target.dir}/xsd/vra-bf.xsd"
               force="true">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath refid="transform.class.path"/>
             <param name="debug" expression="${debug}"/>
             <param name="vraTypeSchemaName" expression="vra-types.xsd"/>
@@ -522,28 +538,31 @@
             UI file for editing by someone who is responsible for maintaining the order and appearance of certain
             vra fields.
         </echo>
-        <!--
+       
         <xslt style="${xsl.dir}/helper/createInitialUIDefinition.xsl"
-                in="${target.dir}/02_XF_Binds.xml"
-                out="${target.dir}/UIDefinition.xml"
-                force="true">
+              in="${target.dir}/02_XF_Binds.xml"
+              out="${target.dir}/UIDefinition.xml"
+              force="true">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath refid="transform.class.path"/>
             <param name="debug" expression="${debug}"/>
         </xslt>
-        -->
+       
         <xslt style="${xsl.dir}/helper/sortUIDefinition.xsl"
-                in="${basedir}/profile/UIDefinition.xml"
-                out="${target.dir}/UIDefinition-Updated.xml"
-                force="true">
+              in="${basedir}/profile/UIDefinition.xml"
+              out="${target.dir}/UIDefinition-Updated.xml"
+              force="true">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath refid="transform.class.path"/>
             <param name="generatedUIDefinition" expression="${target.dir}/UIDefinition.xml"/>
             <param name="debug" expression="${debug}"/>
         </xslt>
 
         <xslt style="${xsl.dir}/helper/mergeUIDefinition.xsl"
-                in="${target.dir}/UIDefinition-Updated.xml"
-                out="${target.dir}/UIDefinition-Final.xml"
-                force="true">
+              in="${target.dir}/UIDefinition-Updated.xml"
+              out="${target.dir}/UIDefinition-Final.xml"
+              force="true">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath refid="transform.class.path"/>
             <param name="generatedUIDefinition" expression="${target.dir}/UIDefinition.xml"/>
             <param name="debug" expression="${debug}"/>
@@ -561,9 +580,10 @@
 
     <target name="mergeUIDefinition" depends="generateInitialUIDefinition">
         <xslt style="../resources/xsl/mergeData.xsl"
-                in="${target.dir}/02_XF_Binds.xml"
-                out="${target.dir}/UIDefinition.xml"
-                force="true">
+              in="${target.dir}/02_XF_Binds.xml"
+              out="${target.dir}/UIDefinition.xml"
+              force="true">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath refid="transform.class.path"/>
             <param name="debug" expression="${debug}"/>
         </xslt>

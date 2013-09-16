@@ -1,12 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><html xmlns:ev="http://www.w3.org/2001/xml-events"
-      xmlns:bf="http://betterform.sourceforge.net/xforms"
-      xmlns:vra="http://www.vraweb.org/vracore4.htm"
-      xmlns:bfc="http://betterform.sourceforge.net/xforms/controls"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-      xmlns:xf="http://www.w3.org/2002/xforms"
-      xmlns:xi="http://www.w3.org/2001/XInclude"
-      bf:transform="/apps/ziziphus/resources/xsl/ziziphus.xsl">
+<?xml version="1.0" encoding="UTF-8"?><html xmlns:bf="http://betterform.sourceforge.net/xforms" xmlns="http://www.w3.org/1999/xhtml" xmlns:vra="http://www.vraweb.org/vracore4.htm" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:bfc="http://betterform.sourceforge.net/xforms/controls" bf:transform="/apps/ziziphus/resources/xsl/ziziphus.xsl">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
       <link href="resources/css/edit-form.css" rel="stylesheet" type="text/css" />
@@ -18,13 +10,9 @@
          <!-- ###################### MODEL ################################## -->
          <!-- ###################### MODEL ################################## -->
          <div style="display:none">
-            <xf:model id="m-child-model" schema="resources/xsd/vra-types.xsd">
+            <xf:model id="m-child-model" schema="resources/xsd/generator/vra-types.xsd">
                <xf:send ev:event="xforms-model-construct-done" submission="s-loadSet"></xf:send>
-               <xf:submission id="s-loadSet"
-                              resource="modules/loadData.xql?id={bf:instanceOfModel('m-main','i-control-center')/uuid}&amp;workdir={bf:instanceOfModel('m-main','i-control-center')/workdir}"
-                              method="post"
-                              replace="instance"
-                              validate="false">
+               <xf:submission id="s-loadSet" resource="modules/loadData.xql?id={bf:instanceOfModel('m-main','i-control-center')/uuid}&amp;workdir={bf:instanceOfModel('m-main','i-control-center')/workdir}" method="post" replace="instance" validate="false">
                   <xf:header>
                      <xf:name>username</xf:name>
                      <xf:value>admin</xf:value>
@@ -38,11 +26,7 @@
                      <xf:value>exist</xf:value>
                   </xf:header>
                </xf:submission>
-               <xf:submission id="s-update"
-                              resource="modules/updateRecord.xql?id={bf:instanceOfModel('m-main','i-control-center')/uuid}&amp;workdir={bf:instanceOfModel('m-main','i-control-center')/workdir}&amp;set=locationSet"
-                              method="post"
-                              replace="none"
-                              validate="false">
+               <xf:submission id="s-update" resource="modules/updateRecord.xql?id={bf:instanceOfModel('m-main','i-control-center')/uuid}&amp;workdir={bf:instanceOfModel('m-main','i-control-center')/workdir}&amp;set=locationSet" method="post" replace="none" validate="false">
                   <xf:header>
                      <xf:name>username</xf:name>
                      <xf:value>admin</xf:value>
@@ -55,8 +39,7 @@
                      <xf:name>realm</xf:name>
                      <xf:value>exist</xf:value>
                   </xf:header>
-                  <xf:action ev:event="xforms-submit"
-                             if="not(count(vra:location[@pref = ('true', '1')]) &lt;= 1)">
+                  <xf:action ev:event="xforms-submit" if="not(count(vra:location[@pref = ('true', '1')]) &lt;= 1)">
                      <xf:message>Warning: At most one preferred location can be selected.</xf:message>
                   </xf:action>
                   <xf:message ev:event="xforms-submit-error">Sorry, updating of this record failed</xf:message>
@@ -64,17 +47,16 @@
                      <xf:message level="ephemeral">Data have been stored.</xf:message>
                      <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/changed" value="'true'"></xf:setvalue>
                      <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/isDirty" value="'false'"></xf:setvalue>
-                     <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/setname"
-                                  value="'locationSet'"></xf:setvalue>
+                     <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/setname" value="'locationSet'"></xf:setvalue>
                   </xf:action>
                </xf:submission>
                <xf:instance id="i-locationSet">
                   <locationSet xmlns="http://www.vraweb.org/vracore4.htm">
-                     <display transliteration="" script="" lastAccessed=""></display>
-                     <notes transliteration="" script="" lastAccessed=""></notes>
-                     <location pref="false" transliteration="" script="" lastAccessed="" type="">
-                        <refid type="" transliteration="" script="" lastAccessed=""></refid>
-                        <name type="" transliteration="" script="" lastAccessed=""></name>
+                     <display></display>
+                     <notes></notes>
+                     <location pref="false" type="">
+                        <refid type=""></refid>
+                        <name type=""></name>
                         <point epsg="" url="">
                            <lat></lat>
                            <long></long>
@@ -92,15 +74,20 @@
                      <xf:bind nodeset="vra:refid">
                         <xf:bind nodeset="@type" type="vra:locationRefidTypeType"></xf:bind>
                      </xf:bind>
+                     <xf:bind nodeset="vra:point" type="">
+                        <xf:bind nodeset="vra:lat"></xf:bind>
+                        <xf:bind nodeset="vra:long"></xf:bind>
+                        <xf:bind nodeset="@epsg"></xf:bind>
+                        <xf:bind nodeset="@url"></xf:bind>
+                     </xf:bind>
                   </xf:bind>
                </xf:bind>
-               <xf:bind nodeset="instance()"
-                        constraint="count(vra:location[@pref = ('true', '1')]) &lt;= 1"></xf:bind>
+               <xf:bind nodeset="instance()" constraint="count(vra:location[@pref = ('true', '1')]) &lt;= 1"></xf:bind>
                <xf:instance id="i-templates">
                   <templates xmlns="http://www.vraweb.org/vracore4.htm">
-                     <location pref="false" transliteration="" script="" lastAccessed="" type="">
-                        <refid type="" transliteration="" script="" lastAccessed=""></refid>
-                        <name type="" transliteration="" script="" lastAccessed=""></name>
+                     <location pref="false" type="">
+                        <refid type=""></refid>
+                        <name type=""></name>
                         <point epsg="" url="">
                            <lat></lat>
                            <long></long>
@@ -123,13 +110,10 @@
          <!-- ####################################### VISIBLE UI ####################################### -->
          <!-- ####################################### VISIBLE UI ####################################### -->
          <div class="toolbar">
-            <xf:trigger class="t-plus -toolbarbutton" model="m-child-model" id="d3e1-add"
-                        title="Add Location">
+            <xf:trigger class="t-plus -toolbarbutton" model="m-child-model" id="d3e1-add" title="Add Location">
                <xf:label>+</xf:label>
                <xf:hint>add an entry</xf:hint>
-               <xf:insert model="m-child-model" nodeset="instance()/vra:location[1]"
-                          origin="instance('i-templates')/vra:location"
-                          position="before"></xf:insert>
+               <xf:insert model="m-child-model" nodeset="instance()/vra:location[1]" origin="instance('i-templates')/vra:location" position="before"></xf:insert>
             </xf:trigger>
             <xf:trigger id="d3e1-save" class="t-save -toolbarbutton">
                <xf:label>Save</xf:label>
@@ -151,8 +135,7 @@
                <xf:dispatch name="unload-subform" targetid="controlCenter"></xf:dispatch>
             </xf:trigger>
          </div>
-         <xf:group id="outerGroup" appearance="minimal" model="m-child-model"
-                   ref="instance('i-locationSet')">
+         <xf:group id="outerGroup" appearance="minimal" model="m-child-model" ref="instance('i-locationSet')">
             <xf:label></xf:label>
             <xf:action ev:event="xforms-value-changed" ev:phase="capture">
                <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/isDirty" value="'true'"></xf:setvalue>
@@ -168,12 +151,8 @@
                <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@lang"></xf:setvalue>
                <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@transliteration"></xf:setvalue>
                <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@script"></xf:setvalue>
-               <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]"
-                          if="'.'=instance('i-util')/currentElement"
-                          origin="instance('i-locationSet')/vra:location[index('r-vraLocation')]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:insert>
-               <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]"
-                          if="not('.'=instance('i-util')/currentElement)"
-                          origin="instance('i-locationSet')/vra:location[index('r-vraLocation')]/*[local-name()=instance('i-util')/currentElement]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:insert>
+               <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]" if="'.'=instance('i-util')/currentElement" origin="instance('i-locationSet')/vra:location[index('r-vraLocation')]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:insert>
+               <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]" if="not('.'=instance('i-util')/currentElement)" origin="instance('i-locationSet')/vra:location[index('r-vraLocation')]/*[local-name()=instance('i-util')/currentElement]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:insert>
             </xf:action>
             <xf:trigger id="doDelete" class="hiddenControl">
                <xf:label>remove</xf:label>
@@ -186,19 +165,17 @@
                <tbody model="m-child-model" id="r-vraLocation" xf:repeat-nodeset="vra:location">
                   <tr>
                      <td class="prefCol">
-                        <xf:input ref="@pref" id="d3e34-pref">
+                        <xf:input ref="@pref" id="d3e40-pref">
                            <xf:label>pref</xf:label>
                            <xf:hint>preferred</xf:hint>
-                           <xf:action ev:event="xforms-value-changed" if=".=('true',1)"
-                                      while="(../preceding-sibling::*|../following-sibling::*)/@pref=('true',1)">
-                              <xf:setvalue ref="(../preceding-sibling::*|../following-sibling::*)[@pref=('true',1)][1]/@pref"
-                                           value="'false'"></xf:setvalue>
+                           <xf:action ev:event="xforms-value-changed" if=".=('true',1)" while="(../preceding-sibling::*|../following-sibling::*)/@pref=('true',1)">
+                              <xf:setvalue ref="(../preceding-sibling::*|../following-sibling::*)[@pref=('true',1)][1]/@pref" value="'false'"></xf:setvalue>
                            </xf:action>
                         </xf:input>
                      </td>
                      <td class="contentCol">
                         <xf:group appearance="minimal">
-                           <xf:select1 id="b-d2e511" ref="@type">
+                           <xf:select1 id="b-d2e661" ref="@type">
                               <xf:label>Type</xf:label>
                               <xf:hint></xf:hint>
                               <xf:item>
@@ -260,11 +237,11 @@
                            </xf:select1>
                         </xf:group>
                         <xf:group appearance="minimal">
-                           <xf:input id="b-d2e484" ref="vra:name">
+                           <xf:input id="b-d2e615" ref="vra:name">
                               <xf:label>Name</xf:label>
                               <xf:hint>Name</xf:hint>
                            </xf:input>
-                           <xf:select1 id="b-d2e491" ref="vra:name/@type">
+                           <xf:select1 id="b-d2e622" ref="vra:name/@type">
                               <xf:label>Type</xf:label>
                               <xf:hint></xf:hint>
                               <xf:item>
@@ -298,11 +275,11 @@
                            </xf:trigger>
                         </xf:group>
                         <xf:group appearance="minimal">
-                           <xf:input id="b-d2e467" ref="vra:refid">
+                           <xf:input id="b-d2e593" ref="vra:refid">
                               <xf:label>Refid</xf:label>
                               <xf:hint>Refid</xf:hint>
                            </xf:input>
-                           <xf:select1 id="b-d2e474" ref="vra:refid/@type">
+                           <xf:select1 id="b-d2e600" ref="vra:refid/@type">
                               <xf:label>Type</xf:label>
                               <xf:hint></xf:hint>
                               <xf:item>
@@ -330,6 +307,28 @@
                               <xf:hint>Attributes...</xf:hint>
                               <xf:action>
                                  <xf:setvalue ref="instance('i-util')/currentElement" value="'refid'"></xf:setvalue>
+                                 <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
+                              </xf:action>
+                              <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
+                           </xf:trigger>
+                        </xf:group>
+                        <xf:group appearance="minimal">
+                           <xf:input ref="vra:point/@epsg">
+                              <xf:label>epsg</xf:label>
+                              <xf:hint>@epsg</xf:hint>
+                           </xf:input>
+                           <xf:input ref="vra:point/@url">
+                              <xf:label>url</xf:label>
+                              <xf:hint>@url</xf:hint>
+                           </xf:input>
+                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:point">
+                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
+                           </xf:group>
+                           <xf:trigger class="vraAttributeTrigger">
+                              <xf:label>A</xf:label>
+                              <xf:hint>Attributes...</xf:hint>
+                              <xf:action>
+                                 <xf:setvalue ref="instance('i-util')/currentElement" value="'point'"></xf:setvalue>
                                  <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
                               </xf:action>
                               <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
@@ -509,13 +508,11 @@
                      <xf:label>Ok</xf:label>
                      <xf:action if="'.'=instance('i-util')/currentElement">
                         <xf:delete nodeset="instance('i-locationSet')/vra:location[index('r-vraLocation')]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:delete>
-                        <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]"
-                                   context="instance('i-locationSet')/vra:location[index('r-vraLocation')]"></xf:insert>
+                        <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]" context="instance('i-locationSet')/vra:location[index('r-vraLocation')]"></xf:insert>
                      </xf:action>
                      <xf:action if="not('.'=instance('i-util')/currentElement)">
                         <xf:delete nodeset="instance('i-locationSet')/vra:location[index('r-vraLocation')]/*[local-name()=instance('i-util')/currentElement]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:delete>
-                        <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]"
-                                   context="instance('i-locationSet')/vra:location[index('r-vraLocation')]/*[local-name()=instance('i-util')/currentElement]"></xf:insert>
+                        <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]" context="instance('i-locationSet')/vra:location[index('r-vraLocation')]/*[local-name()=instance('i-util')/currentElement]"></xf:insert>
                      </xf:action>
                      <bfc:hide dialog="attrDialog"></bfc:hide>
                   </xf:trigger>

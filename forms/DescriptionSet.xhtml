@@ -1,12 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><html xmlns:ev="http://www.w3.org/2001/xml-events"
-      xmlns:bf="http://betterform.sourceforge.net/xforms"
-      xmlns:vra="http://www.vraweb.org/vracore4.htm"
-      xmlns:bfc="http://betterform.sourceforge.net/xforms/controls"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-      xmlns:xf="http://www.w3.org/2002/xforms"
-      xmlns:xi="http://www.w3.org/2001/XInclude"
-      bf:transform="/apps/ziziphus/resources/xsl/ziziphus.xsl">
+<?xml version="1.0" encoding="UTF-8"?><html xmlns:bf="http://betterform.sourceforge.net/xforms" xmlns="http://www.w3.org/1999/xhtml" xmlns:vra="http://www.vraweb.org/vracore4.htm" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:bfc="http://betterform.sourceforge.net/xforms/controls" bf:transform="/apps/ziziphus/resources/xsl/ziziphus.xsl">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
       <link href="resources/css/edit-form.css" rel="stylesheet" type="text/css" />
@@ -18,13 +10,9 @@
          <!-- ###################### MODEL ################################## -->
          <!-- ###################### MODEL ################################## -->
          <div style="display:none">
-            <xf:model id="m-child-model" schema="resources/xsd/vra-types.xsd">
+            <xf:model id="m-child-model" schema="resources/xsd/generator/vra-types.xsd">
                <xf:send ev:event="xforms-model-construct-done" submission="s-loadSet"></xf:send>
-               <xf:submission id="s-loadSet"
-                              resource="modules/loadData.xql?id={bf:instanceOfModel('m-main','i-control-center')/uuid}&amp;workdir={bf:instanceOfModel('m-main','i-control-center')/workdir}"
-                              method="post"
-                              replace="instance"
-                              validate="false">
+               <xf:submission id="s-loadSet" resource="modules/loadData.xql?id={bf:instanceOfModel('m-main','i-control-center')/uuid}&amp;workdir={bf:instanceOfModel('m-main','i-control-center')/workdir}" method="post" replace="instance" validate="false">
                   <xf:header>
                      <xf:name>username</xf:name>
                      <xf:value>admin</xf:value>
@@ -38,11 +26,7 @@
                      <xf:value>exist</xf:value>
                   </xf:header>
                </xf:submission>
-               <xf:submission id="s-update"
-                              resource="modules/updateRecord.xql?id={bf:instanceOfModel('m-main','i-control-center')/uuid}&amp;workdir={bf:instanceOfModel('m-main','i-control-center')/workdir}&amp;set=descriptionSet"
-                              method="post"
-                              replace="none"
-                              validate="false">
+               <xf:submission id="s-update" resource="modules/updateRecord.xql?id={bf:instanceOfModel('m-main','i-control-center')/uuid}&amp;workdir={bf:instanceOfModel('m-main','i-control-center')/workdir}&amp;set=descriptionSet" method="post" replace="none" validate="false">
                   <xf:header>
                      <xf:name>username</xf:name>
                      <xf:value>admin</xf:value>
@@ -55,8 +39,7 @@
                      <xf:name>realm</xf:name>
                      <xf:value>exist</xf:value>
                   </xf:header>
-                  <xf:action ev:event="xforms-submit"
-                             if="not(count(vra:description[@pref = ('true', '1')]) &lt;= 1)">
+                  <xf:action ev:event="xforms-submit" if="not(count(vra:description[@pref = ('true', '1')]) &lt;= 1)">
                      <xf:message>Warning: At most one preferred description can be selected.</xf:message>
                   </xf:action>
                   <xf:message ev:event="xforms-submit-error">Sorry, updating of this record failed</xf:message>
@@ -64,29 +47,26 @@
                      <xf:message level="ephemeral">Data have been stored.</xf:message>
                      <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/changed" value="'true'"></xf:setvalue>
                      <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/isDirty" value="'false'"></xf:setvalue>
-                     <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/setname"
-                                  value="'descriptionSet'"></xf:setvalue>
+                     <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/setname" value="'descriptionSet'"></xf:setvalue>
                   </xf:action>
                </xf:submission>
                <xf:instance id="i-descriptionSet">
                   <descriptionSet xmlns="http://www.vraweb.org/vracore4.htm">
-                     <display transliteration="" script="" lastAccessed=""></display>
-                     <notes transliteration="" script="" lastAccessed=""></notes>
-                     <description pref="false" stateOfPreservation="" transliteration="" script=""
-                                  lastAccessed=""></description>
+                     <display></display>
+                     <notes></notes>
+                     <description pref="false" stateOfPreservation=""></description>
                   </descriptionSet>
                </xf:instance>
                <xf:bind nodeset="instance()">
                   <xf:bind nodeset="vra:description">
                      <xf:bind nodeset="@pref" type="boolean"></xf:bind>
+                     <xf:bind nodeset="@stateOfPreservation"></xf:bind>
                   </xf:bind>
                </xf:bind>
-               <xf:bind nodeset="instance()"
-                        constraint="count(vra:description[@pref = ('true', '1')]) &lt;= 1"></xf:bind>
+               <xf:bind nodeset="instance()" constraint="count(vra:description[@pref = ('true', '1')]) &lt;= 1"></xf:bind>
                <xf:instance id="i-templates">
                   <templates xmlns="http://www.vraweb.org/vracore4.htm">
-                     <description pref="false" stateOfPreservation="" transliteration="" script=""
-                                  lastAccessed=""></description>
+                     <description pref="false" stateOfPreservation=""></description>
                      <notes></notes>
                      <display></display>
                   </templates>
@@ -104,13 +84,10 @@
          <!-- ####################################### VISIBLE UI ####################################### -->
          <!-- ####################################### VISIBLE UI ####################################### -->
          <div class="toolbar">
-            <xf:trigger class="t-plus -toolbarbutton" model="m-child-model" id="d3e1-add"
-                        title="Add Description">
+            <xf:trigger class="t-plus -toolbarbutton" model="m-child-model" id="d3e1-add" title="Add Description">
                <xf:label>+</xf:label>
                <xf:hint>add an entry</xf:hint>
-               <xf:insert model="m-child-model" nodeset="instance()/vra:description[1]"
-                          origin="instance('i-templates')/vra:description"
-                          position="before"></xf:insert>
+               <xf:insert model="m-child-model" nodeset="instance()/vra:description[1]" origin="instance('i-templates')/vra:description" position="before"></xf:insert>
             </xf:trigger>
             <xf:trigger id="d3e1-save" class="t-save -toolbarbutton">
                <xf:label>Save</xf:label>
@@ -132,8 +109,7 @@
                <xf:dispatch name="unload-subform" targetid="controlCenter"></xf:dispatch>
             </xf:trigger>
          </div>
-         <xf:group id="outerGroup" appearance="minimal" model="m-child-model"
-                   ref="instance('i-descriptionSet')">
+         <xf:group id="outerGroup" appearance="minimal" model="m-child-model" ref="instance('i-descriptionSet')">
             <xf:label></xf:label>
             <xf:action ev:event="xforms-value-changed" ev:phase="capture">
                <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/isDirty" value="'true'"></xf:setvalue>
@@ -149,12 +125,8 @@
                <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@lang"></xf:setvalue>
                <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@transliteration"></xf:setvalue>
                <xf:setvalue ref="instance('i-vraAttributes')/vra:vraElement[1]/@script"></xf:setvalue>
-               <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]"
-                          if="'.'=instance('i-util')/currentElement"
-                          origin="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:insert>
-               <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]"
-                          if="not('.'=instance('i-util')/currentElement)"
-                          origin="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/*[local-name()=instance('i-util')/currentElement]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:insert>
+               <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]" if="'.'=instance('i-util')/currentElement" origin="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:insert>
+               <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]" if="not('.'=instance('i-util')/currentElement)" origin="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/*[local-name()=instance('i-util')/currentElement]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:insert>
             </xf:action>
             <xf:trigger id="doDelete" class="hiddenControl">
                <xf:label>remove</xf:label>
@@ -167,21 +139,23 @@
                <tbody model="m-child-model" id="r-vraDescription" xf:repeat-nodeset="vra:description">
                   <tr>
                      <td class="prefCol">
-                        <xf:input ref="@pref" id="d3e31-pref">
+                        <xf:input ref="@pref" id="d3e36-pref">
                            <xf:label>pref</xf:label>
                            <xf:hint>preferred</xf:hint>
-                           <xf:action ev:event="xforms-value-changed" if=".=('true',1)"
-                                      while="(../preceding-sibling::*|../following-sibling::*)/@pref=('true',1)">
-                              <xf:setvalue ref="(../preceding-sibling::*|../following-sibling::*)[@pref=('true',1)][1]/@pref"
-                                           value="'false'"></xf:setvalue>
+                           <xf:action ev:event="xforms-value-changed" if=".=('true',1)" while="(../preceding-sibling::*|../following-sibling::*)/@pref=('true',1)">
+                              <xf:setvalue ref="(../preceding-sibling::*|../following-sibling::*)[@pref=('true',1)][1]/@pref" value="'false'"></xf:setvalue>
                            </xf:action>
                         </xf:input>
                      </td>
                      <td class="contentCol">
                         <xf:group appearance="minimal">
-                           <xf:textarea id="b-d2e311" ref=".">
+                           <xf:textarea id="b-d2e391" ref=".">
                               <xf:hint>Description</xf:hint>
                            </xf:textarea>
+                           <xf:input ref="@stateOfPreservation">
+                              <xf:label>stateOfPreservation</xf:label>
+                              <xf:hint>@stateOfPreservation</xf:hint>
+                           </xf:input>
                         </xf:group>
                      </td>
                      <td class="triggerCol">
@@ -357,13 +331,11 @@
                      <xf:label>Ok</xf:label>
                      <xf:action if="'.'=instance('i-util')/currentElement">
                         <xf:delete nodeset="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:delete>
-                        <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]"
-                                   context="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]"></xf:insert>
+                        <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]" context="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]"></xf:insert>
                      </xf:action>
                      <xf:action if="not('.'=instance('i-util')/currentElement)">
                         <xf:delete nodeset="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/*[local-name()=instance('i-util')/currentElement]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:delete>
-                        <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]"
-                                   context="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/*[local-name()=instance('i-util')/currentElement]"></xf:insert>
+                        <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]" context="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/*[local-name()=instance('i-util')/currentElement]"></xf:insert>
                      </xf:action>
                      <bfc:hide dialog="attrDialog"></bfc:hide>
                   </xf:trigger>

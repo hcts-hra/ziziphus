@@ -99,7 +99,7 @@
 <xsl:comment> ###################### MODEL ################################## </xsl:comment>
 
                     <div style="display:none">
-                        <xf:model id="m-child-model" schema="{$relativePath}resources/xsd/vra-types.xsd">
+                        <xf:model id="m-child-model" schema="{$relativePath}resources/xsd/generator/vra-types.xsd">
                             <xf:send ev:event="xforms-model-construct-done" submission="s-loadSet"/>
                             <xf:submission id="s-loadSet"
                                     resource="{$relativePath}modules/loadData.xql?id={{bf:instanceOfModel('m-main','i-control-center')/uuid}}&amp;workdir={{bf:instanceOfModel('m-main','i-control-center')/workdir}}"

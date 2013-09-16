@@ -156,27 +156,27 @@
             <xsd:element ref="textrefSet" minOccurs="0"/>
             <xsd:element ref="titleSet" minOccurs="0"/>
             <xsd:element ref="worktypeSet" minOccurs="0"/>
-            <!--<xsd:element ref="languageOfCatalogingSet" minOccurs="0"/>-->
+            <xsd:element ref="languageOfCatalogingSet" minOccurs="0"/>
         </xsd:sequence>
         <xsd:attributeGroup ref="vraAttributes"/>
         <xsd:attribute name="id" type="xsd:ID"/>
         <!-- >>> EXTENSION START >>> -->
-        <xsd:attribute name="languageOfCataloging">
-            <xsd:simpleType>
-                <xsd:restriction base="xsd:string">
-                    <xsd:pattern value="[a-z]{3}"/>
-                </xsd:restriction>
-            </xsd:simpleType>
-        </xsd:attribute>
-        <xsd:attribute name="catalogingScript">
-            <xsd:simpleType>
-                <xsd:restriction base="xsd:string">
-                    <xsd:pattern value="[a-z]{4}"/>
-                </xsd:restriction>
-            </xsd:simpleType>
-        </xsd:attribute>
+        <xsd:attribute name="languageOfCataloging" type="languageOfCatalogingType"/>
+        <xsd:attribute name="catalogingScript" type="catalogingScriptType"/>
         <!-- <<< EXTENSION END <<< -->
     </xsd:complexType>
+    <!-- >>> EXTENSION START >>> -->
+    <xsd:simpleType name="languageOfCatalogingType">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[a-z]{3}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="catalogingScriptType">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[a-z]{4}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <!-- <<< EXTENSION END <<< -->
     <xsd:complexType name="setType">
         <xsd:annotation>
             <xsd:documentation>
@@ -363,17 +363,16 @@
         </xsd:annotation>
         <xsd:simpleContent>
             <xsd:extension base="xsd:string">
-                <xsd:attribute name="type">
-                    <xsd:simpleType>
-                        <xsd:restriction base="xsd:string">
-                            <xsd:enumeration value="code"/>
-                            <xsd:enumeration value="term"/>
-                        </xsd:restriction>
-                    </xsd:simpleType>
-                </xsd:attribute>
+                <xsd:attribute name="type" type="roleString"/>       
             </xsd:extension>
         </xsd:simpleContent>
     </xsd:complexType>
+    <xsd:simpleType name="roleString">
+       <xsd:restriction base="xsd:string">
+           <xsd:enumeration value="code"/>
+           <xsd:enumeration value="term"/>
+       </xsd:restriction>
+    </xsd:simpleType>
     <!-- <<< EXTENSION END <<< -->
 
     <!-- >>> EXTENSION START >>> -->
@@ -550,19 +549,18 @@
     <xsd:complexType name="alternativeNotationDateType">
         <xsd:simpleContent>
             <xsd:extension base="basicString">
-                <xsd:attribute name="type" use="required">
-                    <xsd:simpleType>
-                        <xsd:restriction base="xsd:string">
-                            <xsd:enumeration value="before"/>
-                            <xsd:enumeration value="after"/>
-                            <xsd:enumeration value="about"/>
-                            <xsd:enumeration value="probably"/>
-                        </xsd:restriction>
-                    </xsd:simpleType>
-                </xsd:attribute>
+                <xsd:attribute name="type" use="required" type="alternativeNotationDateAttributeType"/>
             </xsd:extension>
         </xsd:simpleContent>
     </xsd:complexType>
+    <xsd:simpleType name="alternativeNotationDateAttributeType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="before"/>
+            <xsd:enumeration value="after"/>
+            <xsd:enumeration value="about"/>
+            <xsd:enumeration value="probably"/>
+        </xsd:restriction>
+    </xsd:simpleType>
     <!-- <<< EXTENSION END <<< -->
     <!-- Element: Description (See basicString) -->
 
@@ -702,33 +700,31 @@
                 <xsd:attribute name="type" type="measurementsTypeType"/>
                 <xsd:attribute name="unit" type="measurementsUnitType"/>
                 <!-- >>> EXTENSION START >>> -->
-                <xsd:attribute name="shape">
-                    <xsd:simpleType>
-                        <xsd:restriction base="xsd:string">
-                            <xsd:enumeration value="oval"/>
-                            <xsd:enumeration value="cube"/>
-                            <xsd:enumeration value="sphere"/>
-                            <xsd:enumeration value="rectangle"/>
-                            <xsd:enumeration value="circle"/>
-                            <xsd:enumeration value="irregular"/>
-                            <xsd:enumeration value="landscape"/>
-                            <xsd:enumeration value="portrait"/>
-                        </xsd:restriction>
-                    </xsd:simpleType>
-                </xsd:attribute>
+                <xsd:attribute name="shape" type="shapeType"/>
                 <!-- <<< EXTENSION END <<< -->
             </xsd:extension>
         </xsd:simpleContent>
     </xsd:complexType>
+    <!-- >>> EXTENSION START >>> -->
+    <xsd:simpleType name="shapeType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="oval"/>
+            <xsd:enumeration value="cube"/>
+            <xsd:enumeration value="sphere"/>
+            <xsd:enumeration value="rectangle"/>
+            <xsd:enumeration value="circle"/>
+            <xsd:enumeration value="irregular"/>
+            <xsd:enumeration value="landscape"/>
+            <xsd:enumeration value="portrait"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <!-- <<< EXTENSION END <<< -->
     <xsd:simpleType name="measurementsTypeType">
         <xsd:restriction base="xsd:string"/>
     </xsd:simpleType>
     <xsd:simpleType name="measurementsUnitType">
         <xsd:annotation>
-            <xsd:documentation>
-        See http://ts.nist.gov/ts/htdocs/230/235/appxc/appxc.htm for
-        appropriate unit types.
-      </xsd:documentation>
+            <xsd:documentation>See http://ts.nist.gov/ts/htdocs/230/235/appxc/appxc.htm for appropriate unit types.</xsd:documentation>
         </xsd:annotation>
         <xsd:restriction base="xsd:string"/>
     </xsd:simpleType>
@@ -952,7 +948,7 @@
 
     <xsd:complexType name="languageOfCatalogingSet">
         <xsd:sequence minOccurs="1" maxOccurs="unbounded">
-             <xsd:element name="languageTerm" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="languageTerm" type="xsd:string" minOccurs="0"/>
             <xsd:element name="scriptTerm" type="xsd:string" minOccurs="0"/>
             <xsd:element name="transliterationTerm" type="xsd:string" minOccurs="0"/>
         </xsd:sequence>

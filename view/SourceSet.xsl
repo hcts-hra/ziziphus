@@ -1,10 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:html="http://www.w3.org/1999/xhtml"
-                xmlns="http://www.w3.org/1999/xhtml"
-                xmlns:vra="http://www.vraweb.org/vracore4.htm"
-                version="2.0">
-   <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes"
-               omit-xml-declaration="no"></xsl:output>
+<?xml version="1.0" encoding="UTF-8"?><xsl:stylesheet xmlns="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:vra="http://www.vraweb.org/vracore4.htm" xmlns:html="http://www.w3.org/1999/xhtml" version="2.0">
+   <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"></xsl:output>
    <xsl:template match="vra:sourceSet">
       <xsl:param name="vraTableId"></xsl:param>
       <div class="simple" id="{$vraTableId}">
@@ -15,20 +10,17 @@
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:refid/@type,'')) != 0">
-                              <div data-bf-type="select1" data-bf-bind="vra:refid/@type" tabindex="0" title="Type"
-                                   id="b-d2e802">
+                              <div data-bf-type="select1" data-bf-bind="vra:refid/@type" tabindex="0" title="Type" id="b-d2e1032">
                                  <xsl:value-of select="vra:refid/@type"></xsl:value-of>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="nodata" data-bf-type="select1" data-bf-bind="vra:refid/@type"
-                                   tabindex="0">(Type)</div>
+                              <div class="nodata" data-bf-type="select1" data-bf-bind="vra:refid/@type" tabindex="0">(Type)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:refid,'')) != 0">
-                              <div data-bf-type="input" data-bf-bind="vra:refid" tabindex="0" title="Refid"
-                                   id="b-d2e795">
+                              <div data-bf-type="input" data-bf-bind="vra:refid" tabindex="0" title="Refid" id="b-d2e1025">
                                  <xsl:value-of select="vra:refid"></xsl:value-of>
                               </div>
                            </xsl:when>
@@ -40,20 +32,17 @@
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:name/@type,'')) != 0">
-                              <div data-bf-type="select1" data-bf-bind="vra:name/@type" tabindex="0" title="Type"
-                                   id="b-d2e819">
+                              <div data-bf-type="select1" data-bf-bind="vra:name/@type" tabindex="0" title="Type" id="b-d2e1054">
                                  <xsl:value-of select="vra:name/@type"></xsl:value-of>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="nodata" data-bf-type="select1" data-bf-bind="vra:name/@type"
-                                   tabindex="0">(Type)</div>
+                              <div class="nodata" data-bf-type="select1" data-bf-bind="vra:name/@type" tabindex="0">(Type)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:name,'')) != 0">
-                              <div data-bf-type="input" data-bf-bind="vra:name" tabindex="0" title="Name"
-                                   id="b-d2e812">
+                              <div data-bf-type="input" data-bf-bind="vra:name" tabindex="0" title="Name" id="b-d2e1047">
                                  <xsl:value-of select="vra:name"></xsl:value-of>
                               </div>
                            </xsl:when>

@@ -1,219 +1,209 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<group idref="b-d2e10" name="vra:vra">
-    <!--
-        Structure of collection, image and work records are the same - just using collection here
+        <!--
+                This a generated file meant for further hand-editing as a UI profile. Must be placed in 'profile'
+                directory to take effect during generation of forms and views.
+        --><group idref="b-d2e10" name="vra:vra"><group name="vra:collection" idref="b-d2e16">
         
-        sorting in two blocks:
-        1) agent-date-descr-loc-right-subject-title
-        2) the rest
-    -->
-    <group idref="b-d2e16" name="vra:collection">
-        <!-- node idref="b-d2e6736" name="@languageOfCataloging" detail="false"/ -->
-        <!-- node idref="b-d2e6740" name="@catalogingScript" detail="false"/ -->
-        <set idref="b-d2e22" name="vra:agentSet">
-            <group idref="b-d2e57" name="vra:agent" repeated="true">
-                <group idref="b-d2e115" name="vra:name">
-                    <node idref="b-d2e122" name="@type" detail="true"/>
-                    <textNode detail="false"/>
+        
+        <set name="vra:agentSet" idref="b-d2e22">
+            <group name="vra:agent" repeated="true" idref="b-d2e67">
+                <group name="vra:name" idref="b-d2e135">
+                    <node name="@type" detail="true" idref="b-d2e142"/>
+                    <textNode xpath="" detail="false" idref="b-d2e10"/>
                 </group>
-                <group idref="b-d2e157" name="vra:role" control="select1" code-table="role">
-                    <node idref="b-d2e164" name="@type" detail="false"/>
-                    <textNode detail="true"/>
+                <group name="vra:role" control="select1" code-table="role" idref="b-d2e157">
+                    <node name="@type" detail="false" idref="b-d2e164"/>
+                    <textNode xpath="" detail="true" idref="b-d2e10"/>
                 </group>
-                <node idref="b-d2e63" name="vra:attribution" detail="true"/>
-                <node idref="b-d2e79" name="vra:culture" detail="true"/>
-                <group idref="b-d2e95" name="vra:dates">
-                    <node idref="b-d2e114" name="@type" detail="true"/>
-                    <group idref="b-d2e98" name="vra:earliestDate">
-                        <node idref="b-d2e105" name="@circa" detail="true"/>
-                        <textNode detail="true"/>
+                <node name="vra:attribution" detail="true" idref="b-d2e73"/>
+                <node name="vra:culture" detail="true" idref="b-d2e94"/>
+                <group name="vra:dates" idref="b-d2e115">
+                    <node name="@type" detail="true" idref="b-d2e134"/>
+                    <group name="vra:earliestDate" idref="b-d2e118">
+                        <node name="@circa" detail="true" idref="b-d2e125"/>
+                        <textNode xpath="" detail="true" idref="b-d2e10"/>
                     </group>
-                    <group idref="b-d2e106" name="vra:latestDate">
-                        <node idref="b-d2e113" name="@circa" detail="true"/>
-                        <textNode detail="true"/>
+                    <group name="vra:latestDate" idref="b-d2e126">
+                        <node name="@circa" detail="true" idref="b-d2e133"/>
+                        <textNode xpath="" detail="true" idref="b-d2e10"/>
                     </group>
                 </group>
             </group>
-            <node idref="b-d2e41" name="vra:notes" detail="false"/>
+            <node name="vra:notes" detail="false" idref="b-d2e46"/>
         </set>
-        <set idref="b-d2e208" name="vra:dateSet">
-            <group idref="b-d2e243" name="vra:date" repeated="true">
-                <node idref="b-d2e265" name="@type" detail="false"/>
-                <group idref="b-d2e249" name="vra:earliestDate">
-                    <node idref="b-d2e256" name="@circa" detail="false"/>
-                    <textNode detail="false"/>
+        <set name="vra:dateSet" idref="b-d2e245">
+            <group name="vra:date" repeated="true" idref="b-d2e290">
+                <node name="@type" detail="false" idref="b-d2e331"/>
+                <group name="vra:earliestDate" idref="b-d2e296">
+                    <node name="@circa" detail="false" idref="b-d2e303"/>
+                    <textNode xpath="" detail="false" idref="b-d2e10"/>
                 </group>
-                <group idref="b-d2e257" name="vra:latestDate">
-                    <node idref="b-d2e264" name="@circa" detail="false"/>
-                    <textNode detail="false"/>
+                <group name="vra:latestDate" idref="b-d2e304">
+                    <node name="@circa" detail="false" idref="b-d2e311"/>
+                    <textNode xpath="" detail="false" idref="b-d2e10"/>
                 </group>
-                <group idref="b-d2e316" name="vra:alternativeNotation">
-                    <node idref="b-d2e320" name="@type" detail="false"/>
-                    <textNode detail="false"/>
+                <group name="vra:alternativeNotation" idref="b-d2e312">
+                    <node name="@type" detail="false" idref="b-d2e316"/>
+                    <textNode xpath="" detail="false" idref="b-d2e10"/>
                 </group>
             </group>
-            <node idref="b-d2e227" name="vra:notes" detail="false"/>
+            <node name="vra:notes" detail="false" idref="b-d2e269"/>
         </set>
-        <set idref="b-d2e276" name="vra:descriptionSet">
-            <group idref="b-d2e401" name="vra:description" repeated="true" control="textarea">
-                <node idref="b-d2e408" name="@stateOfPreservation" detail="false"/>
+        <set name="vra:descriptionSet" idref="b-d2e346">
+            <group name="vra:description" repeated="true" control="textarea" idref="b-d2e391">
+                <node name="@stateOfPreservation" detail="false" idref="b-d2e398"/>
             </group>
-            <node idref="b-d2e295" name="vra:notes" detail="false"/>
+            <node name="vra:notes" detail="false" idref="b-d2e370"/>
         </set>
-        <set idref="b-d2e426" name="vra:locationSet">
-            <!-- name an den anfang -->
-            <group idref="b-d2e461" name="vra:location" repeated="true">
-                <group idref="b-d2e484" name="vra:name">
-                    <textNode detail="false"/>
-                    <node idref="b-d2e491" name="@type" detail="false"/>
+        <set name="vra:locationSet" idref="b-d2e542">
+            
+            <group name="vra:location" repeated="true" idref="b-d2e587">
+                <group name="vra:name" idref="b-d2e615">
+                    <textNode xpath="" detail="false" idref="b-d2e10"/>
+                    <node name="@type" detail="false" idref="b-d2e622"/>
                 </group>
-                <node idref="b-d2e511" name="@type" detail="false"/>
-                <group idref="b-d2e467" name="vra:refid">
-                    <textNode detail="false"/>
-                    <node idref="b-d2e474" name="@type" detail="false"/>
+                <node name="@type" detail="false" idref="b-d2e661"/>
+                <group name="vra:refid" idref="b-d2e593">
+                    <textNode xpath="" detail="false" idref="b-d2e10"/>
+                    <node name="@type" detail="false" idref="b-d2e600"/>
                 </group>
-                <group idref="b-d2e647" name="vra:point">
-                    <node idref="b-d2e653" name="vra:lat" detail="false"/>
-                    <node idref="b-d2e654" name="vra:long" detail="false"/>
-                    <node idref="b-d2e655" name="@epsg" detail="false"/>
-                    <node idref="b-d2e656" name="@url" detail="false"/>
-                </group>
-            </group>
-            <node idref="b-d2e445" name="vra:notes" detail="false"/>
-        </set>
-        <set idref="b-d2e670" name="vra:rightsSet">
-            <group idref="b-d2e705" name="vra:rights" repeated="true">
-                <!-- @type VOR dem inhalt von vra:rights (@refid) -->
-                <!-- labels im UI müssen korrigiert werden, entsprechen nicht dem schema (zb. "Name" im UI müsste lt. schema "RightsHolder" heissen) -->
-                <node idref="b-d2e753" name="@type" detail="false"/>
-                <node idref="b-d2e711" name="vra:rightsHolder" detail="false"/>
-                <node idref="b-d2e727" name="vra:text" detail="false"/>
-            </group>
-            <node idref="b-d2e689" name="vra:notes" detail="false"/>
-        </set>
-        <set idref="b-d2e976" name="vra:subjectSet">
-            <group idref="b-d2e1011" name="vra:subject" repeated="true">
-                <group idref="b-d2e1017" name="vra:term">
-                    <!-- @type VOR dem inhalt von vra:term -->
-                    <node idref="b-d2e1024" name="@type" detail="false"/>
-                    <textNode detail="false"/>
+                <group name="vra:point" idref="b-d2e637">
+                    <node name="vra:lat" detail="false" idref="b-d2e643"/>
+                    <node name="vra:long" detail="false" idref="b-d2e644"/>
+                    <node name="@epsg" detail="false" idref="b-d2e645"/>
+                    <node name="@url" detail="false" idref="b-d2e646"/>
                 </group>
             </group>
-            <node idref="b-d2e995" name="vra:notes" detail="false"/>
+            <node name="vra:notes" detail="false" idref="b-d2e566"/>
         </set>
-        <set idref="b-d2e1178" name="vra:titleSet">
-            <group idref="b-d2e1213" name="vra:title" repeated="true">
-                <!-- @type VOR dem inhalt von vra:title -->
-                <node idref="b-d2e1220" name="@type" detail="false"/>
-                <textNode detail="false"/>
+        <set name="vra:rightsSet" idref="b-d2e866">
+            <group name="vra:rights" repeated="true" idref="b-d2e911">
+                
+                
+                <node name="@type" detail="false" idref="b-d2e973"/>
+                <node name="vra:rightsHolder" detail="false" idref="b-d2e917"/>
+                <node name="vra:text" detail="false" idref="b-d2e938"/>
             </group>
-            <node idref="b-d2e1197" name="vra:notes" detail="false"/>
+            <node name="vra:notes" detail="false" idref="b-d2e890"/>
+        </set>
+        <set name="vra:subjectSet" idref="b-d2e1260">
+            <group name="vra:subject" repeated="true" idref="b-d2e1305">
+                <group name="vra:term" idref="b-d2e1311">
+                    
+                    <node name="@type" detail="false" idref="b-d2e1318"/>
+                    <textNode xpath="" detail="false" idref="b-d2e10"/>
+                </group>
+            </group>
+            <node name="vra:notes" detail="false" idref="b-d2e1284"/>
+        </set>
+        <set name="vra:titleSet" idref="b-d2e1522">
+            <group name="vra:title" repeated="true" idref="b-d2e1567">
+                
+                <node name="@type" detail="false" idref="b-d2e1574"/>
+                <textNode xpath="" detail="false" idref="b-d2e10"/>
+            </group>
+            <node name="vra:notes" detail="false" idref="b-d2e1546"/>
         </set>
 
-        <separator/>
-        <!-- can there be a separator betwenn the two blocks, like a simple <hr/> or so? -->
-        <set idref="b-d2e157" name="vra:culturalContextSet" visible="false">
-            <!-- attribute zu vra:culturalContext solle im UI _unterhalb_ der werte von "culturalContext" angezeigt werden (immer: attribute der (sub)elemente unterhalb ihrer Werte anzeigen)
-             jt: verstehe nicht was hier genau gemeint ist.
-             -->
-            <group idref="b-d2e192" name="vra:culturalContext" repeated="true"/>
-            <node idref="b-d2e176" name="vra:notes" detail="false"/>
+        <separator xpath="" idref="b-d2e10"/>
+        
+        <set name="vra:culturalContextSet" visible="false" idref="b-d2e179">
+            
+            <group name="vra:culturalContext" repeated="true" idref="b-d2e224"/>
+            <node name="vra:notes" detail="false" idref="b-d2e203"/>
         </set>
-        <set idref="b-d2e327" name="vra:inscriptionSet" visible="false">
-            <group idref="b-d2e362" name="vra:inscription" repeated="true">
-                <group idref="b-d2e400" name="vra:text">
-                    <node idref="b-d2e407" name="@type" detail="false"/>
-                    <!-- @type VOR dem inhalt von vra:text -->
-                    <textNode detail="false" control="textarea"/>
+        <set name="vra:inscriptionSet" visible="false" idref="b-d2e413">
+            <group name="vra:inscription" repeated="true" idref="b-d2e458">
+                <group name="vra:text" idref="b-d2e506">
+                    <node name="@type" detail="false" idref="b-d2e513"/>
+                    
+                    <textNode xpath="" detail="false" control="textarea" idref="b-d2e10"/>
                 </group>
-                <!-- author/position ans ende -->
-                <node idref="b-d2e368" name="vra:author" detail="false"/>
-                <node idref="b-d2e384" name="vra:position" detail="false"/>
+                
+                <node name="vra:author" detail="false" idref="b-d2e464"/>
+                <node name="vra:position" detail="false" idref="b-d2e485"/>
             </group>
-            <node idref="b-d2e346" name="vra:notes" detail="false"/>
+            <node name="vra:notes" detail="false" idref="b-d2e437"/>
         </set>
-        <set idref="b-d2e512" name="vra:materialSet" visible="false">
-            <!-- attribute zu vra:material solle im UI _unterhalb_ der werte von "material" angezeigt werden (immer: attribute der elemente unten anzeigen)
-             jt: siehe oben
-             -->
-            <group idref="b-d2e547" name="vra:material" repeated="true">
-                <!-- @type VOR dem inhalt von vra:material (type - material)-->
-                <node idref="b-d2e554" name="@type" detail="false"/>
-                <textNode detail="false" />
+        <set name="vra:materialSet" visible="false" idref="b-d2e662">
+            
+            <group name="vra:material" repeated="true" idref="b-d2e707">
+                
+                <node name="@type" detail="false" idref="b-d2e714"/>
+                <textNode xpath="" detail="false" idref="b-d2e10"/>
             </group>
-            <node idref="b-d2e531" name="vra:notes" detail="false"/>
+            <node name="vra:notes" detail="false" idref="b-d2e686"/>
         </set>
-        <set idref="b-d2e564" name="vra:measurementsSet" visible="false">
-            <group idref="b-d2e599" name="vra:measurements" repeated="true">
-                <!-- @type VOR dem inhalt von vra:measurements, dann @unit (type - measurements - unit)-->
-                <node idref="b-d2e606" name="@type" detail="false"/>
-                <textNode detail="false" />
-                <node idref="b-d2e607" name="@unit" detail="false"/>
-                <node idref="b-d2e793" name="@shape" detail="false"/>
+        <set name="vra:measurementsSet" visible="false" idref="b-d2e729">
+            <group name="vra:measurements" repeated="true" idref="b-d2e774">
+                
+                <node name="@type" detail="false" idref="b-d2e781"/>
+                <textNode xpath="" detail="false" idref="b-d2e10"/>
+                <node name="@unit" detail="false" idref="b-d2e782"/>
+                <node name="@shape" detail="false" idref="b-d2e783"/>
             </group>
-            <node idref="b-d2e583" name="vra:notes" detail="false"/>
+            <node name="vra:notes" detail="false" idref="b-d2e753"/>
         </set>
-        <set idref="b-d2e617" name="vra:relationSet" visible="false">
-            <group idref="b-d2e652" name="vra:relation" repeated="true">
-                <!-- @type VOR dem inhalt von vra:relation -->
-                <!-- elementSet muss noch angepasst werden, wenn die relations im UI sichtbar sind (zb. thumbnails!) -->
-                <node idref="b-d2e660" name="@type" detail="false"/>
-                <textNode detail="false"/>
-                <node idref="b-d2e659" name="@relids" detail="false"/>
+        <set name="vra:relationSet" visible="false" idref="b-d2e798">
+            <group name="vra:relation" repeated="true" idref="b-d2e843">
+                
+                
+                <node name="@type" detail="false" idref="b-d2e851"/>
+                <textNode xpath="" detail="false" idref="b-d2e10"/>
+                <node name="@relids" detail="false" idref="b-d2e850"/>
             </group>
-            <node idref="b-d2e636" name="vra:notes" detail="false"/>
+            <node name="vra:notes" detail="false" idref="b-d2e822"/>
         </set>
-        <set idref="b-d2e754" name="vra:sourceSet" visible="false">
-            <group idref="b-d2e789" name="vra:source" repeated="true">
-                <group idref="b-d2e795" name="vra:refid">
-                    <!-- @type VOR dem inhalt von vra:refid -->
-                    <node idref="b-d2e802" name="@type" detail="false"/>
-                    <textNode detail="false"/>
+        <set name="vra:sourceSet" visible="false" idref="b-d2e974">
+            <group name="vra:source" repeated="true" idref="b-d2e1019">
+                <group name="vra:refid" idref="b-d2e1025">
+                    
+                    <node name="@type" detail="false" idref="b-d2e1032"/>
+                    <textNode xpath="" detail="false" idref="b-d2e10"/>
                 </group>
-                <group idref="b-d2e812" name="vra:name">
-                    <!-- @type VOR dem inhalt von vra:name -->
-                    <node idref="b-d2e819" name="@type" detail="false"/>
-                    <textNode detail="false"/>
+                <group name="vra:name" idref="b-d2e1047">
+                    
+                    <node name="@type" detail="false" idref="b-d2e1054"/>
+                    <textNode xpath="" detail="false" idref="b-d2e10"/>
                 </group>
             </group>
-            <node idref="b-d2e773" name="vra:notes" detail="false"/>
+            <node name="vra:notes" detail="false" idref="b-d2e998"/>
         </set>
-        <set idref="b-d2e839" name="vra:stateEditionSet" visible="false">
-            <group idref="b-d2e874" name="vra:stateEdition" repeated="true">
-                <node idref="b-d2e924" name="@type" detail="false"/> 	<!-- @type VOR dem inhalt von vra:stateEdition @count -->
-                <node idref="b-d2e922" name="@count" detail="false"/>
-                <node idref="b-d2e923" name="@num" detail="false"/>
-                <node idref="b-d2e880" name="vra:description" detail="false"/>
-                <node idref="b-d2e896" name="vra:name" detail="false"/>
+        <set name="vra:stateEditionSet" visible="false" idref="b-d2e1084">
+            <group name="vra:stateEdition" repeated="true" idref="b-d2e1129">
+                <node name="@type" detail="false" idref="b-d2e1193"/> 	
+                <node name="@count" detail="false" idref="b-d2e1191"/>
+                <node name="@num" detail="false" idref="b-d2e1192"/>
+                <node name="vra:description" detail="false" idref="b-d2e1135"/>
+                <node name="vra:name" detail="false" idref="b-d2e1156"/>
             </group>
-            <node idref="b-d2e858" name="vra:notes" detail="false"/>
+            <node name="vra:notes" detail="false" idref="b-d2e1108"/>
         </set>
-        <set idref="b-d2e925" name="vra:stylePeriodSet" visible="false">
-            <group idref="b-d2e960" name="vra:stylePeriod" repeated="true"/>
-            <node idref="b-d2e944" name="vra:notes" detail="false"/>
+        <set name="vra:stylePeriodSet" visible="false" idref="b-d2e1194">
+            <group name="vra:stylePeriod" repeated="true" idref="b-d2e1239"/>
+            <node name="vra:notes" detail="false" idref="b-d2e1218"/>
         </set>
-        <set idref="b-d2e1043" name="vra:techniqueSet" visible="false">
-            <group idref="b-d2e1078" name="vra:technique" repeated="true"/>
-            <node idref="b-d2e1062" name="vra:notes" detail="false"/>
+        <set name="vra:techniqueSet" visible="false" idref="b-d2e1347">
+            <group name="vra:technique" repeated="true" idref="b-d2e1392"/>
+            <node name="vra:notes" detail="false" idref="b-d2e1371"/>
         </set>
-        <set idref="b-d2e1094" name="vra:textrefSet" visible="false">
-            <group idref="b-d2e1129" name="vra:textref" repeated="true">
-                <group idref="b-d2e1135" name="vra:name">
-                    <!-- @type VOR dem inhalt von vra:name -->
-                    <textNode detail="false"/>
-                    <node idref="b-d2e1142" name="@type" detail="false"/>
+        <set name="vra:textrefSet" visible="false" idref="b-d2e1413">
+            <group name="vra:textref" repeated="true" idref="b-d2e1458">
+                <group name="vra:name" idref="b-d2e1464">
+                    
+                    <textNode xpath="" detail="false" idref="b-d2e10"/>
+                    <node name="@type" detail="false" idref="b-d2e1471"/>
                 </group>
-                <group idref="b-d2e1152" name="vra:refid">
-                    <!-- @type VOR dem inhalt von vra:refid -->
-                    <textNode detail="false"/>
-                    <node idref="b-d2e1159" name="@type" detail="false"/>
+                <group name="vra:refid" idref="b-d2e1486">
+                    
+                    <textNode xpath="" detail="false" idref="b-d2e10"/>
+                    <node name="@type" detail="false" idref="b-d2e1493"/>
                 </group>
             </group>
-            <node idref="b-d2e1113" name="vra:notes" detail="false"/>
+            <node name="vra:notes" detail="false" idref="b-d2e1437"/>
         </set>
-        <set idref="b-d2e1230" name="vra:worktypeSet" visible="false">
-            <group idref="b-d2e1265" name="vra:worktype" repeated="true"/>
-            <node idref="b-d2e1249" name="vra:notes" detail="false"/>
+        <set name="vra:worktypeSet" visible="false" idref="b-d2e1589">
+            <group name="vra:worktype" repeated="true" idref="b-d2e1634"/>
+            <node name="vra:notes" detail="false" idref="b-d2e1613"/>
         </set>
-    </group>
-</group>
+    <node name="@languageOfCataloging" detail="false" idref="b-d2e6642"/><node name="@catalogingScript" detail="false" idref="b-d2e6643"/></group></group>
