@@ -42,12 +42,13 @@
                         </xsl:choose>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:role,'')) != 0">
-                              <div data-bf-type="input" data-bf-bind="vra:role" tabindex="0" title="Role" id="b-d2e157">
-                                 <xsl:value-of select="vra:role"></xsl:value-of>
+                              <div data-bf-type="select1" data-bf-bind="vra:role" tabindex="0" title=".">
+                                 <xsl:variable name="role" select="vra:role"></xsl:variable>
+                                 <xsl:value-of select="$role-codes-legend//item[value eq $role]/label"></xsl:value-of>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="nodata" data-bf-type="input" data-bf-bind="vra:role" tabindex="0">(Role)</div>
+                              <div class="nodata" data-bf-type="select1" data-bf-bind="vra:role" tabindex="0">(.)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>

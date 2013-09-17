@@ -99,13 +99,27 @@
                     <!--<transform:otherwise><div class="detail" data-bf-type="{local-name(.)}" data-bf-bind="{@ref}" tabindex="0"><a href="#" title="Click to add element: {xf:label}">[+]</a></div></transform:otherwise>-->
                 </transform:choose>
             </xsl:when>
+            
             <xsl:otherwise>
                 <transform:choose>
                     <transform:when test="string-length(string-join({@ref},'')) != 0">
                         <!--<div id="{@id}" data-bf-type="{local-name(.)}" data-bf-bind="{@ref}" contenteditable="true">-->
                         <div data-bf-type="{local-name(.)}" data-bf-bind="{@ref}" tabindex="0" title="{xf:label}">
                             <xsl:copy-of select="@*[not(name()='ref')]"/>
-                            <transform:value-of select="{@ref}"/>
+                            <xsl:choose>
+                                <xsl:when test="@ref eq 'vra:role'">
+                                    <transform:variable name="role" select="{@ref}"/>  
+                                    <transform:value-of select="$role-codes-legend//item[value eq $role]/label"/>
+                                </xsl:when>
+                                <!-- View mode lang is not displayed yet, so no handling. UNTESTED! -->
+                                <!-- xsl:when test="@ref eq '@lang'">
+                                    <transform:variable name="lang" select="{@ref}"/>  
+                                    <transform:value-of select="$language-3-type-codes//item[value eq $lang/label"/>
+                                </xsl:when -->
+                                <xsl:otherwise>
+                                    <transform:value-of select="{@ref}"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
                         </div>
                     </transform:when>
 

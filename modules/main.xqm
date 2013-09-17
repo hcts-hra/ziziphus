@@ -88,6 +88,7 @@ declare %private function main:transformVraRecord($root as node(), $id as xs:str
     let $parameters := <parameters>
                         <param  name="recordType" value="{$vraRecordType}"/>
                         <param name="recordId" value="{$id}"/>
+                        <param  name="codetables-uri" value="{substring-before(request:get-url(), '/apps') || $app:code-tables}"/>
                     </parameters>
     let $transform := transform:transform($root, doc($app:app-resources-dir ||  "/xsl/vra-record.xsl"), $parameters)
     return

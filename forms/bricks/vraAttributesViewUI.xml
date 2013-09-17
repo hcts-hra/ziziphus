@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <!--
 This brick is used as include in all *Set Forms for the display of vraAttributes within the edit forms.
 Please note that not all common vra attributes (as defined by VRA Schema) are handled here as e.g. @pref is
@@ -46,7 +45,8 @@ handled by the *Set forms themselves. Same is true for xml:lang which is not use
         <xf:hint>vocab</xf:hint>
     </xf:output>
     <!-- todo: must probably be a select1 ? where do we get the list? -->
-    <xf:output ref="@lang">
+    <!-- Use "long" names for UI -->
+    <xf:output ref="bf:instanceOfModel('m-code-tables', 'i-codes-lang')/items/item[value eq current()/@lang]/label">
         <xf:label>Language Code</xf:label>
         <xf:hint>Language Code</xf:hint>
     </xf:output>

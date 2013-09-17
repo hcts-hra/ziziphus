@@ -231,10 +231,13 @@
                                  <xf:value>term</xf:value>
                               </xf:item>
                            </xf:select1>
-                           <xf:input id="b-d2e157" ref="vra:role">
-                              <xf:label>Role</xf:label>
-                              <xf:hint>Role</xf:hint>
-                           </xf:input>
+                           <xf:select1 ref="vra:role">
+                              <xf:label>.</xf:label>
+                              <xf:itemset nodeset="bf:instanceOfModel('m-code-tables', 'i-codes-role')/items/item">
+                                 <xf:label ref="label"></xf:label>
+                                 <xf:value ref="value"></xf:value>
+                              </xf:itemset>
+                           </xf:select1>
                            <xf:group class="vraAttributes" appearance="minimal" ref="vra:role">
                               <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                            </xf:group>

@@ -50,6 +50,7 @@ declare function local:transformVraRecord($root as node(), $id as xs:string, $vr
         let $parameters := <parameters>
                                 <param  name="type" value="{$vraRecordType}"/>
                                 <param  name="recordId" value="{$id}"/>
+                                <param  name="codetables-uri" value="{substring-before(request:get-url(), '/apps') || $app:code-tables}"/>
                             </parameters>
         return
             transform:transform($root, doc("/db/apps/ziziphus/resources/xsl/vra-record.xsl"), $parameters)

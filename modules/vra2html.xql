@@ -2,6 +2,7 @@ module namespace vra2html="http://exist-db.org/xquery/vra2html";
 
 import module namespace request="http://exist-db.org/xquery/request";
 import module namespace transform = "http://exist-db.org/xquery/transform";
+import module namespace app="http://www.betterform.de/projects/ziziphus/xquery/app" at "app.xqm";
 
 declare namespace vra = "http://www.vraweb.org/vracore4.htm";
 
@@ -48,6 +49,7 @@ declare function vra2html:transformVraRecord($root as node(), $id as xs:string, 
         let $parameters := <parameters>
                                 <param  name="type" value="{$vraRecordType}"/>
                                 <param  name="recordId" value="{$id}"/>
+                                <param  name="codetables-uri" value="{$app:code-tables}"/>
                             </parameters>
         return
             transform:transform($root, doc("/db/apps/ziziphus/resources/xsl/vra-record.xsl"), $parameters)

@@ -11,9 +11,9 @@
                     <node name="@type" detail="true" idref="b-d2e142"/>
                     <textNode xpath="" detail="false" idref="b-d2e10"/>
                 </group>
-                <group name="vra:role" control="select1" code-table="role" idref="b-d2e157">
+                <group name="vra:role" idref="b-d2e157">
                     <node name="@type" detail="false" idref="b-d2e164"/>
-                    <textNode xpath="" detail="true" idref="b-d2e10"/>
+                    <textNode xpath="" detail="true" idref="b-d2e10" control="select1" code-table="role"/>
                 </group>
                 <node name="vra:attribution" detail="true" idref="b-d2e73"/>
                 <node name="vra:culture" detail="true" idref="b-d2e94"/>
