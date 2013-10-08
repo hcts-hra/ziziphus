@@ -100,7 +100,19 @@
 
                     <div style="display:none">
                         <xf:model id="m-child-model" schema="{$relativePath}resources/xsd/generator/vra-types.xsd">
-                            <xf:send ev:event="xforms-model-construct-done" submission="s-loadSet"/>
+                            <xf:action ev:event="xforms-model-construct-done">
+                                <xf:send submission="s-loadSet"/>
+                                <script>
+                                    initAutocompletes();
+                                </script>
+                            </xf:action>
+                            
+                            <xf:action ev:observer="i-{$vraSectionNode}" ev:event="xforms-insert">
+                                <script>
+                                    initAutocompletes();
+                                </script>
+                            </xf:action>
+                            
                             <xf:submission id="s-loadSet"
                                     resource="{$relativePath}modules/loadData.xql?id={{bf:instanceOfModel('m-main','i-control-center')/uuid}}&amp;workdir={{bf:instanceOfModel('m-main','i-control-center')/workdir}}"
                                     method="post" replace="instance" validate="false">
@@ -476,7 +488,7 @@
 
         <xf:group id="outerGroup" appearance="minimal" model="m-child-model">
             <xsl:attribute name="ref">instance('i-<xsl:value-of select="$vraSectionNode"/>')</xsl:attribute>
-
+            
             <xsl:if test="$debugEnabled">
                 <xsl:message>UI-1 - matched bind for:<xsl:value-of select="$vraNodeName"/></xsl:message>
                 <xsl:message></xsl:message>
@@ -530,7 +542,7 @@
                                 <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                                 <xf:trigger class="vraAttributeTrigger">
                                     <xf:label/>
-                                    <xf:hint>Attributes...</xf:hint>
+                                    <xf:hint>Edit Attributes</xf:hint>
                                     <xf:action>
                                         <xf:setvalue ref="instance('i-util')/currentElement">.</xf:setvalue>
                                         <xf:dispatch name="init-dialog" targetid="outerGroup"/>
@@ -645,7 +657,7 @@
 
                                 <xf:trigger class="vraAttributeTrigger">
                                     <xf:label>A</xf:label>
-                                    <xf:hint>Attributes...</xf:hint>
+                                    <xf:hint>Edit Attributes</xf:hint>
                                     <xf:action>
                                         <xf:setvalue ref="instance('i-util')/currentElement">
                                             <xsl:attribute name="value">'<xsl:value-of select="functx:remove-vra-prefix($vraNodeName)"/>'</xsl:attribute>
@@ -725,21 +737,21 @@
                     <xi:include href="bricks/vraAttributesViewUI.xml"/>
                 </xf:group>
 
-                <xf:trigger class="vraAttributeTrigger">
-                    <xf:label>A</xf:label>
-                    <xf:hint>Attributes...</xf:hint>
-                    <xf:action>
-                        <xf:setvalue ref="instance('i-util')/currentElement">
-                            <xsl:attribute name="value">'<xsl:value-of select="functx:remove-vra-prefix($vraNodeName)"/>'</xsl:attribute>
-                        </xf:setvalue>
-                        <xf:dispatch name="init-dialog" targetid="outerGroup"/>
-                    </xf:action>
-                    <bfc:show dialog="attrDialog" ev:event="DOMActivate"/>
-                </xf:trigger>
-            </xsl:if>
-        </xf:group>
-    </xsl:template>
--->
+                    <xf:trigger class="vraAttributeTrigger">
+                        <xf:label>A</xf:label>
+                        <xf:hint>Edit Attributes</xf:hint>
+                        <xf:action>
+                            <xf:setvalue ref="instance('i-util')/currentElement">
+                                <xsl:attribute name="value">'<xsl:value-of select="functx:remove-vra-prefix($vraNodeName)"/>'</xsl:attribute>
+                            </xf:setvalue>
+                            <xf:dispatch name="init-dialog" targetid="outerGroup"/>
+                        </xf:action>
+                        <bfc:show dialog="attrDialog" ev:event="DOMActivate"/>
+                    </xf:trigger>
+                </xsl:if>
+            </xf:group>
+        </xsl:template>
+    -->
 
 
 
@@ -753,7 +765,9 @@
         <xsl:variable name="currentPath">
             <xsl:choose>
                 <xsl:when test="$isArtifactNode">.</xsl:when>
-                <xsl:otherwise><xsl:value-of select="functx:concat-xpath($path, $vraNodeName)"/></xsl:otherwise>
+                <xsl:otherwise>
+                    <xsl:value-of select="functx:concat-xpath($path, $vraNodeName)"/>
+                </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
 
@@ -776,7 +790,7 @@
 
             <xf:trigger class="vraAttributeTrigger">
                 <xf:label>A</xf:label>
-                <xf:hint>Attributes...</xf:hint>
+                <xf:hint>Edit Attributes</xf:hint>
                 <xf:action>
                     <xf:setvalue ref="instance('i-util')/currentElement">
                         <xsl:attribute name="value">'<xsl:value-of select="functx:remove-vra-prefix($vraNodeName)"/>'</xsl:attribute>
@@ -800,8 +814,12 @@
         <xsl:variable name="currentPath">
             <xsl:choose>
                 <xsl:when test="$isArtifactNode">.</xsl:when>
-                <xsl:when test="$vraNodeName='.'"><xsl:value-of select="$path"/></xsl:when>
-                <xsl:otherwise><xsl:value-of select="functx:concat-xpath($path, $vraNodeName)"/></xsl:otherwise>
+                <xsl:when test="$vraNodeName='.'">
+                    <xsl:value-of select="$path"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="functx:concat-xpath($path, $vraNodeName)"/>
+                </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
 
@@ -818,18 +836,67 @@
         </xsl:if>
 
         <xsl:if test="@xfType='simpleType'">
+            <xsl:variable name="label">
+                <xsl:choose>
+                    <xsl:when test="$vraNodeName eq '.'">
+                        <xsl:value-of select="functx:capitalize-first(../@nodeset)"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="functx:capitalize-first($vraNodeName)"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:variable>
+
             <xsl:choose>
                 <!--<xsl:when test="contains($useTextarea,$targetNode)">-->
+                <xsl:when test="@control='autocomplete' and exists(@queryType)">
+                    <xsl:if test="$debugEnabled">
+                        <xsl:message>UI-4.1:found element that shall use autocomplete</xsl:message>
+                    </xsl:if>
+                    <xsl:variable name="queryType" select="@queryType"/>
+
+                    <span style="display:none">
+                        <xf:input id="{$id}" class="{$label}-autocomplete">
+                            <xsl:attribute name="ref">
+                                <xsl:value-of select="$currentPath"/>
+                            </xsl:attribute>
+                            <xsl:if test="not($isArtifactNode) and ('vra:name'=$vraNodeName)">
+                                <xsl:attribute name="class">elementName</xsl:attribute>
+                            </xsl:if>
+                            <xf:label/>
+                        </xf:input>
+                    </span>
+
+                    <label for="{$label}-autocomplete">
+                        <xsl:value-of select="$label"/>
+                    </label>
+                    <input type="text" name="{$label}-autocomplete" class="{$label}-autocomplete-input" placeholder="{$label}" query="{$queryType}">
+                        <xsl:attribute name="callbackSet">r-vra<xsl:value-of select="$vraArtifact"/></xsl:attribute>
+                        <xsl:if test="not($isArtifactNode) and ('vra:name'=$vraNodeName)">
+                            <xsl:attribute name="class">elementName</xsl:attribute>
+                        </xsl:if>
+                    </input>
+                    <span>
+                        <img id="{$label}-autocomplete-indicator" src="../images/indicator.gif"/>
+                    </span>
+                </xsl:when>
                 <xsl:when test="@control='select1' and exists(@code-table)">
-                    <xsl:variable name="code-table-name"><xsl:value-of select="concat('i-codes-', @code-table)" /></xsl:variable>
+                    <xsl:if test="$debugEnabled">
+                        <xsl:message>UI-4.1:found element that shall use select1</xsl:message>
+                    </xsl:if>
+                    <xsl:variable name="code-table-name">
+                        <xsl:value-of select="concat('i-codes-', @code-table)" />
+                    </xsl:variable>
                     <xf:select1>
-                        <xsl:attribute name="ref"><xsl:value-of select="$currentPath"/></xsl:attribute>
+                        <xsl:attribute name="ref">
+                            <xsl:value-of select="$currentPath"/>
+                        </xsl:attribute>
                         <xsl:if test="not($isArtifactNode) and ('vra:name'=$vraNodeName)">
                             <xsl:attribute name="class">elementName</xsl:attribute>
                         </xsl:if>
                         <!--<xsl:if test="not($isArtifactNode)">-->
                         <xf:label>
-                            <xsl:value-of select="functx:capitalize-first($vraNodeName)"/>
+                            <xsl:value-of select="functx:capitalize-first($label)"/>
                         </xf:label>
                         <xf:itemset nodeset="bf:instanceOfModel('m-code-tables', '{$code-table-name}')/items/item">
                             <xf:label ref="label"/>
@@ -843,13 +910,15 @@
                     </xsl:if>
                     <!-- ### should only differ in being a textarea instead of input text field ### -->
                     <xf:textarea id="{$id}">
-                        <xsl:attribute name="ref"><xsl:value-of select="$currentPath"/></xsl:attribute>
+                        <xsl:attribute name="ref">
+                            <xsl:value-of select="$currentPath"/>
+                        </xsl:attribute>
                         <xsl:if test="not($isArtifactNode) and ('vra:name'=$vraNodeName)">
                             <xsl:attribute name="class">elementName</xsl:attribute>
                         </xsl:if>
                         <xsl:if test="not($isArtifactNode)">
                             <xf:label>
-                                <xsl:value-of select="functx:capitalize-first($vraNodeName)"/>
+                                <xsl:value-of select="functx:capitalize-first($label)"/>
                             </xf:label>
                         </xsl:if>
                         <xf:hint>
@@ -858,7 +927,7 @@
                     </xf:textarea>
                 </xsl:when>
                 <xsl:when test="./bind[@nodeset='.']">
-                      <!-- irgnore elements which have a bind child with nodeset="." -->
+                    <!-- irgnore elements which have a bind child with nodeset="." -->
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:if test="$debugEnabled">
@@ -869,29 +938,21 @@
                         <xsl:message></xsl:message>
                     </xsl:if>
 
-                    <xsl:variable name="label">
-                        <xsl:choose>
-                            <xsl:when test="$vraNodeName eq '.'">
-                                <xsl:value-of select="../@nodeset"/>
-                            </xsl:when>
-                            <xsl:otherwise>
-                                <xsl:value-of select="$vraNodeName"/>
-                            </xsl:otherwise>
-                        </xsl:choose>
-                    </xsl:variable>
                     <!--<xf:input id="{concat(generate-id(),'-', functx:capitalize-first($vraNodeName))}">-->
                     <xf:input id="{$id}">
-                        <xsl:attribute name="ref"><xsl:value-of select="$currentPath"/></xsl:attribute>
+                        <xsl:attribute name="ref">
+                            <xsl:value-of select="$currentPath"/>
+                        </xsl:attribute>
                         <xsl:if test="not($isArtifactNode) and ('vra:name'=$vraNodeName)">
                             <xsl:attribute name="class">elementName</xsl:attribute>
                         </xsl:if>
                         <!--<xsl:if test="not($isArtifactNode)">-->
-                            <xf:label>
-                                <xsl:value-of select="functx:capitalize-first($label)"/>
-                            </xf:label>
-                            <xf:hint>
-                                <xsl:value-of select="functx:capitalize-first($label)"/>
-                            </xf:hint>
+                        <xf:label>
+                            <xsl:value-of select="functx:capitalize-first($label)"/>
+                        </xf:label>
+                        <xf:hint>
+                            <xsl:value-of select="functx:capitalize-first($label)"/>
+                        </xf:hint>
                         <!--</xsl:if>-->
                     </xf:input>
                 </xsl:otherwise>
@@ -919,9 +980,15 @@
         </xsl:if>
 
         <xsl:apply-templates select="$vraTypes/*/xsd:simpleType[@name=$vraTypeName][1]/*" mode="ui">
-            <xsl:with-param name="id"><xsl:value-of select="$id"/></xsl:with-param>
-            <xsl:with-param name="pref"><xsl:value-of select="functx:concat-xpath($path,concat('@',$vraAttrName))"/></xsl:with-param>
-            <xsl:with-param name="plabel"><xsl:value-of select="functx:capitalize-first($vraAttrName)"/></xsl:with-param>
+            <xsl:with-param name="id">
+                <xsl:value-of select="$id"/>
+            </xsl:with-param>
+            <xsl:with-param name="pref">
+                <xsl:value-of select="functx:concat-xpath($path,concat('@',$vraAttrName))"/>
+            </xsl:with-param>
+            <xsl:with-param name="plabel">
+                <xsl:value-of select="functx:capitalize-first($vraAttrName)"/>
+            </xsl:with-param>
             <xsl:with-param name="detail" select="@detail"/>
         </xsl:apply-templates>
     </xsl:template>
@@ -936,23 +1003,32 @@
         <xsl:if test="$debugEnabled">
             <xsl:message>UI-6a (type): xsd:string restriction (select1)</xsl:message>
             <xsl:message>UI-6a detail:
-                <xsl:value-of select="$detail"/></xsl:message>
+                <xsl:value-of select="$detail"/>
+            </xsl:message>
         </xsl:if>
 
         <xf:select1 id="{$id}">
-            <xsl:attribute name="ref"><xsl:value-of select="$pref"/></xsl:attribute>
+            <xsl:attribute name="ref">
+                <xsl:value-of select="$pref"/>
+            </xsl:attribute>
             <xsl:if test="$detail='true'">
                 <xsl:attribute name="class" select="'detail'"/>
             </xsl:if>
-            <xf:label><xsl:value-of select="$plabel"/></xf:label>
+            <xf:label>
+                <xsl:value-of select="$plabel"/>
+            </xf:label>
             <xf:hint>
                 <xsl:value-of select="functx:capitalize-first($vraNodeName)"/>
             </xf:hint>
 
             <xsl:for-each select="xsd:enumeration">
                 <xf:item>
-                    <xf:label><xsl:value-of select="functx:capitalize-first(@value)"/></xf:label>
-                    <xf:value><xsl:value-of select="@value"/></xf:value>
+                    <xf:label>
+                        <xsl:value-of select="functx:capitalize-first(@value)"/>
+                    </xf:label>
+                    <xf:value>
+                        <xsl:value-of select="@value"/>
+                    </xf:value>
                 </xf:item>
             </xsl:for-each>
         </xf:select1>
@@ -970,12 +1046,16 @@
         </xsl:if>
 
         <xf:input id="{$id}">
-            <xsl:attribute name="ref"><xsl:value-of select="$pref"/></xsl:attribute>
+            <xsl:attribute name="ref">
+                <xsl:value-of select="$pref"/>
+            </xsl:attribute>
             <xsl:if test="$detail='true'">
                 <xsl:attribute name="class" select="'detail'"/>
             </xsl:if>
 
-            <xf:label><xsl:value-of select="$plabel"/></xf:label>
+            <xf:label>
+                <xsl:value-of select="$plabel"/>
+            </xf:label>
             <xf:hint>
                 <xsl:value-of select="functx:capitalize-first($vraNodeName)"/>
             </xf:hint>
@@ -995,7 +1075,9 @@
         </xsl:if>
 
         <xf:input ref="{$currentPath}">
-            <xf:label><xsl:value-of select="substring-after($vraNodeName,'@')"/></xf:label>
+            <xf:label>
+                <xsl:value-of select="substring-after($vraNodeName,'@')"/>
+            </xf:label>
             <xf:hint>
                 <xsl:value-of select="functx:capitalize-first($vraNodeName)"/>
             </xf:hint>
@@ -1007,51 +1089,51 @@
         <xsl:message terminate="yes">This rule must never be matched</xsl:message>
     </xsl:template>
 
-	<!-- Provide here actions (or other staff) that should be inserted into 
-		xf:submission and is related to pref attibute. -->
-	<xsl:template name="checkPrefOnSubmission">
-		<xsl:param name="sectionNode"  required="yes" />
-		<xsl:param name="artifactNode" required="yes" />
-		<xsl:variable name="policy" select="functx:prefAttributePolicy($sectionNode)"/>
+    <!-- Provide here actions (or other staff) that should be inserted into
+    xf:submission and is related to pref attibute. -->
+    <xsl:template name="checkPrefOnSubmission">
+        <xsl:param name="sectionNode"  required="yes" />
+        <xsl:param name="artifactNode" required="yes" />
+        <xsl:variable name="policy" select="functx:prefAttributePolicy($sectionNode)"/>
 
-       	<xsl:if test="$policy != 'forbidden'">
-			<xf:action ev:event="xforms-submit" if="not({functx:prefConstraint($artifactNode, $policy)})">
-				<xsl:call-template name="prefMessage">
-					<xsl:with-param name="artifactNode" select="$artifactNode"/>
-					<xsl:with-param name="policy" select="$policy"/>
-				</xsl:call-template>
-			</xf:action>
-		</xsl:if>
-	</xsl:template>
+        <xsl:if test="$policy != 'forbidden'">
+            <xf:action ev:event="xforms-submit" if="not({functx:prefConstraint($artifactNode, $policy)})">
+                <xsl:call-template name="prefMessage">
+                    <xsl:with-param name="artifactNode" select="$artifactNode"/>
+                    <xsl:with-param name="policy" select="$policy"/>
+                </xsl:call-template>
+            </xf:action>
+        </xsl:if>
+    </xsl:template>
 
-	<!-- Creates xf:bind element with constraint related to pref attibutes. -->
-	<xsl:template name="prefConstraint">
-		<xsl:param name="sectionNode"  required="yes" />
-		<xsl:param name="artifactNode" required="yes" />
-		<xsl:variable name="policy" select="functx:prefAttributePolicy($sectionNode)"/>
+    <!-- Creates xf:bind element with constraint related to pref attibutes. -->
+    <xsl:template name="prefConstraint">
+        <xsl:param name="sectionNode"  required="yes" />
+        <xsl:param name="artifactNode" required="yes" />
+        <xsl:variable name="policy" select="functx:prefAttributePolicy($sectionNode)"/>
 
-       	<xsl:if test="$policy != 'forbidden'">
-			<xf:bind nodeset="instance()" constraint="{functx:prefConstraint($artifactNode, $policy)}"/>
-		</xsl:if>
-	</xsl:template>
+        <xsl:if test="$policy != 'forbidden'">
+            <xf:bind nodeset="instance()" constraint="{functx:prefConstraint($artifactNode, $policy)}"/>
+        </xsl:if>
+    </xsl:template>
 
-	<!-- Creates xf:message with message to be printed when pref attributes in a set do not obey the constraint. -->
-	<xsl:template name="prefMessage">
-		<xsl:param name="artifactNode" required="yes"/>
-		<xsl:param name="policy" required="yes"/>
+    <!-- Creates xf:message with message to be printed when pref attributes in a set do not obey the constraint. -->
+    <xsl:template name="prefMessage">
+        <xsl:param name="artifactNode" required="yes"/>
+        <xsl:param name="policy" required="yes"/>
 
-		<xsl:choose>
-			<xsl:when test="$policy = 'role-required'">
-				<xf:message>Warning: Exactly one preferred <xsl:value-of select="$artifactNode"/> should be selected for each role.</xf:message>
-			</xsl:when>
-			<xsl:when test="$policy = 'optional'">
-				<xf:message>Warning: At most one preferred <xsl:value-of select="$artifactNode"/> can be selected.</xf:message>
-			</xsl:when>
-			<xsl:when test="$policy = 'forbidden'">
-				<xf:message>Warning: No <xsl:value-of select="$artifactNode"/> can be selected as preferred.</xf:message>
-			</xsl:when>
-		</xsl:choose>
-	</xsl:template>
+        <xsl:choose>
+            <xsl:when test="$policy = 'role-required'">
+                <xf:message>Warning: Exactly one preferred <xsl:value-of select="$artifactNode"/> should be selected for each role.</xf:message>
+            </xsl:when>
+            <xsl:when test="$policy = 'optional'">
+                <xf:message>Warning: At most one preferred <xsl:value-of select="$artifactNode"/> can be selected.</xf:message>
+            </xsl:when>
+            <xsl:when test="$policy = 'forbidden'">
+                <xf:message>Warning: No <xsl:value-of select="$artifactNode"/> can be selected as preferred.</xf:message>
+            </xsl:when>
+        </xsl:choose>
+    </xsl:template>
 
     <!--
         ########################################################################################
@@ -1063,11 +1145,11 @@
         <xsl:apply-templates/>
     </xsl:template>
 
-<!--
-    <xsl:template match="text()">
-        <xsl:copy/>
-    </xsl:template>
--->
+    <!--
+        <xsl:template match="text()">
+            <xsl:copy/>
+        </xsl:template>
+    -->
 
     <xsl:template match="comment()" priority="20">
         <xsl:copy/>
@@ -1076,8 +1158,12 @@
     <xsl:function name="functx:remove-vra-prefix" as="xsd:string?">
         <xsl:param name="arg" as="xsd:string?"/>
         <xsl:choose>
-            <xsl:when test="starts-with($arg, 'vra')"><xsl:value-of select="substring-after($arg, 'vra:')"/></xsl:when>
-            <xsl:otherwise><xsl:value-of select="$arg"/></xsl:otherwise>
+            <xsl:when test="starts-with($arg, 'vra')">
+                <xsl:value-of select="substring-after($arg, 'vra:')"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="$arg"/>
+            </xsl:otherwise>
         </xsl:choose>
     </xsl:function>
 
@@ -1085,11 +1171,21 @@
         <xsl:param name="arg1" as="xsd:string?"/>
         <xsl:param name="arg2" as="xsd:string?"/>
         <xsl:choose>
-            <xsl:when test="0=string-length($arg1)"><xsl:value-of select="$arg2"/></xsl:when>
-            <xsl:when test="0=string-length($arg2)"><xsl:value-of select="$arg1"/></xsl:when>
-            <xsl:when test="'.'=$arg1"><xsl:value-of select="$arg2"/></xsl:when>
-            <xsl:when test="ends-with($arg1,'/')"><xsl:value-of select="concat($arg1,$arg2)"/></xsl:when>
-            <xsl:otherwise><xsl:value-of select="concat($arg1,concat('/',$arg2))"/></xsl:otherwise>
+            <xsl:when test="0=string-length($arg1)">
+                <xsl:value-of select="$arg2"/>
+            </xsl:when>
+            <xsl:when test="0=string-length($arg2)">
+                <xsl:value-of select="$arg1"/>
+            </xsl:when>
+            <xsl:when test="'.'=$arg1">
+                <xsl:value-of select="$arg2"/>
+            </xsl:when>
+            <xsl:when test="ends-with($arg1,'/')">
+                <xsl:value-of select="concat($arg1,$arg2)"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="concat($arg1,concat('/',$arg2))"/>
+            </xsl:otherwise>
         </xsl:choose>
     </xsl:function>
 
@@ -1104,48 +1200,48 @@
         <xsl:variable name="string2lowercase" select="functx:remove-vra-prefix($arg)"/>
         <xsl:sequence select="concat(lower-case(substring($string2lowercase,1,1)),substring($string2lowercase,2))"/>
     </xsl:function>
-    
+
     <!-- Returns the actual constraint expression (XPath) that checks if pref attributes are set correctly. -->
     <xsl:function name="functx:prefConstraint" as="xsd:string">
-		<xsl:param name="artifactNode" as="xsd:string"/>
-		<xsl:param name="policy" as="xsd:string"/>
-		<xsl:choose>
-			<xsl:when test="$policy = 'role-required'">
-				<xsl:sequence select="normalize-space(concat(
-					'every $role in distinct-values(vra:', $artifactNode, '/vra:role/text()) ', 
+        <xsl:param name="artifactNode" as="xsd:string"/>
+        <xsl:param name="policy" as="xsd:string"/>
+        <xsl:choose>
+            <xsl:when test="$policy = 'role-required'">
+                <xsl:sequence select="normalize-space(concat(
+					'every $role in distinct-values(vra:', $artifactNode, '/vra:role/text()) ',
 					'satisfies count(vra:', $artifactNode, '[vra:role = $role][@pref = ',
 					'(''true'', ''1'')]) = 1'))"/>
-			</xsl:when>
-			<xsl:when test="$policy = 'optional'">
-				<xsl:sequence select="normalize-space(concat(
+            </xsl:when>
+            <xsl:when test="$policy = 'optional'">
+                <xsl:sequence select="normalize-space(concat(
 					'count(vra:', $artifactNode, '[@pref = ',
 					'(''true'', ''1'')]) &lt;= 1'))"/>
-			</xsl:when>
-			<xsl:when test="$policy = 'forbidden'">
-				<xsl:sequence select="normalize-space(concat(
+            </xsl:when>
+            <xsl:when test="$policy = 'forbidden'">
+                <xsl:sequence select="normalize-space(concat(
 					'not(vra:', $artifactNode, '[@pref = (''true'', ''1'')])'))"/>
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:sequence select="'true()'"/>				
-			</xsl:otherwise>
-		</xsl:choose>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:sequence select="'true()'"/>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:function>
 
-	<!-- Here you can define the policy of treatment of 'pref' attribute
-		depending on element set.
-		Return values:
-		- 'forbidden' - no element can be chosen; pref checkbox is not even rendered,
-		- 'optional' - at most one element from a set can be chosen (default policy),
-		- 'role-required' - elements can have different roles (@role attribute);
-			exactly one element must be chosen for each role (this is desired behaviour for agentSet).
-	-->
+    <!-- Here you can define the policy of treatment of 'pref' attribute
+            depending on element set.
+            Return values:
+            - 'forbidden' - no element can be chosen; pref checkbox is not even rendered,
+            - 'optional' - at most one element from a set can be chosen (default policy),
+            - 'role-required' - elements can have different roles (@role attribute);
+                    exactly one element must be chosen for each role (this is desired behaviour for agentSet).
+    -->
     <xsl:function name="functx:prefAttributePolicy" as="xsd:string">
         <xsl:param name="sectionNode" as="xsd:string?"/>
         <xsl:choose>
-        	<xsl:when test="$sectionNode = 'agentSet'">role-required</xsl:when>
-        	<xsl:when test="$sectionNode = 'subjectSet'">forbidden</xsl:when>
-        	<xsl:when test="$sectionNode = 'techniqueSet'">forbidden</xsl:when>
-        	<xsl:otherwise>optional</xsl:otherwise>
+            <xsl:when test="$sectionNode = 'agentSet'">role-required</xsl:when>
+            <xsl:when test="$sectionNode = 'subjectSet'">forbidden</xsl:when>
+            <xsl:when test="$sectionNode = 'techniqueSet'">forbidden</xsl:when>
+            <xsl:otherwise>optional</xsl:otherwise>
         </xsl:choose>
     </xsl:function>
 </xsl:stylesheet>

@@ -7,7 +7,6 @@
         <link rel="stylesheet" type="text/css" href="resources/script/mingos-uwindow/themes/ziziphus/style.css"/>
         <link rel="stylesheet" type="text/css" href="resources/script/layout-default-latest.css"/>
         <link rel="stylesheet" type="text/css" href="resources/css/jquery-ui.css"/>
-        <link rel="stylesheet" type="text/css" href="/exist/apps/cluster-services/resources/css/autocomplete.css"/>
         <!--<link rel="stylesheet" type="text/css" href="resources/css/ui-lightness/jquery-ui-1.10.2.custom.min.css"/>-->
     </head>
     <body class="main:createVraRecord">
@@ -181,10 +180,6 @@
         <script type="text/javascript" src="resources/script/jquery-ui-1.10.2.custom.min.js"/>
         <script type="text/javascript" src="resources/script/mingos-uwindow/jWindow.js"/>
         <script type="text/javascript" src="resources/script/jquery.layout-latest.min.js"/>
-        <script type="text/javascript" src="/exist/apps/cluster-services/resources/js/typeahead.js/hogan-2.0.0.js"/>
-        <script type="text/javascript" src="/exist/apps/cluster-services/resources/js/typeahead.js/typeahead-0.9.3.js"/>
-        <script type="text/javascript" src="/exist/apps/cluster-services/resources/js/typeahead.js/typeahead-init.js"/>
-        
         <script type="text/javascript">
             $(document).ready(function() {
                 ziziphusLayout = $('body').layout({
@@ -222,8 +217,6 @@
             });
         </script>
         <script type="text/javascript">
-            var autocompletes = [];
-
             jQuery(document).ready(function() {
                 var w = $.jWindow({
                     parentElement: '#heidiconWindow',
@@ -386,6 +379,36 @@
             function showImageXML() {
                 $('#t-load-xml-image-value').click();
             }
+            
+            function initAutocomplete(id, queryType, set) {
+                console.log("initAutocomplete: ", id);
+                var myInput = $('#' + id + "-ac");
+                var myIndicator = $('#' + id + "-indicator");
+                console.log("initAutocomplete: myInput", myInput);
+                console.log("initAutocomplete: myIndicator", myIndicator);
+                
+                $(myInput).autocomplete({
+                    serviceUrl: 'modules/services/search/search.xql',
+                    minChars: "2",
+                    paramName: queryType,
+                    width: "450",
+                    onSelect: function(suggestion) {
+                        var id = $("#r-" + set + " .xfRepeatIndex .xfControl").attr("id");
+                        var xfValue = $("#" + id + "-value");
+                        //xfValue.focus();
+                        xfValue.val(suggestion.data)
+                        fluxProcessor.sendValue("" + id, suggestion.data);
+                    },
+                    onSearchStart: function(query) {
+                        $(myIndicator).css("display", "inline-block");
+                    },
+                    onSearchComplete: function(query) {
+                        $(myIndicator).css("display", "none");
+                    }
+                });
+                $(myIndicator).css("display", "none");
+            }
+
         </script>
     </body>
 </html>
