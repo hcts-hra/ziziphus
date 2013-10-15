@@ -225,12 +225,13 @@
                                  <xf:label>OtherName</xf:label>
                                  <xf:value>otherName</xf:value>
                               </xf:item>
-                           </xf:select1>
-                           <xf:input id="b-d2e1311" ref="vra:term">
-                              <xf:label>Term</xf:label>
-                              <xf:hint>Term</xf:hint>
-                           </xf:input>
-                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:term">
+                           </xf:select1><span style="display:none">
+                              <xf:input id="b-d2e1311" class="Term-autocomplete" ref="vra:term">
+                                 <xf:label></xf:label>
+                              </xf:input></span><label for="Term-autocomplete">Term</label><input type="text" name="Term-autocomplete" class="Term-autocomplete-input"
+                                  placeholder="Term"
+                                  query="subjects"
+                                  callbackSet="r-vraSubject" /><span><img id="Term-autocomplete-indicator" src="../images/indicator.gif" /></span><xf:group class="vraAttributes" appearance="minimal" ref="vra:term">
                               <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                            </xf:group>
                            <xf:trigger class="vraAttributeTrigger">

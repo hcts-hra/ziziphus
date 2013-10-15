@@ -92,7 +92,7 @@
                 <group name="vra:term" idref="b-d2e1311">
 
                     <node name="@type" detail="false" idref="b-d2e1318"/>
-                    <textNode xpath="" detail="false" idref="b-d2e10"/>
+                    <textNode xpath="" detail="false" idref="b-d2e10" control="autocomplete" queryType="subjects"/>
                 </group>
             </group>
             <node name="vra:notes" detail="false" idref="b-d2e1284"/>
