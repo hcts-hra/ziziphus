@@ -876,9 +876,9 @@
                             <xsl:attribute name="class">elementName</xsl:attribute>
                         </xsl:if>
                     </input>
-                    <span>
+                    <!-- span>
                         <img id="{$label}-autocomplete-indicator" src="../images/indicator.gif"/>
-                    </span>
+                    </span -->
                 </xsl:when>
                 <xsl:when test="@control='select1' and exists(@code-table)">
                     <xsl:if test="$debugEnabled">
