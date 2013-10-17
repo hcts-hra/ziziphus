@@ -102,16 +102,20 @@
                         <xf:model id="m-child-model" schema="{$relativePath}resources/xsd/generator/vra-types.xsd">
                             <xf:action ev:event="xforms-model-construct-done">
                                 <xf:send submission="s-loadSet"/>
-                                <script>
-                                    initAutocompletes();
-                                </script>
+                                <xsl:if test="//xf:bind[@nodeset=concat('vra:',$vraSectionNode)]//@control[. eq 'autocomplete']">
+                                    <script>
+                                        initAutocompletes();
+                                    </script>
+                                </xsl:if>
                             </xf:action>
                             
-                            <xf:action ev:observer="i-{$vraSectionNode}" ev:event="xforms-insert">
-                                <script>
-                                    initAutocompletes();
-                                </script>
-                            </xf:action>
+                            <xsl:if test="//xf:bind[@nodeset=concat('vra:',$vraSectionNode)]//@control[. eq 'autocomplete']">
+                                <xf:action ev:observer="i-{$vraSectionNode}" ev:event="xforms-insert">
+                                    <script>
+                                        initAutocompletes();
+                                    </script>
+                                </xf:action>
+                            </xsl:if>
                             
                             <xf:submission id="s-loadSet"
                                     resource="{$relativePath}modules/loadData.xql?id={{bf:instanceOfModel('m-main','i-control-center')/uuid}}&amp;workdir={{bf:instanceOfModel('m-main','i-control-center')/workdir}}"
@@ -854,6 +858,7 @@
                         <xsl:message>UI-4.1:found element that shall use autocomplete</xsl:message>
                     </xsl:if>
                     <xsl:variable name="queryType" select="@queryType"/>
+                    <xsl:variable name="host" select="@host"/>
 
                     <span style="display:none">
                         <xf:input id="{$id}" class="{$label}-autocomplete">
@@ -863,14 +868,14 @@
                             <xsl:if test="not($isArtifactNode) and ('vra:name'=$vraNodeName)">
                                 <xsl:attribute name="class">elementName</xsl:attribute>
                             </xsl:if>
-                            <xf:label/>
+                            <xf:label>Hidden Input for autocomplete</xf:label>
                         </xf:input>
                     </span>
 
                     <label for="{$label}-autocomplete">
                         <xsl:value-of select="$label"/>
                     </label>
-                    <input type="text" name="{$label}-autocomplete" class="{$label}-autocomplete-input" placeholder="{$label}" query="{$queryType}">
+                    <input type="text" name="{$label}-autocomplete" class="{$label}-autocomplete-input" placeholder="Type to search ..." queryType="{$queryType}" host="{$host}" autocomplete="off">
                         <xsl:attribute name="callbackSet">r-vra<xsl:value-of select="$vraArtifact"/></xsl:attribute>
                         <xsl:if test="not($isArtifactNode) and ('vra:name'=$vraNodeName)">
                             <xsl:attribute name="class">elementName</xsl:attribute>

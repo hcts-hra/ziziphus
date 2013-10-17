@@ -21,11 +21,11 @@
             <xf:model id="m-child-model" schema="resources/xsd/generator/vra-types.xsd">
                <xf:action ev:event="xforms-model-construct-done">
                   <xf:send submission="s-loadSet"></xf:send><script>
-                                    initAutocompletes();
-                                </script></xf:action>
+                                        initAutocompletes();
+                                    </script></xf:action>
                <xf:action ev:observer="i-agentSet" ev:event="xforms-insert"><script>
-                                    initAutocompletes();
-                                </script></xf:action>
+                                        initAutocompletes();
+                                    </script></xf:action>
                <xf:submission id="s-loadSet"
                               resource="modules/loadData.xql?id={bf:instanceOfModel('m-main','i-control-center')/uuid}&amp;workdir={bf:instanceOfModel('m-main','i-control-center')/workdir}"
                               method="post"
@@ -241,6 +241,7 @@
                               </xf:input></span><label for="Name-autocomplete">Name</label><input type="text" name="Name-autocomplete" class="Name-autocomplete-input"
                                   placeholder="Name"
                                   query="names"
+                                  host="http://localhost:8080"
                                   callbackSet="r-vraAgent" /><span><img id="Name-autocomplete-indicator" src="../images/indicator.gif" /></span><xf:group class="vraAttributes" appearance="minimal" ref="vra:name">
                               <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                            </xf:group>
