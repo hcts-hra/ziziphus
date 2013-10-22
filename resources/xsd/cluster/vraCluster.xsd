@@ -1,33 +1,33 @@
 <xsd:schema xmlns="http://www.vraweb.org/vracore4.htm" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsl="http://www.w3.org/2001/XMLSchema"
     targetNamespace="http://www.vraweb.org/vracore4.htm" version="4.0.42" xml:lang="en"
-    elementFormDefault="qualified" attributeFormDefault="unqualified">
+    elementFormDefault="qualified" attributeFormDefault="unqualified"
+    xmlns:ext="http://exist-db.org/vra/extension">
     <xsd:annotation>
-        <xsd:documentation>
-            This schema is an extension (patched version) of the VRA Core version 4.0 used at the University of Heidelberg for
-            the implementation of Ziziphus, an implementation of an VRA editor.
-
-            We use a patched version rather than a Schema overwrite or extension version for pragmatic reasons:
-            - handling of the schema is easier within common tools such as Oxygen
-            - some extensions are hard to do with pure extensions (not allowing overwrites) as known in XML Schema 1.0
-              and are either hard to do with pure 'overwride" mechanism of XML Schema 1.1. Further tool support
-              for XML Schema 1.1 is still incomplete and requires specific configuration.
-
-            Extensions (patches) in this schema are marked with "EXTENSION START" for the start and "EXTENSION END"
-            to simplify the manual merging process that will be needed when migrating to a newer VRA version.
-
-
-            Further documentation can be found as a Googledoc at https://docs.google.com/document/d/1ZXVCOuZLg6-FlYaQaBTVw2OsKNn4dr1KfqJgw25I0zA/edit#heading=h.vj515vkolvh7
-
-    </xsd:documentation>
+        <xsd:documentation> This schema is an extension (patched version) of the VRA Core version
+            4.0 used at the University of Heidelberg for the implementation of Ziziphus, an
+            implementation of an VRA editor. We use a patched version rather than a Schema overwrite
+            or extension version for pragmatic reasons: - handling of the schema is easier within
+            common tools such as Oxygen - some extensions are hard to do with pure extensions (not
+            allowing overwrites) as known in XML Schema 1.0 and are either hard to do with pure
+            'overwride" mechanism of XML Schema 1.1. Further tool support for XML Schema 1.1 is
+            still incomplete and requires specific configuration. Extensions (patches) in this
+            schema are marked with "EXTENSION START" for the start and "EXTENSION END" to simplify
+            the manual merging process that will be needed when migrating to a newer VRA version.
+            Further documentation can be found as a Googledoc at
+            https://docs.google.com/document/d/1ZXVCOuZLg6-FlYaQaBTVw2OsKNn4dr1KfqJgw25I0zA/edit#heading=h.vj515vkolvh7
+        </xsd:documentation>
     </xsd:annotation>
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace"
         schemaLocation="http://www.w3.org/2001/xml.xsd">
         <xsd:annotation>
-            <xsd:documentation>
-                Get access to the xml: attribute groups for xml:lang as declared below.
-            </xsd:documentation>
+            <xsd:documentation> Get access to the xml: attribute groups for xml:lang as declared
+                below. </xsd:documentation>
         </xsd:annotation>
     </xsd:import>
+
+    <xsd:import namespace="http://exist-db.org/vra/extension" schemaLocation="extension.xsd"/>
+
 
 
     <!--== Top-level elements ================================================-->
@@ -35,6 +35,10 @@
     <xsd:element name="collection" type="collectionRecordType"/>
     <xsd:element name="work" type="workRecordType"/>
     <xsd:element name="image" type="recordType"/>
+
+    <!-- >>> EXTENSION START >>> -->
+    <xsd:element name="languageOfCataloging" type="languageOfCatalogingType"/>
+    <!-- <<< EXTENSION END <<< -->
 
 
     <!--== VRA Element Sets ==================================================-->
@@ -77,14 +81,11 @@
     <xsd:element name="title" type="titleType"/>
     <xsd:element name="worktype" type="basicString"/>
 
-
     <!--== Structure =========================================================-->
     <xsd:complexType name="vraType">
         <xsd:annotation>
-            <xsd:documentation>
-        Top-level wrapper element allowing for the inclusion of any number of
-        collection, work and image elements.
-      </xsd:documentation>
+            <xsd:documentation> Top-level wrapper element allowing for the inclusion of any number
+                of collection, work and image elements. </xsd:documentation>
         </xsd:annotation>
         <xsd:sequence minOccurs="1" maxOccurs="unbounded">
             <xsd:element ref="collection" minOccurs="0" maxOccurs="unbounded"/>
@@ -94,32 +95,31 @@
     </xsd:complexType>
     <xsd:complexType name="collectionRecordType">
         <xsd:annotation>
-            <xsd:documentation>
-        Contains all the values belonging to an aggregate of work and image
-        records.  Related work and image records can be nested within this
-        element to explicitly indicate a hierarchy of description.  Child
-        elements can appear any number of times.  Allows assignment of the
-        refid attribute to embed local system identifiers.
-      </xsd:documentation>
+            <xsd:documentation> Contains all the values belonging to an aggregate of work and image
+                records. Related work and image records can be nested within this element to
+                explicitly indicate a hierarchy of description. Child elements can appear any number
+                of times. Allows assignment of the refid attribute to embed local system
+                identifiers. </xsd:documentation>
         </xsd:annotation>
         <xsd:complexContent>
             <xsd:extension base="recordType">
                 <xsd:sequence minOccurs="0" maxOccurs="unbounded">
                     <xsd:element ref="work" minOccurs="0" maxOccurs="unbounded"/>
                     <xsd:element ref="image" minOccurs="0" maxOccurs="unbounded"/>
+                    <!-- >>> EXTENSION START >>> -->
+                    <xsd:element ref="languageOfCataloging"/>
+                    <!-- <<< EXTENSION END <<< -->
                 </xsd:sequence>
             </xsd:extension>
         </xsd:complexContent>
     </xsd:complexType>
     <xsd:complexType name="workRecordType">
         <xsd:annotation>
-            <xsd:documentation>
-        Contains all the values belonging to a unique entity such as an object
-        or event.  Related image records can be nested within this element to
-        explicitly indicate a hierarchy of description.  Child elements can
-        appear any number of times.  Allows assignment of the refid attribute
-        to embed local system identifiers.
-      </xsd:documentation>
+            <xsd:documentation> Contains all the values belonging to a unique entity such as an
+                object or event. Related image records can be nested within this element to
+                explicitly indicate a hierarchy of description. Child elements can appear any number
+                of times. Allows assignment of the refid attribute to embed local system
+                identifiers. </xsd:documentation>
         </xsd:annotation>
         <xsd:complexContent>
             <xsd:extension base="recordType">
@@ -131,11 +131,9 @@
     </xsd:complexType>
     <xsd:complexType name="recordType">
         <xsd:annotation>
-            <xsd:documentation>
-        Contains all the values belonging to an image or surrogate for a work
-        of art.  Child elements can appear any number of times.  Allows
-        assignment of the refid attribute to embed local system identifiers.
-      </xsd:documentation>
+            <xsd:documentation> Contains all the values belonging to an image or surrogate for a
+                work of art. Child elements can appear any number of times. Allows assignment of the
+                refid attribute to embed local system identifiers. </xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
             <xsd:element ref="agentSet" minOccurs="0"/>
@@ -156,32 +154,18 @@
             <xsd:element ref="textrefSet" minOccurs="0"/>
             <xsd:element ref="titleSet" minOccurs="0"/>
             <xsd:element ref="worktypeSet" minOccurs="0"/>
-            <xsd:element ref="languageOfCatalogingSet" minOccurs="0"/>
+            <!-- >>> EXTENSION START >>> -->
+            <xsd:element ref="ext:heidicon" minOccurs="0" maxOccurs="unbounded"/>
+            <!-- <<< EXTENSION END <<< -->
         </xsd:sequence>
         <xsd:attributeGroup ref="vraAttributes"/>
         <xsd:attribute name="id" type="xsd:ID"/>
-        <!-- >>> EXTENSION START >>> -->
-        <xsd:attribute name="languageOfCataloging" type="languageOfCatalogingType"/>
-        <xsd:attribute name="catalogingScript" type="catalogingScriptType"/>
-        <!-- <<< EXTENSION END <<< -->
+
     </xsd:complexType>
-    <!-- >>> EXTENSION START >>> -->
-    <xsd:simpleType name="languageOfCatalogingType">
-        <xsd:restriction base="xsd:string">
-            <xsd:pattern value="[a-z]{3}"/>
-        </xsd:restriction>
-    </xsd:simpleType>
-    <xsd:simpleType name="catalogingScriptType">
-        <xsd:restriction base="xsd:string">
-            <xsd:pattern value="[a-z]{4}"/>
-        </xsd:restriction>
-    </xsd:simpleType>
-    <!-- <<< EXTENSION END <<< -->
     <xsd:complexType name="setType">
         <xsd:annotation>
-            <xsd:documentation>
-        Allows one display element and one notes element.
-      </xsd:documentation>
+            <xsd:documentation> Allows one display element and one notes element.
+            </xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
             <xsd:element name="display" type="basicString" minOccurs="0" maxOccurs="1"/>
@@ -357,49 +341,28 @@
     <!-- >>> EXTENSION START >>> -->
     <xsd:complexType name="roleType">
         <xsd:annotation>
-            <xsd:documentation>
-                Basic datatype for all roles.
-            </xsd:documentation>
+            <xsd:documentation> Basic datatype for all roles. </xsd:documentation>
         </xsd:annotation>
         <xsd:simpleContent>
             <xsd:extension base="xsd:string">
-                <xsd:attribute name="type" type="roleString"/>       
+                <xsd:attribute name="vocab" type="xsd:string"/>
+                <xsd:attribute name="type" type="roleString"/>
             </xsd:extension>
         </xsd:simpleContent>
     </xsd:complexType>
     <xsd:simpleType name="roleString">
-       <xsd:restriction base="xsd:string">
-           <xsd:enumeration value="code"/>
-           <xsd:enumeration value="term"/>
-       </xsd:restriction>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="code"/>
+            <xsd:enumeration value="term"/>
+        </xsd:restriction>
     </xsd:simpleType>
-    <!-- <<< EXTENSION END <<< -->
-
-    <!-- >>> EXTENSION START >>> -->
-    <xsd:simpleType name="langType">
-        <xsd:restriction base="xsd:string"/>
-    </xsd:simpleType>
-    <xsd:simpleType name="scriptType">
-        <xsd:restriction base="xsd:string"/>
-    </xsd:simpleType>
-    <xsd:simpleType name="transliterationType">
-        <xsd:annotation>
-            <xsd:documentation>
-                values as in the “transliteration scheme” dropdown for the Tamboti MODS-editor,
-                using an expanded ALA-LC list (e.g. “Arabic/ALA-LC”, “Chinese/modified Wade-Giles”)
-            </xsd:documentation>
-        </xsd:annotation>
-        <xsd:restriction base="xsd:string"/>
-    </xsd:simpleType>
-
     <!-- <<< EXTENSION END <<< -->
 
     <xsd:complexType name="basicString">
         <xsd:annotation>
-            <xsd:documentation>
-        Basic datatype for all freetext values.  Allows assignment of source,
-        vocabulary, refid and language attributes to virtually any value.
-      </xsd:documentation>
+            <xsd:documentation> Basic datatype for all freetext values. Allows assignment of source,
+                vocabulary, refid and language attributes to virtually any value.
+            </xsd:documentation>
         </xsd:annotation>
         <xsd:simpleContent>
             <xsd:extension base="xsd:string">
@@ -410,48 +373,66 @@
     <!-- >>> EXTENSION START >>> -->
     <xsd:complexType name="descriptionType">
         <xsd:annotation>
-            <xsd:documentation>
-                Description type
-            </xsd:documentation>
+            <xsd:documentation> Description type </xsd:documentation>
         </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="text" type="textType"/>
+            <xsd:element name="author" type="authorType" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attributeGroup ref="vraAttributes"/>
+        <xsd:attribute type="xsd:string" name="type"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="textType">
         <xsd:simpleContent>
             <xsd:extension base="xsd:string">
-                <xsd:attribute type="xsd:string" name="stateOfPreservation"/>
-                <xsd:attributeGroup ref="vraAttributes"/>
+                <xsd:attribute name="lang" type="langType"/>
+                <xsd:attribute name="script" type="scriptType"/>
             </xsd:extension>
         </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="authorType">
+        <xsd:sequence>
+            <xsd:element name="name" type="agentNameType" minOccurs="0"/>
+            <xsd:element name="role" type="roleType" minOccurs="0"/>
+        </xsd:sequence>
     </xsd:complexType>
     <!-- <<< EXTENSION END <<< -->
     <xsd:simpleType name="dateValueType">
         <xsd:annotation>
-            <xsd:documentation>
-        Basic datatype for all dates.  Allows any textual value.
-      </xsd:documentation>
+            <xsd:documentation> Basic datatype for all dates. Allows any textual value.
+            </xsd:documentation>
         </xsd:annotation>
         <xsd:restriction base="xsd:string"/>
     </xsd:simpleType>
     <xsd:complexType name="dateWrapperType">
         <xsd:annotation>
-            <xsd:documentation>
-        Basic datatype for all date elements.  Allows a textual element body
-        and a "circa" attribute.
-      </xsd:documentation>
+            <xsd:documentation> Basic datatype for all date elements. Allows a textual element body
+                and a "circa" attribute. </xsd:documentation>
         </xsd:annotation>
         <xsd:simpleContent>
             <xsd:extension base="dateValueType">
                 <xsd:attribute name="circa" type="xsd:boolean"/>
+                <!-- >>> EXTENSION START >>> -->
+                <xsd:attribute name="type" type="uncertainDateType"/>
+                <!-- <<< EXTENSION END <<< -->
             </xsd:extension>
         </xsd:simpleContent>
     </xsd:complexType>
+
+    <!-- >>> EXTENSION START >>> -->
+    <xsd:simpleType name="uncertainDateType">
+        <xsd:restriction base="xsd:string"/>
+    </xsd:simpleType>
+    <!-- <<< EXTENSION END <<< -->
+
     <xsd:attributeGroup name="vraAttributes">
         <xsd:annotation>
-            <xsd:documentation>
-        VRA Core metadata attributes which can be applied to virtually any
-        element.  Note that xml:lang should contain ISO 639 language codes, not
-        the English names of languages.  Although the XML Schema defines
-        xml:lang as allowing ISO 639-2 (three-letter) codes, some validators
-        will only accept ISO 639-1 (two-letter) codes.
-      </xsd:documentation>
+            <xsd:documentation> VRA Core metadata attributes which can be applied to virtually any
+                element. Note that xml:lang should contain ISO 639 language codes, not the English
+                names of languages. Although the XML Schema defines xml:lang as allowing ISO 639-2
+                (three-letter) codes, some validators will only accept ISO 639-1 (two-letter) codes.
+            </xsd:documentation>
         </xsd:annotation>
         <xsd:attribute name="dataDate" type="dateValueType"/>
         <xsd:attribute name="extent" type="xsd:string"/>
@@ -471,15 +452,38 @@
         <!-- <<< EXTENSION END <<< -->
     </xsd:attributeGroup>
 
+    <!-- >>> EXTENSION START >>> -->
+    <xsd:complexType name="languageOfCatalogingType">
+        <xsd:annotation>
+            <xsd:documentation>Extension to Core VRA Schema used by University of
+                Heidelberg</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+            <xsd:element name="languageTerm" type="langType" minOccurs="0"/>
+            <xsd:element name="scriptTerm" type="scriptType" minOccurs="0"/>
+            <xsd:element name="transliterationTerm" type="transliterationType" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="langType">
+        <xsd:restriction base="xsd:string"/>
+    </xsd:simpleType>
+    <xsd:simpleType name="scriptType">
+        <xsd:restriction base="xsd:string"/>
+    </xsd:simpleType>
+    <xsd:simpleType name="transliterationType">
+        <xsd:restriction base="xsd:string"/>
+    </xsd:simpleType>
+    <!-- <<< EXTENSION END <<< -->
+
+
     <!--== VRA Core Elements =================================================-->
 
     <!-- Element: Agent -->
     <xsd:complexType name="agentType">
         <xsd:annotation>
-            <xsd:documentation>
-        VRA Agent element.  Subelements are used for different types of data
-        (names, roles, dates, etc.).  At least one subelement must be provided.
-      </xsd:documentation>
+            <xsd:documentation> VRA Agent element. Subelements are used for different types of data
+                (names, roles, dates, etc.). At least one subelement must be provided.
+            </xsd:documentation>
         </xsd:annotation>
         <xsd:sequence minOccurs="1" maxOccurs="unbounded">
             <xsd:element name="attribution" type="basicString" minOccurs="0"/>
@@ -504,10 +508,8 @@
     </xsd:simpleType>
     <xsd:complexType name="agentNameType">
         <xsd:annotation>
-            <xsd:documentation>
-        Agent name element.  Use type attribute to differentiate different
-        kinds of names (personal, corporate, etc.).
-      </xsd:documentation>
+            <xsd:documentation> Agent name element. Use type attribute to differentiate different
+                kinds of names (personal, corporate, etc.). </xsd:documentation>
         </xsd:annotation>
         <xsd:simpleContent>
             <xsd:extension base="basicString">
@@ -526,11 +528,9 @@
     <!-- Element: Date -->
     <xsd:complexType name="dateType">
         <xsd:annotation>
-            <xsd:documentation>
-        Date element.  Allows assignment of a type attribute to distinguish
-        various types of dates (creation, completion, etc.).  Omit this
-        attribute for unknown types of dates.
-      </xsd:documentation>
+            <xsd:documentation> Date element. Allows assignment of a type attribute to distinguish
+                various types of dates (creation, completion, etc.). Omit this attribute for unknown
+                types of dates. </xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
             <xsd:element name="earliestDate" type="dateWrapperType" minOccurs="0"/>
@@ -549,7 +549,8 @@
     <xsd:complexType name="alternativeNotationDateType">
         <xsd:simpleContent>
             <xsd:extension base="basicString">
-                <xsd:attribute name="type" use="required" type="alternativeNotationDateAttributeType"/>
+                <xsd:attribute name="type" use="required"
+                    type="alternativeNotationDateAttributeType"/>
             </xsd:extension>
         </xsd:simpleContent>
     </xsd:complexType>
@@ -568,11 +569,9 @@
     <!-- Element: Inscription -->
     <xsd:complexType name="inscriptionType">
         <xsd:annotation>
-            <xsd:documentation>
-        VRA Inscription element.  Subelements are used for different types of
-        data (author, position, text).  At least one text subelement must be
-        provided.
-      </xsd:documentation>
+            <xsd:documentation> VRA Inscription element. Subelements are used for different types of
+                data (author, position, text). At least one text subelement must be provided.
+            </xsd:documentation>
         </xsd:annotation>
         <xsd:sequence minOccurs="1" maxOccurs="unbounded">
             <xsd:element name="author" type="basicString" minOccurs="0"/>
@@ -583,10 +582,8 @@
     </xsd:complexType>
     <xsd:complexType name="inscriptionTextType">
         <xsd:annotation>
-            <xsd:documentation>
-        Inscription text element.  Use type attribute to differentiate
-        different kinds of inscriptions.
-      </xsd:documentation>
+            <xsd:documentation> Inscription text element. Use type attribute to differentiate
+                different kinds of inscriptions. </xsd:documentation>
         </xsd:annotation>
         <xsd:simpleContent>
             <xsd:extension base="basicString">
@@ -602,11 +599,9 @@
     <!-- Element: Location -->
     <xsd:complexType name="locationType">
         <xsd:annotation>
-            <xsd:documentation>
-        Element containing a name and an identifier.  Typically used when a
-        name or description can be associated with a number of different
-        identifiers.
-      </xsd:documentation>
+            <xsd:documentation> Element containing a name and an identifier. Typically used when a
+                name or description can be associated with a number of different identifiers.
+            </xsd:documentation>
         </xsd:annotation>
         <xsd:sequence minOccurs="1" maxOccurs="unbounded">
             <xsd:element name="refid" type="locationRefidType" minOccurs="0"/>
@@ -621,16 +616,13 @@
     <!-- >>> EXTENSION START >>> -->
     <xsd:complexType name="geoType">
         <xsd:annotation>
-            <xsd:documentation> 
-                Element containing a latitude and a longitude
-            </xsd:documentation>
+            <xsd:documentation> Element containing a latitude and a longitude </xsd:documentation>
         </xsd:annotation>
         <xsd:all minOccurs="0">
             <xsd:element name="lat" type="xsd:string" maxOccurs="1" minOccurs="1"/>
             <xsd:element name="long" type="xsd:string" maxOccurs="1" minOccurs="1"/>
         </xsd:all>
         <xsd:attribute name="epsg" type="xsd:string"/>
-        <xsd:attribute name="url" type="xsd:string"/>
     </xsd:complexType>
     <!-- <<< EXTENSION END <<< -->
     <xsd:simpleType name="locationTypeType">
@@ -638,10 +630,8 @@
     </xsd:simpleType>
     <xsd:complexType name="locationRefidType">
         <xsd:annotation>
-            <xsd:documentation>
-        Location refid element.  Use type attribute to specfy which kind of
-        identifier is provided.
-      </xsd:documentation>
+            <xsd:documentation> Location refid element. Use type attribute to specfy which kind of
+                identifier is provided. </xsd:documentation>
         </xsd:annotation>
         <xsd:simpleContent>
             <xsd:extension base="basicString">
@@ -654,10 +644,8 @@
     </xsd:simpleType>
     <xsd:complexType name="locationNameType">
         <xsd:annotation>
-            <xsd:documentation>
-        Location name element.  Use type attribute to differentiate different
-        kinds of locations.
-      </xsd:documentation>
+            <xsd:documentation> Location name element. Use type attribute to differentiate different
+                kinds of locations. </xsd:documentation>
         </xsd:annotation>
         <xsd:simpleContent>
             <xsd:extension base="basicString">
@@ -673,9 +661,8 @@
     <!-- Element: Material -->
     <xsd:complexType name="materialType">
         <xsd:annotation>
-            <xsd:documentation>
-        Material element.  Use type attribute to specify medium, support, etc.
-      </xsd:documentation>
+            <xsd:documentation> Material element. Use type attribute to specify medium, support,
+                etc. </xsd:documentation>
         </xsd:annotation>
         <xsd:simpleContent>
             <xsd:extension base="basicString">
@@ -691,9 +678,8 @@
     <!-- Element: Measurements -->
     <xsd:complexType name="measurementsType">
         <xsd:annotation>
-            <xsd:documentation>
-        Measurement element.  Use unit attribute for units (cm, in, dpi, etc.).
-      </xsd:documentation>
+            <xsd:documentation> Measurement element. Use unit attribute for units (cm, in, dpi,
+                etc.). </xsd:documentation>
         </xsd:annotation>
         <xsd:simpleContent>
             <xsd:extension base="basicString">
@@ -707,16 +693,7 @@
     </xsd:complexType>
     <!-- >>> EXTENSION START >>> -->
     <xsd:simpleType name="shapeType">
-        <xsd:restriction base="xsd:string">
-            <xsd:enumeration value="oval"/>
-            <xsd:enumeration value="cube"/>
-            <xsd:enumeration value="sphere"/>
-            <xsd:enumeration value="rectangle"/>
-            <xsd:enumeration value="circle"/>
-            <xsd:enumeration value="irregular"/>
-            <xsd:enumeration value="landscape"/>
-            <xsd:enumeration value="portrait"/>
-        </xsd:restriction>
+        <xsd:restriction base="xsd:string"/>
     </xsd:simpleType>
     <!-- <<< EXTENSION END <<< -->
     <xsd:simpleType name="measurementsTypeType">
@@ -724,7 +701,8 @@
     </xsd:simpleType>
     <xsd:simpleType name="measurementsUnitType">
         <xsd:annotation>
-            <xsd:documentation>See http://ts.nist.gov/ts/htdocs/230/235/appxc/appxc.htm for appropriate unit types.</xsd:documentation>
+            <xsd:documentation>See http://ts.nist.gov/ts/htdocs/230/235/appxc/appxc.htm for
+                appropriate unit types.</xsd:documentation>
         </xsd:annotation>
         <xsd:restriction base="xsd:string"/>
     </xsd:simpleType>
@@ -733,11 +711,9 @@
     <!-- Element: Relation -->
     <xsd:complexType name="relationType">
         <xsd:annotation>
-            <xsd:documentation>
-        Relation element.  Attributes contain the type of relationship and
-        an identifier for the related work.  The body does not need to be
-        supplied, but can contain a title or other label for the related work.
-      </xsd:documentation>
+            <xsd:documentation> Relation element. Attributes contain the type of relationship and an
+                identifier for the related work. The body does not need to be supplied, but can
+                contain a title or other label for the related work. </xsd:documentation>
         </xsd:annotation>
         <xsd:simpleContent>
             <xsd:extension base="basicString">
@@ -754,11 +730,9 @@
     <!-- Element: Rights -->
     <xsd:complexType name="rightsType">
         <xsd:annotation>
-            <xsd:documentation>
-        VRA Rights element.  Subelements are used to separate the rights holder
-        from the rights statement.  At least one text subelement must be
-        provided.
-      </xsd:documentation>
+            <xsd:documentation> VRA Rights element. Subelements are used to separate the rights
+                holder from the rights statement. At least one text subelement must be provided.
+            </xsd:documentation>
         </xsd:annotation>
         <xsd:sequence minOccurs="1" maxOccurs="unbounded">
             <xsd:element name="rightsHolder" type="basicString" minOccurs="0"/>
@@ -775,11 +749,9 @@
     <!-- Element: Source -->
     <xsd:complexType name="sourceType">
         <xsd:annotation>
-            <xsd:documentation>
-        Element containing a name and an identifier.  Typically used when a
-        name or description can be associated with a number of different
-        identifiers.
-      </xsd:documentation>
+            <xsd:documentation> Element containing a name and an identifier. Typically used when a
+                name or description can be associated with a number of different identifiers.
+            </xsd:documentation>
         </xsd:annotation>
         <xsd:sequence minOccurs="1" maxOccurs="unbounded">
             <xsd:element name="refid" type="sourceRefidType" minOccurs="0"/>
@@ -789,10 +761,8 @@
     </xsd:complexType>
     <xsd:complexType name="sourceRefidType">
         <xsd:annotation>
-            <xsd:documentation>
-        Source refid element.  Use type attribute to specify which kind of
-        identifier is provided.
-      </xsd:documentation>
+            <xsd:documentation> Source refid element. Use type attribute to specify which kind of
+                identifier is provided. </xsd:documentation>
         </xsd:annotation>
         <xsd:simpleContent>
             <xsd:extension base="basicString">
@@ -805,10 +775,8 @@
     </xsd:simpleType>
     <xsd:complexType name="sourceNameType">
         <xsd:annotation>
-            <xsd:documentation>
-        Source name element.  Use type attribute to differentiate different
-        kinds of sources.
-      </xsd:documentation>
+            <xsd:documentation> Source name element. Use type attribute to differentiate different
+                kinds of sources. </xsd:documentation>
         </xsd:annotation>
         <xsd:simpleContent>
             <xsd:extension base="basicString">
@@ -824,10 +792,8 @@
     <!-- Element: State/Edition -->
     <xsd:complexType name="stateEditionType">
         <xsd:annotation>
-            <xsd:documentation>
-        VRA State/Edition element.  Subelements are used to separate version
-        names from descriptive notes.
-      </xsd:documentation>
+            <xsd:documentation> VRA State/Edition element. Subelements are used to separate version
+                names from descriptive notes. </xsd:documentation>
         </xsd:annotation>
         <xsd:sequence minOccurs="1" maxOccurs="unbounded">
             <xsd:element name="description" type="basicString" minOccurs="0"/>
@@ -849,10 +815,8 @@
     <!-- Element: Subject -->
     <xsd:complexType name="subjectType">
         <xsd:annotation>
-            <xsd:documentation>
-        VRA Subject element.  Subelements are used to separate different types
-        of terms into individual elements.
-      </xsd:documentation>
+            <xsd:documentation> VRA Subject element. Subelements are used to separate different
+                types of terms into individual elements. </xsd:documentation>
         </xsd:annotation>
         <xsd:sequence minOccurs="1" maxOccurs="unbounded">
             <xsd:element name="term" type="subjectTermType"/>
@@ -861,10 +825,8 @@
     </xsd:complexType>
     <xsd:complexType name="subjectTermType">
         <xsd:annotation>
-            <xsd:documentation>
-        Heading element.  Use type attribute to differentiate different kinds of
-        terms.
-      </xsd:documentation>
+            <xsd:documentation> Heading element. Use type attribute to differentiate different kinds
+                of terms. </xsd:documentation>
         </xsd:annotation>
         <xsd:simpleContent>
             <xsd:extension base="basicString">
@@ -883,11 +845,9 @@
     <!-- Element: Textref -->
     <xsd:complexType name="textrefType">
         <xsd:annotation>
-            <xsd:documentation>
-        Element containing a name and an identifier.  Typically used when a
-        name or description can be associated with a number of different
-        identifiers.
-      </xsd:documentation>
+            <xsd:documentation> Element containing a name and an identifier. Typically used when a
+                name or description can be associated with a number of different identifiers.
+            </xsd:documentation>
         </xsd:annotation>
         <xsd:sequence minOccurs="1" maxOccurs="unbounded">
             <xsd:element name="name" type="textrefNameType" minOccurs="0"/>
@@ -897,10 +857,8 @@
     </xsd:complexType>
     <xsd:complexType name="textrefNameType">
         <xsd:annotation>
-            <xsd:documentation>
-        Textref name element.  Use type attribute to differentiate different
-        kinds of references.
-      </xsd:documentation>
+            <xsd:documentation> Textref name element. Use type attribute to differentiate different
+                kinds of references. </xsd:documentation>
         </xsd:annotation>
         <xsd:simpleContent>
             <xsd:extension base="basicString">
@@ -913,10 +871,8 @@
     </xsd:simpleType>
     <xsd:complexType name="textrefRefidType">
         <xsd:annotation>
-            <xsd:documentation>
-        Textref refid element.  Use type attribute to differentiate different
-        kinds of identifiers.
-      </xsd:documentation>
+            <xsd:documentation> Textref refid element. Use type attribute to differentiate different
+                kinds of identifiers. </xsd:documentation>
         </xsd:annotation>
         <xsd:simpleContent>
             <xsd:extension base="basicString">
@@ -932,9 +888,7 @@
     <!-- Element: Title -->
     <xsd:complexType name="titleType">
         <xsd:annotation>
-            <xsd:documentation>
-        Title element.  
-      </xsd:documentation>
+            <xsd:documentation> Title element. </xsd:documentation>
         </xsd:annotation>
         <xsd:simpleContent>
             <xsd:extension base="basicString">
@@ -946,15 +900,4 @@
         <xsd:restriction base="xsd:string"/>
     </xsd:simpleType>
 
-    <xsd:complexType name="languageOfCatalogingSet">
-        <xsd:sequence minOccurs="1" maxOccurs="unbounded">
-            <xsd:element name="languageTerm" type="xsd:string" minOccurs="0"/>
-            <xsd:element name="scriptTerm" type="xsd:string" minOccurs="0"/>
-            <xsd:element name="transliterationTerm" type="xsd:string" minOccurs="0"/>
-        </xsd:sequence>
-    </xsd:complexType>
-    
-    <xsd:complexType name="languageTerm">
-        <!-- todo: continue... -->
-    </xsd:complexType>    
 </xsd:schema>

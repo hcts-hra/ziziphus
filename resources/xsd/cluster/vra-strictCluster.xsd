@@ -34,7 +34,7 @@
                 </xsd:documentation>
             </xsd:annotation>
 
-            <xsd:restriction base="xsd:string">
+            <xsd:restriction base="langType">
                 <xsd:pattern value="[a-z][a-z][a-z]"/>
             </xsd:restriction>
         </xsd:simpleType>
@@ -46,13 +46,38 @@
                 </xsd:documentation>
             </xsd:annotation>
 
-            <xsd:restriction base="xsd:string">
+            <xsd:restriction base="scriptType">
                 <xsd:pattern value="[A-Z][a-z][a-z][a-z]"/>
             </xsd:restriction>
         </xsd:simpleType>
 
-        <!--todo: define transliterationType -->
+        <xsd:simpleType name="transliterationType">
+            <xsd:restriction base="transliterationType">
+                <xsd:pattern value="[a-z]{4}"/>
+            </xsd:restriction>
+        </xsd:simpleType>
 
+        <xsd:simpleType name="uncertainDateType">
+            <xsd:restriction base="uncertainDateType">
+                <xsd:enumeration value="about"/>
+                <xsd:enumeration value="before"/>
+                <xsd:enumeration value="after"/>
+                <xsd:enumeration value="active"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+
+        <xsd:simpleType name="shapeType">
+            <xsd:restriction base="shapeType">
+                <xsd:enumeration value="oval"/>
+                <xsd:enumeration value="cube"/>
+                <xsd:enumeration value="sphere"/>
+                <xsd:enumeration value="rectangle"/>
+                <xsd:enumeration value="circle"/>
+                <xsd:enumeration value="irregular"/>
+                <xsd:enumeration value="landscape"/>
+                <xsd:enumeration value="portrait"/>
+            </xsd:restriction>
+        </xsd:simpleType>
         <!-- <<< EXTENSION END <<< -->
 
     <!--== Controlled Value Lists ==========================================-->
