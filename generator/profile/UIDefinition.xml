@@ -2,212 +2,230 @@
 <!--
         This a generated file meant for further hand-editing as a UI profile. Must be placed in 'profile'
         directory to take effect during generation of forms and views.
---><group idref="b-d2e10" name="vra:vra">
-    <group name="vra:collection" idref="b-d2e16">
+-->
+<group idref="b-d2e11" name="vra:vra">
+    <group name="vra:collection" idref="b-d2e17">
 
 
-        <set name="vra:agentSet" idref="b-d2e22">
-            <group name="vra:agent" repeated="true" idref="b-d2e67">
-                <group name="vra:name" idref="b-d2e135">
-                    <node name="@type" detail="true" idref="b-d2e142"/>
-                    <textNode xpath="" detail="false" idref="b-d2e10" control="autocomplete" queryType="names" host="http://localhost:8080"/>
+        <set name="vra:agentSet" idref="b-d2e23">
+            <group name="vra:agent" repeated="true" idref="b-d2e68">
+                <group name="vra:name" idref="b-d2e138">
+                    <node name="@type" detail="true" idref="b-d2e145"/>
+                    <textNode detail="false" control="autocomplete" queryType="names" host="http://localhost:8080" idref="b-d2e11"/>
                 </group>
-                <group name="vra:role" idref="b-d2e157">
-                    <node name="@type" detail="false" idref="b-d2e164"/>
-                    <textNode xpath="" detail="true" idref="b-d2e10" control="select1" code-table="role"/>
+                <group name="vra:role" idref="b-d2e160">
+                    <node name="@type" detail="false" idref="b-d2e168"/>
+                    <textNode detail="true" control="select1" code-table="role" idref="b-d2e11"/>
                 </group>
-                <node name="vra:attribution" detail="true" idref="b-d2e73"/>
-                <node name="vra:culture" detail="true" idref="b-d2e94"/>
-                <group name="vra:dates" idref="b-d2e115">
-                    <node name="@type" detail="true" idref="b-d2e134"/>
-                    <group name="vra:earliestDate" idref="b-d2e118">
-                        <node name="@circa" detail="true" idref="b-d2e125"/>
-                        <textNode xpath="" detail="true" idref="b-d2e10"/>
+                <node name="vra:attribution" detail="true" idref="b-d2e74"/>
+                <node name="vra:culture" detail="true" idref="b-d2e95"/>
+                <group name="vra:dates" idref="b-d2e116">
+                    <node name="@type" detail="true" idref="b-d2e137"/>
+                    <group name="vra:earliestDate" idref="b-d2e119">
+                        <node name="@circa" detail="true" idref="b-d2e126"/>
+                        <textNode detail="true" idref="b-d2e11"/>
+                        <node idref="b-d2e127" name="@type" detail="false"/>
                     </group>
-                    <group name="vra:latestDate" idref="b-d2e126">
-                        <node name="@circa" detail="true" idref="b-d2e133"/>
-                        <textNode xpath="" detail="true" idref="b-d2e10"/>
+                    <group name="vra:latestDate" idref="b-d2e128">
+                        <node name="@circa" detail="true" idref="b-d2e135"/>
+                        <textNode detail="true" idref="b-d2e11"/>
+                        <node idref="b-d2e136" name="@type" detail="false"/>
                     </group>
                 </group>
             </group>
-            <node name="vra:notes" detail="false" idref="b-d2e46"/>
+            <node name="vra:notes" detail="false" idref="b-d2e47"/>
         </set>
-        <set name="vra:dateSet" idref="b-d2e245">
-            <group name="vra:date" repeated="true" idref="b-d2e290">
-                <node name="@type" detail="false" idref="b-d2e331"/>
-                <group name="vra:earliestDate" idref="b-d2e296">
-                    <node name="@circa" detail="false" idref="b-d2e303"/>
-                    <textNode xpath="" detail="false" idref="b-d2e10"/>
+        <set name="vra:dateSet" idref="b-d2e249">
+            <group name="vra:date" repeated="true" idref="b-d2e294">
+                <node name="@type" detail="false" idref="b-d2e337"/>
+                <group name="vra:earliestDate" idref="b-d2e300">
+                    <node name="@circa" detail="false" idref="b-d2e307"/>
+                    <textNode detail="false" idref="b-d2e11"/>
+                    <node idref="b-d2e308" name="@type" detail="false"/>
                 </group>
-                <group name="vra:latestDate" idref="b-d2e304">
-                    <node name="@circa" detail="false" idref="b-d2e311"/>
-                    <textNode xpath="" detail="false" idref="b-d2e10"/>
+                <group name="vra:latestDate" idref="b-d2e309">
+                    <node name="@circa" detail="false" idref="b-d2e316"/>
+                    <textNode detail="false" idref="b-d2e11"/>
+                    <node idref="b-d2e317" name="@type" detail="false"/>
                 </group>
-                <group name="vra:alternativeNotation" idref="b-d2e312">
-                    <node name="@type" detail="false" idref="b-d2e316"/>
-                    <textNode xpath="" detail="false" idref="b-d2e10"/>
-                </group>
-            </group>
-            <node name="vra:notes" detail="false" idref="b-d2e269"/>
-        </set>
-        <set name="vra:descriptionSet" idref="b-d2e346">
-            <group name="vra:description" repeated="true" control="textarea" idref="b-d2e391">
-                <node name="@stateOfPreservation" detail="false" idref="b-d2e398"/>
-            </group>
-            <node name="vra:notes" detail="false" idref="b-d2e370"/>
-        </set>
-        <set name="vra:locationSet" idref="b-d2e542">
-
-            <group name="vra:location" repeated="true" idref="b-d2e587">
-                <group name="vra:name" idref="b-d2e615">
-                    <textNode xpath="" detail="false" idref="b-d2e10"/>
-                    <node name="@type" detail="false" idref="b-d2e622"/>
-                </group>
-                <node name="@type" detail="false" idref="b-d2e661"/>
-                <group name="vra:refid" idref="b-d2e593">
-                    <textNode xpath="" detail="false" idref="b-d2e10"/>
-                    <node name="@type" detail="false" idref="b-d2e600"/>
-                </group>
-                <group name="vra:point" idref="b-d2e637">
-                    <node name="vra:lat" detail="false" idref="b-d2e643"/>
-                    <node name="vra:long" detail="false" idref="b-d2e644"/>
-                    <node name="@epsg" detail="false" idref="b-d2e645"/>
-                    <node name="@url" detail="false" idref="b-d2e646"/>
+                <group name="vra:alternativeNotation" idref="b-d2e318">
+                    <node name="@type" detail="false" idref="b-d2e322"/>
+                    <textNode detail="false" idref="b-d2e11"/>
                 </group>
             </group>
-            <node name="vra:notes" detail="false" idref="b-d2e566"/>
+            <node name="vra:notes" detail="false" idref="b-d2e273"/>
         </set>
-        <set name="vra:rightsSet" idref="b-d2e866">
-            <group name="vra:rights" repeated="true" idref="b-d2e911">
+        <set name="vra:descriptionSet" idref="b-d2e352">
+            <group name="vra:description" repeated="true" control="textarea" idref="b-d2e397">
 
-
-                <node name="@type" detail="false" idref="b-d2e973"/>
-                <node name="vra:rightsHolder" detail="false" idref="b-d2e917"/>
-                <node name="vra:text" detail="false" idref="b-d2e938"/>
-            </group>
-            <node name="vra:notes" detail="false" idref="b-d2e890"/>
-        </set>
-        <set name="vra:subjectSet" idref="b-d2e1260">
-            <group name="vra:subject" repeated="true" idref="b-d2e1305">
-                <group name="vra:term" idref="b-d2e1311">
-
-                    <node name="@type" detail="false" idref="b-d2e1318"/>
-                    <textNode xpath="" detail="false" idref="b-d2e10" control="autocomplete" queryType="subjects" host="http://localhost:8080"/>
+                <node idref="b-d2e457" name="@type" detail="false"/>
+                <node idref="b-d2e403" name="vra:text" detail="false"/>
+                <group idref="b-d2e409" name="vra:author" repeated="true">
+                    <group idref="b-d2e412" name="vra:name" xpath="/vra:vra/vra:collection/vra:descriptionSet/vra:description/vra:author/vra:name">
+                        <textNode detail="false"/>
+                        <node idref="b-d2e419" name="@type" detail="false" xpath="/vra:vra/vra:collection/vra:descriptionSet/vra:description/vra:author/vra:name/@type"/>
+                    </group>
+                    <group idref="b-d2e434" name="vra:role" xpath="/vra:vra/vra:collection/vra:descriptionSet/vra:description/vra:author/vra:role">
+                        <textNode detail="false"/>
+                        <node idref="b-d2e442" name="@type" detail="false" xpath="/vra:vra/vra:collection/vra:descriptionSet/vra:description/vra:author/vra:role/@type"/>
+                    </group>
                 </group>
             </group>
-            <node name="vra:notes" detail="false" idref="b-d2e1284"/>
+            <node name="vra:notes" detail="false" idref="b-d2e376"/>
         </set>
-        <set name="vra:titleSet" idref="b-d2e1522">
-            <group name="vra:title" repeated="true" idref="b-d2e1567">
+        <set name="vra:locationSet" idref="b-d2e587">
 
-                <node name="@type" detail="false" idref="b-d2e1574"/>
-                <textNode xpath="" detail="false" idref="b-d2e10"/>
-            </group>
-            <node name="vra:notes" detail="false" idref="b-d2e1546"/>
-        </set>
-
-        <separator xpath="" idref="b-d2e10"/>
-
-        <set name="vra:culturalContextSet" visible="false" idref="b-d2e179">
-
-            <group name="vra:culturalContext" repeated="true" idref="b-d2e224"/>
-            <node name="vra:notes" detail="false" idref="b-d2e203"/>
-        </set>
-        <set name="vra:inscriptionSet" visible="false" idref="b-d2e413">
-            <group name="vra:inscription" repeated="true" idref="b-d2e458">
-                <group name="vra:text" idref="b-d2e506">
-                    <node name="@type" detail="false" idref="b-d2e513"/>
-
-                    <textNode xpath="" detail="false" control="textarea" idref="b-d2e10"/>
+            <group name="vra:location" repeated="true" idref="b-d2e632">
+                <group name="vra:name" idref="b-d2e660">
+                    <textNode detail="false" idref="b-d2e11"/>
+                    <node name="@type" detail="false" idref="b-d2e667"/>
                 </group>
-
-                <node name="vra:author" detail="false" idref="b-d2e464"/>
-                <node name="vra:position" detail="false" idref="b-d2e485"/>
-            </group>
-            <node name="vra:notes" detail="false" idref="b-d2e437"/>
-        </set>
-        <set name="vra:materialSet" visible="false" idref="b-d2e662">
-
-            <group name="vra:material" repeated="true" idref="b-d2e707">
-
-                <node name="@type" detail="false" idref="b-d2e714"/>
-                <textNode xpath="" detail="false" idref="b-d2e10"/>
-            </group>
-            <node name="vra:notes" detail="false" idref="b-d2e686"/>
-        </set>
-        <set name="vra:measurementsSet" visible="false" idref="b-d2e729">
-            <group name="vra:measurements" repeated="true" idref="b-d2e774">
-
-                <node name="@type" detail="false" idref="b-d2e781"/>
-                <textNode xpath="" detail="false" idref="b-d2e10"/>
-                <node name="@unit" detail="false" idref="b-d2e782"/>
-                <node name="@shape" detail="false" idref="b-d2e783"/>
-            </group>
-            <node name="vra:notes" detail="false" idref="b-d2e753"/>
-        </set>
-        <set name="vra:relationSet" visible="false" idref="b-d2e798">
-            <group name="vra:relation" repeated="true" idref="b-d2e843">
-
-
-                <node name="@type" detail="false" idref="b-d2e851"/>
-                <textNode xpath="" detail="false" idref="b-d2e10"/>
-                <node name="@relids" detail="false" idref="b-d2e850"/>
-            </group>
-            <node name="vra:notes" detail="false" idref="b-d2e822"/>
-        </set>
-        <set name="vra:sourceSet" visible="false" idref="b-d2e974">
-            <group name="vra:source" repeated="true" idref="b-d2e1019">
-                <group name="vra:refid" idref="b-d2e1025">
-
-                    <node name="@type" detail="false" idref="b-d2e1032"/>
-                    <textNode xpath="" detail="false" idref="b-d2e10"/>
+                <node name="@type" detail="false" idref="b-d2e703"/>
+                <group name="vra:refid" idref="b-d2e638">
+                    <textNode detail="false" idref="b-d2e11"/>
+                    <node name="@type" detail="false" idref="b-d2e645"/>
                 </group>
-                <group name="vra:name" idref="b-d2e1047">
+                <group name="vra:point" idref="b-d2e682">
 
-                    <node name="@type" detail="false" idref="b-d2e1054"/>
-                    <textNode xpath="" detail="false" idref="b-d2e10"/>
+
+                    <node name="@epsg" detail="false" idref="b-d2e688"/>
+
                 </group>
             </group>
-            <node name="vra:notes" detail="false" idref="b-d2e998"/>
+            <node name="vra:notes" detail="false" idref="b-d2e611"/>
         </set>
-        <set name="vra:stateEditionSet" visible="false" idref="b-d2e1084">
-            <group name="vra:stateEdition" repeated="true" idref="b-d2e1129">
-                <node name="@type" detail="false" idref="b-d2e1193"/>
-                <node name="@count" detail="false" idref="b-d2e1191"/>
-                <node name="@num" detail="false" idref="b-d2e1192"/>
-                <node name="vra:description" detail="false" idref="b-d2e1135"/>
-                <node name="vra:name" detail="false" idref="b-d2e1156"/>
+        <set name="vra:rightsSet" idref="b-d2e908">
+            <group name="vra:rights" repeated="true" idref="b-d2e953">
+
+
+                <node name="@type" detail="false" idref="b-d2e1015"/>
+                <node name="vra:rightsHolder" detail="false" idref="b-d2e959"/>
+                <node name="vra:text" detail="false" idref="b-d2e980"/>
             </group>
-            <node name="vra:notes" detail="false" idref="b-d2e1108"/>
+            <node name="vra:notes" detail="false" idref="b-d2e932"/>
         </set>
-        <set name="vra:stylePeriodSet" visible="false" idref="b-d2e1194">
-            <group name="vra:stylePeriod" repeated="true" idref="b-d2e1239"/>
-            <node name="vra:notes" detail="false" idref="b-d2e1218"/>
-        </set>
-        <set name="vra:techniqueSet" visible="false" idref="b-d2e1347">
-            <group name="vra:technique" repeated="true" idref="b-d2e1392"/>
-            <node name="vra:notes" detail="false" idref="b-d2e1371"/>
-        </set>
-        <set name="vra:textrefSet" visible="false" idref="b-d2e1413">
-            <group name="vra:textref" repeated="true" idref="b-d2e1458">
-                <group name="vra:name" idref="b-d2e1464">
+        <set name="vra:subjectSet" idref="b-d2e1302">
+            <group name="vra:subject" repeated="true" idref="b-d2e1347">
+                <group name="vra:term" idref="b-d2e1353">
 
-                    <textNode xpath="" detail="false" idref="b-d2e10"/>
-                    <node name="@type" detail="false" idref="b-d2e1471"/>
-                </group>
-                <group name="vra:refid" idref="b-d2e1486">
-
-                    <textNode xpath="" detail="false" idref="b-d2e10"/>
-                    <node name="@type" detail="false" idref="b-d2e1493"/>
+                    <node name="@type" detail="false" idref="b-d2e1360"/>
+                    <textNode detail="false" control="autocomplete" queryType="subjects" host="http://localhost:8080" idref="b-d2e11"/>
                 </group>
             </group>
-            <node name="vra:notes" detail="false" idref="b-d2e1437"/>
+            <node name="vra:notes" detail="false" idref="b-d2e1326"/>
         </set>
-        <set name="vra:worktypeSet" visible="false" idref="b-d2e1589">
-            <group name="vra:worktype" repeated="true" idref="b-d2e1634"/>
-            <node name="vra:notes" detail="false" idref="b-d2e1613"/>
+        <set name="vra:titleSet" idref="b-d2e1564">
+            <group name="vra:title" repeated="true" idref="b-d2e1609">
+
+                <node name="@type" detail="false" idref="b-d2e1616"/>
+                <textNode detail="false" idref="b-d2e11"/>
+            </group>
+            <node name="vra:notes" detail="false" idref="b-d2e1588"/>
         </set>
-        <node name="@languageOfCataloging" detail="false" idref="b-d2e6642"/>
-        <node name="@catalogingScript" detail="false" idref="b-d2e6643"/>
+
+        <separator idref="b-d2e11"/>
+
+        <set name="vra:culturalContextSet" visible="false" idref="b-d2e183">
+
+            <group name="vra:culturalContext" repeated="true" idref="b-d2e228"/>
+            <node name="vra:notes" detail="false" idref="b-d2e207"/>
+        </set>
+        <set name="vra:inscriptionSet" visible="false" idref="b-d2e458">
+            <group name="vra:inscription" repeated="true" idref="b-d2e503">
+                <group name="vra:text" idref="b-d2e551">
+                    <node name="@type" detail="false" idref="b-d2e558"/>
+
+                    <textNode detail="false" control="textarea" idref="b-d2e11"/>
+                </group>
+
+                <node name="vra:author" detail="false" idref="b-d2e509"/>
+                <node name="vra:position" detail="false" idref="b-d2e530"/>
+            </group>
+            <node name="vra:notes" detail="false" idref="b-d2e482"/>
+        </set>
+        <set name="vra:materialSet" visible="false" idref="b-d2e704">
+
+            <group name="vra:material" repeated="true" idref="b-d2e749">
+
+                <node name="@type" detail="false" idref="b-d2e756"/>
+                <textNode detail="false" idref="b-d2e11"/>
+            </group>
+            <node name="vra:notes" detail="false" idref="b-d2e728"/>
+        </set>
+        <set name="vra:measurementsSet" visible="false" idref="b-d2e771">
+            <group name="vra:measurements" repeated="true" idref="b-d2e816">
+
+                <node name="@type" detail="false" idref="b-d2e823"/>
+                <textNode detail="false" idref="b-d2e11"/>
+                <node name="@unit" detail="false" idref="b-d2e824"/>
+                <node name="@shape" detail="false" idref="b-d2e825"/>
+            </group>
+            <node name="vra:notes" detail="false" idref="b-d2e795"/>
+        </set>
+        <set name="vra:relationSet" visible="false" idref="b-d2e840">
+            <group name="vra:relation" repeated="true" idref="b-d2e885">
+
+
+                <node name="@type" detail="false" idref="b-d2e893"/>
+                <textNode detail="false" idref="b-d2e11"/>
+                <node name="@relids" detail="false" idref="b-d2e892"/>
+            </group>
+            <node name="vra:notes" detail="false" idref="b-d2e864"/>
+        </set>
+        <set name="vra:sourceSet" visible="false" idref="b-d2e1016">
+            <group name="vra:source" repeated="true" idref="b-d2e1061">
+                <group name="vra:refid" idref="b-d2e1067">
+
+                    <node name="@type" detail="false" idref="b-d2e1074"/>
+                    <textNode detail="false" idref="b-d2e11"/>
+                </group>
+                <group name="vra:name" idref="b-d2e1089">
+
+                    <node name="@type" detail="false" idref="b-d2e1096"/>
+                    <textNode detail="false" idref="b-d2e11"/>
+                </group>
+            </group>
+            <node name="vra:notes" detail="false" idref="b-d2e1040"/>
+        </set>
+        <set name="vra:stateEditionSet" visible="false" idref="b-d2e1126">
+            <group name="vra:stateEdition" repeated="true" idref="b-d2e1171">
+                <node name="@type" detail="false" idref="b-d2e1235"/>
+                <node name="@count" detail="false" idref="b-d2e1233"/>
+                <node name="@num" detail="false" idref="b-d2e1234"/>
+                <node name="vra:description" detail="false" idref="b-d2e1177"/>
+                <node name="vra:name" detail="false" idref="b-d2e1198"/>
+            </group>
+            <node name="vra:notes" detail="false" idref="b-d2e1150"/>
+        </set>
+        <set name="vra:stylePeriodSet" visible="false" idref="b-d2e1236">
+            <group name="vra:stylePeriod" repeated="true" idref="b-d2e1281"/>
+            <node name="vra:notes" detail="false" idref="b-d2e1260"/>
+        </set>
+        <set name="vra:techniqueSet" visible="false" idref="b-d2e1389">
+            <group name="vra:technique" repeated="true" idref="b-d2e1434"/>
+            <node name="vra:notes" detail="false" idref="b-d2e1413"/>
+        </set>
+        <set name="vra:textrefSet" visible="false" idref="b-d2e1455">
+            <group name="vra:textref" repeated="true" idref="b-d2e1500">
+                <group name="vra:name" idref="b-d2e1506">
+
+                    <textNode detail="false" idref="b-d2e11"/>
+                    <node name="@type" detail="false" idref="b-d2e1513"/>
+                </group>
+                <group name="vra:refid" idref="b-d2e1528">
+
+                    <textNode detail="false" idref="b-d2e11"/>
+                    <node name="@type" detail="false" idref="b-d2e1535"/>
+                </group>
+            </group>
+            <node name="vra:notes" detail="false" idref="b-d2e1479"/>
+        </set>
+        <set name="vra:worktypeSet" visible="false" idref="b-d2e1631">
+            <group name="vra:worktype" repeated="true" idref="b-d2e1676"/>
+            <node name="vra:notes" detail="false" idref="b-d2e1655"/>
+        </set>
+
+
+
     </group>
 </group>

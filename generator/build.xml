@@ -15,7 +15,7 @@
     <property name="generator.schema.dir" value="${basedir}/../resources/xsd/generator"/>
     <property name="form.dir" value="${basedir}/../forms"/>
 
-    <property name="debug" value="false"/>
+    <property name="debug" value="true"/>
     <property name="xsl.dir" value="${basedir}/xsl"/>
     <property name="xsl.xsd.dir" value="${xsl.dir}/inlineXSD"/>
 
@@ -576,16 +576,5 @@
             effect in the generation process.
         </echo>
 
-    </target>
-
-    <target name="mergeUIDefinition" depends="generateInitialUIDefinition">
-        <xslt style="../resources/xsl/mergeData.xsl"
-              in="${target.dir}/02_XF_Binds.xml"
-              out="${target.dir}/UIDefinition.xml"
-              force="true">
-            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
-            <classpath refid="transform.class.path"/>
-            <param name="debug" expression="${debug}"/>
-        </xslt>
     </target>
 </project>

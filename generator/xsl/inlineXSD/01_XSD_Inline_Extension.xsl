@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="2.0"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                xmlns:ext="http://exist-db.org/vra/extension"
+                >
 
     <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"/>
     <xsl:strip-space elements="*"/>
@@ -37,13 +39,15 @@
     <xsl:template match="xsd:schema">
         <xsl:copy>     
             <xsl:copy-of select="@*"/>
-            <!-- <xsl:apply-templates select="*[local-name(.) != 'complexType'][local-name(.) != 'simpleType'][local-name(.) != 'attributeGroup']"/> -->            
-            <xsl:apply-templates select="*"/>                
+            <!-- <xsl:apply-templates select="*[local-name(.) != 'complexType'][local-name(.) != 'simpleType'][local-name(.) != 'attributeGroup']"/> -->
+
+            <xsl:apply-templates select="*"/>
         </xsl:copy>
     </xsl:template>
 
 
-   
+   <xsl:template match="xsd:element[starts-with(@ref,'ext:')]" priority="50"/>
+
     <xsl:template match="xsd:complexContent[exists(xsd:extension/xsd:sequence)]" priority="10">
         <xsl:variable name="extensionBaseName" select="xsd:extension/@base"/>
         <xsl:variable name="sequenceToInsert" select="xsd:extension/xsd:sequence"/>

@@ -74,20 +74,40 @@
                   <descriptionSet xmlns="http://www.vraweb.org/vracore4.htm">
                      <display></display>
                      <notes></notes>
-                     <description pref="false" stateOfPreservation=""></description>
+                     <description pref="false" type="">
+                        <text></text>
+                        <author>
+                           <name type=""></name>
+                           <role type=""></role>
+                        </author>
+                     </description>
                   </descriptionSet>
                </xf:instance>
                <xf:bind nodeset="instance()">
                   <xf:bind nodeset="vra:description">
                      <xf:bind nodeset="@pref" type="boolean"></xf:bind>
-                     <xf:bind nodeset="@stateOfPreservation"></xf:bind>
+                     <xf:bind nodeset="@type"></xf:bind>
+                     <xf:bind nodeset="vra:author">
+                        <xf:bind nodeset="vra:name">
+                           <xf:bind nodeset="@type" type="vra:agentNameTypeType"></xf:bind>
+                        </xf:bind>
+                        <xf:bind nodeset="vra:role">
+                           <xf:bind nodeset="@type" type="vra:roleString"></xf:bind>
+                        </xf:bind>
+                     </xf:bind>
                   </xf:bind>
                </xf:bind>
                <xf:bind nodeset="instance()"
                         constraint="count(vra:description[@pref = ('true', '1')]) &lt;= 1"></xf:bind>
                <xf:instance id="i-templates">
                   <templates xmlns="http://www.vraweb.org/vracore4.htm">
-                     <description pref="false" stateOfPreservation=""></description>
+                     <description pref="false" type="">
+                        <text></text>
+                        <author>
+                           <name type=""></name>
+                           <role type=""></role>
+                        </author>
+                     </description>
                      <notes></notes>
                      <display></display>
                   </templates>
@@ -168,7 +188,7 @@
                <tbody model="m-child-model" id="r-vraDescription" xf:repeat-nodeset="vra:description">
                   <tr>
                      <td class="prefCol">
-                        <xf:input ref="@pref" id="d3e36-pref">
+                        <xf:input ref="@pref" id="d3e40-pref">
                            <xf:label>pref</xf:label>
                            <xf:hint>preferred</xf:hint>
                            <xf:action ev:event="xforms-value-changed" if=".=('true',1)"
@@ -180,13 +200,82 @@
                      </td>
                      <td class="contentCol">
                         <xf:group appearance="minimal">
-                           <xf:textarea id="b-d2e391" ref=".">
-                              <xf:hint>Description</xf:hint>
-                           </xf:textarea>
-                           <xf:input ref="@stateOfPreservation">
-                              <xf:label>stateOfPreservation</xf:label>
-                              <xf:hint>@stateOfPreservation</xf:hint>
+                           <xf:input ref="@type">
+                              <xf:label>type</xf:label>
+                              <xf:hint>@type</xf:hint>
                            </xf:input>
+                        </xf:group>
+                        <xf:group appearance="minimal">
+                           <xf:input id="b-d2e403" ref="vra:text">
+                              <xf:label>Text</xf:label>
+                              <xf:hint>Text</xf:hint>
+                           </xf:input>
+                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:text">
+                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
+                           </xf:group>
+                           <xf:trigger class="vraAttributeTrigger">
+                              <xf:label>A</xf:label>
+                              <xf:hint>Edit Attributes</xf:hint>
+                              <xf:action>
+                                 <xf:setvalue ref="instance('i-util')/currentElement" value="'text'"></xf:setvalue>
+                                 <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
+                              </xf:action>
+                              <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
+                           </xf:trigger>
+                        </xf:group>
+                        <xf:group appearance="minimal">
+                           <xf:input id="b-d2e412" ref="vra:author/vra:name">
+                              <xf:label>Name</xf:label>
+                              <xf:hint>Name</xf:hint>
+                           </xf:input>
+                           <xf:select1 id="b-d2e419" ref="vra:author/vra:name/@type">
+                              <xf:label>Type</xf:label>
+                              <xf:hint></xf:hint>
+                              <xf:item>
+                                 <xf:label>Personal</xf:label>
+                                 <xf:value>personal</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Corporate</xf:label>
+                                 <xf:value>corporate</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Family</xf:label>
+                                 <xf:value>family</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Other</xf:label>
+                                 <xf:value>other</xf:value>
+                              </xf:item>
+                           </xf:select1>
+                           <xf:input id="b-d2e434" ref="vra:author/vra:role">
+                              <xf:label>Role</xf:label>
+                              <xf:hint>Role</xf:hint>
+                           </xf:input>
+                           <xf:select1 id="b-d2e442" ref="vra:author/vra:role/@type">
+                              <xf:label>Type</xf:label>
+                              <xf:hint></xf:hint>
+                              <xf:item>
+                                 <xf:label>Code</xf:label>
+                                 <xf:value>code</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Term</xf:label>
+                                 <xf:value>term</xf:value>
+                              </xf:item>
+                           </xf:select1>
+                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:author">
+                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
+                           </xf:group>
+                           <xf:trigger class="vraAttributeTrigger">
+                              <xf:label>A</xf:label>
+                              <xf:hint>Edit Attributes</xf:hint>
+                              <xf:action>
+                                 <xf:setvalue ref="instance('i-util')/currentElement" value="'author'"></xf:setvalue>
+                                 <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
+                              </xf:action>
+                              <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
+                           </xf:trigger>
                         </xf:group>
                      </td>
                      <td class="triggerCol">

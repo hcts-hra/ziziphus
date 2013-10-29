@@ -16,7 +16,7 @@
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(@type,'')) != 0">
                               <div data-bf-type="select1" data-bf-bind="@type" tabindex="0" title="Type"
-                                   id="b-d2e1193">
+                                   id="b-d2e1235">
                                  <xsl:value-of select="@type"></xsl:value-of>
                               </div>
                            </xsl:when>
@@ -50,7 +50,7 @@
                            <xsl:when test="string-length(string-join(vra:description,'')) != 0">
                               <div data-bf-type="input" data-bf-bind="vra:description" tabindex="0"
                                    title="Description"
-                                   id="b-d2e1135">
+                                   id="b-d2e1177">
                                  <xsl:value-of select="vra:description"></xsl:value-of>
                               </div>
                            </xsl:when>
@@ -63,7 +63,7 @@
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:name,'')) != 0">
                               <div data-bf-type="input" data-bf-bind="vra:name" tabindex="0" title="Name"
-                                   id="b-d2e1156"
+                                   id="b-d2e1198"
                                    class="elementName">
                                  <xsl:value-of select="vra:name"></xsl:value-of>
                               </div>

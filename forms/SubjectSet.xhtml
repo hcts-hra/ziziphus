@@ -174,7 +174,7 @@
                      <td class="prefCol"></td>
                      <td class="contentCol">
                         <xf:group appearance="minimal">
-                           <xf:select1 id="b-d2e1318" ref="vra:term/@type">
+                           <xf:select1 id="b-d2e1360" ref="vra:term/@type">
                               <xf:label>Type</xf:label>
                               <xf:hint></xf:hint>
                               <xf:item>
@@ -226,11 +226,13 @@
                                  <xf:value>otherName</xf:value>
                               </xf:item>
                            </xf:select1><span style="display:none">
-                              <xf:input id="b-d2e1311" class="Term-autocomplete" ref="vra:term">
-                                 <xf:label></xf:label>
+                              <xf:input id="b-d2e1353" class="Term-autocomplete" ref="vra:term">
+                                 <xf:label>Hidden Input for autocomplete</xf:label>
                               </xf:input></span><label for="Term-autocomplete">Term</label><input type="text" name="Term-autocomplete" class="Term-autocomplete-input"
-                                  placeholder="Term"
-                                  query="subjects"
+                                  placeholder="Type to search ..."
+                                  queryType="subjects"
+                                  host="http://localhost:8080"
+                                  autocomplete="off"
                                   callbackSet="r-vraSubject" /><xf:group class="vraAttributes" appearance="minimal" ref="vra:term">
                               <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                            </xf:group>

@@ -77,10 +77,7 @@
                      <location pref="false" type="">
                         <refid type=""></refid>
                         <name type=""></name>
-                        <point epsg="" url="">
-                           <lat></lat>
-                           <long></long>
-                        </point>
+                        <point epsg=""></point>
                      </location>
                   </locationSet>
                </xf:instance>
@@ -94,11 +91,8 @@
                      <xf:bind nodeset="vra:refid">
                         <xf:bind nodeset="@type" type="vra:locationRefidTypeType"></xf:bind>
                      </xf:bind>
-                     <xf:bind nodeset="vra:point" type="">
-                        <xf:bind nodeset="vra:lat"></xf:bind>
-                        <xf:bind nodeset="vra:long"></xf:bind>
+                     <xf:bind nodeset="vra:point" type="geoType">
                         <xf:bind nodeset="@epsg"></xf:bind>
-                        <xf:bind nodeset="@url"></xf:bind>
                      </xf:bind>
                   </xf:bind>
                </xf:bind>
@@ -109,10 +103,7 @@
                      <location pref="false" type="">
                         <refid type=""></refid>
                         <name type=""></name>
-                        <point epsg="" url="">
-                           <lat></lat>
-                           <long></long>
-                        </point>
+                        <point epsg=""></point>
                      </location>
                      <notes></notes>
                      <display></display>
@@ -194,7 +185,7 @@
                <tbody model="m-child-model" id="r-vraLocation" xf:repeat-nodeset="vra:location">
                   <tr>
                      <td class="prefCol">
-                        <xf:input ref="@pref" id="d3e40-pref">
+                        <xf:input ref="@pref" id="d3e52-pref">
                            <xf:label>pref</xf:label>
                            <xf:hint>preferred</xf:hint>
                            <xf:action ev:event="xforms-value-changed" if=".=('true',1)"
@@ -206,7 +197,7 @@
                      </td>
                      <td class="contentCol">
                         <xf:group appearance="minimal">
-                           <xf:select1 id="b-d2e661" ref="@type">
+                           <xf:select1 id="b-d2e703" ref="@type">
                               <xf:label>Type</xf:label>
                               <xf:hint></xf:hint>
                               <xf:item>
@@ -268,11 +259,11 @@
                            </xf:select1>
                         </xf:group>
                         <xf:group appearance="minimal">
-                           <xf:input id="b-d2e615" ref="vra:name">
+                           <xf:input id="b-d2e660" ref="vra:name">
                               <xf:label>Name</xf:label>
                               <xf:hint>Name</xf:hint>
                            </xf:input>
-                           <xf:select1 id="b-d2e622" ref="vra:name/@type">
+                           <xf:select1 id="b-d2e667" ref="vra:name/@type">
                               <xf:label>Type</xf:label>
                               <xf:hint></xf:hint>
                               <xf:item>
@@ -306,11 +297,11 @@
                            </xf:trigger>
                         </xf:group>
                         <xf:group appearance="minimal">
-                           <xf:input id="b-d2e593" ref="vra:refid">
+                           <xf:input id="b-d2e638" ref="vra:refid">
                               <xf:label>Refid</xf:label>
                               <xf:hint>Refid</xf:hint>
                            </xf:input>
-                           <xf:select1 id="b-d2e600" ref="vra:refid/@type">
+                           <xf:select1 id="b-d2e645" ref="vra:refid/@type">
                               <xf:label>Type</xf:label>
                               <xf:hint></xf:hint>
                               <xf:item>
@@ -347,10 +338,6 @@
                            <xf:input ref="vra:point/@epsg">
                               <xf:label>epsg</xf:label>
                               <xf:hint>@epsg</xf:hint>
-                           </xf:input>
-                           <xf:input ref="vra:point/@url">
-                              <xf:label>url</xf:label>
-                              <xf:hint>@url</xf:hint>
                            </xf:input>
                            <xf:group class="vraAttributes" appearance="minimal" ref="vra:point">
                               <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>

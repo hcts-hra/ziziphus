@@ -16,7 +16,7 @@
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(.,'')) != 0">
                               <div data-bf-type="input" data-bf-bind="." tabindex="0" title="Technique"
-                                   id="b-d2e1392">
+                                   id="b-d2e1434">
                                  <xsl:value-of select="."></xsl:value-of>
                               </div>
                            </xsl:when>

@@ -102,6 +102,7 @@
             <xsl:message select="concat('inlineComplexType: ComplexType: ', @type)"/>
         </xsl:if>
 
+        <xsl:if test="$referencedType">
         <xsl:choose>
             <xsl:when test="name(..)='xsd:all'">
                 <xsl:copy-of select="."/>
@@ -131,6 +132,7 @@
                 </xsl:copy>
             </xsl:otherwise>
         </xsl:choose>
+        </xsl:if>
     </xsl:template>
         
         
