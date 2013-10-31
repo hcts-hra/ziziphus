@@ -39,7 +39,7 @@
         <script type="text/javascript" src="resources/script/diff_match_patch.js"/>
         <script type="text/javascript">//
             function fill_info(res, rev1, rev2) {
-                $("#resource-link").text(resource).attr("href", resource);
+                $("#resource-link").text(resource).attr("href", compose_current_url(resource));
                 $("#rev1").val(rev1);
                 $("#rev2").val(rev2);
             }
