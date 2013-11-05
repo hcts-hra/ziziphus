@@ -56,10 +56,10 @@
             <node name="vra:notes" detail="false" idref="b-d2e273"/>
         </set>
         <set name="vra:descriptionSet" idref="b-d2e352">
-            <group name="vra:description" repeated="true" control="textarea" idref="b-d2e397">
+            <group name="vra:description" repeated="true" idref="b-d2e397">
 
                 <node idref="b-d2e457" name="@type" detail="false"/>
-                <node idref="b-d2e403" name="vra:text" detail="false"/>
+                <node idref="b-d2e403" name="vra:text" detail="false" control="textarea"/>
                 <group idref="b-d2e409" name="vra:author" repeated="true">
                     <group idref="b-d2e412" name="vra:name" xpath="/vra:vra/vra:collection/vra:descriptionSet/vra:description/vra:author/vra:name">
                         <textNode detail="false"/>
