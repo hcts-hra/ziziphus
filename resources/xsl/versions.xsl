@@ -132,26 +132,26 @@
 			</xsl:choose>
 			<td>
 				<a href="{$versions-xql}?action=restore&amp;rev={$rev}&amp;resource={$path}"
-					target="_blank" title="XML content of that revision.">content</a>
+					target="_blank" title="XML content of that revision">content</a>
 				<xsl:text>, </xsl:text><br/>
 				<a href="{$versions-xql}?action=diff&amp;rev={$rev}&amp;resource={$path}"
-					target="_blank" title="eXistsDB-provided diffs recorded in that revision.">diff</a>
+					target="_blank" title="eXistsDB-provided diffs recorded in that revision">diff</a>
 			</td>
 			<td>
 				<a href="{$xqdiff}?resource={$path}&amp;rev1={$prev-rev}&amp;rev2={$rev}"
-					target="_blank" title="Formatted content changes recorded in that revision.">changes</a>
+					target="_blank" title="Compare to the previous version (formatted data-view)">changes to previous</a>
 				<xsl:text>, </xsl:text><br/>
 				<a href="{$xqdiff}?resource={$path}&amp;rev1={$rev}&amp;rev2=last"
-					target="_blank" title="Formatted content changes since that revision until now.">changes since then</a>
+					target="_blank" title="Compare to the latest version (formatted data-view)">changes since then</a>
 			</td>
 			<td>
 				<a href="{$diff}?resource={$path}&amp;rev1={$prev-rev}&amp;rev2={$rev}"
 					target="_blank"
-					title="Presetation of XML-source changes recorded in that revision.">changes</a>
+					title="Compare to the previous version (XML source-data view)">changes to previous</a>
 				<xsl:text>, </xsl:text><br/>
 				<a href="{$diff}?resource={$path}&amp;rev1={$rev}&amp;rev2=last"
 					target="_blank"
-					title="Presetation of XML-source changes since that revision until now.">changes since then</a>
+					title="Compare to the latest version (XML source-code view)">changes since then</a>
 			</td>
 		</tr>
 	</xsl:template>
