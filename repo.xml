@@ -10,4 +10,5 @@
     <repo:target>/ziziphus</repo:target>
     <repo:prepare>pre-install.xql</repo:prepare>
     <repo:permissions user="editor" password="editor" group="biblio.users" mode="0444"/>
+    <deployed>2013-11-05T10:31:10.031+01:00</deployed>
 </repo:meta>

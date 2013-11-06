@@ -151,6 +151,19 @@
                                                          <xsd:extension base="dateValueType">
                                                             <xsd:attribute name="circa" type="xsd:boolean"/>
                                                             <xsd:attribute name="type" type="uncertainDateType"/>
+                                                            <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                            <xsd:attribute name="extent" type="xsd:string"/>
+                                                            <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                            <xsd:attribute ref="xml:lang"/>
+                                                            <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                            <xsd:attribute name="refid" type="xsd:string"/>
+                                                            <xsd:attribute name="rules" type="xsd:string"/>
+                                                            <xsd:attribute name="source" type="xsd:string"/>
+                                                            <xsd:attribute name="vocab" type="xsd:string"/>
+                                                            <xsd:attribute name="lang" type="langType"/>
+                                                            <xsd:attribute name="transliteration" type="xsd:string"/>
+                                                            <xsd:attribute name="script" type="scriptType"/>
+                                                            <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                          </xsd:extension>
                                                       </xsd:simpleContent>
                                                    </xsd:complexType>
@@ -164,12 +177,38 @@
                                                          <xsd:extension base="dateValueType">
                                                             <xsd:attribute name="circa" type="xsd:boolean"/>
                                                             <xsd:attribute name="type" type="uncertainDateType"/>
+                                                            <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                            <xsd:attribute name="extent" type="xsd:string"/>
+                                                            <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                            <xsd:attribute ref="xml:lang"/>
+                                                            <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                            <xsd:attribute name="refid" type="xsd:string"/>
+                                                            <xsd:attribute name="rules" type="xsd:string"/>
+                                                            <xsd:attribute name="source" type="xsd:string"/>
+                                                            <xsd:attribute name="vocab" type="xsd:string"/>
+                                                            <xsd:attribute name="lang" type="langType"/>
+                                                            <xsd:attribute name="transliteration" type="xsd:string"/>
+                                                            <xsd:attribute name="script" type="scriptType"/>
+                                                            <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                          </xsd:extension>
                                                       </xsd:simpleContent>
                                                    </xsd:complexType>
                                                 </xsd:element>
                                              </xsd:sequence>
                                              <xsd:attribute name="type" type="agentDateTypeType"/>
+                                             <xsd:attribute name="dataDate" type="dateValueType"/>
+                                             <xsd:attribute name="extent" type="xsd:string"/>
+                                             <xsd:attribute name="href" type="xsd:anyURI"/>
+                                             <xsd:attribute ref="xml:lang"/>
+                                             <xsd:attribute name="pref" type="xsd:boolean"/>
+                                             <xsd:attribute name="refid" type="xsd:string"/>
+                                             <xsd:attribute name="rules" type="xsd:string"/>
+                                             <xsd:attribute name="source" type="xsd:string"/>
+                                             <xsd:attribute name="vocab" type="xsd:string"/>
+                                             <xsd:attribute name="lang" type="langType"/>
+                                             <xsd:attribute name="transliteration" type="xsd:string"/>
+                                             <xsd:attribute name="script" type="scriptType"/>
+                                             <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                           </xsd:complexType>
                                        </xsd:element>
                                        <xsd:element lasse2="" name="name" type="agentNameType" minOccurs="0">
@@ -203,10 +242,23 @@
                                              <xsd:annotation>
                                                 <xsd:documentation>Basic datatype for all roles.</xsd:documentation>
                                              </xsd:annotation>
-                                             <xsd:simpleContent>
+                                             <xsd:simpleContent xmlns="http://www.w3.org/2001/XMLSchema">
                                                 <xsd:extension base="xsd:string">
-                                                   <xsd:attribute name="vocab" type="xsd:string"/>
-                                                   <xsd:attribute name="type" type="roleString"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="type" type="roleString"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="dataDate" type="dateValueType"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="extent" type="xsd:string"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="href" type="xsd:anyURI"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" ref="xml:lang"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="pref" type="xsd:boolean"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="refid" type="xsd:string"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="rules" type="xsd:string"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="source" type="xsd:string"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="vocab" type="xsd:string"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="lang" type="langType"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="transliteration"
+                                                                  type="xsd:string"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="script" type="scriptType"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="lastAccessed" type="xsd:date"/>
                                                 </xsd:extension>
                                              </xsd:simpleContent>
                                           </xsd:complexType>
@@ -377,6 +429,19 @@
                                                 <xsd:extension base="dateValueType">
                                                    <xsd:attribute name="circa" type="xsd:boolean"/>
                                                    <xsd:attribute name="type" type="uncertainDateType"/>
+                                                   <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                   <xsd:attribute name="extent" type="xsd:string"/>
+                                                   <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                   <xsd:attribute ref="xml:lang"/>
+                                                   <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                   <xsd:attribute name="refid" type="xsd:string"/>
+                                                   <xsd:attribute name="rules" type="xsd:string"/>
+                                                   <xsd:attribute name="source" type="xsd:string"/>
+                                                   <xsd:attribute name="vocab" type="xsd:string"/>
+                                                   <xsd:attribute name="lang" type="langType"/>
+                                                   <xsd:attribute name="transliteration" type="xsd:string"/>
+                                                   <xsd:attribute name="script" type="scriptType"/>
+                                                   <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                 </xsd:extension>
                                              </xsd:simpleContent>
                                           </xsd:complexType>
@@ -390,6 +455,19 @@
                                                 <xsd:extension base="dateValueType">
                                                    <xsd:attribute name="circa" type="xsd:boolean"/>
                                                    <xsd:attribute name="type" type="uncertainDateType"/>
+                                                   <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                   <xsd:attribute name="extent" type="xsd:string"/>
+                                                   <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                   <xsd:attribute ref="xml:lang"/>
+                                                   <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                   <xsd:attribute name="refid" type="xsd:string"/>
+                                                   <xsd:attribute name="rules" type="xsd:string"/>
+                                                   <xsd:attribute name="source" type="xsd:string"/>
+                                                   <xsd:attribute name="vocab" type="xsd:string"/>
+                                                   <xsd:attribute name="lang" type="langType"/>
+                                                   <xsd:attribute name="transliteration" type="xsd:string"/>
+                                                   <xsd:attribute name="script" type="scriptType"/>
+                                                   <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                 </xsd:extension>
                                              </xsd:simpleContent>
                                           </xsd:complexType>
@@ -499,19 +577,33 @@
                                        <xsd:documentation>Description type</xsd:documentation>
                                     </xsd:annotation>
                                     <xsd:sequence>
-                                       <xsd:element lasse2="" name="text" type="textType">
-                                          <xsd:complexType lasse3="" name="text" type="textType">
+                                       <xsd:element lasse2="" name="text" type="basicString">
+                                          <xsd:complexType lasse3="" name="text" type="basicString">
+                                             <xsd:annotation>
+                                                <xsd:documentation>Basic datatype for all freetext values. Allows assignment of source, vocabulary, refid and language attributes to virtually any value.</xsd:documentation>
+                                             </xsd:annotation>
                                              <xsd:simpleContent>
                                                 <xsd:extension base="xsd:string">
+                                                   <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                   <xsd:attribute name="extent" type="xsd:string"/>
+                                                   <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                   <xsd:attribute ref="xml:lang"/>
+                                                   <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                   <xsd:attribute name="refid" type="xsd:string"/>
+                                                   <xsd:attribute name="rules" type="xsd:string"/>
+                                                   <xsd:attribute name="source" type="xsd:string"/>
+                                                   <xsd:attribute name="vocab" type="xsd:string"/>
                                                    <xsd:attribute name="lang" type="langType"/>
+                                                   <xsd:attribute name="transliteration" type="xsd:string"/>
                                                    <xsd:attribute name="script" type="scriptType"/>
+                                                   <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                 </xsd:extension>
                                              </xsd:simpleContent>
                                           </xsd:complexType>
                                        </xsd:element>
                                        <xsd:element lasse2="" name="author" type="authorType" minOccurs="0" maxOccurs="unbounded">
                                           <xsd:complexType lasse3="" name="author" type="authorType" minOccurs="0" maxOccurs="unbounded">
-                                             <xsd:sequence>
+                                             <xsd:sequence maxOccurs="unbounded">
                                                 <xsd:element lasse2="" name="name" type="agentNameType" minOccurs="0">
                                                    <xsd:complexType lasse3="" name="name" type="agentNameType" minOccurs="0">
                                                       <xsd:annotation>
@@ -543,15 +635,41 @@
                                                       <xsd:annotation>
                                                          <xsd:documentation>Basic datatype for all roles.</xsd:documentation>
                                                       </xsd:annotation>
-                                                      <xsd:simpleContent>
+                                                      <xsd:simpleContent xmlns="http://www.w3.org/2001/XMLSchema">
                                                          <xsd:extension base="xsd:string">
-                                                            <xsd:attribute name="vocab" type="xsd:string"/>
-                                                            <xsd:attribute name="type" type="roleString"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="type" type="roleString"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="dataDate" type="dateValueType"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="extent" type="xsd:string"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="href" type="xsd:anyURI"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" ref="xml:lang"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="pref" type="xsd:boolean"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="refid" type="xsd:string"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="rules" type="xsd:string"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="source" type="xsd:string"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="vocab" type="xsd:string"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="lang" type="langType"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="transliteration"
+                                                                           type="xsd:string"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="script" type="scriptType"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="lastAccessed" type="xsd:date"/>
                                                          </xsd:extension>
                                                       </xsd:simpleContent>
                                                    </xsd:complexType>
                                                 </xsd:element>
                                              </xsd:sequence>
+                                             <xsd:attribute name="dataDate" type="dateValueType"/>
+                                             <xsd:attribute name="extent" type="xsd:string"/>
+                                             <xsd:attribute name="href" type="xsd:anyURI"/>
+                                             <xsd:attribute ref="xml:lang"/>
+                                             <xsd:attribute name="pref" type="xsd:boolean"/>
+                                             <xsd:attribute name="refid" type="xsd:string"/>
+                                             <xsd:attribute name="rules" type="xsd:string"/>
+                                             <xsd:attribute name="source" type="xsd:string"/>
+                                             <xsd:attribute name="vocab" type="xsd:string"/>
+                                             <xsd:attribute name="lang" type="langType"/>
+                                             <xsd:attribute name="transliteration" type="xsd:string"/>
+                                             <xsd:attribute name="script" type="scriptType"/>
+                                             <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                           </xsd:complexType>
                                        </xsd:element>
                                     </xsd:sequence>
@@ -2181,6 +2299,19 @@
                                                                   <xsd:extension base="dateValueType">
                                                                      <xsd:attribute name="circa" type="xsd:boolean"/>
                                                                      <xsd:attribute name="type" type="uncertainDateType"/>
+                                                                     <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                                     <xsd:attribute name="extent" type="xsd:string"/>
+                                                                     <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                                     <xsd:attribute ref="xml:lang"/>
+                                                                     <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                                     <xsd:attribute name="refid" type="xsd:string"/>
+                                                                     <xsd:attribute name="rules" type="xsd:string"/>
+                                                                     <xsd:attribute name="source" type="xsd:string"/>
+                                                                     <xsd:attribute name="vocab" type="xsd:string"/>
+                                                                     <xsd:attribute name="lang" type="langType"/>
+                                                                     <xsd:attribute name="transliteration" type="xsd:string"/>
+                                                                     <xsd:attribute name="script" type="scriptType"/>
+                                                                     <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                                   </xsd:extension>
                                                                </xsd:simpleContent>
                                                             </xsd:complexType>
@@ -2194,12 +2325,38 @@
                                                                   <xsd:extension base="dateValueType">
                                                                      <xsd:attribute name="circa" type="xsd:boolean"/>
                                                                      <xsd:attribute name="type" type="uncertainDateType"/>
+                                                                     <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                                     <xsd:attribute name="extent" type="xsd:string"/>
+                                                                     <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                                     <xsd:attribute ref="xml:lang"/>
+                                                                     <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                                     <xsd:attribute name="refid" type="xsd:string"/>
+                                                                     <xsd:attribute name="rules" type="xsd:string"/>
+                                                                     <xsd:attribute name="source" type="xsd:string"/>
+                                                                     <xsd:attribute name="vocab" type="xsd:string"/>
+                                                                     <xsd:attribute name="lang" type="langType"/>
+                                                                     <xsd:attribute name="transliteration" type="xsd:string"/>
+                                                                     <xsd:attribute name="script" type="scriptType"/>
+                                                                     <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                                   </xsd:extension>
                                                                </xsd:simpleContent>
                                                             </xsd:complexType>
                                                          </xsd:element>
                                                       </xsd:sequence>
                                                       <xsd:attribute name="type" type="agentDateTypeType"/>
+                                                      <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                      <xsd:attribute name="extent" type="xsd:string"/>
+                                                      <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                      <xsd:attribute ref="xml:lang"/>
+                                                      <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                      <xsd:attribute name="refid" type="xsd:string"/>
+                                                      <xsd:attribute name="rules" type="xsd:string"/>
+                                                      <xsd:attribute name="source" type="xsd:string"/>
+                                                      <xsd:attribute name="vocab" type="xsd:string"/>
+                                                      <xsd:attribute name="lang" type="langType"/>
+                                                      <xsd:attribute name="transliteration" type="xsd:string"/>
+                                                      <xsd:attribute name="script" type="scriptType"/>
+                                                      <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                    </xsd:complexType>
                                                 </xsd:element>
                                                 <xsd:element lasse2="" name="name" type="agentNameType" minOccurs="0">
@@ -2233,10 +2390,23 @@
                                                       <xsd:annotation>
                                                          <xsd:documentation>Basic datatype for all roles.</xsd:documentation>
                                                       </xsd:annotation>
-                                                      <xsd:simpleContent>
+                                                      <xsd:simpleContent xmlns="http://www.w3.org/2001/XMLSchema">
                                                          <xsd:extension base="xsd:string">
-                                                            <xsd:attribute name="vocab" type="xsd:string"/>
-                                                            <xsd:attribute name="type" type="roleString"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="type" type="roleString"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="dataDate" type="dateValueType"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="extent" type="xsd:string"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="href" type="xsd:anyURI"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" ref="xml:lang"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="pref" type="xsd:boolean"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="refid" type="xsd:string"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="rules" type="xsd:string"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="source" type="xsd:string"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="vocab" type="xsd:string"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="lang" type="langType"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="transliteration"
+                                                                           type="xsd:string"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="script" type="scriptType"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="lastAccessed" type="xsd:date"/>
                                                          </xsd:extension>
                                                       </xsd:simpleContent>
                                                    </xsd:complexType>
@@ -2407,6 +2577,19 @@
                                                          <xsd:extension base="dateValueType">
                                                             <xsd:attribute name="circa" type="xsd:boolean"/>
                                                             <xsd:attribute name="type" type="uncertainDateType"/>
+                                                            <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                            <xsd:attribute name="extent" type="xsd:string"/>
+                                                            <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                            <xsd:attribute ref="xml:lang"/>
+                                                            <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                            <xsd:attribute name="refid" type="xsd:string"/>
+                                                            <xsd:attribute name="rules" type="xsd:string"/>
+                                                            <xsd:attribute name="source" type="xsd:string"/>
+                                                            <xsd:attribute name="vocab" type="xsd:string"/>
+                                                            <xsd:attribute name="lang" type="langType"/>
+                                                            <xsd:attribute name="transliteration" type="xsd:string"/>
+                                                            <xsd:attribute name="script" type="scriptType"/>
+                                                            <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                          </xsd:extension>
                                                       </xsd:simpleContent>
                                                    </xsd:complexType>
@@ -2420,6 +2603,19 @@
                                                          <xsd:extension base="dateValueType">
                                                             <xsd:attribute name="circa" type="xsd:boolean"/>
                                                             <xsd:attribute name="type" type="uncertainDateType"/>
+                                                            <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                            <xsd:attribute name="extent" type="xsd:string"/>
+                                                            <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                            <xsd:attribute ref="xml:lang"/>
+                                                            <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                            <xsd:attribute name="refid" type="xsd:string"/>
+                                                            <xsd:attribute name="rules" type="xsd:string"/>
+                                                            <xsd:attribute name="source" type="xsd:string"/>
+                                                            <xsd:attribute name="vocab" type="xsd:string"/>
+                                                            <xsd:attribute name="lang" type="langType"/>
+                                                            <xsd:attribute name="transliteration" type="xsd:string"/>
+                                                            <xsd:attribute name="script" type="scriptType"/>
+                                                            <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                          </xsd:extension>
                                                       </xsd:simpleContent>
                                                    </xsd:complexType>
@@ -2529,19 +2725,33 @@
                                                 <xsd:documentation>Description type</xsd:documentation>
                                              </xsd:annotation>
                                              <xsd:sequence>
-                                                <xsd:element lasse2="" name="text" type="textType">
-                                                   <xsd:complexType lasse3="" name="text" type="textType">
+                                                <xsd:element lasse2="" name="text" type="basicString">
+                                                   <xsd:complexType lasse3="" name="text" type="basicString">
+                                                      <xsd:annotation>
+                                                         <xsd:documentation>Basic datatype for all freetext values. Allows assignment of source, vocabulary, refid and language attributes to virtually any value.</xsd:documentation>
+                                                      </xsd:annotation>
                                                       <xsd:simpleContent>
                                                          <xsd:extension base="xsd:string">
+                                                            <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                            <xsd:attribute name="extent" type="xsd:string"/>
+                                                            <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                            <xsd:attribute ref="xml:lang"/>
+                                                            <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                            <xsd:attribute name="refid" type="xsd:string"/>
+                                                            <xsd:attribute name="rules" type="xsd:string"/>
+                                                            <xsd:attribute name="source" type="xsd:string"/>
+                                                            <xsd:attribute name="vocab" type="xsd:string"/>
                                                             <xsd:attribute name="lang" type="langType"/>
+                                                            <xsd:attribute name="transliteration" type="xsd:string"/>
                                                             <xsd:attribute name="script" type="scriptType"/>
+                                                            <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                          </xsd:extension>
                                                       </xsd:simpleContent>
                                                    </xsd:complexType>
                                                 </xsd:element>
                                                 <xsd:element lasse2="" name="author" type="authorType" minOccurs="0" maxOccurs="unbounded">
                                                    <xsd:complexType lasse3="" name="author" type="authorType" minOccurs="0" maxOccurs="unbounded">
-                                                      <xsd:sequence>
+                                                      <xsd:sequence maxOccurs="unbounded">
                                                          <xsd:element lasse2="" name="name" type="agentNameType" minOccurs="0">
                                                             <xsd:complexType lasse3="" name="name" type="agentNameType" minOccurs="0">
                                                                <xsd:annotation>
@@ -2573,15 +2783,41 @@
                                                                <xsd:annotation>
                                                                   <xsd:documentation>Basic datatype for all roles.</xsd:documentation>
                                                                </xsd:annotation>
-                                                               <xsd:simpleContent>
+                                                               <xsd:simpleContent xmlns="http://www.w3.org/2001/XMLSchema">
                                                                   <xsd:extension base="xsd:string">
-                                                                     <xsd:attribute name="vocab" type="xsd:string"/>
-                                                                     <xsd:attribute name="type" type="roleString"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="type" type="roleString"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="dataDate" type="dateValueType"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="extent" type="xsd:string"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="href" type="xsd:anyURI"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" ref="xml:lang"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="pref" type="xsd:boolean"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="refid" type="xsd:string"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="rules" type="xsd:string"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="source" type="xsd:string"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="vocab" type="xsd:string"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="lang" type="langType"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="transliteration"
+                                                                                    type="xsd:string"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="script" type="scriptType"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="lastAccessed" type="xsd:date"/>
                                                                   </xsd:extension>
                                                                </xsd:simpleContent>
                                                             </xsd:complexType>
                                                          </xsd:element>
                                                       </xsd:sequence>
+                                                      <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                      <xsd:attribute name="extent" type="xsd:string"/>
+                                                      <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                      <xsd:attribute ref="xml:lang"/>
+                                                      <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                      <xsd:attribute name="refid" type="xsd:string"/>
+                                                      <xsd:attribute name="rules" type="xsd:string"/>
+                                                      <xsd:attribute name="source" type="xsd:string"/>
+                                                      <xsd:attribute name="vocab" type="xsd:string"/>
+                                                      <xsd:attribute name="lang" type="langType"/>
+                                                      <xsd:attribute name="transliteration" type="xsd:string"/>
+                                                      <xsd:attribute name="script" type="scriptType"/>
+                                                      <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                    </xsd:complexType>
                                                 </xsd:element>
                                              </xsd:sequence>
@@ -4211,6 +4447,19 @@
                                                                            <xsd:extension base="dateValueType">
                                                                               <xsd:attribute name="circa" type="xsd:boolean"/>
                                                                               <xsd:attribute name="type" type="uncertainDateType"/>
+                                                                              <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                                              <xsd:attribute name="extent" type="xsd:string"/>
+                                                                              <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                                              <xsd:attribute ref="xml:lang"/>
+                                                                              <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                                              <xsd:attribute name="refid" type="xsd:string"/>
+                                                                              <xsd:attribute name="rules" type="xsd:string"/>
+                                                                              <xsd:attribute name="source" type="xsd:string"/>
+                                                                              <xsd:attribute name="vocab" type="xsd:string"/>
+                                                                              <xsd:attribute name="lang" type="langType"/>
+                                                                              <xsd:attribute name="transliteration" type="xsd:string"/>
+                                                                              <xsd:attribute name="script" type="scriptType"/>
+                                                                              <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                                            </xsd:extension>
                                                                         </xsd:simpleContent>
                                                                      </xsd:complexType>
@@ -4224,12 +4473,38 @@
                                                                            <xsd:extension base="dateValueType">
                                                                               <xsd:attribute name="circa" type="xsd:boolean"/>
                                                                               <xsd:attribute name="type" type="uncertainDateType"/>
+                                                                              <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                                              <xsd:attribute name="extent" type="xsd:string"/>
+                                                                              <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                                              <xsd:attribute ref="xml:lang"/>
+                                                                              <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                                              <xsd:attribute name="refid" type="xsd:string"/>
+                                                                              <xsd:attribute name="rules" type="xsd:string"/>
+                                                                              <xsd:attribute name="source" type="xsd:string"/>
+                                                                              <xsd:attribute name="vocab" type="xsd:string"/>
+                                                                              <xsd:attribute name="lang" type="langType"/>
+                                                                              <xsd:attribute name="transliteration" type="xsd:string"/>
+                                                                              <xsd:attribute name="script" type="scriptType"/>
+                                                                              <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                                            </xsd:extension>
                                                                         </xsd:simpleContent>
                                                                      </xsd:complexType>
                                                                   </xsd:element>
                                                                </xsd:sequence>
                                                                <xsd:attribute name="type" type="agentDateTypeType"/>
+                                                               <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                               <xsd:attribute name="extent" type="xsd:string"/>
+                                                               <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                               <xsd:attribute ref="xml:lang"/>
+                                                               <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                               <xsd:attribute name="refid" type="xsd:string"/>
+                                                               <xsd:attribute name="rules" type="xsd:string"/>
+                                                               <xsd:attribute name="source" type="xsd:string"/>
+                                                               <xsd:attribute name="vocab" type="xsd:string"/>
+                                                               <xsd:attribute name="lang" type="langType"/>
+                                                               <xsd:attribute name="transliteration" type="xsd:string"/>
+                                                               <xsd:attribute name="script" type="scriptType"/>
+                                                               <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                             </xsd:complexType>
                                                          </xsd:element>
                                                          <xsd:element lasse2="" name="name" type="agentNameType" minOccurs="0">
@@ -4263,10 +4538,23 @@
                                                                <xsd:annotation>
                                                                   <xsd:documentation>Basic datatype for all roles.</xsd:documentation>
                                                                </xsd:annotation>
-                                                               <xsd:simpleContent>
+                                                               <xsd:simpleContent xmlns="http://www.w3.org/2001/XMLSchema">
                                                                   <xsd:extension base="xsd:string">
-                                                                     <xsd:attribute name="vocab" type="xsd:string"/>
-                                                                     <xsd:attribute name="type" type="roleString"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="type" type="roleString"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="dataDate" type="dateValueType"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="extent" type="xsd:string"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="href" type="xsd:anyURI"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" ref="xml:lang"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="pref" type="xsd:boolean"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="refid" type="xsd:string"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="rules" type="xsd:string"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="source" type="xsd:string"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="vocab" type="xsd:string"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="lang" type="langType"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="transliteration"
+                                                                                    type="xsd:string"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="script" type="scriptType"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="lastAccessed" type="xsd:date"/>
                                                                   </xsd:extension>
                                                                </xsd:simpleContent>
                                                             </xsd:complexType>
@@ -4437,6 +4725,19 @@
                                                                   <xsd:extension base="dateValueType">
                                                                      <xsd:attribute name="circa" type="xsd:boolean"/>
                                                                      <xsd:attribute name="type" type="uncertainDateType"/>
+                                                                     <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                                     <xsd:attribute name="extent" type="xsd:string"/>
+                                                                     <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                                     <xsd:attribute ref="xml:lang"/>
+                                                                     <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                                     <xsd:attribute name="refid" type="xsd:string"/>
+                                                                     <xsd:attribute name="rules" type="xsd:string"/>
+                                                                     <xsd:attribute name="source" type="xsd:string"/>
+                                                                     <xsd:attribute name="vocab" type="xsd:string"/>
+                                                                     <xsd:attribute name="lang" type="langType"/>
+                                                                     <xsd:attribute name="transliteration" type="xsd:string"/>
+                                                                     <xsd:attribute name="script" type="scriptType"/>
+                                                                     <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                                   </xsd:extension>
                                                                </xsd:simpleContent>
                                                             </xsd:complexType>
@@ -4450,6 +4751,19 @@
                                                                   <xsd:extension base="dateValueType">
                                                                      <xsd:attribute name="circa" type="xsd:boolean"/>
                                                                      <xsd:attribute name="type" type="uncertainDateType"/>
+                                                                     <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                                     <xsd:attribute name="extent" type="xsd:string"/>
+                                                                     <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                                     <xsd:attribute ref="xml:lang"/>
+                                                                     <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                                     <xsd:attribute name="refid" type="xsd:string"/>
+                                                                     <xsd:attribute name="rules" type="xsd:string"/>
+                                                                     <xsd:attribute name="source" type="xsd:string"/>
+                                                                     <xsd:attribute name="vocab" type="xsd:string"/>
+                                                                     <xsd:attribute name="lang" type="langType"/>
+                                                                     <xsd:attribute name="transliteration" type="xsd:string"/>
+                                                                     <xsd:attribute name="script" type="scriptType"/>
+                                                                     <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                                   </xsd:extension>
                                                                </xsd:simpleContent>
                                                             </xsd:complexType>
@@ -4559,19 +4873,33 @@
                                                          <xsd:documentation>Description type</xsd:documentation>
                                                       </xsd:annotation>
                                                       <xsd:sequence>
-                                                         <xsd:element lasse2="" name="text" type="textType">
-                                                            <xsd:complexType lasse3="" name="text" type="textType">
+                                                         <xsd:element lasse2="" name="text" type="basicString">
+                                                            <xsd:complexType lasse3="" name="text" type="basicString">
+                                                               <xsd:annotation>
+                                                                  <xsd:documentation>Basic datatype for all freetext values. Allows assignment of source, vocabulary, refid and language attributes to virtually any value.</xsd:documentation>
+                                                               </xsd:annotation>
                                                                <xsd:simpleContent>
                                                                   <xsd:extension base="xsd:string">
+                                                                     <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                                     <xsd:attribute name="extent" type="xsd:string"/>
+                                                                     <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                                     <xsd:attribute ref="xml:lang"/>
+                                                                     <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                                     <xsd:attribute name="refid" type="xsd:string"/>
+                                                                     <xsd:attribute name="rules" type="xsd:string"/>
+                                                                     <xsd:attribute name="source" type="xsd:string"/>
+                                                                     <xsd:attribute name="vocab" type="xsd:string"/>
                                                                      <xsd:attribute name="lang" type="langType"/>
+                                                                     <xsd:attribute name="transliteration" type="xsd:string"/>
                                                                      <xsd:attribute name="script" type="scriptType"/>
+                                                                     <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                                   </xsd:extension>
                                                                </xsd:simpleContent>
                                                             </xsd:complexType>
                                                          </xsd:element>
                                                          <xsd:element lasse2="" name="author" type="authorType" minOccurs="0" maxOccurs="unbounded">
                                                             <xsd:complexType lasse3="" name="author" type="authorType" minOccurs="0" maxOccurs="unbounded">
-                                                               <xsd:sequence>
+                                                               <xsd:sequence maxOccurs="unbounded">
                                                                   <xsd:element lasse2="" name="name" type="agentNameType" minOccurs="0">
                                                                      <xsd:complexType lasse3="" name="name" type="agentNameType" minOccurs="0">
                                                                         <xsd:annotation>
@@ -4603,15 +4931,41 @@
                                                                         <xsd:annotation>
                                                                            <xsd:documentation>Basic datatype for all roles.</xsd:documentation>
                                                                         </xsd:annotation>
-                                                                        <xsd:simpleContent>
+                                                                        <xsd:simpleContent xmlns="http://www.w3.org/2001/XMLSchema">
                                                                            <xsd:extension base="xsd:string">
-                                                                              <xsd:attribute name="vocab" type="xsd:string"/>
-                                                                              <xsd:attribute name="type" type="roleString"/>
+                                                                              <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="type" type="roleString"/>
+                                                                              <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="dataDate" type="dateValueType"/>
+                                                                              <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="extent" type="xsd:string"/>
+                                                                              <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="href" type="xsd:anyURI"/>
+                                                                              <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" ref="xml:lang"/>
+                                                                              <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="pref" type="xsd:boolean"/>
+                                                                              <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="refid" type="xsd:string"/>
+                                                                              <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="rules" type="xsd:string"/>
+                                                                              <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="source" type="xsd:string"/>
+                                                                              <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="vocab" type="xsd:string"/>
+                                                                              <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="lang" type="langType"/>
+                                                                              <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="transliteration"
+                                                                                             type="xsd:string"/>
+                                                                              <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="script" type="scriptType"/>
+                                                                              <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="lastAccessed" type="xsd:date"/>
                                                                            </xsd:extension>
                                                                         </xsd:simpleContent>
                                                                      </xsd:complexType>
                                                                   </xsd:element>
                                                                </xsd:sequence>
+                                                               <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                               <xsd:attribute name="extent" type="xsd:string"/>
+                                                               <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                               <xsd:attribute ref="xml:lang"/>
+                                                               <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                               <xsd:attribute name="refid" type="xsd:string"/>
+                                                               <xsd:attribute name="rules" type="xsd:string"/>
+                                                               <xsd:attribute name="source" type="xsd:string"/>
+                                                               <xsd:attribute name="vocab" type="xsd:string"/>
+                                                               <xsd:attribute name="lang" type="langType"/>
+                                                               <xsd:attribute name="transliteration" type="xsd:string"/>
+                                                               <xsd:attribute name="script" type="scriptType"/>
+                                                               <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                             </xsd:complexType>
                                                          </xsd:element>
                                                       </xsd:sequence>
@@ -6275,6 +6629,19 @@
                                                                   <xsd:extension base="dateValueType">
                                                                      <xsd:attribute name="circa" type="xsd:boolean"/>
                                                                      <xsd:attribute name="type" type="uncertainDateType"/>
+                                                                     <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                                     <xsd:attribute name="extent" type="xsd:string"/>
+                                                                     <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                                     <xsd:attribute ref="xml:lang"/>
+                                                                     <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                                     <xsd:attribute name="refid" type="xsd:string"/>
+                                                                     <xsd:attribute name="rules" type="xsd:string"/>
+                                                                     <xsd:attribute name="source" type="xsd:string"/>
+                                                                     <xsd:attribute name="vocab" type="xsd:string"/>
+                                                                     <xsd:attribute name="lang" type="langType"/>
+                                                                     <xsd:attribute name="transliteration" type="xsd:string"/>
+                                                                     <xsd:attribute name="script" type="scriptType"/>
+                                                                     <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                                   </xsd:extension>
                                                                </xsd:simpleContent>
                                                             </xsd:complexType>
@@ -6288,12 +6655,38 @@
                                                                   <xsd:extension base="dateValueType">
                                                                      <xsd:attribute name="circa" type="xsd:boolean"/>
                                                                      <xsd:attribute name="type" type="uncertainDateType"/>
+                                                                     <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                                     <xsd:attribute name="extent" type="xsd:string"/>
+                                                                     <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                                     <xsd:attribute ref="xml:lang"/>
+                                                                     <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                                     <xsd:attribute name="refid" type="xsd:string"/>
+                                                                     <xsd:attribute name="rules" type="xsd:string"/>
+                                                                     <xsd:attribute name="source" type="xsd:string"/>
+                                                                     <xsd:attribute name="vocab" type="xsd:string"/>
+                                                                     <xsd:attribute name="lang" type="langType"/>
+                                                                     <xsd:attribute name="transliteration" type="xsd:string"/>
+                                                                     <xsd:attribute name="script" type="scriptType"/>
+                                                                     <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                                   </xsd:extension>
                                                                </xsd:simpleContent>
                                                             </xsd:complexType>
                                                          </xsd:element>
                                                       </xsd:sequence>
                                                       <xsd:attribute name="type" type="agentDateTypeType"/>
+                                                      <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                      <xsd:attribute name="extent" type="xsd:string"/>
+                                                      <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                      <xsd:attribute ref="xml:lang"/>
+                                                      <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                      <xsd:attribute name="refid" type="xsd:string"/>
+                                                      <xsd:attribute name="rules" type="xsd:string"/>
+                                                      <xsd:attribute name="source" type="xsd:string"/>
+                                                      <xsd:attribute name="vocab" type="xsd:string"/>
+                                                      <xsd:attribute name="lang" type="langType"/>
+                                                      <xsd:attribute name="transliteration" type="xsd:string"/>
+                                                      <xsd:attribute name="script" type="scriptType"/>
+                                                      <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                    </xsd:complexType>
                                                 </xsd:element>
                                                 <xsd:element lasse2="" name="name" type="agentNameType" minOccurs="0">
@@ -6327,10 +6720,23 @@
                                                       <xsd:annotation>
                                                          <xsd:documentation>Basic datatype for all roles.</xsd:documentation>
                                                       </xsd:annotation>
-                                                      <xsd:simpleContent>
+                                                      <xsd:simpleContent xmlns="http://www.w3.org/2001/XMLSchema">
                                                          <xsd:extension base="xsd:string">
-                                                            <xsd:attribute name="vocab" type="xsd:string"/>
-                                                            <xsd:attribute name="type" type="roleString"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="type" type="roleString"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="dataDate" type="dateValueType"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="extent" type="xsd:string"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="href" type="xsd:anyURI"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" ref="xml:lang"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="pref" type="xsd:boolean"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="refid" type="xsd:string"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="rules" type="xsd:string"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="source" type="xsd:string"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="vocab" type="xsd:string"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="lang" type="langType"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="transliteration"
+                                                                           type="xsd:string"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="script" type="scriptType"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="lastAccessed" type="xsd:date"/>
                                                          </xsd:extension>
                                                       </xsd:simpleContent>
                                                    </xsd:complexType>
@@ -6501,6 +6907,19 @@
                                                          <xsd:extension base="dateValueType">
                                                             <xsd:attribute name="circa" type="xsd:boolean"/>
                                                             <xsd:attribute name="type" type="uncertainDateType"/>
+                                                            <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                            <xsd:attribute name="extent" type="xsd:string"/>
+                                                            <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                            <xsd:attribute ref="xml:lang"/>
+                                                            <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                            <xsd:attribute name="refid" type="xsd:string"/>
+                                                            <xsd:attribute name="rules" type="xsd:string"/>
+                                                            <xsd:attribute name="source" type="xsd:string"/>
+                                                            <xsd:attribute name="vocab" type="xsd:string"/>
+                                                            <xsd:attribute name="lang" type="langType"/>
+                                                            <xsd:attribute name="transliteration" type="xsd:string"/>
+                                                            <xsd:attribute name="script" type="scriptType"/>
+                                                            <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                          </xsd:extension>
                                                       </xsd:simpleContent>
                                                    </xsd:complexType>
@@ -6514,6 +6933,19 @@
                                                          <xsd:extension base="dateValueType">
                                                             <xsd:attribute name="circa" type="xsd:boolean"/>
                                                             <xsd:attribute name="type" type="uncertainDateType"/>
+                                                            <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                            <xsd:attribute name="extent" type="xsd:string"/>
+                                                            <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                            <xsd:attribute ref="xml:lang"/>
+                                                            <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                            <xsd:attribute name="refid" type="xsd:string"/>
+                                                            <xsd:attribute name="rules" type="xsd:string"/>
+                                                            <xsd:attribute name="source" type="xsd:string"/>
+                                                            <xsd:attribute name="vocab" type="xsd:string"/>
+                                                            <xsd:attribute name="lang" type="langType"/>
+                                                            <xsd:attribute name="transliteration" type="xsd:string"/>
+                                                            <xsd:attribute name="script" type="scriptType"/>
+                                                            <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                          </xsd:extension>
                                                       </xsd:simpleContent>
                                                    </xsd:complexType>
@@ -6623,19 +7055,33 @@
                                                 <xsd:documentation>Description type</xsd:documentation>
                                              </xsd:annotation>
                                              <xsd:sequence>
-                                                <xsd:element lasse2="" name="text" type="textType">
-                                                   <xsd:complexType lasse3="" name="text" type="textType">
+                                                <xsd:element lasse2="" name="text" type="basicString">
+                                                   <xsd:complexType lasse3="" name="text" type="basicString">
+                                                      <xsd:annotation>
+                                                         <xsd:documentation>Basic datatype for all freetext values. Allows assignment of source, vocabulary, refid and language attributes to virtually any value.</xsd:documentation>
+                                                      </xsd:annotation>
                                                       <xsd:simpleContent>
                                                          <xsd:extension base="xsd:string">
+                                                            <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                            <xsd:attribute name="extent" type="xsd:string"/>
+                                                            <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                            <xsd:attribute ref="xml:lang"/>
+                                                            <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                            <xsd:attribute name="refid" type="xsd:string"/>
+                                                            <xsd:attribute name="rules" type="xsd:string"/>
+                                                            <xsd:attribute name="source" type="xsd:string"/>
+                                                            <xsd:attribute name="vocab" type="xsd:string"/>
                                                             <xsd:attribute name="lang" type="langType"/>
+                                                            <xsd:attribute name="transliteration" type="xsd:string"/>
                                                             <xsd:attribute name="script" type="scriptType"/>
+                                                            <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                          </xsd:extension>
                                                       </xsd:simpleContent>
                                                    </xsd:complexType>
                                                 </xsd:element>
                                                 <xsd:element lasse2="" name="author" type="authorType" minOccurs="0" maxOccurs="unbounded">
                                                    <xsd:complexType lasse3="" name="author" type="authorType" minOccurs="0" maxOccurs="unbounded">
-                                                      <xsd:sequence>
+                                                      <xsd:sequence maxOccurs="unbounded">
                                                          <xsd:element lasse2="" name="name" type="agentNameType" minOccurs="0">
                                                             <xsd:complexType lasse3="" name="name" type="agentNameType" minOccurs="0">
                                                                <xsd:annotation>
@@ -6667,15 +7113,41 @@
                                                                <xsd:annotation>
                                                                   <xsd:documentation>Basic datatype for all roles.</xsd:documentation>
                                                                </xsd:annotation>
-                                                               <xsd:simpleContent>
+                                                               <xsd:simpleContent xmlns="http://www.w3.org/2001/XMLSchema">
                                                                   <xsd:extension base="xsd:string">
-                                                                     <xsd:attribute name="vocab" type="xsd:string"/>
-                                                                     <xsd:attribute name="type" type="roleString"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="type" type="roleString"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="dataDate" type="dateValueType"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="extent" type="xsd:string"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="href" type="xsd:anyURI"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" ref="xml:lang"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="pref" type="xsd:boolean"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="refid" type="xsd:string"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="rules" type="xsd:string"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="source" type="xsd:string"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="vocab" type="xsd:string"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="lang" type="langType"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="transliteration"
+                                                                                    type="xsd:string"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="script" type="scriptType"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="lastAccessed" type="xsd:date"/>
                                                                   </xsd:extension>
                                                                </xsd:simpleContent>
                                                             </xsd:complexType>
                                                          </xsd:element>
                                                       </xsd:sequence>
+                                                      <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                      <xsd:attribute name="extent" type="xsd:string"/>
+                                                      <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                      <xsd:attribute ref="xml:lang"/>
+                                                      <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                      <xsd:attribute name="refid" type="xsd:string"/>
+                                                      <xsd:attribute name="rules" type="xsd:string"/>
+                                                      <xsd:attribute name="source" type="xsd:string"/>
+                                                      <xsd:attribute name="vocab" type="xsd:string"/>
+                                                      <xsd:attribute name="lang" type="langType"/>
+                                                      <xsd:attribute name="transliteration" type="xsd:string"/>
+                                                      <xsd:attribute name="script" type="scriptType"/>
+                                                      <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                    </xsd:complexType>
                                                 </xsd:element>
                                              </xsd:sequence>
@@ -8349,6 +8821,19 @@
                                                          <xsd:extension base="dateValueType">
                                                             <xsd:attribute name="circa" type="xsd:boolean"/>
                                                             <xsd:attribute name="type" type="uncertainDateType"/>
+                                                            <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                            <xsd:attribute name="extent" type="xsd:string"/>
+                                                            <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                            <xsd:attribute ref="xml:lang"/>
+                                                            <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                            <xsd:attribute name="refid" type="xsd:string"/>
+                                                            <xsd:attribute name="rules" type="xsd:string"/>
+                                                            <xsd:attribute name="source" type="xsd:string"/>
+                                                            <xsd:attribute name="vocab" type="xsd:string"/>
+                                                            <xsd:attribute name="lang" type="langType"/>
+                                                            <xsd:attribute name="transliteration" type="xsd:string"/>
+                                                            <xsd:attribute name="script" type="scriptType"/>
+                                                            <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                          </xsd:extension>
                                                       </xsd:simpleContent>
                                                    </xsd:complexType>
@@ -8362,12 +8847,38 @@
                                                          <xsd:extension base="dateValueType">
                                                             <xsd:attribute name="circa" type="xsd:boolean"/>
                                                             <xsd:attribute name="type" type="uncertainDateType"/>
+                                                            <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                            <xsd:attribute name="extent" type="xsd:string"/>
+                                                            <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                            <xsd:attribute ref="xml:lang"/>
+                                                            <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                            <xsd:attribute name="refid" type="xsd:string"/>
+                                                            <xsd:attribute name="rules" type="xsd:string"/>
+                                                            <xsd:attribute name="source" type="xsd:string"/>
+                                                            <xsd:attribute name="vocab" type="xsd:string"/>
+                                                            <xsd:attribute name="lang" type="langType"/>
+                                                            <xsd:attribute name="transliteration" type="xsd:string"/>
+                                                            <xsd:attribute name="script" type="scriptType"/>
+                                                            <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                          </xsd:extension>
                                                       </xsd:simpleContent>
                                                    </xsd:complexType>
                                                 </xsd:element>
                                              </xsd:sequence>
                                              <xsd:attribute name="type" type="agentDateTypeType"/>
+                                             <xsd:attribute name="dataDate" type="dateValueType"/>
+                                             <xsd:attribute name="extent" type="xsd:string"/>
+                                             <xsd:attribute name="href" type="xsd:anyURI"/>
+                                             <xsd:attribute ref="xml:lang"/>
+                                             <xsd:attribute name="pref" type="xsd:boolean"/>
+                                             <xsd:attribute name="refid" type="xsd:string"/>
+                                             <xsd:attribute name="rules" type="xsd:string"/>
+                                             <xsd:attribute name="source" type="xsd:string"/>
+                                             <xsd:attribute name="vocab" type="xsd:string"/>
+                                             <xsd:attribute name="lang" type="langType"/>
+                                             <xsd:attribute name="transliteration" type="xsd:string"/>
+                                             <xsd:attribute name="script" type="scriptType"/>
+                                             <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                           </xsd:complexType>
                                        </xsd:element>
                                        <xsd:element lasse2="" name="name" type="agentNameType" minOccurs="0">
@@ -8401,10 +8912,23 @@
                                              <xsd:annotation>
                                                 <xsd:documentation>Basic datatype for all roles.</xsd:documentation>
                                              </xsd:annotation>
-                                             <xsd:simpleContent>
+                                             <xsd:simpleContent xmlns="http://www.w3.org/2001/XMLSchema">
                                                 <xsd:extension base="xsd:string">
-                                                   <xsd:attribute name="vocab" type="xsd:string"/>
-                                                   <xsd:attribute name="type" type="roleString"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="type" type="roleString"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="dataDate" type="dateValueType"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="extent" type="xsd:string"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="href" type="xsd:anyURI"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" ref="xml:lang"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="pref" type="xsd:boolean"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="refid" type="xsd:string"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="rules" type="xsd:string"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="source" type="xsd:string"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="vocab" type="xsd:string"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="lang" type="langType"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="transliteration"
+                                                                  type="xsd:string"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="script" type="scriptType"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="lastAccessed" type="xsd:date"/>
                                                 </xsd:extension>
                                              </xsd:simpleContent>
                                           </xsd:complexType>
@@ -8575,6 +9099,19 @@
                                                 <xsd:extension base="dateValueType">
                                                    <xsd:attribute name="circa" type="xsd:boolean"/>
                                                    <xsd:attribute name="type" type="uncertainDateType"/>
+                                                   <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                   <xsd:attribute name="extent" type="xsd:string"/>
+                                                   <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                   <xsd:attribute ref="xml:lang"/>
+                                                   <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                   <xsd:attribute name="refid" type="xsd:string"/>
+                                                   <xsd:attribute name="rules" type="xsd:string"/>
+                                                   <xsd:attribute name="source" type="xsd:string"/>
+                                                   <xsd:attribute name="vocab" type="xsd:string"/>
+                                                   <xsd:attribute name="lang" type="langType"/>
+                                                   <xsd:attribute name="transliteration" type="xsd:string"/>
+                                                   <xsd:attribute name="script" type="scriptType"/>
+                                                   <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                 </xsd:extension>
                                              </xsd:simpleContent>
                                           </xsd:complexType>
@@ -8588,6 +9125,19 @@
                                                 <xsd:extension base="dateValueType">
                                                    <xsd:attribute name="circa" type="xsd:boolean"/>
                                                    <xsd:attribute name="type" type="uncertainDateType"/>
+                                                   <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                   <xsd:attribute name="extent" type="xsd:string"/>
+                                                   <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                   <xsd:attribute ref="xml:lang"/>
+                                                   <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                   <xsd:attribute name="refid" type="xsd:string"/>
+                                                   <xsd:attribute name="rules" type="xsd:string"/>
+                                                   <xsd:attribute name="source" type="xsd:string"/>
+                                                   <xsd:attribute name="vocab" type="xsd:string"/>
+                                                   <xsd:attribute name="lang" type="langType"/>
+                                                   <xsd:attribute name="transliteration" type="xsd:string"/>
+                                                   <xsd:attribute name="script" type="scriptType"/>
+                                                   <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                 </xsd:extension>
                                              </xsd:simpleContent>
                                           </xsd:complexType>
@@ -8697,19 +9247,33 @@
                                        <xsd:documentation>Description type</xsd:documentation>
                                     </xsd:annotation>
                                     <xsd:sequence>
-                                       <xsd:element lasse2="" name="text" type="textType">
-                                          <xsd:complexType lasse3="" name="text" type="textType">
+                                       <xsd:element lasse2="" name="text" type="basicString">
+                                          <xsd:complexType lasse3="" name="text" type="basicString">
+                                             <xsd:annotation>
+                                                <xsd:documentation>Basic datatype for all freetext values. Allows assignment of source, vocabulary, refid and language attributes to virtually any value.</xsd:documentation>
+                                             </xsd:annotation>
                                              <xsd:simpleContent>
                                                 <xsd:extension base="xsd:string">
+                                                   <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                   <xsd:attribute name="extent" type="xsd:string"/>
+                                                   <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                   <xsd:attribute ref="xml:lang"/>
+                                                   <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                   <xsd:attribute name="refid" type="xsd:string"/>
+                                                   <xsd:attribute name="rules" type="xsd:string"/>
+                                                   <xsd:attribute name="source" type="xsd:string"/>
+                                                   <xsd:attribute name="vocab" type="xsd:string"/>
                                                    <xsd:attribute name="lang" type="langType"/>
+                                                   <xsd:attribute name="transliteration" type="xsd:string"/>
                                                    <xsd:attribute name="script" type="scriptType"/>
+                                                   <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                 </xsd:extension>
                                              </xsd:simpleContent>
                                           </xsd:complexType>
                                        </xsd:element>
                                        <xsd:element lasse2="" name="author" type="authorType" minOccurs="0" maxOccurs="unbounded">
                                           <xsd:complexType lasse3="" name="author" type="authorType" minOccurs="0" maxOccurs="unbounded">
-                                             <xsd:sequence>
+                                             <xsd:sequence maxOccurs="unbounded">
                                                 <xsd:element lasse2="" name="name" type="agentNameType" minOccurs="0">
                                                    <xsd:complexType lasse3="" name="name" type="agentNameType" minOccurs="0">
                                                       <xsd:annotation>
@@ -8741,15 +9305,41 @@
                                                       <xsd:annotation>
                                                          <xsd:documentation>Basic datatype for all roles.</xsd:documentation>
                                                       </xsd:annotation>
-                                                      <xsd:simpleContent>
+                                                      <xsd:simpleContent xmlns="http://www.w3.org/2001/XMLSchema">
                                                          <xsd:extension base="xsd:string">
-                                                            <xsd:attribute name="vocab" type="xsd:string"/>
-                                                            <xsd:attribute name="type" type="roleString"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="type" type="roleString"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="dataDate" type="dateValueType"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="extent" type="xsd:string"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="href" type="xsd:anyURI"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" ref="xml:lang"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="pref" type="xsd:boolean"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="refid" type="xsd:string"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="rules" type="xsd:string"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="source" type="xsd:string"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="vocab" type="xsd:string"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="lang" type="langType"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="transliteration"
+                                                                           type="xsd:string"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="script" type="scriptType"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="lastAccessed" type="xsd:date"/>
                                                          </xsd:extension>
                                                       </xsd:simpleContent>
                                                    </xsd:complexType>
                                                 </xsd:element>
                                              </xsd:sequence>
+                                             <xsd:attribute name="dataDate" type="dateValueType"/>
+                                             <xsd:attribute name="extent" type="xsd:string"/>
+                                             <xsd:attribute name="href" type="xsd:anyURI"/>
+                                             <xsd:attribute ref="xml:lang"/>
+                                             <xsd:attribute name="pref" type="xsd:boolean"/>
+                                             <xsd:attribute name="refid" type="xsd:string"/>
+                                             <xsd:attribute name="rules" type="xsd:string"/>
+                                             <xsd:attribute name="source" type="xsd:string"/>
+                                             <xsd:attribute name="vocab" type="xsd:string"/>
+                                             <xsd:attribute name="lang" type="langType"/>
+                                             <xsd:attribute name="transliteration" type="xsd:string"/>
+                                             <xsd:attribute name="script" type="scriptType"/>
+                                             <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                           </xsd:complexType>
                                        </xsd:element>
                                     </xsd:sequence>
@@ -10379,6 +10969,19 @@
                                                                   <xsd:extension base="dateValueType">
                                                                      <xsd:attribute name="circa" type="xsd:boolean"/>
                                                                      <xsd:attribute name="type" type="uncertainDateType"/>
+                                                                     <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                                     <xsd:attribute name="extent" type="xsd:string"/>
+                                                                     <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                                     <xsd:attribute ref="xml:lang"/>
+                                                                     <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                                     <xsd:attribute name="refid" type="xsd:string"/>
+                                                                     <xsd:attribute name="rules" type="xsd:string"/>
+                                                                     <xsd:attribute name="source" type="xsd:string"/>
+                                                                     <xsd:attribute name="vocab" type="xsd:string"/>
+                                                                     <xsd:attribute name="lang" type="langType"/>
+                                                                     <xsd:attribute name="transliteration" type="xsd:string"/>
+                                                                     <xsd:attribute name="script" type="scriptType"/>
+                                                                     <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                                   </xsd:extension>
                                                                </xsd:simpleContent>
                                                             </xsd:complexType>
@@ -10392,12 +10995,38 @@
                                                                   <xsd:extension base="dateValueType">
                                                                      <xsd:attribute name="circa" type="xsd:boolean"/>
                                                                      <xsd:attribute name="type" type="uncertainDateType"/>
+                                                                     <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                                     <xsd:attribute name="extent" type="xsd:string"/>
+                                                                     <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                                     <xsd:attribute ref="xml:lang"/>
+                                                                     <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                                     <xsd:attribute name="refid" type="xsd:string"/>
+                                                                     <xsd:attribute name="rules" type="xsd:string"/>
+                                                                     <xsd:attribute name="source" type="xsd:string"/>
+                                                                     <xsd:attribute name="vocab" type="xsd:string"/>
+                                                                     <xsd:attribute name="lang" type="langType"/>
+                                                                     <xsd:attribute name="transliteration" type="xsd:string"/>
+                                                                     <xsd:attribute name="script" type="scriptType"/>
+                                                                     <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                                   </xsd:extension>
                                                                </xsd:simpleContent>
                                                             </xsd:complexType>
                                                          </xsd:element>
                                                       </xsd:sequence>
                                                       <xsd:attribute name="type" type="agentDateTypeType"/>
+                                                      <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                      <xsd:attribute name="extent" type="xsd:string"/>
+                                                      <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                      <xsd:attribute ref="xml:lang"/>
+                                                      <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                      <xsd:attribute name="refid" type="xsd:string"/>
+                                                      <xsd:attribute name="rules" type="xsd:string"/>
+                                                      <xsd:attribute name="source" type="xsd:string"/>
+                                                      <xsd:attribute name="vocab" type="xsd:string"/>
+                                                      <xsd:attribute name="lang" type="langType"/>
+                                                      <xsd:attribute name="transliteration" type="xsd:string"/>
+                                                      <xsd:attribute name="script" type="scriptType"/>
+                                                      <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                    </xsd:complexType>
                                                 </xsd:element>
                                                 <xsd:element lasse2="" name="name" type="agentNameType" minOccurs="0">
@@ -10431,10 +11060,23 @@
                                                       <xsd:annotation>
                                                          <xsd:documentation>Basic datatype for all roles.</xsd:documentation>
                                                       </xsd:annotation>
-                                                      <xsd:simpleContent>
+                                                      <xsd:simpleContent xmlns="http://www.w3.org/2001/XMLSchema">
                                                          <xsd:extension base="xsd:string">
-                                                            <xsd:attribute name="vocab" type="xsd:string"/>
-                                                            <xsd:attribute name="type" type="roleString"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="type" type="roleString"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="dataDate" type="dateValueType"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="extent" type="xsd:string"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="href" type="xsd:anyURI"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" ref="xml:lang"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="pref" type="xsd:boolean"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="refid" type="xsd:string"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="rules" type="xsd:string"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="source" type="xsd:string"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="vocab" type="xsd:string"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="lang" type="langType"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="transliteration"
+                                                                           type="xsd:string"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="script" type="scriptType"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="lastAccessed" type="xsd:date"/>
                                                          </xsd:extension>
                                                       </xsd:simpleContent>
                                                    </xsd:complexType>
@@ -10605,6 +11247,19 @@
                                                          <xsd:extension base="dateValueType">
                                                             <xsd:attribute name="circa" type="xsd:boolean"/>
                                                             <xsd:attribute name="type" type="uncertainDateType"/>
+                                                            <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                            <xsd:attribute name="extent" type="xsd:string"/>
+                                                            <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                            <xsd:attribute ref="xml:lang"/>
+                                                            <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                            <xsd:attribute name="refid" type="xsd:string"/>
+                                                            <xsd:attribute name="rules" type="xsd:string"/>
+                                                            <xsd:attribute name="source" type="xsd:string"/>
+                                                            <xsd:attribute name="vocab" type="xsd:string"/>
+                                                            <xsd:attribute name="lang" type="langType"/>
+                                                            <xsd:attribute name="transliteration" type="xsd:string"/>
+                                                            <xsd:attribute name="script" type="scriptType"/>
+                                                            <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                          </xsd:extension>
                                                       </xsd:simpleContent>
                                                    </xsd:complexType>
@@ -10618,6 +11273,19 @@
                                                          <xsd:extension base="dateValueType">
                                                             <xsd:attribute name="circa" type="xsd:boolean"/>
                                                             <xsd:attribute name="type" type="uncertainDateType"/>
+                                                            <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                            <xsd:attribute name="extent" type="xsd:string"/>
+                                                            <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                            <xsd:attribute ref="xml:lang"/>
+                                                            <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                            <xsd:attribute name="refid" type="xsd:string"/>
+                                                            <xsd:attribute name="rules" type="xsd:string"/>
+                                                            <xsd:attribute name="source" type="xsd:string"/>
+                                                            <xsd:attribute name="vocab" type="xsd:string"/>
+                                                            <xsd:attribute name="lang" type="langType"/>
+                                                            <xsd:attribute name="transliteration" type="xsd:string"/>
+                                                            <xsd:attribute name="script" type="scriptType"/>
+                                                            <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                          </xsd:extension>
                                                       </xsd:simpleContent>
                                                    </xsd:complexType>
@@ -10727,19 +11395,33 @@
                                                 <xsd:documentation>Description type</xsd:documentation>
                                              </xsd:annotation>
                                              <xsd:sequence>
-                                                <xsd:element lasse2="" name="text" type="textType">
-                                                   <xsd:complexType lasse3="" name="text" type="textType">
+                                                <xsd:element lasse2="" name="text" type="basicString">
+                                                   <xsd:complexType lasse3="" name="text" type="basicString">
+                                                      <xsd:annotation>
+                                                         <xsd:documentation>Basic datatype for all freetext values. Allows assignment of source, vocabulary, refid and language attributes to virtually any value.</xsd:documentation>
+                                                      </xsd:annotation>
                                                       <xsd:simpleContent>
                                                          <xsd:extension base="xsd:string">
+                                                            <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                            <xsd:attribute name="extent" type="xsd:string"/>
+                                                            <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                            <xsd:attribute ref="xml:lang"/>
+                                                            <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                            <xsd:attribute name="refid" type="xsd:string"/>
+                                                            <xsd:attribute name="rules" type="xsd:string"/>
+                                                            <xsd:attribute name="source" type="xsd:string"/>
+                                                            <xsd:attribute name="vocab" type="xsd:string"/>
                                                             <xsd:attribute name="lang" type="langType"/>
+                                                            <xsd:attribute name="transliteration" type="xsd:string"/>
                                                             <xsd:attribute name="script" type="scriptType"/>
+                                                            <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                          </xsd:extension>
                                                       </xsd:simpleContent>
                                                    </xsd:complexType>
                                                 </xsd:element>
                                                 <xsd:element lasse2="" name="author" type="authorType" minOccurs="0" maxOccurs="unbounded">
                                                    <xsd:complexType lasse3="" name="author" type="authorType" minOccurs="0" maxOccurs="unbounded">
-                                                      <xsd:sequence>
+                                                      <xsd:sequence maxOccurs="unbounded">
                                                          <xsd:element lasse2="" name="name" type="agentNameType" minOccurs="0">
                                                             <xsd:complexType lasse3="" name="name" type="agentNameType" minOccurs="0">
                                                                <xsd:annotation>
@@ -10771,15 +11453,41 @@
                                                                <xsd:annotation>
                                                                   <xsd:documentation>Basic datatype for all roles.</xsd:documentation>
                                                                </xsd:annotation>
-                                                               <xsd:simpleContent>
+                                                               <xsd:simpleContent xmlns="http://www.w3.org/2001/XMLSchema">
                                                                   <xsd:extension base="xsd:string">
-                                                                     <xsd:attribute name="vocab" type="xsd:string"/>
-                                                                     <xsd:attribute name="type" type="roleString"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="type" type="roleString"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="dataDate" type="dateValueType"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="extent" type="xsd:string"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="href" type="xsd:anyURI"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" ref="xml:lang"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="pref" type="xsd:boolean"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="refid" type="xsd:string"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="rules" type="xsd:string"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="source" type="xsd:string"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="vocab" type="xsd:string"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="lang" type="langType"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="transliteration"
+                                                                                    type="xsd:string"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="script" type="scriptType"/>
+                                                                     <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="lastAccessed" type="xsd:date"/>
                                                                   </xsd:extension>
                                                                </xsd:simpleContent>
                                                             </xsd:complexType>
                                                          </xsd:element>
                                                       </xsd:sequence>
+                                                      <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                      <xsd:attribute name="extent" type="xsd:string"/>
+                                                      <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                      <xsd:attribute ref="xml:lang"/>
+                                                      <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                      <xsd:attribute name="refid" type="xsd:string"/>
+                                                      <xsd:attribute name="rules" type="xsd:string"/>
+                                                      <xsd:attribute name="source" type="xsd:string"/>
+                                                      <xsd:attribute name="vocab" type="xsd:string"/>
+                                                      <xsd:attribute name="lang" type="langType"/>
+                                                      <xsd:attribute name="transliteration" type="xsd:string"/>
+                                                      <xsd:attribute name="script" type="scriptType"/>
+                                                      <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                    </xsd:complexType>
                                                 </xsd:element>
                                              </xsd:sequence>
@@ -12443,6 +13151,19 @@
                                                          <xsd:extension base="dateValueType">
                                                             <xsd:attribute name="circa" type="xsd:boolean"/>
                                                             <xsd:attribute name="type" type="uncertainDateType"/>
+                                                            <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                            <xsd:attribute name="extent" type="xsd:string"/>
+                                                            <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                            <xsd:attribute ref="xml:lang"/>
+                                                            <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                            <xsd:attribute name="refid" type="xsd:string"/>
+                                                            <xsd:attribute name="rules" type="xsd:string"/>
+                                                            <xsd:attribute name="source" type="xsd:string"/>
+                                                            <xsd:attribute name="vocab" type="xsd:string"/>
+                                                            <xsd:attribute name="lang" type="langType"/>
+                                                            <xsd:attribute name="transliteration" type="xsd:string"/>
+                                                            <xsd:attribute name="script" type="scriptType"/>
+                                                            <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                          </xsd:extension>
                                                       </xsd:simpleContent>
                                                    </xsd:complexType>
@@ -12456,12 +13177,38 @@
                                                          <xsd:extension base="dateValueType">
                                                             <xsd:attribute name="circa" type="xsd:boolean"/>
                                                             <xsd:attribute name="type" type="uncertainDateType"/>
+                                                            <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                            <xsd:attribute name="extent" type="xsd:string"/>
+                                                            <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                            <xsd:attribute ref="xml:lang"/>
+                                                            <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                            <xsd:attribute name="refid" type="xsd:string"/>
+                                                            <xsd:attribute name="rules" type="xsd:string"/>
+                                                            <xsd:attribute name="source" type="xsd:string"/>
+                                                            <xsd:attribute name="vocab" type="xsd:string"/>
+                                                            <xsd:attribute name="lang" type="langType"/>
+                                                            <xsd:attribute name="transliteration" type="xsd:string"/>
+                                                            <xsd:attribute name="script" type="scriptType"/>
+                                                            <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                          </xsd:extension>
                                                       </xsd:simpleContent>
                                                    </xsd:complexType>
                                                 </xsd:element>
                                              </xsd:sequence>
                                              <xsd:attribute name="type" type="agentDateTypeType"/>
+                                             <xsd:attribute name="dataDate" type="dateValueType"/>
+                                             <xsd:attribute name="extent" type="xsd:string"/>
+                                             <xsd:attribute name="href" type="xsd:anyURI"/>
+                                             <xsd:attribute ref="xml:lang"/>
+                                             <xsd:attribute name="pref" type="xsd:boolean"/>
+                                             <xsd:attribute name="refid" type="xsd:string"/>
+                                             <xsd:attribute name="rules" type="xsd:string"/>
+                                             <xsd:attribute name="source" type="xsd:string"/>
+                                             <xsd:attribute name="vocab" type="xsd:string"/>
+                                             <xsd:attribute name="lang" type="langType"/>
+                                             <xsd:attribute name="transliteration" type="xsd:string"/>
+                                             <xsd:attribute name="script" type="scriptType"/>
+                                             <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                           </xsd:complexType>
                                        </xsd:element>
                                        <xsd:element lasse2="" name="name" type="agentNameType" minOccurs="0">
@@ -12495,10 +13242,23 @@
                                              <xsd:annotation>
                                                 <xsd:documentation>Basic datatype for all roles.</xsd:documentation>
                                              </xsd:annotation>
-                                             <xsd:simpleContent>
+                                             <xsd:simpleContent xmlns="http://www.w3.org/2001/XMLSchema">
                                                 <xsd:extension base="xsd:string">
-                                                   <xsd:attribute name="vocab" type="xsd:string"/>
-                                                   <xsd:attribute name="type" type="roleString"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="type" type="roleString"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="dataDate" type="dateValueType"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="extent" type="xsd:string"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="href" type="xsd:anyURI"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" ref="xml:lang"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="pref" type="xsd:boolean"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="refid" type="xsd:string"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="rules" type="xsd:string"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="source" type="xsd:string"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="vocab" type="xsd:string"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="lang" type="langType"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="transliteration"
+                                                                  type="xsd:string"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="script" type="scriptType"/>
+                                                   <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="lastAccessed" type="xsd:date"/>
                                                 </xsd:extension>
                                              </xsd:simpleContent>
                                           </xsd:complexType>
@@ -12669,6 +13429,19 @@
                                                 <xsd:extension base="dateValueType">
                                                    <xsd:attribute name="circa" type="xsd:boolean"/>
                                                    <xsd:attribute name="type" type="uncertainDateType"/>
+                                                   <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                   <xsd:attribute name="extent" type="xsd:string"/>
+                                                   <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                   <xsd:attribute ref="xml:lang"/>
+                                                   <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                   <xsd:attribute name="refid" type="xsd:string"/>
+                                                   <xsd:attribute name="rules" type="xsd:string"/>
+                                                   <xsd:attribute name="source" type="xsd:string"/>
+                                                   <xsd:attribute name="vocab" type="xsd:string"/>
+                                                   <xsd:attribute name="lang" type="langType"/>
+                                                   <xsd:attribute name="transliteration" type="xsd:string"/>
+                                                   <xsd:attribute name="script" type="scriptType"/>
+                                                   <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                 </xsd:extension>
                                              </xsd:simpleContent>
                                           </xsd:complexType>
@@ -12682,6 +13455,19 @@
                                                 <xsd:extension base="dateValueType">
                                                    <xsd:attribute name="circa" type="xsd:boolean"/>
                                                    <xsd:attribute name="type" type="uncertainDateType"/>
+                                                   <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                   <xsd:attribute name="extent" type="xsd:string"/>
+                                                   <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                   <xsd:attribute ref="xml:lang"/>
+                                                   <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                   <xsd:attribute name="refid" type="xsd:string"/>
+                                                   <xsd:attribute name="rules" type="xsd:string"/>
+                                                   <xsd:attribute name="source" type="xsd:string"/>
+                                                   <xsd:attribute name="vocab" type="xsd:string"/>
+                                                   <xsd:attribute name="lang" type="langType"/>
+                                                   <xsd:attribute name="transliteration" type="xsd:string"/>
+                                                   <xsd:attribute name="script" type="scriptType"/>
+                                                   <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                 </xsd:extension>
                                              </xsd:simpleContent>
                                           </xsd:complexType>
@@ -12791,19 +13577,33 @@
                                        <xsd:documentation>Description type</xsd:documentation>
                                     </xsd:annotation>
                                     <xsd:sequence>
-                                       <xsd:element lasse2="" name="text" type="textType">
-                                          <xsd:complexType lasse3="" name="text" type="textType">
+                                       <xsd:element lasse2="" name="text" type="basicString">
+                                          <xsd:complexType lasse3="" name="text" type="basicString">
+                                             <xsd:annotation>
+                                                <xsd:documentation>Basic datatype for all freetext values. Allows assignment of source, vocabulary, refid and language attributes to virtually any value.</xsd:documentation>
+                                             </xsd:annotation>
                                              <xsd:simpleContent>
                                                 <xsd:extension base="xsd:string">
+                                                   <xsd:attribute name="dataDate" type="dateValueType"/>
+                                                   <xsd:attribute name="extent" type="xsd:string"/>
+                                                   <xsd:attribute name="href" type="xsd:anyURI"/>
+                                                   <xsd:attribute ref="xml:lang"/>
+                                                   <xsd:attribute name="pref" type="xsd:boolean"/>
+                                                   <xsd:attribute name="refid" type="xsd:string"/>
+                                                   <xsd:attribute name="rules" type="xsd:string"/>
+                                                   <xsd:attribute name="source" type="xsd:string"/>
+                                                   <xsd:attribute name="vocab" type="xsd:string"/>
                                                    <xsd:attribute name="lang" type="langType"/>
+                                                   <xsd:attribute name="transliteration" type="xsd:string"/>
                                                    <xsd:attribute name="script" type="scriptType"/>
+                                                   <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                                 </xsd:extension>
                                              </xsd:simpleContent>
                                           </xsd:complexType>
                                        </xsd:element>
                                        <xsd:element lasse2="" name="author" type="authorType" minOccurs="0" maxOccurs="unbounded">
                                           <xsd:complexType lasse3="" name="author" type="authorType" minOccurs="0" maxOccurs="unbounded">
-                                             <xsd:sequence>
+                                             <xsd:sequence maxOccurs="unbounded">
                                                 <xsd:element lasse2="" name="name" type="agentNameType" minOccurs="0">
                                                    <xsd:complexType lasse3="" name="name" type="agentNameType" minOccurs="0">
                                                       <xsd:annotation>
@@ -12835,15 +13635,41 @@
                                                       <xsd:annotation>
                                                          <xsd:documentation>Basic datatype for all roles.</xsd:documentation>
                                                       </xsd:annotation>
-                                                      <xsd:simpleContent>
+                                                      <xsd:simpleContent xmlns="http://www.w3.org/2001/XMLSchema">
                                                          <xsd:extension base="xsd:string">
-                                                            <xsd:attribute name="vocab" type="xsd:string"/>
-                                                            <xsd:attribute name="type" type="roleString"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="type" type="roleString"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="dataDate" type="dateValueType"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="extent" type="xsd:string"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="href" type="xsd:anyURI"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" ref="xml:lang"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="pref" type="xsd:boolean"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="refid" type="xsd:string"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="rules" type="xsd:string"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="source" type="xsd:string"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="vocab" type="xsd:string"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="lang" type="langType"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="transliteration"
+                                                                           type="xsd:string"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="script" type="scriptType"/>
+                                                            <xsd:attribute xmlns="http://www.vraweb.org/vracore4.htm" name="lastAccessed" type="xsd:date"/>
                                                          </xsd:extension>
                                                       </xsd:simpleContent>
                                                    </xsd:complexType>
                                                 </xsd:element>
                                              </xsd:sequence>
+                                             <xsd:attribute name="dataDate" type="dateValueType"/>
+                                             <xsd:attribute name="extent" type="xsd:string"/>
+                                             <xsd:attribute name="href" type="xsd:anyURI"/>
+                                             <xsd:attribute ref="xml:lang"/>
+                                             <xsd:attribute name="pref" type="xsd:boolean"/>
+                                             <xsd:attribute name="refid" type="xsd:string"/>
+                                             <xsd:attribute name="rules" type="xsd:string"/>
+                                             <xsd:attribute name="source" type="xsd:string"/>
+                                             <xsd:attribute name="vocab" type="xsd:string"/>
+                                             <xsd:attribute name="lang" type="langType"/>
+                                             <xsd:attribute name="transliteration" type="xsd:string"/>
+                                             <xsd:attribute name="script" type="scriptType"/>
+                                             <xsd:attribute name="lastAccessed" type="xsd:date"/>
                                           </xsd:complexType>
                                        </xsd:element>
                                     </xsd:sequence>

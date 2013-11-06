@@ -344,8 +344,7 @@
             <xsd:documentation> Basic datatype for all roles. </xsd:documentation>
         </xsd:annotation>
         <xsd:simpleContent>
-            <xsd:extension base="xsd:string">
-                <xsd:attribute name="vocab" type="xsd:string"/>
+            <xsd:extension base="basicString">
                 <xsd:attribute name="type" type="roleString"/>
             </xsd:extension>
         </xsd:simpleContent>
@@ -376,26 +375,20 @@
             <xsd:documentation> Description type </xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
-            <xsd:element name="text" type="textType"/>
+            <xsd:element name="text" type="basicString"/>
             <xsd:element name="author" type="authorType" minOccurs="0" maxOccurs="unbounded"/>
         </xsd:sequence>
         <xsd:attributeGroup ref="vraAttributes"/>
         <xsd:attribute type="xsd:string" name="type"/>
     </xsd:complexType>
 
-    <xsd:complexType name="textType">
-        <xsd:simpleContent>
-            <xsd:extension base="xsd:string">
-                <xsd:attribute name="lang" type="langType"/>
-                <xsd:attribute name="script" type="scriptType"/>
-            </xsd:extension>
-        </xsd:simpleContent>
-    </xsd:complexType>
+
     <xsd:complexType name="authorType">
-        <xsd:sequence>
+        <xsd:sequence maxOccurs="unbounded">
             <xsd:element name="name" type="agentNameType" minOccurs="0"/>
             <xsd:element name="role" type="roleType" minOccurs="0"/>
         </xsd:sequence>
+        <xsd:attributeGroup ref="vraAttributes"/>
     </xsd:complexType>
     <!-- <<< EXTENSION END <<< -->
     <xsd:simpleType name="dateValueType">
@@ -416,6 +409,7 @@
                 <!-- >>> EXTENSION START >>> -->
                 <xsd:attribute name="type" type="uncertainDateType"/>
                 <!-- <<< EXTENSION END <<< -->
+                <xsd:attributeGroup ref="vraAttributes"/>
             </xsd:extension>
         </xsd:simpleContent>
     </xsd:complexType>
@@ -502,6 +496,7 @@
             <xsd:element name="latestDate" type="dateWrapperType" minOccurs="0"/>
         </xsd:sequence>
         <xsd:attribute name="type" type="agentDateTypeType"/>
+        <xsd:attributeGroup ref="vraAttributes"/>
     </xsd:complexType>
     <xsd:simpleType name="agentDateTypeType">
         <xsd:restriction base="xsd:string"/>

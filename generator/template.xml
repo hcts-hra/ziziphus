@@ -1,41 +1,32 @@
 <merge:data xmlns:merge="http://www.betterform.de/merge">
     <merge:templateInstance>
-        <agentSet xmlns="http://www.vraweb.org/vracore4.htm">
-            <display/>
-            <notes foo="false"/>
-            <agent pref="false">
-                <attribution/>
-                <culture/>
-                <dates type="">
-                    <earliestDate circa="false"/>
-                    <latestDate circa="false"/>
-                </dates>
-                <name type=""/>
-                <role/>
-            </agent>
-        </agentSet>
+        <descriptionSet xmlns="http://www.vraweb.org/vracore4.htm">
+            <display></display>
+            <notes></notes>
+            <description pref="false" type="">
+                <text></text>
+                <author>
+                    <name type=""></name>
+                    <role type=""></role>
+                </author>
+            </description>
+        </descriptionSet>
     </merge:templateInstance>
 
     <merge:importInstance>
-        <agentSet xmlns="http://www.vraweb.org/vracore4.htm">
-            <display>yes</display>
-            <agent bar="baz">
-                <culture>asia</culture>
-                <dates type="lksdjf">
-                    <earliestDate circa="true">1000</earliestDate>
-                </dates>
-                <name vocab="local" type="personal" refid="uuid-65d331c8-aea5-564e-a372-b0b6cd6f30df">Gandhi, Mohandas Karamchand</name>
-                <role/>
-            </agent>
-            <agent pref="true">
-                <attribution>something</attribution>
-                <dates type="lksdjf">
-                    <earliestDate circa="false">2000</earliestDate>
-                    <latestDate circa="true">2012</latestDate>
-                </dates>
-                <name/>
-            </agent>
-        </agentSet>
+        <descriptionSet>
+            <description lang="en" script="Latn">
+                <text>An advertising calendar poster for CIBA Dyes Ltd from basle, Switzerland. The central image shows groups of people sitting on a meadow near a mosque-like structure. On both sides, the central image is surrounded by 14 small brand-like images. the calender is printed at the bottom.</text>
+                <author>
+                    <name vocab="local" type="personal" refid="uuid-009f50e1-2a8e-5896-89a1-665effeff19c">Arnold, Matthias</name>
+                    <role vocab="marcrelator" code="edt">Editor</role>
+                </author>
+            </description>
+            <description vocab="LOCAL" refid="687bd7ca-1185-5511-8938-1f351c94a5eb">
+                <text>framing (processes)</text>
+
+            </description>
+        </descriptionSet>
     </merge:importInstance>
 </merge:data>
 

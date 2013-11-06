@@ -782,28 +782,75 @@
         </xsl:if>
 
 
-        <xf:group appearance="minimal">
-            <xsl:call-template name="ui-nodeset-vra">
-                <!--<xsl:with-param name="path" select="$currentPath"/>-->
-            </xsl:call-template>
+        <xsl:choose>
+            <xsl:when test=".[@seqMaxOccurs eq 'unbounded']">
+                <xsl:variable name="parent" select="../@nodeset"/>
+                <xsl:variable name="repeat-id" select="substring-after($vraNodeName, 'vra:')"/>
+                <xf:group>
+                    <xf:trigger>
+                        <xf:label>Add</xf:label>
+                        <xf:action>
+                            <xf:insert context="instance('i-{$vraSectionNode}')/{$parent}[index('r-vra{$vraArtifact}')]" nodeset="{$vraNodeName}" origin="instance('i-templates')/{$parent}/{$vraNodeName}"/>
+                        </xf:action>
+                    </xf:trigger>
+                    <xf:trigger>
+                        <xf:label>delete</xf:label>
+                        <xf:action>
+                            <xf:delete ref="instance('i-{$vraSectionNode}')/{$parent}[index('r-vra{$vraArtifact}')]/{$vraNodeName}[index('r-{$repeat-id}')]"/>
+                        </xf:action>
+                    </xf:trigger>
+                </xf:group>
+                <xf:repeat id="r-{$repeat-id}" ref="{$vraNodeName}">
+                    <xsl:call-template name="ui-nodeset-vra">
+                        <!-- xsl:with-param name="path" select="@nodeset"/ -->
+                    </xsl:call-template>
 
-            <xf:group class="vraAttributes" appearance="minimal">
-                <xsl:attribute name="ref" select="$vraNodeName"/>
-                <xi:include href="bricks/vraAttributesViewUI.xml"/>
-            </xf:group>
+                    <!-- Maybe to do ...
+                   <xf:group class="vraAttributes" appearance="minimal">
+                       <xsl:attribute name="ref" select="'.'"/>
+                       <xi:include href="bricks/vraAttributesViewUI.xml"/>
+                   </xf:group>
 
-            <xf:trigger class="vraAttributeTrigger">
-                <xf:label>A</xf:label>
-                <xf:hint>Edit Attributes</xf:hint>
-                <xf:action>
-                    <xf:setvalue ref="instance('i-util')/currentElement">
-                        <xsl:attribute name="value">'<xsl:value-of select="functx:remove-vra-prefix($vraNodeName)"/>'</xsl:attribute>
-                    </xf:setvalue>
-                    <xf:dispatch name="init-dialog" targetid="outerGroup"/>
-                </xf:action>
-                <bfc:show dialog="attrDialog" ev:event="DOMActivate"/>
-            </xf:trigger>
-        </xf:group>
+                   <xf:trigger class="vraAttributeTrigger">
+                       <xf:label>A</xf:label>
+                       <xf:hint>Edit Attributes</xf:hint>
+                       <xf:action>
+                           <xf:setvalue ref="instance('i-util')/currentElement">
+                               <xsl:attribute name="value">'<xsl:value-of select="functx:remove-vra-prefix($vraNodeName)"/>'</xsl:attribute>
+                           </xf:setvalue>
+                           <xf:dispatch name="init-dialog" targetid="outerGroup"/>
+                       </xf:action>
+                       <bfc:show dialog="attrDialog" ev:event="DOMActivate"/>
+                   </xf:trigger>
+                   -->
+               </xf:repeat>
+           </xsl:when>
+           <xsl:otherwise>
+               <xf:group appearance="minimal">
+                   <xsl:call-template name="ui-nodeset-vra">
+                       <!--<xsl:with-param name="path" select="$currentPath"/>-->
+                    </xsl:call-template>
+
+                    <xf:group class="vraAttributes" appearance="minimal">
+                        <xsl:attribute name="ref" select="$vraNodeName"/>
+                        <xi:include href="bricks/vraAttributesViewUI.xml"/>
+                    </xf:group>
+
+                    <xf:trigger class="vraAttributeTrigger">
+                        <xf:label>A</xf:label>
+                        <xf:hint>Edit Attributes</xf:hint>
+                        <xf:action>
+                            <xf:setvalue ref="instance('i-util')/currentElement">
+                                <xsl:attribute name="value">'<xsl:value-of select="functx:remove-vra-prefix($vraNodeName)"/>'</xsl:attribute>
+                            </xf:setvalue>
+                            <xf:dispatch name="init-dialog" targetid="outerGroup"/>
+                        </xf:action>
+                        <bfc:show dialog="attrDialog" ev:event="DOMActivate"/>
+                    </xf:trigger>
+                </xf:group>
+
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
 
     <!-- priority=15 because ignores have 20 -->
@@ -817,6 +864,7 @@
 
         <xsl:variable name="currentPath">
             <xsl:choose>
+                <xsl:when test="../@seqMaxOccurs eq 'unbounded'"><xsl:value-of select="@nodeset"/></xsl:when>
                 <xsl:when test="$isArtifactNode">.</xsl:when>
                 <xsl:when test="$vraNodeName='.'">
                     <xsl:value-of select="$path"/>

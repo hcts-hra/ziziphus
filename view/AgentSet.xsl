@@ -16,7 +16,7 @@
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:name/@type,'')) != 0">
                               <div data-bf-type="select1" data-bf-bind="vra:name/@type" tabindex="0" title="Type"
-                                   id="b-d2e145"
+                                   id="b-d2e187"
                                    class="detail">
                                  <xsl:value-of select="vra:name/@type"></xsl:value-of>
                               </div>
@@ -30,7 +30,7 @@
                            <xsl:when test="string-length(string-join(vra:name,'')) != 0">
                               <div data-bf-type="input" data-bf-bind="vra:name" tabindex="0"
                                    title="Hidden Input for autocomplete"
-                                   id="b-d2e138"
+                                   id="b-d2e180"
                                    class="Name-autocomplete">
                                  <xsl:value-of select="vra:name"></xsl:value-of>
                               </div>
@@ -44,7 +44,7 @@
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:role/@type,'')) != 0">
                               <div data-bf-type="select1" data-bf-bind="vra:role/@type" tabindex="0" title="Type"
-                                   id="b-d2e168"></div>
+                                   id="b-d2e209"></div>
                            </xsl:when>
                            <xsl:otherwise>
                               <div class="nodata" data-bf-type="select1" data-bf-bind="vra:role/@type"
@@ -94,7 +94,7 @@
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:dates/@type,'')) != 0">
                               <div data-bf-type="select1" data-bf-bind="vra:dates/@type" tabindex="0" title="Type"
-                                   id="b-d2e137"
+                                   id="b-d2e165"
                                    class="detail">
                                  <xsl:value-of select="vra:dates/@type"></xsl:value-of>
                               </div>
@@ -162,7 +162,7 @@
                            <xsl:when test="string-length(string-join(vra:dates/vra:latestDate,'')) != 0">
                               <div data-bf-type="input" data-bf-bind="vra:dates/vra:latestDate" tabindex="0"
                                    title="LatestDate"
-                                   id="b-d2e128">
+                                   id="b-d2e142">
                                  <xsl:value-of select="vra:dates/vra:latestDate"></xsl:value-of>
                               </div>
                            </xsl:when>
@@ -176,7 +176,7 @@
                               <div data-bf-type="select1" data-bf-bind="vra:dates/vra:latestDate/@type"
                                    tabindex="0"
                                    title="Type"
-                                   id="b-d2e136">
+                                   id="b-d2e150">
                                  <xsl:value-of select="vra:dates/vra:latestDate/@type"></xsl:value-of>
                               </div>
                            </xsl:when>
