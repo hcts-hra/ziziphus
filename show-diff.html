@@ -39,7 +39,7 @@
         <script type="text/javascript" src="resources/script/diff_match_patch.js"/>
         <script type="text/javascript">//
             function fill_info(res, rev1, rev2) {
-                $("#resource-link").text(resource).attr("href", resource);
+                $("#resource-link").text(resource).attr("href", compose_current_url(resource));
                 $("#rev1").val(rev1);
                 $("#rev2").val(rev2);
             }
@@ -124,8 +124,8 @@
     <body>
         <div id="info">
         	Resource: <a id="resource-link"/>.<br/>
-            Changes from revision <input type="text" id="rev1" class="rev" size="3" maxlength="8"/>
-            to revision <input type="text" id="rev2" class="rev" size="3" maxlength="8"/>.
+            Compare revision Nr.&#xA0;<input type="text" id="rev1" class="rev" size="3" maxlength="8"/>
+            and Nr.&#xA0;<input type="text" id="rev2" class="rev" size="3" maxlength="8"/>.
         </div>
         <div id="options">
         Diffs computed by <a href="http://code.google.com/p/google-diff-match-patch/">google-diff-match-patch</a>.<br/>

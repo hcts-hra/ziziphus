@@ -40,7 +40,6 @@
     <!-- UUID of Record e.g w_****** -->
     <xsl:param name="recordId" select="'GIVEN BY CALLER'"/>
     <!--<xsl:variable name="root_id" select="if($type='work') then 'workrecord' else 'imagerecord'"/>-->
-    <xsl:variable name="title" select="if($recordType='work') then 'Work Record' else 'Image Record'"/>
     <xsl:variable name="id_pref" select="if($recordType='work') then 'w_' else 'i_'"/>
 
     <!-- parameter is only used if a single section is rendered -->
@@ -112,7 +111,10 @@
     <xsl:template match="vra:work | vra:image">
         <xsl:variable name="side" select="if(local-name(.)='work') then 'leftPanel' else 'rightPanel'"/>
         <div>
-            <xsl:value-of select="$title"/>
+            <xsl:choose>
+            	<xsl:when test="local-name(.)='work'">Work Record</xsl:when>
+            	<xsl:when test="local-name(.)='image'">Image Record</xsl:when>
+            </xsl:choose>
         </div>
         <div id="{$side}" class="sidePanel">
             <xsl:call-template name="titlePane">
