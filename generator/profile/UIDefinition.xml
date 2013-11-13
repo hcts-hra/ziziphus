@@ -11,7 +11,7 @@
             <group name="vra:agent" repeated="true" idref="b-d2e68">
                 <group name="vra:name" idref="b-d2e138">
                     <node name="@type" detail="true" idref="b-d2e145"/>
-                    <textNode detail="false" control="autocomplete" queryType="names" host="http://localhost:8080" idref="b-d2e11"/>
+                    <textNode detail="false" control="autocomplete" queryType="names" host="http://kjc-ws2.kjc.uni-heidelberg.de:8650" idref="b-d2e11"/>
                 </group>
                 <group name="vra:role" idref="b-d2e160">
                     <node name="@type" detail="false" idref="b-d2e168"/>
@@ -24,12 +24,12 @@
                     <group name="vra:earliestDate" idref="b-d2e119">
                         <node name="@circa" detail="true" idref="b-d2e126"/>
                         <textNode detail="true" idref="b-d2e11"/>
-                        <node idref="b-d2e127" name="@type" detail="false"/>
+                        <node name="@type" detail="false" idref="b-d2e127"/>
                     </group>
                     <group name="vra:latestDate" idref="b-d2e128">
                         <node name="@circa" detail="true" idref="b-d2e135"/>
                         <textNode detail="true" idref="b-d2e11"/>
-                        <node idref="b-d2e136" name="@type" detail="false"/>
+                        <node name="@type" detail="false" idref="b-d2e136"/>
                     </group>
                 </group>
             </group>
@@ -41,12 +41,12 @@
                 <group name="vra:earliestDate" idref="b-d2e300">
                     <node name="@circa" detail="false" idref="b-d2e307"/>
                     <textNode detail="false" idref="b-d2e11"/>
-                    <node idref="b-d2e308" name="@type" detail="false"/>
+                    <node name="@type" detail="false" idref="b-d2e308"/>
                 </group>
                 <group name="vra:latestDate" idref="b-d2e309">
                     <node name="@circa" detail="false" idref="b-d2e316"/>
                     <textNode detail="false" idref="b-d2e11"/>
-                    <node idref="b-d2e317" name="@type" detail="false"/>
+                    <node name="@type" detail="false" idref="b-d2e317"/>
                 </group>
                 <group name="vra:alternativeNotation" idref="b-d2e318">
                     <node name="@type" detail="false" idref="b-d2e322"/>
@@ -58,16 +58,16 @@
         <set name="vra:descriptionSet" idref="b-d2e352">
             <group name="vra:description" repeated="true" idref="b-d2e397">
 
-                <node idref="b-d2e457" name="@type" detail="false"/>
-                <node idref="b-d2e403" name="vra:text" detail="false" control="textarea"/>
-                <group idref="b-d2e409" name="vra:author" repeated="true">
-                    <group idref="b-d2e412" name="vra:name" xpath="/vra:vra/vra:collection/vra:descriptionSet/vra:description/vra:author/vra:name">
-                        <textNode detail="false"/>
-                        <node idref="b-d2e419" name="@type" detail="false" xpath="/vra:vra/vra:collection/vra:descriptionSet/vra:description/vra:author/vra:name/@type"/>
+                <node name="@type" detail="false" idref="b-d2e457"/>
+                <node name="vra:text" detail="false" control="textarea" idref="b-d2e403"/>
+                <group name="vra:author" repeated="true" idref="b-d2e409">
+                    <group name="vra:name" idref="b-d2e412">
+                        <textNode detail="false" idref="b-d2e11"/>
+                        <node name="@type" detail="false" idref="b-d2e419"/>
                     </group>
-                    <group idref="b-d2e434" name="vra:role" xpath="/vra:vra/vra:collection/vra:descriptionSet/vra:description/vra:author/vra:role">
-                        <textNode detail="false"/>
-                        <node idref="b-d2e442" name="@type" detail="false" xpath="/vra:vra/vra:collection/vra:descriptionSet/vra:description/vra:author/vra:role/@type"/>
+                    <group name="vra:role" idref="b-d2e434">
+                        <textNode detail="false" idref="b-d2e11"/>
+                        <node name="@type" detail="false" idref="b-d2e442"/>
                     </group>
                 </group>
             </group>
@@ -109,7 +109,7 @@
                 <group name="vra:term" idref="b-d2e1353">
 
                     <node name="@type" detail="false" idref="b-d2e1360"/>
-                    <textNode detail="false" control="autocomplete" queryType="subjects" host="http://localhost:8080" idref="b-d2e11"/>
+                    <textNode detail="false" control="autocomplete" queryType="subjects" host="http://kjc-ws2.kjc.uni-heidelberg.de:8650" idref="b-d2e11"/>
                 </group>
             </group>
             <node name="vra:notes" detail="false" idref="b-d2e1326"/>
@@ -227,5 +227,4 @@
 
 
 
-    </group>
-</group>
+    <group name="vra:languageOfCataloging" repeated="true" idref="b-d2e6782"/></group></group>
