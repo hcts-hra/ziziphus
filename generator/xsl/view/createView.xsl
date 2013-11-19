@@ -159,6 +159,7 @@
 
     <xsl:template match="xf:hint"/>
     <xsl:template match="xf:label"/>
+    <xsl:template match="html:label"/>
 
     <xsl:template match="html:script"/>
 </xsl:stylesheet>

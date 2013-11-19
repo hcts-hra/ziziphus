@@ -16,7 +16,8 @@
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(@type,'')) != 0">
                               <div data-bf-type="select1" data-bf-bind="@type" tabindex="0" title="Type"
-                                   id="b-d2e1360">
+                                   id="b-d2e1360"
+                                   class=" ">
                                  <xsl:value-of select="@type"></xsl:value-of>
                               </div>
                            </xsl:when>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-        This a generated file meant for further hand-editing as a UI profile. Must be placed in 'profile'
-        directory to take effect during generation of forms and views.
---><group idref="b-d2e11" name="vra:vra"><group name="vra:collection" idref="b-d2e17">
+        <!--
+                This a generated file meant for further hand-editing as a UI profile. Must be placed in 'profile'
+                directory to take effect during generation of forms and views.
+        --><group idref="b-d2e11" name="vra:vra"><group name="vra:collection" idref="b-d2e17">
 
 
     <set name="vra:agentSet" idref="b-d2e23">
@@ -59,7 +59,7 @@
             <node name="@type" detail="false" idref="b-d2e582"/>
             <node name="vra:text" detail="false" control="textarea" idref="b-d2e486"/>
             <group name="vra:author" repeated="true" idref="b-d2e507">
-                <group name="vra:name" idref="b-d2e510">
+                <group name="vra:name" idref="b-d2e510" control="autocomplete" queryType="names" host="http://localhost:8080">
                     <textNode detail="false" idref="b-d2e11"/>
                     <node name="@type" detail="false" idref="b-d2e517"/>
                 </group>
@@ -114,7 +114,6 @@
     </set>
     <set name="vra:titleSet" idref="b-d2e1689">
         <group name="vra:title" repeated="true" idref="b-d2e1734">
-
             <node name="@type" detail="false" idref="b-d2e1741"/>
             <textNode detail="false" idref="b-d2e11"/>
         </group>
@@ -225,4 +224,4 @@
 
 
 
-    <group idref="b-d2e7282" name="vra:languageOfCataloging" repeated="true"/></group></group>
+    <group name="vra:languageOfCataloging" repeated="true" idref="b-d2e7282"/></group></group>

@@ -14,27 +14,26 @@
                   <tr>
                      <td>
                         <xsl:choose>
-                           <xsl:when test="string-length(string-join(vra:material/@type,'')) != 0">
-                              <div data-bf-type="select1" data-bf-bind="vra:material/@type" tabindex="0"
-                                   title="Type"
-                                   id="b-d2e881">
-                                 <xsl:value-of select="vra:material/@type"></xsl:value-of>
+                           <xsl:when test="string-length(string-join(@type,'')) != 0">
+                              <div data-bf-type="select1" data-bf-bind="@type" tabindex="0" title="Type"
+                                   id="b-d2e881"
+                                   class=" ">
+                                 <xsl:value-of select="@type"></xsl:value-of>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="nodata" data-bf-type="select1" data-bf-bind="vra:material/@type"
-                                   tabindex="0">(Type)</div>
+                              <div class="nodata" data-bf-type="select1" data-bf-bind="@type" tabindex="0">(Type)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                         <xsl:choose>
-                           <xsl:when test="string-length(string-join(vra:material,'')) != 0">
-                              <div data-bf-type="input" data-bf-bind="vra:material" tabindex="0" title="Material"
+                           <xsl:when test="string-length(string-join(.,'')) != 0">
+                              <div data-bf-type="input" data-bf-bind="." tabindex="0" title="Material"
                                    id="b-d2e874">
-                                 <xsl:value-of select="vra:material"></xsl:value-of>
+                                 <xsl:value-of select="."></xsl:value-of>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="nodata" data-bf-type="input" data-bf-bind="vra:material" tabindex="0">(Material)</div>
+                              <div class="nodata" data-bf-type="input" data-bf-bind="." tabindex="0">(Material)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>

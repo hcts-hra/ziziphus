@@ -14,6 +14,8 @@ import module namespace config="http://exist-db.org/xquery/apps/config" at "conf
 import module namespace app="http://www.betterform.de/projects/ziziphus/xquery/app" at "app.xqm";
 import module namespace templates="http://exist-db.org/xquery/templates";
 
+import module namespace csconfig="http://exist-db.org/mods/config" at "/apps/cluster-shared/modules/config.xqm";
+
 declare %templates:wrap %templates:default("workdir", "") function main:createVraRecord($node as node()*, $model as map(*), $id as xs:string?, $workdir as xs:string) {
     let $uuid := $id
     let $workRecordDir as xs:string := if($workdir eq "") then ($app:record-dir) else ($workdir)
@@ -65,7 +67,7 @@ declare %templates:wrap function main:displayImageArea($node as node()*, $model 
                                      then $vraWorkRecord/vra:relationSet/vra:relation[@pref='true'][1]/@relids
                                      else $vraWorkRecord/vra:relationSet/vra:relation[1]/@relids
                     return
-                        <img src="http://kjc-ws2.kjc.uni-heidelberg.de/images/service/download_uuid/{$imageId}" alt="" class="relatedImage"/>
+                        <img src="{$csconfig:image-service-url || '/' || $imageId}" alt="" class="relatedImage"/>
                     ) else ()
         }
     </div>

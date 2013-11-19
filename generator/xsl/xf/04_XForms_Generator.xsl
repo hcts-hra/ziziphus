@@ -826,7 +826,7 @@
                </xf:repeat>
            </xsl:when>
            <xsl:otherwise>
-               <xf:group appearance="minimal">
+              <xf:group appearance="minimal">
                    <xsl:call-template name="ui-nodeset-vra">
                        <!--<xsl:with-param name="path" select="$currentPath"/>-->
                     </xsl:call-template>
@@ -849,8 +849,8 @@
                     </xf:trigger>
                 </xf:group>
 
-            </xsl:otherwise>
-        </xsl:choose>
+            </xsl:otherwise> 
+        </xsl:choose>        
     </xsl:template>
 
     <!-- priority=15 because ignores have 20 -->
@@ -864,7 +864,9 @@
 
         <xsl:variable name="currentPath">
             <xsl:choose>
-                <xsl:when test="../@seqMaxOccurs eq 'unbounded'"><xsl:value-of select="@nodeset"/></xsl:when>
+                <xsl:when test="not(contains(../@nodeset, 'Set' )) and ../@seqMaxOccurs eq 'unbounded'">
+                    <xsl:value-of select="@nodeset"/>
+                </xsl:when>
                 <xsl:when test="$isArtifactNode">.</xsl:when>
                 <xsl:when test="$vraNodeName='.'">
                     <xsl:value-of select="$path"/>
@@ -916,7 +918,7 @@
                             <xsl:if test="not($isArtifactNode) and ('vra:name'=$vraNodeName)">
                                 <xsl:attribute name="class">elementName</xsl:attribute>
                             </xsl:if>
-                            <xf:label>Hidden Input for autocomplete</xf:label>
+                            <xf:label><xsl:value-of select="$label"/></xf:label>
                         </xf:input>
                     </span>
 
@@ -1059,14 +1061,21 @@
                 <xsl:value-of select="$detail"/>
             </xsl:message>
         </xsl:if>
-
-        <xf:select1 id="{$id}">
+        
+        <xsl:variable name="class">
+            <xsl:if test="$detail='true'">
+                <xsl:value-of select="'detail'"/>
+            </xsl:if>
+            <xsl:if test="contains($pref, '@')">
+                <xsl:value-of select="concat(' ', substring-before(substring-after($pref, 'vra:'), '/'), functx:capitalize-first(substring-after($pref, '/@')) )"/>
+            </xsl:if>
+        </xsl:variable>
+    
+        <xf:select1 id="{$id}" class="{$class}">
             <xsl:attribute name="ref">
                 <xsl:value-of select="$pref"/>
             </xsl:attribute>
-            <xsl:if test="$detail='true'">
-                <xsl:attribute name="class" select="'detail'"/>
-            </xsl:if>
+            
             <xf:label>
                 <xsl:value-of select="$plabel"/>
             </xf:label>

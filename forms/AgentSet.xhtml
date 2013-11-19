@@ -218,7 +218,7 @@
                      </td>
                      <td class="contentCol">
                         <xf:group appearance="minimal">
-                           <xf:select1 id="b-d2e187" ref="vra:name/@type" class="detail">
+                           <xf:select1 id="b-d2e187" class="detail nameType" ref="vra:name/@type">
                               <xf:label>Type</xf:label>
                               <xf:hint></xf:hint>
                               <xf:item>
@@ -239,7 +239,7 @@
                               </xf:item>
                            </xf:select1><span style="display:none">
                               <xf:input id="b-d2e180" class="Name-autocomplete" ref="vra:name">
-                                 <xf:label>Hidden Input for autocomplete</xf:label>
+                                 <xf:label>Name</xf:label>
                               </xf:input></span><label for="Name-autocomplete">Name</label><input type="text" name="Name-autocomplete" class="Name-autocomplete-input"
                                   placeholder="Type to search ..."
                                   queryType="names"
@@ -259,7 +259,7 @@
                            </xf:trigger>
                         </xf:group>
                         <xf:group appearance="minimal">
-                           <xf:select1 id="b-d2e209" ref="vra:role/@type">
+                           <xf:select1 id="b-d2e209" class=" roleType" ref="vra:role/@type">
                               <xf:label>Type</xf:label>
                               <xf:hint></xf:hint>
                               <xf:item>
@@ -328,7 +328,7 @@
                            </xf:trigger>
                         </xf:group>
                         <xf:group appearance="minimal">
-                           <xf:select1 id="b-d2e165" ref="vra:dates/@type" class="detail">
+                           <xf:select1 id="b-d2e165" class="detail datesType" ref="vra:dates/@type">
                               <xf:label>Type</xf:label>
                               <xf:hint></xf:hint>
                               <xf:item>
@@ -352,7 +352,7 @@
                               <xf:label>EarliestDate</xf:label>
                               <xf:hint>EarliestDate</xf:hint>
                            </xf:input>
-                           <xf:select1 id="b-d2e127" ref="vra:dates/vra:earliestDate/@type">
+                           <xf:select1 id="b-d2e127" class=" datesType" ref="vra:dates/vra:earliestDate/@type">
                               <xf:label>Type</xf:label>
                               <xf:hint></xf:hint>
                               <xf:item>
@@ -380,7 +380,7 @@
                               <xf:label>LatestDate</xf:label>
                               <xf:hint>LatestDate</xf:hint>
                            </xf:input>
-                           <xf:select1 id="b-d2e150" ref="vra:dates/vra:latestDate/@type">
+                           <xf:select1 id="b-d2e150" class=" datesType" ref="vra:dates/vra:latestDate/@type">
                               <xf:label>Type</xf:label>
                               <xf:hint></xf:hint>
                               <xf:item>

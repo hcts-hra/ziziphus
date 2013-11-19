@@ -14,16 +14,14 @@
                   <tr>
                      <td>
                         <xsl:choose>
-                           <xsl:when test="string-length(string-join(vra:culturalContext,'')) != 0">
-                              <div data-bf-type="input" data-bf-bind="vra:culturalContext" tabindex="0"
-                                   title="CulturalContext"
+                           <xsl:when test="string-length(string-join(.,'')) != 0">
+                              <div data-bf-type="input" data-bf-bind="." tabindex="0" title="CulturalContext"
                                    id="b-d2e283">
-                                 <xsl:value-of select="vra:culturalContext"></xsl:value-of>
+                                 <xsl:value-of select="."></xsl:value-of>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="nodata" data-bf-type="input" data-bf-bind="vra:culturalContext"
-                                   tabindex="0">(CulturalContext)</div>
+                              <div class="nodata" data-bf-type="input" data-bf-bind="." tabindex="0">(CulturalContext)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>

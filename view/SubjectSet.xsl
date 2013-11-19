@@ -16,7 +16,8 @@
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:term/@type,'')) != 0">
                               <div data-bf-type="select1" data-bf-bind="vra:term/@type" tabindex="0" title="Type"
-                                   id="b-d2e1485">
+                                   id="b-d2e1485"
+                                   class=" termType">
                                  <xsl:value-of select="vra:term/@type"></xsl:value-of>
                               </div>
                            </xsl:when>
@@ -27,17 +28,16 @@
                         </xsl:choose>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:term,'')) != 0">
-                              <div data-bf-type="input" data-bf-bind="vra:term" tabindex="0"
-                                   title="Hidden Input for autocomplete"
+                              <div data-bf-type="input" data-bf-bind="vra:term" tabindex="0" title="Term"
                                    id="b-d2e1478"
                                    class="Term-autocomplete">
                                  <xsl:value-of select="vra:term"></xsl:value-of>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="nodata" data-bf-type="input" data-bf-bind="vra:term" tabindex="0">(Hidden Input for autocomplete)</div>
+                              <div class="nodata" data-bf-type="input" data-bf-bind="vra:term" tabindex="0">(Term)</div>
                            </xsl:otherwise>
-                        </xsl:choose>Term
+                        </xsl:choose>
                      </td>
                   </tr>
                </xsl:for-each>

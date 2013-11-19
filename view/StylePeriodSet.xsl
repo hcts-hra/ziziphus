@@ -14,15 +14,14 @@
                   <tr>
                      <td>
                         <xsl:choose>
-                           <xsl:when test="string-length(string-join(vra:stylePeriod,'')) != 0">
-                              <div data-bf-type="input" data-bf-bind="vra:stylePeriod" tabindex="0"
-                                   title="StylePeriod"
+                           <xsl:when test="string-length(string-join(.,'')) != 0">
+                              <div data-bf-type="input" data-bf-bind="." tabindex="0" title="StylePeriod"
                                    id="b-d2e1406">
-                                 <xsl:value-of select="vra:stylePeriod"></xsl:value-of>
+                                 <xsl:value-of select="."></xsl:value-of>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="nodata" data-bf-type="input" data-bf-bind="vra:stylePeriod" tabindex="0">(StylePeriod)</div>
+                              <div class="nodata" data-bf-type="input" data-bf-bind="." tabindex="0">(StylePeriod)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>

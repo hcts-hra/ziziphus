@@ -16,7 +16,8 @@
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(@type,'')) != 0">
                               <div data-bf-type="select1" data-bf-bind="@type" tabindex="0" title="Type"
-                                   id="b-d2e420">
+                                   id="b-d2e420"
+                                   class=" ">
                                  <xsl:value-of select="@type"></xsl:value-of>
                               </div>
                            </xsl:when>
@@ -54,7 +55,8 @@
                            <xsl:when test="string-length(string-join(vra:earliestDate/@type,'')) != 0">
                               <div data-bf-type="select1" data-bf-bind="vra:earliestDate/@type" tabindex="0"
                                    title="Type"
-                                   id="b-d2e363">
+                                   id="b-d2e363"
+                                   class=" earliestDateType">
                                  <xsl:value-of select="vra:earliestDate/@type"></xsl:value-of>
                               </div>
                            </xsl:when>
@@ -92,7 +94,8 @@
                            <xsl:when test="string-length(string-join(vra:latestDate/@type,'')) != 0">
                               <div data-bf-type="select1" data-bf-bind="vra:latestDate/@type" tabindex="0"
                                    title="Type"
-                                   id="b-d2e386">
+                                   id="b-d2e386"
+                                   class=" latestDateType">
                                  <xsl:value-of select="vra:latestDate/@type"></xsl:value-of>
                               </div>
                            </xsl:when>
@@ -108,7 +111,8 @@
                               <div data-bf-type="select1" data-bf-bind="vra:alternativeNotation/@type"
                                    tabindex="0"
                                    title="Type"
-                                   id="b-d2e405">
+                                   id="b-d2e405"
+                                   class=" alternativeNotationType">
                                  <xsl:value-of select="vra:alternativeNotation/@type"></xsl:value-of>
                               </div>
                            </xsl:when>

@@ -235,7 +235,7 @@
                            <xf:trigger>
                               <xf:label>delete</xf:label>
                               <xf:action>
-                                 <xf:delete nodeset="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]"></xf:delete>
+                                 <xf:delete ref="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]"></xf:delete>
                               </xf:action>
                            </xf:trigger>
                         </xf:group>
@@ -244,7 +244,7 @@
                               <xf:label>Name</xf:label>
                               <xf:hint>Name</xf:hint>
                            </xf:input>
-                           <xf:select1 id="b-d2e517" ref="vra:name/@type">
+                           <xf:select1 id="b-d2e517" class=" nameType" ref="vra:name/@type">
                               <xf:label>Type</xf:label>
                               <xf:hint></xf:hint>
                               <xf:item>
@@ -268,7 +268,7 @@
                               <xf:label>Role</xf:label>
                               <xf:hint>Role</xf:hint>
                            </xf:input>
-                           <xf:select1 id="b-d2e539" ref="vra:role/@type">
+                           <xf:select1 id="b-d2e539" class=" roleType" ref="vra:role/@type">
                               <xf:label>Type</xf:label>
                               <xf:hint></xf:hint>
                               <xf:item>
