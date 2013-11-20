@@ -171,22 +171,24 @@
             -->
             <xsl:for-each select="$templateNode/*">
                 <xsl:message>THIS: <xsl:value-of select="name(.)"/></xsl:message>
-                <xsl:message>IMPORTEDNODE: <xsl:value-of select="name($importContextNode)"/></xsl:message>
+                <xsl:message>IMPORTEDNODE: <xsl:value-of select="name($importContextNode[1])"/></xsl:message>
                 <xsl:variable name="this" select="."/>
                 <xsl:variable name="currentImport" select="$importContextNode/*[name(.)=name($this)]"/>
                 <xsl:choose>
                     <xsl:when test="$currentImport">
-                        <xsl:if test="$debug = 'true'">
+                        <xsl:for-each select="$currentImport">
+                            <xsl:if test="$debug = 'true'">
                             <xsl:message>processing node: <xsl:value-of select="name(.)"/>
                             </xsl:message>
-                            <xsl:message>merging text:<xsl:value-of select="$currentImport/text()"/>
+                            <xsl:message>merging text:<xsl:value-of select="./text()"/>
                             </xsl:message>
                         </xsl:if>
                         <xsl:call-template name="mergeImportNode">
                             <xsl:with-param name="templateNode" select="$this"/>
-                            <xsl:with-param name="importContextNode" select="$currentImport"/>
-                            <xsl:with-param name="textValue" select="$currentImport/text()"/>
+                            <xsl:with-param name="importContextNode" select="."/>
+                            <xsl:with-param name="textValue" select="./text()"/>
                         </xsl:call-template>
+                        </xsl:for-each>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:element name="{name(.)}" namespace="{$targetNS}">
