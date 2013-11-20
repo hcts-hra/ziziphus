@@ -59,8 +59,8 @@
             <node name="@type" detail="false" idref="b-d2e582"/>
             <node name="vra:text" detail="false" control="textarea" idref="b-d2e486"/>
             <group name="vra:author" repeated="true" idref="b-d2e507">
-                <group name="vra:name" idref="b-d2e510" control="autocomplete" queryType="names" host="http://localhost:8080">
-                    <textNode detail="false" idref="b-d2e11"/>
+                <group name="vra:name" idref="b-d2e510">
+                    <textNode detail="false" idref="b-d2e11" control="autocomplete" queryType="names" host="http://localhost:8080"/>
                     <node name="@type" detail="false" idref="b-d2e517"/>
                 </group>
                 <group name="vra:role" idref="b-d2e532">

@@ -42,7 +42,8 @@
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:name,'')) != 0">
                               <div data-bf-type="input" data-bf-bind="vra:name" tabindex="0" title="Name"
-                                   id="b-d2e510">
+                                   id="b-d2e510"
+                                   class="Name-autocomplete">
                                  <xsl:value-of select="vra:name"></xsl:value-of>
                               </div>
                            </xsl:when>
