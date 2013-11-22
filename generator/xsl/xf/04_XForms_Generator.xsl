@@ -796,7 +796,7 @@
                     <xf:trigger>
                         <xf:label>delete</xf:label>
                         <xf:action>
-                            <xf:delete ref="instance('i-{$vraSectionNode}')/{$parent}[index('r-vra{$vraArtifact}')]/{$vraNodeName}[index('r-{$repeat-id}')]"/>
+                            <xf:delete nodeset="instance('i-{$vraSectionNode}')/{$parent}[index('r-vra{$vraArtifact}')]/{$vraNodeName}" at="index('r-{$repeat-id}')"/>
                         </xf:action>
                     </xf:trigger>
                 </xf:group>

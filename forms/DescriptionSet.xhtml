@@ -239,7 +239,8 @@
                            <xf:trigger>
                               <xf:label>delete</xf:label>
                               <xf:action>
-                                 <xf:delete ref="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]"></xf:delete>
+                                 <xf:delete nodeset="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author"
+                                            at="index('r-author')"></xf:delete>
                               </xf:action>
                            </xf:trigger>
                         </xf:group>
