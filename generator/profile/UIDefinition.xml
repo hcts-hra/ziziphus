@@ -98,7 +98,7 @@
 
             <node name="@type" detail="false" idref="b-d2e1140"/>
             <node name="vra:rightsHolder" detail="false" idref="b-d2e1084"/>
-            <node name="vra:text" detail="false" idref="b-d2e1105"/>
+            <node name="vra:text" detail="false" control="textarea" idref="b-d2e1105"/>
         </group>
         <node name="vra:notes" detail="false" idref="b-d2e1057"/>
     </set>
