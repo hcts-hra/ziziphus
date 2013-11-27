@@ -17,7 +17,7 @@
                            <xsl:when test="string-length(string-join(vra:name/@type,'')) != 0">
                               <div data-bf-type="select1" data-bf-bind="vra:name/@type" tabindex="0" title="Type"
                                    id="b-d2e187"
-                                   class="detail nameType">
+                                   class="detail">
                                  <xsl:value-of select="vra:name/@type"></xsl:value-of>
                               </div>
                            </xsl:when>
@@ -43,8 +43,7 @@
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:role/@type,'')) != 0">
                               <div data-bf-type="select1" data-bf-bind="vra:role/@type" tabindex="0" title="Type"
-                                   id="b-d2e209"
-                                   class=" roleType"></div>
+                                   id="b-d2e209"></div>
                            </xsl:when>
                            <xsl:otherwise>
                               <div class="nodata" data-bf-type="select1" data-bf-bind="vra:role/@type"
@@ -95,7 +94,7 @@
                            <xsl:when test="string-length(string-join(vra:dates/@type,'')) != 0">
                               <div data-bf-type="select1" data-bf-bind="vra:dates/@type" tabindex="0" title="Type"
                                    id="b-d2e165"
-                                   class="detail datesType">
+                                   class="detail">
                                  <xsl:value-of select="vra:dates/@type"></xsl:value-of>
                               </div>
                            </xsl:when>
@@ -135,8 +134,7 @@
                               <div data-bf-type="select1" data-bf-bind="vra:dates/vra:earliestDate/@type"
                                    tabindex="0"
                                    title="Type"
-                                   id="b-d2e127"
-                                   class=" datesType">
+                                   id="b-d2e127">
                                  <xsl:value-of select="vra:dates/vra:earliestDate/@type"></xsl:value-of>
                               </div>
                            </xsl:when>
@@ -177,8 +175,7 @@
                               <div data-bf-type="select1" data-bf-bind="vra:dates/vra:latestDate/@type"
                                    tabindex="0"
                                    title="Type"
-                                   id="b-d2e150"
-                                   class=" datesType">
+                                   id="b-d2e150">
                                  <xsl:value-of select="vra:dates/vra:latestDate/@type"></xsl:value-of>
                               </div>
                            </xsl:when>

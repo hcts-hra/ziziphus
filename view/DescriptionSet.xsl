@@ -37,53 +37,57 @@
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>
-                     <td></td>
                      <td>
                         <xsl:choose>
-                           <xsl:when test="string-length(string-join(vra:name,'')) != 0">
-                              <div data-bf-type="input" data-bf-bind="vra:name" tabindex="0" title="Name"
+                           <xsl:when test="string-length(string-join(vra:author/vra:name,'')) != 0">
+                              <div data-bf-type="input" data-bf-bind="vra:author/vra:name" tabindex="0"
+                                   title="Name"
                                    id="b-d2e510"
                                    class="Name-autocomplete">
-                                 <xsl:value-of select="vra:name"></xsl:value-of>
+                                 <xsl:value-of select="vra:author/vra:name"></xsl:value-of>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="nodata" data-bf-type="input" data-bf-bind="vra:name" tabindex="0">(Name)</div>
+                              <div class="nodata" data-bf-type="input" data-bf-bind="vra:author/vra:name"
+                                   tabindex="0">(Name)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                         <xsl:choose>
-                           <xsl:when test="string-length(string-join(vra:name/@type,'')) != 0">
-                              <div data-bf-type="select1" data-bf-bind="vra:name/@type" tabindex="0" title="Type"
-                                   id="b-d2e517"
-                                   class=" nameType">
-                                 <xsl:value-of select="vra:name/@type"></xsl:value-of>
+                           <xsl:when test="string-length(string-join(vra:author/vra:name/@type,'')) != 0">
+                              <div data-bf-type="select1" data-bf-bind="vra:author/vra:name/@type" tabindex="0"
+                                   title="Type"
+                                   id="b-d2e517">
+                                 <xsl:value-of select="vra:author/vra:name/@type"></xsl:value-of>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="nodata" data-bf-type="select1" data-bf-bind="vra:name/@type"
+                              <div class="nodata" data-bf-type="select1" data-bf-bind="vra:author/vra:name/@type"
                                    tabindex="0">(Type)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                         <xsl:choose>
-                           <xsl:when test="string-length(string-join(vra:role,'')) != 0">
-                              <div data-bf-type="input" data-bf-bind="vra:role" tabindex="0" title="Role"
+                           <xsl:when test="string-length(string-join(vra:author/vra:role,'')) != 0">
+                              <div data-bf-type="input" data-bf-bind="vra:author/vra:role" tabindex="0"
+                                   title="Role"
                                    id="b-d2e532">
-                                 <xsl:variable name="role" select="vra:role"></xsl:variable>
-                                 <xsl:value-of select="$role-codes-legend//item[value eq $role]/label"></xsl:value-of>
+                                 <xsl:value-of select="vra:author/vra:role"></xsl:value-of>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="nodata" data-bf-type="input" data-bf-bind="vra:role" tabindex="0">(Role)</div>
+                              <div class="nodata" data-bf-type="input" data-bf-bind="vra:author/vra:role"
+                                   tabindex="0">(Role)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                         <xsl:choose>
-                           <xsl:when test="string-length(string-join(vra:role/@type,'')) != 0">
-                              <div data-bf-type="select1" data-bf-bind="vra:role/@type" tabindex="0" title="Type"
-                                   id="b-d2e539"
-                                   class=" roleType"></div>
+                           <xsl:when test="string-length(string-join(vra:author/vra:role/@type,'')) != 0">
+                              <div data-bf-type="select1" data-bf-bind="vra:author/vra:role/@type" tabindex="0"
+                                   title="Type"
+                                   id="b-d2e539">
+                                 <xsl:value-of select="vra:author/vra:role/@type"></xsl:value-of>
+                              </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="nodata" data-bf-type="select1" data-bf-bind="vra:role/@type"
+                              <div class="nodata" data-bf-type="select1" data-bf-bind="vra:author/vra:role/@type"
                                    tabindex="0">(Type)</div>
                            </xsl:otherwise>
                         </xsl:choose>
