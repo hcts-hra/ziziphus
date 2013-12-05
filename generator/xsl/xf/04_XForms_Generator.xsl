@@ -94,7 +94,7 @@
             <body>
                 <div id="xforms">
 
-<xsl:comment> ###################### MODEL ################################## </xsl:comment>
+<xsl:comment> ###################### MODEL ##########################'-',######## </xsl:comment>
 <xsl:comment> ###################### MODEL ################################## </xsl:comment>
 <xsl:comment> ###################### MODEL ################################## </xsl:comment>
 
@@ -151,6 +151,20 @@
                                 	<xsl:with-param name="artifactNode" select="$vraArtifactNode"/>
                                 </xsl:call-template>
                                 <xf:message ev:event="xforms-submit-error">Sorry, updating of this record failed</xf:message>
+                                <xf:action ev:event="xforms-submit">
+                                    <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@dataDate">
+                                        <xsl:attribute name="context">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]</xsl:attribute>
+                                        <xsl:attribute name="if">not(exists(instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/@dataDate))</xsl:attribute>
+                                    </xf:insert>
+                                    <xf:setvalue value="now()">
+                                        <xsl:attribute name="ref">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/@dataDate</xsl:attribute>    
+                                    </xf:setvalue>
+                                    <xf:recalculate/>
+                                        <!-- strip unwanted chars from timestamp -->
+                                        <xf:setvalue value="concat(substring(.,1,10),'-',substring(.,12,2), '-', substring(.,15,2), '-', substring(.,18,2))">
+                                            <xsl:attribute name="ref">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/@dataDate</xsl:attribute>    
+                                        </xf:setvalue>
+                                </xf:action>
                                 <xf:action ev:event="xforms-submit-done">
                                     <xf:message level="ephemeral">Data have been stored.</xf:message>
                                     <!-- ##### use to signal that the UI needs re-generation by calling respective xsl e.g. AgentSet.xsl ##### -->
@@ -918,6 +932,48 @@
                             <xsl:if test="not($isArtifactNode) and ('vra:name'=$vraNodeName)">
                                 <xsl:attribute name="class">elementName</xsl:attribute>
                             </xsl:if>
+                            <!--replace JavaScript-Magic with XForms -->
+                            <xf:action ev:event="autocomplete-callback">
+                                <xf:setvalue ref="." value="event('value')"/>
+                               
+                                <!-- If uuid exists set refid to uuid -->
+                                <xf:action>
+                                    <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@refid" context=".">
+                                        <xsl:attribute name="if">not(exists(instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/@refid))</xsl:attribute>
+                                    </xf:insert>
+                                    <xf:setvalue ref="@refid" value="event('uuid')"/>
+                                </xf:action> 
+                                <!-- If internalID (viaf-id / getty-id) exist but no uuid set refid to internalID-->
+                                <xf:action>
+                                    <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@refid" context=".">
+                                        <xsl:attribute name="if">not(exists(instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/@refid))</xsl:attribute>
+                                    </xf:insert>
+                                    <xf:setvalue ref="@refid" value="event('internalID')"/>
+                                </xf:action>
+                                <!-- If resource exists (local/ULAN ...) set source -->
+                                <xf:action>
+                                    <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@vocab" context=".">
+                                        <xsl:attribute name="if">not(exists(instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/@vocab))</xsl:attribute>
+                                    </xf:insert>
+                                    <xf:setvalue ref="@vocab" value="event('resource')"/>
+                                </xf:action>
+                                <!-- If earliestDate exists and "Set" has a dates element set it -->
+                                <xf:action if="exists(../vra:dates/vra:earliestDate)">
+                                    <xf:setvalue ref="../vra:dates/vra:earliestDate" value="event('earliestDate')"/>
+                                </xf:action>
+                                <!-- If latestDate exists and "Set" has a dates element set it -->
+                                <xf:action if="exists(../vra:dates/vra:latestDate)">
+                                    <xf:setvalue ref="../vra:dates/vra:latestDate" value="event('latestDate')"/>
+                                </xf:action>
+                                 <!-- If type exists and set it -->
+                                <xf:action>
+                                    <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@type" context=".">
+                                        <xsl:attribute name="if">not(exists(instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/@type))</xsl:attribute>
+                                    </xf:insert>
+                                    <xf:setvalue ref="@type" value="event('datumType')"/>
+                                </xf:action>
+                            </xf:action>
+                            
                             <xf:label><xsl:value-of select="$label"/></xf:label>
                         </xf:input>
                     </span>

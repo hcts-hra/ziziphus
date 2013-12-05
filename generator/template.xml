@@ -15,16 +15,27 @@
 
     <merge:importInstance>
         <descriptionSet>
-            <description lang="en" script="Latn">
-                <text>An advertising calendar poster for CIBA Dyes Ltd from basle, Switzerland. The central image shows groups of people sitting on a meadow near a mosque-like structure. On both sides, the central image is surrounded by 14 small brand-like images. the calender is printed at the bottom.</text>
+            <description lang="eng" script="Latn">
+                <text>The picture shows Mohandas K Gandhi clad in a dhoti being welcomed by Mother India holding the Indian flag. He has just disembarked from the steamer "Pilsna" which fills the background. Part of the gangway is depicted to the right, a distant ship can be seen on the left hand side.</text>
                 <author>
-                    <name vocab="local" type="personal" refid="uuid-009f50e1-2a8e-5896-89a1-665effeff19c">Arnold, Matthias</name>
+                    <name vocab="local" type="corporate" refid="">PPColl_editors1</name>
+                    <role vocab="marcrelator" code="edt">Editor</role>
+                </author>
+                <author>
+                    <name vocab="local" type="corporate" refid="">PPColl_editors2</name>
                     <role vocab="marcrelator" code="edt">Editor</role>
                 </author>
             </description>
-            <description vocab="LOCAL" refid="687bd7ca-1185-5511-8938-1f351c94a5eb">
-                <text>framing (processes)</text>
-
+            <description lang="eng" script="Latn">
+                <text>2</text>
+                <author>
+                    <name vocab="local" type="corporate" refid="">PPColl_editors11</name>
+                    <role vocab="marcrelator" code="edt">Editor</role>
+                </author>
+                <author>
+                    <name vocab="local" type="corporate" refid="">PPColl_editors22</name>
+                    <role vocab="marcrelator" code="edt">Editor</role>
+                </author>
             </description>
         </descriptionSet>
     </merge:importInstance>

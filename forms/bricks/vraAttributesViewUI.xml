@@ -3,7 +3,7 @@ This brick is used as include in all *Set Forms for the display of vraAttributes
 Please note that not all common vra attributes (as defined by VRA Schema) are handled here as e.g. @pref is
 handled by the *Set forms themselves. Same is true for xml:lang which is not used for the Ziziphus project.
 -->
-<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xf="http://www.w3.org/2002/xforms">
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xf="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events">
     <xf:output ref="@dataDate">
         <xf:label>dataDate</xf:label>
         <xf:hint>dataDate</xf:hint>
@@ -28,7 +28,7 @@ handled by the *Set forms themselves. Same is true for xml:lang which is not use
                         <xf:label>pref</xf:label>
                     </xf:output>
     -->
-    <xf:output ref="@refid">
+    <xf:output ref="@refid" class="testme">
         <xf:label>refid</xf:label>
         <xf:hint>refid</xf:hint>
     </xf:output>
@@ -50,12 +50,12 @@ handled by the *Set forms themselves. Same is true for xml:lang which is not use
         <xf:label>Language Code</xf:label>
         <xf:hint>Language Code</xf:hint>
     </xf:output>
-    <xf:output ref="@transliteration">
-        <xf:label>transliteration</xf:label>
-        <xf:hint>transliteration</xf:hint>
-    </xf:output>
     <xf:output ref="@script">
         <xf:label>Script</xf:label>
         <xf:hint>Script</xf:hint>
+    </xf:output>
+    <xf:output ref="@transliteration">
+        <xf:label>transliteration</xf:label>
+        <xf:hint>transliteration</xf:hint>
     </xf:output>
 </div>

@@ -32,7 +32,7 @@
         <xsl:if test="$debugEnabled">
             <xsl:message>element:<xsl:value-of select="name()"/> | nodeset:<xsl:value-of select="@name"/> :originBind:<xsl:value-of select="$originBind"/></xsl:message>
         </xsl:if>
-
+    
         <xsl:element name="{name($originBind)}" namespace="http://www.w3.org/2002/xforms">
             <xsl:copy-of select="$originBind/@*"/>
             <xsl:copy-of select="@*"/>

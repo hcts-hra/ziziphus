@@ -40,11 +40,11 @@
         <xf:input ref="@lang">
             <xf:label>Language</xf:label>
         </xf:input>
-        <xf:input ref="@transliteration">
-            <xf:label>Transliteration</xf:label>
-        </xf:input>
         <xf:input ref="@script">
             <xf:label>Script</xf:label>
+        </xf:input>
+        <xf:input ref="@transliteration">
+            <xf:label>Transliteration</xf:label>
         </xf:input>
     </xf:group>
 </div><!--</div>-->
