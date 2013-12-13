@@ -99,15 +99,10 @@
         <xsl:message>inlineComplextType: <xsl:value-of select="$referencedType"/></xsl:message>
 
         <xsl:if test="$debugEnabled">
-            <xsl:message select="concat('inlineComplexType: ComplexType: ', @type)"/>
+            <xsl:message select="concat('inlineComplexType: ComplexType: ', @type, ' referencedType: ', $referencedType/@name, ' Name: ', @name)"/>
         </xsl:if>
 
         <xsl:if test="$referencedType">
-        <xsl:choose>
-            <xsl:when test="name(..)='xsd:all'">
-                <xsl:copy-of select="."/>
-            </xsl:when>
-            <xsl:otherwise>
                 <xsl:copy>
                     <xsl:choose>
                         <xsl:when test="$debugEnabled">
@@ -127,15 +122,16 @@
                             </xsl:when>
                             <xsl:otherwise/>
                         </xsl:choose>
+                        <xsl:message select="concat('Arrrggghhh count: ', count($referencedType/*))"/>
                         <xsl:apply-templates select="$referencedType/*"/>
                     </xsl:element>
                 </xsl:copy>
-            </xsl:otherwise>
-        </xsl:choose>
         </xsl:if>
     </xsl:template>
         
-        
+    <xsl:template match="xsd:all" priority="15">
+        <xsl:copy-of select="."/>
+    </xsl:template>
 
     <!-- inline attributeGroups -->
     <xsl:template name="inlineAttributeGroups" match="xsd:attributeGroup[@ref]">

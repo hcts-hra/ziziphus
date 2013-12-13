@@ -415,6 +415,18 @@
     </xsd:complexType>
 
     <!-- >>> EXTENSION START >>> -->
+    <xsd:complexType name="clusterDateWrapperType">
+        <xsd:annotation>
+            <xsd:documentation> Basic datatype for all date elements. Allows a textual element body
+                and a "circa" attribute. </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence minOccurs="1" maxOccurs="1">
+            <xsd:element name="date" type="dateWrapperType"/>
+            <xsd:element name="alternativeNotation" type="alternativeNotationDateType" minOccurs="0"
+                maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
     <xsd:simpleType name="uncertainDateType">
         <xsd:restriction base="xsd:string"/>
     </xsd:simpleType>
@@ -528,10 +540,9 @@
                 types of dates. </xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
-            <xsd:element name="earliestDate" type="dateWrapperType" minOccurs="0"/>
-            <xsd:element name="latestDate" type="dateWrapperType" minOccurs="0"/>
             <!-- >>> EXTENSION START >>> -->
-            <xsd:element name="alternativeNotation" type="alternativeNotationDateType" minOccurs="0"/>
+            <xsd:element name="earliestDate" type="clusterDateWrapperType" minOccurs="0"/>
+            <xsd:element name="latestDate" type="clusterDateWrapperType" minOccurs="0"/>
             <!-- <<< EXTENSION END <<< -->
         </xsd:sequence>
         <xsd:attribute name="type" type="dateTypeType"/>

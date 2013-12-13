@@ -16,7 +16,7 @@
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(@type,'')) != 0">
                               <div data-bf-type="select1" data-bf-bind="@type" tabindex="0" title="Type"
-                                   id="b-d2e420"
+                                   id="b-d2e451"
                                    class=" ">
                                  <xsl:value-of select="@type"></xsl:value-of>
                               </div>
@@ -28,111 +28,135 @@
                      </td>
                      <td>
                         <xsl:choose>
-                           <xsl:when test="string-length(string-join(vra:earliestDate/@circa,'')) != 0 and vra:earliestDate/@circa eq 'true'">
-                              <div class="subtitle" data-bf-type="input" data-bf-bind="vra:earliestDate/@circa"
+                           <xsl:when test="string-length(string-join(vra:earliestDate/vra:date,'')) != 0">
+                              <div data-bf-type="input" data-bf-bind="vra:earliestDate/vra:date" tabindex="0"
+                                   title="Date"
+                                   id="b-d2e361">
+                                 <xsl:value-of select="vra:earliestDate/vra:date"></xsl:value-of>
+                              </div>
+                           </xsl:when>
+                           <xsl:otherwise>
+                              <div class="nodata" data-bf-type="input" data-bf-bind="vra:earliestDate/vra:date"
+                                   tabindex="0">(Date)</div>
+                           </xsl:otherwise>
+                        </xsl:choose>
+                        <xsl:choose>
+                           <xsl:when test="string-length(string-join(vra:earliestDate/vra:date/@circa,'')) != 0 and vra:earliestDate/vra:date/@circa eq 'true'">
+                              <div class="subtitle" data-bf-type="input"
+                                   data-bf-bind="vra:earliestDate/vra:date/@circa"
                                    tabindex="0"
                                    title="circa">circa</div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="nodata" data-bf-type="input" data-bf-bind="vra:earliestDate/@circa"
+                              <div class="nodata" data-bf-type="input"
+                                   data-bf-bind="vra:earliestDate/vra:date/@circa"
                                    tabindex="0">(circa)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                         <xsl:choose>
-                           <xsl:when test="string-length(string-join(vra:earliestDate,'')) != 0">
-                              <div data-bf-type="input" data-bf-bind="vra:earliestDate" tabindex="0"
-                                   title="EarliestDate"
-                                   id="b-d2e355">
-                                 <xsl:value-of select="vra:earliestDate"></xsl:value-of>
-                              </div>
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <div class="nodata" data-bf-type="input" data-bf-bind="vra:earliestDate"
-                                   tabindex="0">(EarliestDate)</div>
-                           </xsl:otherwise>
-                        </xsl:choose>
-                        <xsl:choose>
-                           <xsl:when test="string-length(string-join(vra:earliestDate/@type,'')) != 0">
-                              <div data-bf-type="select1" data-bf-bind="vra:earliestDate/@type" tabindex="0"
+                           <xsl:when test="string-length(string-join(vra:earliestDate/vra:date/@type,'')) != 0">
+                              <div data-bf-type="select1" data-bf-bind="vra:earliestDate/vra:date/@type"
+                                   tabindex="0"
                                    title="Type"
-                                   id="b-d2e363"
+                                   id="b-d2e369"
                                    class=" earliestDateType">
-                                 <xsl:value-of select="vra:earliestDate/@type"></xsl:value-of>
-                              </div>
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <div class="nodata" data-bf-type="select1" data-bf-bind="vra:earliestDate/@type"
-                                   tabindex="0">(Type)</div>
-                           </xsl:otherwise>
-                        </xsl:choose>
-                     </td>
-                     <td>
-                        <xsl:choose>
-                           <xsl:when test="string-length(string-join(vra:latestDate/@circa,'')) != 0 and vra:latestDate/@circa eq 'true'">
-                              <div class="subtitle" data-bf-type="input" data-bf-bind="vra:latestDate/@circa"
-                                   tabindex="0"
-                                   title="circa">circa</div>
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <div class="nodata" data-bf-type="input" data-bf-bind="vra:latestDate/@circa"
-                                   tabindex="0">(circa)</div>
-                           </xsl:otherwise>
-                        </xsl:choose>
-                        <xsl:choose>
-                           <xsl:when test="string-length(string-join(vra:latestDate,'')) != 0">
-                              <div data-bf-type="input" data-bf-bind="vra:latestDate" tabindex="0"
-                                   title="LatestDate"
-                                   id="b-d2e378">
-                                 <xsl:value-of select="vra:latestDate"></xsl:value-of>
-                              </div>
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <div class="nodata" data-bf-type="input" data-bf-bind="vra:latestDate" tabindex="0">(LatestDate)</div>
-                           </xsl:otherwise>
-                        </xsl:choose>
-                        <xsl:choose>
-                           <xsl:when test="string-length(string-join(vra:latestDate/@type,'')) != 0">
-                              <div data-bf-type="select1" data-bf-bind="vra:latestDate/@type" tabindex="0"
-                                   title="Type"
-                                   id="b-d2e386"
-                                   class=" latestDateType">
-                                 <xsl:value-of select="vra:latestDate/@type"></xsl:value-of>
-                              </div>
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <div class="nodata" data-bf-type="select1" data-bf-bind="vra:latestDate/@type"
-                                   tabindex="0">(Type)</div>
-                           </xsl:otherwise>
-                        </xsl:choose>
-                     </td>
-                     <td>
-                        <xsl:choose>
-                           <xsl:when test="string-length(string-join(vra:alternativeNotation/@type,'')) != 0">
-                              <div data-bf-type="select1" data-bf-bind="vra:alternativeNotation/@type"
-                                   tabindex="0"
-                                   title="Type"
-                                   id="b-d2e405"
-                                   class=" alternativeNotationType">
-                                 <xsl:value-of select="vra:alternativeNotation/@type"></xsl:value-of>
+                                 <xsl:value-of select="vra:earliestDate/vra:date/@type"></xsl:value-of>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
                               <div class="nodata" data-bf-type="select1"
-                                   data-bf-bind="vra:alternativeNotation/@type"
+                                   data-bf-bind="vra:earliestDate/vra:date/@type"
                                    tabindex="0">(Type)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                         <xsl:choose>
-                           <xsl:when test="string-length(string-join(vra:alternativeNotation,'')) != 0">
-                              <div data-bf-type="input" data-bf-bind="vra:alternativeNotation" tabindex="0"
-                                   title="AlternativeNotation"
-                                   id="b-d2e401">
-                                 <xsl:value-of select="vra:alternativeNotation"></xsl:value-of>
+                           <xsl:when test="string-length(string-join(@type,'')) != 0">
+                              <div data-bf-type="select1" data-bf-bind="@type" tabindex="0" title="Type"
+                                   id="b-d2e388"
+                                   class=" ">
+                                 <xsl:value-of select="@type"></xsl:value-of>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="nodata" data-bf-type="input" data-bf-bind="vra:alternativeNotation"
-                                   tabindex="0">(AlternativeNotation)</div>
+                              <div class="nodata" data-bf-type="select1" data-bf-bind="@type" tabindex="0">(Type)</div>
+                           </xsl:otherwise>
+                        </xsl:choose>
+                        <xsl:choose>
+                           <xsl:when test="string-length(string-join(.,'')) != 0">
+                              <div data-bf-type="input" data-bf-bind="." tabindex="0" title="AlternativeNotation"
+                                   id="b-d2e384">
+                                 <xsl:value-of select="."></xsl:value-of>
+                              </div>
+                           </xsl:when>
+                           <xsl:otherwise>
+                              <div class="nodata" data-bf-type="input" data-bf-bind="." tabindex="0">(AlternativeNotation)</div>
+                           </xsl:otherwise>
+                        </xsl:choose>
+                     </td>
+                     <td>
+                        <xsl:choose>
+                           <xsl:when test="string-length(string-join(vra:latestDate/vra:date,'')) != 0">
+                              <div data-bf-type="input" data-bf-bind="vra:latestDate/vra:date" tabindex="0"
+                                   title="Date"
+                                   id="b-d2e409">
+                                 <xsl:value-of select="vra:latestDate/vra:date"></xsl:value-of>
+                              </div>
+                           </xsl:when>
+                           <xsl:otherwise>
+                              <div class="nodata" data-bf-type="input" data-bf-bind="vra:latestDate/vra:date"
+                                   tabindex="0">(Date)</div>
+                           </xsl:otherwise>
+                        </xsl:choose>
+                        <xsl:choose>
+                           <xsl:when test="string-length(string-join(vra:latestDate/vra:date/@circa,'')) != 0 and vra:latestDate/vra:date/@circa eq 'true'">
+                              <div class="subtitle" data-bf-type="input"
+                                   data-bf-bind="vra:latestDate/vra:date/@circa"
+                                   tabindex="0"
+                                   title="circa">circa</div>
+                           </xsl:when>
+                           <xsl:otherwise>
+                              <div class="nodata" data-bf-type="input"
+                                   data-bf-bind="vra:latestDate/vra:date/@circa"
+                                   tabindex="0">(circa)</div>
+                           </xsl:otherwise>
+                        </xsl:choose>
+                        <xsl:choose>
+                           <xsl:when test="string-length(string-join(vra:latestDate/vra:date/@type,'')) != 0">
+                              <div data-bf-type="select1" data-bf-bind="vra:latestDate/vra:date/@type"
+                                   tabindex="0"
+                                   title="Type"
+                                   id="b-d2e417"
+                                   class=" latestDateType">
+                                 <xsl:value-of select="vra:latestDate/vra:date/@type"></xsl:value-of>
+                              </div>
+                           </xsl:when>
+                           <xsl:otherwise>
+                              <div class="nodata" data-bf-type="select1"
+                                   data-bf-bind="vra:latestDate/vra:date/@type"
+                                   tabindex="0">(Type)</div>
+                           </xsl:otherwise>
+                        </xsl:choose>
+                        <xsl:choose>
+                           <xsl:when test="string-length(string-join(@type,'')) != 0">
+                              <div data-bf-type="select1" data-bf-bind="@type" tabindex="0" title="Type"
+                                   id="b-d2e436"
+                                   class=" ">
+                                 <xsl:value-of select="@type"></xsl:value-of>
+                              </div>
+                           </xsl:when>
+                           <xsl:otherwise>
+                              <div class="nodata" data-bf-type="select1" data-bf-bind="@type" tabindex="0">(Type)</div>
+                           </xsl:otherwise>
+                        </xsl:choose>
+                        <xsl:choose>
+                           <xsl:when test="string-length(string-join(.,'')) != 0">
+                              <div data-bf-type="input" data-bf-bind="." tabindex="0" title="AlternativeNotation"
+                                   id="b-d2e432">
+                                 <xsl:value-of select="."></xsl:value-of>
+                              </div>
+                           </xsl:when>
+                           <xsl:otherwise>
+                              <div class="nodata" data-bf-type="input" data-bf-bind="." tabindex="0">(AlternativeNotation)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>

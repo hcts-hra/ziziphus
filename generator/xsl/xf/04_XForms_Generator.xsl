@@ -107,15 +107,7 @@
                                         initAutocompletes();
                                     </script>
                                 </xsl:if>
-                            </xf:action>
-                            
-                            <xsl:if test="//xf:bind[@nodeset=concat('vra:',$vraSectionNode)]//@control[. eq 'autocomplete']">
-                                <xf:action ev:observer="i-{$vraSectionNode}" ev:event="xforms-insert">
-                                    <script>
-                                        initAutocompletes();
-                                    </script>
-                                </xf:action>
-                            </xsl:if>
+                            </xf:action>                           
                             
                             <xf:submission id="s-loadSet"
                                     resource="{$relativePath}modules/loadData.xql?id={{bf:instanceOfModel('m-main','i-control-center')/uuid}}&amp;workdir={{bf:instanceOfModel('m-main','i-control-center')/workdir}}"
@@ -214,6 +206,11 @@
                             </xf:instance>
 
                         </xf:model>
+                        <!--
+                        <xf:action ev:observer="outerGroup" ev:event="xforms-value-changed">
+                            <xf:message level="ephemeral">Value changed</xf:message>
+                        </xf:action>
+                        -->
                     </div>
 
 <xsl:comment> ####################################### VISIBLE UI ####################################### </xsl:comment>
@@ -229,6 +226,9 @@
                                 <xsl:attribute name="nodeset">instance()/vra:<xsl:value-of select="$vraArtifactNode"/>[1]</xsl:attribute>
                                 <xsl:attribute name="origin">instance('i-templates')/vra:<xsl:value-of select="$vraArtifactNode"/></xsl:attribute>
                                 <xsl:attribute name="position">before</xsl:attribute>
+                                 <script>
+                                        initAutocompletes();
+                                </script>
                             </xf:insert>
                         </xf:trigger>
                         <xf:trigger id="{concat(generate-id(),'-save')}" class="t-save -toolbarbutton">
@@ -294,6 +294,7 @@
                                     <xf:setvalue ref="@href"/>
                                 </xf:trigger>
                             </xf:group>
+                            <!--
                             <xf:group appearance="minimal" class="attrDialogGroup">
                                 <xf:input ref="@refid" id="{concat(generate-id(),'-refid')}">
                                     <xf:label>refid</xf:label>
@@ -303,6 +304,7 @@
                                     <xf:setvalue ref="@refid"/>
                                 </xf:trigger>
                             </xf:group>
+                            -->
                             <xf:group appearance="minimal" class="attrDialogGroup">
                                 <xf:input ref="@rules" id="{concat(generate-id(),'-rules')}">
                                     <xf:label>rules</xf:label>
@@ -321,6 +323,7 @@
                                     <xf:setvalue ref="@source"/>
                                 </xf:trigger>
                             </xf:group>
+                            <!--
                             <xf:group appearance="minimal" class="attrDialogGroup">
                                 <xf:select1 ref="@vocab" id="{concat(generate-id(),'-vocab')}">
                                     <xf:label>vocab</xf:label>
@@ -346,6 +349,7 @@
                                     <xf:setvalue ref="@vocab"/>
                                 </xf:trigger>
                             </xf:group>
+                            -->
                             <xf:group appearance="minimal" class="attrDialogGroup">
                                 <xf:select1 ref="@lang"  id="{concat(generate-id(),'-lang')}">
                                         <xf:label>Language</xf:label>
@@ -797,7 +801,7 @@
 
 
         <xsl:choose>
-            <xsl:when test=".[@seqMaxOccurs eq 'unbounded']">
+            <xsl:when test=".[@maxOccurs eq 'unbounded']">
                 <xsl:variable name="parent" select="../@nodeset"/>
                 <xsl:variable name="repeat-id" select="substring-after($vraNodeName, 'vra:')"/>
                 <xf:group>
@@ -825,24 +829,24 @@
                        <xi:include href="bricks/vraAttributesViewUI.xml"/>
                    </xf:group>
 
-                   <xf:trigger class="vraAttributeTrigger">
-                       <xf:label>A</xf:label>
-                       <xf:hint>Edit Attributes</xf:hint>
-                       <xf:action>
-                           <xf:setvalue ref="instance('i-util')/currentElement">
-                               <xsl:attribute name="value">'<xsl:value-of select="functx:remove-vra-prefix($vraNodeName)"/>'</xsl:attribute>
-                           </xf:setvalue>
-                           <xf:dispatch name="init-dialog" targetid="outerGroup"/>
-                       </xf:action>
-                       <bfc:show dialog="attrDialog" ev:event="DOMActivate"/>
-                   </xf:trigger>
-                   -->
-               </xf:repeat>
-           </xsl:when>
-           <xsl:otherwise>
-              <xf:group appearance="minimal">
-                   <xsl:call-template name="ui-nodeset-vra">
-                       <!--<xsl:with-param name="path" select="$currentPath"/>-->
+                    <xf:trigger class="vraAttributeTrigger">
+                        <xf:label>A</xf:label>
+                        <xf:hint>Edit Attributes</xf:hint>
+                        <xf:action>
+                            <xf:setvalue ref="instance('i-util')/currentElement">
+                                <xsl:attribute name="value">'<xsl:value-of select="functx:remove-vra-prefix($vraNodeName)"/>'</xsl:attribute>
+                            </xf:setvalue>
+                            <xf:dispatch name="init-dialog" targetid="outerGroup"/>
+                        </xf:action>
+                        <bfc:show dialog="attrDialog" ev:event="DOMActivate"/>
+                    </xf:trigger>
+                    -->
+                </xf:repeat>
+            </xsl:when>
+            <xsl:otherwise>
+                <xf:group appearance="minimal">
+                    <xsl:call-template name="ui-nodeset-vra">
+                        <!--<xsl:with-param name="path" select="$currentPath"/>-->
                     </xsl:call-template>
 
                     <xf:group class="vraAttributes" appearance="minimal">
@@ -894,7 +898,8 @@
         <xsl:variable name="targetNode" select="@nodeset"/>
 
         <xsl:if test="$debugEnabled">
-            <xsl:message>UI-4: currentPath : <xsl:value-of select="$currentPath"/>#</xsl:message>
+            <xsl:message>UI-4: path : <xsl:value-of select="$path"/></xsl:message>
+            <xsl:message>UI-4: currentPath : <xsl:value-of select="$currentPath"/></xsl:message>
             <xsl:message>UI-4: element name : <xsl:value-of select="name()"/></xsl:message>
             <xsl:message>UI-4: element nodeset : <xsl:value-of select="@nodeset"/></xsl:message>
             <xsl:message>UI-4: element vraNodeName : <xsl:value-of select="$vraNodeName"/></xsl:message>
@@ -903,177 +908,208 @@
             <xsl:message></xsl:message>
         </xsl:if>
 
-        <xsl:if test="@xfType='simpleType'">
-            <xsl:variable name="label">
-                <xsl:choose>
-                    <xsl:when test="$vraNodeName eq '.'">
-                        <xsl:value-of select="functx:capitalize-first(../@nodeset)"/>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:value-of select="functx:capitalize-first($vraNodeName)"/>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </xsl:variable>
-
-            <xsl:choose>
-                <!--<xsl:when test="contains($useTextarea,$targetNode)">-->
-                <xsl:when test="@control='autocomplete' and exists(@queryType)">
-                    <xsl:if test="$debugEnabled">
-                        <xsl:message>UI-4.1:found element that shall use autocomplete</xsl:message>
-                    </xsl:if>
-                    <xsl:variable name="queryType" select="@queryType"/>
-                    <xsl:variable name="host" select="@host"/>
-
-                    <span style="display:none">
-                        <xf:input id="{$id}" class="{$label}-autocomplete">
-                            <xsl:attribute name="ref">
-                                <xsl:value-of select="$currentPath"/>
-                            </xsl:attribute>
-                            <xsl:if test="not($isArtifactNode) and ('vra:name'=$vraNodeName)">
-                                <xsl:attribute name="class">elementName</xsl:attribute>
-                            </xsl:if>
-                            <!--replace JavaScript-Magic with XForms -->
-                            <xf:action ev:event="autocomplete-callback">
-                                <xf:setvalue ref="." value="event('value')"/>
-                               
-                                <!-- If uuid exists set refid to uuid -->
-                                <xf:action>
-                                    <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@refid" context=".">
-                                        <xsl:attribute name="if">not(exists(instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/@refid))</xsl:attribute>
-                                    </xf:insert>
-                                    <xf:setvalue ref="@refid" value="event('uuid')"/>
-                                </xf:action> 
-                                <!-- If internalID (viaf-id / getty-id) exist but no uuid set refid to internalID-->
-                                <xf:action>
-                                    <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@refid" context=".">
-                                        <xsl:attribute name="if">not(exists(instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/@refid))</xsl:attribute>
-                                    </xf:insert>
-                                    <xf:setvalue ref="@refid" value="event('internalID')"/>
-                                </xf:action>
-                                <!-- If resource exists (local/ULAN ...) set source -->
-                                <xf:action>
-                                    <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@vocab" context=".">
-                                        <xsl:attribute name="if">not(exists(instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/@vocab))</xsl:attribute>
-                                    </xf:insert>
-                                    <xf:setvalue ref="@vocab" value="event('resource')"/>
-                                </xf:action>
-                                <!-- If earliestDate exists and "Set" has a dates element set it -->
-                                <xf:action if="exists(../vra:dates/vra:earliestDate)">
-                                    <xf:setvalue ref="../vra:dates/vra:earliestDate" value="event('earliestDate')"/>
-                                </xf:action>
-                                <!-- If latestDate exists and "Set" has a dates element set it -->
-                                <xf:action if="exists(../vra:dates/vra:latestDate)">
-                                    <xf:setvalue ref="../vra:dates/vra:latestDate" value="event('latestDate')"/>
-                                </xf:action>
-                                 <!-- If type exists and set it -->
-                                <xf:action>
-                                    <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@type" context=".">
-                                        <xsl:attribute name="if">not(exists(instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/@type))</xsl:attribute>
-                                    </xf:insert>
-                                    <xf:setvalue ref="@type" value="event('datumType')"/>
-                                </xf:action>
-                            </xf:action>
-                            
-                            <xf:label><xsl:value-of select="$label"/></xf:label>
-                        </xf:input>
-                    </span>
-
-                    <label for="{$label}-autocomplete">
-                        <xsl:value-of select="$label"/>
-                    </label>
-                    <input type="text" name="{$label}-autocomplete" class="{$label}-autocomplete-input" placeholder="Type to search ..." queryType="{$queryType}" host="{$host}" autocomplete="off">
-                        <xsl:attribute name="callbackSet">r-vra<xsl:value-of select="$vraArtifact"/></xsl:attribute>
-                        <xsl:if test="not($isArtifactNode) and ('vra:name'=$vraNodeName)">
-                            <xsl:attribute name="class">elementName</xsl:attribute>
-                        </xsl:if>
-                    </input>
-                    <!-- span>
-                        <img id="{$label}-autocomplete-indicator" src="../images/indicator.gif"/>
-                    </span -->
-                </xsl:when>
-                <xsl:when test="@control='select1' and exists(@code-table)">
-                    <xsl:if test="$debugEnabled">
-                        <xsl:message>UI-4.1:found element that shall use select1</xsl:message>
-                    </xsl:if>
-                    <xsl:variable name="code-table-name">
-                        <xsl:value-of select="concat('i-codes-', @code-table)" />
+        <xsl:choose>
+            <!-- Special case for cluster addition : vra:alternativeNotation -->
+            <xsl:when test="$vraNodeName eq 'vra:alternativeNotation'">
+                <xsl:variable name="repeat-id" select="substring-after($path, 'vra:')"/>
+                <xf:group>
+                    <xf:trigger>
+                        <xf:label>Add</xf:label>
+                        <xf:action>
+                            <xf:insert context="instance('i-{$vraSectionNode}')/vra:date[index('r-vra{$vraArtifact}')]/{$path}" nodeset="{$vraNodeName}" origin="instance('i-templates')/vra:date/{$path}/{$vraNodeName}"/>
+                        </xf:action>
+                    </xf:trigger>
+                    <xf:trigger>
+                        <xf:label>delete</xf:label>
+                        <xf:action>
+                            <xf:delete nodeset="instance('i-{$vraSectionNode}')/vra:date[index('r-vra{$vraArtifact}')]/{$path}/{$vraNodeName}" at="index('r-{$repeat-id}')"/>
+                        </xf:action>
+                    </xf:trigger>
+                </xf:group>
+                <xf:repeat id="r-{$repeat-id}" ref="{$path}/{$vraNodeName}">
+                    <xsl:apply-templates select="xf:bind" mode="ui">
+                        <xsl:with-param name="path">.</xsl:with-param>
+                    </xsl:apply-templates>
+                </xf:repeat>
+            </xsl:when>
+            <xsl:otherwise>
+                <!-- mixedType is for now lat + long -> geoType -->
+                <xsl:if test="@xfType='simpleType' or @xfType='mixedType'">
+                    <xsl:variable name="label">
+                        <xsl:choose>
+                            <xsl:when test="$vraNodeName eq '.'">
+                                <xsl:value-of select="functx:capitalize-first(../@nodeset)"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:value-of select="functx:capitalize-first($vraNodeName)"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
                     </xsl:variable>
-                    <xf:select1>
-                        <xsl:attribute name="ref">
-                            <xsl:value-of select="$currentPath"/>
-                        </xsl:attribute>
-                        <xsl:if test="not($isArtifactNode) and ('vra:name'=$vraNodeName)">
-                            <xsl:attribute name="class">elementName</xsl:attribute>
-                        </xsl:if>
-                        <!--<xsl:if test="not($isArtifactNode)">-->
-                        <xf:label>
-                            <xsl:value-of select="functx:capitalize-first($label)"/>
-                        </xf:label>
-                        <xf:itemset nodeset="bf:instanceOfModel('m-code-tables', '{$code-table-name}')/items/item">
-                            <xf:label ref="label"/>
-                            <xf:value ref="value"/>
-                        </xf:itemset>
-                    </xf:select1>
-                </xsl:when>
-                <xsl:when test="@control='textarea'">
-                    <xsl:if test="$debugEnabled">
-                        <xsl:message>UI-4.1:found element that shall use textarea</xsl:message>
-                    </xsl:if>
-                    <!-- ### should only differ in being a textarea instead of input text field ### -->
-                    <xf:textarea id="{$id}">
-                        <xsl:attribute name="ref">
-                            <xsl:value-of select="$currentPath"/>
-                        </xsl:attribute>
-                        <xsl:if test="not($isArtifactNode) and ('vra:name'=$vraNodeName)">
-                            <xsl:attribute name="class">elementName</xsl:attribute>
-                        </xsl:if>
-                        <xsl:if test="not($isArtifactNode)">
-                            <xf:label>
-                                <xsl:value-of select="functx:capitalize-first($label)"/>
-                            </xf:label>
-                        </xsl:if>
-                        <xf:hint>
-                            <xsl:value-of select="functx:capitalize-first($vraNodeName)"/>
-                        </xf:hint>
-                    </xf:textarea>
-                </xsl:when>
-                <xsl:when test="./bind[@nodeset='.']">
-                    <!-- irgnore elements which have a bind child with nodeset="." -->
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:if test="$debugEnabled">
-                        <xsl:message>UI-4.2:found element that shall use input text (default)</xsl:message>
-                        <xsl:message>UI-4.2:ArtifactNode = <xsl:value-of select="$vraArtifactNode"/></xsl:message>
-                        <xsl:message>UI-4.2:isArtifactNode = <xsl:value-of select="$isArtifactNode"/></xsl:message>
-                        <xsl:message>UI-4.2:currentPath = <xsl:value-of select="$currentPath"/></xsl:message>
-                        <xsl:message></xsl:message>
-                    </xsl:if>
 
-                    <!--<xf:input id="{concat(generate-id(),'-', functx:capitalize-first($vraNodeName))}">-->
-                    <xf:input id="{$id}">
-                        <xsl:attribute name="ref">
-                            <xsl:value-of select="$currentPath"/>
-                        </xsl:attribute>
-                        <xsl:if test="not($isArtifactNode) and ('vra:name'=$vraNodeName)">
-                            <xsl:attribute name="class">elementName</xsl:attribute>
-                        </xsl:if>
-                        <!--<xsl:if test="not($isArtifactNode)">-->
-                        <xf:label>
-                            <xsl:value-of select="functx:capitalize-first($label)"/>
-                        </xf:label>
-                        <xf:hint>
-                            <xsl:value-of select="functx:capitalize-first($label)"/>
-                        </xf:hint>
-                        <!--</xsl:if>-->
-                    </xf:input>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:if>
-        <xsl:message>UI-4.3: currentPath : <xsl:value-of select="$currentPath"/>#</xsl:message>
+                    <xsl:choose>
+                        <!--<xsl:when test="contains($useTextarea,$targetNode)">-->
+                        <xsl:when test="@control='autocomplete' and exists(@queryType)">
+                            <xsl:if test="$debugEnabled">
+                                <xsl:message>UI-4.1:found element that shall use autocomplete</xsl:message>
+                            </xsl:if>
+                            <xsl:variable name="queryType" select="@queryType"/>
+                            <xsl:variable name="host" select="@host"/>
 
-        <xsl:apply-templates select="xf:bind" mode="ui">
-            <xsl:with-param name="path" select="$currentPath"/>
-        </xsl:apply-templates>
+                            <span style="display:none">
+                                <xf:input id="{$id}" class="{$label}-autocomplete">
+                                    <xsl:attribute name="ref">
+                                        <xsl:value-of select="$currentPath"/>
+                                    </xsl:attribute>
+                                    <xsl:if test="not($isArtifactNode) and ('vra:name'=$vraNodeName)">
+                                        <xsl:attribute name="class">elementName</xsl:attribute>
+                                    </xsl:if>
+                                    <!--replace JavaScript-Magic with XForms -->
+                                    <xf:action ev:event="autocomplete-callback">
+                                        <xf:setvalue ref="." value="event('value')"/>
+                               
+                                        <!-- If uuid exists set refid to uuid -->
+                                        <xf:action>
+                                            <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@refid" context=".">
+                                                <xsl:attribute name="if">not(exists(instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/@refid))</xsl:attribute>
+                                            </xf:insert>
+                                            <xf:setvalue ref="@refid" value="event('uuid')"/>
+                                        </xf:action> 
+                                        <!-- If internalID (viaf-id / getty-id) exist but no uuid set refid to internalID-->
+                                        <xf:action if="not(exists(event('uuid')) or event('uuid') eq '')">
+                                            <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@refid" context=".">
+                                                <xsl:attribute name="if">not(exists(instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/@refid))</xsl:attribute>
+                                            </xf:insert>
+                                            <xf:setvalue ref="@refid" value="event('internalID')"/>
+                                        </xf:action>
+                                        <!-- If resource exists (local/ULAN ...) set source -->
+                                        <xf:action>
+                                            <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@vocab" context=".">
+                                                <xsl:attribute name="if">not(exists(instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/@vocab))</xsl:attribute>
+                                            </xf:insert>
+                                            <xf:setvalue ref="@vocab" value="event('resource')"/>
+                                        </xf:action>
+                                        <!-- If earliestDate exists and "Set" has a dates element set it -->
+                                        <xf:action if="exists(../vra:dates/vra:earliestDate)">
+                                            <xf:setvalue ref="../vra:dates/vra:earliestDate" value="event('earliestDate')"/>
+                                        </xf:action>
+                                        <!-- If latestDate exists and "Set" has a dates element set it -->
+                                        <xf:action if="exists(../vra:dates/vra:latestDate)">
+                                            <xf:setvalue ref="../vra:dates/vra:latestDate" value="event('latestDate')"/>
+                                        </xf:action>
+                                        <!-- If type exists and set it -->
+                                        <xf:action>
+                                            <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@type" context=".">
+                                                <xsl:attribute name="if">not(exists(instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/@type))</xsl:attribute>
+                                            </xf:insert>
+                                            <xf:setvalue ref="@type" value="event('datumType')"/>
+                                        </xf:action>
+                                    </xf:action>
+                            
+                                    <xf:label>
+                                        <xsl:value-of select="$label"/>
+                                    </xf:label>
+                                </xf:input>
+                            </span>
+
+                            <label for="{$label}-autocomplete">
+                                <xsl:value-of select="$label"/>
+                            </label>
+                            <input type="text" name="{$label}-autocomplete" class="{$label}-autocomplete-input" placeholder="Type to search ..." queryType="{$queryType}" host="{$host}" autocomplete="off">
+                                <xsl:attribute name="callbackSet">r-vra<xsl:value-of select="$vraArtifact"/></xsl:attribute>
+                                <xsl:if test="not($isArtifactNode) and ('vra:name'=$vraNodeName)">
+                                    <xsl:attribute name="class">elementName</xsl:attribute>
+                                </xsl:if>
+                            </input>
+                            <!-- span>
+                                <img id="{$label}-autocomplete-indicator" src="../images/indicator.gif"/>
+                            </span -->
+                        </xsl:when>
+                        <xsl:when test="@control='select1' and exists(@code-table)">
+                            <xsl:if test="$debugEnabled">
+                                <xsl:message>UI-4.1:found element that shall use select1</xsl:message>
+                            </xsl:if>
+                            <xsl:variable name="code-table-name">
+                                <xsl:value-of select="concat('i-codes-', @code-table)" />
+                            </xsl:variable>
+                            <xf:select1>
+                                <xsl:attribute name="ref">
+                                    <xsl:value-of select="$currentPath"/>
+                                </xsl:attribute>
+                                <xsl:if test="not($isArtifactNode) and ('vra:name'=$vraNodeName)">
+                                    <xsl:attribute name="class">elementName</xsl:attribute>
+                                </xsl:if>
+                                <!--<xsl:if test="not($isArtifactNode)">-->
+                                <xf:label>
+                                    <xsl:value-of select="functx:capitalize-first($label)"/>
+                                </xf:label>
+                                <xf:itemset nodeset="bf:instanceOfModel('m-code-tables', '{$code-table-name}')/items/item">
+                                    <xf:label ref="label"/>
+                                    <xf:value ref="value"/>
+                                </xf:itemset>
+                            </xf:select1>
+                        </xsl:when>
+                        <xsl:when test="@control='textarea'">
+                            <xsl:if test="$debugEnabled">
+                                <xsl:message>UI-4.1:found element that shall use textarea</xsl:message>
+                            </xsl:if>
+                            <!-- ### should only differ in being a textarea instead of input text field ### -->
+                            <xf:textarea id="{$id}">
+                                <xsl:attribute name="ref">
+                                    <xsl:value-of select="$currentPath"/>
+                                </xsl:attribute>
+                                <xsl:if test="not($isArtifactNode) and ('vra:name'=$vraNodeName)">
+                                    <xsl:attribute name="class">elementName</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="not($isArtifactNode)">
+                                    <xf:label>
+                                        <xsl:value-of select="functx:capitalize-first($label)"/>
+                                    </xf:label>
+                                </xsl:if>
+                                <xf:hint>
+                                    <xsl:value-of select="functx:capitalize-first($vraNodeName)"/>
+                                </xf:hint>
+                            </xf:textarea>
+                        </xsl:when>
+                        <xsl:when test="./bind[@nodeset='.']">
+                            <!-- irgnore elements which have a bind child with nodeset="." -->
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:if test="$debugEnabled">
+                                <xsl:message>UI-4.2:found element that shall use input text (default)</xsl:message>
+                                <xsl:message>UI-4.2:ArtifactNode = <xsl:value-of select="$vraArtifactNode"/></xsl:message>
+                                <xsl:message>UI-4.2:isArtifactNode = <xsl:value-of select="$isArtifactNode"/></xsl:message>
+                                <xsl:message>UI-4.2:currentPath = <xsl:value-of select="$currentPath"/></xsl:message>
+                                <xsl:message></xsl:message>
+                            </xsl:if>
+
+                            <!--<xf:input id="{concat(generate-id(),'-', functx:capitalize-first($vraNodeName))}">-->
+                            <xf:input id="{$id}">
+                                <xsl:attribute name="ref">
+                                    <xsl:value-of select="$currentPath"/>
+                                </xsl:attribute>
+                                <xsl:if test="not($isArtifactNode) and ('vra:name'=$vraNodeName)">
+                                    <xsl:attribute name="class">elementName</xsl:attribute>
+                                </xsl:if>
+                                <!--<xsl:if test="not($isArtifactNode)">-->
+                                <xf:label>
+                                    <xsl:value-of select="functx:capitalize-first($label)"/>
+                                </xf:label>
+                                <xf:hint>
+                                    <xsl:value-of select="functx:capitalize-first($label)"/>
+                                </xf:hint>
+                                <!--</xsl:if>-->
+                            </xf:input>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:if>
+                <xsl:message>UI-4.3: currentPath : <xsl:value-of select="$currentPath"/>#</xsl:message>
+
+                <xsl:apply-templates select="xf:bind" mode="ui">
+                    <xsl:with-param name="path" select="$currentPath"/>
+                </xsl:apply-templates>
+            </xsl:otherwise>
+        </xsl:choose>
+        
     </xsl:template>
 
     <!-- attribute VRA type -->

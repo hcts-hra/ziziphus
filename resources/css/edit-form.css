@@ -217,7 +217,7 @@ table tr td .xfGroup:last-child {
   border: none;
   font-size: 30px;
   margin-top: 0;
-  margin-right: -5px;
+  margin-top: -8px;
 }
 .toolbar .t-save button {
   background: url(/exist/apps/ziziphus/resources/css/../images/icons/floppy_save_disc.png) no-repeat;

@@ -132,7 +132,9 @@
                <xf:hint>add an entry</xf:hint>
                <xf:insert model="m-child-model" nodeset="instance()/vra:textref[1]"
                           origin="instance('i-templates')/vra:textref"
-                          position="before"></xf:insert>
+                          position="before"><script>
+                                        initAutocompletes();
+                                </script></xf:insert>
             </xf:trigger>
             <xf:trigger id="d3e1-save" class="t-save -toolbarbutton">
                <xf:label>Save</xf:label>
@@ -189,7 +191,7 @@
                <tbody model="m-child-model" id="r-vraTextref" xf:repeat-nodeset="vra:textref">
                   <tr>
                      <td class="prefCol">
-                        <xf:input ref="@pref" id="d3e134-pref">
+                        <xf:input ref="@pref" id="d3e141-pref">
                            <xf:label>pref</xf:label>
                            <xf:hint>preferred</xf:hint>
                            <xf:action ev:event="xforms-value-changed" if=".=('true',1)"
@@ -201,11 +203,11 @@
                      </td>
                      <td class="contentCol">
                         <xf:group appearance="minimal">
-                           <xf:input id="b-d2e1631" ref="vra:name">
+                           <xf:input id="b-d2e1664" ref="vra:name">
                               <xf:label>Name</xf:label>
                               <xf:hint>Name</xf:hint>
                            </xf:input>
-                           <xf:select1 id="b-d2e1638" class=" nameType" ref="vra:name/@type">
+                           <xf:select1 id="b-d2e1671" class=" nameType" ref="vra:name/@type">
                               <xf:label>Type</xf:label>
                               <xf:hint></xf:hint>
                               <xf:item>
@@ -247,11 +249,11 @@
                            </xf:trigger>
                         </xf:group>
                         <xf:group appearance="minimal">
-                           <xf:input id="b-d2e1653" ref="vra:refid">
+                           <xf:input id="b-d2e1686" ref="vra:refid">
                               <xf:label>Refid</xf:label>
                               <xf:hint>Refid</xf:hint>
                            </xf:input>
-                           <xf:select1 id="b-d2e1660" class=" refidType" ref="vra:refid/@type">
+                           <xf:select1 id="b-d2e1693" class=" refidType" ref="vra:refid/@type">
                               <xf:label>Type</xf:label>
                               <xf:hint></xf:hint>
                               <xf:item>
@@ -375,15 +377,6 @@
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:input ref="@refid" id="d3e1-refid">
-                     <xf:label>refid</xf:label>
-                  </xf:input>
-                  <xf:trigger class="deleteAttribute">
-                     <xf:label>clear</xf:label>
-                     <xf:setvalue ref="@refid"></xf:setvalue>
-                  </xf:trigger>
-               </xf:group>
-               <xf:group appearance="minimal" class="attrDialogGroup">
                   <xf:input ref="@rules" id="d3e1-rules">
                      <xf:label>rules</xf:label>
                   </xf:input>
@@ -399,31 +392,6 @@
                   <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@source"></xf:setvalue>
-                  </xf:trigger>
-               </xf:group>
-               <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:select1 ref="@vocab" id="d3e1-vocab">
-                     <xf:label>vocab</xf:label>
-                     <xf:item>
-                        <xf:label>local</xf:label>
-                        <xf:value>local</xf:value>
-                     </xf:item>
-                     <xf:item>
-                        <xf:label>ULAN</xf:label>
-                        <xf:value>ULAN</xf:value>
-                     </xf:item>
-                     <xf:item>
-                        <xf:label>GND</xf:label>
-                        <xf:value>GND</xf:value>
-                     </xf:item>
-                     <xf:item>
-                        <xf:label>(AKL)</xf:label>
-                        <xf:value>(AKL)</xf:value>
-                     </xf:item>
-                  </xf:select1>
-                  <xf:trigger class="deleteAttribute">
-                     <xf:label>clear</xf:label>
-                     <xf:setvalue ref="@vocab"></xf:setvalue>
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">

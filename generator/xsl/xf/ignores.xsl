@@ -39,10 +39,12 @@
         <xsl:copy/>
     </xsl:template>
 
+    
     <xsl:template match="xf:bind[@nodeset='vra:display']" mode="bind" priority="20"/>
     <xsl:template match="xf:bind[@nodeset='vra:notes']" mode="bind" priority="20"/>
     <xsl:template match="xf:bind[contains($vraAttributes,@nodeset)]" mode="bind" priority="15"/>
 
+    <xsl:template match="xf:bind[@hidden eq 'true']" mode="ui" priority="100"/>
     <xsl:template match="xf:bind[@nodeset='vra:display']" mode="ui" priority="20"/>
     <xsl:template match="xf:bind[@nodeset='vra:notes']" mode="ui" priority="20"/>
     <xsl:template match="xf:bind[contains($vraAttributes,@nodeset)]" mode="ui" priority="20"/>

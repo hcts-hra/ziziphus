@@ -23,9 +23,6 @@
                   <xf:send submission="s-loadSet"></xf:send><script>
                                         initAutocompletes();
                                     </script></xf:action>
-               <xf:action ev:observer="i-subjectSet" ev:event="xforms-insert"><script>
-                                        initAutocompletes();
-                                    </script></xf:action>
                <xf:submission id="s-loadSet"
                               resource="modules/loadData.xql?id={bf:instanceOfModel('m-main','i-control-center')/uuid}&amp;workdir={bf:instanceOfModel('m-main','i-control-center')/workdir}"
                               method="post"
@@ -125,7 +122,9 @@
                <xf:hint>add an entry</xf:hint>
                <xf:insert model="m-child-model" nodeset="instance()/vra:subject[1]"
                           origin="instance('i-templates')/vra:subject"
-                          position="before"></xf:insert>
+                          position="before"><script>
+                                        initAutocompletes();
+                                </script></xf:insert>
             </xf:trigger>
             <xf:trigger id="d3e1-save" class="t-save -toolbarbutton">
                <xf:label>Save</xf:label>
@@ -184,7 +183,7 @@
                      <td class="prefCol"></td>
                      <td class="contentCol">
                         <xf:group appearance="minimal">
-                           <xf:select1 id="b-d2e1485" class=" termType" ref="vra:term/@type">
+                           <xf:select1 id="b-d2e1518" class=" termType" ref="vra:term/@type">
                               <xf:label>Type</xf:label>
                               <xf:hint></xf:hint>
                               <xf:item>
@@ -236,7 +235,7 @@
                                  <xf:value>otherName</xf:value>
                               </xf:item>
                            </xf:select1><span style="display:none">
-                              <xf:input id="b-d2e1478" class="Term-autocomplete" ref="vra:term">
+                              <xf:input id="b-d2e1511" class="Term-autocomplete" ref="vra:term">
                                  <xf:action ev:event="autocomplete-callback">
                                     <xf:setvalue ref="." value="event('value')"></xf:setvalue>
                                     <xf:action>
@@ -244,7 +243,7 @@
                                                   if="not(exists(instance('i-subjectSet')/vra:subject[index('r-vraSubject')]/@refid))"></xf:insert>
                                        <xf:setvalue ref="@refid" value="event('uuid')"></xf:setvalue>
                                     </xf:action>
-                                    <xf:action>
+                                    <xf:action if="not(exists(event('uuid')) or event('uuid') eq '')">
                                        <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@refid" context="."
                                                   if="not(exists(instance('i-subjectSet')/vra:subject[index('r-vraSubject')]/@refid))"></xf:insert>
                                        <xf:setvalue ref="@refid" value="event('internalID')"></xf:setvalue>
@@ -364,15 +363,6 @@
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:input ref="@refid" id="d3e1-refid">
-                     <xf:label>refid</xf:label>
-                  </xf:input>
-                  <xf:trigger class="deleteAttribute">
-                     <xf:label>clear</xf:label>
-                     <xf:setvalue ref="@refid"></xf:setvalue>
-                  </xf:trigger>
-               </xf:group>
-               <xf:group appearance="minimal" class="attrDialogGroup">
                   <xf:input ref="@rules" id="d3e1-rules">
                      <xf:label>rules</xf:label>
                   </xf:input>
@@ -388,31 +378,6 @@
                   <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@source"></xf:setvalue>
-                  </xf:trigger>
-               </xf:group>
-               <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:select1 ref="@vocab" id="d3e1-vocab">
-                     <xf:label>vocab</xf:label>
-                     <xf:item>
-                        <xf:label>local</xf:label>
-                        <xf:value>local</xf:value>
-                     </xf:item>
-                     <xf:item>
-                        <xf:label>ULAN</xf:label>
-                        <xf:value>ULAN</xf:value>
-                     </xf:item>
-                     <xf:item>
-                        <xf:label>GND</xf:label>
-                        <xf:value>GND</xf:value>
-                     </xf:item>
-                     <xf:item>
-                        <xf:label>(AKL)</xf:label>
-                        <xf:value>(AKL)</xf:value>
-                     </xf:item>
-                  </xf:select1>
-                  <xf:trigger class="deleteAttribute">
-                     <xf:label>clear</xf:label>
-                     <xf:setvalue ref="@vocab"></xf:setvalue>
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">

@@ -16,7 +16,7 @@
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:text/@type,'')) != 0">
                               <div data-bf-type="select1" data-bf-bind="vra:text/@type" tabindex="0" title="Type"
-                                   id="b-d2e683"
+                                   id="b-d2e714"
                                    class=" textType">
                                  <xsl:value-of select="vra:text/@type"></xsl:value-of>
                               </div>
@@ -29,7 +29,7 @@
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:text,'')) != 0">
                               <div data-bf-type="textarea" data-bf-bind="vra:text" tabindex="0" title="Text"
-                                   id="b-d2e676">
+                                   id="b-d2e707">
                                  <xsl:value-of select="vra:text"></xsl:value-of>
                               </div>
                            </xsl:when>
@@ -42,7 +42,7 @@
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:author,'')) != 0">
                               <div data-bf-type="input" data-bf-bind="vra:author" tabindex="0" title="Author"
-                                   id="b-d2e634">
+                                   id="b-d2e665">
                                  <xsl:value-of select="vra:author"></xsl:value-of>
                               </div>
                            </xsl:when>
@@ -55,7 +55,7 @@
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:position,'')) != 0">
                               <div data-bf-type="input" data-bf-bind="vra:position" tabindex="0" title="Position"
-                                   id="b-d2e655">
+                                   id="b-d2e686">
                                  <xsl:value-of select="vra:position"></xsl:value-of>
                               </div>
                            </xsl:when>

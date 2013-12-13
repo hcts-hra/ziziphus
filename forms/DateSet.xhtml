@@ -83,9 +83,14 @@
                      <display></display>
                      <notes></notes>
                      <date pref="false" type="">
-                        <earliestDate circa="false" type=""></earliestDate>
-                        <latestDate circa="false" type=""></latestDate>
-                        <alternativeNotation type=""></alternativeNotation>
+                        <earliestDate>
+                           <date circa="false" type=""></date>
+                           <alternativeNotation type=""></alternativeNotation>
+                        </earliestDate>
+                        <latestDate>
+                           <date circa="false" type=""></date>
+                           <alternativeNotation type=""></alternativeNotation>
+                        </latestDate>
                      </date>
                   </dateSet>
                </xf:instance>
@@ -94,15 +99,22 @@
                      <xf:bind nodeset="@pref" type="boolean"></xf:bind>
                      <xf:bind nodeset="@type" type="vra:dateTypeType"></xf:bind>
                      <xf:bind nodeset="vra:earliestDate">
-                        <xf:bind nodeset="@circa" type="xsd:boolean"></xf:bind>
-                        <xf:bind nodeset="@type" type="vra:uncertainDateType"></xf:bind>
+                        <xf:bind nodeset="vra:date">
+                           <xf:bind nodeset="@circa" type="xsd:boolean"></xf:bind>
+                           <xf:bind nodeset="@type" type="vra:uncertainDateType"></xf:bind>
+                        </xf:bind>
+                        <xf:bind nodeset="vra:alternativeNotation">
+                           <xf:bind nodeset="@type" type="vra:alternativeNotationDateAttributeType"></xf:bind>
+                        </xf:bind>
                      </xf:bind>
                      <xf:bind nodeset="vra:latestDate">
-                        <xf:bind nodeset="@circa" type="xsd:boolean"></xf:bind>
-                        <xf:bind nodeset="@type" type="vra:uncertainDateType"></xf:bind>
-                     </xf:bind>
-                     <xf:bind nodeset="vra:alternativeNotation">
-                        <xf:bind nodeset="@type" type="vra:alternativeNotationDateAttributeType"></xf:bind>
+                        <xf:bind nodeset="vra:date">
+                           <xf:bind nodeset="@circa" type="xsd:boolean"></xf:bind>
+                           <xf:bind nodeset="@type" type="vra:uncertainDateType"></xf:bind>
+                        </xf:bind>
+                        <xf:bind nodeset="vra:alternativeNotation">
+                           <xf:bind nodeset="@type" type="vra:alternativeNotationDateAttributeType"></xf:bind>
+                        </xf:bind>
                      </xf:bind>
                   </xf:bind>
                </xf:bind>
@@ -110,9 +122,14 @@
                <xf:instance id="i-templates">
                   <templates xmlns="http://www.vraweb.org/vracore4.htm">
                      <date pref="false" type="">
-                        <earliestDate circa="false" type=""></earliestDate>
-                        <latestDate circa="false" type=""></latestDate>
-                        <alternativeNotation type=""></alternativeNotation>
+                        <earliestDate>
+                           <date circa="false" type=""></date>
+                           <alternativeNotation type=""></alternativeNotation>
+                        </earliestDate>
+                        <latestDate>
+                           <date circa="false" type=""></date>
+                           <alternativeNotation type=""></alternativeNotation>
+                        </latestDate>
                      </date>
                      <notes></notes>
                      <display></display>
@@ -137,7 +154,9 @@
                <xf:hint>add an entry</xf:hint>
                <xf:insert model="m-child-model" nodeset="instance()/vra:date[1]"
                           origin="instance('i-templates')/vra:date"
-                          position="before"></xf:insert>
+                          position="before"><script>
+                                        initAutocompletes();
+                                </script></xf:insert>
             </xf:trigger>
             <xf:trigger id="d3e1-save" class="t-save -toolbarbutton">
                <xf:label>Save</xf:label>
@@ -206,7 +225,7 @@
                      </td>
                      <td class="contentCol">
                         <xf:group appearance="minimal">
-                           <xf:select1 id="b-d2e420" class=" " ref="@type">
+                           <xf:select1 id="b-d2e451" class=" " ref="@type">
                               <xf:label>Type</xf:label>
                               <xf:hint></xf:hint>
                               <xf:item>
@@ -272,15 +291,15 @@
                            </xf:select1>
                         </xf:group>
                         <xf:group appearance="minimal">
-                           <xf:input ref="vra:earliestDate/@circa">
+                           <xf:input id="b-d2e361" ref="vra:earliestDate/vra:date">
+                              <xf:label>Date</xf:label>
+                              <xf:hint>Date</xf:hint>
+                           </xf:input>
+                           <xf:input ref="vra:earliestDate/vra:date/@circa">
                               <xf:label>circa</xf:label>
                               <xf:hint>@circa</xf:hint>
                            </xf:input>
-                           <xf:input id="b-d2e355" ref="vra:earliestDate">
-                              <xf:label>EarliestDate</xf:label>
-                              <xf:hint>EarliestDate</xf:hint>
-                           </xf:input>
-                           <xf:select1 id="b-d2e363" class=" earliestDateType" ref="vra:earliestDate/@type">
+                           <xf:select1 id="b-d2e369" class=" earliestDateType" ref="vra:earliestDate/vra:date/@type">
                               <xf:label>Type</xf:label>
                               <xf:hint></xf:hint>
                               <xf:item>
@@ -300,6 +319,49 @@
                                  <xf:value>active</xf:value>
                               </xf:item>
                            </xf:select1>
+                           <xf:group>
+                              <xf:trigger>
+                                 <xf:label>Add</xf:label>
+                                 <xf:action>
+                                    <xf:insert context="instance('i-dateSet')/vra:date[index('r-vraDate')]/vra:earliestDate"
+                                               nodeset="vra:alternativeNotation"
+                                               origin="instance('i-templates')/vra:date/vra:earliestDate/vra:alternativeNotation"></xf:insert>
+                                 </xf:action>
+                              </xf:trigger>
+                              <xf:trigger>
+                                 <xf:label>delete</xf:label>
+                                 <xf:action>
+                                    <xf:delete nodeset="instance('i-dateSet')/vra:date[index('r-vraDate')]/vra:earliestDate/vra:alternativeNotation"
+                                               at="index('r-earliestDate')"></xf:delete>
+                                 </xf:action>
+                              </xf:trigger>
+                           </xf:group>
+                           <xf:repeat id="r-earliestDate" ref="vra:earliestDate/vra:alternativeNotation">
+                              <xf:select1 id="b-d2e388" class=" " ref="@type">
+                                 <xf:label>Type</xf:label>
+                                 <xf:hint></xf:hint>
+                                 <xf:item>
+                                    <xf:label>Before</xf:label>
+                                    <xf:value>before</xf:value>
+                                 </xf:item>
+                                 <xf:item>
+                                    <xf:label>After</xf:label>
+                                    <xf:value>after</xf:value>
+                                 </xf:item>
+                                 <xf:item>
+                                    <xf:label>About</xf:label>
+                                    <xf:value>about</xf:value>
+                                 </xf:item>
+                                 <xf:item>
+                                    <xf:label>Probably</xf:label>
+                                    <xf:value>probably</xf:value>
+                                 </xf:item>
+                              </xf:select1>
+                              <xf:input id="b-d2e384" ref=".">
+                                 <xf:label>AlternativeNotation</xf:label>
+                                 <xf:hint>AlternativeNotation</xf:hint>
+                              </xf:input>
+                           </xf:repeat>
                            <xf:group class="vraAttributes" appearance="minimal" ref="vra:earliestDate">
                               <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                            </xf:group>
@@ -314,15 +376,15 @@
                            </xf:trigger>
                         </xf:group>
                         <xf:group appearance="minimal">
-                           <xf:input ref="vra:latestDate/@circa">
+                           <xf:input id="b-d2e409" ref="vra:latestDate/vra:date">
+                              <xf:label>Date</xf:label>
+                              <xf:hint>Date</xf:hint>
+                           </xf:input>
+                           <xf:input ref="vra:latestDate/vra:date/@circa">
                               <xf:label>circa</xf:label>
                               <xf:hint>@circa</xf:hint>
                            </xf:input>
-                           <xf:input id="b-d2e378" ref="vra:latestDate">
-                              <xf:label>LatestDate</xf:label>
-                              <xf:hint>LatestDate</xf:hint>
-                           </xf:input>
-                           <xf:select1 id="b-d2e386" class=" latestDateType" ref="vra:latestDate/@type">
+                           <xf:select1 id="b-d2e417" class=" latestDateType" ref="vra:latestDate/vra:date/@type">
                               <xf:label>Type</xf:label>
                               <xf:hint></xf:hint>
                               <xf:item>
@@ -342,6 +404,49 @@
                                  <xf:value>active</xf:value>
                               </xf:item>
                            </xf:select1>
+                           <xf:group>
+                              <xf:trigger>
+                                 <xf:label>Add</xf:label>
+                                 <xf:action>
+                                    <xf:insert context="instance('i-dateSet')/vra:date[index('r-vraDate')]/vra:latestDate"
+                                               nodeset="vra:alternativeNotation"
+                                               origin="instance('i-templates')/vra:date/vra:latestDate/vra:alternativeNotation"></xf:insert>
+                                 </xf:action>
+                              </xf:trigger>
+                              <xf:trigger>
+                                 <xf:label>delete</xf:label>
+                                 <xf:action>
+                                    <xf:delete nodeset="instance('i-dateSet')/vra:date[index('r-vraDate')]/vra:latestDate/vra:alternativeNotation"
+                                               at="index('r-latestDate')"></xf:delete>
+                                 </xf:action>
+                              </xf:trigger>
+                           </xf:group>
+                           <xf:repeat id="r-latestDate" ref="vra:latestDate/vra:alternativeNotation">
+                              <xf:select1 id="b-d2e436" class=" " ref="@type">
+                                 <xf:label>Type</xf:label>
+                                 <xf:hint></xf:hint>
+                                 <xf:item>
+                                    <xf:label>Before</xf:label>
+                                    <xf:value>before</xf:value>
+                                 </xf:item>
+                                 <xf:item>
+                                    <xf:label>After</xf:label>
+                                    <xf:value>after</xf:value>
+                                 </xf:item>
+                                 <xf:item>
+                                    <xf:label>About</xf:label>
+                                    <xf:value>about</xf:value>
+                                 </xf:item>
+                                 <xf:item>
+                                    <xf:label>Probably</xf:label>
+                                    <xf:value>probably</xf:value>
+                                 </xf:item>
+                              </xf:select1>
+                              <xf:input id="b-d2e432" ref=".">
+                                 <xf:label>AlternativeNotation</xf:label>
+                                 <xf:hint>AlternativeNotation</xf:hint>
+                              </xf:input>
+                           </xf:repeat>
                            <xf:group class="vraAttributes" appearance="minimal" ref="vra:latestDate">
                               <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                            </xf:group>
@@ -350,45 +455,6 @@
                               <xf:hint>Edit Attributes</xf:hint>
                               <xf:action>
                                  <xf:setvalue ref="instance('i-util')/currentElement" value="'latestDate'"></xf:setvalue>
-                                 <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
-                              </xf:action>
-                              <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
-                           </xf:trigger>
-                        </xf:group>
-                        <xf:group appearance="minimal">
-                           <xf:select1 id="b-d2e405" class=" alternativeNotationType"
-                                       ref="vra:alternativeNotation/@type">
-                              <xf:label>Type</xf:label>
-                              <xf:hint></xf:hint>
-                              <xf:item>
-                                 <xf:label>Before</xf:label>
-                                 <xf:value>before</xf:value>
-                              </xf:item>
-                              <xf:item>
-                                 <xf:label>After</xf:label>
-                                 <xf:value>after</xf:value>
-                              </xf:item>
-                              <xf:item>
-                                 <xf:label>About</xf:label>
-                                 <xf:value>about</xf:value>
-                              </xf:item>
-                              <xf:item>
-                                 <xf:label>Probably</xf:label>
-                                 <xf:value>probably</xf:value>
-                              </xf:item>
-                           </xf:select1>
-                           <xf:input id="b-d2e401" ref="vra:alternativeNotation">
-                              <xf:label>AlternativeNotation</xf:label>
-                              <xf:hint>AlternativeNotation</xf:hint>
-                           </xf:input>
-                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:alternativeNotation">
-                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
-                           </xf:group>
-                           <xf:trigger class="vraAttributeTrigger">
-                              <xf:label>A</xf:label>
-                              <xf:hint>Edit Attributes</xf:hint>
-                              <xf:action>
-                                 <xf:setvalue ref="instance('i-util')/currentElement" value="'alternativeNotation'"></xf:setvalue>
                                  <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
                               </xf:action>
                               <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
@@ -473,15 +539,6 @@
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:input ref="@refid" id="d3e1-refid">
-                     <xf:label>refid</xf:label>
-                  </xf:input>
-                  <xf:trigger class="deleteAttribute">
-                     <xf:label>clear</xf:label>
-                     <xf:setvalue ref="@refid"></xf:setvalue>
-                  </xf:trigger>
-               </xf:group>
-               <xf:group appearance="minimal" class="attrDialogGroup">
                   <xf:input ref="@rules" id="d3e1-rules">
                      <xf:label>rules</xf:label>
                   </xf:input>
@@ -497,31 +554,6 @@
                   <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@source"></xf:setvalue>
-                  </xf:trigger>
-               </xf:group>
-               <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:select1 ref="@vocab" id="d3e1-vocab">
-                     <xf:label>vocab</xf:label>
-                     <xf:item>
-                        <xf:label>local</xf:label>
-                        <xf:value>local</xf:value>
-                     </xf:item>
-                     <xf:item>
-                        <xf:label>ULAN</xf:label>
-                        <xf:value>ULAN</xf:value>
-                     </xf:item>
-                     <xf:item>
-                        <xf:label>GND</xf:label>
-                        <xf:value>GND</xf:value>
-                     </xf:item>
-                     <xf:item>
-                        <xf:label>(AKL)</xf:label>
-                        <xf:value>(AKL)</xf:value>
-                     </xf:item>
-                  </xf:select1>
-                  <xf:trigger class="deleteAttribute">
-                     <xf:label>clear</xf:label>
-                     <xf:setvalue ref="@vocab"></xf:setvalue>
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">

@@ -87,7 +87,10 @@
                      <location pref="false" type="">
                         <refid type=""></refid>
                         <name type=""></name>
-                        <point epsg=""></point>
+                        <point epsg="">
+                           <lat></lat>
+                           <long></long>
+                        </point>
                      </location>
                   </locationSet>
                </xf:instance>
@@ -101,8 +104,10 @@
                      <xf:bind nodeset="vra:refid">
                         <xf:bind nodeset="@type" type="vra:locationRefidTypeType"></xf:bind>
                      </xf:bind>
-                     <xf:bind nodeset="vra:point" type="geoType">
+                     <xf:bind nodeset="vra:point">
                         <xf:bind nodeset="@epsg"></xf:bind>
+                        <xf:bind nodeset="vra:lat"></xf:bind>
+                        <xf:bind nodeset="vra:long"></xf:bind>
                      </xf:bind>
                   </xf:bind>
                </xf:bind>
@@ -113,7 +118,10 @@
                      <location pref="false" type="">
                         <refid type=""></refid>
                         <name type=""></name>
-                        <point epsg=""></point>
+                        <point epsg="">
+                           <lat></lat>
+                           <long></long>
+                        </point>
                      </location>
                      <notes></notes>
                      <display></display>
@@ -138,7 +146,9 @@
                <xf:hint>add an entry</xf:hint>
                <xf:insert model="m-child-model" nodeset="instance()/vra:location[1]"
                           origin="instance('i-templates')/vra:location"
-                          position="before"></xf:insert>
+                          position="before"><script>
+                                        initAutocompletes();
+                                </script></xf:insert>
             </xf:trigger>
             <xf:trigger id="d3e1-save" class="t-save -toolbarbutton">
                <xf:label>Save</xf:label>
@@ -195,7 +205,7 @@
                <tbody model="m-child-model" id="r-vraLocation" xf:repeat-nodeset="vra:location">
                   <tr>
                      <td class="prefCol">
-                        <xf:input ref="@pref" id="d3e52-pref">
+                        <xf:input ref="@pref" id="d3e57-pref">
                            <xf:label>pref</xf:label>
                            <xf:hint>preferred</xf:hint>
                            <xf:action ev:event="xforms-value-changed" if=".=('true',1)"
@@ -207,7 +217,7 @@
                      </td>
                      <td class="contentCol">
                         <xf:group appearance="minimal">
-                           <xf:select1 id="b-d2e828" class=" " ref="@type">
+                           <xf:select1 id="b-d2e861" class=" " ref="@type">
                               <xf:label>Type</xf:label>
                               <xf:hint></xf:hint>
                               <xf:item>
@@ -269,11 +279,11 @@
                            </xf:select1>
                         </xf:group>
                         <xf:group appearance="minimal">
-                           <xf:input id="b-d2e785" ref="vra:name">
+                           <xf:input id="b-d2e816" ref="vra:name">
                               <xf:label>Name</xf:label>
                               <xf:hint>Name</xf:hint>
                            </xf:input>
-                           <xf:select1 id="b-d2e792" class=" nameType" ref="vra:name/@type">
+                           <xf:select1 id="b-d2e823" class=" nameType" ref="vra:name/@type">
                               <xf:label>Type</xf:label>
                               <xf:hint></xf:hint>
                               <xf:item>
@@ -307,11 +317,11 @@
                            </xf:trigger>
                         </xf:group>
                         <xf:group appearance="minimal">
-                           <xf:input id="b-d2e763" ref="vra:refid">
+                           <xf:input id="b-d2e794" ref="vra:refid">
                               <xf:label>Refid</xf:label>
                               <xf:hint>Refid</xf:hint>
                            </xf:input>
-                           <xf:select1 id="b-d2e770" class=" refidType" ref="vra:refid/@type">
+                           <xf:select1 id="b-d2e801" class=" refidType" ref="vra:refid/@type">
                               <xf:label>Type</xf:label>
                               <xf:hint></xf:hint>
                               <xf:item>
@@ -345,9 +355,21 @@
                            </xf:trigger>
                         </xf:group>
                         <xf:group appearance="minimal">
+                           <xf:input id="b-d2e838" ref="vra:point">
+                              <xf:label>Point</xf:label>
+                              <xf:hint>Point</xf:hint>
+                           </xf:input>
                            <xf:input ref="vra:point/@epsg">
                               <xf:label>epsg</xf:label>
                               <xf:hint>@epsg</xf:hint>
+                           </xf:input>
+                           <xf:input id="b-d2e844" ref="vra:point/vra:lat">
+                              <xf:label>Lat</xf:label>
+                              <xf:hint>Lat</xf:hint>
+                           </xf:input>
+                           <xf:input id="b-d2e845" ref="vra:point/vra:long">
+                              <xf:label>Long</xf:label>
+                              <xf:hint>Long</xf:hint>
                            </xf:input>
                            <xf:group class="vraAttributes" appearance="minimal" ref="vra:point">
                               <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
@@ -441,15 +463,6 @@
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:input ref="@refid" id="d3e1-refid">
-                     <xf:label>refid</xf:label>
-                  </xf:input>
-                  <xf:trigger class="deleteAttribute">
-                     <xf:label>clear</xf:label>
-                     <xf:setvalue ref="@refid"></xf:setvalue>
-                  </xf:trigger>
-               </xf:group>
-               <xf:group appearance="minimal" class="attrDialogGroup">
                   <xf:input ref="@rules" id="d3e1-rules">
                      <xf:label>rules</xf:label>
                   </xf:input>
@@ -465,31 +478,6 @@
                   <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@source"></xf:setvalue>
-                  </xf:trigger>
-               </xf:group>
-               <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:select1 ref="@vocab" id="d3e1-vocab">
-                     <xf:label>vocab</xf:label>
-                     <xf:item>
-                        <xf:label>local</xf:label>
-                        <xf:value>local</xf:value>
-                     </xf:item>
-                     <xf:item>
-                        <xf:label>ULAN</xf:label>
-                        <xf:value>ULAN</xf:value>
-                     </xf:item>
-                     <xf:item>
-                        <xf:label>GND</xf:label>
-                        <xf:value>GND</xf:value>
-                     </xf:item>
-                     <xf:item>
-                        <xf:label>(AKL)</xf:label>
-                        <xf:value>(AKL)</xf:value>
-                     </xf:item>
-                  </xf:select1>
-                  <xf:trigger class="deleteAttribute">
-                     <xf:label>clear</xf:label>
-                     <xf:setvalue ref="@vocab"></xf:setvalue>
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">

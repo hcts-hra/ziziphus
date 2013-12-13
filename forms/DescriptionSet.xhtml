@@ -23,9 +23,6 @@
                   <xf:send submission="s-loadSet"></xf:send><script>
                                         initAutocompletes();
                                     </script></xf:action>
-               <xf:action ev:observer="i-descriptionSet" ev:event="xforms-insert"><script>
-                                        initAutocompletes();
-                                    </script></xf:action>
                <xf:submission id="s-loadSet"
                               resource="modules/loadData.xql?id={bf:instanceOfModel('m-main','i-control-center')/uuid}&amp;workdir={bf:instanceOfModel('m-main','i-control-center')/workdir}"
                               method="post"
@@ -145,7 +142,9 @@
                <xf:hint>add an entry</xf:hint>
                <xf:insert model="m-child-model" nodeset="instance()/vra:description[1]"
                           origin="instance('i-templates')/vra:description"
-                          position="before"></xf:insert>
+                          position="before"><script>
+                                        initAutocompletes();
+                                </script></xf:insert>
             </xf:trigger>
             <xf:trigger id="d3e1-save" class="t-save -toolbarbutton">
                <xf:label>Save</xf:label>
@@ -202,7 +201,7 @@
                <tbody model="m-child-model" id="r-vraDescription" xf:repeat-nodeset="vra:description">
                   <tr>
                      <td class="prefCol">
-                        <xf:input ref="@pref" id="d3e40-pref">
+                        <xf:input ref="@pref" id="d3e45-pref">
                            <xf:label>pref</xf:label>
                            <xf:hint>preferred</xf:hint>
                            <xf:action ev:event="xforms-value-changed" if=".=('true',1)"
@@ -220,7 +219,7 @@
                            </xf:input>
                         </xf:group>
                         <xf:group appearance="minimal">
-                           <xf:textarea id="b-d2e486" ref="vra:text">
+                           <xf:textarea id="b-d2e517" ref="vra:text">
                               <xf:label>Text</xf:label>
                               <xf:hint>Text</xf:hint>
                            </xf:textarea>
@@ -255,7 +254,7 @@
                            </xf:trigger>
                         </xf:group>
                         <xf:repeat id="r-author" ref="vra:author"><span style="display:none">
-                              <xf:input id="b-d2e510" class="Name-autocomplete" ref="vra:name">
+                              <xf:input id="b-d2e541" class="Name-autocomplete" ref="vra:name">
                                  <xf:action ev:event="autocomplete-callback">
                                     <xf:setvalue ref="." value="event('value')"></xf:setvalue>
                                     <xf:action>
@@ -263,7 +262,7 @@
                                                   if="not(exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/@refid))"></xf:insert>
                                        <xf:setvalue ref="@refid" value="event('uuid')"></xf:setvalue>
                                     </xf:action>
-                                    <xf:action>
+                                    <xf:action if="not(exists(event('uuid')) or event('uuid') eq '')">
                                        <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@refid" context="."
                                                   if="not(exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/@refid))"></xf:insert>
                                        <xf:setvalue ref="@refid" value="event('internalID')"></xf:setvalue>
@@ -291,7 +290,7 @@
                                   queryType="names"
                                   host="http://localhost:8080"
                                   autocomplete="off"
-                                  callbackSet="r-vraDescription" /><xf:select1 id="b-d2e517" class=" nameType" ref="vra:name/@type">
+                                  callbackSet="r-vraDescription" /><xf:select1 id="b-d2e548" class=" nameType" ref="vra:name/@type">
                               <xf:label>Type</xf:label>
                               <xf:hint></xf:hint>
                               <xf:item>
@@ -311,21 +310,12 @@
                                  <xf:value>other</xf:value>
                               </xf:item>
                            </xf:select1>
-                           <xf:input id="b-d2e532" ref="vra:role">
+                           <xf:select1 ref="vra:role">
                               <xf:label>Role</xf:label>
-                              <xf:hint>Role</xf:hint>
-                           </xf:input>
-                           <xf:select1 id="b-d2e539" class=" roleType" ref="vra:role/@type">
-                              <xf:label>Type</xf:label>
-                              <xf:hint></xf:hint>
-                              <xf:item>
-                                 <xf:label>Code</xf:label>
-                                 <xf:value>code</xf:value>
-                              </xf:item>
-                              <xf:item>
-                                 <xf:label>Term</xf:label>
-                                 <xf:value>term</xf:value>
-                              </xf:item>
+                              <xf:itemset nodeset="bf:instanceOfModel('m-code-tables', 'i-codes-role')/items/item">
+                                 <xf:label ref="label"></xf:label>
+                                 <xf:value ref="value"></xf:value>
+                              </xf:itemset>
                            </xf:select1>
                         </xf:repeat>
                      </td>
@@ -407,15 +397,6 @@
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:input ref="@refid" id="d3e1-refid">
-                     <xf:label>refid</xf:label>
-                  </xf:input>
-                  <xf:trigger class="deleteAttribute">
-                     <xf:label>clear</xf:label>
-                     <xf:setvalue ref="@refid"></xf:setvalue>
-                  </xf:trigger>
-               </xf:group>
-               <xf:group appearance="minimal" class="attrDialogGroup">
                   <xf:input ref="@rules" id="d3e1-rules">
                      <xf:label>rules</xf:label>
                   </xf:input>
@@ -431,31 +412,6 @@
                   <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@source"></xf:setvalue>
-                  </xf:trigger>
-               </xf:group>
-               <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:select1 ref="@vocab" id="d3e1-vocab">
-                     <xf:label>vocab</xf:label>
-                     <xf:item>
-                        <xf:label>local</xf:label>
-                        <xf:value>local</xf:value>
-                     </xf:item>
-                     <xf:item>
-                        <xf:label>ULAN</xf:label>
-                        <xf:value>ULAN</xf:value>
-                     </xf:item>
-                     <xf:item>
-                        <xf:label>GND</xf:label>
-                        <xf:value>GND</xf:value>
-                     </xf:item>
-                     <xf:item>
-                        <xf:label>(AKL)</xf:label>
-                        <xf:value>(AKL)</xf:value>
-                     </xf:item>
-                  </xf:select1>
-                  <xf:trigger class="deleteAttribute">
-                     <xf:label>clear</xf:label>
-                     <xf:setvalue ref="@vocab"></xf:setvalue>
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">

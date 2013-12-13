@@ -13,15 +13,18 @@
         <xf:input ref="@href">
             <xf:label>href</xf:label>
         </xf:input>
+        <!--
         <xf:input ref="@refid">
             <xf:label>refid</xf:label>
         </xf:input>
+        -->
         <xf:input ref="@rules">
             <xf:label>rules</xf:label>
         </xf:input>
         <xf:input ref="@source">
             <xf:label>source</xf:label>
         </xf:input>
+        <!--
         <xf:select1 ref="@vocab">
             <xf:label>vocab</xf:label>
             <xf:item>
@@ -37,6 +40,7 @@
                 <xf:value>(AKL)</xf:value>
             </xf:item>
         </xf:select1>
+        -->
         <xf:input ref="@lang">
             <xf:label>Language</xf:label>
         </xf:input>

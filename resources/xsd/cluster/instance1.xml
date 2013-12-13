@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vr:dateSet xmlns:ext="http://exist-db.org/vra/extension"
+ xmlns:vr="http://www.vraweb.org/vracore4.htm"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.vraweb.org/vracore4.htm file:/home/zwobit/develop/source/customer/uni-hd/ziziphus/resources/xsd/cluster/vraCluster.xsd">
+    <vr:display dataDate="dataDate0" extent="extent0" href="http://www.oxygenxml.com/" xml:lang="en-US" pref="false"
+         refid="refid0" rules="rules0" source="source0" vocab="vocab0" lang="lang0" transliteration="transliteration0"
+         script="script0" lastAccessed="2006-05-04">display0</vr:display>
+    <vr:notes dataDate="dataDate1" extent="extent1" href="http://www.oxygenxml.com/" xml:lang="en-US" pref="false"
+         refid="refid1" rules="rules1" source="source1" vocab="vocab1" lang="lang1" transliteration="transliteration1"
+         script="script1" lastAccessed="2006-05-04">notes0</vr:notes>
+    <vr:date type="type0" dataDate="dataDate2" extent="extent2" href="http://www.oxygenxml.com/" xml:lang="en-US"
+         pref="false" refid="refid2" rules="rules2" source="source2" vocab="vocab2" lang="lang2" transliteration="transliteration2"
+         script="script2" lastAccessed="2006-05-04">
+        <vr:earliestDate>
+            <vr:date circa="false" type="type1" dataDate="dataDate3" extent="extent3" href="http://www.oxygenxml.com/" xml:lang="en-US"
+                 pref="false" refid="refid3" rules="rules3" source="source3" vocab="vocab3" lang="lang3"
+                 transliteration="transliteration3" script="script3" lastAccessed="2006-05-04">date0</vr:date>
+            <vr:alternativeNotation type="before" dataDate="dataDate4" extent="extent4" href="http://www.oxygenxml.com/" xml:lang="en-US"
+                 pref="false" refid="refid4" rules="rules4" source="source4" vocab="vocab4" lang="lang4"
+                 transliteration="transliteration4" script="script4" lastAccessed="2006-05-04">alternativeNotation0</vr:alternativeNotation>
+            <vr:alternativeNotation type="before" dataDate="dataDate5" extent="extent5" href="http://www.oxygenxml.com/" xml:lang="en-US"
+                 pref="false" refid="refid5" rules="rules5" source="source5" vocab="vocab5" lang="lang5"
+                 transliteration="transliteration5" script="script5" lastAccessed="2006-05-04">alternativeNotation1</vr:alternativeNotation>
+        </vr:earliestDate>
+        <vr:latestDate>
+            <vr:date circa="false" type="type4" dataDate="dataDate6" extent="extent6" href="http://www.oxygenxml.com/" xml:lang="en-US"
+                 pref="false" refid="refid6" rules="rules6" source="source6" vocab="vocab6" lang="lang6"
+                 transliteration="transliteration6" script="script6" lastAccessed="2006-05-04">date1</vr:date>
+            <vr:alternativeNotation type="before" dataDate="dataDate7" extent="extent7" href="http://www.oxygenxml.com/" xml:lang="en-US"
+                 pref="false" refid="refid7" rules="rules7" source="source7" vocab="vocab7" lang="lang7"
+                 transliteration="transliteration7" script="script7" lastAccessed="2006-05-04">alternativeNotation2</vr:alternativeNotation>
+            <vr:alternativeNotation type="before" dataDate="dataDate8" extent="extent8" href="http://www.oxygenxml.com/" xml:lang="en-US"
+                 pref="false" refid="refid8" rules="rules8" source="source8" vocab="vocab8" lang="lang8"
+                 transliteration="transliteration8" script="script8" lastAccessed="2006-05-04">alternativeNotation3</vr:alternativeNotation>
+        </vr:latestDate>
+    </vr:date>
+    <vr:date type="type7" dataDate="dataDate9" extent="extent9" href="http://www.oxygenxml.com/" xml:lang="en-US"
+         pref="false" refid="refid9" rules="rules9" source="source9" vocab="vocab9" lang="lang9" transliteration="transliteration9"
+         script="script9" lastAccessed="2006-05-04">
+        <vr:earliestDate>
+            <vr:date circa="false" type="type8" dataDate="dataDate10" extent="extent10" href="http://www.oxygenxml.com/"
+                 xml:lang="en-US" pref="false" refid="refid10" rules="rules10" source="source10" vocab="vocab10"
+                 lang="lang10" transliteration="transliteration10" script="script10" lastAccessed="2006-05-04">date2</vr:date>
+            <vr:alternativeNotation type="before" dataDate="dataDate11" extent="extent11" href="http://www.oxygenxml.com/" xml:lang="en-US"
+                 pref="false" refid="refid11" rules="rules11" source="source11" vocab="vocab11" lang="lang11"
+                 transliteration="transliteration11" script="script11" lastAccessed="2006-05-04">alternativeNotation4</vr:alternativeNotation>
+            <vr:alternativeNotation type="before" dataDate="dataDate12" extent="extent12" href="http://www.oxygenxml.com/" xml:lang="en-US"
+                 pref="false" refid="refid12" rules="rules12" source="source12" vocab="vocab12" lang="lang12"
+                 transliteration="transliteration12" script="script12" lastAccessed="2006-05-04">alternativeNotation5</vr:alternativeNotation>
+        </vr:earliestDate>
+        <vr:latestDate>
+            <vr:date circa="false" type="type11" dataDate="dataDate13" extent="extent13" href="http://www.oxygenxml.com/"
+                 xml:lang="en-US" pref="false" refid="refid13" rules="rules13" source="source13" vocab="vocab13"
+                 lang="lang13" transliteration="transliteration13" script="script13" lastAccessed="2006-05-04">date3</vr:date>
+            <vr:alternativeNotation type="before" dataDate="dataDate14" extent="extent14" href="http://www.oxygenxml.com/" xml:lang="en-US"
+                 pref="false" refid="refid14" rules="rules14" source="source14" vocab="vocab14" lang="lang14"
+                 transliteration="transliteration14" script="script14" lastAccessed="2006-05-04">alternativeNotation6</vr:alternativeNotation>
+            <vr:alternativeNotation type="before" dataDate="dataDate15" extent="extent15" href="http://www.oxygenxml.com/" xml:lang="en-US"
+                 pref="false" refid="refid15" rules="rules15" source="source15" vocab="vocab15" lang="lang15"
+                 transliteration="transliteration15" script="script15" lastAccessed="2006-05-04">alternativeNotation7</vr:alternativeNotation>
+        </vr:latestDate>
+    </vr:date>
+</vr:dateSet>

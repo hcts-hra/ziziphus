@@ -16,7 +16,7 @@
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(@type,'')) != 0">
                               <div data-bf-type="select1" data-bf-bind="@type" tabindex="0" title="Type"
-                                   id="b-d2e948"
+                                   id="b-d2e981"
                                    class=" ">
                                  <xsl:value-of select="@type"></xsl:value-of>
                               </div>
@@ -28,7 +28,7 @@
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(.,'')) != 0">
                               <div data-bf-type="input" data-bf-bind="." tabindex="0" title="Measurements"
-                                   id="b-d2e941">
+                                   id="b-d2e974">
                                  <xsl:value-of select="."></xsl:value-of>
                               </div>
                            </xsl:when>
@@ -39,7 +39,7 @@
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(@unit,'')) != 0">
                               <div data-bf-type="input" data-bf-bind="@unit" tabindex="0" title="Unit"
-                                   id="b-d2e949">
+                                   id="b-d2e982">
                                  <xsl:value-of select="@unit"></xsl:value-of>
                               </div>
                            </xsl:when>
@@ -50,7 +50,7 @@
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(@shape,'')) != 0">
                               <div data-bf-type="select1" data-bf-bind="@shape" tabindex="0" title="Shape"
-                                   id="b-d2e950"
+                                   id="b-d2e983"
                                    class=" ">
                                  <xsl:value-of select="@shape"></xsl:value-of>
                               </div>

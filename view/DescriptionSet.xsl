@@ -28,7 +28,7 @@
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:text,'')) != 0">
                               <div data-bf-type="textarea" data-bf-bind="vra:text" tabindex="0" title="Text"
-                                   id="b-d2e486">
+                                   id="b-d2e517">
                                  <xsl:value-of select="vra:text"></xsl:value-of>
                               </div>
                            </xsl:when>
@@ -42,7 +42,7 @@
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:name,'')) != 0">
                               <div data-bf-type="input" data-bf-bind="vra:name" tabindex="0" title="Name"
-                                   id="b-d2e510"
+                                   id="b-d2e541"
                                    class="Name-autocomplete">
                                  <xsl:value-of select="vra:name"></xsl:value-of>
                               </div>
@@ -54,7 +54,7 @@
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:name/@type,'')) != 0">
                               <div data-bf-type="select1" data-bf-bind="vra:name/@type" tabindex="0" title="Type"
-                                   id="b-d2e517"
+                                   id="b-d2e548"
                                    class=" nameType">
                                  <xsl:value-of select="vra:name/@type"></xsl:value-of>
                               </div>
@@ -66,25 +66,13 @@
                         </xsl:choose>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:role,'')) != 0">
-                              <div data-bf-type="input" data-bf-bind="vra:role" tabindex="0" title="Role"
-                                   id="b-d2e532">
+                              <div data-bf-type="select1" data-bf-bind="vra:role" tabindex="0" title="Role">
                                  <xsl:variable name="role" select="vra:role"></xsl:variable>
                                  <xsl:value-of select="$role-codes-legend//item[value eq $role]/label"></xsl:value-of>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="nodata" data-bf-type="input" data-bf-bind="vra:role" tabindex="0">(Role)</div>
-                           </xsl:otherwise>
-                        </xsl:choose>
-                        <xsl:choose>
-                           <xsl:when test="string-length(string-join(vra:role/@type,'')) != 0">
-                              <div data-bf-type="select1" data-bf-bind="vra:role/@type" tabindex="0" title="Type"
-                                   id="b-d2e539"
-                                   class=" roleType"></div>
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <div class="nodata" data-bf-type="select1" data-bf-bind="vra:role/@type"
-                                   tabindex="0">(Type)</div>
+                              <div class="nodata" data-bf-type="select1" data-bf-bind="vra:role" tabindex="0">(Role)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>

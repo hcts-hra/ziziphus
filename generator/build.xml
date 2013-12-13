@@ -83,7 +83,7 @@
 
     <target name="testDescriptionView">
         <antcall target="generate-section-view-transform">
-            <param name="subformName" value="DescriptionSet"/>
+            <param name="subformName" value="DateSet"/>
         </antcall>
     </target>
 

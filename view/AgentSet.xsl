@@ -41,17 +41,6 @@
                      </td>
                      <td>
                         <xsl:choose>
-                           <xsl:when test="string-length(string-join(vra:role/@type,'')) != 0">
-                              <div data-bf-type="select1" data-bf-bind="vra:role/@type" tabindex="0" title="Type"
-                                   id="b-d2e209"
-                                   class=" roleType"></div>
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <div class="nodata" data-bf-type="select1" data-bf-bind="vra:role/@type"
-                                   tabindex="0">(Type)</div>
-                           </xsl:otherwise>
-                        </xsl:choose>
-                        <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:role,'')) != 0">
                               <div data-bf-type="select1" data-bf-bind="vra:role" tabindex="0" title="Role">
                                  <xsl:variable name="role" select="vra:role"></xsl:variable>
