@@ -21,6 +21,9 @@
             <xf:model id="m-child-model" schema="resources/xsd/generator/vra-types.xsd">
                <xf:action ev:event="xforms-model-construct-done">
                   <xf:send submission="s-loadSet"></xf:send><script>
+                                        clearAndInitAutocompletes();
+                                    </script></xf:action>
+               <xf:action ev:observer="i-descriptionSet" ev:event="xforms-insert"><script>
                                         initAutocompletes();
                                     </script></xf:action>
                <xf:submission id="s-loadSet"
@@ -142,9 +145,7 @@
                <xf:hint>add an entry</xf:hint>
                <xf:insert model="m-child-model" nodeset="instance()/vra:description[1]"
                           origin="instance('i-templates')/vra:description"
-                          position="before"><script>
-                                        initAutocompletes();
-                                </script></xf:insert>
+                          position="before"></xf:insert>
             </xf:trigger>
             <xf:trigger id="d3e1-save" class="t-save -toolbarbutton">
                <xf:label>Save</xf:label>
@@ -236,7 +237,7 @@
                               <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
                            </xf:trigger>
                         </xf:group>
-                        <xf:group>
+                        <xf:group hideInView="true">
                            <xf:trigger>
                               <xf:label>Add</xf:label>
                               <xf:action>

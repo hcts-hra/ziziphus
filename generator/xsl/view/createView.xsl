@@ -54,13 +54,37 @@
             <transform:for-each select="{@xf:repeat-nodeset}">
                 <tr>
                     <xsl:for-each select="//xf:group[@id='outerGroup']/html:table//html:td[@class='contentCol']/*">
-                        <td>
-                            <xsl:apply-templates select="."/>
-                        </td>
+                        <xsl:choose>
+                            <xsl:when test="exists(@hideInView)">
+                              <xsl:message>Ignoring <xsl:value-of select="local-name(.)"/></xsl:message>  
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <td>
+                                    <xsl:apply-templates select="."/>
+                                </td>
+                            </xsl:otherwise>
+                        </xsl:choose>
                     </xsl:for-each>
                 </tr>
             </transform:for-each>
         </tbody>
+    </xsl:template>
+    
+    <xsl:template match="xf:repeat">
+        <table class="vraSetInnerRepeatView table">
+            <tbody>
+                <transform:for-each select="{@ref}">
+                    <tr>
+                        <xsl:for-each select="html:span/xf:*[contains(@class, '-autocomplete')] | xf:*">
+                            <xsl:message>Current <xsl:value-of select="local-name(.)"/></xsl:message>
+                            <td>
+                                <xsl:apply-templates select="."/>
+                            </td>
+                        </xsl:for-each>
+                    </tr>
+                </transform:for-each>
+            </tbody>
+        </table>        
     </xsl:template>
 
     <xsl:template match="html:td">
@@ -84,14 +108,14 @@
             <xsl:apply-templates select="."/>
         </xsl:for-each>
     </xsl:template>
-
+    
     <xsl:template match="xf:input | xf:select1 | xf:textarea">
         <xsl:variable name="path">
             <xsl:call-template name="buildPath"/>
         </xsl:variable>
         <xsl:variable name="isDetail" select="if(@class='detail') then true() else false()"/>
 
-        <xsl:choose>
+            <xsl:choose>
             <xsl:when test="contains(@ref, '@circa')">
                 <transform:choose>
                     <transform:when test="string-length(string-join({@ref},'')) != 0 and {@ref} eq 'true'">

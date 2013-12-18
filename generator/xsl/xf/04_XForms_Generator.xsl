@@ -104,10 +104,18 @@
                                 <xf:send submission="s-loadSet"/>
                                 <xsl:if test="//xf:bind[@nodeset=concat('vra:',$vraSectionNode)]//@control[. eq 'autocomplete']">
                                     <script>
-                                        initAutocompletes();
+                                        clearAndInitAutocompletes();
                                     </script>
                                 </xsl:if>
-                            </xf:action>                           
+                            </xf:action>   
+                            
+                            <xsl:if test="//xf:bind[@nodeset=concat('vra:',$vraSectionNode)]//@control[. eq 'autocomplete']">
+                                <xf:action ev:observer="i-{$vraSectionNode}" ev:event="xforms-insert">
+                                    <script>
+                                        initAutocompletes();
+                                    </script>
+                                </xf:action>
+                            </xsl:if>                        
                             
                             <xf:submission id="s-loadSet"
                                     resource="{$relativePath}modules/loadData.xql?id={{bf:instanceOfModel('m-main','i-control-center')/uuid}}&amp;workdir={{bf:instanceOfModel('m-main','i-control-center')/workdir}}"
@@ -226,9 +234,6 @@
                                 <xsl:attribute name="nodeset">instance()/vra:<xsl:value-of select="$vraArtifactNode"/>[1]</xsl:attribute>
                                 <xsl:attribute name="origin">instance('i-templates')/vra:<xsl:value-of select="$vraArtifactNode"/></xsl:attribute>
                                 <xsl:attribute name="position">before</xsl:attribute>
-                                 <script>
-                                        initAutocompletes();
-                                </script>
                             </xf:insert>
                         </xf:trigger>
                         <xf:trigger id="{concat(generate-id(),'-save')}" class="t-save -toolbarbutton">
@@ -804,7 +809,7 @@
             <xsl:when test=".[@maxOccurs eq 'unbounded']">
                 <xsl:variable name="parent" select="../@nodeset"/>
                 <xsl:variable name="repeat-id" select="substring-after($vraNodeName, 'vra:')"/>
-                <xf:group>
+                <xf:group hideInView="true">
                     <xf:trigger>
                         <xf:label>Add</xf:label>
                         <xf:action>

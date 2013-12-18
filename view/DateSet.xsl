@@ -69,29 +69,41 @@
                                    tabindex="0">(Type)</div>
                            </xsl:otherwise>
                         </xsl:choose>
-                        <xsl:choose>
-                           <xsl:when test="string-length(string-join(@type,'')) != 0">
-                              <div data-bf-type="select1" data-bf-bind="@type" tabindex="0" title="Type"
-                                   id="b-d2e388"
-                                   class=" ">
-                                 <xsl:value-of select="@type"></xsl:value-of>
-                              </div>
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <div class="nodata" data-bf-type="select1" data-bf-bind="@type" tabindex="0">(Type)</div>
-                           </xsl:otherwise>
-                        </xsl:choose>
-                        <xsl:choose>
-                           <xsl:when test="string-length(string-join(.,'')) != 0">
-                              <div data-bf-type="input" data-bf-bind="." tabindex="0" title="AlternativeNotation"
-                                   id="b-d2e384">
-                                 <xsl:value-of select="."></xsl:value-of>
-                              </div>
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <div class="nodata" data-bf-type="input" data-bf-bind="." tabindex="0">(AlternativeNotation)</div>
-                           </xsl:otherwise>
-                        </xsl:choose>
+                        <table class="vraSetInnerRepeatView table">
+                           <tbody>
+                              <xsl:for-each select="vra:earliestDate/vra:alternativeNotation">
+                                 <tr>
+                                    <td>
+                                       <xsl:choose>
+                                          <xsl:when test="string-length(string-join(@type,'')) != 0">
+                                             <div data-bf-type="select1" data-bf-bind="@type" tabindex="0" title="Type"
+                                                  id="b-d2e388"
+                                                  class=" ">
+                                                <xsl:value-of select="@type"></xsl:value-of>
+                                             </div>
+                                          </xsl:when>
+                                          <xsl:otherwise>
+                                             <div class="nodata" data-bf-type="select1" data-bf-bind="@type" tabindex="0">(Type)</div>
+                                          </xsl:otherwise>
+                                       </xsl:choose>
+                                    </td>
+                                    <td>
+                                       <xsl:choose>
+                                          <xsl:when test="string-length(string-join(.,'')) != 0">
+                                             <div data-bf-type="input" data-bf-bind="." tabindex="0" title="AlternativeNotation"
+                                                  id="b-d2e384">
+                                                <xsl:value-of select="."></xsl:value-of>
+                                             </div>
+                                          </xsl:when>
+                                          <xsl:otherwise>
+                                             <div class="nodata" data-bf-type="input" data-bf-bind="." tabindex="0">(AlternativeNotation)</div>
+                                          </xsl:otherwise>
+                                       </xsl:choose>
+                                    </td>
+                                 </tr>
+                              </xsl:for-each>
+                           </tbody>
+                        </table>
                      </td>
                      <td>
                         <xsl:choose>
@@ -136,29 +148,41 @@
                                    tabindex="0">(Type)</div>
                            </xsl:otherwise>
                         </xsl:choose>
-                        <xsl:choose>
-                           <xsl:when test="string-length(string-join(@type,'')) != 0">
-                              <div data-bf-type="select1" data-bf-bind="@type" tabindex="0" title="Type"
-                                   id="b-d2e436"
-                                   class=" ">
-                                 <xsl:value-of select="@type"></xsl:value-of>
-                              </div>
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <div class="nodata" data-bf-type="select1" data-bf-bind="@type" tabindex="0">(Type)</div>
-                           </xsl:otherwise>
-                        </xsl:choose>
-                        <xsl:choose>
-                           <xsl:when test="string-length(string-join(.,'')) != 0">
-                              <div data-bf-type="input" data-bf-bind="." tabindex="0" title="AlternativeNotation"
-                                   id="b-d2e432">
-                                 <xsl:value-of select="."></xsl:value-of>
-                              </div>
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <div class="nodata" data-bf-type="input" data-bf-bind="." tabindex="0">(AlternativeNotation)</div>
-                           </xsl:otherwise>
-                        </xsl:choose>
+                        <table class="vraSetInnerRepeatView table">
+                           <tbody>
+                              <xsl:for-each select="vra:latestDate/vra:alternativeNotation">
+                                 <tr>
+                                    <td>
+                                       <xsl:choose>
+                                          <xsl:when test="string-length(string-join(@type,'')) != 0">
+                                             <div data-bf-type="select1" data-bf-bind="@type" tabindex="0" title="Type"
+                                                  id="b-d2e436"
+                                                  class=" ">
+                                                <xsl:value-of select="@type"></xsl:value-of>
+                                             </div>
+                                          </xsl:when>
+                                          <xsl:otherwise>
+                                             <div class="nodata" data-bf-type="select1" data-bf-bind="@type" tabindex="0">(Type)</div>
+                                          </xsl:otherwise>
+                                       </xsl:choose>
+                                    </td>
+                                    <td>
+                                       <xsl:choose>
+                                          <xsl:when test="string-length(string-join(.,'')) != 0">
+                                             <div data-bf-type="input" data-bf-bind="." tabindex="0" title="AlternativeNotation"
+                                                  id="b-d2e432">
+                                                <xsl:value-of select="."></xsl:value-of>
+                                             </div>
+                                          </xsl:when>
+                                          <xsl:otherwise>
+                                             <div class="nodata" data-bf-type="input" data-bf-bind="." tabindex="0">(AlternativeNotation)</div>
+                                          </xsl:otherwise>
+                                       </xsl:choose>
+                                    </td>
+                                 </tr>
+                              </xsl:for-each>
+                           </tbody>
+                        </table>
                      </td>
                   </tr>
                </xsl:for-each>
