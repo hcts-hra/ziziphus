@@ -534,7 +534,7 @@
     </target>
 
     <!-- this is just a helper transform to intially create the view definition file -->
-    <target name="generateInitialUIDefinition">
+    <target name="generateInitialUIDefinition" description="Rebuild UiDefintion using current binds.">
         <echo>
             WARNING - Utility target - needs manual intervention:
             this target (re)creates a UI definition file. The target can be run manually to generate a plain-vanilla

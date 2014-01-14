@@ -289,7 +289,7 @@
                               </xf:input></span><label for="Name-autocomplete">Name</label><input type="text" name="Name-autocomplete" class="Name-autocomplete-input"
                                   placeholder="Type to search ..."
                                   queryType="names"
-                                  host="http://localhost:8080"
+                                  host="http://kjc-ws2.kjc.uni-heidelberg.de:8650"
                                   autocomplete="off"
                                   callbackSet="r-vraDescription" /><xf:select1 id="b-d2e548" class=" nameType" ref="vra:name/@type">
                               <xf:label>Type</xf:label>
@@ -429,19 +429,6 @@
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:select1 ref="@transliteration" id="d3e1-transliteration">
-                     <xf:label>Transliteration</xf:label>
-                     <xf:itemset nodeset="bf:instanceOfModel('m-code-tables', 'i-codes-transliteration')/items/item">
-                        <xf:label ref="label"></xf:label>
-                        <xf:value ref="value"></xf:value>
-                     </xf:itemset>
-                  </xf:select1>
-                  <xf:trigger class="deleteAttribute">
-                     <xf:label>clear</xf:label>
-                     <xf:setvalue ref="@transliteration"></xf:setvalue>
-                  </xf:trigger>
-               </xf:group>
-               <xf:group appearance="minimal" class="attrDialogGroup">
                   <xf:select1 ref="@script" id="d3e1-script">
                      <xf:label>Script</xf:label>
                      <xf:itemset nodeset="bf:instanceOfModel('m-code-tables', 'i-codes-script')/items/item">
@@ -452,6 +439,19 @@
                   <xf:trigger class="deleteAttribute">
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@script"></xf:setvalue>
+                  </xf:trigger>
+               </xf:group>
+               <xf:group appearance="minimal" class="attrDialogGroup">
+                  <xf:select1 ref="@transliteration" id="d3e1-transliteration">
+                     <xf:label>Transliteration</xf:label>
+                     <xf:itemset nodeset="bf:instanceOfModel('m-code-tables', 'i-codes-transliteration')/items/item">
+                        <xf:label ref="label"></xf:label>
+                        <xf:value ref="value"></xf:value>
+                     </xf:itemset>
+                  </xf:select1>
+                  <xf:trigger class="deleteAttribute">
+                     <xf:label>clear</xf:label>
+                     <xf:setvalue ref="@transliteration"></xf:setvalue>
                   </xf:trigger>
                </xf:group>
                <xf:group class="buttonBar">

@@ -368,19 +368,7 @@
                                     <xf:setvalue ref="@lang"/>
                                 </xf:trigger>
                             </xf:group>
-                            <xf:group appearance="minimal" class="attrDialogGroup">
-                                <xf:select1 ref="@transliteration" id="{concat(generate-id(),'-transliteration')}">
-                                    <xf:label>Transliteration</xf:label>
-                                    <xf:itemset nodeset="bf:instanceOfModel('m-code-tables', 'i-codes-transliteration')/items/item">
-                                        <xf:label ref="label"/>
-                                        <xf:value ref="value"/>
-                                    </xf:itemset>
-                                </xf:select1>
-                                <xf:trigger class="deleteAttribute">
-                                    <xf:label>clear</xf:label>
-                                    <xf:setvalue ref="@transliteration"/>
-                                </xf:trigger>
-                            </xf:group>
+                           
                             <xf:group appearance="minimal" class="attrDialogGroup">
                                 <xf:select1 ref="@script" id="{concat(generate-id(),'-script')}">
                                     <xf:label>Script</xf:label>
@@ -394,6 +382,19 @@
                                     <xf:setvalue ref="@script"/>
                                 </xf:trigger>
                             </xf:group>
+                            <xf:group appearance="minimal" class="attrDialogGroup">
+                                <xf:select1 ref="@transliteration" id="{concat(generate-id(),'-transliteration')}">
+                                    <xf:label>Transliteration</xf:label>
+                                    <xf:itemset nodeset="bf:instanceOfModel('m-code-tables', 'i-codes-transliteration')/items/item">
+                                        <xf:label ref="label"/>
+                                        <xf:value ref="value"/>
+                                    </xf:itemset>
+                                </xf:select1>
+                                <xf:trigger class="deleteAttribute">
+                                    <xf:label>clear</xf:label>
+                                    <xf:setvalue ref="@transliteration"/>
+                                </xf:trigger>
+                           </xf:group>
 
                             <xf:group class="buttonBar">
                                 <xf:trigger class="-btn">
