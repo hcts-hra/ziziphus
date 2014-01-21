@@ -299,6 +299,11 @@
                                     <xf:setvalue ref="@href"/>
                                 </xf:trigger>
                             </xf:group>
+                            <xf:group appearance="minimal" class="attrDialogGroup">
+                                <xf:output ref="@refid" id="{concat(generate-id(),'-refid')}">
+                                    <xf:label>refid</xf:label>
+                                </xf:output>
+                            </xf:group>
                             <!--
                             <xf:group appearance="minimal" class="attrDialogGroup">
                                 <xf:input ref="@refid" id="{concat(generate-id(),'-refid')}">
@@ -327,6 +332,11 @@
                                     <xf:label>clear</xf:label>
                                     <xf:setvalue ref="@source"/>
                                 </xf:trigger>
+                            </xf:group>
+                            <xf:group appearance="minimal" class="attrDialogGroup">
+                                <xf:output ref="@vocab" id="{concat(generate-id(),'-vocab')}">
+                                    <xf:label>vocab</xf:label>
+                                </xf:output>
                             </xf:group>
                             <!--
                             <xf:group appearance="minimal" class="attrDialogGroup">
@@ -1181,15 +1191,26 @@
                 <xsl:value-of select="functx:capitalize-first($vraNodeName)"/>
             </xf:hint>
 
-            <xsl:for-each select="xsd:enumeration">
-                <xf:item>
-                    <xf:label>
-                        <xsl:value-of select="functx:capitalize-first(@value)"/>
-                    </xf:label>
-                    <xf:value>
-                        <xsl:value-of select="@value"/>
-                    </xf:value>
-                </xf:item>
+            <xsl:for-each select="xsd:enumeration|comment()">
+                <xsl:choose>
+                    <xsl:when test="local-name(.) eq 'enumeration'">
+                        <xf:item>
+                            <xf:label>
+                                <xsl:value-of select="functx:capitalize-first(@value)"/>
+                            </xf:label>
+                            <xf:value>
+                                <xsl:value-of select="@value"/>
+                            </xf:value>
+                        </xf:item>
+                    </xsl:when>
+                    <xsl:when test="contains(., 'HEADER:')">
+                        <optgroup><xsl:value-of select="substring-after(.,'HEADER:' )"/></optgroup>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        
+                    </xsl:otherwise>
+                
+                </xsl:choose>
             </xsl:for-each>
         </xf:select1>
     </xsl:template>

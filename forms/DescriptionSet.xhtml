@@ -289,7 +289,7 @@
                               </xf:input></span><label for="Name-autocomplete">Name</label><input type="text" name="Name-autocomplete" class="Name-autocomplete-input"
                                   placeholder="Type to search ..."
                                   queryType="names"
-                                  host="http://kjc-ws2.kjc.uni-heidelberg.de:8650"
+                                  host="http://localhost:8080"
                                   autocomplete="off"
                                   callbackSet="r-vraDescription" /><xf:select1 id="b-d2e548" class=" nameType" ref="vra:name/@type">
                               <xf:label>Type</xf:label>
@@ -398,6 +398,11 @@
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">
+                  <xf:output ref="@refid" id="d3e1-refid">
+                     <xf:label>refid</xf:label>
+                  </xf:output>
+               </xf:group>
+               <xf:group appearance="minimal" class="attrDialogGroup">
                   <xf:input ref="@rules" id="d3e1-rules">
                      <xf:label>rules</xf:label>
                   </xf:input>
@@ -414,6 +419,11 @@
                      <xf:label>clear</xf:label>
                      <xf:setvalue ref="@source"></xf:setvalue>
                   </xf:trigger>
+               </xf:group>
+               <xf:group appearance="minimal" class="attrDialogGroup">
+                  <xf:output ref="@vocab" id="d3e1-vocab">
+                     <xf:label>vocab</xf:label>
+                  </xf:output>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">
                   <xf:select1 ref="@lang" id="d3e1-lang">

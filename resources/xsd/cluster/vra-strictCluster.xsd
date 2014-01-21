@@ -280,13 +280,16 @@
         </xsd:simpleType>
         <xsd:simpleType name="subjectTermTypeType">
             <xsd:restriction base="subjectTermTypeType">
+                <!-- HEADER:Topics -->
                 <xsd:enumeration value="conceptTopic"/>
                 <xsd:enumeration value="descriptiveTopic"/>
                 <xsd:enumeration value="iconographicTopic"/>
                 <xsd:enumeration value="otherTopic"/>
+                <!-- HEADER:Places -->
                 <xsd:enumeration value="builtworkPlace"/>
                 <xsd:enumeration value="geographicPlace"/>
                 <xsd:enumeration value="otherPlace"/>
+                <!-- HEADER:Names -->
                 <xsd:enumeration value="corporateName"/>
                 <xsd:enumeration value="familyName"/>
                 <xsd:enumeration value="personalName"/>

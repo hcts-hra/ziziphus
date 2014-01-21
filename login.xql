@@ -63,7 +63,7 @@ return
                     </ul>
                 </div>
                 <div class="span6">
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" on-submit="return false;">
                         <fieldset>
                             <legend>Sign up for free</legend>
                             <div class="control-group">
