@@ -17,6 +17,9 @@
          <!-- ###################### MODEL ##########################'-',######## -->
          <!-- ###################### MODEL ################################## -->
          <!-- ###################### MODEL ################################## -->
+         <!-- ####################################### VISIBLE UI ####################################### -->
+         <!-- ####################################### VISIBLE UI ####################################### -->
+         <!-- ####################################### VISIBLE UI ####################################### -->
          <div style="display:none">
             <xf:model id="m-child-model" schema="resources/xsd/generator/vra-types.xsd">
                <xf:action ev:event="xforms-model-construct-done">
@@ -135,9 +138,6 @@
                </xf:instance>
             </xf:model>
          </div>
-         <!-- ####################################### VISIBLE UI ####################################### -->
-         <!-- ####################################### VISIBLE UI ####################################### -->
-         <!-- ####################################### VISIBLE UI ####################################### -->
          <div class="toolbar">
             <xf:trigger class="t-plus -toolbarbutton" model="m-child-model" id="d3e1-add"
                         title="Add Description">
@@ -169,6 +169,9 @@
          </div>
          <xf:group id="outerGroup" appearance="minimal" model="m-child-model"
                    ref="instance('i-descriptionSet')">
+            <!-- ############################## NOTES ####################################### -->
+            <!-- ############################## NOTES ####################################### -->
+            <!-- ############################## NOTES ####################################### -->
             <xf:label></xf:label>
             <xf:action ev:event="xforms-value-changed" ev:phase="capture">
                <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/isDirty" value="'true'"></xf:setvalue>
@@ -313,6 +316,19 @@
                            </xf:select1>
                            <xf:select1 ref="vra:role">
                               <xf:label>Role</xf:label>
+                              <xf:action ev:event="xforms-value-changed">
+                                 <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@vocab"
+                                            context="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role"
+                                            if="not(exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@vocab))"></xf:insert>
+                                 <xf:setvalue ref="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@vocab"
+                                              value="'marcrelator'"></xf:setvalue>
+                                 <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@type"
+                                            context="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role"
+                                            if="not(exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@type))"></xf:insert>
+                                 <xf:setvalue ref="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@type"
+                                              value="'code'"></xf:setvalue>
+                              </xf:action>
+                              <xf:label>Role</xf:label>
                               <xf:itemset nodeset="bf:instanceOfModel('m-code-tables', 'i-codes-role')/items/item">
                                  <xf:label ref="label"></xf:label>
                                  <xf:value ref="value"></xf:value>
@@ -346,9 +362,6 @@
                   </tr>
                </tbody>
             </table>
-            <!-- ############################## NOTES ####################################### -->
-            <!-- ############################## NOTES ####################################### -->
-            <!-- ############################## NOTES ####################################### -->
             <xf:switch>
                <xf:case id="c-hidden">
                   <xf:trigger class="notesDisplayTrigger">

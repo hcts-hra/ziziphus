@@ -33,8 +33,8 @@
     <!-- NOTE: change this to '../' to run the generated forms standalone -->
     <xsl:variable name="relativePath" select="''"/>
 
-
-    <xsl:variable name="useTextarea" select="'vra:description vra:text'"/>
+    <!-- No longer used -->
+    <!-- xsl:variable name="useTextarea" select="'vra:description vra:text'"/ -->
 
     <!-- must be '../' if testing forms standalone -->
     <!--<xsl:variable name="relativePath" select="'../'"/>-->

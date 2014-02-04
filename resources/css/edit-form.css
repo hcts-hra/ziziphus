@@ -153,6 +153,9 @@ table tr td .xfGroup:last-child {
   margin: 0 0 0 -1px;
   padding: 0 4px;
 }
+#attrDialog .buttonBar {
+  clear: both;
+}
 .buttonBar .xfTrigger {
   display: inline-block !important;
   font-size: 0.85em;
@@ -264,31 +267,4 @@ input[type="color"],
 .uneditable-input {
   padding: 0;
   margin: 0;
-}
-#r-vraSubject .termType option[value="conceptTopic"]:before {
-  color: lightgray;
-  content: "Topics";
-  display: block;
-  font-weight: bold;
-  font-size: 12px;
-}
-#r-vraSubject .termType option[value="builtworkPlace"]:before {
-  color: lightgray;
-  content: "Places";
-  display: block;
-  font-weight: bold;
-  font-size: 12px;
-}
-#r-vraSubject .termType option[value="corporateName"]:before {
-  color: lightgray;
-  content: "Names";
-  display: block;
-  font-weight: bold;
-  font-size: 12px;
-}
-#r-vraSubject .termType option[value="otherTopic"] {
-  border-bottom: 2px solid #000000;
-}
-#r-vraSubject .termType option[value="otherPlace"] {
-  border-bottom: 2px solid #000000;
 }

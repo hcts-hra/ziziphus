@@ -17,6 +17,9 @@
          <!-- ###################### MODEL ##########################'-',######## -->
          <!-- ###################### MODEL ################################## -->
          <!-- ###################### MODEL ################################## -->
+         <!-- ####################################### VISIBLE UI ####################################### -->
+         <!-- ####################################### VISIBLE UI ####################################### -->
+         <!-- ####################################### VISIBLE UI ####################################### -->
          <div style="display:none">
             <xf:model id="m-child-model" schema="resources/xsd/generator/vra-types.xsd">
                <xf:action ev:event="xforms-model-construct-done">
@@ -115,9 +118,6 @@
                </xf:instance>
             </xf:model>
          </div>
-         <!-- ####################################### VISIBLE UI ####################################### -->
-         <!-- ####################################### VISIBLE UI ####################################### -->
-         <!-- ####################################### VISIBLE UI ####################################### -->
          <div class="toolbar">
             <xf:trigger class="t-plus -toolbarbutton" model="m-child-model" id="d3e1-add"
                         title="Add Subject">
@@ -149,6 +149,9 @@
          </div>
          <xf:group id="outerGroup" appearance="minimal" model="m-child-model"
                    ref="instance('i-subjectSet')">
+            <!-- ############################## NOTES ####################################### -->
+            <!-- ############################## NOTES ####################################### -->
+            <!-- ############################## NOTES ####################################### -->
             <xf:label></xf:label>
             <xf:action ev:event="xforms-value-changed" ev:phase="capture">
                <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/isDirty" value="'true'"></xf:setvalue>
@@ -187,54 +190,63 @@
                            <xf:select1 id="b-d2e1518" class=" termType" ref="vra:term/@type">
                               <xf:label>Type</xf:label>
                               <xf:hint></xf:hint>
-                              <xf:item>
-                                 <xf:label>ConceptTopic</xf:label>
-                                 <xf:value>conceptTopic</xf:value>
-                              </xf:item>
-                              <xf:item>
-                                 <xf:label>DescriptiveTopic</xf:label>
-                                 <xf:value>descriptiveTopic</xf:value>
-                              </xf:item>
-                              <xf:item>
-                                 <xf:label>IconographicTopic</xf:label>
-                                 <xf:value>iconographicTopic</xf:value>
-                              </xf:item>
-                              <xf:item>
-                                 <xf:label>OtherTopic</xf:label>
-                                 <xf:value>otherTopic</xf:value>
-                              </xf:item>
-                              <xf:item>
-                                 <xf:label>BuiltworkPlace</xf:label>
-                                 <xf:value>builtworkPlace</xf:value>
-                              </xf:item>
-                              <xf:item>
-                                 <xf:label>GeographicPlace</xf:label>
-                                 <xf:value>geographicPlace</xf:value>
-                              </xf:item>
-                              <xf:item>
-                                 <xf:label>OtherPlace</xf:label>
-                                 <xf:value>otherPlace</xf:value>
-                              </xf:item>
-                              <xf:item>
-                                 <xf:label>CorporateName</xf:label>
-                                 <xf:value>corporateName</xf:value>
-                              </xf:item>
-                              <xf:item>
-                                 <xf:label>FamilyName</xf:label>
-                                 <xf:value>familyName</xf:value>
-                              </xf:item>
-                              <xf:item>
-                                 <xf:label>PersonalName</xf:label>
-                                 <xf:value>personalName</xf:value>
-                              </xf:item>
-                              <xf:item>
-                                 <xf:label>ScientificName</xf:label>
-                                 <xf:value>scientificName</xf:value>
-                              </xf:item>
-                              <xf:item>
-                                 <xf:label>OtherName</xf:label>
-                                 <xf:value>otherName</xf:value>
-                              </xf:item>
+                              <xf:choices>
+                                 <xf:label>Topics</xf:label>
+                                 <xf:item>
+                                    <xf:label>ConceptTopic</xf:label>
+                                    <xf:value>conceptTopic</xf:value>
+                                 </xf:item>
+                                 <xf:item>
+                                    <xf:label>DescriptiveTopic</xf:label>
+                                    <xf:value>descriptiveTopic</xf:value>
+                                 </xf:item>
+                                 <xf:item>
+                                    <xf:label>IconographicTopic</xf:label>
+                                    <xf:value>iconographicTopic</xf:value>
+                                 </xf:item>
+                                 <xf:item>
+                                    <xf:label>OtherTopic</xf:label>
+                                    <xf:value>otherTopic</xf:value>
+                                 </xf:item>
+                              </xf:choices>
+                              <xf:choices>
+                                 <xf:label>Places</xf:label>
+                                 <xf:item>
+                                    <xf:label>BuiltworkPlace</xf:label>
+                                    <xf:value>builtworkPlace</xf:value>
+                                 </xf:item>
+                                 <xf:item>
+                                    <xf:label>GeographicPlace</xf:label>
+                                    <xf:value>geographicPlace</xf:value>
+                                 </xf:item>
+                                 <xf:item>
+                                    <xf:label>OtherPlace</xf:label>
+                                    <xf:value>otherPlace</xf:value>
+                                 </xf:item>
+                              </xf:choices>
+                              <xf:choices>
+                                 <xf:label>Names</xf:label>
+                                 <xf:item>
+                                    <xf:label>CorporateName</xf:label>
+                                    <xf:value>corporateName</xf:value>
+                                 </xf:item>
+                                 <xf:item>
+                                    <xf:label>FamilyName</xf:label>
+                                    <xf:value>familyName</xf:value>
+                                 </xf:item>
+                                 <xf:item>
+                                    <xf:label>PersonalName</xf:label>
+                                    <xf:value>personalName</xf:value>
+                                 </xf:item>
+                                 <xf:item>
+                                    <xf:label>ScientificName</xf:label>
+                                    <xf:value>scientificName</xf:value>
+                                 </xf:item>
+                                 <xf:item>
+                                    <xf:label>OtherName</xf:label>
+                                    <xf:value>otherName</xf:value>
+                                 </xf:item>
+                              </xf:choices>
                            </xf:select1><span style="display:none">
                               <xf:input id="b-d2e1511" class="Term-autocomplete" ref="vra:term">
                                  <xf:action ev:event="autocomplete-callback">
@@ -312,9 +324,6 @@
                   </tr>
                </tbody>
             </table>
-            <!-- ############################## NOTES ####################################### -->
-            <!-- ############################## NOTES ####################################### -->
-            <!-- ############################## NOTES ####################################### -->
             <xf:switch>
                <xf:case id="c-hidden">
                   <xf:trigger class="notesDisplayTrigger">

@@ -214,6 +214,10 @@ table {
         padding: 0 4px;
       }
     }
+    
+    .buttonBar {
+        clear:both;
+    }
   }
 }
 
@@ -335,42 +339,3 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
   padding: 0;
   margin: 0;
 }
-
-#r-vraSubject {
-    .termType {
-        option {
-            padding-left: 2px;
-        }
-        
-        option[value="conceptTopic"]:before {
-            color: lightgray;
-            content: "Topics";
-            display: block;
-            font-weight: bold;
-            padding-left: 0px;
-        }
-
-        option[value="builtworkPlace"]:before {
-            color: lightgray;
-            content: "Places";
-            display: block;
-            font-weight: bold;
-            padding-left: 0px;
-        }
-
-        option[value="corporateName"]:before {
-            color: lightgray;
-            content: "Names";
-            display: block;
-            font-weight: bold;
-            padding-left: 0px;
-        }
-        option[value="otherTopic"] {
-            border-bottom: 2px solid #000000;
-        }
-
-        option[value="otherPlace"] {
-            border-bottom: 2px solid #000000;
-        }
-    }
-} 
