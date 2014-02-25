@@ -368,6 +368,9 @@
         <antcall target="generate-section-view-transform">
             <param name="subformName" value="DateSet"/>
         </antcall>
+        <antcall target="finetune-subform">
+            <param name="subformName" value="DateSet"/>
+        </antcall>
         <antcall target="generate-section-view-transform">
             <param name="subformName" value="DescriptionSet"/>
         </antcall>

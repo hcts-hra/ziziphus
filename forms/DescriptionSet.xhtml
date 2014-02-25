@@ -217,10 +217,13 @@
                      </td>
                      <td class="contentCol">
                         <xf:group appearance="minimal">
-                           <xf:input ref="@type">
-                              <xf:label>type</xf:label>
-                              <xf:hint>@type</xf:hint>
-                           </xf:input>
+                           <xf:select1 ref="@type">
+                              <xf:label>Type</xf:label>
+                              <xf:item>
+                                 <xf:label>State of preservation</xf:label>
+                                 <xf:value>stateOfPreservation</xf:value>
+                              </xf:item>
+                           </xf:select1>
                         </xf:group>
                         <xf:group appearance="minimal">
                            <xf:textarea id="b-d2e517" ref="vra:text">

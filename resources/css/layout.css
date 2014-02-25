@@ -91,7 +91,10 @@ ol.inline > li {
 
 }
 .bf .imagePanel {
+  background-size: contain;
+  height: 97%;
   text-align: center;
+  width: 97%;
 }
 .bf .xfRepeatIndex {
   border-top: 3px solid #cccccc;
@@ -259,9 +262,10 @@ ol.inline > li {
   padding: 5px 4px;
 }
 .relatedImage {
-  width: 100%;
-  /*max-width: 530px;*/
-
+  background-size: contain;
+  max-height: 100%;
+  max-width: 100%;
+  vertical-align: middle;
 }
 .tundra .dijitMenu,
 .tundra .dijitMenuBar {
@@ -348,3 +352,11 @@ ol.inline > li {
   float: left;
   padding: 0 2px;
 }
+/*
+#113
+
+div[data-bf-bind] {
+    display: inline;
+    width: 100%;
+}
+*/

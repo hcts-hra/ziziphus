@@ -17,6 +17,9 @@
          <!-- ###################### MODEL ##########################'-',######## -->
          <!-- ###################### MODEL ################################## -->
          <!-- ###################### MODEL ################################## -->
+         <!-- ####################################### VISIBLE UI ####################################### -->
+         <!-- ####################################### VISIBLE UI ####################################### -->
+         <!-- ####################################### VISIBLE UI ####################################### -->
          <div style="display:none">
             <xf:model id="m-child-model" schema="resources/xsd/generator/vra-types.xsd">
                <xf:action ev:event="xforms-model-construct-done">
@@ -100,8 +103,8 @@
                      <xf:bind nodeset="@type" type="vra:dateTypeType"></xf:bind>
                      <xf:bind nodeset="vra:earliestDate">
                         <xf:bind nodeset="vra:date">
-                           <xf:bind nodeset="@circa" type="xsd:boolean"></xf:bind>
                            <xf:bind nodeset="@type" type="vra:uncertainDateType"></xf:bind>
+                           <xf:bind nodeset="@circa" type="xsd:boolean"></xf:bind>
                         </xf:bind>
                         <xf:bind nodeset="vra:alternativeNotation">
                            <xf:bind nodeset="@type" type="vra:alternativeNotationDateAttributeType"></xf:bind>
@@ -109,8 +112,8 @@
                      </xf:bind>
                      <xf:bind nodeset="vra:latestDate">
                         <xf:bind nodeset="vra:date">
-                           <xf:bind nodeset="@circa" type="xsd:boolean"></xf:bind>
                            <xf:bind nodeset="@type" type="vra:uncertainDateType"></xf:bind>
+                           <xf:bind nodeset="@circa" type="xsd:boolean"></xf:bind>
                         </xf:bind>
                         <xf:bind nodeset="vra:alternativeNotation">
                            <xf:bind nodeset="@type" type="vra:alternativeNotationDateAttributeType"></xf:bind>
@@ -144,9 +147,6 @@
                </xf:instance>
             </xf:model>
          </div>
-         <!-- ####################################### VISIBLE UI ####################################### -->
-         <!-- ####################################### VISIBLE UI ####################################### -->
-         <!-- ####################################### VISIBLE UI ####################################### -->
          <div class="toolbar">
             <xf:trigger class="t-plus -toolbarbutton" model="m-child-model" id="d3e1-add"
                         title="Add Date">
@@ -178,6 +178,9 @@
          </div>
          <xf:group id="outerGroup" appearance="minimal" model="m-child-model"
                    ref="instance('i-dateSet')">
+            <!-- ############################## NOTES ####################################### -->
+            <!-- ############################## NOTES ####################################### -->
+            <!-- ############################## NOTES ####################################### -->
             <xf:label></xf:label>
             <xf:action ev:event="xforms-value-changed" ev:phase="capture">
                <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/isDirty" value="'true'"></xf:setvalue>
@@ -289,14 +292,6 @@
                            </xf:select1>
                         </xf:group>
                         <xf:group appearance="minimal">
-                           <xf:input id="b-d2e361" ref="vra:earliestDate/vra:date">
-                              <xf:label>Date</xf:label>
-                              <xf:hint>Date</xf:hint>
-                           </xf:input>
-                           <xf:input ref="vra:earliestDate/vra:date/@circa">
-                              <xf:label>circa</xf:label>
-                              <xf:hint>@circa</xf:hint>
-                           </xf:input>
                            <xf:select1 id="b-d2e369" class=" earliestDateType" ref="vra:earliestDate/vra:date/@type">
                               <xf:label>Type</xf:label>
                               <xf:hint></xf:hint>
@@ -317,6 +312,14 @@
                                  <xf:value>active</xf:value>
                               </xf:item>
                            </xf:select1>
+                           <xf:input ref="vra:earliestDate/vra:date/@circa">
+                              <xf:label>circa</xf:label>
+                              <xf:hint>@circa</xf:hint>
+                           </xf:input>
+                           <xf:input id="b-d2e361" ref="vra:earliestDate/vra:date">
+                              <xf:label>Date</xf:label>
+                              <xf:hint>Date</xf:hint>
+                           </xf:input>
                            <xf:group>
                               <xf:trigger>
                                  <xf:label>Add</xf:label>
@@ -374,14 +377,6 @@
                            </xf:trigger>
                         </xf:group>
                         <xf:group appearance="minimal">
-                           <xf:input id="b-d2e409" ref="vra:latestDate/vra:date">
-                              <xf:label>Date</xf:label>
-                              <xf:hint>Date</xf:hint>
-                           </xf:input>
-                           <xf:input ref="vra:latestDate/vra:date/@circa">
-                              <xf:label>circa</xf:label>
-                              <xf:hint>@circa</xf:hint>
-                           </xf:input>
                            <xf:select1 id="b-d2e417" class=" latestDateType" ref="vra:latestDate/vra:date/@type">
                               <xf:label>Type</xf:label>
                               <xf:hint></xf:hint>
@@ -402,6 +397,14 @@
                                  <xf:value>active</xf:value>
                               </xf:item>
                            </xf:select1>
+                           <xf:input ref="vra:latestDate/vra:date/@circa">
+                              <xf:label>circa</xf:label>
+                              <xf:hint>@circa</xf:hint>
+                           </xf:input>
+                           <xf:input id="b-d2e409" ref="vra:latestDate/vra:date">
+                              <xf:label>Date</xf:label>
+                              <xf:hint>Date</xf:hint>
+                           </xf:input>
                            <xf:group>
                               <xf:trigger>
                                  <xf:label>Add</xf:label>
@@ -485,9 +488,6 @@
                   </tr>
                </tbody>
             </table>
-            <!-- ############################## NOTES ####################################### -->
-            <!-- ############################## NOTES ####################################### -->
-            <!-- ############################## NOTES ####################################### -->
             <xf:switch>
                <xf:case id="c-hidden">
                   <xf:trigger class="notesDisplayTrigger">

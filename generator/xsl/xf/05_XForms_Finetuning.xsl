@@ -101,14 +101,17 @@
     
     
     
-    
+    -->
     <xsl:template match="xhtml:tbody[@xf:repeat-nodeset eq 'vra:description']/xhtml:tr/xhtml:td[@class eq 'contentCol']/xf:group[@appearance eq 'minimal']/xf:input[@ref = '@type']">
-        <xf:input ref="instance('i-util')/states/stateOfPreservation[position()]">
-            <xf:label>State of preservation</xf:label>
-            <xf:hint>State of preservation</xf:hint>
-        </xf:input>
+        <xf:select1 ref="@type">
+            <xf:label>Type</xf:label>
+            <xf:item>
+                <xf:label>State of preservation</xf:label>
+                <xf:value>stateOfPreservation</xf:value>
+            </xf:item>
+        </xf:select1>
     </xsl:template>
-    --> 
+    
     
     <!-- State of preservation -->
     
@@ -247,5 +250,39 @@
     
     
     
-        
+    <!-- 
+        ########## DateSet ##########
+    -->
+    <!--   
+    <xsl:template match="xhtml:tbody[@xf:repeat-nodeset eq 'vra:date']/xhtml:tr/xhtml:td[@class eq 'contentCol']">
+        <table>
+            <tbody>
+                <tr>
+                    <td rowspan="2" class="date">
+                        <xsl:copy-of select="xf:group[xf:select1[@ref eq '@type']]"/>
+                    </td>
+                    <td class="earliestDate">
+                        <xf:label>Earliest Date</xf:label>
+                        <xsl:apply-templates select="xf:group[xf:input[@ref eq 'vra:earliestDate/vra:date']]"/> 
+                    </td>
+                </tr>
+                <tr>
+                    <td class="latestDate">
+                        <xf:label>Latest Date</xf:label>
+                        <xsl:apply-templates select="xf:group[xf:input[@ref eq 'vra:latestDate/vra:date']]"/> 
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </xsl:template>
+    
+    <xsl:template match="xf:input[@ref eq 'vra:earliestDate/vra:date']">
+    
+    </xsl:template>
+    
+    <xsl:template match="xf:input[@ref eq 'vra:latestDate/vra:date']">
+    
+    </xsl:template>
+    
+    -->
 </xsl:stylesheet>
