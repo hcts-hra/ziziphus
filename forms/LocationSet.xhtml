@@ -23,7 +23,7 @@
                   <xf:send submission="s-loadSet"></xf:send>
                </xf:action>
                <xf:submission id="s-loadSet"
-                              resource="modules/loadData.xql?id={bf:instanceOfModel('m-main','i-control-center')/uuid}&amp;workdir={bf:instanceOfModel('m-main','i-control-center')/workdir}"
+                              resource="modules/loadData.xql?id={bf:instanceOfModel('m-main','i-control-center')/uuid}"
                               method="post"
                               replace="instance"
                               validate="false">
@@ -41,7 +41,7 @@
                   </xf:header>
                </xf:submission>
                <xf:submission id="s-update"
-                              resource="modules/updateRecord.xql?id={bf:instanceOfModel('m-main','i-control-center')/uuid}&amp;workdir={bf:instanceOfModel('m-main','i-control-center')/workdir}&amp;set=locationSet"
+                              resource="modules/updateRecord.xql?id={bf:instanceOfModel('m-main','i-control-center')/uuid}&amp;set=locationSet"
                               method="post"
                               replace="none"
                               validate="false">

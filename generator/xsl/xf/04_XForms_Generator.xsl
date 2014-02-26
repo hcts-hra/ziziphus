@@ -118,7 +118,7 @@
                             </xsl:if>                        
                             
                             <xf:submission id="s-loadSet"
-                                    resource="{$relativePath}modules/loadData.xql?id={{bf:instanceOfModel('m-main','i-control-center')/uuid}}&amp;workdir={{bf:instanceOfModel('m-main','i-control-center')/workdir}}"
+                                    resource="{$relativePath}modules/loadData.xql?id={{bf:instanceOfModel('m-main','i-control-center')/uuid}}"
                                     method="post" replace="instance" validate="false">
                                 <xf:header>
                                     <xf:name>username</xf:name>
@@ -133,7 +133,7 @@
                                     <xf:value>exist</xf:value>
                                 </xf:header>
                             </xf:submission>
-                            <xf:submission id="s-update" resource="{$relativePath}modules/updateRecord.xql?id={{bf:instanceOfModel('m-main','i-control-center')/uuid}}&amp;workdir={{bf:instanceOfModel('m-main','i-control-center')/workdir}}&amp;set={$vraSectionNode}" method="post" replace="none" validate="false">
+                            <xf:submission id="s-update" resource="{$relativePath}modules/updateRecord.xql?id={{bf:instanceOfModel('m-main','i-control-center')/uuid}}&amp;set={$vraSectionNode}" method="post" replace="none" validate="false">
                                 <xf:header>
                                     <xf:name>username</xf:name>
                                     <xf:value>admin</xf:value>

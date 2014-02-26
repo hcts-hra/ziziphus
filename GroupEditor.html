@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:bf="http://betterform.sourceforge.net/xforms" xmlns:vra="http://www.vraweb.org/vracore4.htm" xmlns:bfc="http://betterform.sourceforge.net/xforms/controls" xmlns:exist="http://exist.sourceforge.net/NS/exist" xmlns:xf="http://www.w3.org/2002/xforms" xmlns:meta="http://expath.org/ns/pkg" bf:transform="/apps/ziziphus/resources/xsl/ziziphus.xsl">
     <head>
-        <title>Ziziphus Image DB</title>
+        <title>Ziziphus Group Editor</title>
         <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css"/>
         <link rel="stylesheet" type="text/css" href="resources/css/layout.css"/>
         <link rel="stylesheet" type="text/css" href="resources/css/record.css"/>
@@ -16,11 +16,11 @@
             <span style="font-weight:bold; font-size:200% !important;position:absolute;top:50%;width:100%;text-align:center;">... loading Ziziphus Image Database</span>
         </div>
         <div style="display:none">
+            <!--
             <xf:model id="m-main">
                 <xf:instance id="i-control-center">
                     <data xmlns="">
                         <currentform/>
-                        <!-- Which record to save/load, used by subform -->
                         <workdir/>
                         <imagepath/>
                         <uuid/>
@@ -34,12 +34,12 @@
                 <xf:setvalue ev:event="xforms-model-construct-done" ref="instance('i-control-center')/imagepath" value="bf:appContext('imagepath')"/>
                 <xf:submission method="get" id="s-refresh" replace="embedHTML" resource="modules/refreshSection.xql" targetid="{concat(instance('i-control-center')/currentform,'_HtmlContent')}">
                     <xf:action ev:event="xforms-submit-done">
-                        <!-- ##### reset 'changed' flag which is set whenever a section was updated in the db ###### -->
+                      
                         <xf:setvalue ref="instance('i-control-center')/changed" value="'false'"/>
                     </xf:action>
                 </xf:submission>
                 <xf:submission id="s-delete" method="get" replace="none">
-                    <xf:resource value="concat('exist:/db/apps/ziziphus/modules/utils/record-utils.xqm?function=delete-work-record&amp;work-record-id=', instance('i-control-center')/uuid)"/>
+                    <xf:resource value="concat('exist:/db/apps/ziziphus/modules/deleteRecord.xqm?function=deleteWorkRecord&amp;id=', instance('i-control-center')/uuid, '&amp;workdir=', instance('i-control-center')/workdir)"/>
                     <xf:message ev:event="xforms-submit-error">Could not delete workrecord</xf:message>
                     <xf:action ev:event="xforms-submit-done">
                         <xf:load show="replace">
@@ -97,7 +97,7 @@
                         <xf:case value="concat('c-',instance('i-control-center')/currentform,'-view')"/>
                     </xf:toggle>
                     <xf:load show="none" targetid="{concat(instance('i-control-center')/currentform,'_MountPoint')}"/>
-                    <!-- ##### reset isDirty flag ##### -->
+                 
                     <xf:setvalue ref="instance('i-control-center')/isDirty" value="'false'"/>
                     <xf:setvalue ref="instance('i-control-center')/currentform"/>
                 </xf:action>
@@ -108,6 +108,7 @@
             <xf:input id="workdir" ref="instance('i-control-center')/workdir">
                 <xf:label>Hidden Control</xf:label>
             </xf:input>
+            -->
         </div>
 
         <!-- window for heidicon data -->
@@ -163,6 +164,8 @@
             </div>
         </div>
         <div class="ui-layout-south">
+            <div class="ui-layout-center">XXXXXXXXXXXXXXXXXXXXX</div>
+            <div class="ui-layout-south">
             <xf:output ref="instance('i-meta')/@version">
                 <xf:label>Version: </xf:label>
             </xf:output>

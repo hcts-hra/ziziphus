@@ -14,11 +14,11 @@
                         <scenarioAssociation-array>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>tmp/testRecord.html</String>
+                                    <String>generator/build/AgentSet.xhtml</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
-                                        <String>testRecord</String>
+                                        <String>Finetuning</String>
                                     </list>
                                 </field>
                                 <field name="scenarioTypes">
@@ -29,11 +29,26 @@
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>generator/build/02_XF_Binds_redefined.xml</String>
+                                    <String>generator/xsl/xf/05_XForms_Finetuning.xsl</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
-                                        <String>02_XF_Binds_redefined</String>
+                                        <String>05_XForms_Finetuning</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XML</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>tmp/testRecord.html</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>testRecord</String>
                                     </list>
                                 </field>
                                 <field name="scenarioTypes">
@@ -212,6 +227,424 @@
                     <entry>
                         <String>scenarios</String>
                         <scenario-array>
+                            <scenario>
+                                <field name="advancedOptionsMap">
+                                    <null/>
+                                </field>
+                                <field name="name">
+                                    <String>incriptionSet</String>
+                                </field>
+                                <field name="baseURL">
+                                    <String></String>
+                                </field>
+                                <field name="footerURL">
+                                    <String></String>
+                                </field>
+                                <field name="fOPMethod">
+                                    <String>pdf</String>
+                                </field>
+                                <field name="fOProcessorName">
+                                    <String>Apache FOP</String>
+                                </field>
+                                <field name="headerURL">
+                                    <String></String>
+                                </field>
+                                <field name="inputXSLURL">
+                                    <String>file:/Users/joern/dev/ziziphus-github/generator/xsl/xf/vra2xf_04_XF_Section_Subform_Generator.xsl</String>
+                                </field>
+                                <field name="inputXMLURL">
+                                    <String>file:/Users/joern/dev/ziziphus-github/generator/build/02_XF_Binds.xml</String>
+                                </field>
+                                <field name="defaultScenario">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="isFOPPerforming">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="type">
+                                    <String>XSL</String>
+                                </field>
+                                <field name="saveAs">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="openInBrowser">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="outputFile">
+                                    <File>/Users/joern/dev/ziziphus-github/generator/xsl/xf/temp.xhtml</File>
+                                </field>
+                                <field name="openOtherLocationInBrowser">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="locationToOpenInBrowserURL">
+                                    <null/>
+                                </field>
+                                <field name="openInEditor">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="showInHTMLPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInXMLPane">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="showInSVGPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInResultSetPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="useXSLTInput">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="xsltParams">
+                                    <list>
+                                        <transformationParameter>
+                                            <field name="paramDescription">
+                                                <paramDescriptor>
+                                                    <field name="localName">
+                                                        <String>debug</String>
+                                                    </field>
+                                                    <field name="prefix">
+                                                        <null/>
+                                                    </field>
+                                                    <field name="namespace">
+                                                        <null/>
+                                                    </field>
+                                                </paramDescriptor>
+                                            </field>
+                                            <field name="value">
+                                                <String>true</String>
+                                            </field>
+                                            <field name="hasXPathValue">
+                                                <Boolean>false</Boolean>
+                                            </field>
+                                        </transformationParameter>
+                                        <transformationParameter>
+                                            <field name="paramDescription">
+                                                <paramDescriptor>
+                                                    <field name="localName">
+                                                        <String>subformName</String>
+                                                    </field>
+                                                    <field name="prefix">
+                                                        <null/>
+                                                    </field>
+                                                    <field name="namespace">
+                                                        <null/>
+                                                    </field>
+                                                </paramDescriptor>
+                                            </field>
+                                            <field name="value">
+                                                <String>IncriptionSet</String>
+                                            </field>
+                                            <field name="hasXPathValue">
+                                                <Boolean>false</Boolean>
+                                            </field>
+                                        </transformationParameter>
+                                    </list>
+                                </field>
+                                <field name="cascadingStylesheets">
+                                    <String-array/>
+                                </field>
+                                <field name="xslTransformer">
+                                    <String>Saxon-EE</String>
+                                </field>
+                                <field name="extensionURLs">
+                                    <String-array/>
+                                </field>
+                            </scenario>
+                            <scenario>
+                                <field name="advancedOptionsMap">
+                                    <null/>
+                                </field>
+                                <field name="name">
+                                    <String>testRecord</String>
+                                </field>
+                                <field name="baseURL">
+                                    <String></String>
+                                </field>
+                                <field name="footerURL">
+                                    <String></String>
+                                </field>
+                                <field name="fOPMethod">
+                                    <String>pdf</String>
+                                </field>
+                                <field name="fOProcessorName">
+                                    <String>Apache FOP</String>
+                                </field>
+                                <field name="headerURL">
+                                    <String></String>
+                                </field>
+                                <field name="inputXSLURL">
+                                    <String>file:/Users/joern/dev/ziziphus-github/resources/xsl/ziziphus.xsl</String>
+                                </field>
+                                <field name="inputXMLURL">
+                                    <String>file:/Users/joern/dev/ziziphus-github/tmp/testRecord.html</String>
+                                </field>
+                                <field name="defaultScenario">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="isFOPPerforming">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="type">
+                                    <String>XSL</String>
+                                </field>
+                                <field name="saveAs">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="openInBrowser">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="outputFile">
+                                    <null/>
+                                </field>
+                                <field name="openOtherLocationInBrowser">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="locationToOpenInBrowserURL">
+                                    <null/>
+                                </field>
+                                <field name="openInEditor">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="showInHTMLPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInXMLPane">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="showInSVGPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInResultSetPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="useXSLTInput">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="xsltParams">
+                                    <list/>
+                                </field>
+                                <field name="cascadingStylesheets">
+                                    <String-array/>
+                                </field>
+                                <field name="xslTransformer">
+                                    <String>Saxon-EE</String>
+                                </field>
+                                <field name="extensionURLs">
+                                    <String-array/>
+                                </field>
+                            </scenario>
+                            <scenario>
+                                <field name="advancedOptionsMap">
+                                    <null/>
+                                </field>
+                                <field name="name">
+                                    <String>w_40ca74a3-3e6c-5749-b0a0-b42afbadff01</String>
+                                </field>
+                                <field name="baseURL">
+                                    <String></String>
+                                </field>
+                                <field name="footerURL">
+                                    <String></String>
+                                </field>
+                                <field name="fOPMethod">
+                                    <String>pdf</String>
+                                </field>
+                                <field name="fOProcessorName">
+                                    <String>Apache FOP</String>
+                                </field>
+                                <field name="headerURL">
+                                    <String></String>
+                                </field>
+                                <field name="inputXSLURL">
+                                    <String>file:/Users/joernturner/dev/ziziphus/resources/xsl/vra-record.xsl</String>
+                                </field>
+                                <field name="inputXMLURL">
+                                    <String>${currentFileURL}</String>
+                                </field>
+                                <field name="defaultScenario">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="isFOPPerforming">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="type">
+                                    <String>XSL</String>
+                                </field>
+                                <field name="saveAs">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="openInBrowser">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="outputFile">
+                                    <null/>
+                                </field>
+                                <field name="openOtherLocationInBrowser">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="locationToOpenInBrowserURL">
+                                    <null/>
+                                </field>
+                                <field name="openInEditor">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="showInHTMLPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInXMLPane">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="showInSVGPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInResultSetPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="useXSLTInput">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="xsltParams">
+                                    <list>
+                                        <transformationParameter>
+                                            <field name="paramDescription">
+                                                <paramDescriptor>
+                                                    <field name="localName">
+                                                        <String>recordId</String>
+                                                    </field>
+                                                    <field name="prefix">
+                                                        <null/>
+                                                    </field>
+                                                    <field name="namespace">
+                                                        <null/>
+                                                    </field>
+                                                </paramDescriptor>
+                                            </field>
+                                            <field name="value">
+                                                <String>w_40ca74a3-3e6c-5749-b0a0-b42afbadff01</String>
+                                            </field>
+                                            <field name="hasXPathValue">
+                                                <Boolean>false</Boolean>
+                                            </field>
+                                        </transformationParameter>
+                                        <transformationParameter>
+                                            <field name="paramDescription">
+                                                <paramDescriptor>
+                                                    <field name="localName">
+                                                        <String>type</String>
+                                                    </field>
+                                                    <field name="prefix">
+                                                        <null/>
+                                                    </field>
+                                                    <field name="namespace">
+                                                        <null/>
+                                                    </field>
+                                                </paramDescriptor>
+                                            </field>
+                                            <field name="value">
+                                                <String>work</String>
+                                            </field>
+                                            <field name="hasXPathValue">
+                                                <Boolean>false</Boolean>
+                                            </field>
+                                        </transformationParameter>
+                                    </list>
+                                </field>
+                                <field name="cascadingStylesheets">
+                                    <String-array/>
+                                </field>
+                                <field name="xslTransformer">
+                                    <String>Saxon-HE</String>
+                                </field>
+                                <field name="extensionURLs">
+                                    <String-array/>
+                                </field>
+                            </scenario>
+                            <scenario>
+                                <field name="advancedOptionsMap">
+                                    <null/>
+                                </field>
+                                <field name="name">
+                                    <String>Finetuning</String>
+                                </field>
+                                <field name="baseURL">
+                                    <String></String>
+                                </field>
+                                <field name="footerURL">
+                                    <String></String>
+                                </field>
+                                <field name="fOPMethod">
+                                    <String>pdf</String>
+                                </field>
+                                <field name="fOProcessorName">
+                                    <String>Apache FOP</String>
+                                </field>
+                                <field name="headerURL">
+                                    <String></String>
+                                </field>
+                                <field name="inputXSLURL">
+                                    <String>file:/home/zwobit/develop/source/customer/uni-hd/ziziphus/generator/xsl/xf/05_XForms_Finetuning.xsl</String>
+                                </field>
+                                <field name="inputXMLURL">
+                                    <String>file:/home/zwobit/develop/source/customer/uni-hd/ziziphus/generator/build/AgentSet.xhtml</String>
+                                </field>
+                                <field name="defaultScenario">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="isFOPPerforming">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="type">
+                                    <String>XSL</String>
+                                </field>
+                                <field name="saveAs">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="openInBrowser">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="outputFile">
+                                    <null/>
+                                </field>
+                                <field name="openOtherLocationInBrowser">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="locationToOpenInBrowserURL">
+                                    <null/>
+                                </field>
+                                <field name="openInEditor">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInHTMLPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInXMLPane">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="showInSVGPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInResultSetPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="useXSLTInput">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="xsltParams">
+                                    <list/>
+                                </field>
+                                <field name="cascadingStylesheets">
+                                    <String-array/>
+                                </field>
+                                <field name="xslTransformer">
+                                    <String>Saxon-HE</String>
+                                </field>
+                                <field name="extensionURLs">
+                                    <String-array/>
+                                </field>
+                            </scenario>
                             <antScenario>
                                 <field name="additionalAntArgs">
                                     <String></String>
@@ -1086,6 +1519,89 @@
                                     <String-array/>
                                 </field>
                             </scenario>
+                            <scenario>
+                                <field name="advancedOptionsMap">
+                                    <null/>
+                                </field>
+                                <field name="name">
+                                    <String>05_XForms_Finetuning</String>
+                                </field>
+                                <field name="baseURL">
+                                    <String></String>
+                                </field>
+                                <field name="footerURL">
+                                    <String></String>
+                                </field>
+                                <field name="fOPMethod">
+                                    <String>pdf</String>
+                                </field>
+                                <field name="fOProcessorName">
+                                    <String>Apache FOP</String>
+                                </field>
+                                <field name="headerURL">
+                                    <String></String>
+                                </field>
+                                <field name="inputXSLURL">
+                                    <String>file:/home/zwobit/develop/source/customer/uni-hd/ziziphus/generator/xsl/xf/05_XForms_Finetuning.xsl</String>
+                                </field>
+                                <field name="inputXMLURL">
+                                    <String>file:/home/zwobit/develop/source/customer/uni-hd/ziziphus/generator/build/AgentSet.xhtml</String>
+                                </field>
+                                <field name="defaultScenario">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="isFOPPerforming">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="type">
+                                    <String>XML</String>
+                                </field>
+                                <field name="saveAs">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="openInBrowser">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="outputFile">
+                                    <null/>
+                                </field>
+                                <field name="openOtherLocationInBrowser">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="locationToOpenInBrowserURL">
+                                    <null/>
+                                </field>
+                                <field name="openInEditor">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInHTMLPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInXMLPane">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="showInSVGPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInResultSetPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="useXSLTInput">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="xsltParams">
+                                    <list/>
+                                </field>
+                                <field name="cascadingStylesheets">
+                                    <String-array/>
+                                </field>
+                                <field name="xslTransformer">
+                                    <String>Saxon-PE</String>
+                                </field>
+                                <field name="extensionURLs">
+                                    <String-array/>
+                                </field>
+                            </scenario>
                             <xprocScenario>
                                 <field name="inputPorts">
                                     <xprocInputPort-array>
@@ -1211,509 +1727,6 @@
                                     <String-array/>
                                 </field>
                             </xprocScenario>
-                            <scenario>
-                                <field name="advancedOptionsMap">
-                                    <null/>
-                                </field>
-                                <field name="name">
-                                    <String>02_XF_Binds_redefined</String>
-                                </field>
-                                <field name="baseURL">
-                                    <String></String>
-                                </field>
-                                <field name="footerURL">
-                                    <String></String>
-                                </field>
-                                <field name="fOPMethod">
-                                    <String>pdf</String>
-                                </field>
-                                <field name="fOProcessorName">
-                                    <String>Apache FOP</String>
-                                </field>
-                                <field name="headerURL">
-                                    <String></String>
-                                </field>
-                                <field name="inputXSLURL">
-                                    <String>file:/Users/joern/dev/ziziphus-github/generator/xsl/xf/vra2xf_04_XF_Section_Subform_Generator.xsl</String>
-                                </field>
-                                <field name="inputXMLURL">
-                                    <String>${currentFileURL}</String>
-                                </field>
-                                <field name="defaultScenario">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="isFOPPerforming">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="type">
-                                    <String>XSL</String>
-                                </field>
-                                <field name="saveAs">
-                                    <Boolean>true</Boolean>
-                                </field>
-                                <field name="openInBrowser">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="outputFile">
-                                    <File>/Users/joern/dev/ziziphus-github/generator/build/AgentSet.xhtml</File>
-                                </field>
-                                <field name="openOtherLocationInBrowser">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="locationToOpenInBrowserURL">
-                                    <null/>
-                                </field>
-                                <field name="openInEditor">
-                                    <Boolean>true</Boolean>
-                                </field>
-                                <field name="showInHTMLPane">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="showInXMLPane">
-                                    <Boolean>true</Boolean>
-                                </field>
-                                <field name="showInSVGPane">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="showInResultSetPane">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="useXSLTInput">
-                                    <Boolean>true</Boolean>
-                                </field>
-                                <field name="xsltParams">
-                                    <list>
-                                        <transformationParameter>
-                                            <field name="paramDescription">
-                                                <paramDescriptor>
-                                                    <field name="localName">
-                                                        <String>debug</String>
-                                                    </field>
-                                                    <field name="prefix">
-                                                        <null/>
-                                                    </field>
-                                                    <field name="namespace">
-                                                        <null/>
-                                                    </field>
-                                                </paramDescriptor>
-                                            </field>
-                                            <field name="value">
-                                                <String>true</String>
-                                            </field>
-                                            <field name="hasXPathValue">
-                                                <Boolean>false</Boolean>
-                                            </field>
-                                        </transformationParameter>
-                                        <transformationParameter>
-                                            <field name="paramDescription">
-                                                <paramDescriptor>
-                                                    <field name="localName">
-                                                        <String>path_2_vra_types_schema</String>
-                                                    </field>
-                                                    <field name="prefix">
-                                                        <null/>
-                                                    </field>
-                                                    <field name="namespace">
-                                                        <null/>
-                                                    </field>
-                                                </paramDescriptor>
-                                            </field>
-                                            <field name="value">
-                                                <String>/Users/joern/dev/ziziphus-github/resources/xsd/vra-types.xsd</String>
-                                            </field>
-                                            <field name="hasXPathValue">
-                                                <Boolean>false</Boolean>
-                                            </field>
-                                        </transformationParameter>
-                                        <transformationParameter>
-                                            <field name="paramDescription">
-                                                <paramDescriptor>
-                                                    <field name="localName">
-                                                        <String>path_2_xf_instance</String>
-                                                    </field>
-                                                    <field name="prefix">
-                                                        <null/>
-                                                    </field>
-                                                    <field name="namespace">
-                                                        <null/>
-                                                    </field>
-                                                </paramDescriptor>
-                                            </field>
-                                            <field name="value">
-                                                <String>/Users/joern/dev/ziziphus-github/generator/build/01_VRA_Instance.xml</String>
-                                            </field>
-                                            <field name="hasXPathValue">
-                                                <Boolean>false</Boolean>
-                                            </field>
-                                        </transformationParameter>
-                                        <transformationParameter>
-                                            <field name="paramDescription">
-                                                <paramDescriptor>
-                                                    <field name="localName">
-                                                        <String>vraSection</String>
-                                                    </field>
-                                                    <field name="prefix">
-                                                        <null/>
-                                                    </field>
-                                                    <field name="namespace">
-                                                        <null/>
-                                                    </field>
-                                                </paramDescriptor>
-                                            </field>
-                                            <field name="value">
-                                                <String>AgentSet</String>
-                                            </field>
-                                            <field name="hasXPathValue">
-                                                <Boolean>false</Boolean>
-                                            </field>
-                                        </transformationParameter>
-                                    </list>
-                                </field>
-                                <field name="cascadingStylesheets">
-                                    <String-array/>
-                                </field>
-                                <field name="xslTransformer">
-                                    <String>Saxon-EE</String>
-                                </field>
-                                <field name="extensionURLs">
-                                    <String-array/>
-                                </field>
-                            </scenario>
-                            <scenario>
-                                <field name="advancedOptionsMap">
-                                    <null/>
-                                </field>
-                                <field name="name">
-                                    <String>incriptionSet</String>
-                                </field>
-                                <field name="baseURL">
-                                    <String></String>
-                                </field>
-                                <field name="footerURL">
-                                    <String></String>
-                                </field>
-                                <field name="fOPMethod">
-                                    <String>pdf</String>
-                                </field>
-                                <field name="fOProcessorName">
-                                    <String>Apache FOP</String>
-                                </field>
-                                <field name="headerURL">
-                                    <String></String>
-                                </field>
-                                <field name="inputXSLURL">
-                                    <String>file:/Users/joern/dev/ziziphus-github/generator/xsl/xf/vra2xf_04_XF_Section_Subform_Generator.xsl</String>
-                                </field>
-                                <field name="inputXMLURL">
-                                    <String>file:/Users/joern/dev/ziziphus-github/generator/build/02_XF_Binds.xml</String>
-                                </field>
-                                <field name="defaultScenario">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="isFOPPerforming">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="type">
-                                    <String>XSL</String>
-                                </field>
-                                <field name="saveAs">
-                                    <Boolean>true</Boolean>
-                                </field>
-                                <field name="openInBrowser">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="outputFile">
-                                    <File>/Users/joern/dev/ziziphus-github/generator/xsl/xf/temp.xhtml</File>
-                                </field>
-                                <field name="openOtherLocationInBrowser">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="locationToOpenInBrowserURL">
-                                    <null/>
-                                </field>
-                                <field name="openInEditor">
-                                    <Boolean>true</Boolean>
-                                </field>
-                                <field name="showInHTMLPane">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="showInXMLPane">
-                                    <Boolean>true</Boolean>
-                                </field>
-                                <field name="showInSVGPane">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="showInResultSetPane">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="useXSLTInput">
-                                    <Boolean>true</Boolean>
-                                </field>
-                                <field name="xsltParams">
-                                    <list>
-                                        <transformationParameter>
-                                            <field name="paramDescription">
-                                                <paramDescriptor>
-                                                    <field name="localName">
-                                                        <String>debug</String>
-                                                    </field>
-                                                    <field name="prefix">
-                                                        <null/>
-                                                    </field>
-                                                    <field name="namespace">
-                                                        <null/>
-                                                    </field>
-                                                </paramDescriptor>
-                                            </field>
-                                            <field name="value">
-                                                <String>true</String>
-                                            </field>
-                                            <field name="hasXPathValue">
-                                                <Boolean>false</Boolean>
-                                            </field>
-                                        </transformationParameter>
-                                        <transformationParameter>
-                                            <field name="paramDescription">
-                                                <paramDescriptor>
-                                                    <field name="localName">
-                                                        <String>subformName</String>
-                                                    </field>
-                                                    <field name="prefix">
-                                                        <null/>
-                                                    </field>
-                                                    <field name="namespace">
-                                                        <null/>
-                                                    </field>
-                                                </paramDescriptor>
-                                            </field>
-                                            <field name="value">
-                                                <String>IncriptionSet</String>
-                                            </field>
-                                            <field name="hasXPathValue">
-                                                <Boolean>false</Boolean>
-                                            </field>
-                                        </transformationParameter>
-                                    </list>
-                                </field>
-                                <field name="cascadingStylesheets">
-                                    <String-array/>
-                                </field>
-                                <field name="xslTransformer">
-                                    <String>Saxon-EE</String>
-                                </field>
-                                <field name="extensionURLs">
-                                    <String-array/>
-                                </field>
-                            </scenario>
-                            <scenario>
-                                <field name="advancedOptionsMap">
-                                    <null/>
-                                </field>
-                                <field name="name">
-                                    <String>testRecord</String>
-                                </field>
-                                <field name="baseURL">
-                                    <String></String>
-                                </field>
-                                <field name="footerURL">
-                                    <String></String>
-                                </field>
-                                <field name="fOPMethod">
-                                    <String>pdf</String>
-                                </field>
-                                <field name="fOProcessorName">
-                                    <String>Apache FOP</String>
-                                </field>
-                                <field name="headerURL">
-                                    <String></String>
-                                </field>
-                                <field name="inputXSLURL">
-                                    <String>file:/Users/joern/dev/ziziphus-github/resources/xsl/ziziphus.xsl</String>
-                                </field>
-                                <field name="inputXMLURL">
-                                    <String>file:/Users/joern/dev/ziziphus-github/tmp/testRecord.html</String>
-                                </field>
-                                <field name="defaultScenario">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="isFOPPerforming">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="type">
-                                    <String>XSL</String>
-                                </field>
-                                <field name="saveAs">
-                                    <Boolean>true</Boolean>
-                                </field>
-                                <field name="openInBrowser">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="outputFile">
-                                    <null/>
-                                </field>
-                                <field name="openOtherLocationInBrowser">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="locationToOpenInBrowserURL">
-                                    <null/>
-                                </field>
-                                <field name="openInEditor">
-                                    <Boolean>true</Boolean>
-                                </field>
-                                <field name="showInHTMLPane">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="showInXMLPane">
-                                    <Boolean>true</Boolean>
-                                </field>
-                                <field name="showInSVGPane">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="showInResultSetPane">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="useXSLTInput">
-                                    <Boolean>true</Boolean>
-                                </field>
-                                <field name="xsltParams">
-                                    <list/>
-                                </field>
-                                <field name="cascadingStylesheets">
-                                    <String-array/>
-                                </field>
-                                <field name="xslTransformer">
-                                    <String>Saxon-EE</String>
-                                </field>
-                                <field name="extensionURLs">
-                                    <String-array/>
-                                </field>
-                            </scenario>
-                            <scenario>
-                                <field name="advancedOptionsMap">
-                                    <null/>
-                                </field>
-                                <field name="name">
-                                    <String>w_40ca74a3-3e6c-5749-b0a0-b42afbadff01</String>
-                                </field>
-                                <field name="baseURL">
-                                    <String></String>
-                                </field>
-                                <field name="footerURL">
-                                    <String></String>
-                                </field>
-                                <field name="fOPMethod">
-                                    <String>pdf</String>
-                                </field>
-                                <field name="fOProcessorName">
-                                    <String>Apache FOP</String>
-                                </field>
-                                <field name="headerURL">
-                                    <String></String>
-                                </field>
-                                <field name="inputXSLURL">
-                                    <String>file:/Users/joernturner/dev/ziziphus/resources/xsl/vra-record.xsl</String>
-                                </field>
-                                <field name="inputXMLURL">
-                                    <String>${currentFileURL}</String>
-                                </field>
-                                <field name="defaultScenario">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="isFOPPerforming">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="type">
-                                    <String>XSL</String>
-                                </field>
-                                <field name="saveAs">
-                                    <Boolean>true</Boolean>
-                                </field>
-                                <field name="openInBrowser">
-                                    <Boolean>true</Boolean>
-                                </field>
-                                <field name="outputFile">
-                                    <null/>
-                                </field>
-                                <field name="openOtherLocationInBrowser">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="locationToOpenInBrowserURL">
-                                    <null/>
-                                </field>
-                                <field name="openInEditor">
-                                    <Boolean>true</Boolean>
-                                </field>
-                                <field name="showInHTMLPane">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="showInXMLPane">
-                                    <Boolean>true</Boolean>
-                                </field>
-                                <field name="showInSVGPane">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="showInResultSetPane">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="useXSLTInput">
-                                    <Boolean>true</Boolean>
-                                </field>
-                                <field name="xsltParams">
-                                    <list>
-                                        <transformationParameter>
-                                            <field name="paramDescription">
-                                                <paramDescriptor>
-                                                    <field name="localName">
-                                                        <String>recordId</String>
-                                                    </field>
-                                                    <field name="prefix">
-                                                        <null/>
-                                                    </field>
-                                                    <field name="namespace">
-                                                        <null/>
-                                                    </field>
-                                                </paramDescriptor>
-                                            </field>
-                                            <field name="value">
-                                                <String>w_40ca74a3-3e6c-5749-b0a0-b42afbadff01</String>
-                                            </field>
-                                            <field name="hasXPathValue">
-                                                <Boolean>false</Boolean>
-                                            </field>
-                                        </transformationParameter>
-                                        <transformationParameter>
-                                            <field name="paramDescription">
-                                                <paramDescriptor>
-                                                    <field name="localName">
-                                                        <String>type</String>
-                                                    </field>
-                                                    <field name="prefix">
-                                                        <null/>
-                                                    </field>
-                                                    <field name="namespace">
-                                                        <null/>
-                                                    </field>
-                                                </paramDescriptor>
-                                            </field>
-                                            <field name="value">
-                                                <String>work</String>
-                                            </field>
-                                            <field name="hasXPathValue">
-                                                <Boolean>false</Boolean>
-                                            </field>
-                                        </transformationParameter>
-                                    </list>
-                                </field>
-                                <field name="cascadingStylesheets">
-                                    <String-array/>
-                                </field>
-                                <field name="xslTransformer">
-                                    <String>Saxon-HE</String>
-                                </field>
-                                <field name="extensionURLs">
-                                    <String-array/>
-                                </field>
-                            </scenario>
                         </scenario-array>
                     </entry>
                     <entry>
