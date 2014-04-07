@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Document</title>
+        <style>
+            .close-icon{
+                position:absolute;
+                top:0;
+                right:0;
+                width:36px;
+                height:36px;
+                background:#666;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="close-icon">
+            <i class="fa fa-times"/>
+        </div>
+        This is just a test for url:<span id="url"/>
+        <script type="text/javascript" src="../script/jquery-1.9.1.js"/>
+        <script type="text/javascript">
+        jQuery(document).ready(function () {
+            
+            var uuid=getParameter('uuid');
+            console.log("url: ",window.location.href);
+            console.log("uuid: ",uuid);
+
+            jQuery('#url').html(uuid);
+            
+            
+            
+            jQuery(".close-icon").on("click",function(e){
+                
+                //parent.document.body.removeChild(parent.document.getElementById('issues-frame'));
+                $('#issues-frame', window.parent.document).removeClass("slideInDown");
+                $('#issues-frame', window.parent.document).remove();
+                
+            });
+        });
+            
+             /*
+                returns a url parameter from window.location.href
+            */
+            function getParameter(paramName) {
+                var searchString = window.location.search.substring(1),
+                        i, val, params = searchString.split("&amp;");
+                for(i in params){
+                    val = params[i].split("=");
+                    if (val[0] == paramName) {
+                        return unescape(val[1]);
+                    }
+                }
+                return null;
+            }
+
+        </script>
+    </body>
+</html>

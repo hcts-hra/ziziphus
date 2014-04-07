@@ -2,7 +2,7 @@
 <root>
     <build>
         <dir>build</dir>
-        <excludes>build/*, generator, .svn, .git, ziziphus.xpr, resources/**/*.html</excludes>
+        <excludes>build/*, generator, .svn, .git, ziziphus.xpr, resources/script/**/*.html</excludes>
     </build>
     <app>
         <name>ziziphus</name>
