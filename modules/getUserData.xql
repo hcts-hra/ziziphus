@@ -15,5 +15,8 @@ let $workdir :=  request:get-parameter('workdir','')
 let $username := security:get-user-credential-from-session()[1]
 return
     <data>
-        <user name="{$username}"edit="{security:can-write-collection($workdir)}"/>
+        <!--
+            <user name="{$username}" edit="{security:can-write-collection($workdir)}"/> :)
+        -->
+        <user name="{$username}"/>
     </data>
