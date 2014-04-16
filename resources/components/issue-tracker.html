@@ -1,39 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<html lang="en">
     <head>
         <meta charset="UTF-8"/>
         <title>Document</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="description" content=""/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link type="text/css" rel="stylesheet" href="../css/bootstrap.min.css"/>
+        <script type="text/javascript" src="../script/jquery-1.9.1.js"/>
+
         <style>
+            body {
+                padding:20px;
+                background-color:#B45F04;
+            }
+            .label {
+                background: none;
+                font-size: 14px;
+                text-shadow: 1px 2px 2px #000000;
+            }
+                
             .close-icon{
                 position:absolute;
                 top:0;
                 right:0;
                 width:36px;
                 height:36px;
-                background:#666;
+            }
+            input {
+                margin-right:10px;
+            }
+            select, textarea {
+                margin-top:10px;
+                margin-right:10px;
             }
         </style>
     </head>
     <body>
-        <div class="close-icon">
-            <i class="fa fa-times"/>
-        </div>
-        This is just a test for url:<span id="url"/>
+        <button class="close-icon">X</button>
+
+        <form role="form" class="issueTracker" action="#">
+            <div>
+                <span for="type" class="label">I'd like to </span>
+                <select id="type" name="type">
+                    <option value="1" selected="true">report a bug</option>
+                    <option value="2">propose a feature</option>
+                    <option value="3">receive support</option>
+                    <option value="4">tell you something</option>
+                </select>
+                <span for="description" class="label">Description: </span>
+                <textarea cols="300" rows="3" placeholder="Short description of your issue" id="description" name="description"/>
+                <span for="email" class="label">Email: </span>
+                <input id="email" name="email" placeholder="enter your email" value=""/>
+                <button id="create" class="btn">Report</button>
+            </div>
+        </form>
         <script type="text/javascript" src="../script/jquery-1.9.1.js"/>
         <script type="text/javascript">
         jQuery(document).ready(function () {
             
-            var uuid=getParameter('uuid');
+            var imageUuid=getParameter('uuid');
             console.log("url: ",window.location.href);
-            console.log("uuid: ",uuid);
+            console.log("imageUuid: ",imageUuid);
 
-            jQuery('#url').html(uuid);
-            
-            
+            jQuery("#create").on("click", function(e){
+                e.preventDefault();
+                // console.log("creating a ticket e:",e);
+
+                var d = new Date().getTime();
+                var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                    var r = (d + Math.random()*16)%16 | 0;
+                    d = Math.floor(d/16);
+                    return (c=='x' ? r : (0x8)).toString(16);
+                });
+                var type = jQuery("#type").val();
+                var desc = jQuery("#description").val()
+                var email = jQuery("#email").val()
+
+                createRedmineTicket(type, uuid, desc,email,imageUuid);                
+                
+                return false;
+            });
             
             jQuery(".close-icon").on("click",function(e){
-                
-                //parent.document.body.removeChild(parent.document.getElementById('issues-frame'));
                 $('#issues-frame', window.parent.document).removeClass("slideInDown");
                 $('#issues-frame', window.parent.document).remove();
                 
@@ -43,18 +92,100 @@
              /*
                 returns a url parameter from window.location.href
             */
+            
+            function createRedmineTicket(type, uuid, desc,email,imageUuid) {
+                
+                var redmineTracker_ids = {
+                     1:"bug", 
+                     2:"feature",
+                     3:"support",
+                     4:"userstory"
+                }
+                
+                var redmineTicket = {
+                    "issue": {
+                        "project_id": 1,
+                        "tracker_id":type,
+                        "subject": redmineTracker_ids[type] + "-" + uuid,
+                        "description":desc + " VRA UUID: '" + imageUuid + "' Report: '" + email + "'",
+                        "priority_id": 4,
+                        "assigned_to_id":7
+                        /* "custom_fields":
+                          [
+                            {"value": email,"name":"email","id":1},
+                            {"value": imageUuid,"name":"uuid","id":2}
+                          ]
+                          */
+                    }
+                };
+                console.log("redmine ticket: ",redmineTicket);
+                
+                var redmineURL = "http://kjc-sv013.kjc.uni-heidelberg.de/redmine/projects/1/issues.json?key=797dc72ff43a3a00fbff841636c3b15dc5d1673a"
+                
+                var request = $.ajax({
+                    url: redmineURL,
+                    type: "POST",
+                    data:redmineTicket ,
+                    dataType: "json"
+                });
+                request.done(function(msg) {
+                    // console.log("done: ", msg);
+                });
+                request.fail(function( jqXHR, textStatus ) {
+                    // console.log("error: jqXHR:", jqXHR, " textStatus:",textStatus);
+                });
+                
+            }
+            
+            function createGithubTicket(type, uuid, desc) {
+                var gitHubTicket = {
+                    "title": type + "-" + uuid,
+                    "body": desc,
+                    "assignee": "windauer",
+                    "milestone": 5,
+                    "labels": [
+                        type,
+                        "feedback"
+                    ]
+                };
+                console.log("github ticket: ", gitHubTicket);
+                
+                var gitHubProperties = {
+                    apiRoot:"https://api.github.com",
+                    repoOwner : "betterFORM",
+                    repo:"ziziphus",
+                    authToken: "49852117e1b14ab91c6786af574cc05a730a9212"
+                }    
+                var githubURL = gitHubProperties.apiRoot + "/repos/"+gitHubProperties.repoOwner +"/"+ gitHubProperties.repo+"/issues?authToken=" + gitHubProperties.authToken;
+                console.log("github ticket: ", githubURL);                  
+                
+                var request = $.ajax({
+                    url: githubURL,
+                    type: "POST",
+                    data:gitHubTicket,
+                    dataType: "json"
+                });
+                request.done(function(msg) {
+                    console.log("done: ", msg);
+                });
+                request.fail(function( jqXHR, textStatus ) {
+                    console.log("error: jqXHR:", jqXHR, " textStatus:",textStatus);
+                });
+                
+            }
+
+
+
             function getParameter(paramName) {
-                var searchString = window.location.search.substring(1),
-                        i, val, params = searchString.split("&amp;");
-                for(i in params){
-                    val = params[i].split("=");
+                var searchString = window.location.search.substring(1), params = searchString.split("&amp;");
+                for(var index in params){
+                    var val = params[index].split("=");
                     if (val[0] == paramName) {
                         return unescape(val[1]);
                     }
                 }
                 return null;
             }
-
         </script>
     </body>
 </html>

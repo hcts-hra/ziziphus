@@ -99,7 +99,7 @@ jQuery(document).ready(function () {
         var uuid = getParameter("id");
         console.log("uuid: ",uuid);
 //        $('#issue-window').html("<iframe src='resources/components/issue-tracker.html?uuid=" + encodeURIComponent(uuid) + "' />");
-        $("<iframe id='issues-frame'></iframe")
+        $("<iframe id='issues-frame'></iframe>")
                             .attr("src","resources/components/issue-tracker.html?uuid=" + encodeURIComponent(uuid) + ")")
                             .attr("style","position:fixed;top:0;width:100%;background:white;z-index:10")
                             .addClass("animated")
