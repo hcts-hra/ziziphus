@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:vra="http://www.vraweb.org/vracore4.htm" xmlns:bf="http://betterform.sourceforge.net/xforms" xmlns:bfc="http://betterform.sourceforge.net/xforms/controls" xmlns:exist="http://exist.sourceforge.net/NS/exist" xmlns:xf="http://www.w3.org/2002/xforms" xmlns:meta="http://expath.org/ns/pkg" bf:transform="/apps/ziziphus/resources/xsl/ziziphus.xsl">
     <head>
         <title>Ziziphus Image DB</title>
@@ -8,6 +9,8 @@
         <link rel="stylesheet" type="text/css" href="resources/script/mingos-uwindow/themes/ziziphus/style.css"/>
         <link rel="stylesheet" type="text/css" href="resources/script/layout-default-latest.css"/>
         <link rel="stylesheet" type="text/css" href="resources/css/jquery-ui.css"/>
+        <link rel="stylesheet" type="text/css" href="resources/css/animate.css"/>
+        <link rel="stylesheet" type="text/css" href="/exist/apps/cluster-shared/resources/css/autocomplete.css"/>
         <link rel="stylesheet" type="text/css" href="/exist/apps/cluster-shared/resources/css/select2-cluster.css"/>
         <link rel="stylesheet" href="/exist/apps/cluster-shared/resources/css/font-awesome-4.0.3/css/font-awesome.min.css"/>
         <!--<link rel="stylesheet" type="text/css" href="resources/css/ui-lightness/jquery-ui-1.10.2.custom.min.css"/>-->
@@ -111,7 +114,7 @@
                 <xf:label>Hidden Control</xf:label>
             </xf:input>
         </div>
-
+        <div id="issue-window"/>
         <!-- window for heidicon data -->
         <div id="heidiconWindow" class="main:getid"/>
 
@@ -124,6 +127,11 @@
         <div class="ui-layout-north" style="overflow:hidden;">
             <div id="headerTitle" style="float:left;display:block;">
                 <ul class="inline" style="list-style:none outside none;margin-left:0;padding:0">
+                    <li>
+                        <div class="btn-group">
+                            <button type="button" class="btn" id="report-issue">report an issue</button>
+                        </div>
+                    </li>
                     <li>
                         <div class="btn-group">
                             <button type="button" class="btn" id="heidicon">Heidicon Data</button>
@@ -191,6 +199,10 @@
         <script type="text/javascript" src="resources/script/jquery-ui-1.10.2.custom.min.js"/>
         <script type="text/javascript" src="resources/script/mingos-uwindow/jWindow.js"/>
         <script type="text/javascript" src="resources/script/jquery.layout-latest.min.js"/>
+        <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/typeahead.js/hogan-2.0.0.js"/>
+        <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/typeahead.js/typeahead-0.9.3.js"/>
+        <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/typeahead-init.js"/>
+        <script type="text/javascript" src="resources/script/ziziphus.js"/>
         <!--
             <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/vendor/typeahead.js/hogan-2.0.0.js"/>
             <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/vendor/typeahead.js/typeahead-0.9.3.js"/>
