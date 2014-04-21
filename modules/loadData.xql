@@ -53,9 +53,12 @@ let $templateInstance := request:get-data()
 let $setName := local-name($templateInstance/*[1])
 
 let $data := local:getSetData($id, $setName)
-let $data2process := local:mergeXMLFragments($templateInstance, $data) 
+
 return 
-    local:mergeVraRecord($data2process)
-
-    
-
+    if($data)
+    then (
+        let $data2process := local:mergeXMLFragments($templateInstance, $data) 
+        return local:mergeVraRecord($data2process)
+    ) else (
+        $templateInstance
+    )

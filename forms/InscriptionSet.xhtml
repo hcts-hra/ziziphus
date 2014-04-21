@@ -31,36 +31,14 @@
                               method="post"
                               replace="instance"
                               validate="false">
-                  <xf:header>
-                     <xf:name>username</xf:name>
-                     <xf:value>admin</xf:value>
-                  </xf:header>
-                  <xf:header>
-                     <xf:name>password</xf:name>
-                     <xf:value></xf:value>
-                  </xf:header>
-                  <xf:header>
-                     <xf:name>realm</xf:name>
-                     <xf:value>exist</xf:value>
-                  </xf:header>
+                  <xf:message ev:event="xforms-submit-done" level="ephemeral">Data have been loaded.</xf:message>
+                  <xf:message ev:event="xforms-submit-error">Failed to load data.</xf:message>
                </xf:submission>
                <xf:submission id="s-update"
                               resource="modules/updateRecord.xql?id={bf:instanceOfModel('m-main','i-control-center')/uuid}&amp;set=inscriptionSet"
                               method="post"
                               replace="none"
                               validate="false">
-                  <xf:header>
-                     <xf:name>username</xf:name>
-                     <xf:value>admin</xf:value>
-                  </xf:header>
-                  <xf:header>
-                     <xf:name>password</xf:name>
-                     <xf:value></xf:value>
-                  </xf:header>
-                  <xf:header>
-                     <xf:name>realm</xf:name>
-                     <xf:value>exist</xf:value>
-                  </xf:header>
                   <xf:action ev:event="xforms-submit"
                              if="not(count(vra:inscription[@pref = ('true', '1')]) &lt;= 1)">
                      <xf:message>Warning: At most one preferred inscription can be selected.</xf:message>
@@ -256,21 +234,16 @@
                         <xf:group appearance="minimal"><span style="display:none">
                               <xf:input id="b-d2e665" class="Author-autocomplete" ref="vra:author">
                                  <xf:action ev:event="autocomplete-callback">
-                                    <xf:setvalue ref="." value="event('value')"></xf:setvalue>
+                                    <xf:setvalue ref="." value="event('termValue')"></xf:setvalue>
                                     <xf:action>
                                        <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@refid" context="."
                                                   if="not(exists(instance('i-inscriptionSet')/vra:inscription[index('r-vraInscription')]/@refid))"></xf:insert>
-                                       <xf:setvalue ref="@refid" value="event('uuid')"></xf:setvalue>
-                                    </xf:action>
-                                    <xf:action if="not(exists(event('uuid')) or event('uuid') eq '')">
-                                       <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@refid" context="."
-                                                  if="not(exists(instance('i-inscriptionSet')/vra:inscription[index('r-vraInscription')]/@refid))"></xf:insert>
-                                       <xf:setvalue ref="@refid" value="event('internalID')"></xf:setvalue>
+                                       <xf:setvalue ref="@refid" value="event('refid')"></xf:setvalue>
                                     </xf:action>
                                     <xf:action>
                                        <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@vocab" context="."
                                                   if="not(exists(instance('i-inscriptionSet')/vra:inscription[index('r-vraInscription')]/@vocab))"></xf:insert>
-                                       <xf:setvalue ref="@vocab" value="event('resource')"></xf:setvalue>
+                                       <xf:setvalue ref="@vocab" value="event('authority')"></xf:setvalue>
                                     </xf:action>
                                     <xf:action if="exists(../vra:dates/vra:earliestDate)">
                                        <xf:setvalue ref="../vra:dates/vra:earliestDate" value="event('earliestDate')"></xf:setvalue>
@@ -281,14 +254,13 @@
                                     <xf:action>
                                        <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@type" context="."
                                                   if="not(exists(instance('i-inscriptionSet')/vra:inscription[index('r-vraInscription')]/@type))"></xf:insert>
-                                       <xf:setvalue ref="@type" value="event('datumType')"></xf:setvalue>
+                                       <xf:setvalue ref="@type" value="event('termType')"></xf:setvalue>
                                     </xf:action>
                                  </xf:action>
                                  <xf:label>Author</xf:label>
-                              </xf:input></span><label for="Author-autocomplete">Author</label><input type="text" name="Author-autocomplete" class="Author-autocomplete-input"
+                              </xf:input></span><label for="Author-autocomplete">Author</label><input type="hidden" name="Author-autocomplete" class="Author-autocomplete-input"
                                   placeholder="Type to search ..."
-                                  queryType="names"
-                                  host="http://localhost:8080"
+                                  data-queryType="names"
                                   autocomplete="off"
                                   callbackSet="r-vraInscription" /><xf:group class="vraAttributes" appearance="minimal" ref="vra:author">
                               <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>

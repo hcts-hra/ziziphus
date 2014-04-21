@@ -34,36 +34,14 @@
                               method="post"
                               replace="instance"
                               validate="false">
-                  <xf:header>
-                     <xf:name>username</xf:name>
-                     <xf:value>admin</xf:value>
-                  </xf:header>
-                  <xf:header>
-                     <xf:name>password</xf:name>
-                     <xf:value></xf:value>
-                  </xf:header>
-                  <xf:header>
-                     <xf:name>realm</xf:name>
-                     <xf:value>exist</xf:value>
-                  </xf:header>
+                  <xf:message ev:event="xforms-submit-done" level="ephemeral">Data have been loaded.</xf:message>
+                  <xf:message ev:event="xforms-submit-error">Failed to load data.</xf:message>
                </xf:submission>
                <xf:submission id="s-update"
                               resource="modules/updateRecord.xql?id={bf:instanceOfModel('m-main','i-control-center')/uuid}&amp;set=descriptionSet"
                               method="post"
                               replace="none"
                               validate="false">
-                  <xf:header>
-                     <xf:name>username</xf:name>
-                     <xf:value>admin</xf:value>
-                  </xf:header>
-                  <xf:header>
-                     <xf:name>password</xf:name>
-                     <xf:value></xf:value>
-                  </xf:header>
-                  <xf:header>
-                     <xf:name>realm</xf:name>
-                     <xf:value>exist</xf:value>
-                  </xf:header>
                   <xf:action ev:event="xforms-submit"
                              if="not(count(vra:description[@pref = ('true', '1')]) &lt;= 1)">
                      <xf:message>Warning: At most one preferred description can be selected.</xf:message>
@@ -263,21 +241,16 @@
                         <xf:repeat id="r-author" ref="vra:author"><span style="display:none">
                               <xf:input id="b-d2e541" class="Name-autocomplete" ref="vra:name">
                                  <xf:action ev:event="autocomplete-callback">
-                                    <xf:setvalue ref="." value="event('value')"></xf:setvalue>
+                                    <xf:setvalue ref="." value="event('termValue')"></xf:setvalue>
                                     <xf:action>
                                        <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@refid" context="."
                                                   if="not(exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/@refid))"></xf:insert>
-                                       <xf:setvalue ref="@refid" value="event('uuid')"></xf:setvalue>
-                                    </xf:action>
-                                    <xf:action if="not(exists(event('uuid')) or event('uuid') eq '')">
-                                       <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@refid" context="."
-                                                  if="not(exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/@refid))"></xf:insert>
-                                       <xf:setvalue ref="@refid" value="event('internalID')"></xf:setvalue>
+                                       <xf:setvalue ref="@refid" value="event('refid')"></xf:setvalue>
                                     </xf:action>
                                     <xf:action>
                                        <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@vocab" context="."
                                                   if="not(exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/@vocab))"></xf:insert>
-                                       <xf:setvalue ref="@vocab" value="event('resource')"></xf:setvalue>
+                                       <xf:setvalue ref="@vocab" value="event('authority')"></xf:setvalue>
                                     </xf:action>
                                     <xf:action if="exists(../vra:dates/vra:earliestDate)">
                                        <xf:setvalue ref="../vra:dates/vra:earliestDate" value="event('earliestDate')"></xf:setvalue>
@@ -288,14 +261,31 @@
                                     <xf:action>
                                        <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@type" context="."
                                                   if="not(exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/@type))"></xf:insert>
-                                       <xf:setvalue ref="@type" value="event('datumType')"></xf:setvalue>
+                                       <xf:setvalue ref="@type" value="event('termType')"></xf:setvalue>
+                                    </xf:action>
+                                    <xf:action>
+                                       <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@vocab"
+                                                  context="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role"
+                                                  if="not(exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@vocab))"></xf:insert>
+                                    </xf:action>
+                                    <xf:action>
+                                       <xf:setvalue ref="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@vocab"
+                                                    value="'marcrelator'"></xf:setvalue>
+                                    </xf:action>
+                                    <xf:action>
+                                       <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@type"
+                                                  context="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role"
+                                                  if="not(exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@type))"></xf:insert>
+                                    </xf:action>
+                                    <xf:action>
+                                       <xf:setvalue ref="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@type"
+                                                    value="'code'"></xf:setvalue>
                                     </xf:action>
                                  </xf:action>
                                  <xf:label>Name</xf:label>
-                              </xf:input></span><label for="Name-autocomplete">Name</label><input type="text" name="Name-autocomplete" class="Name-autocomplete-input"
+                              </xf:input></span><label for="Name-autocomplete">Name</label><input type="hidden" name="Name-autocomplete" class="Name-autocomplete-input"
                                   placeholder="Type to search ..."
-                                  queryType="names"
-                                  host="http://localhost:8080"
+                                  data-queryType="names"
                                   autocomplete="off"
                                   callbackSet="r-vraDescription" /><xf:select1 id="b-d2e548" class=" nameType" ref="vra:name/@type">
                               <xf:label>Type</xf:label>
@@ -319,6 +309,10 @@
                            </xf:select1>
                            <xf:select1 ref="vra:role">
                               <xf:label>Role</xf:label>
+                              <xf:itemset nodeset="bf:instanceOfModel('m-code-tables', 'i-codes-role')/items/item">
+                                 <xf:label ref="label"></xf:label>
+                                 <xf:value ref="value"></xf:value>
+                              </xf:itemset>
                               <xf:action ev:event="xforms-value-changed">
                                  <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@vocab"
                                             context="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role"
@@ -331,11 +325,6 @@
                                  <xf:setvalue ref="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@type"
                                               value="'code'"></xf:setvalue>
                               </xf:action>
-                              <xf:label>Role</xf:label>
-                              <xf:itemset nodeset="bf:instanceOfModel('m-code-tables', 'i-codes-role')/items/item">
-                                 <xf:label ref="label"></xf:label>
-                                 <xf:value ref="value"></xf:value>
-                              </xf:itemset>
                            </xf:select1>
                         </xf:repeat>
                      </td>

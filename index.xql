@@ -78,7 +78,7 @@ return
             <tr>
                 <td>{$counter}</td>
                 <td style="height:32px;width:32px;margin:4px;"><img src="{$csconfig:image-service-url || '/' || $imageRecordId|| '?width=32&amp;height=32'}" alt="" class="relatedImage"/></td>
-                <td><a href="{$context}/apps/ziziphus/record.html?id={$uuid}&amp;workdir={$app:record-dir}&amp;imagepath={record-utils:get-image-record-path-by-work-record-id($uuid, $app:record-dir)}" target="_blank">{$uuid}</a></td>
+                <td><a href="{$context}/apps/ziziphus/record.html?id={$uuid}&amp;workdir={$app:record-dir}" target="_blank">{$uuid}</a></td>
                 <td><a href="{$context}/rest/{$app:record-dir || $uuid}.xml" target="_blank">work</a></td>
                 <td><a href="{$context}/rest/{record-utils:get-image-record-path-by-work-record-id($uuid, $app:record-dir)}" target="_blank">image</a></td>
                 <td>{$heidiconId}</td>

@@ -28,11 +28,40 @@
         ########## AgentSet ##########
     -->
     
-    <!-- vocab + type -->    
+    <!-- vocab + type -->
+
+    <!-- Autocomplete -->
+    
+    <xsl:template match="xhtml:tbody[@xf:repeat-nodeset eq 'vra:agent']//xf:action[@ev:event = 'autocomplete-callback']">
+        <xsl:copy>
+            <xsl:copy-of select ="@*"/>
+            <xsl:copy-of select ="*|text()"/>
+            
+            <xf:action>
+                <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@vocab"
+                           context="instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role"
+                           if="not(exists(instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role/@vocab))"/>
+            </xf:action>
+            <xf:action>
+                <xf:setvalue ref="instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role/@vocab" value="'marcrelator'"/>
+            </xf:action>
+            <xf:action>
+                <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@type"
+                    context="instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role"
+                    if="not(exists(instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role/@type))"/>
+            </xf:action>
+            <xf:action>
+                <xf:setvalue ref="instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role/@type" value="'code'"/>
+            </xf:action>
+        </xsl:copy>
+    </xsl:template>    
+    
+    <!-- Role Select -->
     <xsl:template match="xhtml:tbody[@xf:repeat-nodeset eq 'vra:agent']//xf:select1[@ref = 'vra:role']">
         <xsl:copy>
             <xsl:copy-of select ="@*"/>
-            <xsl:copy-of select ="xf:label|xf:hint|xf:help|xf:alert"/>
+             <xsl:copy-of select ="*|text()"/>
+            <!--xsl:copy-of select ="xf:label|xf:hint|xf:help|xf:alert"/-->
             <xf:action ev:event="xforms-value-changed">
                 <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@vocab"
                            context="instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role"
@@ -43,7 +72,7 @@
                     if="not(exists(instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role/@type))"></xf:insert>
                 <xf:setvalue ref="instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role/@type" value="'code'"/>
             </xf:action>
-            <xsl:copy-of select ="*|text()"/>
+           
         </xsl:copy>
     </xsl:template>
 
@@ -208,10 +237,37 @@
     </xsl:template>
     -->
     <!-- vocab + type -->
+    
+    <!-- Autocomplete -->
+    <xsl:template match="xf:repeat[@ref eq 'vra:author']//xf:action[@ev:event = 'autocomplete-callback']">
+        <xsl:copy>
+            <xsl:copy-of select ="@*"/>
+            <xsl:copy-of select ="*"/>
+            
+            <xf:action>
+                <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@vocab"
+                    context="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role"
+                    if="not(exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@vocab))"/>
+            </xf:action>
+            <xf:action>
+                <xf:setvalue ref="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@vocab" value="'marcrelator'"/>
+            </xf:action>
+            <xf:action>
+                <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@type"
+                    context="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role"
+                    if="not(exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@type))"/>
+            </xf:action>
+            <xf:action>
+                <xf:setvalue ref="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@type" value="'code'"/>
+            </xf:action>
+        </xsl:copy>
+    </xsl:template>
+    
     <xsl:template match="xf:repeat[@ref eq 'vra:author']//xf:select1[@ref = 'vra:role']">
         <xsl:copy>
             <xsl:copy-of select ="@*"/>
-            <xsl:copy-of select ="xf:label|xf:hint|xf:help|xf:alert"/>
+            <xsl:copy-of select ="*|text()"/>
+            
             <xf:action ev:event="xforms-value-changed">
                 <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@vocab"
                     context="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role"
@@ -222,7 +278,7 @@
                     if="not(exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@type))"></xf:insert>
                 <xf:setvalue ref="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@type" value="'code'"/>
             </xf:action>
-            <xsl:copy-of select ="*|text()"/>
+            
         </xsl:copy>
     </xsl:template>
         
@@ -248,7 +304,25 @@
         </xsl:copy>
     </xsl:template>
     
+    <xsl:template match="xhtml:tbody[@xf:repeat-nodeset eq 'vra:subject']//xf:input[@ref = 'vra:term']//xf:insert[@context='.' and contains(@origin, '@type')]" priority="10"/>
+        
+    <xsl:template match="xhtml:tbody[@xf:repeat-nodeset eq 'vra:subject']//xf:input[@ref = 'vra:term']//xf:insert[@context='.']">
+        <xf:insert context="..">
+            <xsl:copy-of select="@origin"/>
+            <xsl:copy-of select="@if"/>
+        </xf:insert>
+    </xsl:template>
     
+    <xsl:template match="xhtml:tbody[@xf:repeat-nodeset eq 'vra:subject']//xf:input[@ref = 'vra:term']//xf:setvalue[starts-with(@ref, '@type')]" priority="10"/>
+
+    <xsl:template match="xhtml:tbody[@xf:repeat-nodeset eq 'vra:subject']//xf:input[@ref = 'vra:term']//xf:setvalue[starts-with(@ref, '@')]">
+        <xf:setvalue>
+            <xsl:attribute name="ref">
+                <xsl:value-of select="concat('../', @ref)"/>
+            </xsl:attribute>
+            <xsl:copy-of select="@value"/>
+        </xf:setvalue>
+    </xsl:template>
     
     <!-- 
         ########## DateSet ##########

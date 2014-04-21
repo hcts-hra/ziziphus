@@ -6,6 +6,17 @@ import module namespace config="http://exist-db.org/xquery/apps/config" at "modu
 declare option exist:serialize "method=xhtml media-type=text/html";
 
 
+declare %private function local:buildRequestURL() {
+    let $parameter-names := request:get-parameter-names()
+    for $parameter-name in $parameter-names
+    return
+        if($parameter-name = "id" or $parameter-name = "controller" or $parameter-name = "prefix" or $parameter-name = "path")
+        then ()
+        else (
+            "&amp;" || $parameter-name || "=" || request:get-parameter($parameter-name, "")
+        )
+};
+
 let $user := request:get-parameter("app.user",'guest')
 let $path := request:get-parameter('path', '')
 let $controller := request:get-parameter('controller', '')
@@ -15,7 +26,7 @@ let $rootContext := '/exist'
 let $appPath := concat($rootContext, $prefix, $controller)
 
 let $origin :=  concat($appPath, $path)
-let $requestURL := concat($origin, if($id) then (concat('?id=',$id)) else ())
+let $requestURL := concat($origin, if($id) then ( concat('?id=',$id) ) else (), string-join(local:buildRequestURL(), '') ) 
 return
 <html>
     <head>
@@ -131,7 +142,7 @@ return
                 </div>
             </div>        
         </div>        
-        <script type="text/javascript" src="resources/script/jquery-1.8.0.min.js"/>
+        <script type="text/javascript" src="resources/script/jquery-1.9.1.js"/>
         <script type="text/javascript" src="resources/script/jquery-ui-1-1.10.0.custom/js/jquery-ui-1.10.0.custom.min.js"/>
         <script type="text/javascript" src="resources/script/mingos-uwindow/jWindow.js"/>
         <script type="text/javascript" src="resources/script/jquery.layout-latest.min.js"/>
