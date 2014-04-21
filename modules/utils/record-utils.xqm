@@ -13,7 +13,7 @@ declare %private variable $record-utils:db := "/db";
     ##### RECORDS #####
 :)
 declare function record-utils:get-record($record-id) as node() {
-    record-utils:get-work-record($record-id, $record-utils:db)
+    record-utils:get-record($record-id, $record-utils:db)
 };
 
 declare function record-utils:get-record($record-id, $base-collection) as node() {

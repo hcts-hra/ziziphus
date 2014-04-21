@@ -1,18 +1,30 @@
+/* line 4, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\000034}}
 .xfRequired .xfLabel:after {
   content: '';
 }
+/* line 9, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\000039}}
 .xfRequired > .xfLabel:after {
   content: '*';
 }
+/* line 15, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\0000315}}
 .xfRepeatItem {
   background: whitesmoke;
 }
+/* line 20, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\0000320}}
 .xfRepeatIndex .contentCol {
   background-color: whitesmoke;
 }
+/* line 27, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\0000327}}
 table tbody {
   font-size: 0.85em;
 }
+/* line 32, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\0000332}}
 table tbody .xfGroup > .xfControl .xfLabel {
   float: left;
   padding: 0;
@@ -20,21 +32,29 @@ table tbody .xfGroup > .xfControl .xfLabel {
   min-width: 60px;
   font-size: 0.9em;
 }
+/* line 44, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\0000344}}
 table tr td {
   vertical-align: top;
   border: thin solid #999999;
   border-collapse: collapse;
   padding: 3px;
 }
+/* line 50, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\0000350}}
 table tr td > .xfGroup {
   background: #fafafa;
   border-top: thin solid;
   border-bottom: thin solid #cdcdcd;
   padding: 5px 0;
 }
+/* line 58, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\0000358}}
 table tr td .xfGroup:last-child {
   border-bottom: none;
 }
+/* line 68, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\0000368}}
 .vraAttributes .xfControl {
   float: left;
   border: thin solid #aaaaaa;
@@ -45,6 +65,8 @@ table tr td .xfGroup:last-child {
   text-align: center;
   line-height: 1.5;
 }
+/* line 78, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\0000378}}
 .vraAttributes .xfLabel {
   line-height: 1.5;
   font-size: 1em;
@@ -54,50 +76,72 @@ table tr td .xfGroup:last-child {
   width: 100%;
   display: none;
 }
+/* line 87, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\0000387}}
 .vraAttributes .xfOutput {
   font-size: 0.7em;
 }
+/* line 91, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\0000391}}
 .contentCol .vraAttributes .xfControl {
   width: auto;
 }
+/* line 95, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\0000395}}
 .vraAttributeTrigger {
   position: absolute;
   top: 0;
   right: 0;
 }
+/* line 100, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003100}}
 .vraAttributeTrigger button {
   width: 16px;
   height: 16px;
   font-size: 0.9em;
   padding: 0;
-  background: url(/exist/apps/ziziphus/resources/css/../images/icons/attributes.png);
+  background: url(../images/icons/attributes.png);
   border: none;
   color: transparent !important;
 }
+/* line 111, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003111}}
 .triggerCol {
   width: 10px;
 }
+/* line 114, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003114}}
 .triggerCol button {
   width: 24px;
   height: 24px;
   font-size: 0.9em;
   padding: 0;
 }
+/* line 121, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003121}}
 .triggerCol .btn-trashcan {
-  background: url(/exist/apps/ziziphus/resources/css/../images/icons/trash_can.png) no-repeat;
+  background: url(../images/icons/trash_can.png) no-repeat;
   color: transparent;
   border: none;
 }
+/* line 128, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003128}}
 .prefCol {
   width: 10px;
 }
+/* line 131, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003131}}
 .prefCol .xfLabel {
   font-size: 0.9em;
   margin-bottom: 3px;
 }
+/* line 137, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003137}}
 .contentCol {
   width: 100%;
 }
+/* line 140, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003140}}
 .contentCol > .xfGroup {
   width: 100%;
   display: inline-block;
@@ -105,74 +149,112 @@ table tr td .xfGroup:last-child {
   border-top: none !important;
   position: relative;
 }
+/* line 150, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003150}}
 .contentCol .xfControl .widgetContainer {
   display: inline-block;
   width: auto;
   float: left;
 }
+/* line 157, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003157}}
 .contentCol .xfTextarea .widgetContainer {
   width: 90%;
 }
+/* line 160, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003160}}
 .contentCol .xfTextarea .widgetContainer textarea {
   width: 100%;
 }
+/* line 166, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003166}}
 .WorktypeSet .contentCol .xfControl {
   width: 100%;
 }
+/* line 169, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003169}}
 .WorktypeSet .contentCol .xfControl .widgetContainer {
   width: 100%;
   text-align: center;
 }
+/* line 174, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003174}}
 .WorktypeSet .contentCol .xfControl input[type='text'] {
   width: 90%;
 }
+/* line 184, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003184}}
 #attrDialog .attrDialogGroup .xfControl {
   float: left;
 }
+/* line 187, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003187}}
 #attrDialog .attrDialogGroup .xfLabel {
   float: left;
   margin: 2px 10px;
   width: 100px;
   text-align: right;
 }
+/* line 195, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003195}}
 #attrDialog .attrDialogGroup .xfSelect1 .xfValue,
 #attrDialog .attrDialogGroup .xfInput .xfValue {
   height: 22px;
 }
+/* line 201, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003201}}
 #attrDialog .attrDialogGroup .xfSelect1 .xfValue,
 #attrDialog .attrDialogGroup .xfInput .xfValue {
   width: 250px;
   margin-bottom: 5px;
 }
+/* line 207, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003207}}
 #attrDialog .attrDialogGroup .deleteAttribute {
   display: block;
   float: right !important;
 }
+/* line 211, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003211}}
 #attrDialog .attrDialogGroup .deleteAttribute button {
   font-size: 10px;
   margin: 0 0 0 -1px;
   padding: 0 4px;
 }
-#attrDialog .buttonBar {
+/* line 218, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003218}}
+#attrDialog .attrDialogGroup .buttonBar {
   clear: both;
 }
+/* line 225, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003225}}
 .buttonBar .xfTrigger {
   display: inline-block !important;
   font-size: 0.85em;
   margin: 5px;
 }
+/* line 231, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003231}}
 .notesDisplayTrigger {
   float: right;
 }
+/* line 234, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003234}}
 #notes {
   width: 100%;
 }
+/* line 237, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003237}}
 #notes .widgetContainer {
   width: 100%;
 }
+/* line 240, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003240}}
 #notes textarea {
   width: 100%;
 }
+/* line 245, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003245}}
 .bf .globalAttrs .xfContainer {
   display: inline-block;
   min-height: 12px;
@@ -182,6 +264,8 @@ table tr td .xfGroup:last-child {
   border: none;
   padding: 3px;
 }
+/* line 257, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003257}}
 .globalAttrs .vraAttributes .xfTrigger {
   border: none;
   padding: 0;
@@ -190,64 +274,94 @@ table tr td .xfGroup:last-child {
   right: 0;
   margin-top: 0;
 }
+/* line 266, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003266}}
 .xfTextarea {
   width: 100%;
 }
+/* line 269, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003269}}
 .xfTextarea .widgetContainer {
   width: 100%;
 }
+/* line 272, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003272}}
 .xfTextarea .widgetContainer textarea {
   width: 95%;
 }
+/* line 276, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003276}}
 .bf form .hiddenControl {
   display: none;
 }
+/* line 281, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003281}}
 .toolbar {
   position: absolute;
   top: 3px;
   right: 26px;
   padding: 2px 0;
 }
+/* line 288, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003288}}
 .toolbar button {
   background: transparent;
   color: #333333;
 }
+/* line 293, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003293}}
 .toolbar span {
   display: block;
   float: left;
 }
+/* line 299, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003299}}
 .toolbar .t-plus button {
   border: none;
   font-size: 30px;
   margin-top: 0;
   margin-top: -8px;
 }
+/* line 310, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003310}}
 .toolbar .t-save button {
-  background: url(/exist/apps/ziziphus/resources/css/../images/icons/floppy_save_disc.png) no-repeat;
+  background: url(../images/icons/floppy_save_disc.png) no-repeat;
   color: transparent;
   border: none;
 }
+/* line 317, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003317}}
 .toolbar #t-close-value {
   font-size: 30px;
   margin-top: 0;
-  background: url(/exist/apps/ziziphus/resources/css/../images/icons/keyboard_up.png) no-repeat;
+  background: url(../images/icons/keyboard_up.png) no-repeat;
   color: transparent;
 }
+/* line 324, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003324}}
 .bf .dijitTitlePane .t-edit .xfReadOnly {
   opacity: 0.5 !important;
 }
+/* line 327, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003327}}
 .bf .dijitTitlePane:hover .t-edit .xfReadOnly .toolbarbutton:hover {
   opacity: 0.5 !important;
 }
+/* line 331, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003331}}
 .tundra .dijitTitlePaneContentInner {
   padding: 0;
 }
+/* line 335, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003335}}
 .xfInput .xfSecret .xfValue,
 .xfTextarea .xfValue,
 .xfSelect1 .xfValue,
 .xfSelect .xfValue {
   width: auto;
 }
+/* line 338, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003338}}
 select,
 textarea,
 input[type="text"],

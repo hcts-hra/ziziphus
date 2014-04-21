@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:vra="http://www.vraweb.org/vracore4.htm" xmlns:bf="http://betterform.sourceforge.net/xforms" xmlns:bfc="http://betterform.sourceforge.net/xforms/controls" xmlns:exist="http://exist.sourceforge.net/NS/exist" xmlns:xf="http://www.w3.org/2002/xforms" xmlns:meta="http://expath.org/ns/pkg" bf:transform="/apps/ziziphus/resources/xsl/ziziphus.xsl">
     <head>
         <title>Ziziphus Image DB</title>
+        <link href="/exist/apps/cluster-shared/resources/script/vendor/select2-3.4.6/select2.css" rel="stylesheet"/>
         <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css"/>
         <link rel="stylesheet" type="text/css" href="resources/css/layout.css"/>
         <link rel="stylesheet" type="text/css" href="resources/css/record.css"/>
@@ -9,7 +9,9 @@
         <link rel="stylesheet" type="text/css" href="resources/script/layout-default-latest.css"/>
         <link rel="stylesheet" type="text/css" href="resources/css/jquery-ui.css"/>
         <link rel="stylesheet" type="text/css" href="resources/css/animate.css"/>
-        <link rel="stylesheet" type="text/css" href="/exist/apps/cluster-shared/resources/css/autocomplete.css"/>
+        <!-- <link rel="stylesheet" type="text/css" href="/exist/apps/cluster-shared/resources/css/autocomplete.css"/> -->
+        <link rel="stylesheet" type="text/css" href="/exist/apps/cluster-shared/resources/css/select2-cluster.css"/>
+        <link rel="stylesheet" href="/exist/apps/cluster-shared/resources/css/font-awesome-4.0.3/css/font-awesome.min.css"/>
         <!--<link rel="stylesheet" type="text/css" href="resources/css/ui-lightness/jquery-ui-1.10.2.custom.min.css"/>-->
     </head>
     <body class="main:createVraRecord">
@@ -83,12 +85,13 @@
             </xf:submit>
             <xf:trigger id="t-load-xml">
                 <xf:load show="new">
-                    <xf:resource value="concat('/exist/rest/', instance('i-control-center')/workdir, '/' , instance('i-control-center')/uuid, '.xml')"/>
+                    <!--xf:resource value="concat('/exist/rest/', instance('i-control-center')/workdir, '/' , instance('i-control-center')/uuid, '.xml')"/-->
+                    <xf:resource value="concat('modules/loadXML.xql?id=', instance('i-control-center')/uuid)"/>
                 </xf:load>
             </xf:trigger>
             <xf:trigger id="t-load-xml-image">
                 <xf:load show="new">
-                    <xf:resource value="concat('/exist/rest/', instance('i-control-center')/imagepath)"/>
+                    <xf:resource value="concat('modules/loadXML.xql?id=', instance('i-control-center')/uuid, '&amp;type=image')"/>
                 </xf:load>
             </xf:trigger>
             <xf:group id="controlCenter" model="m-main">
@@ -157,22 +160,26 @@
                     <li>
                         <xf:output id="user" ref="instance('i-user')/user/@name">
                             <xf:label>User:</xf:label>
+                            <xf:help ref="instance('i-meta')/@version"/>
+                            <xf:hint ref="instance('i-meta')/@version"/>
                         </xf:output>
                     </li>
                     <li>
                         <xf:trigger class="btn-group -btn">
                             <xf:label>Logout</xf:label>
-                            <xf:load resource="index.xql?logout=true" show="replace"/>
+                            <xf:load resource="?logout=true" show="replace"/>
                         </xf:trigger>
                     </li>
                 </ul>
             </div>
         </div>
+        <!--
         <div class="ui-layout-south">
             <xf:output ref="instance('i-meta')/@version">
                 <xf:label>Version: </xf:label>
             </xf:output>
         </div>
+        -->
         <div class="ui-layout-west main:displayWorkRecord">Workrecord</div>
         <div class="ui-layout-east main:displayImageRecord">Imagerecord</div>
         <div class="ui-layout-center main:displayImageArea">ImageArea 2</div>
@@ -182,18 +189,22 @@
         <!-- ######################################### -->
         <!-- ######################################### -->
         <script type="text/javascript">
-                                require(["dojo/parser",
-                                    "dijit/TitlePane"
-                                ]);
+            require(["dojo/parser",
+                "dijit/TitlePane"
+            ]);
         </script>
         <script type="text/javascript" src="resources/script/jquery-1.9.1.js"/>
         <!--<script type="text/javascript" src="resources/script/jquery-ui-1-1.10.0.custom/js/jquery-ui-1.10.0.custom.min.js"/>-->
         <script type="text/javascript" src="resources/script/jquery-ui-1.10.2.custom.min.js"/>
         <script type="text/javascript" src="resources/script/mingos-uwindow/jWindow.js"/>
         <script type="text/javascript" src="resources/script/jquery.layout-latest.min.js"/>
-        <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/typeahead.js/hogan-2.0.0.js"/>
-        <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/typeahead.js/typeahead-0.9.3.js"/>
-        <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/typeahead-init.js"/>
+        <!--
+            <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/vendor/typeahead.js/hogan-2.0.0.js"/>
+            <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/vendor/typeahead.js/typeahead-0.9.3.js"/>
+            <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/typeahead-init.js"/>
+        -->
+        <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/vendor/select2-3.4.6/select2.js"/>
+        <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/select2-init.js"/>
         <script type="text/javascript" src="resources/script/ziziphus.js"/>
     </body>
 </html>

@@ -1,3 +1,5 @@
+/* line 9, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\000039}}
 html,
 body {
   width: 100%;
@@ -5,9 +7,13 @@ body {
   margin: 0;
   font-size: 100%;
 }
+/* line 15, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\0000315}}
 ul.inline {
   margin: 4px !important;
 }
+/* line 18, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\0000318}}
 ul.inline > li,
 ol.inline > li {
   display: inline-block;
@@ -15,19 +21,27 @@ ol.inline > li {
   padding-right: 0px;
   float: left;
 }
+/* line 24, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\0000324}}
 .xfLabel {
   display: inline-block;
   padding-top: 0;
   vertical-align: baseline;
 }
+/* line 30, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\0000330}}
 .xfOutput .xfValue {
   display: inline-block;
   padding-top: 1px;
 }
+/* line 35, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\0000335}}
 .xfHint {
   display: none !important;
   visibility: hidden !important;
 }
+/* line 40, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\0000340}}
 .bf .sidePanel .editHighlight {
   background-color: steelblue;
 }
@@ -37,30 +51,44 @@ ol.inline > li {
     max-height: 550px;
 }
 */
+/* line 50, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\0000350}}
 .inline .icon {
   color: transparent;
 }
+/* line 53, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\0000353}}
 #workpicture {
-  background: url(/exist/apps/ziziphus/resources/css/../images/icons/work-picture.png) no-repeat center center transparent;
+  background: url(../images/icons/work-picture.png) no-repeat center center transparent;
 }
+/* line 56, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\0000356}}
 #workpictureimage {
-  background: url(/exist/apps/ziziphus/resources/css/../images/icons/work-picture-image.png) no-repeat center center transparent;
+  background: url(../images/icons/work-picture-image.png) no-repeat center center transparent;
 }
+/* line 60, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\0000360}}
 #pictureimage {
-  background: url(/exist/apps/ziziphus/resources/css/../images/icons/picture-imagerec.png) no-repeat center center transparent;
+  background: url(../images/icons/picture-imagerec.png) no-repeat center center transparent;
 }
+/* line 64, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\0000364}}
 #delete-workrecord {
-  background: url(/exist/apps/ziziphus/resources/css/../images/icons/database_delete.png) no-repeat center center transparent;
+  background: url(/exist/apps/ziziphus/resources/images/icons/database_delete.png) no-repeat center center transparent;
   border-bottom-left-radius: 4px;
   border-top-left-radius: 4px;
   border-bottom-right-radius: 4px;
   border-top-right-radius: 4px;
   min-height: 24px;
 }
+/* line 73, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\0000373}}
 #user {
   padding-top: 5px;
   margin-right: 3px;
 }
+/* line 77, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\0000377}}
 .bf {
   font-size: 0.9em;
   /*
@@ -68,13 +96,11 @@ ol.inline > li {
         padding: 1px;
     }
 */
-
   /*
     .dijitTitlePane:hover .toolbar{
       display: inline-block;
     }
     */
-
   /*
     .button{
         border: thin solid #999999 !important;
@@ -88,28 +114,37 @@ ol.inline > li {
         right: 0;
     }
 */
-
 }
+/* line 80, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\0000380}}
 .bf .imagePanel {
   background-size: contain;
   height: 97%;
   text-align: center;
   width: 97%;
 }
+/* line 86, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\0000386}}
 .bf .xfRepeatIndex {
   border-top: 3px solid #cccccc;
   border-bottom: 3px solid #cccccc;
   background: #dddddd !important;
 }
+/* line 92, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\0000392}}
 .bf .dialogControls {
   width: 100%;
   display: block;
   text-align: center;
   border-bottom: thin solid #cccccc;
 }
+/* line 98, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\0000398}}
 .bf .dialogControls .xfControl {
   margin: 0 3px;
 }
+/* line 103, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003103}}
 .bf .columntitle {
   padding: 8px;
   background: #777777;
@@ -117,8 +152,10 @@ ol.inline > li {
   text-align: center;
   font-size: 1.2em;
 }
+/* line 110, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003110}}
 .bf .columntitle .showXML {
-  background: url(/exist/apps/ziziphus/resources/css/../images/icons/xml_document.png) no-repeat center center;
+  background: url(../images/icons/xml_document.png) no-repeat center center;
   border: medium none;
   float: right;
   height: 24px;
@@ -126,24 +163,38 @@ ol.inline > li {
   width: 24px;
   color: transparent !important;
 }
+/* line 125, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003125}}
 .bf select {
   width: auto;
 }
+/* line 128, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003128}}
 .bf .dijitTitlePane {
   position: relative;
 }
+/* line 132, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003132}}
 .bf .dijitTitlePane:hover .t-edit {
   display: inline-block;
 }
+/* line 142, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003142}}
 .bf .editHighlight ~ .dijitTitlePaneContentOuter .t-edit {
   display: inline-block;
 }
+/* line 145, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003145}}
 .bf .editHighlight ~ .dijitTitlePaneContentOuter .t-edit .button-edit button {
   display: none;
 }
+/* line 150, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003150}}
 .bf #sectionDialog {
   position: relative;
 }
+/* line 153, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003153}}
 .bf #sectionDialog .dialogControls {
   top: 0;
   height: 24px;
@@ -153,146 +204,226 @@ ol.inline > li {
   padding: 0;
   left: 0px;
 }
+/* line 163, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003163}}
 .bf .xfInput .xfValue {
   height: 18px;
 }
+/* line 167, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003167}}
 .bf table {
   width: 100%;
   height: 100%;
 }
+/* line 171, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003171}}
 .bf table td {
   vertical-align: top;
 }
+/* line 190, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003190}}
 .bf .icon-remove {
   background-position: -310px 2px;
 }
+/* line 194, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003194}}
 .bf .icon-zoom-in {
   margin-top: 2px;
   background-position: -334px 2px;
 }
+/* line 199, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003199}}
 .bf .icon-zoom-out {
   margin-top: 2px;
   background-position: -358px 2px;
 }
+/* line 204, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003204}}
 .bf .xfSwitch {
   display: inline-block !important;
   width: 100% !important;
 }
+/* line 208, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003208}}
 .bf .xfSwitch .xfSelectedCase {
   display: inherit;
   width: 100%;
 }
+/* line 215, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003215}}
 .bf .vraSection div.display-container {
   clear: both;
 }
+/* line 220, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003220}}
 .bf .vraSection .simple .notes-container {
   display: none;
 }
+/* line 226, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003226}}
 .bf .vraSection .full .notes-container {
   display: block;
   clear: both;
 }
+/* line 230, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003230}}
 .bf .vraSection .full .notes-container .notes {
   font-size: smaller;
 }
+/* line 233, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003233}}
 .bf .vraSection .full .notes-container .notes:before {
   content: 'Notes';
   font-weight: bold;
   display: block;
   text-decoration: underline;
 }
+/* line 242, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003242}}
 .bf .vraSection .vraAttr {
   white-space: nowrap;
   display: inline-block;
 }
+/* line 246, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003246}}
 .bf .vraSection .vraAttrName {
   font-weight: bold;
 }
+/* line 249, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003249}}
 .bf .vraSection .vraAttrName:after {
   content: ": ";
 }
+/* line 255, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003255}}
 .bf .simple .detail {
   display: none;
 }
+/* line 258, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003258}}
 .bf .simple .detail-inline {
   display: none;
 }
+/* line 261, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003261}}
 .bf .simple .detail-cell {
   display: none;
 }
+/* line 264, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003264}}
 .bf .simple .simple-inline:after {
   content: '...';
 }
+/* line 267, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003267}}
 .bf .simple .detail-li {
   display: none;
 }
+/* line 270, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003270}}
 .bf .simple .nodata {
   display: none;
 }
+/* line 276, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003276}}
 .bf .full .detail {
   display: block;
   font-size: 0.9em;
 }
+/* line 280, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003280}}
 .bf .full .detail-inline {
   display: inline;
 }
+/* line 283, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003283}}
 .bf .full .detail-cell {
   display: table-cell;
 }
+/* line 286, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003286}}
 .bf .full .simple-inline:after {
   content: none;
 }
+/* line 289, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003289}}
 .bf .full .detail-li {
   display: list-item;
 }
+/* line 292, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003292}}
 .bf .full .nodata {
   display: inline-block;
   font-size: 0.7em;
   color: #999999;
 }
+/* line 300, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003300}}
 .bf .pref {
   font-weight: bold;
 }
+/* line 304, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003304}}
 .bf .dijitDialogCloseIcon {
   display: none;
 }
+/* line 309, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003309}}
 .tundra .dijitTitlePaneTitle {
   background: #999999;
   color: white;
   padding: 5px 4px;
 }
+/* line 314, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003314}}
 .relatedImage {
   background-size: contain;
   max-height: 100%;
   max-width: 100%;
   vertical-align: middle;
 }
+/* line 320, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003320}}
 .tundra .dijitMenu,
 .tundra .dijitMenuBar {
   background: #454545;
   color: #f5f5f5;
 }
+/* line 324, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003324}}
 #editDialog {
   width: 880px;
 }
+/* line 328, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003328}}
 .ui-layout-content {
   padding: 0 !important;
 }
+/* line 331, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003331}}
 .ui-layout-north,
 .ui-layout-south {
   background: #f5f5f5 !important;
 }
+/* line 335, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003335}}
 .ui-layout-south .xfOutput {
   float: right;
   font-size: 0.7em;
 }
+/* line 339, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003339}}
 .ui-layout-south .xfLabel {
   font-size: 1em;
 }
+/* line 344, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003344}}
 .forceVisible .hidden {
   display: block;
   visibility: inherit;
 }
+/* line 349, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003349}}
 .separator {
   text-align: center;
   font-style: italic;
@@ -303,11 +434,15 @@ ol.inline > li {
   color: white;
   opacity: 0.8;
 }
+/* line 359, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003359}}
 .btn-small {
   font-size: 9px;
 }
+/* line 363, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003363}}
 .historyButton {
-  background: url("/exist/apps/ziziphus/resources/css/../images/icons/history.png") no-repeat scroll 0 0 transparent;
+  background: url("../images/icons/history.png") no-repeat scroll 0 0 transparent;
   border: medium none;
   float: right;
   height: 24px;
@@ -315,6 +450,8 @@ ol.inline > li {
   width: 24px;
   color: transparent !important;
 }
+/* line 373, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003373}}
 .toolbarbutton {
   width: 24px;
   height: 24px;
@@ -322,9 +459,13 @@ ol.inline > li {
   padding: 2px;
   border-radius: 3px;
 }
+/* line 380, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003380}}
 .toolbarbutton:hover {
   opacity: 1.0;
 }
+/* line 384, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003384}}
 .t-edit {
   display: none;
   position: absolute;
@@ -334,20 +475,30 @@ ol.inline > li {
   z-index: 300;
   padding: 2px 0;
 }
+/* line 393, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003393}}
 .t-edit .button-edit button {
-  background: url(/exist/apps/ziziphus/resources/css/../images/icons/write_compose_new.png) no-repeat;
+  background: url(../images/icons/write_compose_new.png) no-repeat;
 }
+/* line 397, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003397}}
 .t-edit .button-zoom-in {
-  background: url("/exist/apps/ziziphus/resources/css/../images/icons/zoom_in.png") no-repeat scroll 0 0 transparent;
+  background: url("../images/icons/zoom_in.png") no-repeat scroll 0 0 transparent;
 }
+/* line 400, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003400}}
 .t-edit .button-zoom-out {
-  background: url("/exist/apps/ziziphus/resources/css/../images/icons/zoom_out.png") no-repeat scroll 0 0 transparent;
+  background: url("../images/icons/zoom_out.png") no-repeat scroll 0 0 transparent;
 }
+/* line 405, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003405}}
 #save-button button {
   width: 24px;
   height: 24px;
-  background: url(/exist/apps/ziziphus/resources/css/../images/icons/database_add.png) no-repeat;
+  background: url(../images/icons/database_add.png) no-repeat;
 }
+/* line 411, /home/zwobit/develop/UNI-HD/ziziphus/resources/css/layout.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/develop\/UNI-HD\/ziziphus\/resources\/css\/layout\.less}line{font-family:\00003411}}
 .subtitle {
   float: left;
   padding: 0 2px;

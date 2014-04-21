@@ -84,17 +84,15 @@ let $username := if(request:get-parameter("username",()))
                  then (
                     config:rewrite-username(request:get-parameter("username",()))
                  )
-                 else(),
-    $password := request:get-parameter("password",())
+                 else(), $password := request:get-parameter("password",())
 let $login := local:login($username, $password)
-
 return
     if (request:get-parameter("logout",()))then
     (
         session:clear(),
         session:invalidate(),
         <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-            <redirect url="index.xql"/>
+            <redirect url="."/>
         </dispatch>
     ) else if ($exist:path eq "") then
         <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
