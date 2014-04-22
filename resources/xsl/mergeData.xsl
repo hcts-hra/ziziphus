@@ -62,7 +62,20 @@
                 <xsl:message>XPath of template:<xsl:value-of select="$templateXPath"/></xsl:message>
                                                                                                   -->
         <!-- find all elements that have the same node name in the import data -->
-        <xsl:variable name="toImport" select="$importContextNode//*[name(.)=name($this)]"/>
+        <xsl:variable name="toImport">
+            <xsl:choose>
+                <xsl:when test="name($this) eq 'vra:date' and $this/@pref">
+                    <xsl:value-of select="$importContextNode//*[name(.)=name($this) and @pref]"/>
+                </xsl:when>
+                <xsl:when test="name($this) eq 'vra:date' and $this/@circa">
+                    <xsl:value-of select="$importContextNode//*[name(.)=name($this) and @circa]"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="$importContextNode//*[name(.)=name($this)]"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+            
         <xsl:choose>
             <xsl:when test="count($toImport)!=0">
                 <!-- we got nodes to import-->
