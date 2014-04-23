@@ -56,6 +56,10 @@
     <target name="xar">
         <delete dir="${target.dir}"/>
         <mkdir dir="${target.dir}"/>
+        <filter token="REDMINE_KEY" value="${issueTracker.key}"/>
+        <copy file="resources/components/issue-tracker.tmp" tofile="resources/components/issue-tracker.html" filtering="true" overwrite="true"/>
+
+
         <copy todir="${target.ziziphus.dir}" file="${basedir}/icon.png"/>
         <copy todir="${target.ziziphus.dir}/modules">
             <fileset dir="${basedir}/modules"/>

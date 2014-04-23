@@ -8,6 +8,9 @@
         <name>ziziphus</name>
         <version>0.31.0</version>
     </app>
+    <issueTracker>
+        <key></key>
+    </issueTracker>
     <transform>
         <classpath pathid="transform.class.path" description="classpath for saxon XPath and XSLT engine">
             <pathelement location="${generator.dir}/lib/saxon-9.2.1.5.jar"/>
