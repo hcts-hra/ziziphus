@@ -4,6 +4,7 @@
     <xsl:variable name="importData" select="/merge:data/merge:importInstance/*"/>
     <xsl:variable name="debug" select="'true'"/>
     <xsl:param name="targetNS" select="'http://www.vraweb.org/vracore4.htm'"/>
+    <xsl:preserve-space elements="text"/>
     <!--
     Transform to merge two data files of same structure but one being possibly incomplete.
 
@@ -26,11 +27,17 @@
         <xsl:if test="not(exists($importData))">
             <xsl:message terminate="yes">No input data given</xsl:message>
         </xsl:if>
-        <xsl:message>Given Root Elem: <xsl:value-of select="name($importData)"/>
-        </xsl:message>
+        
+        
+        
         <xsl:variable name="templateInstance" select="merge:templateInstance/*"/>
-        <xsl:message>VRA Elem: <xsl:value-of select="name($templateInstance)"/>
-        </xsl:message>
+        <xsl:if test="$debug = 'true'">
+            <xsl:message>
+                Given Root Elem: <xsl:value-of select="name($importData)"/>
+                VRA Elem: <xsl:value-of select="name($templateInstance)"/>
+            </xsl:message>
+        </xsl:if>
+        
         <xsl:element name="{name($templateInstance)}" namespace="{$targetNS}">
             <xsl:for-each select="$templateInstance/*">
                 <xsl:apply-templates select=".">
@@ -47,7 +54,8 @@
         <xsl:variable name="this" select="."/>
         <xsl:if test="$debug = 'true'">
             <xsl:message>
-                Looking for:<xsl:value-of select="name()"/> in incoming data</xsl:message>
+                Looking for: <xsl:value-of select="name($this)"/> in incoming data
+            </xsl:message>
         </xsl:if>
 
 
@@ -58,33 +66,39 @@
         Thus keep the markup here but commented.
         -->
         <!--
-                <xsl:variable name="templateXPath"><xsl:call-template name="xpathExpr"/></xsl:variable>
-                <xsl:message>XPath of template:<xsl:value-of select="$templateXPath"/></xsl:message>
-                                                                                                  -->
+<xsl:variable name="templateXPath"><xsl:call-template name="xpathExpr"/></xsl:variable>
+<xsl:message>XPath of template:<xsl:value-of select="$templateXPath"/></xsl:message>
+        -->
         <!-- find all elements that have the same node name in the import data -->
-        <xsl:variable name="toImport">
+        <xsl:variable name="toImportTemp">
             <xsl:choose>
-                <xsl:when test="name($this) eq 'vra:date' and $this/@pref">
-                    <xsl:value-of select="$importContextNode//*[name(.)=name($this) and @pref]"/>
+                <xsl:when test="name($this) eq 'date' and $this/@pref">
+                    <xsl:copy-of select="$importContextNode//*[name(.)=name($this) and @pref]"/>
                 </xsl:when>
-                <xsl:when test="name($this) eq 'vra:date' and $this/@circa">
-                    <xsl:value-of select="$importContextNode//*[name(.)=name($this) and @circa]"/>
+                <xsl:when test="name($this) eq 'date' and $this/@circa">
+                    <xsl:copy-of select="$importContextNode//*[name(.)=name($this) and @circa]"/>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:value-of select="$importContextNode//*[name(.)=name($this)]"/>
+                    <xsl:copy-of select="$importContextNode//*[name(.)=name($this)]"/>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
-            
+
+        <xsl:variable name="toImport" select="$toImportTemp/*"/>
+        <xsl:if test="$debug = 'true'">
+            <xsl:message>count $toImport: <xsl:value-of select="count($toImport)"/></xsl:message>            
+        </xsl:if>
         <xsl:choose>
             <xsl:when test="count($toImport)!=0">
                 <!-- we got nodes to import-->
                 <xsl:variable name="cnt" select="count($toImport)"/>
                 <xsl:for-each select="$toImport">
-                    <xsl:message>
-                        TOIMPORT: <xsl:value-of select="name(.)"/>
-                    </xsl:message>
-                    <!--
+                    <xsl:if test="$debug = 'true'">
+                        <xsl:message>
+                            TOIMPORT: <xsl:value-of select="name(.)"/>
+                        </xsl:message>
+                    </xsl:if>
+                    <!--                                
                     see above. Here the xpath for the imported nodes can be calculated.
                     A comparison of the pathes can make
                     -->
@@ -94,24 +108,25 @@
                                         </xsl:variable>
                                         <xsl:message>importPath:<xsl:value-of select="$importPath"/></xsl:message>
                     -->
-<!--
-                    <xsl:if test=".=text()">
-                        <xsl:element name="{name(.)}" namespace="{$targetNS}">
-                            <xsl:value-of select="text()"/>
-                        </xsl:element>
-                    </xsl:if>
--->
+                    <!--
+                                        <xsl:if test=".=text()">
+                                            <xsl:element name="{name(.)}" namespace="{$targetNS}">
+                                                <xsl:value-of select="text()"/>
+                                            </xsl:element>
+                                        </xsl:if>
+                    -->
                     <xsl:choose>
                         <xsl:when test=".=text()">
+                            <xsl:if test="$debug = 'true'">
+                                <xsl:message>
+                                    found text - copying
+                                </xsl:message>
+                            </xsl:if>
                             <xsl:call-template name="mergeImportNode">
                                 <xsl:with-param name="templateNode" select="$this"/>
                                 <xsl:with-param name="importContextNode" select="."/>
                                 <xsl:with-param name="textValue" select="text()"/>
                             </xsl:call-template>
-                            <xsl:if test="$debug = 'true'">
-                                <xsl:message>found - copying text
-                                </xsl:message>
-                            </xsl:if>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:call-template name="mergeImportNode">
@@ -121,19 +136,20 @@
                             </xsl:call-template>
                         </xsl:otherwise>
                     </xsl:choose>
-<!--
-                    <xsl:call-template name="mergeImportNode">
-                        <xsl:with-param name="templateNode" select="$this"/>
-                        <xsl:with-param name="importedNode" select="."/>
-                        <xsl:with-param name="textValue"/>
-                    </xsl:call-template>
--->
+                    <!--
+                                        <xsl:call-template name="mergeImportNode">
+                                            <xsl:with-param name="templateNode" select="$this"/>
+                                            <xsl:with-param name="importedNode" select="."/>
+                                            <xsl:with-param name="textValue"/>
+                                        </xsl:call-template>
+                    -->
                 </xsl:for-each>
             </xsl:when>
             <!-- using nodes from template-->
             <xsl:otherwise>
                 <xsl:if test="$debug = 'true'">
-                    <xsl:message>adding template nodes that do not exist in data
+                    <xsl:message>
+                        adding template nodes that do not exist in data
                     </xsl:message>
                 </xsl:if>
                 <!--
@@ -152,14 +168,15 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
+    
     <xsl:template name="mergeImportNode">
         <xsl:param name="templateNode"/>
         <xsl:param name="importContextNode"/>
         <xsl:param name="textValue"/>
 
-        <xsl:message>TEXTVALUE: <xsl:value-of select="$textValue"/></xsl:message>
         <xsl:if test="$debug = 'true'">
             <xsl:message>
+                TEXTVALUE: <xsl:value-of select="$textValue"/>
                 MERGEIMPORTNODE: copying tempLateNode: <xsl:value-of select="name($templateNode)"/>
             </xsl:message>
         </xsl:if>
@@ -167,7 +184,9 @@
         <!--todo: namespace-->
         <xsl:element name="{name($templateNode)}" namespace="{$targetNS}">
             <xsl:if test="$debug = 'true'">
-                <xsl:message>copy attributes from template and imported</xsl:message>
+                <xsl:message>
+                    copy attributes from template and imported
+                </xsl:message>
             </xsl:if>
             <xsl:copy-of select="$templateNode/@*"/>
             <!-- by copying the imported attributes after the template attributes the latter
@@ -175,7 +194,16 @@
             <xsl:copy-of select="$importContextNode/@*"/>
 
             <!-- if there's text value put it out.-->
-            <xsl:value-of select="normalize-space(string-join($textValue,''))"/>
+            <xsl:choose>
+                <xsl:when test="name($templateNode) = 'text'">
+                    <xsl:value-of select="$importContextNode"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="normalize-space(string-join($textValue,''))"/>
+                </xsl:otherwise>
+            </xsl:choose>
+            
+            
             <!--
             <xsl:if test="$debug = 'true'">
                 <xsl:message>merging child elements of <xsl:value-of select="name($templateNode)"/>
@@ -183,24 +211,29 @@
             </xsl:if>
             -->
             <xsl:for-each select="$templateNode/*">
-                <xsl:message>THIS: <xsl:value-of select="name(.)"/></xsl:message>
-                <xsl:message>IMPORTEDNODE: <xsl:value-of select="name($importContextNode[1])"/></xsl:message>
+                <xsl:if test="$debug = 'true'">
+                    <xsl:message>
+                        THIS: <xsl:value-of select="name(.)"/>
+                        IMPORTEDNODE: <xsl:value-of select="name($importContextNode[1])"/>
+                    </xsl:message>
+                </xsl:if>
                 <xsl:variable name="this" select="."/>
                 <xsl:variable name="currentImport" select="$importContextNode/*[name(.)=name($this)]"/>
                 <xsl:choose>
                     <xsl:when test="$currentImport">
                         <xsl:for-each select="$currentImport">
                             <xsl:if test="$debug = 'true'">
-                            <xsl:message>processing node: <xsl:value-of select="name(.)"/>
-                            </xsl:message>
-                            <xsl:message>merging text:<xsl:value-of select="./text()"/>
-                            </xsl:message>
-                        </xsl:if>
-                        <xsl:call-template name="mergeImportNode">
-                            <xsl:with-param name="templateNode" select="$this"/>
-                            <xsl:with-param name="importContextNode" select="."/>
-                            <xsl:with-param name="textValue" select="./text()"/>
-                        </xsl:call-template>
+                                <xsl:message>
+                                    processing node: <xsl:value-of select="name(.)"/>
+                                    merging text:<xsl:value-of select="./text()"/>
+                                </xsl:message>
+                            </xsl:if>
+                            
+                            <xsl:call-template name="mergeImportNode">
+                                <xsl:with-param name="templateNode" select="$this"/>
+                                <xsl:with-param name="importContextNode" select="."/>
+                                <xsl:with-param name="textValue" select="./text()"/>
+                            </xsl:call-template>
                         </xsl:for-each>
                     </xsl:when>
                     <xsl:otherwise>
