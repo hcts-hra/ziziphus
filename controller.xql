@@ -1,4 +1,4 @@
-xquery version "1.0";
+xquery version "3.0";
 
 import module namespace session ="http://exist-db.org/xquery/session";
 
@@ -110,6 +110,12 @@ return
         <ignore xmlns="http://exist.sourceforge.net/NS/exist">
             <cache-control cache="yes"/>
         </ignore>
+    else if (contains($exist:path, "/imageService/")) then
+        let $imagerecord := request:get-parameter('imagerecord', 'i_f55c3201-0454-5045-93b4-767e67536fc8')
+        return
+        <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+            <redirect url="{$config:image-service-url || '/' || $imagerecord|| '?width=32&amp;height=32'}"/>
+        </dispatch>
     else if ($login) then (
         if ($exist:path eq "/") then
         <dispatch xmlns="http://exist.sourceforge.net/NS/exist">

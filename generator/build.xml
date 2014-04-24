@@ -350,6 +350,21 @@
 
         <copy file="${target.dir}/${subformName}_finetuned.xhtml" tofile="${form.dir}/${subformName}.xhtml" overwrite="true"/>
     </target>
+    
+     <target name="finetune-view">
+        <echo>finetune-view ${subformName}</echo>
+        
+        <xslt style="${xsl.dir}/view/finetune-view.xsl"
+              in="${basedir}/../view/${subformName}.xsl"
+              out="${target.dir}/view/${subformName}_finetuned.xsl"
+              force="true">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath refid="transform.class.path"/>
+            <param name="debug" expression="${debug}"/>
+        </xslt>
+
+        <copy file="${target.dir}/view/${subformName}_finetuned.xsl" tofile="${basedir}/../view/${subformName}.xsl" overwrite="true" failonerror="true"/>
+    </target>
 
     <!-- ########################################################################################
     View generation targets
@@ -393,6 +408,9 @@
             <param name="subformName" value="MeasurementsSet"/>
         </antcall>
         <antcall target="generate-section-view-transform">
+            <param name="subformName" value="RelationSet"/>
+        </antcall>
+        <antcall target="finetune-view">
             <param name="subformName" value="RelationSet"/>
         </antcall>
         <antcall target="generate-section-view-transform">
@@ -613,5 +631,14 @@
             effect in the generation process.
         </echo>
 
+    </target>
+    
+    <target name="test">
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="RelationSet"/>
+        </antcall>
+        <antcall target="finetune-view">
+            <param name="subformName" value="RelationSet"/>
+        </antcall>
     </target>
 </project>
