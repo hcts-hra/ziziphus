@@ -705,7 +705,7 @@
 -->
                 <xf:trigger class="-btn -btn-trashcan">
                     <xf:label/>
-                    <xf:hint>delete this entry</xf:hint>
+                    <xf:hint>Delete this entry</xf:hint>
                     <script type="text/javascript">
                         removeEntry();
                     </script>
@@ -806,7 +806,7 @@
                         </xf:action>
                     </xf:trigger>
                     <xf:trigger>
-                        <xf:label>delete</xf:label>
+                        <xf:label>Delete</xf:label>
                         <xf:action>
                             <xf:delete nodeset="instance('i-{$vraSectionNode}')/{$parent}[index('r-vra{$vraArtifact}')]/{$vraNodeName}" at="index('r-{$repeat-id}')"/>
                         </xf:action>
@@ -914,7 +914,7 @@
                         </xf:action>
                     </xf:trigger>
                     <xf:trigger>
-                        <xf:label>delete</xf:label>
+                        <xf:label>Delete</xf:label>
                         <xf:action>
                             <xf:delete nodeset="instance('i-{$vraSectionNode}')/vra:date[index('r-vra{$vraArtifact}')]/{$path}/{$vraNodeName}" at="index('r-{$repeat-id}')"/>
                         </xf:action>

@@ -1,46 +1,28 @@
 <merge:data xmlns:merge="http://www.betterform.de/merge">
     <merge:templateInstance>
-        <dateSet xmlns="http://www.vraweb.org/vracore4.htm">
+        <agentSet xmlns="http://www.vraweb.org/vracore4.htm">
             <display></display>
             <notes></notes>
-            <date pref="false" type="">
-                <earliestDate>
-                    <date circa="false" type=""></date>
-                    <alternativeNotation type=""></alternativeNotation>
-                </earliestDate>
-                <latestDate>
-                    <date circa="false" type=""></date>
-                    <alternativeNotation type=""></alternativeNotation>
-                </latestDate>
-            </date>
-        </dateSet>
+            <agent pref="false">
+                <attribution></attribution>
+                <culture></culture>
+                <dates type="">
+                    <earliestDate circa="false" type=""></earliestDate>
+                    <latestDate circa="false" type=""></latestDate>
+                </dates>
+                <name type=""></name>
+                <role type=""></role>
+            </agent>
+        </agentSet>
     </merge:templateInstance>
 
     <merge:importInstance>
-        <dateSet>
-            <display/>
-            <notes/>
-            <date pref="false" type="">
-                <earliestDate>
-                    <date circa="false" type="">1998</date>
-                    <alternativeNotation type="">Neunzehnachtundneunzig</alternativeNotation>
-                </earliestDate>
-                <latestDate>
-                    <date circa="false" type="">1998</date>
-                    <alternativeNotation type="">Neunzehnachtundneunzig</alternativeNotation>
-                </latestDate>
-            </date>
-            <date pref="false" type="">
-                <earliestDate>
-                    <date circa="false" type="">1999</date>
-                    <alternativeNotation type="">Neunzehnneunundneunzig</alternativeNotation>
-                </earliestDate>
-                <latestDate>
-                    <date circa="false" type="">1999</date>
-                    <alternativeNotation type="">Neunzehnneunundneunzig</alternativeNotation>
-                </latestDate>
-            </date>
-        </dateSet>
+        <agentSet>
+            <agent>
+                <name vocab="local" type="personal" refid="uuid-2d9170ef-2e41-537c-8a78-28b7be563ae7">Paul, Priya</name>
+                <role vocab="marcrelator" type="code">col</role>
+            </agent>
+        </agentSet>
     </merge:importInstance>
 </merge:data>
 
