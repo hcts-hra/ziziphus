@@ -203,7 +203,7 @@
                         </xf:input>
                      </td>
                      <td class="contentCol">
-                        <table class="earliestDate">
+                        <table class="dateTable">
                            <tbody>
                               <tr>
                                  <td colspan="5">
@@ -326,42 +326,44 @@
                                     </xf:group>
                                  </td>
                               </tr>
-                              <tr id="r-earliestDate"
-                                  xf:repeat-nodeset="vra:earliestDate/vra:alternativeNotation">
-                                 <td>
-                                    <xf:select1 id="b-d2e388" class=" " ref="@type">
-                                       <xf:label>Type</xf:label>
-                                       <xf:hint></xf:hint>
-                                       <xf:item>
-                                          <xf:label>Before</xf:label>
-                                          <xf:value>before</xf:value>
-                                       </xf:item>
-                                       <xf:item>
-                                          <xf:label>After</xf:label>
-                                          <xf:value>after</xf:value>
-                                       </xf:item>
-                                       <xf:item>
-                                          <xf:label>About</xf:label>
-                                          <xf:value>about</xf:value>
-                                       </xf:item>
-                                       <xf:item>
-                                          <xf:label>Probably</xf:label>
-                                          <xf:value>probably</xf:value>
-                                       </xf:item>
-                                    </xf:select1>
-                                    <xf:input id="b-d2e384" ref=".">
-                                       <xf:label>AlternativeNotation</xf:label>
-                                       <xf:hint>AlternativeNotation</xf:hint>
-                                    </xf:input>
-                                 </td>
-                                 <td>
-                                    <xf:trigger>
-                                       <xf:label>Delete</xf:label>
-                                       <xf:action>
-                                          <xf:delete nodeset="instance('i-dateSet')/vra:date[index('r-vraDate')]/vra:earliestDate/vra:alternativeNotation"
-                                                     at="index('r-earliestDate')"></xf:delete>
-                                       </xf:action>
-                                    </xf:trigger>
+                              <tr class="altNotation">
+                                 <td colspan="5">
+                                    <xf:repeat id="r-earliestDate"
+                                               xf:repeat-nodeset="vra:earliestDate/vra:alternativeNotation">
+                                       <div>
+                                          <xf:select1 id="b-d2e388" class=" " ref="@type">
+                                             <xf:label>Type</xf:label>
+                                             <xf:hint></xf:hint>
+                                             <xf:item>
+                                                <xf:label>Before</xf:label>
+                                                <xf:value>before</xf:value>
+                                             </xf:item>
+                                             <xf:item>
+                                                <xf:label>After</xf:label>
+                                                <xf:value>after</xf:value>
+                                             </xf:item>
+                                             <xf:item>
+                                                <xf:label>About</xf:label>
+                                                <xf:value>about</xf:value>
+                                             </xf:item>
+                                             <xf:item>
+                                                <xf:label>Probably</xf:label>
+                                                <xf:value>probably</xf:value>
+                                             </xf:item>
+                                          </xf:select1>
+                                          <xf:input id="b-d2e384" ref=".">
+                                             <xf:label>AlternativeNotation</xf:label>
+                                             <xf:hint>AlternativeNotation</xf:hint>
+                                          </xf:input>
+                                          <xf:trigger>
+                                             <xf:label>Delete</xf:label>
+                                             <xf:action>
+                                                <xf:delete nodeset="instance('i-dateSet')/vra:date[index('r-vraDate')]/vra:earliestDate/vra:alternativeNotation"
+                                                           at="index('r-earliestDate')"></xf:delete>
+                                             </xf:action>
+                                          </xf:trigger>
+                                       </div>
+                                    </xf:repeat>
                                  </td>
                               </tr>
                               <tr>
@@ -415,41 +417,44 @@
                                     </xf:group>
                                  </td>
                               </tr>
-                              <tr id="r-latestDate" xf:repeat-nodeset="vra:latestDate/vra:alternativeNotation">
-                                 <td>
-                                    <xf:select1 id="b-d2e436" class=" " ref="@type">
-                                       <xf:label>Type</xf:label>
-                                       <xf:hint></xf:hint>
-                                       <xf:item>
-                                          <xf:label>Before</xf:label>
-                                          <xf:value>before</xf:value>
-                                       </xf:item>
-                                       <xf:item>
-                                          <xf:label>After</xf:label>
-                                          <xf:value>after</xf:value>
-                                       </xf:item>
-                                       <xf:item>
-                                          <xf:label>About</xf:label>
-                                          <xf:value>about</xf:value>
-                                       </xf:item>
-                                       <xf:item>
-                                          <xf:label>Probably</xf:label>
-                                          <xf:value>probably</xf:value>
-                                       </xf:item>
-                                    </xf:select1>
-                                    <xf:input id="b-d2e432" ref=".">
-                                       <xf:label>AlternativeNotation</xf:label>
-                                       <xf:hint>AlternativeNotation</xf:hint>
-                                    </xf:input>
-                                 </td>
-                                 <td>
-                                    <xf:trigger>
-                                       <xf:label>Delete</xf:label>
-                                       <xf:action>
-                                          <xf:delete nodeset="instance('i-dateSet')/vra:date[index('r-vraDate')]/vra:latestDate/vra:alternativeNotation"
-                                                     at="index('r-latestDate')"></xf:delete>
-                                       </xf:action>
-                                    </xf:trigger>
+                              <tr class="altNotation">
+                                 <td colspan="5">
+                                    <xf:repeat id="r-latestDate" xf:repeat-nodeset="vra:latestDate/vra:alternativeNotation">
+                                       <div>
+                                          <xf:label></xf:label>
+                                          <xf:select1 id="b-d2e436" class=" " ref="@type">
+                                             <xf:label>Type</xf:label>
+                                             <xf:hint></xf:hint>
+                                             <xf:item>
+                                                <xf:label>Before</xf:label>
+                                                <xf:value>before</xf:value>
+                                             </xf:item>
+                                             <xf:item>
+                                                <xf:label>After</xf:label>
+                                                <xf:value>after</xf:value>
+                                             </xf:item>
+                                             <xf:item>
+                                                <xf:label>About</xf:label>
+                                                <xf:value>about</xf:value>
+                                             </xf:item>
+                                             <xf:item>
+                                                <xf:label>Probably</xf:label>
+                                                <xf:value>probably</xf:value>
+                                             </xf:item>
+                                          </xf:select1>
+                                          <xf:input id="b-d2e432" ref=".">
+                                             <xf:label>AlternativeNotation</xf:label>
+                                             <xf:hint>AlternativeNotation</xf:hint>
+                                          </xf:input>
+                                          <xf:trigger>
+                                             <xf:label>Delete</xf:label>
+                                             <xf:action>
+                                                <xf:delete nodeset="instance('i-dateSet')/vra:date[index('r-vraDate')]/vra:latestDate/vra:alternativeNotation"
+                                                           at="index('r-latestDate')"></xf:delete>
+                                             </xf:action>
+                                          </xf:trigger>
+                                       </div>
+                                    </xf:repeat>
                                  </td>
                               </tr>
                            </tbody>

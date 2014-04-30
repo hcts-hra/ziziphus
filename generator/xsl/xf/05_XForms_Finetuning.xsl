@@ -80,7 +80,7 @@
     <xsl:template match="xhtml:tbody[@xf:repeat-nodeset eq 'vra:agent']//xf:group[xf:select1[@ref = 'vra:dates/@type']]">
        
         <xf:group appearance="minimal">
-            <table  class="earliestDate">
+            <table  class="dateTable">
                 <tbody>
                     <tr>
                         <td colspan="3">
@@ -380,7 +380,7 @@
         <tr>
             <xsl:copy-of select="xhtml:td[@class = 'prefCol']"/>
             <td class="contentCol">
-                <table  class="earliestDate">
+                <table class="dateTable">
                     <tbody>
                         <tr>
                             <td colspan="5">
@@ -410,22 +410,26 @@
                                 <xsl:copy-of select="$earliestDate/xf:group[@class = 'vraAttributes']"/>
                             </td>
                         </tr>
-                        <tr >
-                           <!-- REPEAT alt -->
-                            <xsl:attribute name="id">
-                                <xsl:value-of select="$earliestDate/xf:repeat/@id"/>
-                            </xsl:attribute>
-                            
-                            <xsl:attribute name="xf:repeat-nodeset">
-                                <xsl:value-of select="$earliestDate/xf:repeat/@ref"/>
-                            </xsl:attribute>
-                            <td>
-                               <xsl:copy-of select="$earliestDate/xf:repeat/xf:select1"/> 
-                               <xsl:copy-of select="$earliestDate/xf:repeat/xf:input"/> 
-                            </td>
-                            <td>
-                                <!-- Button -->
-                                <xsl:copy-of select="$earliestDate/xf:group/xf:trigger[xf:label = 'Delete']"/>
+                        <tr class="altNotation">
+                            <td colspan="5">
+                                <!-- REPEAT alt -->
+                                <xf:repeat>
+                                    <xsl:attribute name="id">
+                                        <xsl:value-of select="$earliestDate/xf:repeat/@id"/>
+                                    </xsl:attribute>
+
+                                    <xsl:attribute name="xf:repeat-nodeset">
+                                        <xsl:value-of select="$earliestDate/xf:repeat/@ref"/>
+                                    </xsl:attribute>
+
+                                    <div>
+                                        <xsl:copy-of select="$earliestDate/xf:repeat/xf:select1"/> 
+                                        <xsl:copy-of select="$earliestDate/xf:repeat/xf:input"/> 
+
+                                        <!-- Button -->
+                                        <xsl:copy-of select="$earliestDate/xf:group/xf:trigger[xf:label = 'Delete']"/>
+                                    </div>
+                                </xf:repeat>
                             </td>
                         </tr>
                         <tr>
@@ -451,22 +455,27 @@
                                 <xsl:copy-of select="$latestDate/xf:group[@class = 'vraAttributes']"/>
                             </td>
                         </tr>
-                        <tr >
-                           <!-- REPEAT alt -->
-                            <xsl:attribute name="id">
-                                <xsl:value-of select="$latestDate/xf:repeat/@id"/>
-                            </xsl:attribute>
-                            
-                            <xsl:attribute name="xf:repeat-nodeset">
-                                <xsl:value-of select="$latestDate/xf:repeat/@ref"/>
-                            </xsl:attribute>
-                            <td>
-                               <xsl:copy-of select="$latestDate/xf:repeat/xf:select1"/> 
-                               <xsl:copy-of select="$latestDate/xf:repeat/xf:input"/> 
-                            </td>
-                            <td>
-                                <!-- Button -->
-                                <xsl:copy-of select="$latestDate/xf:group/xf:trigger[xf:label = 'Delete']"/>
+                        <tr class="altNotation">
+                            <td colspan="5">
+                                <!-- REPEAT alt -->
+                                <xf:repeat>
+                                    <xsl:attribute name="id">
+                                        <xsl:value-of select="$latestDate/xf:repeat/@id"/>
+                                    </xsl:attribute>
+
+                                    <xsl:attribute name="xf:repeat-nodeset">
+                                        <xsl:value-of select="$latestDate/xf:repeat/@ref"/>
+                                    </xsl:attribute>
+                                    
+                                    <div>
+                                        <xf:label/>
+                                        <xsl:copy-of select="$latestDate/xf:repeat/xf:select1"/> 
+                                        <xsl:copy-of select="$latestDate/xf:repeat/xf:input"/> 
+
+                                        <!-- Button -->
+                                        <xsl:copy-of select="$latestDate/xf:group/xf:trigger[xf:label = 'Delete']"/>
+                                    </div>
+                                </xf:repeat>
                             </td>
                         </tr>
                     </tbody>
@@ -508,8 +517,12 @@
         
         <xsl:copy>
             <xsl:copy-of select="@*"/>
-            <xf:label><xsl:value-of select="$label"/></xf:label>
-            <xf:hint><xsl:value-of select="$label"/></xf:hint>
+            <xf:label>
+                <xsl:value-of select="$label"/>
+            </xf:label>
+            <xf:hint>
+                <xsl:value-of select="$label"/>
+            </xf:hint>
         </xsl:copy>
     </xsl:template>    
 </xsl:stylesheet>

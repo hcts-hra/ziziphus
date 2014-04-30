@@ -173,15 +173,6 @@ table tr td .xfGroup:last-child {
 #notes textarea {
   width: 100%;
 }
-.bf .globalAttrs .xfContainer {
-  display: inline-block;
-  min-height: 12px;
-  position: relative;
-  width: 100%;
-  background: transparent;
-  border: none;
-  padding: 3px;
-}
 .globalAttrs .vraAttributes .xfTrigger {
   border: none;
   padding: 0;
@@ -198,9 +189,6 @@ table tr td .xfGroup:last-child {
 }
 .xfTextarea .widgetContainer textarea {
   width: 95%;
-}
-.bf form .hiddenControl {
-  display: none;
 }
 .toolbar {
   position: absolute;
@@ -233,11 +221,44 @@ table tr td .xfGroup:last-child {
   background: url(../images/icons/keyboard_up.png) no-repeat;
   color: transparent;
 }
+.bf .globalAttrs .xfContainer {
+  display: inline-block;
+  min-height: 12px;
+  position: relative;
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 3px;
+}
+.bf form .hiddenControl {
+  display: none;
+}
 .bf .dijitTitlePane .t-edit .xfReadOnly {
   opacity: 0.5 !important;
 }
 .bf .dijitTitlePane:hover .t-edit .xfReadOnly .toolbarbutton:hover {
   opacity: 0.5 !important;
+}
+.bf .dateTable label,
+.bf .dateTable .xfLabel {
+  float: left;
+  font-size: 1.1em;
+  margin: 3px 3px 0 2px;
+  padding: 0;
+  display: block !important;
+}
+.bf .dateTable tr td {
+  border: thin none;
+}
+.bf .dateTable tr td > .xfGroup {
+  border-top: thin none;
+}
+.bf .dateTable .altNotation .xfRepeatItem {
+  height: 20px;
+}
+.bf .dateTable .altNotation .xfRepeatItem .xfControl {
+  clear: none;
+  float: left;
 }
 .tundra .dijitTitlePaneContentInner {
   padding: 0;
