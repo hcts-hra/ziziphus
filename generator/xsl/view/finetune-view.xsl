@@ -38,9 +38,42 @@
     </xsl:template>
     
     
-    <xsl:template match="//xsl:template[@match = 'vra:dateSet']//html:table[contains(@class, 'vraSetView')]">
-        <xsl:message>HELLO WORLD!!!!!!!!!!</xsl:message>
+    <xsl:template match="//xsl:template[@match = 'vra:agentSet']//html:table[contains(@class, 'vraSetView')]//html:tr">
         <xsl:copy>
+            <xsl:copy-of select="@*"/>
+            <xsl:copy-of select="html:td[1]"/>
+            <xsl:copy-of select="html:td[2]"/>
+            <xsl:copy-of select="html:td[3]"/>
+            <xsl:copy-of select="html:td[4]"/>
+            <td>
+                <table class="table viewADateTable">
+                    <tr>
+                        <td>
+                            <xsl:copy-of select="html:td[5]/xsl:choose[4]"/>
+                        </td>
+                        <td>
+                            <xsl:copy-of select="html:td[5]/xsl:choose[2]"/>
+                        </td>
+                    </tr>
+                </table>
+                <table class="table viewADateTable">
+                    <tr>
+                        <td>
+                            <xsl:copy-of select="html:td[5]/xsl:choose[7]"/>
+                        </td>
+                        <td>
+                            <xsl:copy-of select="html:td[5]/xsl:choose[5]"/>
+                        </td>
+                    </tr>
+                </table>
+                
+            </td>
+        </xsl:copy>
+    </xsl:template>
+    
+    <xsl:template match="//xsl:template[@match = 'vra:dateSet']//html:table[contains(@class, 'vraSetView')]">
+        <xsl:copy>
+            <xsl:copy-of select="@*"/>
             <tbody>
                 <xsl:copy-of select="html:tbody/@*"/>
                 <tr>

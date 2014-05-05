@@ -8,7 +8,7 @@
    <xsl:template match="vra:dateSet">
       <xsl:param name="vraTableId"></xsl:param>
       <div class="simple" id="{$vraTableId}">
-         <table>
+         <table class="vraSetView table table-striped">
             <tbody xmlns="">
                <tr>
                   <td>Type of Date</td>

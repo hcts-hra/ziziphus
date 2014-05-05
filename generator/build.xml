@@ -380,6 +380,9 @@
         <antcall target="finetune-subform">
            <param name="subformName" value="AgentSet"/>
         </antcall>
+         <antcall target="finetune-view">
+            <param name="subformName" value="AgentSet"/>
+        </antcall>
         <antcall target="generate-section-view-transform">
             <param name="subformName" value="CulturalContextSet"/>
         </antcall>

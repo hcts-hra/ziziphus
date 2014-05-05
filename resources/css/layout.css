@@ -153,10 +153,24 @@ ol.inline > li {
 .bf .xfInput .xfValue {
   height: 18px;
 }
+.bf .viewADateTable {
+  height: auto;
+  margin-bottom: 0;
+}
+.bf .viewADateTable td {
+  border: medium none;
+  width: 50%;
+}
 .bf .vraSetInnerRepeatView,
 .bf .viewDateTable {
   height: auto;
   margin-bottom: 0;
+}
+.bf .vraSetInnerRepeatView td,
+.bf .viewDateTable td {
+  border: medium none;
+  width: 50%;
+  background-color: #FFFFFF !important;
 }
 .bf table {
   width: 100%;
