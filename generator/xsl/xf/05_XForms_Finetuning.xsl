@@ -23,6 +23,16 @@
         </xsl:copy>
     </xsl:template>
     
+
+    <!-- circa (dates) -->
+    <xsl:template match="xf:bind[@nodeset eq '@circa']">
+        <xsl:variable name="quot">"</xsl:variable>
+        <xsl:copy>
+            <xsl:attribute name="readonly" select="'true()'"/>
+            <xsl:attribute name="calculate" select="concat( 'if(normalize-space(../@type) eq ', $quot, $quot, ') then(false()) else(true())')"/>
+            <xsl:copy-of select="@*"/>
+        </xsl:copy>
+    </xsl:template>
         
     <!-- 
         ########## AgentSet ##########
@@ -31,7 +41,6 @@
     <!-- vocab + type -->
 
     <!-- Autocomplete -->
-    
     <xsl:template match="xhtml:tbody[@xf:repeat-nodeset eq 'vra:agent']//xf:action[@ev:event = 'autocomplete-callback']">
         <xsl:copy>
             <xsl:copy-of select ="@*"/>

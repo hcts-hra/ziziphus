@@ -81,7 +81,10 @@
                      <xf:bind nodeset="@type" type="vra:dateTypeType"></xf:bind>
                      <xf:bind nodeset="vra:earliestDate">
                         <xf:bind nodeset="vra:date">
-                           <xf:bind nodeset="@circa" type="xsd:boolean"></xf:bind>
+                           <xf:bind readonly="true()"
+                                    calculate="if(normalize-space(../@type) eq &#34;&#34;) then(false()) else(true())"
+                                    nodeset="@circa"
+                                    type="xsd:boolean"></xf:bind>
                            <xf:bind nodeset="@type" type="vra:uncertainDateType"></xf:bind>
                         </xf:bind>
                         <xf:bind nodeset="vra:alternativeNotation">
@@ -90,7 +93,10 @@
                      </xf:bind>
                      <xf:bind nodeset="vra:latestDate">
                         <xf:bind nodeset="vra:date">
-                           <xf:bind nodeset="@circa" type="xsd:boolean"></xf:bind>
+                           <xf:bind readonly="true()"
+                                    calculate="if(normalize-space(../@type) eq &#34;&#34;) then(false()) else(true())"
+                                    nodeset="@circa"
+                                    type="xsd:boolean"></xf:bind>
                            <xf:bind nodeset="@type" type="vra:uncertainDateType"></xf:bind>
                         </xf:bind>
                         <xf:bind nodeset="vra:alternativeNotation">
