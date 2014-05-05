@@ -153,6 +153,11 @@ ol.inline > li {
 .bf .xfInput .xfValue {
   height: 18px;
 }
+.bf .vraSetInnerRepeatView,
+.bf .viewDateTable {
+  height: auto;
+  margin-bottom: 0;
+}
 .bf table {
   width: 100%;
   height: 100%;

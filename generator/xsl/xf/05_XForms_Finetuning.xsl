@@ -403,7 +403,7 @@
                             </td>
                             <td>
                                 <!-- Button -->
-                                <xsl:copy-of select="$earliestDate/xf:group/xf:trigger[xf:label = 'Add']"/>
+                                <xsl:apply-templates mode="fixDateTriggerlabel" select="$earliestDate/xf:group/xf:trigger[xf:label = 'Add']"/>
                             </td>
                             <td>
                                 <!-- Attributes -->
@@ -427,7 +427,7 @@
                                         <xsl:copy-of select="$earliestDate/xf:repeat/xf:input"/> 
 
                                         <!-- Button -->
-                                        <xsl:copy-of select="$earliestDate/xf:group/xf:trigger[xf:label = 'Delete']"/>
+                                        <xsl:apply-templates mode="fixDateTriggerlabel" select="$earliestDate/xf:group/xf:trigger[xf:label = 'Delete']"/>
                                     </div>
                                 </xf:repeat>
                             </td>
@@ -448,7 +448,8 @@
                             </td>
                             <td>
                                 <!-- Button -->
-                                <xsl:copy-of select="$latestDate/xf:group/xf:trigger[xf:label = 'Add']"/>
+                                <!-- TODO: Rename button -->
+                                <xsl:apply-templates mode="fixDateTriggerlabel" select="$latestDate/xf:group/xf:trigger[xf:label = 'Add']"/>
                             </td>
                             <td>
                                 <!-- Attributes -->
@@ -473,7 +474,7 @@
                                         <xsl:copy-of select="$latestDate/xf:repeat/xf:input"/> 
 
                                         <!-- Button -->
-                                        <xsl:copy-of select="$latestDate/xf:group/xf:trigger[xf:label = 'Delete']"/>
+                                        <xsl:apply-templates mode="fixDateTriggerlabel" select="$latestDate/xf:group/xf:trigger[xf:label = 'Delete']"/>
                                     </div>
                                 </xf:repeat>
                             </td>
@@ -525,4 +526,26 @@
             </xf:hint>
         </xsl:copy>
     </xsl:template>    
+    
+    
+    <xsl:template match="xf:trigger" mode="fixDateTriggerlabel">
+        <xsl:variable name="label">
+            <xsl:choose>
+                <xsl:when test="contains(./xf:label, 'Add')">Add Alternative Notation</xsl:when>
+                <xsl:when test="contains(./xf:label, 'Delete')">Delete Alternative Notation</xsl:when>
+                <xsl:otherwise>Unknown Action</xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        
+        <xsl:copy>
+            <xsl:copy-of select="@*"/>
+            <xf:label>
+                <xsl:value-of select="$label"/>
+            </xf:label>
+            <xf:hint>
+                <xsl:value-of select="$label"/>
+            </xf:hint>
+            <xsl:copy-of select="xf:action"/> 
+        </xsl:copy>
+    </xsl:template>
 </xsl:stylesheet>

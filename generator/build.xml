@@ -389,6 +389,9 @@
         <antcall target="finetune-subform">
             <param name="subformName" value="DateSet"/>
         </antcall>
+        <antcall target="finetune-view">
+            <param name="subformName" value="DateSet"/>
+        </antcall>
         <antcall target="generate-section-view-transform">
             <param name="subformName" value="DescriptionSet"/>
         </antcall>
@@ -449,7 +452,7 @@
     </target>
 
     <target name="generate-section-view-transform" description="generates a XSLT transform for a single VRA section">
-        <echo>generate-subform ${subformName}</echo>
+        <echo>generate-view ${subformName}</echo>
         <mkdir dir="${target.dir}/views"/>
         <xslt style="${basedir}/xsl/view/createView.xsl"
               in="${basedir}/../forms/${subformName}.xhtml"

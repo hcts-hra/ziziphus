@@ -312,7 +312,8 @@
                                  </td>
                                  <td>
                                     <xf:trigger>
-                                       <xf:label>Add</xf:label>
+                                       <xf:label>Add Alternative Notation</xf:label>
+                                       <xf:hint>Add Alternative Notation</xf:hint>
                                        <xf:action>
                                           <xf:insert context="instance('i-dateSet')/vra:date[index('r-vraDate')]/vra:earliestDate"
                                                      nodeset="vra:alternativeNotation"
@@ -356,7 +357,8 @@
                                              <xf:hint>AlternativeNotation</xf:hint>
                                           </xf:input>
                                           <xf:trigger>
-                                             <xf:label>Delete</xf:label>
+                                             <xf:label>Delete Alternative Notation</xf:label>
+                                             <xf:hint>Delete Alternative Notation</xf:hint>
                                              <xf:action>
                                                 <xf:delete nodeset="instance('i-dateSet')/vra:date[index('r-vraDate')]/vra:earliestDate/vra:alternativeNotation"
                                                            at="index('r-earliestDate')"></xf:delete>
@@ -403,7 +405,8 @@
                                  </td>
                                  <td>
                                     <xf:trigger>
-                                       <xf:label>Add</xf:label>
+                                       <xf:label>Add Alternative Notation</xf:label>
+                                       <xf:hint>Add Alternative Notation</xf:hint>
                                        <xf:action>
                                           <xf:insert context="instance('i-dateSet')/vra:date[index('r-vraDate')]/vra:latestDate"
                                                      nodeset="vra:alternativeNotation"
@@ -447,7 +450,8 @@
                                              <xf:hint>AlternativeNotation</xf:hint>
                                           </xf:input>
                                           <xf:trigger>
-                                             <xf:label>Delete</xf:label>
+                                             <xf:label>Delete Alternative Notation</xf:label>
+                                             <xf:hint>Delete Alternative Notation</xf:hint>
                                              <xf:action>
                                                 <xf:delete nodeset="instance('i-dateSet')/vra:date[index('r-vraDate')]/vra:latestDate/vra:alternativeNotation"
                                                            at="index('r-latestDate')"></xf:delete>

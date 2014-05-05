@@ -253,10 +253,14 @@ table tr td .xfGroup:last-child {
 .bf .dateTable tr td > .xfGroup {
   border-top: thin none;
 }
-.bf .dateTable .altNotation .xfRepeatItem {
+.bf .dateTable .altNotation td .xfRepeat {
+  display: inline-block;
+  margin-left: 35px;
+}
+.bf .dateTable .altNotation td .xfRepeatItem {
   height: 20px;
 }
-.bf .dateTable .altNotation .xfRepeatItem .xfControl {
+.bf .dateTable .altNotation td .xfRepeatItem .xfControl {
   clear: none;
   float: left;
 }
