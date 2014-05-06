@@ -23,6 +23,16 @@
         </xsl:copy>
     </xsl:template>
     
+
+    <!-- circa (dates) -->
+    <xsl:template match="xf:bind[@nodeset eq '@circa']">
+        <xsl:variable name="quot">"</xsl:variable>
+        <xsl:copy>
+            <xsl:attribute name="readonly" select="'true()'"/>
+            <xsl:attribute name="calculate" select="concat( 'if(normalize-space(../@type) eq ', $quot, $quot, ') then(false()) else(true())')"/>
+            <xsl:copy-of select="@*"/>
+        </xsl:copy>
+    </xsl:template>
         
     <!-- 
         ########## AgentSet ##########
@@ -31,7 +41,6 @@
     <!-- vocab + type -->
 
     <!-- Autocomplete -->
-    
     <xsl:template match="xhtml:tbody[@xf:repeat-nodeset eq 'vra:agent']//xf:action[@ev:event = 'autocomplete-callback']">
         <xsl:copy>
             <xsl:copy-of select ="@*"/>
@@ -76,6 +85,51 @@
         </xsl:copy>
     </xsl:template>
 
+
+    <xsl:template match="xhtml:tbody[@xf:repeat-nodeset eq 'vra:agent']//xf:group[xf:select1[@ref = 'vra:dates/@type']]">
+       
+        <xf:group appearance="minimal">
+            <table  class="dateTable">
+                <tbody>
+                    <tr>
+                        <td colspan="3">
+                            <xsl:copy-of select="xf:select1[@ref = 'vra:dates/@type']"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!-- Earliest -->
+                        <td>
+                            <!-- Date -->
+                            <xsl:apply-templates mode="fixDatelabel" select="xf:input[@ref = 'vra:dates/vra:earliestDate']"/>
+                        </td>
+                        <td>
+                            <!-- Circa -->
+                            <xsl:copy-of select="xf:input[@ref = 'vra:dates/vra:earliestDate/@circa']"/>
+                        </td>
+                        <td>
+                            <!-- Type -->
+                            <xsl:copy-of select="xf:select1[@ref = 'vra:dates/vra:earliestDate/@type']"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!-- Latest -->
+                        <td>
+                            <!-- Date -->
+                            <xsl:apply-templates mode="fixDatelabel" select="xf:input[@ref = 'vra:dates/vra:latestDate']"/>
+                        </td>
+                        <td>
+                            <!-- Circa -->
+                            <xsl:copy-of select="xf:input[@ref = 'vra:dates/vra:latestDate/@circa']"/>
+                        </td>
+                        <td>
+                            <!-- Type -->
+                            <xsl:copy-of select="xf:select1[@ref = 'vra:dates/vra:latestDate/@type']"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </xf:group>
+    </xsl:template>
     <!-- 
         ########## DescriptionSet ##########
     -->
@@ -327,10 +381,120 @@
     <!-- 
         ########## DateSet ##########
     -->
-    <!--   
-    <xsl:template match="xhtml:tbody[@xf:repeat-nodeset eq 'vra:date']/xhtml:tr/xhtml:td[@class eq 'contentCol']">
-        <table>
-            <tbody>
+    
+    <xsl:template match="xhtml:tbody[@xf:repeat-nodeset eq 'vra:date']/xhtml:tr[xhtml:td[@class = 'prefCol']]">
+        <xsl:variable name="earliestDate" select="xhtml:td[@class='contentCol']/xf:group[@appearance='minimal'][2]"/>
+        <xsl:variable name="latestDate" select="xhtml:td[@class='contentCol']/xf:group[@appearance='minimal'][3]"/>
+        
+        <tr>
+            <xsl:copy-of select="xhtml:td[@class = 'prefCol']"/>
+            <td class="contentCol">
+                <table class="dateTable">
+                    <tbody>
+                        <tr>
+                            <td colspan="5">
+                                <xsl:copy-of select="xhtml:td[@class='contentCol']/xf:group[@appearance='minimal'][1]"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <!-- Earliest -->
+                            <td>
+                                <!-- Date -->
+                                <xsl:apply-templates mode="fixDatelabel" select="$earliestDate/xf:input[@ref = 'vra:earliestDate/vra:date']"/>
+                            </td>
+                            <td>
+                                <!-- Circa -->
+                                <xsl:copy-of select="$earliestDate/xf:input[@ref = 'vra:earliestDate/vra:date/@circa']"/>
+                            </td>
+                            <td>
+                                <!-- Type -->
+                                <xsl:copy-of select="$earliestDate/xf:select1[@ref = 'vra:earliestDate/vra:date/@type']"/>
+                            </td>
+                            <td>
+                                <!-- Button -->
+                                <xsl:apply-templates mode="fixDateTriggerlabel" select="$earliestDate/xf:group/xf:trigger[xf:label = 'Add']"/>
+                            </td>
+                            <td>
+                                <!-- Attributes -->
+                                <xsl:copy-of select="$earliestDate/xf:group[@class = 'vraAttributes']"/>
+                            </td>
+                        </tr>
+                        <tr class="altNotation">
+                            <td colspan="5">
+                                <!-- REPEAT alt -->
+                                <xf:repeat>
+                                    <xsl:attribute name="id">
+                                        <xsl:value-of select="$earliestDate/xf:repeat/@id"/>
+                                    </xsl:attribute>
+
+                                    <xsl:attribute name="xf:repeat-nodeset">
+                                        <xsl:value-of select="$earliestDate/xf:repeat/@ref"/>
+                                    </xsl:attribute>
+
+                                    <div>
+                                        <xsl:copy-of select="$earliestDate/xf:repeat/xf:select1"/> 
+                                        <xsl:copy-of select="$earliestDate/xf:repeat/xf:input"/> 
+
+                                        <!-- Button -->
+                                        <xsl:apply-templates mode="fixDateTriggerlabel" select="$earliestDate/xf:group/xf:trigger[xf:label = 'Delete']"/>
+                                    </div>
+                                </xf:repeat>
+                            </td>
+                        </tr>
+                        <tr>
+                            <!-- Latest -->
+                            <td>
+                                <!-- Date -->
+                                 <xsl:apply-templates mode="fixDatelabel" select="$latestDate/xf:input[@ref = 'vra:latestDate/vra:date']"/>
+                            </td>
+                            <td>
+                                <!-- Circa -->
+                                <xsl:copy-of select="$latestDate/xf:input[@ref = 'vra:latestDate/vra:date/@circa']"/>
+                            </td>
+                            <td>
+                                <!-- Type -->
+                                <xsl:copy-of select="$latestDate/xf:select1[@ref = 'vra:latestDate/vra:date/@type']"/>
+                            </td>
+                            <td>
+                                <!-- Button -->
+                                <!-- TODO: Rename button -->
+                                <xsl:apply-templates mode="fixDateTriggerlabel" select="$latestDate/xf:group/xf:trigger[xf:label = 'Add']"/>
+                            </td>
+                            <td>
+                                <!-- Attributes -->
+                                <xsl:copy-of select="$latestDate/xf:group[@class = 'vraAttributes']"/>
+                            </td>
+                        </tr>
+                        <tr class="altNotation">
+                            <td colspan="5">
+                                <!-- REPEAT alt -->
+                                <xf:repeat>
+                                    <xsl:attribute name="id">
+                                        <xsl:value-of select="$latestDate/xf:repeat/@id"/>
+                                    </xsl:attribute>
+
+                                    <xsl:attribute name="xf:repeat-nodeset">
+                                        <xsl:value-of select="$latestDate/xf:repeat/@ref"/>
+                                    </xsl:attribute>
+                                    
+                                    <div>
+                                        <xf:label/>
+                                        <xsl:copy-of select="$latestDate/xf:repeat/xf:select1"/> 
+                                        <xsl:copy-of select="$latestDate/xf:repeat/xf:input"/> 
+
+                                        <!-- Button -->
+                                        <xsl:apply-templates mode="fixDateTriggerlabel" select="$latestDate/xf:group/xf:trigger[xf:label = 'Delete']"/>
+                                    </div>
+                                </xf:repeat>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        
+        <!--
+        <xsl:copy-of select="xf:group[xf:select1[@ref eq '@type']]"/>
                 <tr>
                     <td rowspan="2" class="date">
                         <xsl:copy-of select="xf:group[xf:select1[@ref eq '@type']]"/>
@@ -348,15 +512,49 @@
                 </tr>
             </tbody>
         </table>
+        
+        -->
     </xsl:template>
+
+    <xsl:template match="xf:input" mode="fixDatelabel">
+        <xsl:variable name="label">
+            <xsl:choose>
+                <xsl:when test="contains(@ref, 'latest')">Latest date</xsl:when>
+                <xsl:when test="contains(@ref, 'earliest')">Earliest date</xsl:when>
+                <xsl:otherwise>Date</xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        
+        <xsl:copy>
+            <xsl:copy-of select="@*"/>
+            <xf:label>
+                <xsl:value-of select="$label"/>
+            </xf:label>
+            <xf:hint>
+                <xsl:value-of select="$label"/>
+            </xf:hint>
+        </xsl:copy>
+    </xsl:template>    
     
-    <xsl:template match="xf:input[@ref eq 'vra:earliestDate/vra:date']">
     
+    <xsl:template match="xf:trigger" mode="fixDateTriggerlabel">
+        <xsl:variable name="label">
+            <xsl:choose>
+                <xsl:when test="contains(./xf:label, 'Add')">Add Alternative Notation</xsl:when>
+                <xsl:when test="contains(./xf:label, 'Delete')">Delete Alternative Notation</xsl:when>
+                <xsl:otherwise>Unknown Action</xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        
+        <xsl:copy>
+            <xsl:copy-of select="@*"/>
+            <xf:label>
+                <xsl:value-of select="$label"/>
+            </xf:label>
+            <xf:hint>
+                <xsl:value-of select="$label"/>
+            </xf:hint>
+            <xsl:copy-of select="xf:action"/> 
+        </xsl:copy>
     </xsl:template>
-    
-    <xsl:template match="xf:input[@ref eq 'vra:latestDate/vra:date']">
-    
-    </xsl:template>
-    
-    -->
 </xsl:stylesheet>

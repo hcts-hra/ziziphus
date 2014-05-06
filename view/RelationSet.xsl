@@ -39,7 +39,12 @@
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(@relids,'')) != 0">
                               <div data-bf-type="input" data-bf-bind="@relids" tabindex="0" title="relids">
-                                 <xsl:value-of select="@relids"></xsl:value-of>
+                                 <img xmlns="">
+                                    <xsl:attribute name="src"
+                                                   select="concat('/exist/apps/ziziphus/imageService/?imagerecord=', @relids)"></xsl:attribute>
+                                    <xsl:attribute name="alt" select="@relids"></xsl:attribute>
+                                    <xsl:attribute name="class" select="relationSetImage"></xsl:attribute>
+                                 </img>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>

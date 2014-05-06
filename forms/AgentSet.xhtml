@@ -93,11 +93,17 @@
                      <xf:bind nodeset="vra:dates">
                         <xf:bind nodeset="@type" type="vra:agentDateTypeType"></xf:bind>
                         <xf:bind nodeset="vra:earliestDate">
-                           <xf:bind nodeset="@circa" type="xsd:boolean"></xf:bind>
+                           <xf:bind readonly="true()"
+                                    calculate="if(normalize-space(../@type) eq &#34;&#34;) then(false()) else(true())"
+                                    nodeset="@circa"
+                                    type="xsd:boolean"></xf:bind>
                            <xf:bind nodeset="@type" type="vra:uncertainDateType"></xf:bind>
                         </xf:bind>
                         <xf:bind nodeset="vra:latestDate">
-                           <xf:bind nodeset="@circa" type="xsd:boolean"></xf:bind>
+                           <xf:bind readonly="true()"
+                                    calculate="if(normalize-space(../@type) eq &#34;&#34;) then(false()) else(true())"
+                                    nodeset="@circa"
+                                    type="xsd:boolean"></xf:bind>
                            <xf:bind nodeset="@type" type="vra:uncertainDateType"></xf:bind>
                         </xf:bind>
                      </xf:bind>
@@ -360,96 +366,108 @@
                            </xf:trigger>
                         </xf:group>
                         <xf:group appearance="minimal">
-                           <xf:select1 id="b-d2e165" class="detail datesType" ref="vra:dates/@type">
-                              <xf:label>Type</xf:label>
-                              <xf:hint></xf:hint>
-                              <xf:item>
-                                 <xf:label>Activity</xf:label>
-                                 <xf:value>activity</xf:value>
-                              </xf:item>
-                              <xf:item>
-                                 <xf:label>Life</xf:label>
-                                 <xf:value>life</xf:value>
-                              </xf:item>
-                              <xf:item>
-                                 <xf:label>Other</xf:label>
-                                 <xf:value>other</xf:value>
-                              </xf:item>
-                           </xf:select1>
-                           <xf:input id="b-d2e119" ref="vra:dates/vra:earliestDate">
-                              <xf:label>EarliestDate</xf:label>
-                              <xf:hint>EarliestDate</xf:hint>
-                           </xf:input>
-                           <xf:input ref="vra:dates/vra:earliestDate/@circa">
-                              <xf:label>circa</xf:label>
-                              <xf:hint>@circa</xf:hint>
-                           </xf:input>
-                           <xf:select1 id="b-d2e127" class=" datesType" ref="vra:dates/vra:earliestDate/@type">
-                              <xf:label>Type</xf:label>
-                              <xf:hint></xf:hint>
-                              <xf:item>
-                                 <xf:label>About</xf:label>
-                                 <xf:value>about</xf:value>
-                              </xf:item>
-                              <xf:item>
-                                 <xf:label>Before</xf:label>
-                                 <xf:value>before</xf:value>
-                              </xf:item>
-                              <xf:item>
-                                 <xf:label>After</xf:label>
-                                 <xf:value>after</xf:value>
-                              </xf:item>
-                              <xf:item>
-                                 <xf:label>Active</xf:label>
-                                 <xf:value>active</xf:value>
-                              </xf:item>
-                           </xf:select1>
-                           <xf:input id="b-d2e142" ref="vra:dates/vra:latestDate">
-                              <xf:label>LatestDate</xf:label>
-                              <xf:hint>LatestDate</xf:hint>
-                           </xf:input>
-                           <xf:input ref="vra:dates/vra:latestDate/@circa">
-                              <xf:label>circa</xf:label>
-                              <xf:hint>@circa</xf:hint>
-                           </xf:input>
-                           <xf:select1 id="b-d2e150" class=" datesType" ref="vra:dates/vra:latestDate/@type">
-                              <xf:label>Type</xf:label>
-                              <xf:hint></xf:hint>
-                              <xf:item>
-                                 <xf:label>About</xf:label>
-                                 <xf:value>about</xf:value>
-                              </xf:item>
-                              <xf:item>
-                                 <xf:label>Before</xf:label>
-                                 <xf:value>before</xf:value>
-                              </xf:item>
-                              <xf:item>
-                                 <xf:label>After</xf:label>
-                                 <xf:value>after</xf:value>
-                              </xf:item>
-                              <xf:item>
-                                 <xf:label>Active</xf:label>
-                                 <xf:value>active</xf:value>
-                              </xf:item>
-                           </xf:select1>
-                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:dates">
-                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
-                           </xf:group>
-                           <xf:trigger class="vraAttributeTrigger">
-                              <xf:label>A</xf:label>
-                              <xf:hint>Edit Attributes</xf:hint>
-                              <xf:action>
-                                 <xf:setvalue ref="instance('i-util')/currentElement" value="'dates'"></xf:setvalue>
-                                 <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
-                              </xf:action>
-                              <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
-                           </xf:trigger>
+                           <table class="dateTable">
+                              <tbody>
+                                 <tr>
+                                    <td colspan="3">
+                                       <xf:select1 id="b-d2e165" class="detail datesType" ref="vra:dates/@type">
+                                          <xf:label>Type</xf:label>
+                                          <xf:hint></xf:hint>
+                                          <xf:item>
+                                             <xf:label>Activity</xf:label>
+                                             <xf:value>activity</xf:value>
+                                          </xf:item>
+                                          <xf:item>
+                                             <xf:label>Life</xf:label>
+                                             <xf:value>life</xf:value>
+                                          </xf:item>
+                                          <xf:item>
+                                             <xf:label>Other</xf:label>
+                                             <xf:value>other</xf:value>
+                                          </xf:item>
+                                       </xf:select1>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td>
+                                       <xf:input id="b-d2e119" ref="vra:dates/vra:earliestDate">
+                                          <xf:label>Earliest date</xf:label>
+                                          <xf:hint>Earliest date</xf:hint>
+                                       </xf:input>
+                                    </td>
+                                    <td>
+                                       <xf:input ref="vra:dates/vra:earliestDate/@circa">
+                                          <xf:label>circa</xf:label>
+                                          <xf:hint>@circa</xf:hint>
+                                       </xf:input>
+                                    </td>
+                                    <td>
+                                       <xf:select1 id="b-d2e127" class=" datesType" ref="vra:dates/vra:earliestDate/@type">
+                                          <xf:label>Type</xf:label>
+                                          <xf:hint></xf:hint>
+                                          <xf:item>
+                                             <xf:label>About</xf:label>
+                                             <xf:value>about</xf:value>
+                                          </xf:item>
+                                          <xf:item>
+                                             <xf:label>Before</xf:label>
+                                             <xf:value>before</xf:value>
+                                          </xf:item>
+                                          <xf:item>
+                                             <xf:label>After</xf:label>
+                                             <xf:value>after</xf:value>
+                                          </xf:item>
+                                          <xf:item>
+                                             <xf:label>Active</xf:label>
+                                             <xf:value>active</xf:value>
+                                          </xf:item>
+                                       </xf:select1>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td>
+                                       <xf:input id="b-d2e142" ref="vra:dates/vra:latestDate">
+                                          <xf:label>Latest date</xf:label>
+                                          <xf:hint>Latest date</xf:hint>
+                                       </xf:input>
+                                    </td>
+                                    <td>
+                                       <xf:input ref="vra:dates/vra:latestDate/@circa">
+                                          <xf:label>circa</xf:label>
+                                          <xf:hint>@circa</xf:hint>
+                                       </xf:input>
+                                    </td>
+                                    <td>
+                                       <xf:select1 id="b-d2e150" class=" datesType" ref="vra:dates/vra:latestDate/@type">
+                                          <xf:label>Type</xf:label>
+                                          <xf:hint></xf:hint>
+                                          <xf:item>
+                                             <xf:label>About</xf:label>
+                                             <xf:value>about</xf:value>
+                                          </xf:item>
+                                          <xf:item>
+                                             <xf:label>Before</xf:label>
+                                             <xf:value>before</xf:value>
+                                          </xf:item>
+                                          <xf:item>
+                                             <xf:label>After</xf:label>
+                                             <xf:value>after</xf:value>
+                                          </xf:item>
+                                          <xf:item>
+                                             <xf:label>Active</xf:label>
+                                             <xf:value>active</xf:value>
+                                          </xf:item>
+                                       </xf:select1>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
                         </xf:group>
                      </td>
                      <td class="triggerCol">
                         <xf:trigger class="-btn -btn-trashcan">
                            <xf:label></xf:label>
-                           <xf:hint>delete this entry</xf:hint><script type="text/javascript">
+                           <xf:hint>Delete this entry</xf:hint><script type="text/javascript">
                         removeEntry();
                     </script></xf:trigger>
                      </td>

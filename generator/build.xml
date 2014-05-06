@@ -263,6 +263,9 @@
         <antcall target="generate-subform">
             <param name="subformName" value="DateSet"/>
         </antcall>
+        <antcall target="finetune-subform">
+            <param name="subformName" value="DateSet"/>
+        </antcall>
     </target>
     <target name="generate-Description-form"  depends="prepare" description="generate the Description form">
         <antcall target="generate-subform">
@@ -350,6 +353,21 @@
 
         <copy file="${target.dir}/${subformName}_finetuned.xhtml" tofile="${form.dir}/${subformName}.xhtml" overwrite="true"/>
     </target>
+    
+     <target name="finetune-view">
+        <echo>finetune-view ${subformName}</echo>
+        
+        <xslt style="${xsl.dir}/view/finetune-view.xsl"
+              in="${basedir}/../view/${subformName}.xsl"
+              out="${target.dir}/view/${subformName}_finetuned.xsl"
+              force="true">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath refid="transform.class.path"/>
+            <param name="debug" expression="${debug}"/>
+        </xslt>
+
+        <copy file="${target.dir}/view/${subformName}_finetuned.xsl" tofile="${basedir}/../view/${subformName}.xsl" overwrite="true" failonerror="true"/>
+    </target>
 
     <!-- ########################################################################################
     View generation targets
@@ -362,6 +380,9 @@
         <antcall target="finetune-subform">
            <param name="subformName" value="AgentSet"/>
         </antcall>
+         <antcall target="finetune-view">
+            <param name="subformName" value="AgentSet"/>
+        </antcall>
         <antcall target="generate-section-view-transform">
             <param name="subformName" value="CulturalContextSet"/>
         </antcall>
@@ -369,6 +390,9 @@
             <param name="subformName" value="DateSet"/>
         </antcall>
         <antcall target="finetune-subform">
+            <param name="subformName" value="DateSet"/>
+        </antcall>
+        <antcall target="finetune-view">
             <param name="subformName" value="DateSet"/>
         </antcall>
         <antcall target="generate-section-view-transform">
@@ -393,6 +417,9 @@
             <param name="subformName" value="MeasurementsSet"/>
         </antcall>
         <antcall target="generate-section-view-transform">
+            <param name="subformName" value="RelationSet"/>
+        </antcall>
+        <antcall target="finetune-view">
             <param name="subformName" value="RelationSet"/>
         </antcall>
         <antcall target="generate-section-view-transform">
@@ -428,7 +455,7 @@
     </target>
 
     <target name="generate-section-view-transform" description="generates a XSLT transform for a single VRA section">
-        <echo>generate-subform ${subformName}</echo>
+        <echo>generate-view ${subformName}</echo>
         <mkdir dir="${target.dir}/views"/>
         <xslt style="${basedir}/xsl/view/createView.xsl"
               in="${basedir}/../forms/${subformName}.xhtml"
@@ -613,5 +640,14 @@
             effect in the generation process.
         </echo>
 
+    </target>
+    
+    <target name="test">
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="RelationSet"/>
+        </antcall>
+        <antcall target="finetune-view">
+            <param name="subformName" value="RelationSet"/>
+        </antcall>
     </target>
 </project>
