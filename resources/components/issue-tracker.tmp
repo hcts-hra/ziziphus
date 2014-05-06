@@ -7,7 +7,7 @@
         <meta name="description" content=""/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link type="text/css" rel="stylesheet" href="../css/bootstrap.min.css"/>
-        <script type="text/javascript" src="../script/jquery-1.9.1.js"/>
+        <script type="text/javascript" src="../script/jquery-1.9.1.js"> </script>
 
         <style>
             body {
@@ -116,10 +116,10 @@
                             "2":email 
                           }
                     }
-                }
+                };
                 console.log("redmine ticket: ",redmineTicket);
                 
-                var redmineURL = "http://kjc-sv013.kjc.uni-heidelberg.de/redmine/projects/ziziphus/issues.json?key=797dc72ff43a3a00fbff841636c3b15dc5d1673a"
+                var redmineURL = "http://kjc-sv013.kjc.uni-heidelberg.de/redmine/projects/ziziphus/issues.json?key=@REDMINE_KEY@"
                 
                 var request = $.ajax({
                     url: redmineURL,
@@ -155,8 +155,8 @@
                     apiRoot:"https://api.github.com",
                     repoOwner : "betterFORM",
                     repo:"ziziphus",
-                    authToken: "49852117e1b14ab91c6786af574cc05a730a9212"
-                }    
+                    authToken: ""
+                };
                 var githubURL = gitHubProperties.apiRoot + "/repos/"+gitHubProperties.repoOwner +"/"+ gitHubProperties.repo+"/issues?authToken=" + gitHubProperties.authToken;
                 console.log("github ticket: ", githubURL);                  
                 
