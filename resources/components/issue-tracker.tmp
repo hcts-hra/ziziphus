@@ -7,8 +7,7 @@
         <meta name="description" content=""/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link type="text/css" rel="stylesheet" href="../css/bootstrap.min.css"/>
-        <script type="text/javascript" src="../script/jquery-1.9.1.js"> </script>
-
+    <script type="text/javascript" src="../script/jquery-1.9.1.js"/>
         <style>
             body {
                 padding:20px;
@@ -128,11 +127,15 @@
                     dataType: "json"
                 });
                 request.done(function(msg) {
+            alert("Feedback saved successful. Thank you!");
                     $('#issues-frame', window.parent.document).removeClass("slideInDown");
                     $('#issues-frame', window.parent.document).remove();
 
                 });
                 request.fail(function( jqXHR, textStatus ) {
+            alert("There was an error saving your feedback. Please contact ziziphus@kjc.uni-heidelberg.de");
+            console.log("error saving ticket");
+            console.log("jqXHR:",jqXHR, " textStatus: ",textStatus);
                     $('#issues-frame', window.parent.document).removeClass("slideInDown");
                     $('#issues-frame', window.parent.document).remove();
                 });
@@ -186,7 +189,7 @@
                     var val = params[index].split("=");
                     if (val[0] == paramName) {
                         var result = val[1];
-                        if(result.contains(")")){
+                if(result.indexOf(")") != -1){
                             result = result.substr(0,(result.length-1))
                         }
                         return unescape(result);
