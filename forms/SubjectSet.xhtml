@@ -239,6 +239,11 @@
                                                   if="not(exists(instance('i-subjectSet')/vra:subject[index('r-vraSubject')]/@vocab))"></xf:insert>
                                        <xf:setvalue ref="../@vocab" value="event('authority')"></xf:setvalue>
                                     </xf:action>
+                                    <xf:action>
+                                       <xf:insert context=".." origin="instance('i-vraAttributes')/vra:vraElement[1]/@src"
+                                                  if="not(exists(instance('i-subjectSet')/vra:subject[index('r-vraSubject')]/@src))"></xf:insert>
+                                       <xf:setvalue ref="../@src" value="event('src')"></xf:setvalue>
+                                    </xf:action>
                                     <xf:action if="exists(../vra:dates/vra:earliestDate)">
                                        <xf:setvalue ref="../vra:dates/vra:earliestDate" value="event('earliestDate')"></xf:setvalue>
                                     </xf:action>

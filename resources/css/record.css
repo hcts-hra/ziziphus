@@ -1,18 +1,26 @@
+/* line 2, /home/zwobit/work/dev/customers/UNI-HD/ziziphus/resources/css/record.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/work\/dev\/customers\/UNI-HD\/ziziphus\/resources\/css\/record\.less}line{font-family:\000032}}
 .bf .vraSection {
   width: 100%;
   overflow: auto;
 }
+/* line 6, /home/zwobit/work/dev/customers/UNI-HD/ziziphus/resources/css/record.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/work\/dev\/customers\/UNI-HD\/ziziphus\/resources\/css\/record\.less}line{font-family:\000036}}
 .bf .vraSection .description {
   border: thin dashed black;
   padding: 1ex 1em;
   margin-top: 2ex;
   margin-bottom: 2ex;
 }
+/* line 14, /home/zwobit/work/dev/customers/UNI-HD/ziziphus/resources/css/record.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/work\/dev\/customers\/UNI-HD\/ziziphus\/resources\/css\/record\.less}line{font-family:\0000314}}
 .bf .vraSection .locationSet .location-subTitle {
   font-weight: bold;
   display: block;
   margin-top: 1ex;
 }
+/* line 20, /home/zwobit/work/dev/customers/UNI-HD/ziziphus/resources/css/record.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/work\/dev\/customers\/UNI-HD\/ziziphus\/resources\/css\/record\.less}line{font-family:\0000320}}
 .bf .vraSection .locationSet ol,
 .bf .vraSection .locationSet ul {
   margin-top: 1ex;

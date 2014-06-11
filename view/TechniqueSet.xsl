@@ -5,6 +5,7 @@
                 version="2.0">
    <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes"
                omit-xml-declaration="no"></xsl:output>
+   <xsl:preserve-space elements="vra:text"></xsl:preserve-space>
    <xsl:template match="vra:techniqueSet">
       <xsl:param name="vraTableId"></xsl:param>
       <div class="simple" id="{$vraTableId}">
