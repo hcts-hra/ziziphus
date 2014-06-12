@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language language="xxx">
+   <display>
+      <label>Display</label>
+      <hint/>
+      <alert/>
+   </display>
+   <notes>
+      <label>Notes</label>
+      <hint/>
+      <alert/>
+   </notes>
+   <dataDate>
+      <label>Data Date</label>
+      <hint/>
+      <alert/>
+   </dataDate>
+   <extent>
+      <label>Extent</label>
+      <hint/>
+      <alert/>
+   </extent>
+   <href>
+      <label>Href</label>
+      <hint/>
+      <alert/>
+   </href>
+   <refid>
+      <label>RefID</label>
+      <hint/>
+      <alert/>
+   </refid>
+   <rules>
+      <label>Rules</label>
+      <hint/>
+      <alert/>
+   </rules>
+   <source>
+      <label>Source</label>
+      <hint/>
+      <alert/>
+   </source>
+   <vocab>
+      <label>Vocab</label>
+      <hint/>
+      <alert/>
+   </vocab>
+   <lang>
+      <label>Lang</label>
+      <hint/>
+      <alert/>
+   </lang>
+   <script>
+      <label>Script</label>
+      <hint/>
+      <alert/>
+   </script>
+   <transliteration>
+      <label>Transliteration</label>
+      <hint/>
+      <alert/>
+   </transliteration>
+   <type>
+      <label>Type</label>
+      <hint/>
+      <alert/>
+   </type>
+   <lang>
+      <agentSet>
+        
+        
+        <agent>
+            <attribution>
+               <label>Attribution</label>
+               <hint/>
+               <alert/>
+            </attribution>
+            <culture>
+               <label>Culture</label>
+               <hint/>
+               <alert/>
+            </culture>
+            <dates>
+                <earliestDate>
+                  <label>EarliestDate</label>
+                  <hint/>
+                  <alert/>
+               </earliestDate>
+                <latestDate>
+                  <label>LatestDate</label>
+                  <hint/>
+                  <alert/>
+               </latestDate>
+            </dates>
+            <name>
+               <label>Name</label>
+               <hint/>
+               <alert/>
+            </name>
+            <role>
+               <label>Role</label>
+               <hint/>
+               <alert/>
+            </role>
+        </agent>
+      </agentSet>
+      <culturalContextSet>
+        
+        
+        <culturalContext>
+            <label>CulturalContext</label>
+            <hint/>
+            <alert/>
+         </culturalContext>
+      </culturalContextSet>
+      <dateSet>
+        
+        
+        <date>
+            <earliestDate>
+                <date>
+                  <label>Date</label>
+                  <hint/>
+                  <alert/>
+               </date>
+                <alternativeNotation>
+                  <label>AlternativeNotation</label>
+                  <hint/>
+                  <alert/>
+               </alternativeNotation>
+            </earliestDate>
+            <latestDate>
+                <date>
+                  <label>Date</label>
+                  <hint/>
+                  <alert/>
+               </date>
+                <alternativeNotation>
+                  <label>AlternativeNotation</label>
+                  <hint/>
+                  <alert/>
+               </alternativeNotation>
+            </latestDate>
+        </date>
+      </dateSet>
+      <descriptionSet>
+        
+        
+        <description>
+            <text>
+               <label>Text</label>
+               <hint/>
+               <alert/>
+            </text>
+            <author>
+                <name>
+                  <label>Name</label>
+                  <hint/>
+                  <alert/>
+               </name>
+                <role>
+                  <label>Role</label>
+                  <hint/>
+                  <alert/>
+               </role>
+            </author>
+        </description>
+      </descriptionSet>
+      <inscriptionSet>
+        
+        
+        <inscription>
+            <author>
+               <label>Author</label>
+               <hint/>
+               <alert/>
+            </author>
+            <position>
+               <label>Position</label>
+               <hint/>
+               <alert/>
+            </position>
+            <text>
+               <label>Text</label>
+               <hint/>
+               <alert/>
+            </text>
+        </inscription>
+      </inscriptionSet>
+      <locationSet>
+        
+        
+        <location>
+            <refid>
+               <label>Refid</label>
+               <hint/>
+               <alert/>
+            </refid>
+            <name>
+               <label>Name</label>
+               <hint/>
+               <alert/>
+            </name>
+            <point>
+                <lat>
+                  <label>Lat</label>
+                  <hint/>
+                  <alert/>
+               </lat>
+                <long>
+                  <label>Long</label>
+                  <hint/>
+                  <alert/>
+               </long>
+            </point>
+        </location>
+      </locationSet>
+      <materialSet>
+        
+        
+        <material>
+            <label>Material</label>
+            <hint/>
+            <alert/>
+         </material>
+      </materialSet>
+      <measurementsSet>
+        
+        
+        <measurements>
+            <label>Measurements</label>
+            <hint/>
+            <alert/>
+         </measurements>
+      </measurementsSet>
+      <relationSet>
+        
+        
+        <relation>
+            <label>Relation</label>
+            <hint/>
+            <alert/>
+         </relation>
+      </relationSet>
+      <rightsSet>
+        
+        
+        <rights>
+            <rightsHolder>
+               <label>RightsHolder</label>
+               <hint/>
+               <alert/>
+            </rightsHolder>
+            <text>
+               <label>Text</label>
+               <hint/>
+               <alert/>
+            </text>
+        </rights>
+      </rightsSet>
+      <sourceSet>
+        
+        
+        <source>
+            <refid>
+               <label>Refid</label>
+               <hint/>
+               <alert/>
+            </refid>
+            <name>
+               <label>Name</label>
+               <hint/>
+               <alert/>
+            </name>
+        </source>
+      </sourceSet>
+      <stateEditionSet>
+        
+        
+        <stateEdition>
+            <description>
+               <label>Description</label>
+               <hint/>
+               <alert/>
+            </description>
+            <name>
+               <label>Name</label>
+               <hint/>
+               <alert/>
+            </name>
+        </stateEdition>
+      </stateEditionSet>
+      <stylePeriodSet>
+        
+        
+        <stylePeriod>
+            <label>StylePeriod</label>
+            <hint/>
+            <alert/>
+         </stylePeriod>
+      </stylePeriodSet>
+      <subjectSet>
+        
+        
+        <subject>
+            <term>
+               <label>Term</label>
+               <hint/>
+               <alert/>
+            </term>
+        </subject>
+      </subjectSet>
+      <techniqueSet>
+        
+        
+        <technique>
+            <label>Technique</label>
+            <hint/>
+            <alert/>
+         </technique>
+      </techniqueSet>
+      <textrefSet>
+        
+        
+        <textref>
+            <name>
+               <label>Name</label>
+               <hint/>
+               <alert/>
+            </name>
+            <refid>
+               <label>Refid</label>
+               <hint/>
+               <alert/>
+            </refid>
+        </textref>
+      </textrefSet>
+      <titleSet>
+        
+        
+        <title>
+            <label>Title</label>
+            <hint/>
+            <alert/>
+         </title>
+      </titleSet>
+      <worktypeSet>
+        
+        
+        <worktype>
+            <label>Worktype</label>
+            <hint/>
+            <alert/>
+         </worktype>
+      </worktypeSet>
+   </lang>
+</language>

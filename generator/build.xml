@@ -655,4 +655,16 @@
             <param name="subformName" value="RelationSet"/>
         </antcall>
     </target>
+    
+    <target name="generate-lang">
+        <mkdir dir="${target.dir}/lang/"/>
+        
+        <xslt style="${xsl.dir}/lang/lang.xsl"
+              in="${xsl.dir}/lang/lang.xml"
+              out="${target.dir}/lang/lang.xml"
+              force="true">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath refid="transform.class.path"/>
+        </xslt>
+    </target>
 </project>
