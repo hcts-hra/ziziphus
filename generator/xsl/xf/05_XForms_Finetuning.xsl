@@ -46,7 +46,7 @@
             <xsl:copy-of select ="@*"/>
             <xsl:copy-of select ="*|text()"/>
             
-            <xf:action>
+            <xf:action>https://startpage.com/eng/
                 <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@vocab"
                            context="instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role"
                            if="not(exists(instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role/@vocab))"/>
@@ -555,6 +555,46 @@
                 <xsl:value-of select="$label"/>
             </xf:hint>
             <xsl:copy-of select="xf:action"/> 
+        </xsl:copy>
+    </xsl:template>
+    
+    <!-- 
+        ########## Inscription Set ##########
+    -->
+    <xsl:template match="xhtml:tbody[@xf:repeat-nodeset eq 'vra:inscription']//xhtml:td[@class eq 'contentCol']/xf:group[xf:select1[@ref eq 'vra:text/@type']]">
+        <xsl:copy>
+            <xf:repeat ref="vra:text" id="r-inscriptionSet-text" class="vraSetInnerRepeatEdit">
+                <xf:select1 class=" textType" ref="@type">
+                    <xsl:copy-of select="xf:select1/*"/>
+                </xf:select1>
+                <xf:textarea ref=".">
+                    <xf:label>Text</xf:label>
+                    <xf:hint>.</xf:hint>
+                </xf:textarea>
+                <xf:trigger class="inscriptionTextDelete">
+                    <xf:label>Delete</xf:label>
+                    <xf:delete nodeset="instance('i-inscriptionSet')/vra:inscription[index('r-vraInscription')]/vra:text[index('r-inscriptionSet-text')]"></xf:delete>
+                </xf:trigger>
+                <xf:group class="vraAttributes" appearance="minimal" ref=".">
+                    <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
+                </xf:group>
+                <xf:trigger class="vraAttributeTrigger">
+                    <xf:label>A</xf:label>
+                    <xf:hint>Edit Attributes</xf:hint>
+                    <xf:action>
+                       <xf:setvalue ref="instance('i-util')/currentElement" value="'text'"></xf:setvalue>
+                       <xf:setvalue ref="instance('i-util')/currentPosition" value="index('r-inscriptionSet-text')"/>
+                       <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
+                    </xf:action>
+                    <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
+                </xf:trigger>
+            </xf:repeat>
+            <xf:trigger>
+                <xf:label>Add Text</xf:label>
+                <xf:insert origin="instance('i-templates')/vra:inscription/vra:text" context="instance('i-inscriptionSet')/vra:inscription[index('r-vraInscription')]"/>
+            </xf:trigger>
+
+            
         </xsl:copy>
     </xsl:template>
 </xsl:stylesheet>

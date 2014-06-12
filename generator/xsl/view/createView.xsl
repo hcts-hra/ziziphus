@@ -76,7 +76,7 @@
             <tbody>
                 <transform:for-each select="{@ref}">
                     <tr>
-                        <xsl:for-each select="html:span/xf:*[contains(@class, '-autocomplete')] | xf:*">
+                        <xsl:for-each select="html:span/xf:*[contains(@class, '-autocomplete')] | xf:input | xf:textarea | xf:select | xf:select1">
                             <xsl:message>Current <xsl:value-of select="local-name(.)"/></xsl:message>
                             <td>
                                 <xsl:apply-templates select="."/>

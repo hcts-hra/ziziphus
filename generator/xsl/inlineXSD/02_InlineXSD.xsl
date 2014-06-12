@@ -63,7 +63,7 @@
             <xsl:attribute name="name" select="$referencedElement/@name"/>
             <xsl:choose>
                 <xsl:when test="$debugEnabled">
-                    <xsl:attribute name="lasse1"/>
+                    <!-- xsl:attribute name="lasse1"/ -->
                     <xsl:copy-of select="@*"/>
                 </xsl:when>
                 <xsl:otherwise>
@@ -106,7 +106,7 @@
                 <xsl:copy>
                     <xsl:choose>
                         <xsl:when test="$debugEnabled">
-                            <xsl:attribute name="lasse2"/>
+                            <!-- xsl:attribute name="lasse2"/ -->
                             <xsl:copy-of select="@*"/>
                         </xsl:when>
                         <xsl:otherwise>
@@ -117,7 +117,7 @@
                     <xsl:element name="{name($referencedType)}">
                         <xsl:choose>
                             <xsl:when test="$debugEnabled">
-                                <xsl:attribute name="lasse3"/>
+                                <!--xsl:attribute name="lasse3"/-->
                                 <xsl:copy-of select="@*"/>
                             </xsl:when>
                             <xsl:otherwise/>

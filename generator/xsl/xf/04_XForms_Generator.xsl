@@ -188,6 +188,8 @@
                                 <data xmlns="">
                                     <xsl:comment>used to store the current element being used in attribute editing</xsl:comment>
                                     <currentElement/>
+                                    <xsl:comment>used to store the current element position being used in attribute editing</xsl:comment>
+                                    <currentPosition/>
                                 </data>
                             </xf:instance>
 
@@ -402,13 +404,24 @@
                                             <xsl:attribute name="context">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]</xsl:attribute>
                                         </xf:insert>
                                     </xf:action>
-                                    <xf:action if="not('.'=instance('i-util')/currentElement)">
+                                    <xf:action if="not('.'=instance('i-util')/currentElement) and instance('i-util')/currentPosition = -1">
+                                        
                                         <xf:delete>
                                             <xsl:attribute name="nodeset">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/*[local-name()=instance('i-util')/currentElement]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]</xsl:attribute>
                                         </xf:delete>
 
                                         <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]">
                                             <xsl:attribute name="context">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/*[local-name()=instance('i-util')/currentElement]</xsl:attribute>
+                                        </xf:insert>
+                                    </xf:action>
+                                    <xf:action if="not('.'=instance('i-util')/currentElement) and instance('i-util')/currentPosition != -1">
+                                        
+                                        <xf:delete>
+                                            <xsl:attribute name="nodeset">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]//*[local-name()=instance('i-util')/currentElement][position() = instance('i-util')/currentPosition]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]</xsl:attribute>
+                                        </xf:delete>
+
+                                        <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]">
+                                            <xsl:attribute name="context">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]//*[local-name()=instance('i-util')/currentElement][position() = instance('i-util')/currentPosition]</xsl:attribute>
                                         </xf:insert>
                                     </xf:action>
                                     <bfc:hide dialog="attrDialog"></bfc:hide>
@@ -530,8 +543,11 @@
                 <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]" if="'.'=instance('i-util')/currentElement">
                     <xsl:attribute name="origin">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]</xsl:attribute>
                 </xf:insert>
-                <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]" if="not('.'=instance('i-util')/currentElement)">
+                <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]" if="not('.'=instance('i-util')/currentElement) and instance('i-util')/currentPosition = -1">
                     <xsl:attribute name="origin">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/*[local-name()=instance('i-util')/currentElement]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]</xsl:attribute>
+                </xf:insert>
+                <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]" if="not('.'=instance('i-util')/currentElement) and instance('i-util')/currentPosition != -1">
+                    <xsl:attribute name="origin">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]//*[local-name()=instance('i-util')/currentElement][position() = instance('i-util')/currentPosition]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]</xsl:attribute>
                 </xf:insert>
             </xf:action>
 
@@ -561,6 +577,7 @@
                                     <xf:hint>Edit Attributes</xf:hint>
                                     <xf:action>
                                         <xf:setvalue ref="instance('i-util')/currentElement">.</xf:setvalue>
+                                        <xf:setvalue ref="instance('i-util')/currentPosition">-1</xf:setvalue>
                                         <xf:dispatch name="init-dialog" targetid="outerGroup"/>
                                     </xf:action>
                                     <bfc:show dialog="attrDialog" ev:event="DOMActivate"/>
@@ -678,6 +695,8 @@
                                         <xf:setvalue ref="instance('i-util')/currentElement">
                                             <xsl:attribute name="value">'<xsl:value-of select="functx:remove-vra-prefix($vraNodeName)"/>'</xsl:attribute>
                                         </xf:setvalue>
+                                        <!-- Override for inner repeats -->
+                                        <xf:setvalue ref="instance('i-util')/currentPosition">-1</xf:setvalue>
                                         <xf:dispatch name="init-dialog" targetid="outerGroup"/>
                                     </xf:action>
                                     <bfc:show dialog="attrDialog" ev:event="DOMActivate"/>
@@ -855,6 +874,8 @@
                             <xf:setvalue ref="instance('i-util')/currentElement">
                                 <xsl:attribute name="value">'<xsl:value-of select="functx:remove-vra-prefix($vraNodeName)"/>'</xsl:attribute>
                             </xf:setvalue>
+                            <!-- Overwrite for inner repeats -->
+                            <xf:setvalue ref="instance('i-util')/currentPosition">-1</xf:setvalue>
                             <xf:dispatch name="init-dialog" targetid="outerGroup"/>
                         </xf:action>
                         <bfc:show dialog="attrDialog" ev:event="DOMActivate"/>

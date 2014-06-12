@@ -384,21 +384,40 @@ table tr td .xfGroup:last-child {
   clear: none;
   float: left;
 }
-/* line 376, /home/zwobit/work/dev/customers/UNI-HD/ziziphus/resources/css/edit-form.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/work\/dev\/customers\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003376}}
+/* line 374, /home/zwobit/work/dev/customers/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/work\/dev\/customers\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003374}}
+.bf .vraSetInnerRepeatEdit {
+  width: 100%;
+  display: block !important;
+}
+/* line 378, /home/zwobit/work/dev/customers/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/work\/dev\/customers\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003378}}
+.bf .vraSetInnerRepeatEdit .vraAttributeTrigger {
+  float: right;
+  position: relative;
+  right: 0;
+  top: -20px;
+}
+/* line 385, /home/zwobit/work/dev/customers/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/work\/dev\/customers\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003385}}
+.bf .vraSetInnerRepeatEdit .inscriptionTextDelete {
+  float: none !important;
+}
+/* line 392, /home/zwobit/work/dev/customers/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/work\/dev\/customers\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003392}}
 .tundra .dijitTitlePaneContentInner {
   padding: 0;
 }
-/* line 380, /home/zwobit/work/dev/customers/UNI-HD/ziziphus/resources/css/edit-form.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/work\/dev\/customers\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003380}}
+/* line 396, /home/zwobit/work/dev/customers/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/work\/dev\/customers\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003396}}
 .xfInput .xfSecret .xfValue,
 .xfTextarea .xfValue,
 .xfSelect1 .xfValue,
 .xfSelect .xfValue {
   width: auto;
 }
-/* line 383, /home/zwobit/work/dev/customers/UNI-HD/ziziphus/resources/css/edit-form.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/work\/dev\/customers\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003383}}
+/* line 399, /home/zwobit/work/dev/customers/UNI-HD/ziziphus/resources/css/edit-form.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/zwobit\/work\/dev\/customers\/UNI-HD\/ziziphus\/resources\/css\/edit-form\.less}line{font-family:\00003399}}
 select,
 textarea,
 input[type="text"],

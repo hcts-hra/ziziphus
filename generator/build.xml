@@ -404,6 +404,11 @@
         <antcall target="generate-section-view-transform">
             <param name="subformName" value="InscriptionSet"/>
         </antcall>
+        
+        <antcall target="finetune-subform">
+            <param name="subformName" value="InscriptionSet"/>
+        </antcall>
+       
         <antcall target="generate-section-view-transform">
             <param name="subformName" value="InscriptionSet"/>
         </antcall>
