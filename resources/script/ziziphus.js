@@ -109,7 +109,16 @@ jQuery(document).ready(function () {
 
     });
 
+}).tooltip({
+  items:'i[title]',
+  content: function() {
+      var element = $(this);
+      var tooltip = element.attr( "title" );
+      return tooltip;
+  }
 });
+
+
 
 dojo.addOnLoad(function () {
     dojo.addOnLoad(function () {
