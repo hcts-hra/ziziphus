@@ -132,4 +132,40 @@
         </xsl:copy>
     </xsl:template>
      
+     
+    <xsl:template match="//xsl:template[@match = 'vra:subjectSet']//html:table[contains(@class, 'vraSetView')]">
+        <xsl:copy>
+            <xsl:copy-of select="@*"/>
+            <tbody>
+                <transform:for-each-group select="vra:subject" group-by="vra:term/@type">
+                    <transform:sort select="current-grouping-key()"/>
+                    <transform:for-each select="current-group()">
+                        <transform:sort select="translate(vra:term, 'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
+                        <tr>
+                            <td>
+                                <transform:choose>
+                                    <transform:when test="string-length(string-join(vra:term,'')) != 0">
+                                        <transform:variable name="term" select="vra:term"/>
+                                        <transform:variable name="type">
+                                            <transform:choose>
+                                                <transform:when test="string-length(string-join($term/@type,'')) != 0"> (<transform:value-of select="$term/@type"/>)</transform:when>
+                                                <transform:otherwise/>
+                                            </transform:choose>
+                                        </transform:variable>
+                                        <div data-bf-type="input" data-bf-bind="vra:term" tabindex="0" title="Term">
+                                            <transform:value-of select="$term"/> <transform:value-of select="$type"/>
+                                        </div>
+                                    </transform:when>
+                                    <transform:otherwise>
+                                        <div class="nodata" data-bf-type="input" data-bf-bind="vra:term"
+                                            tabindex="0">(Term)</div>
+                                    </transform:otherwise>
+                                </transform:choose>
+                            </td>
+                        </tr>
+                    </transform:for-each>
+                </transform:for-each-group>
+            </tbody>
+        </xsl:copy>
+    </xsl:template>
 </xsl:stylesheet>

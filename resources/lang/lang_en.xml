@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language language="xxx">
+<language language="en">
    <display>
       <label>Display</label>
       <hint/>
@@ -67,8 +67,6 @@
    </type>
    <lang>
       <agentSet>
-        
-        
         <agent>
             <attribution>
                <label>Attribution</label>
@@ -105,8 +103,6 @@
         </agent>
       </agentSet>
       <culturalContextSet>
-        
-        
         <culturalContext>
             <label>CulturalContext</label>
             <hint/>
@@ -114,8 +110,6 @@
          </culturalContext>
       </culturalContextSet>
       <dateSet>
-        
-        
         <date>
             <earliestDate>
                 <date>
@@ -144,8 +138,6 @@
         </date>
       </dateSet>
       <descriptionSet>
-        
-        
         <description>
             <text>
                <label>Text</label>
@@ -167,8 +159,6 @@
         </description>
       </descriptionSet>
       <inscriptionSet>
-        
-        
         <inscription>
             <author>
                <label>Author</label>
@@ -188,8 +178,6 @@
         </inscription>
       </inscriptionSet>
       <locationSet>
-        
-        
         <location>
             <refid>
                <label>Refid</label>
@@ -216,8 +204,6 @@
         </location>
       </locationSet>
       <materialSet>
-        
-        
         <material>
             <label>Material</label>
             <hint/>
@@ -225,8 +211,6 @@
          </material>
       </materialSet>
       <measurementsSet>
-        
-        
         <measurements>
             <label>Measurements</label>
             <hint/>
@@ -234,8 +218,6 @@
          </measurements>
       </measurementsSet>
       <relationSet>
-        
-        
         <relation>
             <label>Relation</label>
             <hint/>
@@ -243,8 +225,6 @@
          </relation>
       </relationSet>
       <rightsSet>
-        
-        
         <rights>
             <rightsHolder>
                <label>RightsHolder</label>
@@ -259,8 +239,6 @@
         </rights>
       </rightsSet>
       <sourceSet>
-        
-        
         <source>
             <refid>
                <label>Refid</label>
@@ -275,8 +253,6 @@
         </source>
       </sourceSet>
       <stateEditionSet>
-        
-        
         <stateEdition>
             <description>
                <label>Description</label>
@@ -291,8 +267,6 @@
         </stateEdition>
       </stateEditionSet>
       <stylePeriodSet>
-        
-        
         <stylePeriod>
             <label>StylePeriod</label>
             <hint/>
@@ -300,8 +274,6 @@
          </stylePeriod>
       </stylePeriodSet>
       <subjectSet>
-        
-        
         <subject>
             <term>
                <label>Term</label>
@@ -311,8 +283,6 @@
         </subject>
       </subjectSet>
       <techniqueSet>
-        
-        
         <technique>
             <label>Technique</label>
             <hint/>
@@ -320,8 +290,6 @@
          </technique>
       </techniqueSet>
       <textrefSet>
-        
-        
         <textref>
             <name>
                <label>Name</label>
@@ -336,8 +304,6 @@
         </textref>
       </textrefSet>
       <titleSet>
-        
-        
         <title>
             <label>Title</label>
             <hint/>
@@ -345,8 +311,6 @@
          </title>
       </titleSet>
       <worktypeSet>
-        
-        
         <worktype>
             <label>Worktype</label>
             <hint/>

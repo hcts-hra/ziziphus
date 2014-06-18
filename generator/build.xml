@@ -445,6 +445,9 @@
         <antcall target="finetune-subform">
             <param name="subformName" value="SubjectSet"/>
         </antcall>
+        <antcall target="finetune-view">
+            <param name="subformName" value="SubjectSet"/>
+        </antcall>
         <antcall target="generate-section-view-transform">
             <param name="subformName" value="TechniqueSet"/>
         </antcall>
