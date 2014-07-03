@@ -29,9 +29,10 @@ let $log4 := util:log("info", "xmldb:get-current-user before: " || xmldb:get-cur
 
 let $security := system:as-user($user, $userpass,
     (
-        let $canWrite := security:can-write-collection(xs:anyURI($workdir))
+        let $canWrite := true()
+        (: let $canWrite := security:can-write-collection(xs:anyURI($workdir)) :)
         let $log11 := util:log("info", "xmldb:get-current-user after: " || xmldb:get-current-user())
-        let $log12 := util:log("info", "security:can-write-collection: " || security:can-write-collection(xs:anyURI($workdir)))
+        (: let $log12 := util:log("info", "security:can-write-collection: " || security:can-write-collection(xs:anyURI($workdir))) :)
         let $log13 := util:log("info", "sm:get-permissions Collection: " ||  sm:get-permissions(xs:anyURI($workdir))/sm:permission/@mode)
         let $log14 := util:log("info", "sm:get-permissions File: " ||  sm:get-permissions(xs:anyURI(util:collection-name($record) || "/" || util:document-name($record)))/sm:permission/@mode)
         return

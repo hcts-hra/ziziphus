@@ -31,7 +31,7 @@
                   <xf:message ev:event="xforms-submit-error">Failed to load data.</xf:message>
                </xf:submission>
                <xf:submission id="s-update"
-                              resource="modules/updateRecord.xql?id={bf:instanceOfModel('m-main','i-control-center')/uuid}&amp;set=stateEditionSet"
+                              resource="modules/updateRecord.xql?id={bf:instanceOfModel('m-main','i-control-center')/uuid}&amp;set=stateEditionSet&amp;workdir={bf:instanceOfModel('m-main','i-control-center')/workdir}"
                               method="post"
                               replace="none"
                               validate="false">

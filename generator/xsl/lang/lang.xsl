@@ -16,66 +16,79 @@
             <display>
                 <label>Display</label>
                 <hint/>
+                <help/>
                 <alert/>
             </display>
             <notes>
                 <label>Notes</label>
                 <hint/>
+                <help/>
                 <alert/>
             </notes>
             <dataDate>
                 <label>Data Date</label>
                 <hint/>
+                <help/>
                 <alert/>
             </dataDate>
             <extent>
                 <label>Extent</label>
                 <hint/>
+                <help/>
                 <alert/>
             </extent>
             <href>
                 <label>Href</label>
                 <hint/>
+                <help/>
                 <alert/>
             </href>
             <refid>
                 <label>RefID</label>
                 <hint/>
+                <help/>
                 <alert/>
             </refid>
             <rules>
                 <label>Rules</label>
                 <hint/>
+                <help/>
                 <alert/>
             </rules>
             <source>
                 <label>Source</label>
                 <hint/>
+                <help/>
                 <alert/>
             </source>
             <vocab>
                 <label>Vocab</label>
                 <hint/>
+                <help/>
                 <alert/>
             </vocab>
             <lang>
                 <label>Lang</label>
                 <hint/>
+                <help/>
                 <alert/>
             </lang>
             <script>
                 <label>Script</label>
                 <hint/>
+                <help/>
                 <alert/>
             </script>
             <transliteration>
                 <label>Transliteration</label>
                 <hint/>
+                <help/>
                 <alert/>
             </transliteration>
             <type>
                 <label>Type</label>
                 <hint/>
+                <help/>
                 <alert/>
             </type>
             <xsl:apply-templates select="*"/>
@@ -89,6 +102,7 @@
                 <label><xsl:value-of select="concat(upper-case(substring(local-name(),1,1)),
           substring(local-name(), 2))"/></label>
                 <hint></hint>
+                <help/>
                 <alert></alert>
             </xsl:if>
             <xsl:apply-templates/>

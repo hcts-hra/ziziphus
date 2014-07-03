@@ -3,66 +3,79 @@
    <display>
       <label>Display</label>
       <hint/>
+      <help/>
       <alert/>
    </display>
    <notes>
       <label>Notes</label>
       <hint/>
+      <help/>
       <alert/>
    </notes>
    <dataDate>
       <label>Data Date</label>
       <hint/>
+      <help/>
       <alert/>
    </dataDate>
    <extent>
       <label>Extent</label>
       <hint/>
+      <help/>
       <alert/>
    </extent>
    <href>
       <label>Href</label>
       <hint/>
+      <help/>
       <alert/>
    </href>
    <refid>
       <label>RefID</label>
       <hint/>
+      <help/>
       <alert/>
    </refid>
    <rules>
       <label>Rules</label>
       <hint/>
+      <help/>
       <alert/>
    </rules>
    <source>
       <label>Source</label>
       <hint/>
+      <help/>
       <alert/>
    </source>
    <vocab>
       <label>Vocab</label>
       <hint/>
+      <help/>
       <alert/>
    </vocab>
    <lang>
       <label>Lang</label>
       <hint/>
+      <help/>
       <alert/>
    </lang>
    <script>
       <label>Script</label>
       <hint/>
+      <help/>
       <alert/>
    </script>
    <transliteration>
       <label>Transliteration</label>
       <hint/>
+      <help/>
       <alert/>
    </transliteration>
    <type>
       <label>Type</label>
       <hint/>
+      <help/>
       <alert/>
    </type>
    <lang>
@@ -71,33 +84,39 @@
             <attribution>
                <label>Attribution</label>
                <hint/>
+               <help/>
                <alert/>
             </attribution>
             <culture>
                <label>Culture</label>
                <hint/>
+               <help/>
                <alert/>
             </culture>
             <dates>
                 <earliestDate>
                   <label>EarliestDate</label>
                   <hint/>
+                  <help/>
                   <alert/>
                </earliestDate>
                 <latestDate>
                   <label>LatestDate</label>
                   <hint/>
+                  <help/>
                   <alert/>
                </latestDate>
             </dates>
             <name>
                <label>Name</label>
                <hint/>
+               <help/>
                <alert/>
             </name>
             <role>
                <label>Role</label>
                <hint/>
+               <help/>
                <alert/>
             </role>
         </agent>
@@ -106,6 +125,7 @@
         <culturalContext>
             <label>CulturalContext</label>
             <hint/>
+            <help/>
             <alert/>
          </culturalContext>
       </culturalContextSet>
@@ -115,11 +135,13 @@
                 <date>
                   <label>Date</label>
                   <hint/>
+                  <help/>
                   <alert/>
                </date>
                 <alternativeNotation>
                   <label>AlternativeNotation</label>
                   <hint/>
+                  <help/>
                   <alert/>
                </alternativeNotation>
             </earliestDate>
@@ -127,11 +149,13 @@
                 <date>
                   <label>Date</label>
                   <hint/>
+                  <help/>
                   <alert/>
                </date>
                 <alternativeNotation>
                   <label>AlternativeNotation</label>
                   <hint/>
+                  <help/>
                   <alert/>
                </alternativeNotation>
             </latestDate>
@@ -142,17 +166,20 @@
             <text>
                <label>Text</label>
                <hint/>
+               <help/>
                <alert/>
             </text>
             <author>
                 <name>
                   <label>Name</label>
                   <hint/>
+                  <help/>
                   <alert/>
                </name>
                 <role>
                   <label>Role</label>
                   <hint/>
+                  <help/>
                   <alert/>
                </role>
             </author>
@@ -163,16 +190,19 @@
             <author>
                <label>Author</label>
                <hint/>
+               <help/>
                <alert/>
             </author>
             <position>
                <label>Position</label>
                <hint/>
+               <help/>
                <alert/>
             </position>
             <text>
                <label>Text</label>
                <hint/>
+               <help/>
                <alert/>
             </text>
         </inscription>
@@ -182,22 +212,26 @@
             <refid>
                <label>Refid</label>
                <hint/>
+               <help/>
                <alert/>
             </refid>
             <name>
                <label>Name</label>
                <hint/>
+               <help/>
                <alert/>
             </name>
             <point>
                 <lat>
                   <label>Lat</label>
                   <hint/>
+                  <help/>
                   <alert/>
                </lat>
                 <long>
                   <label>Long</label>
                   <hint/>
+                  <help/>
                   <alert/>
                </long>
             </point>
@@ -207,6 +241,7 @@
         <material>
             <label>Material</label>
             <hint/>
+            <help/>
             <alert/>
          </material>
       </materialSet>
@@ -214,6 +249,7 @@
         <measurements>
             <label>Measurements</label>
             <hint/>
+            <help/>
             <alert/>
          </measurements>
       </measurementsSet>
@@ -221,6 +257,7 @@
         <relation>
             <label>Relation</label>
             <hint/>
+            <help/>
             <alert/>
          </relation>
       </relationSet>
@@ -229,11 +266,13 @@
             <rightsHolder>
                <label>RightsHolder</label>
                <hint/>
+               <help/>
                <alert/>
             </rightsHolder>
             <text>
                <label>Text</label>
                <hint/>
+               <help/>
                <alert/>
             </text>
         </rights>
@@ -243,11 +282,13 @@
             <refid>
                <label>Refid</label>
                <hint/>
+               <help/>
                <alert/>
             </refid>
             <name>
                <label>Name</label>
                <hint/>
+               <help/>
                <alert/>
             </name>
         </source>
@@ -257,11 +298,13 @@
             <description>
                <label>Description</label>
                <hint/>
+               <help/>
                <alert/>
             </description>
             <name>
                <label>Name</label>
                <hint/>
+               <help/>
                <alert/>
             </name>
         </stateEdition>
@@ -270,6 +313,7 @@
         <stylePeriod>
             <label>StylePeriod</label>
             <hint/>
+            <help/>
             <alert/>
          </stylePeriod>
       </stylePeriodSet>
@@ -278,6 +322,7 @@
             <term>
                <label>Term</label>
                <hint/>
+               <help/>
                <alert/>
             </term>
         </subject>
@@ -286,6 +331,7 @@
         <technique>
             <label>Technique</label>
             <hint/>
+            <help/>
             <alert/>
          </technique>
       </techniqueSet>
@@ -294,11 +340,13 @@
             <name>
                <label>Name</label>
                <hint/>
+               <help/>
                <alert/>
             </name>
             <refid>
                <label>Refid</label>
                <hint/>
+               <help/>
                <alert/>
             </refid>
         </textref>
@@ -307,6 +355,7 @@
         <title>
             <label>Title</label>
             <hint/>
+            <help/>
             <alert/>
          </title>
       </titleSet>
@@ -314,6 +363,7 @@
         <worktype>
             <label>Worktype</label>
             <hint/>
+            <help/>
             <alert/>
          </worktype>
       </worktypeSet>

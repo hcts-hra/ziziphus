@@ -339,6 +339,23 @@
     <!-- 
         ########## SubjectSet ##########
     -->
+    
+    <!-- circa (dates) -->
+    
+
+    <xsl:template match="xf:instance[@id eq 'i-templates'][//vra:subject]">
+        <xsl:copy-of select="."/>
+        <xf:instance id="i-repositories" xmlns="">
+            <data/>
+        </xf:instance>
+        
+        <xf:submission id="s-load-repositories" replace="instance" method="get" instance="i-repositories" resource="/exist/apps/cluster-shared/modules/repositories/repositories.xq"/>
+            
+        <xf:action ev:event="xforms-ready">
+            <xf:send submission="s-load-repositories"/>
+        </xf:action>
+    </xsl:template>
+    
     <xsl:template match="xhtml:tbody[@xf:repeat-nodeset eq 'vra:subject']//xf:select1[@ref = 'vra:term/@type']">
         <xsl:copy>
             <xsl:copy-of select ="@*"/>

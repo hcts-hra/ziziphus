@@ -123,7 +123,7 @@
                                     <xf:message ev:event="xforms-submit-done" level="ephemeral">Data have been loaded.</xf:message>
                                     <xf:message ev:event="xforms-submit-error">Failed to load data.</xf:message>
                             </xf:submission>
-                            <xf:submission id="s-update" resource="{$relativePath}modules/updateRecord.xql?id={{bf:instanceOfModel('m-main','i-control-center')/uuid}}&amp;set={$vraSectionNode}" method="post" replace="none" validate="false">
+                            <xf:submission id="s-update" resource="{$relativePath}modules/updateRecord.xql?id={{bf:instanceOfModel('m-main','i-control-center')/uuid}}&amp;set={$vraSectionNode}&amp;workdir={{bf:instanceOfModel('m-main','i-control-center')/workdir}}" method="post" replace="none" validate="false">
                                 <xsl:call-template name="checkPrefOnSubmission">
                                 	<xsl:with-param name="sectionNode" select="$vraSectionNode"/>
                                 	<xsl:with-param name="artifactNode" select="$vraArtifactNode"/>

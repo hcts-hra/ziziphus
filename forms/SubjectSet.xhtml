@@ -38,7 +38,7 @@
                   <xf:message ev:event="xforms-submit-error">Failed to load data.</xf:message>
                </xf:submission>
                <xf:submission id="s-update"
-                              resource="modules/updateRecord.xql?id={bf:instanceOfModel('m-main','i-control-center')/uuid}&amp;set=subjectSet"
+                              resource="modules/updateRecord.xql?id={bf:instanceOfModel('m-main','i-control-center')/uuid}&amp;set=subjectSet&amp;workdir={bf:instanceOfModel('m-main','i-control-center')/workdir}"
                               method="post"
                               replace="none"
                               validate="false">
@@ -87,6 +87,15 @@
                      <display></display>
                   </templates>
                </xf:instance>
+               <xf:instance xmlns="" id="i-repositories">
+                  <data></data>
+               </xf:instance>
+               <xf:submission id="s-load-repositories" replace="instance" method="get"
+                              instance="i-repositories"
+                              resource="/exist/apps/cluster-shared/modules/repositories/repositories.xq"></xf:submission>
+               <xf:action ev:event="xforms-ready">
+                  <xf:send submission="s-load-repositories"></xf:send>
+               </xf:action>
                <xi:include href="bricks/vraAttributesInstance.xml"></xi:include>
                <xf:instance id="i-util">
                   <data xmlns="">
