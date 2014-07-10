@@ -274,23 +274,36 @@
                                                   if="not(exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/@type))"></xf:insert>
                                        <xf:setvalue ref="@type" value="event('termType')"></xf:setvalue>
                                     </xf:action>
-                                    <xf:action>
-                                       <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@vocab"
-                                                  context="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role"
-                                                  if="not(exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@vocab))"></xf:insert>
+                                    <xf:action if="not(event('termValue') eq '')">
+                                       <xf:action>
+                                          <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@vocab"
+                                                     context="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role"
+                                                     if="not(exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@vocab))"></xf:insert>
+                                       </xf:action>
+                                       <xf:action>
+                                          <xf:setvalue ref="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@vocab"
+                                                       value="'marcrelator'"></xf:setvalue>
+                                       </xf:action>
+                                       <xf:action>
+                                          <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@type"
+                                                     context="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role"
+                                                     if="not(exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@type))"></xf:insert>
+                                       </xf:action>
+                                       <xf:action>
+                                          <xf:setvalue ref="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@type"
+                                                       value="'code'"></xf:setvalue>
+                                       </xf:action>
                                     </xf:action>
-                                    <xf:action>
+                                    <xf:action if="event('termValue') eq ''">
                                        <xf:setvalue ref="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@vocab"
-                                                    value="'marcrelator'"></xf:setvalue>
-                                    </xf:action>
-                                    <xf:action>
-                                       <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@type"
-                                                  context="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role"
-                                                  if="not(exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@type))"></xf:insert>
-                                    </xf:action>
-                                    <xf:action>
+                                                    value="''"
+                                                    if="exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@vocab)"></xf:setvalue>
                                        <xf:setvalue ref="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@type"
-                                                    value="'code'"></xf:setvalue>
+                                                    value="''"
+                                                    if="exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@type)"></xf:setvalue>
+                                       <xf:setvalue ref="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role"
+                                                    value="''"
+                                                    if="exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role)"></xf:setvalue>
                                     </xf:action>
                                  </xf:action>
                                  <xf:label>Name</xf:label>
@@ -324,7 +337,8 @@
                                  <xf:label ref="label"></xf:label>
                                  <xf:value ref="value"></xf:value>
                               </xf:itemset>
-                              <xf:action ev:event="xforms-value-changed">
+                              <xf:action ev:event="xforms-value-changed"
+                                         if="not(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role eq '')">
                                  <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@vocab"
                                             context="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role"
                                             if="not(exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@vocab))"></xf:insert>

@@ -45,22 +45,28 @@
         <xsl:copy>
             <xsl:copy-of select ="@*"/>
             <xsl:copy-of select ="*|text()"/>
-            
-            <xf:action>https://startpage.com/eng/
-                <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@vocab"
-                           context="instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role"
-                           if="not(exists(instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role/@vocab))"/>
+            <xf:action if="not(event('termValue') eq '')">
+                <xf:action>
+                    <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@vocab"
+                               context="instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role"
+                               if="not(exists(instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role/@vocab))"/>
+                </xf:action>
+                <xf:action>
+                    <xf:setvalue ref="instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role/@vocab" value="'marcrelator'"/>
+                </xf:action>
+                <xf:action>
+                    <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@type"
+                        context="instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role"
+                        if="not(exists(instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role/@type))"/>
+                </xf:action>
+                <xf:action>
+                    <xf:setvalue ref="instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role/@type" value="'code'"/>
+                </xf:action>
             </xf:action>
-            <xf:action>
-                <xf:setvalue ref="instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role/@vocab" value="'marcrelator'"/>
-            </xf:action>
-            <xf:action>
-                <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@type"
-                    context="instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role"
-                    if="not(exists(instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role/@type))"/>
-            </xf:action>
-            <xf:action>
-                <xf:setvalue ref="instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role/@type" value="'code'"/>
+            <xf:action if="event('termValue') eq ''">
+                <xf:setvalue ref="instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role/@vocab" value="''" if="exists(instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role/@vocab)"/>
+                <xf:setvalue ref="instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role/@type" value="''"  if="exists(instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role/@type)"/>
+                <xf:setvalue ref="instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role" value="''" if="exists(instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role)"/>
             </xf:action>
         </xsl:copy>
     </xsl:template>    
@@ -71,7 +77,7 @@
             <xsl:copy-of select ="@*"/>
              <xsl:copy-of select ="*|text()"/>
             <!--xsl:copy-of select ="xf:label|xf:hint|xf:help|xf:alert"/-->
-            <xf:action ev:event="xforms-value-changed">
+            <xf:action ev:event="xforms-value-changed" if="not(instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role eq '')">
                 <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@vocab"
                            context="instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role"
                            if="not(exists(instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role/@vocab))"></xf:insert>
@@ -297,22 +303,29 @@
         <xsl:copy>
             <xsl:copy-of select ="@*"/>
             <xsl:copy-of select ="*"/>
-            
-            <xf:action>
-                <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@vocab"
-                    context="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role"
-                    if="not(exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@vocab))"/>
+            <xf:action if="not(event('termValue') eq '')">
+                <xf:action>
+                    <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@vocab"
+                        context="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role"
+                        if="not(exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@vocab))"/>
+                </xf:action>
+                <xf:action>
+                    <xf:setvalue ref="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@vocab" value="'marcrelator'"/>
+                </xf:action>
+                <xf:action>
+                    <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@type"
+                        context="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role"
+                        if="not(exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@type))"/>
+                </xf:action>
+                <xf:action>
+                    <xf:setvalue ref="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@type" value="'code'"/>
+                </xf:action>
             </xf:action>
-            <xf:action>
-                <xf:setvalue ref="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@vocab" value="'marcrelator'"/>
-            </xf:action>
-            <xf:action>
-                <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@type"
-                    context="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role"
-                    if="not(exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@type))"/>
-            </xf:action>
-            <xf:action>
-                <xf:setvalue ref="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@type" value="'code'"/>
+            <xf:action if="event('termValue') eq ''">
+                
+                <xf:setvalue ref="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@vocab" value="''" if="exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@vocab)"/>
+                <xf:setvalue ref="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@type" value="''"  if="exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@type)"/>
+                <xf:setvalue ref="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role" value="''" if="exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role)"/>
             </xf:action>
         </xsl:copy>
     </xsl:template>
@@ -322,7 +335,7 @@
             <xsl:copy-of select ="@*"/>
             <xsl:copy-of select ="*|text()"/>
             
-            <xf:action ev:event="xforms-value-changed">
+            <xf:action ev:event="xforms-value-changed" if="not(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role eq '')">
                 <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@vocab"
                     context="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role"
                     if="not(exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@vocab))"></xf:insert>
@@ -349,7 +362,8 @@
             <data/>
         </xf:instance>
         
-        <xf:submission id="s-load-repositories" replace="instance" method="get" instance="i-repositories" resource="/exist/apps/cluster-shared/modules/repositories/repositories.xq"/>
+        <xf:bind nodeset="instance('i-repositories')/custom" relevant="count(instance('i-repositories')//repository[not(@repotype eq 'global')]) &gt; 0"/>
+        <xf:submission id="s-load-repositories" validate="false" replace="instance" method="get" instance="i-repositories" resource="/exist/apps/cluster-shared/modules/repositories/repositories.xq"/>
             
         <xf:action ev:event="xforms-ready">
             <xf:send submission="s-load-repositories"/>
@@ -373,6 +387,23 @@
                 <xsl:copy-of select="xf:item[contains(xf:label, 'Name')]"/>
             </xf:choices>
         </xsl:copy>
+        <!-- TODO: UI for multiple repositories 
+        <xf:select1 ref="@vocab">
+            <xf:label>Vocab</xf:label>
+            <xf:itemset nodeset="instance('i-repositories')//repository[@repotype eq 'global']">
+                <xf:label ref="@name"/>
+                <xf:value ref="@collection"/>
+            </xf:itemset>
+        </xf:select1>
+        
+        <xf:select ref="instance('i-repositories')/custom" appearance="full">
+            <xf:label>Other vocabs</xf:label>
+            <xf:itemset nodeset="instance('i-repositories')//repository[not(@repotype eq 'global')]">
+                <xf:label ref="@name"/>
+                <xf:value ref="@collection"/>
+            </xf:itemset>
+        </xf:select>
+        -->
     </xsl:template>
     
     <xsl:template match="xhtml:tbody[@xf:repeat-nodeset eq 'vra:subject']//xf:input[@ref = 'vra:term']//xf:insert[@context='.' and contains(@origin, '@type')]" priority="10"/>

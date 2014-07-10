@@ -90,7 +90,9 @@
                <xf:instance xmlns="" id="i-repositories">
                   <data></data>
                </xf:instance>
-               <xf:submission id="s-load-repositories" replace="instance" method="get"
+               <xf:bind nodeset="instance('i-repositories')/custom"
+                        relevant="count(instance('i-repositories')//repository[not(@repotype eq 'global')]) &gt; 0"></xf:bind>
+               <xf:submission id="s-load-repositories" validate="false" replace="instance" method="get"
                               instance="i-repositories"
                               resource="/exist/apps/cluster-shared/modules/repositories/repositories.xq"></xf:submission>
                <xf:action ev:event="xforms-ready">
