@@ -83,39 +83,39 @@
         <agent>
             <attribution>
                <label>Attribution</label>
-               <hint/>
+               <hint/If a work is attributed to a certain artist or school, add information about this here.>
                <help/>
                <alert/>
             </attribution>
             <culture>
                <label>Culture</label>
-               <hint/>
+               <hint/You may add information about the cultural background of the agent here.>
                <help/>
                <alert/>
             </culture>
             <dates>
                 <earliestDate>
                   <label>EarliestDate</label>
-                  <hint/>
+                  <hint/ Add e.g. the birth year or start of activity here. Choose a date type and if necessary a specification from the dropdown menus.>
                   <help/>
                   <alert/>
                </earliestDate>
                 <latestDate>
                   <label>LatestDate</label>
-                  <hint/>
+                  <hint/ Add e.g. the year of death or the end of activity here. If necessary choose a specification from the dropdown menu.>
                   <help/>
                   <alert/>
                </latestDate>
             </dates>
             <name>
                <label>Name</label>
-               <hint/>
+               <hint/Start entering the last name of a person and select the right person from the suggestions.>
                <help/>
                <alert/>
             </name>
             <role>
                <label>Role</label>
-               <hint/>
+               <hint/Choose a role from the dropdown menu.>
                <help/>
                <alert/>
             </role>
