@@ -83,20 +83,20 @@
         <agent>
             <attribution>
                <label>Attribution</label>
-               <hint If a work is attributed to a certain artist or school, add information about this here./>
+               <hint>If a work is attributed to a certain artist or school, add information about this here.</hint>
                <help/>
                <alert/>
             </attribution>
             <culture>
                <label>Culture</label>
-               <hint You may add information about the cultural background of the agent here./>
+               <hint>You may add information about the cultural background of the agent here.</hint>
                <help/>
                <alert/>
             </culture>
             <dates>
                 <earliestDate>
                   <label>EarliestDate</label>
-                  <hint Add e.g. the birth year or start of activity here. Choose a date type and if necessary a specification from the dropdown menus./>
+                  <hint>Add e.g. the birth year or start of activity here. Choose a date type and if necessary a specification from the dropdown menus.</hint>
                   <help/>
                   <alert/>
                </earliestDate>
