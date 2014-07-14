@@ -80,10 +80,12 @@
    </type>
    <lang>
       <agentSet>
+      <!-- We need labels for the elementSet as well -->
+      <!-- How to insert line breaks? -->
         <agent>
             <attribution>
                <label>Attribution</label>
-               <hint>If a work is attributed to a certain artist or school, add information about this here.</hint>
+               <hint>If a work is attributed to a certain artist or school, add information about this here; e.g. "School of".</hint>
                <help/>
                <alert/>
             </attribution>
@@ -112,6 +114,7 @@
                <hint Start entering the last name of a person and select the right person from the suggestions./>
                <help/>
                <alert/>
+               <!-- Since @type is also displayed in the interface, it should also be possible to explain it. This probably applies to all VRA core (expanded) attributes. We should add hint and help for all, just the alert will perhaps not be necessary. -->
             </name>
             <role>
                <label>Role</label>
