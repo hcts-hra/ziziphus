@@ -104,21 +104,21 @@
                </earliestDate>
                 <latestDate>
                   <label>LatestDate</label>
-                  <hint Add e.g. the year of death or the end of activity here. If necessary choose a specification from the dropdown menu./>
+                  <hint>Add e.g. the year of death or the end of activity here. If necessary choose a specification from the dropdown menu.</hint>
                   <help/>
                   <alert/>
                </latestDate>
             </dates>
             <name>
                <label>Name</label>
-               <hint Start entering the last name of a person and select the right person from the suggestions./>
+               <hint>Start entering the last name of a person and select the right person from the suggestions.</hint>
                <help/>
                <alert/>
                <!-- Since @type is also displayed in the interface, it should also be possible to explain it. This probably applies to all VRA core (expanded) attributes. We should add hint and help for all, just the alert will perhaps not be necessary. -->
             </name>
             <role>
                <label>Role</label>
-               <hint Choose a role from the dropdown menu./>
+               <hint>Choose a role from the dropdown menu.</hint>
                <help/>
                <alert/>
             </role>
