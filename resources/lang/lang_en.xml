@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language language="en">
    <!-- I am not sure if we need tool tips and help links for the global attributes. Which of the global attributes will be edited by the user? -->
+   <!-- But I think we might need tool tips and help links for "work" and "image." -->
    <display>
       <label>Display</label>
       <hint/>
