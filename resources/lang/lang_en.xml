@@ -89,7 +89,7 @@
                <label>Attribution</label>
                <hint>If a work is attributed to a certain artist or school, add information about this here; e.g. "School of".</hint>
                <help/>
-               <alert>Please specify the attribution as you used the same role description twice.</alert>
+               <alert>Please specify the attribution as you used the same role description more than once.</alert>
                <!-- This is an if... then... alert. This alert is only needed, if the same role has been chosen more than once.-->
             </attribution>
             <culture>
