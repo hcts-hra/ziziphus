@@ -96,7 +96,8 @@
                <label>Culture</label>
                <hint>You may add information about the cultural background of the agent here.</hint>
                <help/>
-               <alert/>
+               <alert>You entered 'unknown' in the agent's name field, so please give a cultural context for this agent.</alert>
+               <!-- Alert is needed, when agent name is "unknown." -->
             </culture>
             <dates>
                 <earliestDate>
