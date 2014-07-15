@@ -115,14 +115,14 @@
                <label>Name</label>
                <hint>Start entering the last name of a person and select the right person from the suggestions.</hint>
                <help/>
-               <alert/>
+               <alert>Please enter a name and choose an agent from the upcoming suggestions. If you are dealing with an unknown artist, please use "unknwon" and specify the cultural background of the agent within the 'Culture' field. For the cultural context of the art work itself, please use the Cultural Context Set.</alert>
                <!-- Since @type is also displayed in the interface, it should also be possible to explain it. This probably applies to all VRA core (expanded) attributes. We should add hint and help for all, just the alert will perhaps not be necessary. -->
             </name>
             <role>
                <label>Role</label>
                <hint>Choose a role from the dropdown menu.</hint>
                <help/>
-               <alert/>
+               <alert>The role field is, please choose a role from the dropdown menu.</alert>
             </role>
         </agent>
       </agentSet>
