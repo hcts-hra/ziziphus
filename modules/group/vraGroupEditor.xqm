@@ -38,8 +38,8 @@ function vraGroupEditor:init($body ) {
             </head>
             <body>
                 <div class="ui-layout-center outer-center">
-                    <div class="full">
-                        <iframe id="iEditor" src="record.html?id={$uuids[1]}&amp;workdir={$app:record-dir}"></iframe>
+                    <div class="full" style="height:100%">
+                        <iframe id="iEditor" src="/exist/apps/ziziphus/record.html?id={$uuids[1]}&amp;workdir={$app:record-dir}"></iframe>
                     </div>
                 </div>
                 <div class="ui-layout-south outer-south">
@@ -53,10 +53,10 @@ function vraGroupEditor:init($body ) {
                     </div>
                 </div>
             
-                <script type="text/javascript" src="resources/script/jquery-1.9.1.js"/>
-                <script type="text/javascript" src="resources/script/jquery-ui-1.10.2.custom.min.js"/>
-                <script type="text/javascript" src="resources/script/jquery.layout-latest.min.js"/>
-                <script type="text/javascript" src="resources/script/group/group.js"/> 
+                <script type="text/javascript" src="/exist/apps/ziziphus/resources/script/jquery-1.9.1.js"/>
+                <script type="text/javascript" src="/exist/apps/ziziphus/resources/script/jquery-ui-1.10.2.custom.min.js"/>
+                <script type="text/javascript" src="/exist/apps/ziziphus/resources/script/jquery.layout-latest.min.js"/>
+                <script type="text/javascript" src="/exist/apps/ziziphus/resources/script/group/group.js"/> 
             </body>
         </html>
 };

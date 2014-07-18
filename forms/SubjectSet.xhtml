@@ -38,7 +38,7 @@
                   <xf:message ev:event="xforms-submit-error">Failed to load data.</xf:message>
                </xf:submission>
                <xf:submission id="s-update"
-                              resource="modules/updateRecord.xql?id={bf:instanceOfModel('m-main','i-control-center')/uuid}&amp;set=subjectSet"
+                              resource="modules/updateRecord.xql?id={bf:instanceOfModel('m-main','i-control-center')/uuid}&amp;set=subjectSet&amp;workdir={bf:instanceOfModel('m-main','i-control-center')/workdir}"
                               method="post"
                               replace="none"
                               validate="false">
@@ -87,11 +87,24 @@
                      <display></display>
                   </templates>
                </xf:instance>
+               <xf:instance xmlns="" id="i-repositories">
+                  <data></data>
+               </xf:instance>
+               <xf:bind nodeset="instance('i-repositories')/custom"
+                        relevant="count(instance('i-repositories')//repository[not(@repotype eq 'global')]) &gt; 0"></xf:bind>
+               <xf:submission id="s-load-repositories" validate="false" replace="instance" method="get"
+                              instance="i-repositories"
+                              resource="/exist/apps/cluster-shared/modules/repositories/repositories.xq"></xf:submission>
+               <xf:action ev:event="xforms-ready">
+                  <xf:send submission="s-load-repositories"></xf:send>
+               </xf:action>
                <xi:include href="bricks/vraAttributesInstance.xml"></xi:include>
                <xf:instance id="i-util">
                   <data xmlns="">
                      <!--used to store the current element being used in attribute editing-->
+                     <!--used to store the current element position being used in attribute editing-->
                      <currentElement></currentElement>
+                     <currentPosition></currentPosition>
                   </data>
                </xf:instance>
             </xf:model>
@@ -149,8 +162,11 @@
                           if="'.'=instance('i-util')/currentElement"
                           origin="instance('i-subjectSet')/vra:subject[index('r-vraSubject')]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:insert>
                <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]"
-                          if="not('.'=instance('i-util')/currentElement)"
+                          if="not('.'=instance('i-util')/currentElement) and instance('i-util')/currentPosition = -1"
                           origin="instance('i-subjectSet')/vra:subject[index('r-vraSubject')]/*[local-name()=instance('i-util')/currentElement]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:insert>
+               <xf:insert context="instance('i-vraAttributes')/vra:vraElement[1]"
+                          if="not('.'=instance('i-util')/currentElement) and instance('i-util')/currentPosition != -1"
+                          origin="instance('i-subjectSet')/vra:subject[index('r-vraSubject')]//*[local-name()=instance('i-util')/currentElement][position() = instance('i-util')/currentPosition]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:insert>
             </xf:action>
             <xf:trigger id="doDelete" class="hiddenControl">
                <xf:label>remove</xf:label>
@@ -239,6 +255,11 @@
                                                   if="not(exists(instance('i-subjectSet')/vra:subject[index('r-vraSubject')]/@vocab))"></xf:insert>
                                        <xf:setvalue ref="../@vocab" value="event('authority')"></xf:setvalue>
                                     </xf:action>
+                                    <xf:action>
+                                       <xf:insert context=".." origin="instance('i-vraAttributes')/vra:vraElement[1]/@src"
+                                                  if="not(exists(instance('i-subjectSet')/vra:subject[index('r-vraSubject')]/@src))"></xf:insert>
+                                       <xf:setvalue ref="../@src" value="event('src')"></xf:setvalue>
+                                    </xf:action>
                                     <xf:action if="exists(../vra:dates/vra:earliestDate)">
                                        <xf:setvalue ref="../vra:dates/vra:earliestDate" value="event('earliestDate')"></xf:setvalue>
                                     </xf:action>
@@ -260,6 +281,7 @@
                               <xf:hint>Edit Attributes</xf:hint>
                               <xf:action>
                                  <xf:setvalue ref="instance('i-util')/currentElement" value="'term'"></xf:setvalue>
+                                 <xf:setvalue ref="instance('i-util')/currentPosition">-1</xf:setvalue>
                                  <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
                               </xf:action>
                               <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
@@ -283,6 +305,7 @@
                               <xf:hint>Edit Attributes</xf:hint>
                               <xf:action>
                                  <xf:setvalue ref="instance('i-util')/currentElement">.</xf:setvalue>
+                                 <xf:setvalue ref="instance('i-util')/currentPosition">-1</xf:setvalue>
                                  <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
                               </xf:action>
                               <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
@@ -415,10 +438,15 @@
                         <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]"
                                    context="instance('i-subjectSet')/vra:subject[index('r-vraSubject')]"></xf:insert>
                      </xf:action>
-                     <xf:action if="not('.'=instance('i-util')/currentElement)">
+                     <xf:action if="not('.'=instance('i-util')/currentElement) and instance('i-util')/currentPosition = -1">
                         <xf:delete nodeset="instance('i-subjectSet')/vra:subject[index('r-vraSubject')]/*[local-name()=instance('i-util')/currentElement]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:delete>
                         <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]"
                                    context="instance('i-subjectSet')/vra:subject[index('r-vraSubject')]/*[local-name()=instance('i-util')/currentElement]"></xf:insert>
+                     </xf:action>
+                     <xf:action if="not('.'=instance('i-util')/currentElement) and instance('i-util')/currentPosition != -1">
+                        <xf:delete nodeset="instance('i-subjectSet')/vra:subject[index('r-vraSubject')]//*[local-name()=instance('i-util')/currentElement][position() = instance('i-util')/currentPosition]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:delete>
+                        <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]"
+                                   context="instance('i-subjectSet')/vra:subject[index('r-vraSubject')]//*[local-name()=instance('i-util')/currentElement][position() = instance('i-util')/currentPosition]"></xf:insert>
                      </xf:action>
                      <bfc:hide dialog="attrDialog"></bfc:hide>
                   </xf:trigger>

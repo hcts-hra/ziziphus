@@ -5,6 +5,7 @@
                 version="2.0">
    <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes"
                omit-xml-declaration="no"></xsl:output>
+   <xsl:preserve-space elements="vra:text"></xsl:preserve-space>
    <xsl:template match="vra:rightsSet">
       <xsl:param name="vraTableId"></xsl:param>
       <div class="simple" id="{$vraTableId}">
@@ -45,8 +46,11 @@
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:text,'')) != 0">
                               <div data-bf-type="textarea" data-bf-bind="vra:text" tabindex="0" title="Text"
-                                   id="b-d2e1138">
-                                 <xsl:value-of select="vra:text"></xsl:value-of>
+                                   id="b-d2e1138"
+                                   style="white-space: pre-line;">
+                                 <p>
+                                    <xsl:value-of select="vra:text"></xsl:value-of>
+                                 </p>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>

@@ -79,7 +79,7 @@ $(function() {
 });
 
 function loadRecord(uuid) {
-    $("#iEditor").attr("src", "record.html?id=" + uuid);
+    $("#iEditor").attr("src", "/exist/apps/ziziphus/record.html?id=" + uuid);
 }
 
 

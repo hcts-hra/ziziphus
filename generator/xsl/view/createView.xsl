@@ -27,7 +27,8 @@
                               xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                               xmlns:vra="http://www.vraweb.org/vracore4.htm">
             <transform:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"/>
-
+            <transform:preserve-space elements="vra:text"/>
+        
 
             <transform:template match="{$rootMatch}">
                 <transform:param name="vraTableId"/>
@@ -75,7 +76,7 @@
             <tbody>
                 <transform:for-each select="{@ref}">
                     <tr>
-                        <xsl:for-each select="html:span/xf:*[contains(@class, '-autocomplete')] | xf:*">
+                        <xsl:for-each select="html:span/xf:*[contains(@class, '-autocomplete')] | xf:input | xf:textarea | xf:select | xf:select1">
                             <xsl:message>Current <xsl:value-of select="local-name(.)"/></xsl:message>
                             <td>
                                 <xsl:apply-templates select="."/>
@@ -134,6 +135,9 @@
                         <!--<div id="{@id}" data-bf-type="{local-name(.)}" data-bf-bind="{@ref}" contenteditable="true">-->
                         <div data-bf-type="{local-name(.)}" data-bf-bind="{@ref}" tabindex="0" title="{xf:label}">
                             <xsl:copy-of select="@*[not(name()='ref')]"/>
+                            <xsl:if test="local-name(.) eq 'textarea'">
+                                <xsl:attribute name="style">white-space: pre-line;</xsl:attribute>
+                            </xsl:if>
                             <xsl:choose>
                                 <xsl:when test="@ref eq 'vra:role/@type'">
                                     <!-- Ignore -->
@@ -148,7 +152,16 @@
                                     <transform:value-of select="$language-3-type-codes//item[value eq $lang/label"/>
                                 </xsl:when -->
                                 <xsl:otherwise>
-                                    <transform:value-of select="{@ref}"/>
+                                    <xsl:choose>
+                                        <xsl:when test="local-name(.) eq 'textarea'">
+                                            <p>
+                                                <transform:value-of select="{@ref}"/>
+                                            </p>
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            <transform:value-of select="{@ref}"/>
+                                        </xsl:otherwise>
+                                    </xsl:choose>
                                 </xsl:otherwise>
                             </xsl:choose>
                         </div>

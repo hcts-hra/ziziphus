@@ -5,6 +5,7 @@
                 version="2.0">
    <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes"
                omit-xml-declaration="no"></xsl:output>
+   <xsl:preserve-space elements="vra:text"></xsl:preserve-space>
    <xsl:template match="vra:inscriptionSet">
       <xsl:param name="vraTableId"></xsl:param>
       <div class="simple" id="{$vraTableId}">
@@ -13,30 +14,42 @@
                <xsl:for-each select="vra:inscription">
                   <tr>
                      <td>
-                        <xsl:choose>
-                           <xsl:when test="string-length(string-join(vra:text/@type,'')) != 0">
-                              <div data-bf-type="select1" data-bf-bind="vra:text/@type" tabindex="0" title="Type"
-                                   id="b-d2e714"
-                                   class=" textType">
-                                 <xsl:value-of select="vra:text/@type"></xsl:value-of>
-                              </div>
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <div class="nodata" data-bf-type="select1" data-bf-bind="vra:text/@type"
-                                   tabindex="0">(Type)</div>
-                           </xsl:otherwise>
-                        </xsl:choose>
-                        <xsl:choose>
-                           <xsl:when test="string-length(string-join(vra:text,'')) != 0">
-                              <div data-bf-type="textarea" data-bf-bind="vra:text" tabindex="0" title="Text"
-                                   id="b-d2e707">
-                                 <xsl:value-of select="vra:text"></xsl:value-of>
-                              </div>
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <div class="nodata" data-bf-type="textarea" data-bf-bind="vra:text" tabindex="0">(Text)</div>
-                           </xsl:otherwise>
-                        </xsl:choose>
+                        <table class="vraSetInnerRepeatView table">
+                           <tbody>
+                              <xsl:for-each select="vra:text">
+                                 <tr>
+                                    <td>
+                                       <xsl:choose>
+                                          <xsl:when test="string-length(string-join(@type,'')) != 0">
+                                             <div data-bf-type="select1" data-bf-bind="@type" tabindex="0" title="Type"
+                                                  class=" textType">
+                                                <xsl:value-of select="@type"></xsl:value-of>
+                                             </div>
+                                          </xsl:when>
+                                          <xsl:otherwise>
+                                             <div class="nodata" data-bf-type="select1" data-bf-bind="@type" tabindex="0">(Type)</div>
+                                          </xsl:otherwise>
+                                       </xsl:choose>
+                                    </td>
+                                    <td>
+                                       <xsl:choose>
+                                          <xsl:when test="string-length(string-join(.,'')) != 0">
+                                             <div data-bf-type="textarea" data-bf-bind="." tabindex="0" title="Text"
+                                                  style="white-space: pre-line;">
+                                                <p>
+                                                   <xsl:value-of select="."></xsl:value-of>
+                                                </p>
+                                             </div>
+                                          </xsl:when>
+                                          <xsl:otherwise>
+                                             <div class="nodata" data-bf-type="textarea" data-bf-bind="." tabindex="0">(Text)</div>
+                                          </xsl:otherwise>
+                                       </xsl:choose>
+                                    </td>
+                                 </tr>
+                              </xsl:for-each>
+                           </tbody>
+                        </table>
                      </td>
                      <td>
                         <xsl:choose>
