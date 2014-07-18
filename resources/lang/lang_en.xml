@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language language="en">
+   <!-- I am not sure if we need tool tips and help links for the global attributes. Which of the global attributes will be edited by the user? -->
+   <!-- But I think we might need tool tips and help links for "work" and "image." -->
    <display>
       <label>Display</label>
       <hint/>
@@ -80,44 +82,49 @@
    </type>
    <lang>
       <agentSet>
+      <!-- We need labels for the elementSet as well -->
+      <!-- How to insert line breaks? -->
         <agent>
             <attribution>
                <label>Attribution</label>
-               <hint/>
+               <hint>If a work is attributed to a certain artist or school, add information about this here; e.g. "School of".</hint>
                <help/>
-               <alert/>
+               <alert>Please specify the attribution as you used the same role description more than once.</alert>
+               <!-- This is an if... then... alert. This alert is only needed, if the same role has been chosen more than once.-->
             </attribution>
             <culture>
                <label>Culture</label>
-               <hint/>
+               <hint>You may add information about the cultural background of the agent here.</hint>
                <help/>
-               <alert/>
+               <alert>You entered 'unknown' in the agent's name field, so please give a cultural context for this agent.</alert>
+               <!-- Alert is needed, when agent name is "unknown." -->
             </culture>
             <dates>
                 <earliestDate>
                   <label>EarliestDate</label>
-                  <hint/>
+                  <hint>Add e.g. the birth year or start of activity here. Choose a date type and if necessary a specification from the dropdown menus.</hint>
                   <help/>
                   <alert/>
                </earliestDate>
                 <latestDate>
                   <label>LatestDate</label>
-                  <hint/>
+                  <hint>Add e.g. the year of death or the end of activity here. If necessary choose a specification from the dropdown menu.</hint>
                   <help/>
                   <alert/>
                </latestDate>
             </dates>
             <name>
                <label>Name</label>
-               <hint/>
+               <hint>Start entering the last name of a person and select the right person from the suggestions.</hint>
                <help/>
-               <alert/>
+               <alert>Please enter a name and choose an agent from the upcoming suggestions. If you are dealing with an unknown artist, please use "unknwon" and specify the cultural background of the agent within the 'Culture' field. For the cultural context of the art work itself, please use the Cultural Context Set.</alert>
+               <!-- Since @type is also displayed in the interface, it should also be possible to explain it. This probably applies to all VRA core (expanded) attributes. We should add hint and help for all, just the alert will perhaps not be necessary. -->
             </name>
             <role>
                <label>Role</label>
-               <hint/>
+               <hint>Choose a role from the dropdown menu.</hint>
                <help/>
-               <alert/>
+               <alert>The role field is, please choose a role from the dropdown menu.</alert>
             </role>
         </agent>
       </agentSet>
