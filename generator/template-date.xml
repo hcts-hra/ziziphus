@@ -1,0 +1,105 @@
+<merge:data xmlns:merge="http://www.betterform.de/merge">
+    <merge:templateInstance>
+        <dateSet xmlns="http://www.vraweb.org/vracore4.htm">
+            <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid=""
+                  rules=""
+                  source=""
+                  vocab=""
+                  lang=""
+                  transliteration=""
+                  script=""
+                  lastAccessed=""/>
+            <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid=""
+                rules=""
+                source=""
+                vocab=""
+                lang=""
+                transliteration=""
+                script=""
+                lastAccessed=""/>
+            <date type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false"
+               refid=""
+               rules=""
+               source=""
+               vocab=""
+               lang=""
+               transliteration=""
+               script=""
+               lastAccessed="">
+                <earliestDate>
+                    <date circa="false" type="" dataDate="2012-01-02" extent="" href="" xml:lang=""
+                     pref="false"
+                     refid=""
+                     rules=""
+                     source=""
+                     vocab=""
+                     lang=""
+                     transliteration=""
+                     script=""
+                     lastAccessed=""/>
+                    <alternativeNotation type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false"
+                                    refid=""
+                                    rules=""
+                                    source=""
+                                    vocab=""
+                                    lang=""
+                                    transliteration=""
+                                    script=""
+                                    lastAccessed=""/>
+                </earliestDate>
+                <latestDate>
+                    <date circa="false" type="" dataDate="2012-01-01" extent="" href="" xml:lang=""
+                     pref="false"
+                     refid=""
+                     rules=""
+                     source=""
+                     vocab=""
+                     lang=""
+                     transliteration=""
+                     script=""
+                     lastAccessed=""/>
+                    <alternativeNotation type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false"
+                                    refid=""
+                                    rules=""
+                                    source=""
+                                    vocab=""
+                                    lang=""
+                                    transliteration=""
+                                    script=""
+                                    lastAccessed=""/>
+                </latestDate>
+            </date>
+        </dateSet>
+    </merge:templateInstance>
+
+    <merge:importInstance>
+        <dateSet xmlns="http://www.vraweb.org/vracore4.htm">
+            <display>WTF?</display>
+            <date type="creation">
+                <earliestDate>
+                    <date circa="false">1940</date>
+                </earliestDate>
+                <latestDate>
+                    <date circa="false">1940</date>
+                </latestDate>
+            </date>
+            <date type="creation">
+                <earliestDate>
+                    <date circa="false">1940</date>
+                </earliestDate>
+                <latestDate>
+                    <date circa="false">1940</date>
+                </latestDate>
+            </date>
+            <date type="creation">
+                <earliestDate>
+                    <date circa="false">1940</date>
+                </earliestDate>
+                <latestDate>
+                    <date circa="false">1940</date>
+                </latestDate>
+            </date>
+        </dateSet>
+    </merge:importInstance>
+</merge:data>
+

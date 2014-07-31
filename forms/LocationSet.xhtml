@@ -36,11 +36,11 @@
                               replace="none"
                               validate="false">
                   <xf:action ev:event="xforms-submit"
-                             if="not(count(vra:location[@pref = ('true', '1')]) &lt;= 1)">
+                             if="exists(vra:location/*) and not(count(vra:location[@pref = ('true', '1')]) &lt;= 1)">
                      <xf:message>Warning: At most one preferred location can be selected.</xf:message>
                   </xf:action>
                   <xf:message ev:event="xforms-submit-error">Sorry, updating of this record failed</xf:message>
-                  <xf:action ev:event="xforms-submit">
+                  <xf:action ev:event="xforms-submit" if="exists(vra:location/*)">
                      <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@dataDate"
                                 context="instance('i-locationSet')/vra:location[index('r-vraLocation')]"
                                 if="not(exists(instance('i-locationSet')/vra:location[index('r-vraLocation')]/@dataDate))"></xf:insert>

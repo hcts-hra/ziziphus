@@ -43,11 +43,11 @@
                               replace="none"
                               validate="false">
                   <xf:action ev:event="xforms-submit"
-                             if="not(count(vra:description[@pref = ('true', '1')]) &lt;= 1)">
+                             if="exists(vra:description/*) and not(count(vra:description[@pref = ('true', '1')]) &lt;= 1)">
                      <xf:message>Warning: At most one preferred description can be selected.</xf:message>
                   </xf:action>
                   <xf:message ev:event="xforms-submit-error">Sorry, updating of this record failed</xf:message>
-                  <xf:action ev:event="xforms-submit">
+                  <xf:action ev:event="xforms-submit" if="exists(vra:description/*)">
                      <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@dataDate"
                                 context="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]"
                                 if="not(exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/@dataDate))"></xf:insert>
@@ -259,9 +259,9 @@
                                        <xf:setvalue ref="@vocab" value="event('authority')"></xf:setvalue>
                                     </xf:action>
                                     <xf:action>
-                                       <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@src" context="."
-                                                  if="not(exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/@src))"></xf:insert>
-                                       <xf:setvalue ref="@src" value="event('src')"></xf:setvalue>
+                                       <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@source" context="."
+                                                  if="not(exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/@source))"></xf:insert>
+                                       <xf:setvalue ref="@source" value="event('source')"></xf:setvalue>
                                     </xf:action>
                                     <xf:action if="exists(../vra:dates/vra:earliestDate)">
                                        <xf:setvalue ref="../vra:dates/vra:earliestDate" value="event('earliestDate')"></xf:setvalue>
@@ -307,11 +307,10 @@
                                     </xf:action>
                                  </xf:action>
                                  <xf:label>Name</xf:label>
-                              </xf:input></span><label for="Name-autocomplete">Name</label><input type="hidden" name="Name-autocomplete" class="Name-autocomplete-input"
-                                  placeholder="Type to search ..."
-                                  data-queryType="names"
-                                  autocomplete="off"
-                                  callbackSet="r-vraDescription" /><xf:select1 id="b-d2e548" class=" nameType" ref="vra:name/@type">
+                              </xf:input></span><span data-name="Name-autocomplete" data-collections="" data-multiple=""><span data-name="custom-selection"><span data-name="global" style="display:none"><label for="global">GLOBAL</label><input type="hidden" name="global-select" value="100" /></span><span data-name="custom" style="display:none"><label for="custom">CUSTOM</label><input type="hidden" name="custom-select" data-placeholder="No repos found." /></span></span><span data-name="autocomplete"><label for="Term-autocomplete-input">Name</label><input type="hidden" data-name="Name-autocomplete" name="Name-autocomplete-input"
+                                        placeholder="Type to search ..."
+                                        data-queryType="names"
+                                        autocomplete="off" /></span></span><xf:select1 id="b-d2e548" class=" nameType" ref="vra:name/@type">
                               <xf:label>Type</xf:label>
                               <xf:hint></xf:hint>
                               <xf:item>

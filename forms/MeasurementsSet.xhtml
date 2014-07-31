@@ -36,11 +36,11 @@
                               replace="none"
                               validate="false">
                   <xf:action ev:event="xforms-submit"
-                             if="not(count(vra:measurements[@pref = ('true', '1')]) &lt;= 1)">
+                             if="exists(vra:measurements/*) and not(count(vra:measurements[@pref = ('true', '1')]) &lt;= 1)">
                      <xf:message>Warning: At most one preferred measurements can be selected.</xf:message>
                   </xf:action>
                   <xf:message ev:event="xforms-submit-error">Sorry, updating of this record failed</xf:message>
-                  <xf:action ev:event="xforms-submit">
+                  <xf:action ev:event="xforms-submit" if="exists(vra:measurements/*)">
                      <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@dataDate"
                                 context="instance('i-measurementsSet')/vra:measurements[index('r-vraMeasurements')]"
                                 if="not(exists(instance('i-measurementsSet')/vra:measurements[index('r-vraMeasurements')]/@dataDate))"></xf:insert>
@@ -304,19 +304,6 @@
                                  <xf:value>portrait</xf:value>
                               </xf:item>
                            </xf:select1>
-                           <xf:group class="vraAttributes" appearance="minimal" ref=".">
-                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
-                           </xf:group>
-                           <xf:trigger class="vraAttributeTrigger">
-                              <xf:label>A</xf:label>
-                              <xf:hint>Edit Attributes</xf:hint>
-                              <xf:action>
-                                 <xf:setvalue ref="instance('i-util')/currentElement" value="'measurements'"></xf:setvalue>
-                                 <xf:setvalue ref="instance('i-util')/currentPosition">-1</xf:setvalue>
-                                 <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
-                              </xf:action>
-                              <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
-                           </xf:trigger>
                         </xf:group>
                      </td>
                      <td class="triggerCol">

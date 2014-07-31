@@ -36,11 +36,11 @@
                               replace="none"
                               validate="false">
                   <xf:action ev:event="xforms-submit"
-                             if="not(count(vra:textref[@pref = ('true', '1')]) &lt;= 1)">
+                             if="exists(vra:textref/*) and not(count(vra:textref[@pref = ('true', '1')]) &lt;= 1)">
                      <xf:message>Warning: At most one preferred textref can be selected.</xf:message>
                   </xf:action>
                   <xf:message ev:event="xforms-submit-error">Sorry, updating of this record failed</xf:message>
-                  <xf:action ev:event="xforms-submit">
+                  <xf:action ev:event="xforms-submit" if="exists(vra:textref/*)">
                      <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@dataDate"
                                 context="instance('i-textrefSet')/vra:textref[index('r-vraTextref')]"
                                 if="not(exists(instance('i-textrefSet')/vra:textref[index('r-vraTextref')]/@dataDate))"></xf:insert>

@@ -129,7 +129,7 @@
                                 	<xsl:with-param name="artifactNode" select="$vraArtifactNode"/>
                                 </xsl:call-template>
                                 <xf:message ev:event="xforms-submit-error">Sorry, updating of this record failed</xf:message>
-                                <xf:action ev:event="xforms-submit">
+                                <xf:action ev:event="xforms-submit" if="exists(vra:{$vraArtifactNode}/*)">
                                     <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@dataDate">
                                         <xsl:attribute name="context">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]</xsl:attribute>
                                         <xsl:attribute name="if">not(exists(instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/@dataDate))</xsl:attribute>
@@ -682,7 +682,9 @@
                         <xf:group appearance="minimal">
                             <xsl:call-template name="ui-nodeset-vra"/>
 
-                            <xsl:if test="./bind[@nodeset='.']">
+                            <!-- TitleSet, MaterialSet, Measurement, Relation  -->
+                            <xsl:message>UI-2.1.1: @nodeset<xsl:value-of select="@nodeset"/></xsl:message>
+                            <xsl:if test="./bind[@nodeset='.'] and not(@nodeset eq 'vra:title' or @nodeset eq 'vra:material' or @nodeset eq 'vra:measurements' or @nodeset eq 'vra:relation')">
                                 <xf:group class="vraAttributes" appearance="minimal">
                                     <xsl:attribute name="ref" select="'.'"/>
                                     <xi:include href="bricks/vraAttributesViewUI.xml"/>
@@ -968,7 +970,8 @@
                                 <xsl:message>UI-4.1:found element that shall use autocomplete</xsl:message>
                             </xsl:if>
                             <xsl:variable name="queryType" select="@queryType"/>
-                            <xsl:variable name="host" select="@host"/>
+                            <xsl:variable name="multiple" select="@multiple"/>
+                            
 
                             <span style="display:none">
                                 <xf:input id="{$id}" class="{$label}-autocomplete">
@@ -999,10 +1002,10 @@
                                         </xf:action>
                                          <!-- If resource exists (local/ULAN ...) set source -->
                                         <xf:action>
-                                            <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@src" context=".">
-                                                <xsl:attribute name="if">not(exists(instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/@src))</xsl:attribute>
+                                            <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@source" context=".">
+                                                <xsl:attribute name="if">not(exists(instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/@source))</xsl:attribute>
                                             </xf:insert>
-                                            <xf:setvalue ref="@src" value="event('src')"/>
+                                            <xf:setvalue ref="@source" value="event('source')"/>
                                         </xf:action>
                                         <!-- If earliestDate exists and "Set" has a dates element set it -->
                                         <xf:action if="exists(../vra:dates/vra:earliestDate)">
@@ -1026,20 +1029,42 @@
                                     </xf:label>
                                 </xf:input>
                             </span>
-
+                            <!-- OLD 
                             <label for="{$label}-autocomplete">
                                 <xsl:value-of select="$label"/>
                             </label>
-                            <!-- <input type="text" name="{$label}-autocomplete" class="{$label}-autocomplete-input" placeholder="Type to search ..." queryType="{$queryType}" host="{$host}" autocomplete="off"> -->
+                            < ! - - <input type="text" name="{$label}-autocomplete" class="{$label}-autocomplete-input" placeholder="Type to search ..." queryType="{$queryType}" host="{$host}" autocomplete="off">  - - >
                             <input type="hidden" name="{$label}-autocomplete" class="{$label}-autocomplete-input" placeholder="Type to search ..." data-queryType="{$queryType}" autocomplete="off">
                                 <xsl:attribute name="callbackSet">r-vra<xsl:value-of select="$vraArtifact"/></xsl:attribute>
                                 <xsl:if test="not($isArtifactNode) and ('vra:name'=$vraNodeName)">
                                     <xsl:attribute name="class">elementName</xsl:attribute>
                                 </xsl:if>
                             </input>
-                            <!-- span>
-                                <img id="{$label}-autocomplete-indicator" src="../images/indicator.gif"/>
-                            </span -->
+                            -->
+                            <span data-name="{$label}-autocomplete" data-collections="" data-multiple="{$multiple}">
+                                <span data-name="custom-selection">
+                                    <span data-name="global" style="display:none">
+                                        <label for="global">GLOBAL</label>
+                                        <input type='hidden' name="global-select" value="100"/>
+                                    </span>
+                                    <span data-name="custom" style="display:none">
+                                        <label for="custom">CUSTOM</label>
+                                        <input type='hidden' name="custom-select" data-placeholder="No repos found."/>
+                                    </span>
+                                </span>
+                                <span data-name="autocomplete">
+                                    <label for="Term-autocomplete-input"><xsl:value-of select="$label"/></label>
+                                    <input type="hidden" data-name="{$label}-autocomplete" name="{$label}-autocomplete-input"
+                                       placeholder="Type to search ..."
+                                       data-queryType="{$queryType}"
+                                       autocomplete="off">
+                                       <xsl:if test="not($isArtifactNode) and ('vra:name'=$vraNodeName)">
+                                            <xsl:attribute name="class">elementName</xsl:attribute>
+                                       </xsl:if>
+                                    </input>
+                                    
+                                </span>
+                            </span>
                         </xsl:when>
                         <xsl:when test="@control='select1' and exists(@code-table)">
                             <xsl:if test="$debugEnabled">
@@ -1279,7 +1304,7 @@
         <xsl:variable name="policy" select="functx:prefAttributePolicy($sectionNode)"/>
 
         <xsl:if test="$policy != 'forbidden'">
-            <xf:action ev:event="xforms-submit" if="not({functx:prefConstraint($artifactNode, $policy)})">
+            <xf:action ev:event="xforms-submit" if="exists(vra:{$artifactNode}/*) and not({functx:prefConstraint($artifactNode, $policy)})">
                 <xsl:call-template name="prefMessage">
                     <xsl:with-param name="artifactNode" select="$artifactNode"/>
                     <xsl:with-param name="policy" select="$policy"/>

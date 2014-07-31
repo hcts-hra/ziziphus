@@ -38,11 +38,12 @@
                               method="post"
                               replace="none"
                               validate="false">
-                  <xf:action ev:event="xforms-submit" if="not(count(vra:date[@pref = ('true', '1')]) &lt;= 1)">
+                  <xf:action ev:event="xforms-submit"
+                             if="exists(vra:date/*) and not(count(vra:date[@pref = ('true', '1')]) &lt;= 1)">
                      <xf:message>Warning: At most one preferred date can be selected.</xf:message>
                   </xf:action>
                   <xf:message ev:event="xforms-submit-error">Sorry, updating of this record failed</xf:message>
-                  <xf:action ev:event="xforms-submit">
+                  <xf:action ev:event="xforms-submit" if="exists(vra:date/*)">
                      <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@dataDate"
                                 context="instance('i-dateSet')/vra:date[index('r-vraDate')]"
                                 if="not(exists(instance('i-dateSet')/vra:date[index('r-vraDate')]/@dataDate))"></xf:insert>

@@ -36,11 +36,11 @@
                               replace="none"
                               validate="false">
                   <xf:action ev:event="xforms-submit"
-                             if="not(count(vra:worktype[@pref = ('true', '1')]) &lt;= 1)">
+                             if="exists(vra:worktype/*) and not(count(vra:worktype[@pref = ('true', '1')]) &lt;= 1)">
                      <xf:message>Warning: At most one preferred worktype can be selected.</xf:message>
                   </xf:action>
                   <xf:message ev:event="xforms-submit-error">Sorry, updating of this record failed</xf:message>
-                  <xf:action ev:event="xforms-submit">
+                  <xf:action ev:event="xforms-submit" if="exists(vra:worktype/*)">
                      <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@dataDate"
                                 context="instance('i-worktypeSet')/vra:worktype[index('r-vraWorktype')]"
                                 if="not(exists(instance('i-worktypeSet')/vra:worktype[index('r-vraWorktype')]/@dataDate))"></xf:insert>

@@ -36,11 +36,11 @@
                               replace="none"
                               validate="false">
                   <xf:action ev:event="xforms-submit"
-                             if="not(count(vra:stateEdition[@pref = ('true', '1')]) &lt;= 1)">
+                             if="exists(vra:stateEdition/*) and not(count(vra:stateEdition[@pref = ('true', '1')]) &lt;= 1)">
                      <xf:message>Warning: At most one preferred stateEdition can be selected.</xf:message>
                   </xf:action>
                   <xf:message ev:event="xforms-submit-error">Sorry, updating of this record failed</xf:message>
-                  <xf:action ev:event="xforms-submit">
+                  <xf:action ev:event="xforms-submit" if="exists(vra:stateEdition/*)">
                      <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@dataDate"
                                 context="instance('i-stateEditionSet')/vra:stateEdition[index('r-vraStateEdition')]"
                                 if="not(exists(instance('i-stateEditionSet')/vra:stateEdition[index('r-vraStateEdition')]/@dataDate))"></xf:insert>

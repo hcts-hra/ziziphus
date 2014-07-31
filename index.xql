@@ -67,10 +67,12 @@ return
           for $record  at $count in subsequence(collection($app:record-dir)//vra:vra/vra:work, $start, $num )
             let $uuid := string($record/@id)
             let $agent := string($record/vra:agentSet/vra:agent[1]/vra:name)
-            let $vraWorkRecord  := collection($app:record-dir)/vra:vra/vra:work[@id = $uuid]
+            (: let $vraWorkRecord  := collection($app:record-dir)/vra:vra/vra:work[@id = $uuid] :)
+            
+            let $vraWorkRecord := $record
             let $imageRecordId  := if(exists($vraWorkRecord/vra:relationSet/vra:relation/@pref[.='true']))
-                                then $vraWorkRecord/vra:relationSet/vra:relation[@pref='true']/@relids
-                                else $vraWorkRecord/vra:relationSet/vra:relation[1]/@relids
+                                then $vraWorkRecord/vra:relationSet/vra:relation[@pref='true']/@refid
+                                else $vraWorkRecord/vra:relationSet/vra:relation[1]/@refid
             let $heidiconId := $vraWorkRecord//ext:heidicon/ext:item[@type='f_id_heidicon']/ext:value[2]
             
             let $counter := if($start gt ($num)) then $start+$count -1 else $count

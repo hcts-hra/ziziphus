@@ -116,7 +116,7 @@
             <group name="vra:subject" repeated="true" idref="b-d2e1505">
                 <group name="vra:term" idref="b-d2e1511">
                     <node name="@type" detail="false" idref="b-d2e1518"/>
-                    <textNode detail="false" control="autocomplete" queryType="subjects" idref="b-d2e11"/>
+                    <textNode detail="false" control="autocomplete" queryType="subjects" idref="b-d2e11" multiple="true"/>
                 </group>
             </group>
             <node name="vra:notes" detail="false" idref="b-d2e1484"/>

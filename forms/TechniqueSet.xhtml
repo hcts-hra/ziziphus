@@ -36,7 +36,7 @@
                               replace="none"
                               validate="false">
                   <xf:message ev:event="xforms-submit-error">Sorry, updating of this record failed</xf:message>
-                  <xf:action ev:event="xforms-submit">
+                  <xf:action ev:event="xforms-submit" if="exists(vra:technique/*)">
                      <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@dataDate"
                                 context="instance('i-techniqueSet')/vra:technique[index('r-vraTechnique')]"
                                 if="not(exists(instance('i-techniqueSet')/vra:technique[index('r-vraTechnique')]/@dataDate))"></xf:insert>
