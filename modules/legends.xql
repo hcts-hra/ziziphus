@@ -1,6 +1,6 @@
 xquery version "3.0";
 
-import module namespace app="http://www.betterform.de/projects/ziziphus/xquery/app" at "app.xqm";
+import module namespace app="http://www.betterform.de/projects/shared/config/app" at "/apps/cluster-shared/modules/ziziphus/config/app.xqm";
 
 declare %private variable $legends-map := map {
                                               "role-codes" := "role-codes-legend.xml"

@@ -3,15 +3,15 @@ xquery version "3.0";
 declare namespace vra = "http://www.vraweb.org/vracore4.htm";
 
 import module namespace request="http://exist-db.org/xquery/request";
-import module namespace app="http://www.betterform.de/projects/ziziphus/xquery/app" at "app.xqm";
-import module namespace security="http://exist-db.org/mods/security" at "../../cluster-shared/modules/search/security.xqm";
+import module namespace app="http://www.betterform.de/projects/shared/config/app" at "/apps/cluster-shared/modules/ziziphus/config/app.xqm";
+import module namespace security="http://exist-db.org/mods/security" at "/exist/apps/cluster-shared/modules/search/security.xqm";
 
 declare variable $user := security:get-user-credential-from-session()[1];
 declare variable $userpass := security:get-user-credential-from-session()[2];
 
 let $id := request:get-parameter('id','')
 let $workdir :=  request:get-parameter('workdir','')
-let $workdir := if($workdir eq "") then ($app:record-dir) else ($workdir)
+let $workdir := if($workdir eq "") then ($app:ziziphus-default-record-dir) else ($workdir)
 let $vraSet := request:get-parameter('set','')
 
 let $log1 := util:log('info',concat('id=',$id,' vraSet=',$vraSet))

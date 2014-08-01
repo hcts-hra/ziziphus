@@ -215,7 +215,7 @@
             <node name="vra:notes" detail="false" idref="b-d2e1637"/>
         </set>
         <set name="vra:worktypeSet" visible="false" idref="b-d2e1789">
-            <group name="vra:worktype" repeated="true" idref="b-d2e1834"/>
+            <group name="vra:worktype" repeated="true" control="autocomplete" queryType="worktypes" idref="b-d2e1834"/>
             <node name="vra:notes" detail="false" idref="b-d2e1813"/>
         </set>
         <group name="vra:languageOfCataloging" repeated="true" idref="b-d2e7414"/>

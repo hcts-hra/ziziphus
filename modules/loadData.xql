@@ -13,7 +13,7 @@ declare namespace request="http://exist-db.org/xquery/request";
 declare namespace vra="http://www.vraweb.org/vracore4.htm";
 declare namespace merge="http://www.betterform.de/merge";
 
-import module namespace app="http://www.betterform.de/projects/ziziphus/xquery/app" at "app.xqm";
+import module namespace app="http://www.betterform.de/projects/shared/config/app" at "/apps/cluster-shared/modules/ziziphus/config/app.xqm";
 import module namespace record-utils="http://www.betterform.de/projects/ziziphus/xquery/record-utils" at "utils/record-utils.xqm";
 import module namespace security="http://exist-db.org/mods/security" at "../../cluster-shared/modules/search/security.xqm";
 

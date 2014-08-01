@@ -4,7 +4,7 @@ xquery version "3.0";
 module namespace vraGroupEditor = "http://exist-db.org/xquery/vraGroupEditor";
 
 import module namespace rest = "http://exquery.org/ns/restxq";
-import module namespace app="http://www.betterform.de/projects/ziziphus/xquery/app" at "../app.xqm";
+import module namespace app="http://www.betterform.de/projects/shared/config/app" at "/apps/cluster-shared/modules/ziziphus/config/app.xqm";
 import module namespace csconfig="http://exist-db.org/mods/config" at "/apps/cluster-shared/modules/config.xqm";
 
 declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization";
@@ -39,7 +39,7 @@ function vraGroupEditor:init($body ) {
             <body>
                 <div class="ui-layout-center outer-center">
                     <div class="full" style="height:100%">
-                        <iframe id="iEditor" src="/exist/apps/ziziphus/record.html?id={$uuids[1]}&amp;workdir={$app:record-dir}"></iframe>
+                        <iframe id="iEditor" src="/exist/apps/ziziphus/record.html?id={$uuids[1]}&amp;workdir={$app:ziziphus-default-record-dir}"></iframe>
                     </div>
                 </div>
                 <div class="ui-layout-south outer-south">

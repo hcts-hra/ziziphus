@@ -4,7 +4,7 @@ declare namespace xmldb="http://exist-db.org/xquery/xmldb";
 declare namespace vra="http://www.vraweb.org/vracore4.htm";
 declare namespace ext="http://exist-db.org/vra/extension";
 
-import module namespace app="http://www.betterform.de/projects/ziziphus/xquery/app" at "modules/app.xqm";
+import module namespace app="http://www.betterform.de/projects/shared/config/app" at "/apps/cluster-shared/modules/ziziphus/config/app.xqm";
 import module namespace security="http://exist-db.org/mods/security" at "/apps/cluster-shared/modules/search/security.xqm";
 
 declare option exist:serialize "method=html5 media-type=text/html";
@@ -14,7 +14,7 @@ let $query-base := request:get-url()
 let $context := request:get-context-path()
 let $user := request:get-attribute("xquery.user")
 let $workdir :=  request:get-parameter('workdir','')
-let $workdir := if($workdir eq "") then ($app:record-dir) else ($workdir)
+let $workdir := if($workdir eq "") then ($app:ziziphus-default-record-dir) else ($workdir)
 
 let $cnt := if($start gt ($num)) then $start + $num -1 else $num
 return
