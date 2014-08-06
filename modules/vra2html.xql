@@ -2,7 +2,7 @@ module namespace vra2html="http://exist-db.org/xquery/vra2html";
 
 import module namespace request="http://exist-db.org/xquery/request";
 import module namespace transform = "http://exist-db.org/xquery/transform";
-import module namespace app="http://www.betterform.de/projects/ziziphus/xquery/app" at "app.xqm";
+import module namespace app="http://www.betterform.de/projects/shared/config/app" at "/apps/cluster-shared/modules/ziziphus/config/app.xqm";
 
 declare namespace vra = "http://www.vraweb.org/vracore4.htm";
 

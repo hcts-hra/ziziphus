@@ -22,8 +22,8 @@
                                  <xsl:variable name="term" select="vra:term"></xsl:variable>
                                  <xsl:variable name="type">
                                     <xsl:choose>
-                                       <xsl:when test="string-length(string-join($term/@type,'')) != 0"> (
-                                          <xsl:value-of select="$term/@type"></xsl:value-of>)
+                                       <xsl:when test="string-length(string-join($term/@type,'')) != 0">
+                                          <xsl:value-of select="concat(' [', normalize-space($term/@type),']')"></xsl:value-of>
                                        </xsl:when>
                                        <xsl:otherwise></xsl:otherwise>
                                     </xsl:choose>

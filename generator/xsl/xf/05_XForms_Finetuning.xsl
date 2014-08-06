@@ -24,7 +24,9 @@
     </xsl:template>
     
 
-    <!-- circa (dates) -->
+    <!-- remove alternativeNotation -->
+    <xsl:template match="xf:instance[@id eq 'i-dateSet']//vra:alternativeNotation"></xsl:template>    
+    
     <xsl:template match="xf:bind[@nodeset eq '@circa']">
         <xsl:variable name="quot">"</xsl:variable>
         <xsl:copy>
@@ -475,7 +477,7 @@
                                         <xsl:value-of select="$earliestDate/xf:repeat/@id"/>
                                     </xsl:attribute>
 
-                                    <xsl:attribute name="xf:repeat-nodeset">
+                                    <xsl:attribute name="nodeset">
                                         <xsl:value-of select="$earliestDate/xf:repeat/@ref"/>
                                     </xsl:attribute>
 
@@ -521,7 +523,7 @@
                                         <xsl:value-of select="$latestDate/xf:repeat/@id"/>
                                     </xsl:attribute>
 
-                                    <xsl:attribute name="xf:repeat-nodeset">
+                                    <xsl:attribute name="nodeset">
                                         <xsl:value-of select="$latestDate/xf:repeat/@ref"/>
                                     </xsl:attribute>
                                     

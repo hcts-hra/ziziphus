@@ -10,7 +10,7 @@ declare namespace vra = "http://www.vraweb.org/vracore4.htm";
 declare namespace xs = "http://www.w3.org/2001/XMLSchema";
 
 import module namespace v = "http://exist-db.org/versioning";
-import module namespace app="http://www.betterform.de/projects/ziziphus/xquery/app" at "app.xqm";
+import module namespace app="http://www.betterform.de/projects/shared/config/app" at "/apps/cluster-shared/modules/ziziphus/config/app.xqm";
 
 declare option exist:serialize "method=xhtml media-type=application/xhtml+xml";
 
@@ -28,11 +28,11 @@ declare variable $rid as xs:string? := request:get-parameter("rid", ());
 declare variable $iid as xs:string? := request:get-parameter("iid", ());
 
 (: Change here location of collections to adjust to your installation layout. :)
-declare variable $ziziphusRoot as xs:string := $app:app-dir;
+declare variable $ziziphusRoot as xs:string := $app:ziziphus-dir;
 declare variable $ziziphusDataRoot as xs:string := $app:data-dir;
-declare variable $defaultPath as xs:string := $app:record-dir;
+declare variable $defaultPath as xs:string := $app:ziziphus-default-record-dir;
 declare variable $urlBase as xs:string := "/exist/rest/";
-declare variable $xsl as xs:string := $app:app-resources-dir || "xsl/versions.xsl";
+declare variable $xsl as xs:string := $app:ziziphus-resources-dir || "xsl/versions.xsl";
 
 (: Absolute path of resource on server :)
 declare variable $absPath as xs:string? := request:get-parameter("resource", ());

@@ -36,11 +36,11 @@
                               replace="none"
                               validate="false">
                   <xf:action ev:event="xforms-submit"
-                             if="not(count(vra:stateEdition[@pref = ('true', '1')]) &lt;= 1)">
+                             if="exists(vra:stateEdition/*) and not(count(vra:stateEdition[@pref = ('true', '1')]) &lt;= 1)">
                      <xf:message>Warning: At most one preferred stateEdition can be selected.</xf:message>
                   </xf:action>
                   <xf:message ev:event="xforms-submit-error">Sorry, updating of this record failed</xf:message>
-                  <xf:action ev:event="xforms-submit">
+                  <xf:action ev:event="xforms-submit" if="exists(vra:stateEdition/*)">
                      <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@dataDate"
                                 context="instance('i-stateEditionSet')/vra:stateEdition[index('r-vraStateEdition')]"
                                 if="not(exists(instance('i-stateEditionSet')/vra:stateEdition[index('r-vraStateEdition')]/@dataDate))"></xf:insert>
@@ -216,38 +216,12 @@
                               <xf:label>Description</xf:label>
                               <xf:hint>Description</xf:hint>
                            </xf:input>
-                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:description">
-                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
-                           </xf:group>
-                           <xf:trigger class="vraAttributeTrigger">
-                              <xf:label>A</xf:label>
-                              <xf:hint>Edit Attributes</xf:hint>
-                              <xf:action>
-                                 <xf:setvalue ref="instance('i-util')/currentElement" value="'description'"></xf:setvalue>
-                                 <xf:setvalue ref="instance('i-util')/currentPosition">-1</xf:setvalue>
-                                 <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
-                              </xf:action>
-                              <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
-                           </xf:trigger>
                         </xf:group>
                         <xf:group appearance="minimal">
                            <xf:input id="b-d2e1356" ref="vra:name" class="elementName">
                               <xf:label>Name</xf:label>
                               <xf:hint>Name</xf:hint>
                            </xf:input>
-                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:name">
-                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
-                           </xf:group>
-                           <xf:trigger class="vraAttributeTrigger">
-                              <xf:label>A</xf:label>
-                              <xf:hint>Edit Attributes</xf:hint>
-                              <xf:action>
-                                 <xf:setvalue ref="instance('i-util')/currentElement" value="'name'"></xf:setvalue>
-                                 <xf:setvalue ref="instance('i-util')/currentPosition">-1</xf:setvalue>
-                                 <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
-                              </xf:action>
-                              <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
-                           </xf:trigger>
                         </xf:group>
                      </td>
                      <td class="triggerCol">

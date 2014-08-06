@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<titleSet xmlns="http://www.vraweb.org/vracore4.htm"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.vraweb.org/vracore4.htm file:/home/zwobit/work/dev/zwobit/ziziphus/resources/xsd/vra/vra.xsd">
+    <display dataDate="dataDate1" extent="extent1" href="http://www.oxygenxml.com/" xml:lang="en-US" pref="false"
+         refid="refid1" rules="rules1" source="source1" vocab="vocab1">display0</display>
+    <notes dataDate="dataDate3" extent="extent3" href="http://www.oxygenxml.com/" xml:lang="en-US" pref="false"
+         refid="refid3" rules="rules3" source="source3" vocab="vocab3">notes0</notes>
+    <title type="type1" dataDate="dataDate5" extent="extent5" href="http://www.oxygenxml.com/" xml:lang="en-US"
+         pref="false" refid="refid5" rules="rules5" source="source5" vocab="vocab5">title0</title>
+    <title type="type3" dataDate="dataDate7" extent="extent7" href="http://www.oxygenxml.com/" xml:lang="en-US"
+         pref="false" refid="refid7" rules="rules7" source="source7" vocab="vocab7">title1</title>
+</titleSet>

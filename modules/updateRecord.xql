@@ -3,15 +3,15 @@ xquery version "3.0";
 declare namespace vra = "http://www.vraweb.org/vracore4.htm";
 
 import module namespace request="http://exist-db.org/xquery/request";
-import module namespace app="http://www.betterform.de/projects/ziziphus/xquery/app" at "app.xqm";
-import module namespace security="http://exist-db.org/mods/security" at "../../cluster-shared/modules/search/security.xqm";
+import module namespace app="http://www.betterform.de/projects/shared/config/app" at "/apps/cluster-shared/modules/ziziphus/config/app.xqm";
+import module namespace security="http://exist-db.org/mods/security" at "/apps/cluster-shared/modules/search/security.xqm";
 
 declare variable $user := security:get-user-credential-from-session()[1];
 declare variable $userpass := security:get-user-credential-from-session()[2];
 
 let $id := request:get-parameter('id','')
 let $workdir :=  request:get-parameter('workdir','')
-let $workdir := if($workdir eq "") then ($app:record-dir) else ($workdir)
+let $workdir := if($workdir eq "") then ($app:ziziphus-default-record-dir) else ($workdir)
 let $vraSet := request:get-parameter('set','')
 
 let $log1 := util:log('info',concat('id=',$id,' vraSet=',$vraSet))
@@ -19,16 +19,14 @@ let $log1 := util:log('info',concat('id=',$id,' vraSet=',$vraSet))
 (: get the new data from the form :)
 let $newData := request:get-data()
 
-(: fetch original record from database :)
-let $record := collection($workdir)//vra:vra/*[./@id=$id]
-
-
-let $log2 := util:log('info', "RECORD ID: " || data($record/@id))
-let $log3 := util:log('info', "WORKDIR: " || $workdir)
-let $log4 := util:log("info", "xmldb:get-current-user before: " || xmldb:get-current-user())
-
 let $security := system:as-user($user, $userpass,
     (
+        (: fetch original record from database :)
+        let $record := collection($workdir)//vra:vra/*[./@id=$id]
+        let $log2 := util:log('info', "RECORD ID: " || data($record/@id))
+        let $log3 := util:log('info', "WORKDIR: " || $workdir)
+        let $log4 := util:log("info", "xmldb:get-current-user before: " || xmldb:get-current-user())
+        
         let $canWrite := true()
         (: let $canWrite := security:can-write-collection(xs:anyURI($workdir)) :)
         let $log11 := util:log("info", "xmldb:get-current-user after: " || xmldb:get-current-user())
@@ -41,15 +39,28 @@ let $security := system:as-user($user, $userpass,
                 let $update :=
                     if(exists($record/*[local-name() eq $vraSet])) 
                     then ( 
-                        let $log21 := util:log("info", "Update replace!")
-                        return
-                            try {
-                                update replace $record/*[local-name(.)=$vraSet] with $newData
-                            } catch * {
-                                let $log211 := util:log("info", "Update replace failed! <"|| $err:code ||'>:<'|| $err:description ||'>:<'|| $err:value || '>')
-                                let $error-code := if($err:code = 'java:org.exist.security.PermissionDeniedException' )then (response:set-status-code('403')) else (response:set-status-code('500'))
-                                return <error>$err:description</error>
-                            }
+                        if(count($newData/*[local-name() eq $vraSet]/*) = 0)
+                        then (
+                            let $log21 := util:log("info", "Update delete!")
+                            return
+                                try {
+                                    update delete $record/*[local-name() eq $vraSet]/*
+                                } catch * {
+                                    let $log211 := util:log("info", "Update delete failed! <"|| $err:code ||'>:<'|| $err:description ||'>:<'|| $err:value || '>')
+                                    let $error-code := if($err:code = 'java:org.exist.security.PermissionDeniedException' )then (response:set-status-code('403')) else (response:set-status-code('500'))
+                                    return <error>$err:description</error>
+                                }
+                        ) else (
+                            let $log21 := util:log("info", "Update replace!")
+                            return
+                                try {
+                                    update replace $record/*[local-name(.)=$vraSet] with $newData
+                                } catch * {
+                                    let $log211 := util:log("info", "Update replace failed! <"|| $err:code ||'>:<'|| $err:description ||'>:<'|| $err:value || '>')
+                                    let $error-code := if($err:code = 'java:org.exist.security.PermissionDeniedException' )then (response:set-status-code('403')) else (response:set-status-code('500'))
+                                    return <error>$err:description</error>
+                                }
+                        )
                     ) else ( 
                         if(exists($record/*[local-name(.) > $vraSet][1]))
                         then ( 

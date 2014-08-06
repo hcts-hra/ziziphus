@@ -107,7 +107,6 @@
         <xsl:if test="$debug = 'true'">
             <xsl:message>count $toImport: <xsl:value-of select="count($toImport)"/></xsl:message>            
         </xsl:if>
-        
         <xsl:choose>
             <xsl:when test="count($toImport)!=0">
                 <!-- we got nodes to import-->
@@ -255,23 +254,12 @@
                         </xsl:for-each>
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:choose>
-                            <xsl:when test="local-name(.) eq 'alternativeNotation'">
-                                <xsl:if test="$debug = 'true'">
-                                    <xsl:message>
-                                        skipping alternativeNotation
-                                    </xsl:message>
-                                </xsl:if>
-                            </xsl:when>
-                            <xsl:otherwise>
-                                <xsl:element name="{local-name(.)}" namespace="{$targetNS}">
-                                    <xsl:apply-templates select="@*"/>
-                                    <xsl:apply-templates select="*">
-                                        <xsl:with-param name="importContextNode" select="$currentImport"/>
-                                    </xsl:apply-templates>
-                                </xsl:element>
-                            </xsl:otherwise>
-                        </xsl:choose>
+                        <xsl:element name="{local-name(.)}" namespace="{$targetNS}">
+                            <xsl:apply-templates select="@*"/>
+                            <xsl:apply-templates select="*">
+                                <xsl:with-param name="importContextNode" select="$currentImport"/>
+                            </xsl:apply-templates>
+                        </xsl:element>
                         <!--<xsl:copy-of select="."/>-->
                     </xsl:otherwise>
                 </xsl:choose>

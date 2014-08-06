@@ -148,7 +148,7 @@
                                         <transform:variable name="term" select="vra:term"/>
                                         <transform:variable name="type">
                                             <transform:choose>
-                                                <transform:when test="string-length(string-join($term/@type,'')) != 0"> (<transform:value-of select="$term/@type"/>)</transform:when>
+                                                <transform:when test="string-length(string-join($term/@type,'')) != 0"><transform:value-of select="concat(' [', normalize-space($term/@type),']')"/></transform:when>
                                                 <transform:otherwise/>
                                             </transform:choose>
                                         </transform:variable>

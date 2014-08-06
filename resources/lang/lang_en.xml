@@ -88,14 +88,14 @@
             <attribution>
                <label>Attribution</label>
                <hint>If a work is attributed to a certain artist or school, add information about this here; e.g. "School of".</hint>
-               <help/>
+               <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agent</help>
                <alert>Please specify the attribution as you used the same role description more than once.</alert>
                <!-- This is an if... then... alert. This alert is only needed, if the same role has been chosen more than once.-->
             </attribution>
             <culture>
                <label>Culture</label>
                <hint>You may add information about the cultural background of the agent here.</hint>
-               <help/>
+               <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agent</help>
                <alert>You entered 'unknown' in the agent's name field, so please give a cultural context for this agent.</alert>
                <!-- Alert is needed, when agent name is "unknown." -->
             </culture>
@@ -116,7 +116,7 @@
             <name>
                <label>Name</label>
                <hint>Start entering the last name of a person and select the right person from the suggestions.</hint>
-               <help/>
+               <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agent</help>
                <alert>Please enter a name and choose an agent from the upcoming suggestions. If you are dealing with an unknown artist, please use "unknwon" and specify the cultural background of the agent within the 'Culture' field. For the cultural context of the art work itself, please use the Cultural Context Set.</alert>
                <!-- Since @type is also displayed in the interface, it should also be possible to explain it. This probably applies to all VRA core (expanded) attributes. We should add hint and help for all, just the alert will perhaps not be necessary. -->
             </name>
