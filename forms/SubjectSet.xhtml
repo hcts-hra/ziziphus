@@ -272,20 +272,7 @@
                               </xf:input></span><span data-name="Term-autocomplete" data-collections="" data-multiple="true"><span data-name="custom-selection"><span data-name="global" style="display:none"><label for="global">GLOBAL</label><input type="hidden" name="global-select" value="100" /></span><span data-name="custom" style="display:none"><label for="custom">CUSTOM</label><input type="hidden" name="custom-select" data-placeholder="No repos found." /></span></span><span data-name="autocomplete"><label for="Term-autocomplete-input">Term</label><input type="hidden" data-name="Term-autocomplete" name="Term-autocomplete-input"
                                         placeholder="Type to search ..."
                                         data-queryType="subjects"
-                                        autocomplete="off" /></span></span><xf:group class="vraAttributes" appearance="minimal" ref="vra:term">
-                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
-                           </xf:group>
-                           <xf:trigger class="vraAttributeTrigger">
-                              <xf:label>A</xf:label>
-                              <xf:hint>Edit Attributes</xf:hint>
-                              <xf:action>
-                                 <xf:setvalue ref="instance('i-util')/currentElement" value="'term'"></xf:setvalue>
-                                 <xf:setvalue ref="instance('i-util')/currentPosition">-1</xf:setvalue>
-                                 <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
-                              </xf:action>
-                              <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
-                           </xf:trigger>
-                        </xf:group>
+                                        autocomplete="off" /></span></span></xf:group>
                      </td>
                      <td class="triggerCol">
                         <xf:trigger class="-btn -btn-trashcan">

@@ -864,26 +864,27 @@
                         <!--<xsl:with-param name="path" select="$currentPath"/>-->
                     </xsl:call-template>
 
-                    <xf:group class="vraAttributes" appearance="minimal">
-                        <xsl:attribute name="ref" select="$vraNodeName"/>
-                        <xi:include href="bricks/vraAttributesViewUI.xml"/>
-                    </xf:group>
+                    <xsl:if test="./bind[@nodeset='.'] and not(@nodeset eq 'vra:term')">
+                        <xf:group class="vraAttributes" appearance="minimal">
+                            <xsl:attribute name="ref" select="$vraNodeName"/>
+                            <xi:include href="bricks/vraAttributesViewUI.xml"/>
+                        </xf:group>
 
-                    <xf:trigger class="vraAttributeTrigger">
-                        <xf:label>A</xf:label>
-                        <xf:hint>Edit Attributes</xf:hint>
-                        <xf:action>
-                            <xf:setvalue ref="instance('i-util')/currentElement">
-                                <xsl:attribute name="value">'<xsl:value-of select="functx:remove-vra-prefix($vraNodeName)"/>'</xsl:attribute>
-                            </xf:setvalue>
-                            <!-- Overwrite for inner repeats -->
-                            <xf:setvalue ref="instance('i-util')/currentPosition">-1</xf:setvalue>
-                            <xf:dispatch name="init-dialog" targetid="outerGroup"/>
-                        </xf:action>
-                        <bfc:show dialog="attrDialog" ev:event="DOMActivate"/>
-                    </xf:trigger>
+                        <xf:trigger class="vraAttributeTrigger">
+                            <xf:label>A</xf:label>
+                            <xf:hint>Edit Attributes</xf:hint>
+                            <xf:action>
+                                <xf:setvalue ref="instance('i-util')/currentElement">
+                                    <xsl:attribute name="value">'<xsl:value-of select="functx:remove-vra-prefix($vraNodeName)"/>'</xsl:attribute>
+                                </xf:setvalue>
+                                <!-- Overwrite for inner repeats -->
+                                <xf:setvalue ref="instance('i-util')/currentPosition">-1</xf:setvalue>
+                                <xf:dispatch name="init-dialog" targetid="outerGroup"/>
+                            </xf:action>
+                            <bfc:show dialog="attrDialog" ev:event="DOMActivate"/>
+                        </xf:trigger>
+                    </xsl:if>
                 </xf:group>
-
             </xsl:otherwise> 
         </xsl:choose>        
     </xsl:template>

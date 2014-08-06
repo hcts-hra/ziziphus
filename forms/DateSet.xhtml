@@ -333,16 +333,11 @@
                                        </xf:action>
                                     </xf:trigger>
                                  </td>
-                                 <td>
-                                    <xf:group class="vraAttributes" appearance="minimal" ref="vra:earliestDate">
-                                       <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
-                                    </xf:group>
-                                 </td>
+                                 <td></td>
                               </tr>
                               <tr class="altNotation">
                                  <td colspan="5">
-                                    <xf:repeat id="r-earliestDate"
-                                               xf:repeat-nodeset="vra:earliestDate/vra:alternativeNotation">
+                                    <xf:repeat id="r-earliestDate" nodeset="vra:earliestDate/vra:alternativeNotation">
                                        <div>
                                           <xf:select1 id="b-d2e388" class=" " ref="@type">
                                              <xf:label>Type</xf:label>
@@ -426,15 +421,11 @@
                                        </xf:action>
                                     </xf:trigger>
                                  </td>
-                                 <td>
-                                    <xf:group class="vraAttributes" appearance="minimal" ref="vra:latestDate">
-                                       <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
-                                    </xf:group>
-                                 </td>
+                                 <td></td>
                               </tr>
                               <tr class="altNotation">
                                  <td colspan="5">
-                                    <xf:repeat id="r-latestDate" xf:repeat-nodeset="vra:latestDate/vra:alternativeNotation">
+                                    <xf:repeat id="r-latestDate" nodeset="vra:latestDate/vra:alternativeNotation">
                                        <div>
                                           <xf:label></xf:label>
                                           <xf:select1 id="b-d2e436" class=" " ref="@type">

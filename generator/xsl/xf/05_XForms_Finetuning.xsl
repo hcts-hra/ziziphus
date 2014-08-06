@@ -475,7 +475,7 @@
                                         <xsl:value-of select="$earliestDate/xf:repeat/@id"/>
                                     </xsl:attribute>
 
-                                    <xsl:attribute name="xf:repeat-nodeset">
+                                    <xsl:attribute name="nodeset">
                                         <xsl:value-of select="$earliestDate/xf:repeat/@ref"/>
                                     </xsl:attribute>
 
@@ -521,7 +521,7 @@
                                         <xsl:value-of select="$latestDate/xf:repeat/@id"/>
                                     </xsl:attribute>
 
-                                    <xsl:attribute name="xf:repeat-nodeset">
+                                    <xsl:attribute name="nodeset">
                                         <xsl:value-of select="$latestDate/xf:repeat/@ref"/>
                                     </xsl:attribute>
                                     

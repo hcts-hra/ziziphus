@@ -4,7 +4,7 @@ declare namespace vra = "http://www.vraweb.org/vracore4.htm";
 
 import module namespace request="http://exist-db.org/xquery/request";
 import module namespace app="http://www.betterform.de/projects/shared/config/app" at "/apps/cluster-shared/modules/ziziphus/config/app.xqm";
-import module namespace security="http://exist-db.org/mods/security" at "/exist/apps/cluster-shared/modules/search/security.xqm";
+import module namespace security="http://exist-db.org/mods/security" at "/apps/cluster-shared/modules/search/security.xqm";
 
 declare variable $user := security:get-user-credential-from-session()[1];
 declare variable $userpass := security:get-user-credential-from-session()[2];

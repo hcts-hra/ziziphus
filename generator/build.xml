@@ -279,6 +279,18 @@
             <param name="subformName" value="DescriptionSet"/>
         </antcall>
     </target>
+    <target name="generate-Subject-form"  depends="prepare" description="generate the Description form">
+        <antcall target="generate-subform">
+            <param name="subformName" value="SubjectSet"/>
+            <param name="debug" value="true"/>
+        </antcall>
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="SubjectSet"/>
+        </antcall>
+        <antcall target="finetune-subform">
+            <param name="subformName" value="SubjectSet"/>
+        </antcall>
+    </target>
     <target name="generate-Inscription-form" depends="prepare" description="generate the Inscription form">
         <antcall target="generate-subform">
             <param name="subformName" value="InscriptionSet"/>

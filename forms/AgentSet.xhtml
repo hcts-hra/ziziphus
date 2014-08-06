@@ -358,38 +358,12 @@
                               <xf:label>Attribution</xf:label>
                               <xf:hint>Attribution</xf:hint>
                            </xf:input>
-                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:attribution">
-                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
-                           </xf:group>
-                           <xf:trigger class="vraAttributeTrigger">
-                              <xf:label>A</xf:label>
-                              <xf:hint>Edit Attributes</xf:hint>
-                              <xf:action>
-                                 <xf:setvalue ref="instance('i-util')/currentElement" value="'attribution'"></xf:setvalue>
-                                 <xf:setvalue ref="instance('i-util')/currentPosition">-1</xf:setvalue>
-                                 <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
-                              </xf:action>
-                              <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
-                           </xf:trigger>
                         </xf:group>
                         <xf:group appearance="minimal">
                            <xf:input id="b-d2e95" ref="vra:culture">
                               <xf:label>Culture</xf:label>
                               <xf:hint>Culture</xf:hint>
                            </xf:input>
-                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:culture">
-                              <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
-                           </xf:group>
-                           <xf:trigger class="vraAttributeTrigger">
-                              <xf:label>A</xf:label>
-                              <xf:hint>Edit Attributes</xf:hint>
-                              <xf:action>
-                                 <xf:setvalue ref="instance('i-util')/currentElement" value="'culture'"></xf:setvalue>
-                                 <xf:setvalue ref="instance('i-util')/currentPosition">-1</xf:setvalue>
-                                 <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
-                              </xf:action>
-                              <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
-                           </xf:trigger>
                         </xf:group>
                         <xf:group appearance="minimal">
                            <table class="dateTable">
