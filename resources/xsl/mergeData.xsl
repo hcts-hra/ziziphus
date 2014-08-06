@@ -194,13 +194,21 @@
 
         <xsl:if test="$debug = 'true'">
             <xsl:message>
-                TEXTVALUE: <xsl:value-of select="$textValue"/>
+                TEXTVALUE: |<xsl:value-of select="$textValue"/>|
                 MERGEIMPORTNODE: copying tempLateNode: <xsl:value-of select="local-name($templateNode)"/>
             </xsl:message>
         </xsl:if>
 
-        <!--todo: namespace-->
-        <xsl:element name="{local-name($templateNode)}" namespace="{$targetNS}">
+        <xsl:choose>
+            <xsl:when test="local-name($templateNode) eq 'alternativeNotation' and not($textValue)">
+                <xsl:if test="$debug = 'true'">
+                    <xsl:message>
+                        skipping empty alternativeNotation
+                    </xsl:message>
+                </xsl:if>
+            </xsl:when>
+            <xsl:otherwise> 
+                 <xsl:element name="{local-name($templateNode)}" namespace="{$targetNS}">
             <xsl:if test="$debug = 'true'">
                 <xsl:message>
                     copy attributes from template and imported
@@ -255,28 +263,20 @@
                         </xsl:for-each>
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:choose>
-                            <xsl:when test="local-name(.) eq 'alternativeNotation'">
-                                <xsl:if test="$debug = 'true'">
-                                    <xsl:message>
-                                        skipping alternativeNotation
-                                    </xsl:message>
-                                </xsl:if>
-                            </xsl:when>
-                            <xsl:otherwise>
-                                <xsl:element name="{local-name(.)}" namespace="{$targetNS}">
-                                    <xsl:apply-templates select="@*"/>
-                                    <xsl:apply-templates select="*">
-                                        <xsl:with-param name="importContextNode" select="$currentImport"/>
-                                    </xsl:apply-templates>
-                                </xsl:element>
-                            </xsl:otherwise>
-                        </xsl:choose>
-                        <!--<xsl:copy-of select="."/>-->
+                        <xsl:element name="{local-name(.)}" namespace="{$targetNS}">
+                            <xsl:apply-templates select="@*"/>
+                            <xsl:apply-templates select="*">
+                                <xsl:with-param name="importContextNode" select="$currentImport"/>
+                            </xsl:apply-templates>
+                        </xsl:element>
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:for-each>
         </xsl:element>
+            </xsl:otherwise>
+        </xsl:choose>
+        <!--todo: namespace-->
+        
     </xsl:template>
     <xsl:template match="@*|text()|comment()">
         <xsl:copy>

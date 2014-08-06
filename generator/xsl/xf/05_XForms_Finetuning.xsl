@@ -25,7 +25,7 @@
     
 
     <!-- remove alternativeNotation -->
-    <xsl:template match="xf:instance[@id eq 'i-dateSet']//vra:alternativeNotation"></xsl:template>    
+    <!--xsl:template math="xf:instance[@id eq 'i-dateSet']//vra:alternativeNotation"></xsl:template-->    
     
     <xsl:template match="xf:bind[@nodeset eq '@circa']">
         <xsl:variable name="quot">"</xsl:variable>
