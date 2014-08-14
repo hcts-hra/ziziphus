@@ -272,6 +272,9 @@ ol.inline > li {
 .bf .dijitDialogCloseIcon {
   display: none;
 }
+.bf .vraSetView .keepWhitespace {
+  white-space: pre-line;
+}
 .tundra .dijitTitlePaneTitle {
   background: #999999;
   color: white;

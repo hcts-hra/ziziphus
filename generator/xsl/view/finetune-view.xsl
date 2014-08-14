@@ -168,4 +168,41 @@
             </tbody>
         </xsl:copy>
     </xsl:template>
+    
+    
+    <xsl:template match="//xsl:template[@match = 'vra:descriptionSet']//html:table[//html:div[@data-bf-type eq 'textarea']]//html:div[@data-bf-type]">
+        <xsl:call-template name="add-whitespace-pre-line-to-divs"/>
+    </xsl:template>
+    
+    <xsl:template match="//xsl:template[@match = 'vra:inscriptionSet']//html:table[//html:div[@data-bf-type eq 'textarea']]//html:div[@data-bf-type]">
+        <xsl:call-template name="add-whitespace-pre-line-to-divs"/>
+    </xsl:template>
+
+    <xsl:template match="//xsl:template[@match = 'vra:rightsSet']//html:table[//html:div[@data-bf-type eq 'textarea']]//html:div[@data-bf-type]">
+        <xsl:call-template name="add-whitespace-pre-line-to-divs"/>
+    </xsl:template>
+    
+    <xsl:template name="add-whitespace-pre-line-to-divs">
+        <xsl:variable name="class">
+            <xsl:choose>
+                <xsl:when test="@class"><xsl:value-of select="concat(@class, ' keepWhitespace')"/></xsl:when>
+                <xsl:otherwise>keepWhitespace</xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:copy>
+            <xsl:attribute name="class"><xsl:value-of select="$class"/></xsl:attribute>
+            <xsl:copy-of select="@*[local-name() ne 'class']"/>
+            <xsl:choose>
+                <xsl:when test="text()">
+                    <xsl:element name="p" namespace="http://www.w3.org/1999/xhtml">
+                       <xsl:copy-of select="text()"/> 
+                    </xsl:element>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:copy-of select="*"/>
+                </xsl:otherwise>
+            </xsl:choose>
+            
+        </xsl:copy>
+    </xsl:template>
 </xsl:stylesheet>

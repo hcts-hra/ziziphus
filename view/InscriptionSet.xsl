@@ -14,67 +14,75 @@
                <xsl:for-each select="vra:inscription">
                   <tr>
                      <td>
-                        <table class="vraSetInnerRepeatView table">
-                           <tbody>
-                              <xsl:for-each select="vra:text">
-                                 <tr>
-                                    <td>
-                                       <xsl:choose>
-                                          <xsl:when test="string-length(string-join(@type,'')) != 0">
-                                             <div data-bf-type="select1" data-bf-bind="@type" tabindex="0" title="Type"
-                                                  class=" textType">
-                                                <xsl:value-of select="@type"></xsl:value-of>
-                                             </div>
-                                          </xsl:when>
-                                          <xsl:otherwise>
-                                             <div class="nodata" data-bf-type="select1" data-bf-bind="@type" tabindex="0">(Type)</div>
-                                          </xsl:otherwise>
-                                       </xsl:choose>
-                                    </td>
-                                    <td>
-                                       <xsl:choose>
-                                          <xsl:when test="string-length(string-join(.,'')) != 0">
-                                             <div data-bf-type="textarea" data-bf-bind="." tabindex="0" title="Text"
-                                                  style="white-space: pre-line;">
-                                                <p>
-                                                   <xsl:value-of select="."></xsl:value-of>
-                                                </p>
-                                             </div>
-                                          </xsl:when>
-                                          <xsl:otherwise>
-                                             <div class="nodata" data-bf-type="textarea" data-bf-bind="." tabindex="0">(Text)</div>
-                                          </xsl:otherwise>
-                                       </xsl:choose>
-                                    </td>
-                                 </tr>
-                              </xsl:for-each>
-                           </tbody>
-                        </table>
+                        <xsl:choose>
+                           <xsl:when test="string-length(string-join(vra:text/@type,'')) != 0">
+                              <div class=" textType keepWhitespace" data-bf-type="select1"
+                                   data-bf-bind="vra:text/@type"
+                                   tabindex="0"
+                                   title="Type"
+                                   id="b-d2e714">
+                                 <xsl:value-of select="vra:text/@type"></xsl:value-of>
+                              </div>
+                           </xsl:when>
+                           <xsl:otherwise>
+                              <div class="nodata keepWhitespace" data-bf-type="select1"
+                                   data-bf-bind="vra:text/@type"
+                                   tabindex="0">
+                                 <p>(Type)</p>
+                              </div>
+                           </xsl:otherwise>
+                        </xsl:choose>
+                        <xsl:choose>
+                           <xsl:when test="string-length(string-join(vra:text,'')) != 0">
+                              <div class="keepWhitespace" data-bf-type="textarea" data-bf-bind="vra:text"
+                                   tabindex="0"
+                                   title="Text"
+                                   id="b-d2e707">
+                                 <xsl:value-of select="vra:text"></xsl:value-of>
+                              </div>
+                           </xsl:when>
+                           <xsl:otherwise>
+                              <div class="nodata keepWhitespace" data-bf-type="textarea" data-bf-bind="vra:text"
+                                   tabindex="0">
+                                 <p>(Text)</p>
+                              </div>
+                           </xsl:otherwise>
+                        </xsl:choose>
                      </td>
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:author,'')) != 0">
-                              <div data-bf-type="input" data-bf-bind="vra:author" tabindex="0" title="Author"
-                                   id="b-d2e665"
-                                   class="Author-autocomplete">
+                              <div class="Author-autocomplete keepWhitespace" data-bf-type="input"
+                                   data-bf-bind="vra:author"
+                                   tabindex="0"
+                                   title="Author"
+                                   id="b-d2e665">
                                  <xsl:value-of select="vra:author"></xsl:value-of>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="nodata" data-bf-type="input" data-bf-bind="vra:author" tabindex="0">(Author)</div>
+                              <div class="nodata keepWhitespace" data-bf-type="input" data-bf-bind="vra:author"
+                                   tabindex="0">
+                                 <p>(Author)</p>
+                              </div>
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:position,'')) != 0">
-                              <div data-bf-type="input" data-bf-bind="vra:position" tabindex="0" title="Position"
+                              <div class="keepWhitespace" data-bf-type="input" data-bf-bind="vra:position"
+                                   tabindex="0"
+                                   title="Position"
                                    id="b-d2e686">
                                  <xsl:value-of select="vra:position"></xsl:value-of>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="nodata" data-bf-type="input" data-bf-bind="vra:position" tabindex="0">(Position)</div>
+                              <div class="nodata keepWhitespace" data-bf-type="input" data-bf-bind="vra:position"
+                                   tabindex="0">
+                                 <p>(Position)</p>
+                              </div>
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>

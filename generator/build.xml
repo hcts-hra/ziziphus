@@ -250,7 +250,7 @@
             <param name="debug" value="true"/>
         </antcall>
         
-         <antcall target="finetune-subform">
+        <antcall target="finetune-subform">
             <param name="subformName" value="AgentSet"/>
         </antcall>
     </target>
@@ -366,7 +366,7 @@
         <copy file="${target.dir}/${subformName}_finetuned.xhtml" tofile="${form.dir}/${subformName}.xhtml" overwrite="true"/>
     </target>
     
-     <target name="finetune-view">
+    <target name="finetune-view">
         <echo>finetune-view ${subformName}</echo>
         
         <xslt style="${xsl.dir}/view/finetune-view.xsl"
@@ -390,14 +390,16 @@
             <param name="subformName" value="AgentSet"/>
         </antcall>
         <antcall target="finetune-subform">
-           <param name="subformName" value="AgentSet"/>
-        </antcall>
-         <antcall target="finetune-view">
             <param name="subformName" value="AgentSet"/>
         </antcall>
+        <antcall target="finetune-view">
+            <param name="subformName" value="AgentSet"/>
+        </antcall>
+        
         <antcall target="generate-section-view-transform">
             <param name="subformName" value="CulturalContextSet"/>
         </antcall>
+        
         <antcall target="generate-section-view-transform">
             <param name="subformName" value="DateSet"/>
         </antcall>
@@ -407,68 +409,88 @@
         <antcall target="finetune-view">
             <param name="subformName" value="DateSet"/>
         </antcall>
+        
         <antcall target="generate-section-view-transform">
             <param name="subformName" value="DescriptionSet"/>
         </antcall>
         <antcall target="finetune-subform">
             <param name="subformName" value="DescriptionSet"/>
         </antcall>
+        <antcall target="finetune-view">
+            <param name="subformName" value="DescriptionSet"/>
+        </antcall>
+        
         <antcall target="generate-section-view-transform">
+            <param name="subformName" value="InscriptionSet"/>
+        </antcall>
+        <antcall target="finetune-subform">
+            <param name="subformName" value="InscriptionSet"/>
+        </antcall>        
+        <antcall target="finetune-view">
             <param name="subformName" value="InscriptionSet"/>
         </antcall>
         
-        <antcall target="finetune-subform">
-            <param name="subformName" value="InscriptionSet"/>
-        </antcall>
-       
-        <antcall target="generate-section-view-transform">
-            <param name="subformName" value="InscriptionSet"/>
-        </antcall>
         <antcall target="generate-section-view-transform">
             <param name="subformName" value="LocationSet"/>
         </antcall>
+        
         <antcall target="generate-section-view-transform">
             <param name="subformName" value="MaterialSet"/>
         </antcall>
+        
         <antcall target="generate-section-view-transform">
             <param name="subformName" value="MeasurementsSet"/>
         </antcall>
+        
         <antcall target="generate-section-view-transform">
             <param name="subformName" value="RelationSet"/>
         </antcall>
         <antcall target="finetune-view">
             <param name="subformName" value="RelationSet"/>
         </antcall>
+        
         <antcall target="generate-section-view-transform">
             <param name="subformName" value="RightsSet"/>
         </antcall>
+        <antcall target="finetune-view">
+            <param name="subformName" value="RightsSet"/>
+        </antcall>
+        
         <antcall target="generate-section-view-transform">
             <param name="subformName" value="SourceSet"/>
         </antcall>
+        
         <antcall target="generate-section-view-transform">
             <param name="subformName" value="StateEditionSet"/>
         </antcall>
+        
         <antcall target="generate-section-view-transform">
             <param name="subformName" value="StylePeriodSet"/>
         </antcall>
+        
         <antcall target="generate-section-view-transform">
             <param name="subformName" value="SubjectSet"/>
         </antcall>
+        
         <antcall target="finetune-subform">
             <param name="subformName" value="SubjectSet"/>
         </antcall>
         <antcall target="finetune-view">
             <param name="subformName" value="SubjectSet"/>
         </antcall>
+        
         <antcall target="generate-section-view-transform">
             <param name="subformName" value="TechniqueSet"/>
         </antcall>
+        
         <antcall target="generate-section-view-transform">
             <param name="subformName" value="TextrefSet"/>
         </antcall>
+        
         <antcall target="generate-section-view-transform">
             <param name="subformName" value="TitleSet"/>
         </antcall>
+        
         <antcall target="generate-section-view-transform">
             <param name="subformName" value="WorktypeSet"/>
         </antcall>

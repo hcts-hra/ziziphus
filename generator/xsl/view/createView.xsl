@@ -135,9 +135,6 @@
                         <!--<div id="{@id}" data-bf-type="{local-name(.)}" data-bf-bind="{@ref}" contenteditable="true">-->
                         <div data-bf-type="{local-name(.)}" data-bf-bind="{@ref}" tabindex="0" title="{xf:label}">
                             <xsl:copy-of select="@*[not(name()='ref')]"/>
-                            <xsl:if test="local-name(.) eq 'textarea'">
-                                <xsl:attribute name="style">white-space: pre-line;</xsl:attribute>
-                            </xsl:if>
                             <xsl:choose>
                                 <xsl:when test="@ref eq 'vra:role/@type'">
                                     <!-- Ignore -->
@@ -152,16 +149,7 @@
                                     <transform:value-of select="$language-3-type-codes//item[value eq $lang/label"/>
                                 </xsl:when -->
                                 <xsl:otherwise>
-                                    <xsl:choose>
-                                        <xsl:when test="local-name(.) eq 'textarea'">
-                                            <p>
-                                                <transform:value-of select="{@ref}"/>
-                                            </p>
-                                        </xsl:when>
-                                        <xsl:otherwise>
-                                            <transform:value-of select="{@ref}"/>
-                                        </xsl:otherwise>
-                                    </xsl:choose>
+                                    <transform:value-of select="{@ref}"/>
                                 </xsl:otherwise>
                             </xsl:choose>
                         </div>
