@@ -165,6 +165,7 @@ ol.inline > li {
 .bf .viewDateTable {
   height: auto;
   margin-bottom: 0;
+  display: inherit;
 }
 .bf .vraSetInnerRepeatView td,
 .bf .viewDateTable td {
