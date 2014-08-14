@@ -306,3 +306,22 @@ input[type="color"],
   padding: 0;
   margin: 0;
 }
+.xlInput select,
+.xlInput textarea,
+.xlInput input[type="text"],
+.xlInput input[type="password"],
+.xlInput input[type="datetime"],
+.xlInput input[type="datetime-local"],
+.xlInput input[type="date"],
+.xlInput input[type="month"],
+.xlInput input[type="time"],
+.xlInput input[type="week"],
+.xlInput input[type="number"],
+.xlInput input[type="email"],
+.xlInput input[type="url"],
+.xlInput input[type="search"],
+.xlInput input[type="tel"],
+.xlInput input[type="color"],
+.xlInput .uneditable-input {
+  width: 550px;
+}

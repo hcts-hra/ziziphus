@@ -28,7 +28,8 @@
                         </xsl:choose>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(.,'')) != 0">
-                              <div data-bf-type="input" data-bf-bind="." tabindex="0" title="Title" id="b-d2e1767">
+                              <div data-bf-type="input" data-bf-bind="." tabindex="0" title="Title" id="b-d2e1767"
+                                   class="xlInput">
                                  <xsl:value-of select="."></xsl:value-of>
                               </div>
                            </xsl:when>

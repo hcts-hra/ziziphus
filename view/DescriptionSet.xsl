@@ -23,9 +23,7 @@
                            </xsl:when>
                            <xsl:otherwise>
                               <div class="nodata keepWhitespace" data-bf-type="input" data-bf-bind="@type"
-                                   tabindex="0">
-                                 <p>(type)</p>
-                              </div>
+                                   tabindex="0">(type)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>
@@ -41,9 +39,7 @@
                            </xsl:when>
                            <xsl:otherwise>
                               <div class="nodata keepWhitespace" data-bf-type="textarea" data-bf-bind="vra:text"
-                                   tabindex="0">
-                                 <p>(Text)</p>
-                              </div>
+                                   tabindex="0">(Text)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>
@@ -65,9 +61,7 @@
                                           </xsl:when>
                                           <xsl:otherwise>
                                              <div class="nodata keepWhitespace" data-bf-type="input" data-bf-bind="vra:name"
-                                                  tabindex="0">
-                                                <p>(Name)</p>
-                                             </div>
+                                                  tabindex="0">(Name)</div>
                                           </xsl:otherwise>
                                        </xsl:choose>
                                     </td>
@@ -85,9 +79,7 @@
                                           <xsl:otherwise>
                                              <div class="nodata keepWhitespace" data-bf-type="select1"
                                                   data-bf-bind="vra:name/@type"
-                                                  tabindex="0">
-                                                <p>(Type)</p>
-                                             </div>
+                                                  tabindex="0">(Type)</div>
                                           </xsl:otherwise>
                                        </xsl:choose>
                                     </td>
@@ -103,9 +95,7 @@
                                           </xsl:when>
                                           <xsl:otherwise>
                                              <div class="nodata keepWhitespace" data-bf-type="select1" data-bf-bind="vra:role"
-                                                  tabindex="0">
-                                                <p>(Role)</p>
-                                             </div>
+                                                  tabindex="0">(Role)</div>
                                           </xsl:otherwise>
                                        </xsl:choose>
                                     </td>

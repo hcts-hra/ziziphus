@@ -124,7 +124,7 @@
         <set name="vra:titleSet" idref="b-d2e1722">
             <group name="vra:title" repeated="true" idref="b-d2e1767">
                 <node name="@type" detail="false" idref="b-d2e1774"/>
-                <textNode detail="false" idref="b-d2e11"/>
+                <textNode detail="false" idref="b-d2e11" large="large"/>
             </group>
             <node name="vra:notes" detail="false" idref="b-d2e1746"/>
         </set>

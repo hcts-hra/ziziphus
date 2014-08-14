@@ -27,9 +27,7 @@
                            <xsl:otherwise>
                               <div class="nodata keepWhitespace" data-bf-type="select1"
                                    data-bf-bind="vra:text/@type"
-                                   tabindex="0">
-                                 <p>(Type)</p>
-                              </div>
+                                   tabindex="0">(Type)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                         <xsl:choose>
@@ -43,9 +41,7 @@
                            </xsl:when>
                            <xsl:otherwise>
                               <div class="nodata keepWhitespace" data-bf-type="textarea" data-bf-bind="vra:text"
-                                   tabindex="0">
-                                 <p>(Text)</p>
-                              </div>
+                                   tabindex="0">(Text)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>
@@ -62,9 +58,7 @@
                            </xsl:when>
                            <xsl:otherwise>
                               <div class="nodata keepWhitespace" data-bf-type="input" data-bf-bind="vra:author"
-                                   tabindex="0">
-                                 <p>(Author)</p>
-                              </div>
+                                   tabindex="0">(Author)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>
@@ -80,9 +74,7 @@
                            </xsl:when>
                            <xsl:otherwise>
                               <div class="nodata keepWhitespace" data-bf-type="input" data-bf-bind="vra:position"
-                                   tabindex="0">
-                                 <p>(Position)</p>
-                              </div>
+                                   tabindex="0">(Position)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>

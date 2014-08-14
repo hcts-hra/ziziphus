@@ -1126,13 +1126,25 @@
                             </xsl:if>
 
                             <!--<xf:input id="{concat(generate-id(),'-', functx:capitalize-first($vraNodeName))}">-->
+                            <xsl:variable name="class">
+                                <xsl:if test="not($isArtifactNode) and ('vra:name'=$vraNodeName)">
+                                    elementName 
+                                </xsl:if>
+                                <xsl:if test="@large">
+                                    xlInput
+                                </xsl:if>
+                            </xsl:variable>
+                            <xsl:if test="@larger">
+                                <xsl:message>Hyper Hyper!</xsl:message>
+                            </xsl:if>
                             <xf:input id="{$id}">
                                 <xsl:attribute name="ref">
                                     <xsl:value-of select="$currentPath"/>
                                 </xsl:attribute>
-                                <xsl:if test="not($isArtifactNode) and ('vra:name'=$vraNodeName)">
-                                    <xsl:attribute name="class">elementName</xsl:attribute>
+                                <xsl:if test="string-length(normalize-space($class)) > 0">
+                                    <xsl:attribute name="class"><xsl:value-of select="normalize-space($class)"/></xsl:attribute>
                                 </xsl:if>
+                                
                                 <!--<xsl:if test="not($isArtifactNode)">-->
                                 <xf:label>
                                     <xsl:value-of select="functx:capitalize-first($label)"/>
