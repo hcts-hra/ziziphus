@@ -275,6 +275,7 @@ ol.inline > li {
 }
 .bf .vraSetView .keepWhitespace {
   white-space: pre-line;
+  overflow: hidden;
 }
 .tundra .dijitTitlePaneTitle {
   background: #999999;

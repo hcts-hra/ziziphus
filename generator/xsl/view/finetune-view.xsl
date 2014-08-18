@@ -184,15 +184,36 @@
     
     <xsl:template name="add-whitespace-pre-line-to-divs">
         <xsl:variable name="class">
+            <xsl:if test="@data-bf-type eq 'textarea'">textarea </xsl:if>
             <xsl:choose>
                 <xsl:when test="@class"><xsl:value-of select="concat(@class, ' keepWhitespace')"/></xsl:when>
                 <xsl:otherwise>keepWhitespace</xsl:otherwise>
-            </xsl:choose>
+            </xsl:choose>    
         </xsl:variable>
         <xsl:copy>
             <xsl:attribute name="class"><xsl:value-of select="$class"/></xsl:attribute>
             <xsl:copy-of select="@*[local-name() ne 'class']"/>
+            <!-- expand/collapse-->
+            <!-- TODO: get value of xsl:value-of="" and test string-length -->
+            
+            <xsl:if test="@data-bf-type eq 'textarea'">
+                <transform:if>
+                    <xsl:attribute name="test">string-length(<xsl:value-of select="@data-bf-bind"/>) &gt; 100</xsl:attribute>
+                    <transform:attribute name="data-expand">100%</transform:attribute>
+                    <transform:attribute name="data-collapse">150px</transform:attribute>
+                </transform:if>
+            </xsl:if>
             <xsl:copy-of select="*|text()"/>
         </xsl:copy>
+        <!-- expand/collapse-->
+        <!-- TODO: get value of xsl:value-of="" and test string-length -->
+        
+        <xsl:if test="@data-bf-type eq 'textarea'">
+            <transform:if>
+                <xsl:attribute name="test">string-length(<xsl:value-of select="@data-bf-bind"/>) &gt; 100</xsl:attribute>
+                <p class="expand"><i class="fa fa-arrow-down"></i> Click to Read More <i class="fa fa-arrow-down"></i></p>
+                <p class="contract hide"><i class="fa fa-arrow-up"></i> Click to Hide <i class="fa fa-arrow-up"></i></p>    
+            </transform:if>
+        </xsl:if>
     </xsl:template>
 </xsl:stylesheet>

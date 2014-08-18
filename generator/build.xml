@@ -275,6 +275,7 @@
         <antcall target="generate-section-view-transform">
             <param name="subformName" value="DescriptionSet"/>
         </antcall>
+        <copy file="${basedir}/../view/DescriptionSet.xsl" tofile="${basedir}/../view/DescriptionSet.xsl.orig" failonerror="true"/>
         <antcall target="finetune-subform">
             <param name="subformName" value="DescriptionSet"/>
         </antcall>
@@ -413,6 +414,7 @@
         <antcall target="generate-section-view-transform">
             <param name="subformName" value="DescriptionSet"/>
         </antcall>
+        <copy file="${basedir}/../view/DescriptionSet.xsl" tofile="${basedir}/../view/DescriptionSet.xsl.orig" failonerror="true"/>
         <antcall target="finetune-subform">
             <param name="subformName" value="DescriptionSet"/>
         </antcall>
