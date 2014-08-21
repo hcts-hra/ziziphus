@@ -538,4 +538,39 @@
         </input>
     </xsl:template>
 
+    <xsl:template match="span">
+        <span>
+            <xsl:if test="@class">
+                <xsl:attribute name="class">
+                    <xsl:value-of select="@class"/>
+                </xsl:attribute>
+            </xsl:if>
+            <xsl:if test="@id">
+                <xsl:attribute name="id">
+                    <xsl:value-of select="@id"/>
+                </xsl:attribute>
+            </xsl:if>
+            <xsl:if test="@style">
+                <xsl:attribute name="style">
+                    <xsl:value-of select="@style"/>
+                </xsl:attribute>
+            </xsl:if>
+            <xsl:if test="@data-name">
+                <xsl:attribute name="data-name">
+                    <xsl:value-of select="@data-name"/>
+                </xsl:attribute>
+            </xsl:if>
+            <xsl:if test="@data-multiple">
+                <xsl:attribute name="data-multiple">
+                    <xsl:value-of select="@data-multiple"/>
+                </xsl:attribute>
+            </xsl:if>
+            <xsl:if test="@data-collections">
+                <xsl:attribute name="data-collections">
+                    <xsl:value-of select="@data-collections"/>
+                </xsl:attribute>
+            </xsl:if>
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
 </xsl:stylesheet>

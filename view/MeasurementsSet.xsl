@@ -5,6 +5,7 @@
                 version="2.0">
    <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes"
                omit-xml-declaration="no"></xsl:output>
+   <xsl:preserve-space elements="vra:text"></xsl:preserve-space>
    <xsl:template match="vra:measurementsSet">
       <xsl:param name="vraTableId"></xsl:param>
       <div class="simple" id="{$vraTableId}">
@@ -16,7 +17,8 @@
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(@type,'')) != 0">
                               <div data-bf-type="select1" data-bf-bind="@type" tabindex="0" title="Type"
-                                   id="b-d2e606">
+                                   id="b-d2e981"
+                                   class=" ">
                                  <xsl:value-of select="@type"></xsl:value-of>
                               </div>
                            </xsl:when>
@@ -27,7 +29,7 @@
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(.,'')) != 0">
                               <div data-bf-type="input" data-bf-bind="." tabindex="0" title="Measurements"
-                                   id="b-d2e599">
+                                   id="b-d2e974">
                                  <xsl:value-of select="."></xsl:value-of>
                               </div>
                            </xsl:when>
@@ -38,12 +40,24 @@
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(@unit,'')) != 0">
                               <div data-bf-type="input" data-bf-bind="@unit" tabindex="0" title="Unit"
-                                   id="b-d2e607">
+                                   id="b-d2e982">
                                  <xsl:value-of select="@unit"></xsl:value-of>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
                               <div class="nodata" data-bf-type="input" data-bf-bind="@unit" tabindex="0">(Unit)</div>
+                           </xsl:otherwise>
+                        </xsl:choose>
+                        <xsl:choose>
+                           <xsl:when test="string-length(string-join(@shape,'')) != 0">
+                              <div data-bf-type="select1" data-bf-bind="@shape" tabindex="0" title="Shape"
+                                   id="b-d2e983"
+                                   class=" ">
+                                 <xsl:value-of select="@shape"></xsl:value-of>
+                              </div>
+                           </xsl:when>
+                           <xsl:otherwise>
+                              <div class="nodata" data-bf-type="select1" data-bf-bind="@shape" tabindex="0">(Shape)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>

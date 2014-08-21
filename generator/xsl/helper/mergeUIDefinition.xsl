@@ -42,7 +42,7 @@
         <xsl:choose>
             <xsl:when test="name() eq 'textNode' or name() eq 'separator'">
                 <xsl:copy>
-                    <xsl:copy-of select="@*"/>
+                    <xsl:copy-of select="@*[name(.) != 'xpath']"/>
                 </xsl:copy>
             </xsl:when>
             <xsl:when test="$matched">

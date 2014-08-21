@@ -5,6 +5,7 @@
                 version="2.0">
    <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes"
                omit-xml-declaration="no"></xsl:output>
+   <xsl:preserve-space elements="vra:text"></xsl:preserve-space>
    <xsl:template match="vra:stateEditionSet">
       <xsl:param name="vraTableId"></xsl:param>
       <div class="simple" id="{$vraTableId}">
@@ -16,7 +17,8 @@
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(@type,'')) != 0">
                               <div data-bf-type="select1" data-bf-bind="@type" tabindex="0" title="Type"
-                                   id="b-d2e924">
+                                   id="b-d2e1393"
+                                   class=" ">
                                  <xsl:value-of select="@type"></xsl:value-of>
                               </div>
                            </xsl:when>
@@ -50,7 +52,7 @@
                            <xsl:when test="string-length(string-join(vra:description,'')) != 0">
                               <div data-bf-type="input" data-bf-bind="vra:description" tabindex="0"
                                    title="Description"
-                                   id="b-d2e880">
+                                   id="b-d2e1335">
                                  <xsl:value-of select="vra:description"></xsl:value-of>
                               </div>
                            </xsl:when>
@@ -63,7 +65,7 @@
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:name,'')) != 0">
                               <div data-bf-type="input" data-bf-bind="vra:name" tabindex="0" title="Name"
-                                   id="b-d2e896"
+                                   id="b-d2e1356"
                                    class="elementName">
                                  <xsl:value-of select="vra:name"></xsl:value-of>
                               </div>

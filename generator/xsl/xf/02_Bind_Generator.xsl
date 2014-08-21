@@ -116,17 +116,18 @@
         <xsl:element name="bind" namespace="http://www.w3.org/2002/xforms">
             <xsl:attribute name="id"><xsl:value-of select="concat('b-',generate-id())"/></xsl:attribute>
             <xsl:attribute name="nodeset" select="$nodesetName"/>
-            <xsl:attribute name="type" select="@type"/>
+            <!-- Ignore type for now: breaks LocationSet -> geotype -->
+            <!-- xsl:attribute name="type" select="@type"/ -->
             <xsl:attribute name="maxOccurs" select="$maxOccurs"/>
             <xsl:attribute name="minOccurs" select="$minOccurs"/>
             <xsl:attribute name="xfType" select="'mixedType'"/>
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
-
-
+   
     <xsl:template match="xsd:attribute">
-
+        <xsl:message>create attribute [name: '<xsl:value-of  select="@name"/>' , type: '<xsl:value-of  select="@type"/>', ref: '<xsl:value-of  select="@ref"/>']</xsl:message>
+        
         <xsl:if test="$debugEnabled">
             <xsl:message>create attribute [name: '<xsl:value-of  select="@name"/>' , type: '<xsl:value-of  select="@type"/>', ref: '<xsl:value-of  select="@ref"/>']</xsl:message>
         </xsl:if>

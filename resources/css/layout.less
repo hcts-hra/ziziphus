@@ -78,7 +78,10 @@ ul.inline > li, ol.inline > li {
     font-size:0.9em;
 
     .imagePanel{
-      text-align: center;
+        background-size: contain;
+        height: 97%;
+        text-align: center;
+        width: 97%;
     }
     .xfRepeatIndex{
         border-top:3px solid #cccccc;
@@ -159,6 +162,27 @@ ul.inline > li, ol.inline > li {
     }
     .xfInput .xfValue{
         height: 18px;
+    }
+
+    .viewADateTable {
+        height: auto;
+        margin-bottom: 0;
+        td {
+           border: medium none;
+            width: 50%;
+        }
+    }
+    .vraSetInnerRepeatView,
+    .viewDateTable {
+        height: auto;
+        margin-bottom: 0;
+        display: inherit;
+        
+        td {
+            border: medium none;
+            width: 50%;
+            background-color: #FFFFFF !important;
+        }
     }
 
     table{
@@ -302,6 +326,12 @@ ul.inline > li, ol.inline > li {
         display: none;
     }
 
+    .vraSetView {
+        .keepWhitespace {
+           white-space: pre-line;
+           overflow: hidden;
+        }
+    }
 }
 .tundra .dijitTitlePaneTitle{
     background:#999999;
@@ -309,8 +339,10 @@ ul.inline > li, ol.inline > li {
     padding: 5px 4px;
 }
 .relatedImage{
-    width: 100%;
-    /*max-width: 530px;*/
+    background-size: contain;
+    max-height: 100%;
+    max-width: 100%;
+    vertical-align: middle;
 }
 .tundra .dijitMenu, .tundra .dijitMenuBar {
     background: #454545;
@@ -371,7 +403,6 @@ ul.inline > li, ol.inline > li {
   border:none;
   padding: 2px;
   border-radius: 3px;
-  opacity: 0.5;
 }
 .toolbarbutton:hover{
   opacity: 1.0;
@@ -387,7 +418,7 @@ ul.inline > li, ol.inline > li {
   padding: 2px 0;
 
   .button-edit button{
-    background: url(../images/icons/keyboard_down.png) no-repeat;
+    background: url(../images/icons/write_compose_new.png) no-repeat;
   }
 
   .button-zoom-in {
@@ -409,3 +440,11 @@ ul.inline > li, ol.inline > li {
   padding: 0 2px;
 }
 
+/*
+#113
+
+div[data-bf-bind] {
+    display: inline;
+    width: 100%;
+}
+*/

@@ -1,0 +1,9 @@
+<work xmlns="http://www.vraweb.org/vracore4.htm" id="w_00520d9e-8243-4c1e-a5e2-4adddd9e6875" source="Brosius" refid="c_9deeb9ec-01c3-471d-a9e3-d1a2d96ef5f2">
+    <vra:relationSet xmlns:vra="http://www.vraweb.org/vracore4.htm">
+        <vra:relation type="imageIs" relids="i_50f8378b-9057-4d78-9011-b16bf52216d3" source="Tamboti" refid="" pref="true">general view</vra:relation>
+        <vra:relation type="relatedTo" href="uuid-ff237b64-c237-4ec1-ab01-f1092f8ef2f6" pref="false">Tamboti MODS record</vra:relation>
+    </vra:relationSet>
+    <vra:titleSet xmlns:vra="http://www.vraweb.org/vracore4.htm">
+        <vra:title type="descriptive" pref="true" lang="hin" script="" source="Tamboti MODS record" href="uuid-ff237b64-c237-4ec1-ab01-f1092f8ef2f6">Sunday</vra:title>
+    </vra:titleSet>
+</work>

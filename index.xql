@@ -4,8 +4,10 @@ declare namespace xmldb="http://exist-db.org/xquery/xmldb";
 declare namespace vra="http://www.vraweb.org/vracore4.htm";
 declare namespace ext="http://exist-db.org/vra/extension";
 
-import module namespace app="http://www.betterform.de/projects/ziziphus/xquery/app" at "modules/app.xqm";
+import module namespace app="http://www.betterform.de/projects/shared/config/app" at "/apps/cluster-shared/modules/ziziphus/config/app.xqm";
+import module namespace record-utils="http://www.betterform.de/projects/ziziphus/xquery/record-utils" at "modules/utils/record-utils.xqm";
 import module namespace security="http://exist-db.org/mods/security" at "/apps/cluster-shared/modules/search/security.xqm";
+import module namespace csconfig="http://exist-db.org/mods/config" at "/apps/cluster-shared/modules/config.xqm";
 
 declare option exist:serialize "method=html5 media-type=text/html";
 let $start := xs:integer(request:get-parameter("start", "1"))
@@ -13,8 +15,6 @@ let $num := xs:integer(request:get-parameter("num", "20"))
 let $query-base := request:get-url()
 let $context := request:get-context-path()
 let $user := request:get-attribute("xquery.user")
-let $workdir :=  request:get-parameter('workdir','')
-let $workdir := if($workdir eq "") then ($app:record-dir) else ($workdir)
 
 let $cnt := if($start gt ($num)) then $start + $num -1 else $num
 return
@@ -31,14 +31,14 @@ return
           <form action="HeidiconSearch.xql" class="form-search">
             <label class="control-label" for="idSearch">Heidicon Id:</label>
             <input id="idSearch" type="search" name="heidiconId"/>
-            <input  type="hidden" name="workdir" value="{$workdir}"/>
+            <input  type="hidden" name="workdir" value="{$app:ziziphus-default-record-dir}"/>
             <button type="submit" class="btn">Search</button>
           </form>,
 
           <form action="WorkrecordSearch.xql" class="form-search">
             <label class="control-label" for="idSearch">Work Record Id:</label>
             <input id="idSearch" type="search" name="workrecord"/>
-            <input  type="hidden" name="workdir" value="{$workdir}"/>
+            <input  type="hidden" name="workdir" value="{$app:ziziphus-default-record-dir}"/>
             <button type="submit" class="btn">Search</button>
           </form>
         ) else ()
@@ -54,6 +54,7 @@ return
            <thead>
                 <tr>
                     <th></th>
+                    <th></th>
                     <th>uuid</th>
                     <th>work record data</th>
                     <th>image record data</th>
@@ -63,22 +64,25 @@ return
           </thead>
           <tbody>
           {
-          for $record  at $count in subsequence(collection($workdir)//vra:vra/vra:work, $start, $num )
+          for $record  at $count in subsequence(collection($app:ziziphus-default-record-dir)//vra:vra/vra:work, $start, $num )
             let $uuid := string($record/@id)
             let $agent := string($record/vra:agentSet/vra:agent[1]/vra:name)
-            let $vraWorkRecord  := collection($workdir)/vra:vra/vra:work[@id = $uuid]
+            (: let $vraWorkRecord  := collection($app:ziziphus-default-record-dir)/vra:vra/vra:work[@id = $uuid] :)
+            
+            let $vraWorkRecord := $record
             let $imageRecordId  := if(exists($vraWorkRecord/vra:relationSet/vra:relation/@pref[.='true']))
-                                then $vraWorkRecord/vra:relationSet/vra:relation[@pref='true']/@relids
-                                else $vraWorkRecord/vra:relationSet/vra:relation[1]/@relids
+                                then $vraWorkRecord/vra:relationSet/vra:relation[@pref='true']/@refid
+                                else $vraWorkRecord/vra:relationSet/vra:relation[1]/@refid
             let $heidiconId := $vraWorkRecord//ext:heidicon/ext:item[@type='f_id_heidicon']/ext:value[2]
             
             let $counter := if($start gt ($num)) then $start+$count -1 else $count
             return
             <tr>
                 <td>{$counter}</td>
-                <td><a href="{$context}/apps/ziziphus/record.html?id={$uuid}&amp;workdir={$workdir}&amp;imagepath={$workdir || $app:image-record-dir-name || $imageRecordId || ".xml"}" target="_blank">{$uuid}</a></td>
-                <td><a href="{$context}/rest/{$workdir || $uuid}.xml" target="_blank">work</a></td>
-                <td><a href="{$context}/rest/{$workdir || $app:image-record-dir-name || $imageRecordId}.xml" target="_blank">image</a></td>
+                <td style="height:32px;width:32px;margin:4px;"><img src="{$csconfig:image-service-url || '/' || $imageRecordId|| '?width=32&amp;height=32'}" alt="" class="relatedImage"/></td>
+                <td><a href="{$context}/apps/ziziphus/record.html?id={$uuid}&amp;workdir={$app:ziziphus-default-record-dir}" target="_blank">{$uuid}</a></td>
+                <td><a href="{$context}/rest/{$app:ziziphus-default-record-dir || $uuid}.xml" target="_blank">work</a></td>
+                <td><a href="{$context}/rest/{record-utils:get-image-record-path-by-work-record-id($uuid, $app:ziziphus-default-record-dir)}" target="_blank">image</a></td>
                 <td>{$heidiconId}</td>
                 <td>{$agent}</td>
             </tr>

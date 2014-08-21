@@ -2,12 +2,15 @@
 <root>
     <build>
         <dir>build</dir>
-        <excludes>build/*, generator, .svn, .git, ziziphus.xpr, resources/**/*.html</excludes>
+        <excludes>build/*, generator, .svn, .git, ziziphus.xpr, resources/script/**/*.html</excludes>
     </build>
     <app>
         <name>ziziphus</name>
-        <version>0.25.1</version>
+        <version>0.34.0</version>
     </app>
+    <issueTracker>
+        <key></key>
+    </issueTracker>
     <transform>
         <classpath pathid="transform.class.path" description="classpath for saxon XPath and XSLT engine">
             <pathelement location="${generator.dir}/lib/saxon-9.2.1.5.jar"/>

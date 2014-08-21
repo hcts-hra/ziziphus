@@ -32,9 +32,16 @@
     <xsl:param name="recordType" select="'GIVEN BY CALLER'"/>
     <!-- UUID of Record e.g w_****** -->
     <xsl:param name="recordId" select="'GIVEN BY CALLER'"/>
+    <!-- URI to codetables  -->
+    <xsl:param name="codetables-uri" select="'GIVEN BY CALLER'"/>
     <!--<xsl:variable name="root_id" select="if($type='work') then 'workrecord' else 'imagerecord'"/>-->
     <xsl:variable name="title" select="if($recordType='work') then 'Work Record' else 'Image Record'"/>
     <xsl:variable name="id_pref" select="if($recordType='work') then 'w_' else 'i_'"/>
+
+    
+    <!-- code-tables and legends -->
+    <xsl:variable name="role-codes-legend" select="document(concat($codetables-uri, 'legends/role-codes-legend.xml'))"/>
+    <xsl:variable name="language-3-type-codes" select="document(concat($codetables-uri, 'language-3-type-codes.xml'))"/>
 
     <!-- parameter is only used if a single section is rendered -->
     <xsl:param name="setname" select="''"/>

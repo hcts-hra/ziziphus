@@ -9,5 +9,5 @@
     <repo:type>application</repo:type>
     <repo:target>/ziziphus</repo:target>
     <repo:prepare>pre-install.xql</repo:prepare>
-    <repo:permissions user="editor" password="editor" group="biblio.users" mode="0444"/>
+    <repo:permissions user="editor" password="editor" group="biblio.users" mode="0555"/>
 </repo:meta>

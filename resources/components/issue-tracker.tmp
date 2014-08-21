@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Document</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="description" content=""/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link type="text/css" rel="stylesheet" href="../css/bootstrap.min.css"/>
+    <script type="text/javascript" src="../script/jquery-1.9.1.js"/>
+        <style>
+            body {
+                padding:20px;
+                background-color:#B45F04;
+            }
+            .label {
+                background: none;
+                font-size: 14px;
+                text-shadow: 1px 2px 2px #000000;
+            }
+                
+            .close-icon{
+                position:absolute;
+                top:0;
+                right:0;
+                width:36px;
+                height:36px;
+            }
+            input {
+                margin-right:10px;
+            }
+            select, textarea {
+                margin-top:10px;
+                margin-right:10px;
+            }
+        </style>
+    </head>
+    <body>
+        <button class="close-icon">X</button>
+
+        <form role="form" class="issueTracker" action="#">
+            <div>
+                <span for="type" class="label">I'd like to </span>
+                <select id="type" name="type">
+                    <option value="1" selected="true">report a bug</option>
+                    <option value="2">propose a feature</option>
+                    <option value="3">receive support</option>
+                    <option value="4">tell you something</option>
+                </select>
+                <span for="description" class="label">Description: </span>
+                <textarea cols="300" rows="3" placeholder="Short description of your issue" id="description" name="description"/>
+                <span for="email" class="label">Email: </span>
+                <input id="email" name="email" placeholder="enter your email" value=""/>
+                <button id="create" class="btn">Report</button>
+            </div>
+        </form>
+        <script type="text/javascript" src="../script/jquery-1.9.1.js"/>
+        <script type="text/javascript">
+        jQuery(document).ready(function () {
+            
+            var imageUuid=getParameter('uuid');
+            console.log("url: ",window.location.href);
+            console.log("imageUuid: ",imageUuid);
+
+            jQuery("#create").on("click", function(e){
+                e.preventDefault();
+                // console.log("creating a ticket e:",e);
+
+                var d = new Date().getTime();
+                var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                    var r = (d + Math.random()*16)%16 | 0;
+                    d = Math.floor(d/16);
+                    return (c=='x' ? r : (0x8)).toString(16);
+                });
+                var type = jQuery("#type").val();
+                var desc = jQuery("#description").val()
+                var email = jQuery("#email").val()
+
+                createRedmineTicket(type, uuid, desc,email,imageUuid);                
+                
+                return false;
+            });
+            
+            jQuery(".close-icon").on("click",function(e){
+                $('#issues-frame', window.parent.document).removeClass("slideInDown");
+                $('#issues-frame', window.parent.document).remove();
+                
+            });
+        });
+            
+             /*
+                returns a url parameter from window.location.href
+            */
+            
+            function createRedmineTicket(type, uuid, desc,email,imageUuid) {
+                
+                var redmineTracker_ids = {
+                     1:"bug", 
+                     2:"feature",
+                     3:"support",
+                     4:"userstory"
+                }
+
+                var redmineTicket = {
+                    "issue": {
+                        "project_id": "ziziphus",
+                        "tracker_id":type,
+                        "subject": redmineTracker_ids[type] + "-" + uuid,
+                        "description":desc,
+                        "priority_id": 4,
+                        "assigned_to_id":7,
+                        "custom_field_values":
+                          {
+                            "1":imageUuid, 
+                            "2":email 
+                          }
+                    }
+                };
+                console.log("redmine ticket: ",redmineTicket);
+                
+                var redmineURL = "http://kjc-sv013.kjc.uni-heidelberg.de/redmine/projects/ziziphus/issues.json?key=@REDMINE_KEY@"
+                
+                var request = $.ajax({
+                    url: redmineURL,
+                    type: "POST",
+                    data:redmineTicket ,
+                    dataType: "json"
+                });
+                request.done(function(msg) {
+            alert("Feedback saved successful. Thank you!");
+                    $('#issues-frame', window.parent.document).removeClass("slideInDown");
+                    $('#issues-frame', window.parent.document).remove();
+
+                });
+                request.fail(function( jqXHR, textStatus ) {
+            alert("There was an error saving your feedback. Please contact ziziphus@kjc.uni-heidelberg.de");
+            console.log("error saving ticket");
+            console.log("jqXHR:",jqXHR, " textStatus: ",textStatus);
+                    $('#issues-frame', window.parent.document).removeClass("slideInDown");
+                    $('#issues-frame', window.parent.document).remove();
+                });
+            }
+            
+            function createGithubTicket(type, uuid, desc) {
+                var gitHubTicket = {
+                    "title": type + "-" + uuid,
+                    "body": desc,
+                    "assignee": "windauer",
+                    "milestone": 5,
+                    "labels": [
+                        type,
+                        "feedback"
+                    ]
+                };
+                console.log("github ticket: ", gitHubTicket);
+                
+                var gitHubProperties = {
+                    apiRoot:"https://api.github.com",
+                    repoOwner : "betterFORM",
+                    repo:"ziziphus",
+                    authToken: ""
+                };
+                var githubURL = gitHubProperties.apiRoot + "/repos/"+gitHubProperties.repoOwner +"/"+ gitHubProperties.repo+"/issues?authToken=" + gitHubProperties.authToken;
+                console.log("github ticket: ", githubURL);                  
+                
+                var request = $.ajax({
+                    url: githubURL,
+                    type: "POST",
+                    data:gitHubTicket,
+                    dataType: "json"
+                });
+                request.done(function(msg) {
+                    console.log("done: ", msg);
+                });
+                request.fail(function( jqXHR, textStatus ) {
+                    console.log("error: jqXHR:", jqXHR, " textStatus:",textStatus);
+                });
+                
+            }
+
+
+
+            function getParameter(paramName) {
+                // console.log("paramName: ",paramName);
+                var searchString = window.location.search.substring(1);
+                var params = searchString.split("&amp;");
+                // console.log("searchString: ", searchString);
+                for(var index in params){
+                    var val = params[index].split("=");
+                    if (val[0] == paramName) {
+                        var result = val[1];
+                if(result.indexOf(")") != -1){
+                            result = result.substr(0,(result.length-1))
+                        }
+                        return unescape(result);
+                    }
+                }
+                return null;
+            }
+        </script>
+    </body>
+</html>

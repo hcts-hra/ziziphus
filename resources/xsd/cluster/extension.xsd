@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://exist-db.org/vra/extension" targetNamespace="http://exist-db.org/vra/extension" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xsd:element name="heidicon" type="heidiconType"/>
+    
+    <xsd:complexType name="heidiconType">
+        <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="item" type="itemType"/>
+            
+            <xsd:element name="administrative" type="administrativeType"/>
+               
+        </xsd:choice>
+    </xsd:complexType>
+    
+    <xsd:complexType name="valueType">
+        <xsd:simpleContent>
+        <xsd:extension base="xsd:string">
+            <xsd:attribute name="type" type="xsd:string"/> 
+        </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    
+    <xsd:complexType name="itemType">
+        <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="value" type="valueType"/>
+            <xsd:element name="item" type="itemType"/>
+        </xsd:choice>
+        <xsd:attribute name="type" type="xsd:string"/>
+        <xsd:attribute name="status" type="xsd:string"/>
+        <xsd:attribute name="display" type="xsd:string"/>
+        <!-- Are these allowed ??? -->
+        <xsd:attribute name="vocab" type="xsd:string"/>
+        <xsd:attribute name="refid" type="xsd:string"/>
+    </xsd:complexType>
+    
+    <xsd:complexType name="administrativeType">
+    <xsd:simpleContent>
+        <xsd:extension base="xsd:string">
+            <xsd:attribute name="type" type="xsd:string"/>
+            <xsd:attribute name="date" type="xsd:dateTime"/> 
+        </xsd:extension>
+    </xsd:simpleContent>
+    </xsd:complexType>
+</xsd:schema>

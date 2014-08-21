@@ -5,6 +5,7 @@
                 version="2.0">
    <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes"
                omit-xml-declaration="no"></xsl:output>
+   <xsl:preserve-space elements="vra:text"></xsl:preserve-space>
    <xsl:template match="vra:materialSet">
       <xsl:param name="vraTableId"></xsl:param>
       <div class="simple" id="{$vraTableId}">
@@ -16,7 +17,8 @@
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(@type,'')) != 0">
                               <div data-bf-type="select1" data-bf-bind="@type" tabindex="0" title="Type"
-                                   id="b-d2e554">
+                                   id="b-d2e914"
+                                   class=" ">
                                  <xsl:value-of select="@type"></xsl:value-of>
                               </div>
                            </xsl:when>
@@ -27,7 +29,7 @@
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(.,'')) != 0">
                               <div data-bf-type="input" data-bf-bind="." tabindex="0" title="Material"
-                                   id="b-d2e547">
+                                   id="b-d2e907">
                                  <xsl:value-of select="."></xsl:value-of>
                               </div>
                            </xsl:when>

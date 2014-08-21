@@ -1,12 +1,12 @@
 xquery version "3.0";
 
-import module namespace app="http://www.betterform.de/projects/ziziphus/xquery/app" at "app.xqm";
+import module namespace app="http://www.betterform.de/projects/shared/config/app" at "/apps/cluster-shared/modules/ziziphus/config/app.xqm";
 
 declare %private variable $table-map := map {
                                               "lang" := "language-3-type-sorted-short-codes.xml",
                                               "script" := "script-short-codes.xml",
                                               "transliteration" := "transliteration-short-codes.xml",
-                                              "role" := "role-short-codes.xml"
+                                              "role" := "legends/role-codes-legend.xml"
                                           };
 
 let $table := xs:string(request:get-parameter("table", "role"))
