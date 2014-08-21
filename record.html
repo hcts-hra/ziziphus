@@ -63,7 +63,7 @@
                 </xf:bind>
                 <xf:submission id="s-load-user-data" method="post" replace="instance" instance="i-user">
                     <xf:resource value="IF(instance('i-control-center')/workdir eq '', 'modules/getUserData.xql', concat('modules/getUserData.xql?workdir=', instance('i-control-center')/workdir))"/>
-                    <xf:message ev:event="xforms-submit-error">error receiving the current user</xf:message>
+                    <xf:message ev:event="xforms-submit-error">Error receiving the current user</xf:message>
                 </xf:submission>
                 <xf:instance id="i-meta">
                     <data xmlns=""/>

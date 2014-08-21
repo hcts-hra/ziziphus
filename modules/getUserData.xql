@@ -13,7 +13,8 @@ let $workdir :=  request:get-parameter('workdir','')
 let $workdir := if($workdir eq "") then ($app:ziziphus-default-record-dir) else ($workdir)
 
 let $username := security:get-user-credential-from-session()[1]
-let $groups := sm:get-user-groups($username)
+let $userpass := security:get-user-credential-from-session()[2]
+let $groups := system:as-user($username, $userpass, sm:get-user-groups($username))
 return
     <data>
         <!--

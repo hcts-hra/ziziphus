@@ -22,6 +22,10 @@ declare
 %output:method("html5")
 %rest:path("/ziziphus/group")    
 function vraGroupEditor:init($body ) {
+    system:as-user( $body//username, $body//password, vraGroupEditor:run($body) )
+};
+
+declare %private function vraGroupEditor:run($body ) {
       let $uuids := vraGroupEditor:extract-uuids($body)
       return
         <html>
@@ -62,7 +66,6 @@ function vraGroupEditor:init($body ) {
 };
 
 declare function vraGroupEditor:thumBar($uuids) { 
-  
     for $uuid in $uuids
     let $vraWorkRecord  := collection('/db/resources')//vra:vra/vra:work[@id = $uuid]
     let $imageRecordId  := if(exists($vraWorkRecord/vra:relationSet/vra:relation/@pref[.='true']))
