@@ -75,6 +75,7 @@
          <xsd:enumeration value="before"/>
          <xsd:enumeration value="after"/>
          <xsd:enumeration value="active"/>
+         <xsd:enumeration value="uncertain"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="langType">
