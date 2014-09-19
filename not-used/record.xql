@@ -10,11 +10,11 @@ import module namespace transform = "http://exist-db.org/xquery/transform";
 declare option exist:serialize "method=xhtml media-type=application/xhtml+xml";
 
 declare function local:createVraRecords($uuid as xs:string?) {
-     let $vraWorkRecord  := collection($app:ziziphus-default-record-dir)/vra:vra/vra:work[@id = $uuid]
+     let $vraWorkRecord  := collection(xmldb:encode($app:ziziphus-default-record-dir))/vra:vra/vra:work[@id = $uuid]
      let $imageRecordId  := if(exists($vraWorkRecord/vra:relationSet/vra:relation/@pref[.='true']))
                                 then $vraWorkRecord/vra:relationSet/vra:relation[@pref='true']/@relids
                                 else $vraWorkRecord/vra:relationSet/vra:relation[1]/@relids
-     let $vraImageRecord := collection($app:ziziphus-default-record-dir || $app:image-record-dir-name)/vra:vra/vra:image[@id = $imageRecordId]
+     let $vraImageRecord := collection(xmldb:encode($app:ziziphus-default-record-dir || $app:image-record-dir-name))/vra:vra/vra:image[@id = $imageRecordId]
      let $vraImageId    := $vraImageRecord/@refid
      let $id := substring($uuid,3)
 (:     let $imageTitle := $vraWorkRecord//vra:titleSet/vra:title/text():)

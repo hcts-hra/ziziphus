@@ -9,7 +9,7 @@ let $setname := request:get-parameter('setname', 'agentSet')
 let $workdir :=  request:get-parameter('workdir','')
 let $workdir := if($workdir eq "") then ($app:ziziphus-default-record-dir) else ($workdir)
 
-let $record := collection($workdir)//vra:vra/*[@id = $uuid]
+let $record := collection(xmldb:encode($workdir))//vra:vra/*[@id = $uuid]
 (: Only the part of the record we are interested in :)
 let $snippet := $record//*[local-name() eq $setname]
 let $stylesheet := doc('/db/apps/ziziphus/resources/xsl/vra-record.xsl')

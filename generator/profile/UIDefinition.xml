@@ -149,7 +149,7 @@
         <set name="vra:materialSet" visible="false" idref="b-d2e862">
             <group name="vra:material" repeated="true" idref="b-d2e907">
                 <node name="@type" detail="false" idref="b-d2e914"/>
-                <textNode detail="false" idref="b-d2e11"/>
+                <textNode detail="false" control="autocomplete" queryType="materials" idref="b-d2e11"/>
             </group>
             <node name="vra:notes" detail="false" idref="b-d2e886"/>
         </set>
@@ -194,11 +194,11 @@
             <node name="vra:notes" detail="false" idref="b-d2e1308"/>
         </set>
         <set name="vra:stylePeriodSet" visible="false" idref="b-d2e1394">
-            <group name="vra:stylePeriod" repeated="true" idref="b-d2e1439"/>
+            <group name="vra:stylePeriod" repeated="true" control="autocomplete" queryType="styleperiods" idref="b-d2e1439"/>
             <node name="vra:notes" detail="false" idref="b-d2e1418"/>
         </set>
         <set name="vra:techniqueSet" visible="false" idref="b-d2e1547">
-            <group name="vra:technique" repeated="true" idref="b-d2e1592"/>
+            <group name="vra:technique" repeated="true" control="autocomplete" queryType="techniques" idref="b-d2e1592"/>
             <node name="vra:notes" detail="false" idref="b-d2e1571"/>
         </set>
         <set name="vra:textrefSet" visible="false" idref="b-d2e1613">

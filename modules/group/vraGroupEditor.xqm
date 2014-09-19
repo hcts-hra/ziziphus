@@ -14,7 +14,7 @@ declare namespace vra="http://www.vraweb.org/vracore4.htm";
 declare %private function vraGroupEditor:extract-uuids($body) {
     let $files:= $body//file
     for $file in $files
-    return data(doc($file)//vra:work/@id)
+    return data(doc(xmldb:encode($file))//vra:work/@id)
 };
 
 declare
@@ -67,7 +67,7 @@ declare %private function vraGroupEditor:run($body ) {
 
 declare function vraGroupEditor:thumBar($uuids) { 
     for $uuid in $uuids
-    let $vraWorkRecord  := collection('/db/resources')//vra:vra/vra:work[@id = $uuid]
+    let $vraWorkRecord  := collection(xmldb:encode('/db/resources'))//vra:vra/vra:work[@id = $uuid]
     let $imageRecordId  := if(exists($vraWorkRecord/vra:relationSet/vra:relation/@pref[.='true']))
                                 then $vraWorkRecord/vra:relationSet/vra:relation[@pref='true']/@relids
                                 else $vraWorkRecord/vra:relationSet/vra:relation[1]/@relids

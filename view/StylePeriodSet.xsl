@@ -17,7 +17,8 @@
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(.,'')) != 0">
                               <div data-bf-type="input" data-bf-bind="." tabindex="0" title="StylePeriod"
-                                   id="b-d2e1439">
+                                   id="b-d2e1439"
+                                   class="StylePeriod-autocomplete">
                                  <xsl:value-of select="."></xsl:value-of>
                               </div>
                            </xsl:when>

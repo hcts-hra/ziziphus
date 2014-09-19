@@ -20,8 +20,12 @@
          <div style="display:none">
             <xf:model id="m-child-model" schema="resources/xsd/generator/vra-types.xsd">
                <xf:action ev:event="xforms-model-construct-done">
-                  <xf:send submission="s-loadSet"></xf:send>
-               </xf:action>
+                  <xf:send submission="s-loadSet"></xf:send><script>
+                                        clearAndInitAutocompletes();
+                                    </script></xf:action>
+               <xf:action ev:observer="i-techniqueSet" ev:event="xforms-insert"><script>
+                                        initAutocompletes();
+                                    </script></xf:action>
                <xf:submission id="s-loadSet"
                               resource="modules/loadData.xql?id={bf:instanceOfModel('m-main','i-control-center')/uuid}"
                               method="post"
@@ -31,7 +35,7 @@
                   <xf:message ev:event="xforms-submit-error">Failed to load data.</xf:message>
                </xf:submission>
                <xf:submission id="s-update"
-                              resource="modules/updateRecord.xql?id={bf:instanceOfModel('m-main','i-control-center')/uuid}&amp;set=techniqueSet&amp;workdir={bf:instanceOfModel('m-main','i-control-center')/workdir}"
+                              resource="modules/updateRecord.xql?id={bf:instanceOfModel('m-main','i-control-center')/uuid}&amp;set=techniqueSet&amp;workdir={encode-for-uri(bf:instanceOfModel('m-main','i-control-center')/workdir)}"
                               method="post"
                               replace="none"
                               validate="false">
@@ -155,12 +159,43 @@
                   <tr>
                      <td class="prefCol"></td>
                      <td class="contentCol">
-                        <xf:group appearance="minimal">
-                           <xf:input id="b-d2e1592" ref=".">
-                              <xf:label>Technique</xf:label>
-                              <xf:hint>Technique</xf:hint>
-                           </xf:input>
-                        </xf:group>
+                        <xf:group appearance="minimal"><span style="display:none">
+                              <xf:input id="b-d2e1592" class="Technique-autocomplete" ref=".">
+                                 <xf:action ev:event="autocomplete-callback">
+                                    <xf:setvalue ref="." value="event('termValue')"></xf:setvalue>
+                                    <xf:action>
+                                       <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@refid" context="."
+                                                  if="not(exists(instance('i-techniqueSet')/vra:technique[index('r-vraTechnique')]/@refid))"></xf:insert>
+                                       <xf:setvalue ref="@refid" value="event('refid')"></xf:setvalue>
+                                    </xf:action>
+                                    <xf:action>
+                                       <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@vocab" context="."
+                                                  if="not(exists(instance('i-techniqueSet')/vra:technique[index('r-vraTechnique')]/@vocab))"></xf:insert>
+                                       <xf:setvalue ref="@vocab" value="event('authority')"></xf:setvalue>
+                                    </xf:action>
+                                    <xf:action>
+                                       <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@source" context="."
+                                                  if="not(exists(instance('i-techniqueSet')/vra:technique[index('r-vraTechnique')]/@source))"></xf:insert>
+                                       <xf:setvalue ref="@source" value="event('source')"></xf:setvalue>
+                                    </xf:action>
+                                    <xf:action if="exists(../vra:dates/vra:earliestDate)">
+                                       <xf:setvalue ref="../vra:dates/vra:earliestDate" value="event('earliestDate')"></xf:setvalue>
+                                    </xf:action>
+                                    <xf:action if="exists(../vra:dates/vra:latestDate)">
+                                       <xf:setvalue ref="../vra:dates/vra:latestDate" value="event('latestDate')"></xf:setvalue>
+                                    </xf:action>
+                                    <xf:action>
+                                       <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@type" context="."
+                                                  if="not(exists(instance('i-techniqueSet')/vra:technique[index('r-vraTechnique')]/@type))"></xf:insert>
+                                       <xf:setvalue ref="@type" value="event('termType')"></xf:setvalue>
+                                    </xf:action>
+                                 </xf:action>
+                                 <xf:label>Technique</xf:label>
+                              </xf:input></span><span data-name="Technique-autocomplete" data-collections="" data-multiple=""><span data-name="custom-selection"><span data-name="global" style="display:none"><label for="global">GLOBAL</label><input type="hidden" name="global-select" value="100" /></span><span data-name="custom" style="display:none"><label for="custom">CUSTOM</label><input type="hidden" name="custom-select" data-placeholder="No repos found." /></span></span><span data-name="autocomplete"><label for="Term-autocomplete-input">Technique</label><input type="hidden" data-name="Technique-autocomplete"
+                                        name="Technique-autocomplete-input"
+                                        placeholder="Type to search ..."
+                                        data-queryType="techniques"
+                                        autocomplete="off" /></span></span></xf:group>
                      </td>
                      <td class="triggerCol">
                         <xf:trigger class="-btn -btn-trashcan">

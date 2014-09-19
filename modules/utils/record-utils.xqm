@@ -17,7 +17,7 @@ declare function record-utils:get-record($record-id) as node() {
 };
 
 declare function record-utils:get-record($record-id, $base-collection) as node() {
-    collection($base-collection)//vra:vra/*[@id = $record-id]
+    collection(xmldb:encode($base-collection))//vra:vra/*[@id = $record-id]
 };
 
 (: 
@@ -30,7 +30,7 @@ declare function record-utils:get-work-record($work-record-id) as node() {
 };
 
 declare function record-utils:get-work-record($work-record-id, $base-collection) as node() {
-    collection($base-collection)//vra:vra/vra:work[@id = $work-record-id]
+    collection(xmldb:encode($base-collection))//vra:vra/vra:work[@id = $work-record-id]
 };
 
 declare function record-utils:get-work-record-collection-by-id($work-record-id) as xs:string {
@@ -58,7 +58,7 @@ declare function record-utils:delete-work-record($work-record-id) {
 };
 
 declare function record-utils:delete-work-record($work-record-id, $base-collection) {
-    let $work-record := collection($base-collection)//vra:vra/vra:work[@id = $work-record-id]
+    let $work-record := collection(xmldb:encode($base-collection))//vra:vra/vra:work[@id = $work-record-id]
     
     return 
         if(exists($work-record))
@@ -87,7 +87,7 @@ declare function record-utils:get-image-record($image-record-id) as node() {
 };
 
 declare function record-utils:get-image-record($image-record-id, $base-collection) as node() {
-    collection($base-collection)//vra:vra/vra:image[@id = $image-record-id]
+    collection(xmldb:encode($base-collection))//vra:vra/vra:image[@id = $image-record-id]
 };
 
 declare function record-utils:get-image-record-id-by-work-record-id($work-record-id) as xs:string {
@@ -95,7 +95,7 @@ declare function record-utils:get-image-record-id-by-work-record-id($work-record
 };
 
 declare function record-utils:get-image-record-id-by-work-record-id($work-record-id, $base-collection) as xs:string {
-    let $work-record     := collection($base-collection)//vra:vra/vra:work[@id = $work-record-id]
+    let $work-record     := collection(xmldb:encode($base-collection))//vra:vra/vra:work[@id = $work-record-id]
     let $image-record-id := if(exists($work-record/vra:relationSet/vra:relation/@pref[.='true']))
                             then $work-record/vra:relationSet/vra:relation[@pref='true']/@relids
                             else $work-record/vra:relationSet/vra:relation[1]/@relids
@@ -117,7 +117,7 @@ declare function record-utils:get-image-record-collection-by-work-record-id($wor
 
 declare function record-utils:get-image-record-collection-by-work-record-id($work-record-id, $base-collection) as xs:string {
     let $image-record-id := record-utils:get-image-record-id-by-work-record-id($work-record-id, $base-collection)
-    let $image-record := collection($base-collection)//vra:vra/vra:image[@id = $image-record-id]
+    let $image-record := collection(xmldb:encode($base-collection))//vra:vra/vra:image[@id = $image-record-id]
     return 
         util:collection-name($image-record)
 };
@@ -128,7 +128,7 @@ declare function record-utils:get-image-record-path-by-work-record-id($work-reco
 
 declare function record-utils:get-image-record-path-by-work-record-id($work-record-id, $base-collection) as xs:string {
     let $image-record-id := record-utils:get-image-record-id-by-work-record-id($work-record-id, $base-collection)
-    let $image-record    := collection($base-collection)//vra:vra/vra:image[@id = $image-record-id]
+    let $image-record    := collection(xmldb:encode($base-collection))//vra:vra/vra:image[@id = $image-record-id]
     return 
         util:collection-name($image-record) || '/' || util:document-name($image-record)
 };

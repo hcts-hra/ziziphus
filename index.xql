@@ -4,10 +4,14 @@ declare namespace xmldb="http://exist-db.org/xquery/xmldb";
 declare namespace vra="http://www.vraweb.org/vracore4.htm";
 declare namespace ext="http://exist-db.org/vra/extension";
 
-import module namespace app="http://www.betterform.de/projects/shared/config/app" at "/apps/cluster-shared/modules/ziziphus/config/app.xqm";
+
 import module namespace record-utils="http://www.betterform.de/projects/ziziphus/xquery/record-utils" at "modules/utils/record-utils.xqm";
+
+(: Cluster-shared :)
+import module namespace app="http://www.betterform.de/projects/shared/config/app" at "/apps/cluster-shared/modules/ziziphus/config/app.xqm";
 import module namespace security="http://exist-db.org/mods/security" at "/apps/cluster-shared/modules/search/security.xqm";
 import module namespace csconfig="http://exist-db.org/mods/config" at "/apps/cluster-shared/modules/config.xqm";
+import module namespace image-link-generator="http://hra.uni-heidelberg.de/ns/tamboti/modules/display/image-link-generator" at "/apps/cluster-shared/modules/display/image-link-generator.xqm";
 
 declare option exist:serialize "method=html5 media-type=text/html";
 let $start := xs:integer(request:get-parameter("start", "1"))
@@ -64,10 +68,10 @@ return
           </thead>
           <tbody>
           {
-          for $record  at $count in subsequence(collection($app:ziziphus-default-record-dir)//vra:vra/vra:work, $start, $num )
+          for $record  at $count in subsequence(collection(xmldb:encode($app:ziziphus-default-record-dir))//vra:vra/vra:work, $start, $num )
             let $uuid := string($record/@id)
             let $agent := string($record/vra:agentSet/vra:agent[1]/vra:name)
-            (: let $vraWorkRecord  := collection($app:ziziphus-default-record-dir)/vra:vra/vra:work[@id = $uuid] :)
+            (: let $vraWorkRecord  := collection(xmldb:encode($app:ziziphus-default-record-dir))/vra:vra/vra:work[@id = $uuid] :)
             
             let $vraWorkRecord := $record
             let $imageRecordId  := if(exists($vraWorkRecord/vra:relationSet/vra:relation/@pref[.='true']))
@@ -79,7 +83,7 @@ return
             return
             <tr>
                 <td>{$counter}</td>
-                <td style="height:32px;width:32px;margin:4px;"><img src="{$csconfig:image-service-url || '/' || $imageRecordId|| '?width=32&amp;height=32'}" alt="" class="relatedImage"/></td>
+                <td style="height:40px;width:40px;margin:4px;"><img src="{image-link-generator:generate-href($imageRecordId, 'tamboti-thumbnail')}" alt="" class="relatedImage"/></td>
                 <td><a href="{$context}/apps/ziziphus/record.html?id={$uuid}&amp;workdir={$app:ziziphus-default-record-dir}" target="_blank">{$uuid}</a></td>
                 <td><a href="{$context}/rest/{$app:ziziphus-default-record-dir || $uuid}.xml" target="_blank">work</a></td>
                 <td><a href="{$context}/rest/{record-utils:get-image-record-path-by-work-record-id($uuid, $app:ziziphus-default-record-dir)}" target="_blank">image</a></td>

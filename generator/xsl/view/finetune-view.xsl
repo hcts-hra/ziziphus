@@ -169,11 +169,40 @@
         </xsl:copy>
     </xsl:template>
     
-    
-    <xsl:template match="//xsl:template[@match = 'vra:descriptionSet']//html:table[//html:div[@data-bf-type eq 'textarea']]//html:div[@data-bf-type]">
-        <xsl:call-template name="add-whitespace-pre-line-to-divs"/>
+    <xsl:template match="//xsl:template[@match = 'vra:descriptionSet']//html:table[contains(@class, 'vraSetView')]">
+        <xsl:message>Doing</xsl:message>
+        <xsl:copy>
+            <xsl:copy-of select="@*"/>
+            <transform:for-each select="vra:description">
+                <tbody>
+                    <table>
+                        <tbody>                            
+                            <xsl:apply-templates mode="copy-description-set-without-authors" select="html:tbody/xsl:for-each/*"/>
+                        </tbody>
+                    </table>
+                </tbody>
+                <tbody>
+                    <xsl:copy-of select="//html:table[contains(@class, 'vraSetInnerRepeatView')]"/>
+                </tbody>
+            </transform:for-each>
+        </xsl:copy>
     </xsl:template>
     
+    <xsl:template mode="copy-description-set-without-authors" match="*">
+        <xsl:if test="local-name(.) != 'table'">
+            <xsl:copy>
+                <xsl:copy-of select="@*"/>
+                <xsl:apply-templates mode="copy-description-set-without-authors" select="*"/>
+            </xsl:copy>
+        </xsl:if>
+    </xsl:template>
+    
+    <!--
+    <xsl:template match="html:div[@data-bf-type eq 'textarea']" mode="copy-description-set" priority="20">
+        <xsl:call-template name="add-whitespace-pre-line-to-divs"/>
+    </xsl:template>
+    -->
+
     <xsl:template match="//xsl:template[@match = 'vra:inscriptionSet']//html:table[//html:div[@data-bf-type eq 'textarea']]//html:div[@data-bf-type]">
         <xsl:call-template name="add-whitespace-pre-line-to-divs"/>
     </xsl:template>

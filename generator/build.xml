@@ -267,6 +267,7 @@
             <param name="subformName" value="DateSet"/>
         </antcall>
     </target>
+    
     <target name="generate-Description-form"  depends="prepare" description="generate the Description form">
         <antcall target="generate-subform">
             <param name="subformName" value="DescriptionSet"/>
@@ -279,7 +280,11 @@
         <antcall target="finetune-subform">
             <param name="subformName" value="DescriptionSet"/>
         </antcall>
+        <antcall target="finetune-view">
+            <param name="subformName" value="DescriptionSet"/>
+        </antcall>
     </target>
+    
     <target name="generate-Subject-form"  depends="prepare" description="generate the Description form">
         <antcall target="generate-subform">
             <param name="subformName" value="SubjectSet"/>

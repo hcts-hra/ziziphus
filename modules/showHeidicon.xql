@@ -10,7 +10,7 @@ declare option exist:serialize "method=xhtml media-type=application/xhtml+xml";
 let $id := request:get-parameter('id', 'w_000197f8-4f11-5c63-9967-678e75fa6e41')
 let $workdir :=  request:get-parameter('workdir','')
 let $workdir := if($workdir eq "") then ($app:ziziphus-default-record-dir) else ($workdir)
-let $input := collection($workdir)//vra:vra[vra:work/@id=$id]
+let $input := collection(xmldb:encode($workdir))//vra:vra[vra:work/@id=$id]
 
 let $result := transform:transform($input, doc("/db/apps/ziziphus/resources/xsl/heidicon.xsl"), ())
 return $result

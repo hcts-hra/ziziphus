@@ -18,7 +18,7 @@ let $groups := system:as-user($username, $userpass, sm:get-user-groups($username
 return
     <data>
         <!--
-            <user name="{$username}" edit="{security:can-write-collection($workdir)}"/> :)
+            <user name="{$username}" edit="{security:can-write-collection(xmldb:encode($workdir))}"/> :)
         -->
         <user name="{$username}"/>
         <groups>{$groups}</groups>

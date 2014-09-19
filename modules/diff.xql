@@ -47,7 +47,7 @@ declare variable $instance-path as xs:string := $ziziphusRoot || "/resources/xsd
 (: Obtains document of the given path and revision number.
  : Beside actual revision numbers, 'last' and '0' are supported. :)
 declare function local:obtain-document($resource-path as xs:string, $rev as xs:string) as document-node()? {
-    let $doc := doc($resource-path) return
+    let $doc := doc(xmldb:encode($resource-path)) return
     if(not($doc))
     then ()
     else if($rev = 'last')
@@ -192,7 +192,7 @@ if(empty($resource))
 then
     <error>Mandatory parameter <html:var>resource</html:var> was not given.</error>
 else
-let $template := doc($instance-path) return
+let $template := doc(xmldb:encode($instance-path)) return
 if(not($template))
 then
     <error>Instance template could not be read from <html:code>{$instance-path}</html:code>.</error>

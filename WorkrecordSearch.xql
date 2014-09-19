@@ -32,7 +32,7 @@ return
       <div>
       {
          
-      for $record in collection($workdir)//vra:vra[.//vra:work/@id=$searchId]
+      for $record in collection(xmldb:encode($workdir))//vra:vra[.//vra:work/@id=$searchId]
         let $theId := $record//hra:item[@type="f_id_heidicon" ]/hra:value[2]/text()
         let $workid := string($record/vra:work/@id)
         let $title := string($record/vra:work/vra:titleSet/vra:title)

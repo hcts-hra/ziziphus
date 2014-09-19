@@ -11,7 +11,7 @@ declare variable $userpass := security:get-user-credential-from-session()[2];
 
 let $id := request:get-parameter('id','')
 let $workdir :=  request:get-parameter('workdir','')
-let $workdir := if($workdir eq "") then ($app:ziziphus-default-record-dir) else ($workdir)
+let $workdir := if($workdir eq "") then (xmldb:encode($app:ziziphus-default-record-dir)) else (xmldb:encode($workdir))
 let $vraSet := request:get-parameter('set','')
 
 let $log1 := util:log('info',concat('id=',$id,' vraSet=',$vraSet))
