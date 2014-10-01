@@ -6,6 +6,8 @@ import module namespace config="http://exist-db.org/mods/config" at "/apps/clust
 import module namespace theme="http://exist-db.org/xquery/biblio/theme" at "/apps/cluster-shared/modules/theme.xqm";
 import module namespace security="http://exist-db.org/mods/security" at "/apps/cluster-shared/modules/search/security.xqm";
 
+import module namespace image-link-generator="http://hra.uni-heidelberg.de/ns/tamboti/modules/display/image-link-generator" at "/apps/cluster-shared/modules/display/image-link-generator.xqm";
+
 declare namespace exist = "http://exist.sourceforge.net/NS/exist";
 
 declare variable $exist:controller external;
@@ -114,7 +116,7 @@ return
         let $imagerecord := request:get-parameter('imagerecord', 'i_f55c3201-0454-5045-93b4-767e67536fc8')
         return
         <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-            <redirect url="{$config:image-service-url || '/' || $imagerecord|| '?width=32&amp;height=32'}"/>
+            <redirect url="{image-link-generator:generate-href($imagerecord, 'tamboti-thumbnail')}"/>
         </dispatch>
     else if ($login) then (
         if ($exist:path eq "/") then

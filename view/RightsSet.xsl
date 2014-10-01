@@ -55,19 +55,21 @@
                                    id="b-d2e1138">
                                  <xsl:if xmlns="" test="string-length(vra:text) &gt; 100">
                                     <xsl:attribute name="data-expand">100%</xsl:attribute>
-                                    <xsl:attribute name="data-collapse">150px</xsl:attribute>
+                                    <xsl:attribute name="data-collapse">75px</xsl:attribute>
                                  </xsl:if>
                                  <xsl:value-of select="vra:text"></xsl:value-of>
                               </div>
                               <xsl:if xmlns="" test="string-length(vra:text) &gt; 100">
-                                 <p class="expand">
-                                    <i class="fa fa-arrow-down"></i> Click to Read More 
-                                    <i class="fa fa-arrow-down"></i>
-                                 </p>
-                                 <p class="contract hide">
-                                    <i class="fa fa-arrow-up"></i> Click to Hide 
-                                    <i class="fa fa-arrow-up"></i>
-                                 </p>
+                                 <div class="expand">
+                                    <span class="fa fa-arrow-down"></span>
+                                    <span>Click to Read More</span>
+                                    <span class="fa fa-arrow-down"></span>
+                                 </div>
+                                 <div class="contract hide">
+                                    <span class="fa fa-arrow-up"></span>
+                                    <span>Click to Hide</span>
+                                    <span class="fa fa-arrow-up"></span>
+                                 </div>
                               </xsl:if>
                            </xsl:when>
                            <xsl:otherwise>
@@ -76,18 +78,20 @@
                                    tabindex="0">
                                  <xsl:if xmlns="" test="string-length(vra:text) &gt; 100">
                                     <xsl:attribute name="data-expand">100%</xsl:attribute>
-                                    <xsl:attribute name="data-collapse">150px</xsl:attribute>
+                                    <xsl:attribute name="data-collapse">75px</xsl:attribute>
                                  </xsl:if>(Text)
                               </div>
                               <xsl:if xmlns="" test="string-length(vra:text) &gt; 100">
-                                 <p class="expand">
-                                    <i class="fa fa-arrow-down"></i> Click to Read More 
-                                    <i class="fa fa-arrow-down"></i>
-                                 </p>
-                                 <p class="contract hide">
-                                    <i class="fa fa-arrow-up"></i> Click to Hide 
-                                    <i class="fa fa-arrow-up"></i>
-                                 </p>
+                                 <div class="expand">
+                                    <span class="fa fa-arrow-down"></span>
+                                    <span>Click to Read More</span>
+                                    <span class="fa fa-arrow-down"></span>
+                                 </div>
+                                 <div class="contract hide">
+                                    <span class="fa fa-arrow-up"></span>
+                                    <span>Click to Hide</span>
+                                    <span class="fa fa-arrow-up"></span>
+                                 </div>
                               </xsl:if>
                            </xsl:otherwise>
                         </xsl:choose>

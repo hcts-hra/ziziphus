@@ -9,7 +9,7 @@ declare namespace vra = "http://www.vraweb.org/vracore4.htm";
 declare function vra2html:createVraRecords($uuid as xs:string) {
      let $vraWorkRecord  := collection('ziziphus/records')/vra:vra/vra:work[@id = concat('w_',$uuid)]
      let $imageRecordId  := if(exists($vraWorkRecord/vra:relationSet/vra:relation/@pref[.='true']))
-                                then $vraWorkRecord/vra:relationSet/vra:relation[@pref='true']/@relids
+                                then $vraWorkRecord/vra:relationSet/vra:relation[@pref='true'][1]/@relids
                                 else $vraWorkRecord/vra:relationSet/vra:relation[1]/@relids
      let $vraImageRecord := collection('ziziphus/records')/vra:vra/vra:image[@id = $imageRecordId]
      let $vraImageId    := $vraImageRecord/@refid

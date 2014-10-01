@@ -37,11 +37,14 @@
                 <xf:setvalue ev:event="xforms-model-construct-done" ref="instance('i-control-center')/uuid" value="bf:appContext('id')"/>
                 <xf:setvalue ev:event="xforms-model-construct-done" ref="instance('i-control-center')/workrecord" value="bf:appContext('id')"/>
                 <xf:setvalue ev:event="xforms-model-construct-done" ref="instance('i-control-center')/workdir" value="bf:appContext('workdir')"/>
-                <xf:setvalue ev:event="xforms-model-construct-done" ref="instance('i-control-center')/imagepath" value="bf:appContext('imagepath')"/>
+                <xf:setvalue ev:event="xforms-model-construct-done" ref="instance('i-control-center')/imagepath" value="substring-before(bf:appContext('imagepath'), '#')"/>
                 <xf:submission method="get" id="s-refresh" replace="embedHTML" resource="modules/refreshSection.xql" targetid="{concat(instance('i-control-center')/currentform,'_HtmlContent')}">
                     <xf:action ev:event="xforms-submit-done">
                         <!-- ##### reset 'changed' flag which is set whenever a section was updated in the db ###### -->
                         <xf:setvalue ref="instance('i-control-center')/changed" value="'false'"/>
+                        <script>
+                            initTextExpand();
+                        </script>
                     </xf:action>
                 </xf:submission>
                 <xf:submission id="s-delete" method="get" replace="none">
@@ -208,6 +211,7 @@
         -->
         <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/vendor/select2/select2.js"/>
         <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/select2-init.js"/>
+        <script type="text/javascript" src="resources/script/text-expand.js"/>
         <script type="text/javascript" src="resources/script/ziziphus.js"/>
     </body>
 </html>

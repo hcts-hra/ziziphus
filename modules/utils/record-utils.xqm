@@ -97,7 +97,7 @@ declare function record-utils:get-image-record-id-by-work-record-id($work-record
 declare function record-utils:get-image-record-id-by-work-record-id($work-record-id, $base-collection) as xs:string {
     let $work-record     := collection(xmldb:encode($base-collection))//vra:vra/vra:work[@id = $work-record-id]
     let $image-record-id := if(exists($work-record/vra:relationSet/vra:relation/@pref[.='true']))
-                            then $work-record/vra:relationSet/vra:relation[@pref='true']/@relids
+                            then $work-record/vra:relationSet/vra:relation[@pref='true'][1]/@relids
                             else $work-record/vra:relationSet/vra:relation[1]/@relids
     return
         $image-record-id

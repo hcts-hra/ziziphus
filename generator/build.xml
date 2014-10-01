@@ -83,7 +83,7 @@
 
     <target name="testDescriptionView">
         <antcall target="generate-section-view-transform">
-            <param name="subformName" value="DateSet"/>
+            <param name="subformName" value="DescriptionSet"/>
         </antcall>
     </target>
 
@@ -709,6 +709,18 @@
               force="true">
             <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath refid="transform.class.path"/>
+        </xslt>
+    </target>
+    
+    <target name="test-view">
+        <xslt style="${basedir}/../resources/xsl/vra-record.xsl"
+              in="${basedir}/view.xml"
+              out="${basedir}/view.html"
+              force="true">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath refid="transform.class.path"/>
+            <param name="setname" expression="DescriptionSet"/>
+            <param name="codetables-uri" expression="../../../cluster-shared/modules/edit/code-tables/"/>
         </xslt>
     </target>
 </project>

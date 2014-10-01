@@ -11,13 +11,11 @@ declare namespace bfc="http://betterform.sourceforge.net/xforms/controls";
 declare namespace xf="http://www.w3.org/2002/xforms"; 
 
 import module namespace config="http://exist-db.org/xquery/apps/config" at "config.xqm";
+import module namespace app="http://www.betterform.de/projects/shared/config/app" at "/apps/cluster-shared/modules/ziziphus/config/app.xqm";
 import module namespace templates="http://exist-db.org/xquery/templates";
 
-(: cluster-shared :)
-import module namespace app="http://www.betterform.de/projects/shared/config/app" at "/apps/cluster-shared/modules/ziziphus/config/app.xqm";
 import module namespace csconfig="http://exist-db.org/mods/config" at "/apps/cluster-shared/modules/config.xqm";
 import module namespace image-link-generator="http://hra.uni-heidelberg.de/ns/tamboti/modules/display/image-link-generator" at "/apps/cluster-shared/modules/display/image-link-generator.xqm";
-
 
 declare %templates:wrap %templates:default("workdir", "") function main:createVraRecord($node as node()*, $model as map(*), $id as xs:string?, $workdir as xs:string) {
     let $uuid := $id
@@ -25,7 +23,7 @@ declare %templates:wrap %templates:default("workdir", "") function main:createVr
     let $imageDir as xs:string := $workRecordDir || $app:image-record-dir-name
     let $vraWorkRecord  := collection(xmldb:encode($workRecordDir))/vra:vra/vra:work[@id = $uuid]
     let $imageRecordId  := if(exists($vraWorkRecord/vra:relationSet/vra:relation/@pref[.='true']))
-                                then $vraWorkRecord/vra:relationSet/vra:relation[@pref='true']/@relids
+                                then $vraWorkRecord/vra:relationSet/vra:relation[@pref='true'][1]/@relids
                                 else $vraWorkRecord/vra:relationSet/vra:relation[1]/@relids
      let $vraImageRecord := collection(xmldb:encode($imageDir))/vra:vra/vra:image[@id = $imageRecordId]
      let $resultMap := map:new(($model,map{

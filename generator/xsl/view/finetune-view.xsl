@@ -170,38 +170,96 @@
     </xsl:template>
     
     <xsl:template match="//xsl:template[@match = 'vra:descriptionSet']//html:table[contains(@class, 'vraSetView')]">
-        <xsl:message>Doing</xsl:message>
         <xsl:copy>
             <xsl:copy-of select="@*"/>
             <transform:for-each select="vra:description">
-                <tbody>
-                    <table>
-                        <tbody>                            
-                            <xsl:apply-templates mode="copy-description-set-without-authors" select="html:tbody/xsl:for-each/*"/>
-                        </tbody>
-                    </table>
-                </tbody>
-                <tbody>
-                    <xsl:copy-of select="//html:table[contains(@class, 'vraSetInnerRepeatView')]"/>
+                <tbody class="vraSetView">
+                    <transform:choose>
+                        <transform:when test="string-length(string-join(@type,'')) != 0">
+                            <div data-bf-type="input" data-bf-bind="@type" tabindex="0" title="type">
+                                <transform:value-of select="@type"></transform:value-of>
+                            </div>
+                        </transform:when>
+                        <transform:otherwise>
+                            <div class="nodata" data-bf-type="input" data-bf-bind="@type" tabindex="0">(type)</div>
+                        </transform:otherwise>
+                    </transform:choose>
+                    <transform:for-each select="vra:text">
+                        <tr>
+                            <td colspan="3">
+                                <transform:choose>
+                                    <transform:when test="string-length(string-join(. ,'')) != 0">
+                                        <div data-bf-type="textarea" data-bf-bind="vra:text" tabindex="0" title="Text"  class="textarea keepWhitespace">
+                                            <transform:if xmlns="" test="string-length(.) &gt; 100">
+                                                <transform:attribute name="data-expand">100%</transform:attribute>
+                                                <transform:attribute name="data-collapse">75px</transform:attribute>
+                                            </transform:if>
+                                            <transform:value-of select="."></transform:value-of>
+                                        </div>
+                                        <transform:if test="string-length(.) &gt; 100">
+                                            <div class="expand">
+                                                <span class="fa fa-arrow-down"/><span>Click to Read More</span><span class="fa fa-arrow-down"/> 
+                                            </div>
+                                            <div class="contract hide">
+                                                <span class="fa fa-arrow-up"/><span>Click to Hide</span><span class="fa fa-arrow-up"/>
+                                            </div>  
+                                        </transform:if>
+                                    </transform:when>
+                                    <transform:otherwise>
+                                       <div class="nodata" data-bf-type="textarea" data-bf-bind="vra:text" tabindex="0">(Text)</div>
+                                    </transform:otherwise>
+                                </transform:choose>
+                            </td>
+                        </tr>
+                        
+                    </transform:for-each>
+                    <transform:for-each select="vra:author">
+                        <transform:if test="string-length(string-join(vra:name,'')) != 0 or string-length(string-join(vra:name/@type,'')) != 0 or string-length(string-join(vra:role,'')) != 0">
+                            <tr>
+                                <td>
+                                    <transform:choose>
+                                        <transform:when test="string-length(string-join(vra:name,'')) != 0">
+                                            <div data-bf-type="input" data-bf-bind="vra:name" tabindex="0" title="Name" class="Name-autocomplete">
+                                                <transform:value-of select="vra:name"></transform:value-of>
+                                            </div>
+                                        </transform:when>
+                                        <transform:otherwise>
+                                            <div class="nodata" data-bf-type="input" data-bf-bind="vra:name" tabindex="0">(Name)</div>
+                                        </transform:otherwise>
+                                    </transform:choose>
+                                </td>
+                                <td>
+                                    <transform:choose>
+                                        <transform:when test="string-length(string-join(vra:name/@type,'')) != 0">
+                                            <div data-bf-type="select1" data-bf-bind="vra:name/@type" tabindex="0" title="Type" class=" nameType">
+                                                <transform:value-of select="vra:name/@type"></transform:value-of>
+                                            </div>
+                                        </transform:when>
+                                        <transform:otherwise>
+                                            <div class="nodata" data-bf-type="select1" data-bf-bind="vra:name/@type" tabindex="0">(Type)</div>
+                                        </transform:otherwise>
+                                    </transform:choose>
+                                </td>
+                                <td>
+                                    <transform:choose>
+                                        <transform:when test="string-length(string-join(vra:role,'')) != 0">
+                                            <div data-bf-type="select1" data-bf-bind="vra:role" tabindex="0" title="Role">
+                                                <transform:variable name="role" select="vra:role"></transform:variable>
+                                                <transform:value-of select="$role-codes-legend//item[value eq $role]/label"></transform:value-of>
+                                            </div>
+                                        </transform:when>
+                                        <transform:otherwise>
+                                            <div class="nodata" data-bf-type="select1" data-bf-bind="vra:role" tabindex="0">(Role)</div>
+                                        </transform:otherwise>
+                                    </transform:choose>
+                                </td>
+                            </tr>
+                        </transform:if>
+                    </transform:for-each>
                 </tbody>
             </transform:for-each>
         </xsl:copy>
     </xsl:template>
-    
-    <xsl:template mode="copy-description-set-without-authors" match="*">
-        <xsl:if test="local-name(.) != 'table'">
-            <xsl:copy>
-                <xsl:copy-of select="@*"/>
-                <xsl:apply-templates mode="copy-description-set-without-authors" select="*"/>
-            </xsl:copy>
-        </xsl:if>
-    </xsl:template>
-    
-    <!--
-    <xsl:template match="html:div[@data-bf-type eq 'textarea']" mode="copy-description-set" priority="20">
-        <xsl:call-template name="add-whitespace-pre-line-to-divs"/>
-    </xsl:template>
-    -->
 
     <xsl:template match="//xsl:template[@match = 'vra:inscriptionSet']//html:table[//html:div[@data-bf-type eq 'textarea']]//html:div[@data-bf-type]">
         <xsl:call-template name="add-whitespace-pre-line-to-divs"/>
@@ -229,7 +287,7 @@
                 <transform:if>
                     <xsl:attribute name="test">string-length(<xsl:value-of select="@data-bf-bind"/>) &gt; 100</xsl:attribute>
                     <transform:attribute name="data-expand">100%</transform:attribute>
-                    <transform:attribute name="data-collapse">150px</transform:attribute>
+                    <transform:attribute name="data-collapse">75px</transform:attribute>
                 </transform:if>
             </xsl:if>
             <xsl:copy-of select="*|text()"/>
@@ -240,8 +298,12 @@
         <xsl:if test="@data-bf-type eq 'textarea'">
             <transform:if>
                 <xsl:attribute name="test">string-length(<xsl:value-of select="@data-bf-bind"/>) &gt; 100</xsl:attribute>
-                <p class="expand"><i class="fa fa-arrow-down"></i> Click to Read More <i class="fa fa-arrow-down"></i></p>
-                <p class="contract hide"><i class="fa fa-arrow-up"></i> Click to Hide <i class="fa fa-arrow-up"></i></p>    
+                <div class="expand">
+                    <span class="fa fa-arrow-down"/><span>Click to Read More</span><span class="fa fa-arrow-down"/> 
+                </div>
+                <div class="contract hide">
+                    <span class="fa fa-arrow-up"/><span>Click to Hide</span><span class="fa fa-arrow-up"/>
+                </div>  
             </transform:if>
         </xsl:if>
     </xsl:template>

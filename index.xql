@@ -75,7 +75,7 @@ return
             
             let $vraWorkRecord := $record
             let $imageRecordId  := if(exists($vraWorkRecord/vra:relationSet/vra:relation/@pref[.='true']))
-                                then $vraWorkRecord/vra:relationSet/vra:relation[@pref='true']/@refid
+                                then $vraWorkRecord/vra:relationSet/vra:relation[@pref='true'][1]/@refid
                                 else $vraWorkRecord/vra:relationSet/vra:relation[1]/@refid
             let $heidiconId := $vraWorkRecord//ext:heidicon/ext:item[@type='f_id_heidicon']/ext:value[2]
             

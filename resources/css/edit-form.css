@@ -13,6 +13,7 @@
 table tbody {
   font-size: 0.85em;
 }
+table tbody .xfGroup > .vraSetInnerRepeatEdit .xfControl .xfLabel,
 table tbody .xfGroup > .xfControl .xfLabel {
   float: left;
   padding: 0;

@@ -1,15 +1,6 @@
 var autocompletes = [];
 
 jQuery(document).ready(function () {
-    
-    var animspeed = 950;
-    
-    jQuery('div[data-expand]').each( function(index) {
-        $this = $(this);
-        $this.css('height',$this.attr('data-collapse'));
-    });
-    
-    
     // init jquery layout
     ziziphusLayout = $('body').layout({
         defaults: {
@@ -117,27 +108,8 @@ jQuery(document).ready(function () {
 
 
     });
-
-    jQuery('.expand').on('click', function(e){
-        $text = $(this).prev();
-
-        $text.animate({
-          'height': $text.attr('data-expand')
-        }, animspeed);
-        $(this).next('.contract').removeClass('hide');
-        $(this).addClass('hide');
-      });
- 
-    jQuery('.contract').on('click', function(e){
-        $text = $(this).prev().prev();
-
-        $text.animate({
-          'height': $text.attr('data-collapse')
-        }, animspeed);
-        $(this).prev('.expand').removeClass('hide');
-        $(this).addClass('hide');
-      });
-
+    
+    initTextExpand();
 }).tooltip({
   items:'i[title]',
   content: function() {

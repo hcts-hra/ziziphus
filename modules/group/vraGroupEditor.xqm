@@ -69,7 +69,7 @@ declare function vraGroupEditor:thumBar($uuids) {
     for $uuid in $uuids
     let $vraWorkRecord  := collection(xmldb:encode('/db/resources'))//vra:vra/vra:work[@id = $uuid]
     let $imageRecordId  := if(exists($vraWorkRecord/vra:relationSet/vra:relation/@pref[.='true']))
-                                then $vraWorkRecord/vra:relationSet/vra:relation[@pref='true']/@relids
+                                then $vraWorkRecord/vra:relationSet/vra:relation[@pref='true'][1]/@relids
                                 else $vraWorkRecord/vra:relationSet/vra:relation[1]/@relids
     return
         <li><img src="{$csconfig:image-service-url || '/' || $imageRecordId|| '?width=96&amp;height=96'}" alt="{$imageRecordId}" title="{$imageRecordId}" class="relatedImage" onclick="loadRecord('{$uuid}')"/></li>

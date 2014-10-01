@@ -11,7 +11,7 @@ let $id := request:get-parameter('id', 'w_f265ddd4-0b05-5319-98a6-376b2875e33b')
 let $type := request:get-parameter('type', 'work')
 let $work := record-utils:get-record($id, '/db')
 let $imageRecordId  := if(exists($work/vra:relationSet/vra:relation/@pref[.='true']))
-                                then $work/vra:relationSet/vra:relation[@pref='true']/@relids
+                                then $work/vra:relationSet/vra:relation[@pref='true'][1]/@relids
                                 else $work/vra:relationSet/vra:relation[1]/@relids
 
 let $data := if($type = 'image') then (record-utils:get-record($imageRecordId, '/db')) else ($work)
