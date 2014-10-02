@@ -77,7 +77,7 @@
             <fileset dir="${basedir}" includes="*.xconf *.xml *.xhtml *.html *.xql"/>
         </copy>
         <copy todir="${target.ziziphus.dir}/view">
-            <fileset dir="${basedir}/view" />
+            <fileset dir="${basedir}/view" excludes="*.orig"/>
         </copy>
         <copy todir="${target.ziziphus.dir}/view-diff">
             <fileset dir="${basedir}/view-diff" />

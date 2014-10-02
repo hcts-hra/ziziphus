@@ -43,6 +43,7 @@
 
     <xsl:template match="html:body">
         <xsl:param name="vraTableId"/>
+        <xsl:message>html:body</xsl:message>
         <div class="simple" id="{{$vraTableId}}">
             <table class="vraSetView table table-striped">
                 <xsl:apply-templates select=".//html:tbody[exists(@xf:repeat-nodeset)]"/>
@@ -51,6 +52,7 @@
     </xsl:template>
 
     <xsl:template match="html:tbody">
+        <xsl:message>html:tbody</xsl:message>
         <tbody>
             <transform:for-each select="{@xf:repeat-nodeset}">
                 <tr>
@@ -72,6 +74,7 @@
     </xsl:template>
     
     <xsl:template match="xf:repeat">
+        <xsl:message>xf:repeat</xsl:message>
         <table class="vraSetInnerRepeatView table">
             <tbody>
                 <transform:for-each select="{@ref}">
@@ -89,28 +92,33 @@
     </xsl:template>
 
     <xsl:template match="html:td">
+        <xsl:message>html:td</xsl:message>
         <xsl:element name="td">
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
 
     <xsl:template match="xf:group[@appearance='minimal']">
+        <xsl:message>xf:group[@appearance='minimal']</xsl:message>
         <xsl:apply-templates/>
     </xsl:template>
 
     <!-- ##### start ignores #####-->
     <xsl:template match="html:td[@class='globalAttrs']" priority="10"/>
+    <xsl:template match="xf:group[@class='vraAttributes']" priority="10"/>
     <xsl:template match="xf:trigger[@class='vraAttributeTrigger']" priority="10"/>
 
     <!-- ##### end ignores ##### -->
 
     <xsl:template match="xf:group">
+        <xsl:message>xf:group</xsl:message>
         <xsl:for-each select="xf:*">
             <xsl:apply-templates select="."/>
         </xsl:for-each>
     </xsl:template>
     
     <xsl:template match="xf:input | xf:select1 | xf:textarea">
+        <xsl:message>xf:input | xf:select1 | xf:textarea</xsl:message>
         <xsl:variable name="path">
             <xsl:call-template name="buildPath"/>
         </xsl:variable>
@@ -165,6 +173,7 @@
     </xsl:template>
 
     <xsl:template name="buildPath">
+        <xsl:message>buildPath</xsl:message>
         <xsl:variable name="tmp">
             /<xsl:value-of select="$rootMatch"/>
             <xsl:for-each select="ancestor-or-self::*">
