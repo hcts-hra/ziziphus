@@ -81,9 +81,9 @@
       <alert/>
    </type>
    <lang>
+    <!-- We need labels for the elementSet as well -->
+    <!-- How to insert line breaks? -->
       <agentSet>
-      <!-- We need labels for the elementSet as well -->
-      <!-- How to insert line breaks? -->
         <agent>
             <attribution>
                <label>Attribution</label>
@@ -103,14 +103,14 @@
                 <earliestDate>
                   <label>EarliestDate</label>
                   <hint>Add e.g. the birth year or start of activity here. Choose a date type and if necessary a specification from the dropdown menus.</hint>
-                  <help/>
+                  <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agent</help>
                   <alert>Date format not valid.</alert>
                   <!-- Alert needed, if date values don't fit ISO 8601 or 'present' -->
                </earliestDate>
                 <latestDate>
                   <label>LatestDate</label>
                   <hint>Add e.g. the year of death or the end of activity here. If necessary choose a specification from the dropdown menu.</hint>
-                  <help/>
+                  <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agent</help>
                   <alert>Date format not valid.</alert>
                   <!-- Alert needed, if date values don't fit ISO 8601 or 'present' -->
                </latestDate>
@@ -125,7 +125,7 @@
             <role>
                <label>Role</label>
                <hint>Choose a role from the dropdown menu.</hint>
-               <help/>
+               <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agent</help>
                <alert>The role field is, please choose a role from the dropdown menu.</alert>
             </role>
         </agent>
@@ -133,9 +133,10 @@
       <culturalContextSet>
         <culturalContext>
             <label>CulturalContext</label>
-            <hint/>
-            <help/>
+            <hint>Add the culture from whicht the work originates here.</hint>
+            <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/cultura-context</help>
             <alert/>
+            <!-- At the moment, we haven't decided, whether we will make this a controlled vocab dropdown. -->
          </culturalContext>
       </culturalContextSet>
       <dateSet>
@@ -144,13 +145,14 @@
                 <date>
                   <label>Date</label>
                   <hint/>
-                  <help/>
-                  <alert/>
+                  <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/date</help>
+                  <alert>Date format not valid.</alert>
+                  <!-- Alert needed, if date values don't fit ISO 8601 -->
                </date>
                 <alternativeNotation>
                   <label>AlternativeNotation</label>
                   <hint/>
-                  <help/>
+                  <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/date</help>
                   <alert/>
                </alternativeNotation>
             </earliestDate>
@@ -158,13 +160,14 @@
                 <date>
                   <label>Date</label>
                   <hint/>
-                  <help/>
-                  <alert/>
+                  <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/date</help>
+                  <alert>Date format not valid.</alert>
+                  <!-- Alert needed, if date values don't fit ISO 8601 -->
                </date>
                 <alternativeNotation>
                   <label>AlternativeNotation</label>
                   <hint/>
-                  <help/>
+                  <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/date</help>
                   <alert/>
                </alternativeNotation>
             </latestDate>
@@ -175,20 +178,20 @@
             <text>
                <label>Text</label>
                <hint/>
-               <help/>
+               <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/description</help>
                <alert/>
             </text>
             <author>
                 <name>
                   <label>Name</label>
                   <hint/>
-                  <help/>
+                  <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/description</help>
                   <alert/>
                </name>
                 <role>
                   <label>Role</label>
                   <hint/>
-                  <help/>
+                  <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/description</help>
                   <alert/>
                </role>
             </author>
@@ -199,19 +202,19 @@
             <author>
                <label>Author</label>
                <hint/>
-               <help/>
+               <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/inscription</help>
                <alert/>
             </author>
             <position>
                <label>Position</label>
                <hint/>
-               <help/>
+               <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/inscription</help>
                <alert/>
             </position>
             <text>
                <label>Text</label>
                <hint/>
-               <help/>
+               <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/inscription</help>
                <alert/>
             </text>
         </inscription>
@@ -221,26 +224,26 @@
             <refid>
                <label>Refid</label>
                <hint/>
-               <help/>
+               <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/location</help>
                <alert/>
             </refid>
             <name>
                <label>Name</label>
                <hint/>
-               <help/>
+               <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/location</help>
                <alert/>
             </name>
             <point>
                 <lat>
                   <label>Lat</label>
                   <hint/>
-                  <help/>
+                  <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/location</help>
                   <alert/>
                </lat>
                 <long>
                   <label>Long</label>
                   <hint/>
-                  <help/>
+                  <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/location</help>
                   <alert/>
                </long>
             </point>
@@ -250,7 +253,7 @@
         <material>
             <label>Material</label>
             <hint/>
-            <help/>
+            <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/material</help>
             <alert/>
          </material>
       </materialSet>
@@ -258,7 +261,7 @@
         <measurements>
             <label>Measurements</label>
             <hint/>
-            <help/>
+            <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/measurements</help>
             <alert/>
          </measurements>
       </measurementsSet>
@@ -266,7 +269,7 @@
         <relation>
             <label>Relation</label>
             <hint/>
-            <help/>
+            <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/relation</help>
             <alert/>
          </relation>
       </relationSet>
@@ -275,13 +278,13 @@
             <rightsHolder>
                <label>RightsHolder</label>
                <hint/>
-               <help/>
+               <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/rights</help>
                <alert/>
             </rightsHolder>
             <text>
                <label>Text</label>
                <hint/>
-               <help/>
+               <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/rights</help>
                <alert/>
             </text>
         </rights>
@@ -291,13 +294,13 @@
             <refid>
                <label>Refid</label>
                <hint/>
-               <help/>
+               <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/source</help>
                <alert/>
             </refid>
             <name>
                <label>Name</label>
                <hint/>
-               <help/>
+               <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/source</help>
                <alert/>
             </name>
         </source>
@@ -307,13 +310,13 @@
             <description>
                <label>Description</label>
                <hint/>
-               <help/>
+               <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/state-edition</help>
                <alert/>
             </description>
             <name>
                <label>Name</label>
                <hint/>
-               <help/>
+               <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/state-edition</help>
                <alert/>
             </name>
         </stateEdition>
@@ -322,7 +325,7 @@
         <stylePeriod>
             <label>StylePeriod</label>
             <hint/>
-            <help/>
+            <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/style-period</help>
             <alert/>
          </stylePeriod>
       </stylePeriodSet>
@@ -331,7 +334,7 @@
             <term>
                <label>Term</label>
                <hint/>
-               <help/>
+               <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/subject</help>
                <alert/>
             </term>
         </subject>
@@ -340,7 +343,7 @@
         <technique>
             <label>Technique</label>
             <hint/>
-            <help/>
+            <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/technique</help>
             <alert/>
          </technique>
       </techniqueSet>
@@ -349,13 +352,13 @@
             <name>
                <label>Name</label>
                <hint/>
-               <help/>
+               <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/text-reference</help>
                <alert/>
             </name>
             <refid>
                <label>Refid</label>
                <hint/>
-               <help/>
+               <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/text-reference</help>
                <alert/>
             </refid>
         </textref>
@@ -364,7 +367,7 @@
         <title>
             <label>Title</label>
             <hint/>
-            <help/>
+            <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/title</help>
             <alert/>
          </title>
       </titleSet>
@@ -372,7 +375,7 @@
         <worktype>
             <label>Worktype</label>
             <hint/>
-            <help/>
+            <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/worktype</help>
             <alert/>
          </worktype>
       </worktypeSet>
