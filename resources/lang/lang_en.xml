@@ -104,13 +104,15 @@
                   <label>EarliestDate</label>
                   <hint>Add e.g. the birth year or start of activity here. Choose a date type and if necessary a specification from the dropdown menus.</hint>
                   <help/>
-                  <alert/>
+                  <alert>Date format not valid.</alert>
+                  <!-- Alert needed, if date values don't fit ISO 8601 or 'present' -->
                </earliestDate>
                 <latestDate>
                   <label>LatestDate</label>
                   <hint>Add e.g. the year of death or the end of activity here. If necessary choose a specification from the dropdown menu.</hint>
                   <help/>
-                  <alert/>
+                  <alert>Date format not valid.</alert>
+                  <!-- Alert needed, if date values don't fit ISO 8601 or 'present' -->
                </latestDate>
             </dates>
             <name>
