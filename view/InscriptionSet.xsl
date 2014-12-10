@@ -21,15 +21,14 @@
                                     <td>
                                        <xsl:choose>
                                           <xsl:when test="string-length(string-join(@type,'')) != 0">
-                                             <div class=" textType keepWhitespace" data-bf-type="select1" data-bf-bind="@type"
+                                             <div xmlns="" class=" textType nodata" data-bf-type="select1" data-bf-bind="@type"
                                                   tabindex="0"
                                                   title="Type">
-                                                <xsl:value-of select="@type"></xsl:value-of>
+                                                <xsl:value-of xmlns="http://www.w3.org/1999/xhtml" select="@type"></xsl:value-of>
                                              </div>
                                           </xsl:when>
                                           <xsl:otherwise>
-                                             <div class="nodata keepWhitespace" data-bf-type="select1" data-bf-bind="@type"
-                                                  tabindex="0">(Type)</div>
+                                             <div class="nodata" data-bf-type="select1" data-bf-bind="@type" tabindex="0">(Type)</div>
                                           </xsl:otherwise>
                                        </xsl:choose>
                                     </td>
@@ -39,13 +38,13 @@
                                              <div class="textarea keepWhitespace" data-bf-type="textarea" data-bf-bind="."
                                                   tabindex="0"
                                                   title="Text">
-                                                <xsl:if xmlns="" test="string-length(.) &gt; 100">
+                                                <xsl:if xmlns="" test="string-length() - string-length(translate(., '&#xA;', '')) &gt; 5">
                                                    <xsl:attribute name="data-expand">100%</xsl:attribute>
                                                    <xsl:attribute name="data-collapse">75px</xsl:attribute>
                                                 </xsl:if>
                                                 <xsl:value-of select="."></xsl:value-of>
                                              </div>
-                                             <xsl:if xmlns="" test="string-length(.) &gt; 100">
+                                             <xsl:if xmlns="" test="string-length() - string-length(translate(., '&#xA;', '')) &gt; 5">
                                                 <div class="expand">
                                                    <span class="fa fa-arrow-down"></span>
                                                    <span>Click to Read More</span>
@@ -61,12 +60,12 @@
                                           <xsl:otherwise>
                                              <div class="textarea nodata keepWhitespace" data-bf-type="textarea" data-bf-bind="."
                                                   tabindex="0">
-                                                <xsl:if xmlns="" test="string-length(.) &gt; 100">
+                                                <xsl:if xmlns="" test="string-length() - string-length(translate(., '&#xA;', '')) &gt; 5">
                                                    <xsl:attribute name="data-expand">100%</xsl:attribute>
                                                    <xsl:attribute name="data-collapse">75px</xsl:attribute>
                                                 </xsl:if>(Text)
                                              </div>
-                                             <xsl:if xmlns="" test="string-length(.) &gt; 100">
+                                             <xsl:if xmlns="" test="string-length() - string-length(translate(., '&#xA;', '')) &gt; 5">
                                                 <div class="expand">
                                                    <span class="fa fa-arrow-down"></span>
                                                    <span>Click to Read More</span>
@@ -89,33 +88,27 @@
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:author,'')) != 0">
-                              <div class="Author-autocomplete keepWhitespace" data-bf-type="input"
-                                   data-bf-bind="vra:author"
-                                   tabindex="0"
-                                   title="Author"
-                                   id="b-d2e665">
+                              <div data-bf-type="input" data-bf-bind="vra:author" tabindex="0" title="Author"
+                                   id="b-d2e665"
+                                   class="Author-autocomplete">
                                  <xsl:value-of select="vra:author"></xsl:value-of>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="nodata keepWhitespace" data-bf-type="input" data-bf-bind="vra:author"
-                                   tabindex="0">(Author)</div>
+                              <div class="nodata" data-bf-type="input" data-bf-bind="vra:author" tabindex="0">(Author)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:position,'')) != 0">
-                              <div class="keepWhitespace" data-bf-type="input" data-bf-bind="vra:position"
-                                   tabindex="0"
-                                   title="Position"
+                              <div data-bf-type="input" data-bf-bind="vra:position" tabindex="0" title="Position"
                                    id="b-d2e686">
                                  <xsl:value-of select="vra:position"></xsl:value-of>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="nodata keepWhitespace" data-bf-type="input" data-bf-bind="vra:position"
-                                   tabindex="0">(Position)</div>
+                              <div class="nodata" data-bf-type="input" data-bf-bind="vra:position" tabindex="0">(Position)</div>
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>

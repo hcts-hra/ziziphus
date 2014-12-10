@@ -174,6 +174,13 @@
                   <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/isDirty" value="'true'"></xf:setvalue>
                   <xf:delete nodeset="instance('i-subjectSet')/vra:subject[index('r-vraSubject')]"></xf:delete>
                </xf:action>
+               <xf:dispatch targetid="doRefresh" name="DOMActivate"></xf:dispatch>
+            </xf:trigger>
+            <xf:trigger id="doRefresh" class="hiddenControl">
+               <xf:label>refresh</xf:label>
+               <xf:action><script>
+                            clearAndInitAutocompletes();
+                        </script></xf:action>
             </xf:trigger>
             <table>
                <tbody model="m-child-model" id="r-vraSubject" xf:repeat-nodeset="vra:subject">
@@ -259,6 +266,9 @@
                                        <xf:insert context=".." origin="instance('i-vraAttributes')/vra:vraElement[1]/@source"
                                                   if="not(exists(instance('i-subjectSet')/vra:subject[index('r-vraSubject')]/@source))"></xf:insert>
                                        <xf:setvalue ref="../@source" value="event('source')"></xf:setvalue>
+                                    </xf:action>
+                                    <xf:action if="event('termType') eq 'personal' and exists(../vra:dates/@type)">
+                                       <xf:setvalue ref="../vra:dates/@type" value="'life'"></xf:setvalue>
                                     </xf:action>
                                     <xf:action if="exists(../vra:dates/vra:earliestDate)">
                                        <xf:setvalue ref="../vra:dates/vra:earliestDate" value="event('earliestDate')"></xf:setvalue>

@@ -20,6 +20,6 @@ return
         <!--
             <user name="{$username}" edit="{security:can-write-collection(xmldb:encode($workdir))}"/> :)
         -->
-        <user name="{$username}"/>
+        <user name="{$username}">{$username}</user>
         <groups>{$groups}</groups>
     </data>

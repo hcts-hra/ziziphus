@@ -1,0 +1,157 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Diff presentation</title>
+        <!-- <link rel="stylesheet" type="text/css" href="resources/css/ziziphus.css"/> -->
+        <style type="text/css">
+            h1 {
+                font-size: 1.2em;
+                margin: 0 0 0.75em 0;
+            }
+
+            .content {
+                display: none;
+            }
+
+            .diff {
+                display: block;
+                border-style: solid;
+                border-width: 2px;
+                border-color: blue;
+                padding: 0.5em;
+                margin: 1em;
+            }
+            #info {
+                font-size: 0.8em;
+            }
+            #options {
+                font-size: 0.7em;
+                margin: 1em 2em;
+            }
+            .rev {
+                font-weight: bold;
+            }
+            input[type='text'] {
+                width: 3em;
+            }
+        </style>
+        <script type="text/javascript" src="../cluster-shared/resources/script/vendor/jquery/jquery.min.js"/>
+        <script type="text/javascript" src="../cluster-shared/resources/script/vendor/purl/purl.js"/>
+        <script type="text/javascript" src="resources/script/diff_match_patch.js"/>
+        <script type="text/javascript">//
+            function fill_info(res, rev1, rev2) {
+                $("#resource-link").text(resource).attr("href", compose_current_url(resource));
+                $("#rev1").val(rev1);
+                $("#rev2").val(rev2);
+            }
+
+            function compose_current_url(resource) {
+                return "/exist/rest" + resource;
+            }
+
+            function compose_url(resource, rev) {
+                return "/exist/admin/versions.xql?action=restore"
+                        + "\u0026resource=" + encodeURIComponent(resource)
+                        + "\u0026rev=" + encodeURIComponent(rev);
+            }
+
+            function obtain_data(resource, rev, idx) {
+                if (!rev || rev === "" || rev == "empty") {
+                    $("#div" + idx).text("");
+                    done += 1;
+                } else {
+                    var query;
+                    if (rev == "last")
+                        query = compose_current_url(resource);
+                    else
+                        query = compose_url(resource, rev);
+                    $.get(query, null, null, "text")
+                            .done(function(data) {
+                                $("#div" + idx).text(data);
+                                done += 1;
+                                if (done == 2)
+                                    compute_diff();
+                            })
+                            .fail(function() {
+                                alert("error " + idx);
+                            });
+                }
+            }
+
+            function load_documents() {
+                done = 0;
+                obtain_data(resource, $("#rev1").val(), 1);
+                obtain_data(resource, $("#rev2").val(), 2);
+            }
+
+            function compute_diff() {
+                var dmp = new diff_match_patch();
+
+                dmp.Diff_Timeout = 2.0;
+                dmp.Diff_EditCost = parseFloat(document.getElementById('editcost').value);
+
+                var text1 = $("#div1").text();
+                var text2 = $("#div2").text();
+                var d = dmp.diff_main(text1, text2);
+
+                if (document.getElementById('semantic').checked) {
+                    dmp.diff_cleanupSemantic(d);
+                }
+                if (document.getElementById('efficiency').checked) {
+                    dmp.diff_cleanupEfficiency(d);
+                }
+                var ds = dmp.diff_prettyHtml(d);
+                $("#outputdiv").html(ds);
+            }
+
+            jQuery(document).ready(function() {
+                url = $.url();
+                resource = url.param('resource');
+                var rev1 = url.param('rev1');
+                var rev2 = url.param('rev2');
+
+                fill_info(resource, rev1, rev2);
+                load_documents();
+                compute_diff();
+
+                jQuery('#recompute').on({
+                    click: function() {
+                        compute_diff();
+                    }});
+                jQuery('#reload').on({
+                    click: function() {
+                        load_documents();
+                    }});
+            });
+        </script>
+    </head>
+    <body>
+        <div id="info">
+            Resource: <a id="resource-link"/>.<br/>
+            Compare revision Nr.&#xA0;<input type="text" id="rev1" class="rev" size="3" maxlength="8"/>
+            and Nr.&#xA0;<input type="text" id="rev2" class="rev" size="3" maxlength="8"/>.
+        </div>
+        <div id="options">
+            Diffs computed by <a href="http://code.google.com/p/google-diff-match-patch/">google-diff-match-patch</a>.<br/>
+            <form>
+                post-diff cleanup options:
+                <span title="No cleanup">
+                    <input type="radio" name="cleanup" id="raw"/>
+                    <label for="raw">none</label>&#160;
+                </span>
+                <span title="Increase human readability by factoring out commonalities which are likely to be coincidental.">
+                    <input type="radio" name="cleanup" id="semantic" checked="checked"/>
+                    <label for="semantic">semantic</label>&#160;
+                </span>
+                <span title="Increase computational efficiency by factoring out short commonalities which are not worth the overhead. The larger the edit cost, the more agressive the cleanup.">
+                    <input type="radio" name="cleanup" id="efficiency"/>
+                    <label for="efficiency">efficiency</label>(<input type="text" size="2" maxlength="5" value="4" id="editcost"/>)
+                </span>
+                <input type="button" id="recompute" value="recompute" title="Recompute diffs in place using given settings."/>
+                <input type="button" id="reload" value="reload" title="Reload documents from server and compute diffs again."/>
+            </form>
+        </div>
+        <div id="div1" class="content"/>
+        <div id="div2" class="content"/>
+        <div id="outputdiv" class="diff"/>
+    </body>
+</html>

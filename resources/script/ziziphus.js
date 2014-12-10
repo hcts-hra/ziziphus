@@ -186,6 +186,11 @@ function deleteRecord() {
     $('#t-delete-workrecord-value').click();
 }
 
+function openWorkrecordInTamboti() {
+    var url = '/exist/apps/tamboti/modules/search/index.html?search-field=ID&value=' + $('#workrecordid-value').val();
+    window.open(url, '_blank');
+}
+
 function leftCenter() {
     ziziphusLayout.open('west');
     ziziphusLayout.close('east');

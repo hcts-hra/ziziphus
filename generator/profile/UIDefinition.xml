@@ -2,7 +2,20 @@
 <!--
         This a generated file meant for further hand-editing as a UI profile. Must be placed in 'profile'
         directory to take effect during generation of forms and views.
---><group idref="b-d2e11" name="vra:vra">
+-->
+<!-- NEW -->
+<!--
+<set name="vra:titleSet" idref="b-d2e1722">
+    <group name="vra:title" repeated="true" idref="b-d2e1767">
+        <group name="vra:text" idref="b-d2e1773">
+            <node name="@type" detail="false" idref="b-d2e1777"/>
+            <textNode detail="false" large="large" idref="b-d2e11"/>
+        </group>
+    </group>
+    <node name="vra:notes" detail="false" idref="b-d2e1746"/>
+</set>
+-->
+<group idref="b-d2e11" name="vra:vra">
     <group name="vra:collection" idref="b-d2e17">
         <set name="vra:agentSet" idref="b-d2e23">
             <group name="vra:agent" repeated="true" idref="b-d2e68">
@@ -19,22 +32,14 @@
                 <group name="vra:dates" idref="b-d2e116">
                     <node name="@type" detail="true" idref="b-d2e165"/>
                     <group name="vra:earliestDate" idref="b-d2e119">
-                        
                         <textNode detail="true" idref="b-d2e11"/>
-                        
-                        
-                        
-                        <node idref="b-d2e126" name="@circa" detail="false"/>
-                        <node idref="b-d2e127" name="@type" detail="false"/>
+                        <node name="@circa" detail="false" idref="b-d2e126"/>
+                        <node name="@type" detail="false" idref="b-d2e127"/>
                     </group>
                     <group name="vra:latestDate" idref="b-d2e142">
-                        
                         <textNode detail="true" idref="b-d2e11"/>
-                        
-                        
-                        
-                        <node idref="b-d2e149" name="@circa" detail="false"/>
-                        <node idref="b-d2e150" name="@type" detail="false"/>
+                        <node name="@circa" detail="false" idref="b-d2e149"/>
+                        <node name="@type" detail="false" idref="b-d2e150"/>
                     </group>
                 </group>
             </group>
@@ -116,15 +121,17 @@
             <group name="vra:subject" repeated="true" idref="b-d2e1505">
                 <group name="vra:term" idref="b-d2e1511">
                     <node name="@type" detail="false" idref="b-d2e1518"/>
-                    <textNode detail="false" control="autocomplete" queryType="subjects" idref="b-d2e11" multiple="true"/>
+                    <textNode detail="false" control="autocomplete" queryType="subjects" multiple="true" idref="b-d2e11"/>
                 </group>
             </group>
             <node name="vra:notes" detail="false" idref="b-d2e1484"/>
         </set>
+        
+        
         <set name="vra:titleSet" idref="b-d2e1722">
             <group name="vra:title" repeated="true" idref="b-d2e1767">
                 <node name="@type" detail="false" idref="b-d2e1774"/>
-                <textNode detail="false" idref="b-d2e11" large="large"/>
+                <textNode detail="false" large="large" idref="b-d2e11"/>
             </group>
             <node name="vra:notes" detail="false" idref="b-d2e1746"/>
         </set>

@@ -1,19 +1,21 @@
-<html xmlns:exist="http://exist.sourceforge.net/NS/exist" xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:bf="http://betterform.sourceforge.net/xforms" xmlns:vra="http://www.vraweb.org/vracore4.htm" xmlns:meta="http://expath.org/ns/pkg" xmlns:bfc="http://betterform.sourceforge.net/xforms/controls" xmlns:xf="http://www.w3.org/2002/xforms" bf:transform="/apps/ziziphus/resources/xsl/ziziphus.xsl">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:vra="http://www.vraweb.org/vracore4.htm" xmlns:bf="http://betterform.sourceforge.net/xforms" xmlns:bfc="http://betterform.sourceforge.net/xforms/controls" xmlns:exist="http://exist.sourceforge.net/NS/exist" xmlns:xf="http://www.w3.org/2002/xforms" xmlns:meta="http://expath.org/ns/pkg" bf:transform="/apps/ziziphus/resources/xsl/ziziphus.xsl">
     <head>
-        <title>Ziziphus VRA editor</title>
-        <link href="/exist/apps/cluster-shared/resources/script/vendor/select2/select2.css" rel="stylesheet"/>
-        <link rel="stylesheet" href="/exist/apps/cluster-shared/resources/script/vendor/font-awesome/css/font-awesome.min.css"/>
-        <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css"/>
+        <title>Ziziphus Image DB</title>
+        <!-- BOWER cluster-shared -->
+        <link rel="stylesheet" type="text/css" href="../cluster-shared/resources/script/vendor/select2/select2.css"/>
+        <link rel="stylesheet" type="text/css" href="../cluster-shared/resources/script/vendor/font-awesome/css/font-awesome.min.css"/>
+        <link rel="stylesheet" type="text/css" href="../cluster-shared/resources/script/vendor/bootstrap2.3.2/bootstrap/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="../cluster-shared/resources/script/vendor/jquery.layout/dist/layout-default-latest.css"/>
+        <link rel="stylesheet" type="text/css" href="../cluster-shared/resources/script/vendor/jquery-ui/themes/smoothness/jquery-ui.min.css"/>
+        <link rel="stylesheet" type="text/css" href="../cluster-shared/resources/script/vendor/animate.css/animate.min.css"/>
+        
+        
+        
+        <link rel="stylesheet" type="text/css" href="resources/script/mingos-uwindow/themes/ziziphus/style.css"/>
+        
         <link rel="stylesheet" type="text/css" href="resources/css/layout.css"/>
         <link rel="stylesheet" type="text/css" href="resources/css/record.css"/>
-        <link rel="stylesheet" type="text/css" href="resources/script/mingos-uwindow/themes/ziziphus/style.css"/>
-        <link rel="stylesheet" type="text/css" href="resources/script/layout-default-latest.css"/>
-        <link rel="stylesheet" type="text/css" href="resources/css/jquery-ui.css"/>
-        <link rel="stylesheet" type="text/css" href="resources/css/animate.css"/>
-        <!-- <link rel="stylesheet" type="text/css" href="/exist/apps/cluster-shared/resources/css/autocomplete.css"/> -->
         <link rel="stylesheet" type="text/css" href="/exist/apps/cluster-shared/resources/css/select2-cluster.css"/>
-        
-        <!--<link rel="stylesheet" type="text/css" href="resources/css/ui-lightness/jquery-ui-1.10.2.custom.min.css"/>-->
     </head>
     <body class="main:createVraRecord">
         <div id="overlay" style="position:absolute;z-index:9999;width:100%;height:100%;background:#444444;">
@@ -37,14 +39,11 @@
                 <xf:setvalue ev:event="xforms-model-construct-done" ref="instance('i-control-center')/uuid" value="bf:appContext('id')"/>
                 <xf:setvalue ev:event="xforms-model-construct-done" ref="instance('i-control-center')/workrecord" value="bf:appContext('id')"/>
                 <xf:setvalue ev:event="xforms-model-construct-done" ref="instance('i-control-center')/workdir" value="bf:appContext('workdir')"/>
-                <xf:setvalue ev:event="xforms-model-construct-done" ref="instance('i-control-center')/imagepath" value="substring-before(bf:appContext('imagepath'), '#')"/>
+                <xf:setvalue ev:event="xforms-model-construct-done" ref="instance('i-control-center')/imagepath" value="bf:appContext('imagepath')"/>
                 <xf:submission method="get" id="s-refresh" replace="embedHTML" resource="modules/refreshSection.xql" targetid="{concat(instance('i-control-center')/currentform,'_HtmlContent')}">
                     <xf:action ev:event="xforms-submit-done">
                         <!-- ##### reset 'changed' flag which is set whenever a section was updated in the db ###### -->
                         <xf:setvalue ref="instance('i-control-center')/changed" value="'false'"/>
-                        <script>
-                            initTextExpand();
-                        </script>
                     </xf:action>
                 </xf:submission>
                 <xf:submission id="s-delete" method="get" replace="none">
@@ -65,8 +64,8 @@
                     </xf:bind>
                 </xf:bind>
                 <xf:submission id="s-load-user-data" method="post" replace="instance" instance="i-user">
-                    <xf:resource value="IF(instance('i-control-center')/workdir eq '', 'modules/getUserData.xql', concat('modules/getUserData.xql?workdir=', encode-for-uri(instance('i-control-center')/workdir)))"/>
-                    <xf:message ev:event="xforms-submit-error">Error receiving the current user</xf:message>
+                    <xf:resource value="IF(instance('i-control-center')/workdir eq '', 'modules/getUserData.xql', concat('modules/getUserData.xql?workdir=', instance('i-control-center')/workdir))"/>
+                    <xf:message ev:event="xforms-submit-error">error receiving the current user</xf:message>
                 </xf:submission>
                 <xf:instance id="i-meta">
                     <data xmlns=""/>
@@ -89,13 +88,9 @@
             <xf:submit id="t-delete-workrecord" submission="s-delete">
                 <xf:label/>
             </xf:submit>
-            <xf:trigger id="t-open-workrecord-in-tamboti">
-                <xf:load show="new">
-                    <xf:resource value="concat('/exist/apps/tamboti/modules/search/index.html?search-field=ID&amp;value=', instance('i-control-center')/workrecord)"/>
-                </xf:load>
-            </xf:trigger>
             <xf:trigger id="t-load-xml">
                 <xf:load show="new">
+                    <!--xf:resource value="concat('/exist/rest/', instance('i-control-center')/workdir, '/' , instance('i-control-center')/uuid, '.xml')"/-->
                     <xf:resource value="concat('modules/loadXML.xql?id=', instance('i-control-center')/workrecord)"/>
                 </xf:load>
             </xf:trigger>
@@ -120,9 +115,6 @@
                 </xf:action>
             </xf:group>
             <xf:input id="workdir" ref="instance('i-control-center')/workdir">
-                <xf:label>Hidden Control</xf:label>
-            </xf:input>
-            <xf:input id="workrecordid" ref="instance('i-control-center')/workrecord">
                 <xf:label>Hidden Control</xf:label>
             </xf:input>
         </div>
@@ -166,12 +158,6 @@
                             <button id="delete-workrecord" class="btn icon" type="button" onclick="deleteRecord();" title="Delete current workrecord and related imagerecords">Delete</button>
                         </div>
                     </li>
-                    <li>
-                        <div class="btn-group">
-                            <button id="open-workrecord-in-tamboti" class="btn" type="button" onclick="openWorkrecordInTamboti();" title="Open current workrecord in Tamboti">
-                                <i class="fa fa-folder-open"/> Tamboti</button>
-                        </div>
-                    </li>
                 </ul>
             </div>
             <div class="headerMenu" style="position:absolute;display:block;right:40px;">
@@ -212,19 +198,16 @@
                 "dijit/TitlePane"
             ]);
         </script>
-        <script type="text/javascript" src="resources/script/jquery-1.9.1.js"/>
-        <!--<script type="text/javascript" src="resources/script/jquery-ui-1-1.10.0.custom/js/jquery-ui-1.10.0.custom.min.js"/>-->
-        <script type="text/javascript" src="resources/script/jquery-ui-1.10.2.custom.min.js"/>
+        
+        <!-- BOWER cluster-shared -->
+        <script type="text/javascript" src="../cluster-shared/resources/script/vendor/jquery/jquery.min.js"/>
+        <script type="text/javascript" src="../cluster-shared/resources/script/vendor/jquery-ui/jquery-ui.min.js"/>
+        <script type="text/javascript" src="../cluster-shared/resources/script/vendor/jquery.layout/dist/jquery.layout-latest.min.js"/>
+        <script type="text/javascript" src="../cluster-shared/resources/script/vendor/select2/select2.js"/>
+        <script type="text/javascript" src="../cluster-shared/resources/script/select2-init.js"/>
+        
+        <!-- Whats that, and who uses it? -->
         <script type="text/javascript" src="resources/script/mingos-uwindow/jWindow.js"/>
-        <script type="text/javascript" src="resources/script/jquery.layout-latest.min.js"/>
-        <!--
-            <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/vendor/typeahead.js/hogan-2.0.0.js"/>
-            <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/vendor/typeahead.js/typeahead-0.9.3.js"/>
-            <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/typeahead-init.js"/>
-        -->
-        <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/vendor/select2/select2.js"/>
-        <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/select2-init.js"/>
-        <script type="text/javascript" src="resources/script/text-expand.js"/>
         <script type="text/javascript" src="resources/script/ziziphus.js"/>
     </body>
 </html>

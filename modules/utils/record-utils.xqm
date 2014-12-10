@@ -1,6 +1,7 @@
 xquery version "3.0";
 
 module namespace record-utils="http://www.betterform.de/projects/ziziphus/xquery/record-utils";
+import module namespace config="http://exist-db.org/mods/config" at "/apps/tamboti/modules/config.xqm";
 
 declare namespace vra="http://www.vraweb.org/vracore4.htm";
 
@@ -17,7 +18,7 @@ declare function record-utils:get-record($record-id) as node() {
 };
 
 declare function record-utils:get-record($record-id, $base-collection) as node() {
-    collection(xmldb:encode($base-collection))//vra:vra/*[@id = $record-id]
+    system:as-user($config:dba-credentials[1], $config:dba-credentials[2], collection(xmldb:encode($base-collection))//vra:vra/*[@id = $record-id])
 };
 
 (: 
@@ -30,7 +31,7 @@ declare function record-utils:get-work-record($work-record-id) as node() {
 };
 
 declare function record-utils:get-work-record($work-record-id, $base-collection) as node() {
-    collection(xmldb:encode($base-collection))//vra:vra/vra:work[@id = $work-record-id]
+    system:as-user($config:dba-credentials[1], $config:dba-credentials[2], collection(xmldb:encode($base-collection))//vra:vra/vra:work[@id = $work-record-id])
 };
 
 declare function record-utils:get-work-record-collection-by-id($work-record-id) as xs:string {
@@ -58,7 +59,7 @@ declare function record-utils:delete-work-record($work-record-id) {
 };
 
 declare function record-utils:delete-work-record($work-record-id, $base-collection) {
-    let $work-record := collection(xmldb:encode($base-collection))//vra:vra/vra:work[@id = $work-record-id]
+    let $work-record := system:as-user($config:dba-credentials[1], $config:dba-credentials[2], collection(xmldb:encode($base-collection))//vra:vra/vra:work[@id = $work-record-id])
     
     return 
         if(exists($work-record))
@@ -69,7 +70,7 @@ declare function record-utils:delete-work-record($work-record-id, $base-collecti
                 return 
                     record-utils:delete-image-record($image-record-id)
             return 
-                xmldb:remove(util:collection-name($work-record), util:document-name($work-record))
+                system:as-user($config:dba-credentials[1], $config:dba-credentials[2], xmldb:remove(util:collection-name($work-record), util:document-name($work-record)))
         ) else (
             response:set-status-code(404)      
         ) 
@@ -87,7 +88,7 @@ declare function record-utils:get-image-record($image-record-id) as node() {
 };
 
 declare function record-utils:get-image-record($image-record-id, $base-collection) as node() {
-    collection(xmldb:encode($base-collection))//vra:vra/vra:image[@id = $image-record-id]
+    system:as-user($config:dba-credentials[1], $config:dba-credentials[2], collection(xmldb:encode($base-collection))//vra:vra/vra:image[@id = $image-record-id])
 };
 
 declare function record-utils:get-image-record-id-by-work-record-id($work-record-id) as xs:string {
@@ -95,7 +96,7 @@ declare function record-utils:get-image-record-id-by-work-record-id($work-record
 };
 
 declare function record-utils:get-image-record-id-by-work-record-id($work-record-id, $base-collection) as xs:string {
-    let $work-record     := collection(xmldb:encode($base-collection))//vra:vra/vra:work[@id = $work-record-id]
+    let $work-record     := system:as-user($config:dba-credentials[1], $config:dba-credentials[2], collection(xmldb:encode($base-collection))//vra:vra/vra:work[@id = $work-record-id])
     let $image-record-id := if(exists($work-record/vra:relationSet/vra:relation/@pref[.='true']))
                             then $work-record/vra:relationSet/vra:relation[@pref='true'][1]/@relids
                             else $work-record/vra:relationSet/vra:relation[1]/@relids
@@ -117,7 +118,7 @@ declare function record-utils:get-image-record-collection-by-work-record-id($wor
 
 declare function record-utils:get-image-record-collection-by-work-record-id($work-record-id, $base-collection) as xs:string {
     let $image-record-id := record-utils:get-image-record-id-by-work-record-id($work-record-id, $base-collection)
-    let $image-record := collection(xmldb:encode($base-collection))//vra:vra/vra:image[@id = $image-record-id]
+    let $image-record := system:as-user($config:dba-credentials[1], $config:dba-credentials[2], collection(xmldb:encode($base-collection))//vra:vra/vra:image[@id = $image-record-id])
     return 
         util:collection-name($image-record)
 };
@@ -128,7 +129,7 @@ declare function record-utils:get-image-record-path-by-work-record-id($work-reco
 
 declare function record-utils:get-image-record-path-by-work-record-id($work-record-id, $base-collection) as xs:string {
     let $image-record-id := record-utils:get-image-record-id-by-work-record-id($work-record-id, $base-collection)
-    let $image-record    := collection(xmldb:encode($base-collection))//vra:vra/vra:image[@id = $image-record-id]
+    let $image-record    := system:as-user($config:dba-credentials[1], $config:dba-credentials[2], collection(xmldb:encode($base-collection))//vra:vra/vra:image[@id = $image-record-id])
     return 
         util:collection-name($image-record) || '/' || util:document-name($image-record)
 };
@@ -139,7 +140,7 @@ declare function record-utils:get-image-record-path-by-id($image-record-id) as x
 };
 
 declare function record-utils:get-image-record-path-by-id($image-record-id, $base-collection) as xs:string {
-    let $image-record := collection($base-collection)//vra:vra/vra:image[@id = $image-record-id]
+    let $image-record := system:as-user($config:dba-credentials[1], $config:dba-credentials[2], collection($base-collection)//vra:vra/vra:image[@id = $image-record-id])
     return 
         util:collection-name($image-record) || '/' || util:document-name($image-record)
 };
@@ -149,14 +150,14 @@ declare function record-utils:delete-image-record($image-record-id) {
 };
 
 declare function record-utils:delete-image-record($image-record-id, $base-collection) {
-    let $image-record := collection($base-collection)//vra:vra/vra:image[@id = $image-record-id]
+    let $image-record := system:as-user($config:dba-credentials[1], $config:dba-credentials[2], collection($base-collection)//vra:vra/vra:image[@id = $image-record-id])
     
     return
         if(exists($image-record))
         then (
             let $log := util:log("INFO", "record-utils:delete-image-record: $image-record-id: " || $image-record-id || " collection: " || util:collection-name($image-record) || " file:" || util:document-name($image-record))
             return
-                xmldb:remove(util:collection-name($image-record), util:document-name($image-record))
+                system:as-user($config:dba-credentials[1], $config:dba-credentials[2], xmldb:remove(util:collection-name($image-record), util:document-name($image-record)))
         ) else (
             response:set-status-code(404)      
         ) 

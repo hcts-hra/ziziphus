@@ -1,70 +1,71 @@
 // this matcher does only exist due to an error in thea generic xforms.css
-.xfRequired {
-    .xfLabel {
-        &:after {
-            content:'';
-        }
-    }
-    > .xfLabel {
-        &:after {
-            content:'*';
-        }
-    }
-}
-
-.xfRepeatItem {
-    background: whitesmoke;
-}
-
-.xfRepeatIndex {
-    .contentCol {
-        background-color: whitesmoke;
-    }
-}
-
-table {
-
-    tbody {
-        font-size: 0.85em;
-
-        .xfGroup {
-            > .vraSetInnerRepeatEdit .xfControl,
-            > .xfControl {
-                .xfLabel {
-                    float: left;
-                    padding: 0;
-                    margin: 3px 3px 0 2px;
-                    min-width: 60px;
-                    font-size: 0.9em;
-                }
+[id*="-edit"] {
+    .xfRequired {
+        .xfLabel {
+            &:after {
+                content:'';
             }
         }
-        
+        > .xfLabel {
+            &:after {
+                content:'*';
+            }
+        }
     }
 
-    tr {
-        td {
-            vertical-align: top;
-            border: thin solid #999999;
-            border-collapse: collapse;
-            padding: 3px;
+    .xfRepeatItem {
+        background: whitesmoke;
+    }
 
-            > .xfGroup {
-                background: #fafafa;
-                border-top: thin solid;
-                border-bottom: thin solid #cdcdcd;
-                padding: 5px 0;
-            }
+    .xfRepeatIndex {
+        .contentCol {
+            background-color: whitesmoke;
+        }
+    }
+
+    table {
+
+        tbody {
+            font-size: 0.85em;
 
             .xfGroup {
-                &:last-child {
-                    border-bottom: none;
+                > .vraSetInnerRepeatEdit .xfControl,
+                > .xfControl {
+                    .xfLabel {
+                        float: left;
+                        padding: 0;
+                        margin: 3px 3px 0 2px;
+                        min-width: 60px;
+                        font-size: 0.9em;
+                    }
+                }
+            }
+
+        }
+
+        tr {
+            td {
+                vertical-align: top;
+                border: thin solid #999999;
+                border-collapse: collapse;
+                padding: 3px;
+
+                > .xfGroup {
+                    background: #fafafa;
+                    border-top: thin solid;
+                    border-bottom: thin solid #cdcdcd;
+                    padding: 5px 0;
+                }
+
+                .xfGroup {
+                    &:last-child {
+                        border-bottom: none;
+                    }
                 }
             }
         }
     }
 }
-
 
 .vraAttributes {
     .xfControl {
@@ -220,7 +221,7 @@ table {
 
 .buttonBar {
     clear:both;
-    
+
     .xfTrigger {
         display: inline-block !important;
         font-size: 0.85em;
@@ -348,7 +349,7 @@ table {
         }
 
         .altNotation {
-            
+
             td {
 
                 .xfRepeat {
@@ -365,22 +366,22 @@ table {
                         float: left;
                     }
                 }
-            
+
             }
         }
     }
-    
+
     .vraSetInnerRepeatEdit {
         width: 100%;
         display:block !important;
-        
+
         .vraAttributeTrigger {
             float: right;
             position: relative;
             right: 0;
             top: -20px;
         }
-        
+
         .inscriptionTextDelete {
             float: none !important;
         }
@@ -402,6 +403,6 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
 
 .xlInput {
     select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input{
-      width: 550px;
+        width: 550px;
     }
 }

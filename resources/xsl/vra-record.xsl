@@ -121,7 +121,7 @@
                 <!-- ############ VIEW CASE ######### -->
                 <!-- ############ VIEW CASE ######### -->
                 <!-- ############ VIEW CASE ######### -->
-                <xf:case id="{$caseId}-view" selected="true">
+                <xf:case id="{$caseId}-view" selected="true" class="view">
                     <xf:action ev:event="xforms-select">
                         <script type="text/javascript">
                             $('.editHighlight').removeClass('editHighlight');
@@ -147,7 +147,7 @@
                 <!-- ############ EDIT CASE ############### -->
                 <!-- ############ EDIT CASE ############### -->
                 <!-- ############ EDIT CASE ############### -->
-                <xf:case id="{$caseId}-edit">
+                <xf:case id="{$caseId}-edit" class="edit">
                     <xf:action ev:event="xforms-select">
                         <script type="text/javascript">scrollToPanel('<xsl:value-of select="$id"/>');</script>
                     </xf:action>

@@ -170,7 +170,7 @@ ol.inline > li {
 .bf .vraSetInnerRepeatView td,
 .bf .viewDateTable td {
   border: medium none;
-  width: 50%;
+  width: auto;
   background-color: #FFFFFF !important;
 }
 .bf table {
@@ -373,6 +373,9 @@ ol.inline > li {
   float: left;
   padding: 0 2px;
 }
+.d-inline-block {
+  display: inline-block;
+}
 /*
 #113
 
@@ -381,3 +384,4 @@ div[data-bf-bind] {
     width: 100%;
 }
 */
+/*# sourceMappingURL=layout.css.map */

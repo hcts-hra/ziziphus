@@ -559,7 +559,21 @@
                         <xsl:attribute name="nodeset">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]</xsl:attribute>
                     </xf:delete>
                 </xf:action>
+                <xsl:if test="/xf:bind/xf:bind/xf:bind[@nodeset=concat('vra:',$vraSectionNode)]//*[@control eq 'autocomplete']">
+                    <xf:dispatch targetid="doRefresh" name="DOMActivate"/>
+                </xsl:if>
             </xf:trigger>
+
+            <xsl:if test="/xf:bind/xf:bind/xf:bind[@nodeset=concat('vra:',$vraSectionNode)]//*[@control eq 'autocomplete']">
+                <xf:trigger id="doRefresh" class="hiddenControl">
+                    <xf:label>refresh</xf:label>
+                    <xf:action>
+                        <script>
+                            clearAndInitAutocompletes();
+                        </script>
+                    </xf:action>
+                </xf:trigger>
+            </xsl:if>
 
             <table>
                 <tbody model="m-child-model">
@@ -1007,6 +1021,9 @@
                                                 <xsl:attribute name="if">not(exists(instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/@source))</xsl:attribute>
                                             </xf:insert>
                                             <xf:setvalue ref="@source" value="event('source')"/>
+                                        </xf:action>
+                                        <xf:action if="event('termType') eq 'personal' and exists(../vra:dates/@type)">
+                                            <xf:setvalue ref="../vra:dates/@type" value="'life'"/>
                                         </xf:action>
                                         <!-- If earliestDate exists and "Set" has a dates element set it -->
                                         <xf:action if="exists(../vra:dates/vra:earliestDate)">

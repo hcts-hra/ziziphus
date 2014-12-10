@@ -451,6 +451,10 @@
             <param name="subformName" value="MeasurementsSet"/>
         </antcall>
         
+        <antcall target="finetune-view">
+            <param name="subformName" value="MeasurementsSet"/>
+        </antcall>
+        
         <antcall target="generate-section-view-transform">
             <param name="subformName" value="RelationSet"/>
         </antcall>
@@ -681,10 +685,10 @@
         </xslt>
 
         <echo>
-            New UI definition file created: ${target.dir}/UIDefintion.xml
+            New UI definition file created: ${target.dir}/UIDefinition-Final.xml
         </echo>
         <echo>
-            ATTENTION: you have to manually move 'UIDefinition.xml' to directory 'profile' to take
+            ATTENTION: you have to manually move 'UIDefinition-Final.xml' to 'profile/UIDefinition.xml' to take
             effect in the generation process.
         </echo>
 

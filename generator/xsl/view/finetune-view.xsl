@@ -190,13 +190,13 @@
                                 <transform:choose>
                                     <transform:when test="string-length(string-join(. ,'')) != 0">
                                         <div data-bf-type="textarea" data-bf-bind="vra:text" tabindex="0" title="Text"  class="textarea keepWhitespace">
-                                            <transform:if xmlns="" test="string-length(.) &gt; 100">
+                                            <transform:if xmlns="" test="string-length() - string-length(translate(., '&#xA;', '')) &gt; 5">
                                                 <transform:attribute name="data-expand">100%</transform:attribute>
                                                 <transform:attribute name="data-collapse">75px</transform:attribute>
                                             </transform:if>
                                             <transform:value-of select="."></transform:value-of>
                                         </div>
-                                        <transform:if test="string-length(.) &gt; 100">
+                                        <transform:if test="string-length() - string-length(translate(., '&#xA;', '')) &gt; 5">
                                             <div class="expand">
                                                 <span class="fa fa-arrow-down"/><span>Click to Read More</span><span class="fa fa-arrow-down"/> 
                                             </div>
@@ -261,9 +261,39 @@
         </xsl:copy>
     </xsl:template>
 
+    <xsl:template match="//xsl:template[@match = 'vra:inscriptionSet']//html:table">
+        <xsl:copy>
+            <xsl:copy-of select ="@*"/>
+            <xsl:apply-templates select="*" mode="inscriptionSet"/>
+        </xsl:copy>
+    </xsl:template>
+    
+    <xsl:template match="//html:div[contains(@class, 'textType')]" mode="inscriptionSet" priority="10">
+        <div>
+            <xsl:attribute name="class">
+                <xsl:value-of select="concat(@class, ' nodata')"/>
+            </xsl:attribute>
+            <xsl:copy-of select="@*[local-name() ne 'class']"/>
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="//html:div[@data-bf-type eq 'textarea']" mode="inscriptionSet" priority="10">
+        <xsl:call-template name="add-whitespace-pre-line-to-divs"/>
+    </xsl:template>
+    
+    <xsl:template match="*|text()|comment()" mode="inscriptionSet">
+        <xsl:copy>
+            <xsl:copy-of select ="@*|text()|comment()"/>
+            <xsl:apply-templates select="*" mode="inscriptionSet"/>
+        </xsl:copy>
+    </xsl:template>
+
+    <!--
     <xsl:template match="//xsl:template[@match = 'vra:inscriptionSet']//html:table[//html:div[@data-bf-type eq 'textarea']]//html:div[@data-bf-type]">
         <xsl:call-template name="add-whitespace-pre-line-to-divs"/>
     </xsl:template>
+    -->
 
     <xsl:template match="//xsl:template[@match = 'vra:rightsSet']//html:table[//html:div[@data-bf-type eq 'textarea']]//html:div[@data-bf-type]">
         <xsl:call-template name="add-whitespace-pre-line-to-divs"/>
@@ -285,7 +315,7 @@
             
             <xsl:if test="@data-bf-type eq 'textarea'">
                 <transform:if>
-                    <xsl:attribute name="test">string-length(<xsl:value-of select="@data-bf-bind"/>) &gt; 100</xsl:attribute>
+                    <xsl:attribute name="test">string-length() - string-length(translate(<xsl:value-of select="@data-bf-bind"/>, '&#xA;', '')) &gt; 5</xsl:attribute>
                     <transform:attribute name="data-expand">100%</transform:attribute>
                     <transform:attribute name="data-collapse">75px</transform:attribute>
                 </transform:if>
@@ -297,7 +327,7 @@
         
         <xsl:if test="@data-bf-type eq 'textarea'">
             <transform:if>
-                <xsl:attribute name="test">string-length(<xsl:value-of select="@data-bf-bind"/>) &gt; 100</xsl:attribute>
+                <xsl:attribute name="test">string-length() - string-length(translate(<xsl:value-of select="@data-bf-bind"/>, '&#xA;', '')) &gt; 5</xsl:attribute>
                 <div class="expand">
                     <span class="fa fa-arrow-down"/><span>Click to Read More</span><span class="fa fa-arrow-down"/> 
                 </div>
@@ -306,5 +336,13 @@
                 </div>  
             </transform:if>
         </xsl:if>
+    </xsl:template>
+    
+    <xsl:template match="//xsl:template[@match = 'vra:measurementsSet']//xsl:for-each[@select = 'vra:measurements']//html:tr/html:td//html:div">
+        <xsl:copy>
+            <xsl:attribute name="class" select="concat(@class , ' d-inline-block')"/> 
+            <xsl:copy-of select="@*[local-name() ne 'class']"/>
+            <xsl:apply-templates select="*"/>
+        </xsl:copy>
     </xsl:template>
 </xsl:stylesheet>

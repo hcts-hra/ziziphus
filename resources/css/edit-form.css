@@ -1,39 +1,39 @@
-.xfRequired .xfLabel:after {
+[id*="-edit"] .xfRequired .xfLabel:after {
   content: '';
 }
-.xfRequired > .xfLabel:after {
+[id*="-edit"] .xfRequired > .xfLabel:after {
   content: '*';
 }
-.xfRepeatItem {
+[id*="-edit"] .xfRepeatItem {
   background: whitesmoke;
 }
-.xfRepeatIndex .contentCol {
+[id*="-edit"] .xfRepeatIndex .contentCol {
   background-color: whitesmoke;
 }
-table tbody {
+[id*="-edit"] table tbody {
   font-size: 0.85em;
 }
-table tbody .xfGroup > .vraSetInnerRepeatEdit .xfControl .xfLabel,
-table tbody .xfGroup > .xfControl .xfLabel {
+[id*="-edit"] table tbody .xfGroup > .vraSetInnerRepeatEdit .xfControl .xfLabel,
+[id*="-edit"] table tbody .xfGroup > .xfControl .xfLabel {
   float: left;
   padding: 0;
   margin: 3px 3px 0 2px;
   min-width: 60px;
   font-size: 0.9em;
 }
-table tr td {
+[id*="-edit"] table tr td {
   vertical-align: top;
   border: thin solid #999999;
   border-collapse: collapse;
   padding: 3px;
 }
-table tr td > .xfGroup {
+[id*="-edit"] table tr td > .xfGroup {
   background: #fafafa;
   border-top: thin solid;
   border-bottom: thin solid #cdcdcd;
   padding: 5px 0;
 }
-table tr td .xfGroup:last-child {
+[id*="-edit"] table tr td .xfGroup:last-child {
   border-bottom: none;
 }
 .vraAttributes .xfControl {
@@ -326,3 +326,4 @@ input[type="color"],
 .xlInput .uneditable-input {
   width: 550px;
 }
+/*# sourceMappingURL=edit-form.css.map */

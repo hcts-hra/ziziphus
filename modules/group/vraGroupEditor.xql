@@ -39,7 +39,7 @@ declare %private function local:extract-uuids-and-workdir($uuid as xs:string ) {
             let $collection := functx:substring-before-last($file/text(), '/')
             let $workrecord-id := data(doc($file/text())//vra:work/@id)
             return
-                if(security:can-read-collection($collection))
+                if(security:can-read-collection($collection) and exists($workrecord-id))
                 then (
                     <record>
                         <id>{$workrecord-id}</id>
@@ -93,7 +93,7 @@ declare %private function local:run($uuid as xs:string) {
                     </body>
                 </html>
             ) else (
-                local:error-page(<div>No readable records found<div>{$uuid}</div></div>)
+                local:error-page(<div>No readable records found. Only VRA records are supported within Ziziphus</div>)
             ) 
 };
 
@@ -104,7 +104,7 @@ declare function local:thumBar($uuid-workdir) {
                                 then $vraWorkRecord/vra:relationSet/vra:relation[@pref='true'][1]/@relids
                                 else $vraWorkRecord/vra:relationSet/vra:relation[1]/@relids
     return
-        <li><img src="{image-link-generator:generate-href($imageRecordId, 'tamboti-thumbnail')}" alt="{$imageRecordId}" class="relatedImage" onclick="loadRecord('{$record/collection}')" title="{$imageRecordId}" /></li>
+        <li><img src="{image-link-generator:generate-href($imageRecordId, 'tamboti-thumbnail')}" alt="{$imageRecordId}" class="relatedImage" onclick="loadRecord('{$record/id}', '{$record/collection}')" title="{$imageRecordId}" /></li>
 };
 
 declare %private function local:groupeditor($uuid as xs:string) {
@@ -121,11 +121,14 @@ declare %private function local:error-page($error-text) {
     <html>
         <head>
             <title>Ziziphus Image DB - Group editor</title>
+            <link rel="stylesheet" type="text/css" href="/exist/apps/ziziphus/resources/css/bootstrap.min.css"/>
         </head>
         <body>
-            <div>user: {$local:user}</div>
-            <div>An error occured:</div>
-            <div>{$error-text}</div>
+            <div class="container">
+                <h2 class="text-center">An error occured:</h2>
+                <div class="text-center text-error">{$error-text}</div>
+            </div>
+            <script type="text/javascript" src="/exist/apps/ziziphus/resources/script/jquery-1.9.1.js"/>
         </body>
     </html>
 };

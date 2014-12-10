@@ -53,13 +53,15 @@
                                    tabindex="0"
                                    title="Text"
                                    id="b-d2e1138">
-                                 <xsl:if xmlns="" test="string-length(vra:text) &gt; 100">
+                                 <xsl:if xmlns=""
+                                         test="string-length() - string-length(translate(vra:text, '&#xA;', '')) &gt; 5">
                                     <xsl:attribute name="data-expand">100%</xsl:attribute>
                                     <xsl:attribute name="data-collapse">75px</xsl:attribute>
                                  </xsl:if>
                                  <xsl:value-of select="vra:text"></xsl:value-of>
                               </div>
-                              <xsl:if xmlns="" test="string-length(vra:text) &gt; 100">
+                              <xsl:if xmlns=""
+                                      test="string-length() - string-length(translate(vra:text, '&#xA;', '')) &gt; 5">
                                  <div class="expand">
                                     <span class="fa fa-arrow-down"></span>
                                     <span>Click to Read More</span>
@@ -76,12 +78,14 @@
                               <div class="textarea nodata keepWhitespace" data-bf-type="textarea"
                                    data-bf-bind="vra:text"
                                    tabindex="0">
-                                 <xsl:if xmlns="" test="string-length(vra:text) &gt; 100">
+                                 <xsl:if xmlns=""
+                                         test="string-length() - string-length(translate(vra:text, '&#xA;', '')) &gt; 5">
                                     <xsl:attribute name="data-expand">100%</xsl:attribute>
                                     <xsl:attribute name="data-collapse">75px</xsl:attribute>
                                  </xsl:if>(Text)
                               </div>
-                              <xsl:if xmlns="" test="string-length(vra:text) &gt; 100">
+                              <xsl:if xmlns=""
+                                      test="string-length() - string-length(translate(vra:text, '&#xA;', '')) &gt; 5">
                                  <div class="expand">
                                     <span class="fa fa-arrow-down"></span>
                                     <span>Click to Read More</span>
