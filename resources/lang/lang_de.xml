@@ -1,371 +1,941 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language language="de">
-   <display>
-      <label>Display</label>
-      <hint/>
-      <help/>
-      <alert/>
-   </display>
-   <notes>
-      <label>Notes</label>
-      <hint/>
-      <help/>
-      <alert/>
-   </notes>
-   <dataDate>
-      <label>Data Date</label>
-      <hint/>
-      <help/>
-      <alert/>
-   </dataDate>
-   <extent>
-      <label>Extent</label>
-      <hint/>
-      <help/>
-      <alert/>
-   </extent>
-   <href>
-      <label>Href</label>
-      <hint/>
-      <help/>
-      <alert/>
-   </href>
-   <refid>
-      <label>RefID</label>
-      <hint/>
-      <help/>
-      <alert/>
-   </refid>
-   <rules>
-      <label>Rules</label>
-      <hint/>
-      <help/>
-      <alert/>
-   </rules>
-   <source>
-      <label>Source</label>
-      <hint/>
-      <help/>
-      <alert/>
-   </source>
-   <vocab>
-      <label>Vocab</label>
-      <hint/>
-      <help/>
-      <alert/>
-   </vocab>
-   <lang>
-      <label>Lang</label>
-      <hint/>
-      <help/>
-      <alert/>
-   </lang>
-   <script>
-      <label>Script</label>
-      <hint/>
-      <help/>
-      <alert/>
-   </script>
-   <transliteration>
-      <label>Transliteration</label>
-      <hint/>
-      <help/>
-      <alert/>
-   </transliteration>
-   <type>
-      <label>Type</label>
-      <hint/>
-      <help/>
-      <alert/>
-   </type>
-   <lang>
-      <agentSet>
-        <agent>
-            <attribution>
-               <label>Attribution</label>
-               <hint/>
-               <help/>
-               <alert/>
-            </attribution>
-            <culture>
-               <label>Culture</label>
-               <hint/>
-               <help/>
-               <alert/>
-            </culture>
-            <dates>
-                <earliestDate>
-                  <label>EarliestDate</label>
-                  <hint/>
-                  <help/>
-                  <alert/>
-               </earliestDate>
-                <latestDate>
-                  <label>LatestDate</label>
-                  <hint/>
-                  <help/>
-                  <alert/>
-               </latestDate>
-            </dates>
-            <name>
-               <label>Name</label>
-               <hint/>
-               <help/>
-               <alert/>
-            </name>
-            <role>
-               <label>Role</label>
-               <hint/>
-               <help/>
-               <alert/>
-            </role>
-        </agent>
-      </agentSet>
-      <culturalContextSet>
-        <culturalContext>
-            <label>CulturalContext</label>
+<language language="en">
+    <actions>
+        <save>
+            <label>DE: Save</label>
+            <hint>save changes to database</hint>
+            <help/>
+            <alert/>
+            <placeholder/>
+        </save>
+        <addEntry>
+            <label>DE: +</label>
+            <hint>add an entry</hint>
+            <help/>
+            <alert/>
+            <placeholder/>
+        </addEntry>
+        <deleteEntry>
+            <label>DE: remove</label>
             <hint/>
             <help/>
             <alert/>
-         </culturalContext>
-      </culturalContextSet>
-      <dateSet>
+            <placeholder/>
+        </deleteEntry>
+        <closeEditor>
+            <label>DE: &#215;</label>
+            <hint>close editor</hint>
+            <help/>
+            <alert/>
+            <placeholder/>
+        </closeEditor>
+        <editAttributes>
+            <label>DE: A</label>
+            <hint>Edit Attributes</hint>
+            <help/>
+            <alert/>
+            <placeholder/>
+        </editAttributes>
+        <removeTrashcan>
+            <label/>
+            <hint>Delete this entry</hint>
+            <help/>
+            <alert/>
+            <placeholder/>
+        </removeTrashcan>
+        <showNotes>
+            <label>DE: Show Notes</label>
+            <hint/>
+            <help/>
+            <alert/>
+            <placeholder/>
+        </showNotes>
+        <hideNotes>
+            <label>DE: Hide Notes</label>
+            <hint/>
+            <help/>
+            <alert/>
+            <placeholder/>
+        </hideNotes>
+        <clear>
+            <label>DE: clear</label>
+            <hint/>
+            <help/>
+            <alert/>
+            <placeholder/>
+        </clear>
+        <ok>
+            <label>DE: Ok</label>
+            <hint/>
+            <help/>
+            <alert/>
+            <placeholder/>
+        </ok>
+        <cancel>
+            <label>DE: Cancel</label>
+            <hint/>
+            <help/>
+            <alert/>
+            <placeholder/>
+        </cancel>
+        <add>
+            <label>DE: Add</label>
+            <hint/>
+            <help/>
+            <alert/>
+            <placeholder/>
+        </add>
+        <remove>
+            <label>DE: Remove</label>
+            <hint/>
+            <help/>
+            <alert/>
+            <placeholder/>
+        </remove>
+    </actions>
+    <!-- I am not sure if we need tool tips and help links for the global attributes. Which of the global attributes will be edited by the user? -->
+    <!-- MA: HINT and HELP should be created for all global attributes. they are accessible in the attributes window. Use VRA definitions for a start. -->
+    <!-- But I think we might need tool tips and help links for "work" and "image." -->
+    <!-- MA: Yes. and for COLLECTION as well. -->
+    <!-- MA: The element-specific attributes should also get help texts. -->
+    <display>
+        <label>DE: Display</label>
+        <hint/>
+        <help/>
+        <alert/>
+        <placeholder/>
+    </display>
+    <notes>
+        <label>DE: Notes</label>
+        <hint/>
+        <help/>
+        <alert/>
+        <placeholder/>
+    </notes>
+    <dataDate>
+        <label>DE: Data Date</label>
+        <hint/>
+        <help/>
+        <alert/>
+        <placeholder/>
+    </dataDate>
+    <extent>
+        <label>DE: Extent</label>
+        <hint/>
+        <help/>
+        <alert/>
+        <placeholder/>
+    </extent>
+    <href>
+        <label>DE: Href</label>
+        <hint/>
+        <help/>
+        <alert/>
+        <placeholder/>
+    </href>
+    <refid>
+        <label>DE: RefID</label>
+        <hint/>
+        <help/>
+        <alert/>
+        <placeholder/>
+    </refid>
+    <rules>
+        <label>DE: Rules</label>
+        <hint/>
+        <help/>
+        <alert/>
+        <placeholder/>
+    </rules>
+    <source>
+        <label>DE: Source</label>
+        <hint/>
+        <help/>
+        <alert/>
+        <placeholder/>
+    </source>
+    <vocab>
+        <label>DE: Vocab</label>
+        <hint/>
+        <help/>
+        <alert/>
+        <placeholder/>
+    </vocab>
+    <lang>
+        <label>DE: Lang</label>
+        <hint/>
+        <help/>
+        <alert/>
+        <placeholder/>
+    </lang>
+    <script>
+        <label>DE: Script</label>
+        <hint/>
+        <help/>
+        <alert/>
+        <placeholder/>
+    </script>
+    <transliteration>
+        <label>DE: Transliteration</label>
+        <hint/>
+        <help/>
+        <alert/>
+        <placeholder/>
+    </transliteration>
+    <!-- We need labels for the elementSet as well -->
+    <!-- How to insert line breaks? -->
+    <!-- MA: Some hints are specific for WORK context. Should the help texts distinguish between contents for COLLECTION, WORK, and IMAGE? Or should the texts be more generic? -->
+    <agentSet>
+        <agent>
+            <pref>
+                <label>DE: pref</label>
+                <hint>preferred</hint>
+                <help/>
+                <alert/>
+                <placeholder/> 
+            </pref>
+            <attribution>
+                <label>DE: Attribution</label>
+                <hint>If a work is attributed to a certain artist or school, add information about this here; e.g. "School of".</hint>
+                <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agent</help>
+                <alert>Please specify the attribution as you used the same role description more than once.</alert>
+                <placeholder/>
+                <!-- This is an if... then... alert. This alert is only needed, if the same role has been chosen more than once.-->
+            </attribution>
+            <culture>
+                <label>DE: Culture</label>
+                <hint>You may add information about the cultural background of the agent here.</hint>
+                <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agent</help>
+                <alert>You entered 'unknown' in the agent's name field, so please give a cultural context for this agent.</alert>
+                <placeholder/>
+                <!-- Alert is needed, when agent name is "unknown." -->
+            </culture>
+            <dates>
+                <type>
+                    <label>DE: Type</label>
+                    <hint>Use terms from the dropdown, if the date is not verified.</hint>
+                    <help/>
+                    <alert/>
+                    <placeholder/> <!-- I think, we don't need an alert here. -->
+                </type>
+                <earliestDate>
+                    <label>DE: EarliestDate</label>
+                    <hint>Add e.g. the birth year or start of activity here. Choose a date type and if necessary a specification from the drop-down list.</hint>
+                    <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agent</help>
+                    <alert>Date format not valid.</alert>
+                    <placeholder/>
+                    <!-- Alert needed, if date values don't fit ISO 8601 or 'present' -->
+                    <type>
+                        <label>DE: Type</label>
+                        <hint>Use terms from the dropdown, if the date is not verified.</hint>
+                        <help/>
+                        <alert/>
+                        <placeholder/> <!-- I think, we don't need an alert here. -->
+                    </type>
+                    <circa>
+                        <label>DE: Circa</label>
+                        <hint>circa</hint>
+                        <help/>
+                        <alert/>
+                        <placeholder/>
+                    </circa>
+                </earliestDate>
+                <latestDate>
+                    <label>DE: LatestDate</label>
+                    <hint>Add e.g. the year of death or the end of activity here. If necessary choose a specification from the drop-down list.</hint>
+                    <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agent</help>
+                    <alert>Date format not valid.</alert>
+                    <placeholder/>
+                    <!-- Alert needed, if date values don't fit ISO 8601 or 'present' -->
+                    <type>
+                        <label>DE: Type</label>
+                        <hint>Use terms from the dropdown, if the date is not verified.</hint>
+                        <help/>
+                        <alert/>
+                        <placeholder/> <!-- I think, we don't need an alert here. -->
+                    </type>
+                    <circa>
+                        <label>DE: Circa</label>
+                        <hint>circa</hint>
+                        <help/>
+                        <alert/>
+                        <placeholder/>
+                    </circa>
+                </latestDate>
+            </dates>
+            <name>
+                <label>DE: Name</label>
+                <hint>Start entering the last name of a person and select the right person from the suggestions or add a new entry.</hint>
+                <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agent</help>
+                <alert>Please enter a name and choose an agent from the upcoming suggestions. If you are dealing with an unknown artist, please use "unknwon" and specify the cultural background of the agent within the 'Culture' element. For the cultural context of the art work itself, please use the Cultural Context Set.</alert>
+                <placeholder/>
+                <!-- Since @type is also displayed in the interface, it should also be possible to explain it. This probably applies to all VRA core (expanded) attributes. We should add hint and help for all, just the alert will perhaps not be necessary. -->
+                <type>
+                    <label>DE: Type</label>
+                    <hint>Use terms from the dropdown, if the date is not verified.</hint>
+                    <help/>
+                    <alert/>
+                    <placeholder/> <!-- I think, we don't need an alert here. -->
+                </type>
+            </name>
+            <role>
+                <label>DE: Role</label>
+                <hint>Choose a role from the drop-down list.</hint>
+                <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agent</help>
+                <alert>The role field is, please choose a role from the drop-down list.</alert>
+                <placeholder/>
+            </role>
+        </agent>
+    </agentSet>
+    <culturalContextSet>
+        <culturalContext>
+            <label>DE: CulturalContext</label>
+            <hint>Add the culture from whicht the work originates here.</hint>
+            <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/cultura-context</help>
+            <alert/>
+            <placeholder/>
+            <!-- At the moment, we haven't decided, whether we will make this a controlled vocab dropdown. -->
+            <pref>
+                <label>DE: pref</label>
+                <hint>preferred</hint>
+                <help/>
+                <alert/>
+                <placeholder/> 
+            </pref>
+        </culturalContext>
+    </culturalContextSet>
+    <dateSet>
         <date>
+            <pref>
+                <label>DE: pref</label>
+                <hint>preferred</hint>
+                <help/>
+                <alert/>
+                <placeholder/> 
+            </pref>
+            <type>
+                <label>DE: Type</label>
+                <hint>Use terms from the dropdown, if the date is not verified.</hint>
+                <help/>
+                <alert/>
+                <placeholder/> <!-- I think, we don't need an alert here. -->
+            </type>
             <earliestDate>
                 <date>
-                  <label>Date</label>
-                  <hint/>
-                  <help/>
-                  <alert/>
-               </date>
+                    <label>DE: Date</label>
+                    <hint>Please use the YYYY-MM-DD format to add a date.</hint>
+                    <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/date</help>
+                    <alert>Date format not valid.</alert>
+                    <placeholder/>
+                    <!-- Alert needed, if date values don't fit ISO 8601 -->
+                    <!-- Added "type" here. -->
+                    <type>
+                        <label>DE: Type</label>
+                        <hint>Use terms from the dropdown, if the date is not verified.</hint>
+                        <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/date</help>
+                        <alert/>
+                        <placeholder/> <!-- I think, we don't need an alert here. -->
+                    </type>
+                    <circa>
+                        <label>DE: circa</label>
+                        <hint>circa</hint>
+                        <help/>
+                        <alert/>
+                        <placeholder/> <!-- I think, we don't need an alert here. -->
+                    </circa>
+                </date>
                 <alternativeNotation>
-                  <label>AlternativeNotation</label>
-                  <hint/>
-                  <help/>
-                  <alert/>
-               </alternativeNotation>
+                    <label>DE: AlternativeNotation</label>
+                    <hint>Can be used to add different written forms of the date other than western format, e.g. using the notation of Chinese reigns, or the Islamic calendar.</hint>
+                    <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/date</help>
+                    <alert/>
+                    <placeholder/> <!-- I think, we don't need an alert here. -->
+                    <type>
+                        <label>DE: Type</label>
+                        <hint>Use terms from the dropdown, if the date is not verified.</hint>
+                        <help/>
+                        <alert/>
+                        <placeholder/> <!-- I think, we don't need an alert here. -->
+                    </type>
+                </alternativeNotation>
             </earliestDate>
             <latestDate>
                 <date>
-                  <label>Date</label>
-                  <hint/>
-                  <help/>
-                  <alert/>
-               </date>
+                    <label>DE: Date</label>
+                    <hint>Please use the YYYY-MM-DD format to add a date. </hint>
+                    <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/date</help>
+                    <alert>Date format not valid.</alert>
+                    <placeholder/>
+                    <!-- Alert needed, if date values don't fit ISO 8601 -->
+                    <!-- Added "type" here. -->
+                    <type>
+                        <label>DE: Type</label>
+                        <hint>Use terms from the dropdown, if the date is not verified.</hint>
+                        <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/date</help>
+                        <alert/>
+                        <placeholder/> <!-- I think, we don't need an alert here. -->
+                    </type>
+                    <circa>
+                        <label>DE: circa</label>
+                        <hint>circa</hint>
+                        <help/>
+                        <alert/>
+                        <placeholder/> <!-- I think, we don't need an alert here. -->
+                    </circa>
+                </date>
                 <alternativeNotation>
-                  <label>AlternativeNotation</label>
-                  <hint/>
-                  <help/>
-                  <alert/>
-               </alternativeNotation>
+                    <label>DE: AlternativeNotation</label>
+                    <hint>Can be used to add different written forms of the date other than western format, e.g. using the notation of Chinese reigns, or the Islamic calendar.</hint>
+                    <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/date</help>
+                    <alert/>
+                    <placeholder/> <!-- I think, we don't need an alert here. -->
+                    <type>
+                        <label>DE: Type</label>
+                        <hint>Use terms from the dropdown, if the date is not verified.</hint>
+                        <help/>
+                        <alert/>
+                        <placeholder/> <!-- I think, we don't need an alert here. -->
+                    </type>
+                </alternativeNotation>
             </latestDate>
         </date>
-      </dateSet>
-      <descriptionSet>
+    </dateSet>
+    <descriptionSet>
         <description>
+            <pref>
+                <label>DE: pref</label>
+                <hint>preferred</hint>
+                <help/>
+                <alert/>
+                <placeholder/> 
+            </pref>
             <text>
-               <label>Text</label>
-               <hint/>
-               <help/>
-               <alert/>
+                <label>DE: Text</label>
+                <hint>Include a description of the work or image here.</hint>
+                <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/description</help>
+                <alert/>
+                <placeholder/> <!-- As long as we don't limit the entry space, I don't think, we need an alert here. -->
             </text>
             <author>
                 <name>
-                  <label>Name</label>
-                  <hint/>
-                  <help/>
-                  <alert/>
-               </name>
+                    <type>
+                        <label>DE: Type</label>
+                        <hint>Use terms from the dropdown, if the date is not verified.</hint>
+                        <help/>
+                        <alert/>
+                        <placeholder/> <!-- I think, we don't need an alert here. -->
+                    </type>
+                    <label>DE: Name</label>
+                    <hint>Start entering the last name of the person who wrote the description or add a new entry</hint>
+                    <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/description</help>
+                    <alert/>
+                    <placeholder/>
+                </name>
                 <role>
-                  <label>Role</label>
-                  <hint/>
-                  <help/>
-                  <alert/>
-               </role>
+                    <type>
+                        <label>DE: Type</label>
+                        <hint>Use terms from the dropdown, if the date is not verified.</hint>
+                        <help/>
+                        <alert/>
+                        <placeholder/> <!-- I think, we don't need an alert here. -->
+                    </type>
+                    <!-- Isn't the role for the editor of the description fixed? -->
+                    <label>DE: Role</label>
+                    <hint/>
+                    <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/description</help>
+                    <alert/>
+                    <placeholder/>
+                </role>
             </author>
         </description>
-      </descriptionSet>
-      <inscriptionSet>
+    </descriptionSet>
+    <inscriptionSet>
         <inscription>
+            <pref>
+                <label>DE: pref</label>
+                <hint>preferred</hint>
+                <help/>
+                <alert/>
+                <placeholder/> 
+            </pref>
             <author>
-               <label>Author</label>
-               <hint/>
-               <help/>
-               <alert/>
+                <label>DE: Author</label>
+                <hint>Start entering the last name of the person who inscribed the artwork and select the right person from the suggestions or add a new entry.</hint>
+                <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/inscription</help>
+                <alert/>
+                <placeholder/>
             </author>
             <position>
-               <label>Position</label>
-               <hint/>
-               <help/>
-               <alert/>
+                <label>DE: Position</label>
+                <hint>Specify the position of the inscription on the artwork here.</hint>
+                <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/inscription</help>
+                <alert/>
+                <placeholder/>
             </position>
+            <type>
+                <label>DE: Type</label>
+                <hint>Use terms from the dropdown to specify what kind of inscription you are adding.</hint>
+                <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/inscription</help>
+                <alert/>
+                <placeholder/> <!-- I think, we don't need an alert here. -->
+            </type>
             <text>
-               <label>Text</label>
-               <hint/>
-               <help/>
-               <alert/>
+                <!-- Added "type" here. -->
+                <type>
+                    <label>DE: Type</label>
+                    <hint>type</hint>
+                    <help/>
+                    <alert/>
+                    <placeholder/>
+                </type>
+                <label>DE: Text</label>
+                <hint>Add the text of the inscription here.</hint>
+                <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/inscription</help>
+                <alert/>
+                <placeholder/>
             </text>
         </inscription>
-      </inscriptionSet>
-      <locationSet>
+    </inscriptionSet>
+    <locationSet>
+        <!-- added a help set for the locationSet itself -->
+        <label>DE: Location</label>
+        <hint>You may enter any location associated with the artwork here, e.g. repository, site of discovery or exhibition.</hint>
+        <help></help>
+        <alert/>
+        <placeholder/>
         <location>
+            <type>
+                <label>DE: Type</label>
+                <hint>Use terms from the dropdown, if the date is not verified.</hint>
+                <help/>
+                <alert/>
+                <placeholder/> <!-- I think, we don't need an alert here. -->
+            </type>
+            <pref>
+                <label>DE: pref</label>
+                <hint>preferred</hint>
+                <help/>
+                <alert/>
+                <placeholder/> 
+            </pref>
             <refid>
-               <label>Refid</label>
-               <hint/>
-               <help/>
-               <alert/>
+                <type>
+                    <label>DE: Type</label>
+                    <hint>Use terms from the dropdown, if the date is not verified.</hint>
+                    <help/>
+                    <alert/>
+                    <placeholder/> <!-- I think, we don't need an alert here. -->
+                </type>
+                <label>DE: Refid</label>
+                <hint>Use this field to add the accession or catalogue number when you are adding a (former) repository or exhibition.</hint>
+                <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/location</help>
+                <alert/>
+                <placeholder/>
             </refid>
             <name>
-               <label>Name</label>
-               <hint/>
-               <help/>
-               <alert/>
+                <label>DE: Name</label>
+                <hint>Enter the name of the location here.</hint>
+                <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/location</help>
+                <alert/>
+                <placeholder/>
             </name>
             <point>
+                <!-- Is this rigt in the UI?? TODO check -->
+                <label>DE: Point</label>
+                <hint>Point</hint>
+                <help/>
+                <alert/>
+                <placeholder/>
+                <epsg>
+                    <label>DE: Epsg</label>
+                    <hint>Epsg</hint>
+                    <help/>
+                    <alert/>
+                    <placeholder/>
+                </epsg>
                 <lat>
-                  <label>Lat</label>
-                  <hint/>
-                  <help/>
-                  <alert/>
-               </lat>
+                    <label>DE: Lat</label>
+                    <hint>You may also add geographical coordinates to specify the location.</hint>
+                    <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/location</help>
+                    <alert>Please also add a longitude for this location.</alert>
+                    <placeholder/>
+                </lat>
                 <long>
-                  <label>Long</label>
-                  <hint/>
-                  <help/>
-                  <alert/>
-               </long>
+                    <label>DE: Long</label>
+                    <hint>You may also add geographical coordinates to specify the location.</hint>
+                    <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/location</help>
+                    <alert>Please also add a latitude for this location.</alert>
+                    <placeholder/>
+                </long>
             </point>
         </location>
-      </locationSet>
-      <materialSet>
+    </locationSet>
+    <materialSet>
         <material>
-            <label>Material</label>
-            <hint/>
-            <help/>
-            <alert/>
-         </material>
-      </materialSet>
-      <measurementsSet>
+            <!-- Added "type" here. -->
+            <type>
+                <label>DE: Type</label>
+                <hint>Select the type of the material you are adding from the drop-down list.</hint>
+                <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/material</help>
+                <alert/>
+                <placeholder/>
+            </type>
+            <pref>
+                <label>DE: pref</label>
+                <hint>preferred</hint>
+                <help/>
+                <alert/>
+                <placeholder/> 
+            </pref>
+            <label>DE: Material</label>
+            <hint>Start entering a material term and select the right term from the suggestions or add a new entry.</hint>
+            <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/material</help>
+            <alert>Please use a new entry for each material you are adding.</alert>
+            <placeholder/> <!-- When somebody adds comma/semicolon seperated values -->
+        </material>
+    </materialSet>
+    <measurementsSet>
         <measurements>
-            <label>Measurements</label>
-            <hint/>
-            <help/>
-            <alert/>
-         </measurements>
-      </measurementsSet>
-      <relationSet>
+            <type>
+                <label>DE: Type</label>
+                <hint>Select the type of the material you are adding from the drop-down list.</hint>
+                <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/material</help>
+                <alert/>
+                <placeholder/>
+            </type>
+            <unit>
+                <label>DE: Unit</label>
+                <hint>Unit</hint>
+                <help/>
+                <alert/>
+                <placeholder/>
+                <type>
+                    <label>DE: Type</label>
+                    <hint>type</hint>
+                    <help/>
+                    <alert/>
+                    <placeholder/>
+                </type>
+            </unit>
+            <shape>
+                <label>DE: Shape</label>
+                <hint>Shape</hint>
+                <help/>
+                <alert/>
+                <placeholder/>
+            </shape>
+            <pref>
+                <label>DE: pref</label>
+                <hint>preferred</hint>
+                <help/>
+                <alert/>
+                <placeholder/> 
+            </pref>
+            <label>DE: Measurements</label>
+            <hint>Add the measurements of the artwork here. Use a new entry for every single measure you add, and choose its type and the shape of the artwork from the drop-down listes.</hint>
+            <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/measurements</help>
+            <!-- We might need several alerts here or work with more than one hint. -->
+            <alert>Please add units</alert>
+            <placeholder/>
+            <alert>Please choose a measurement type.</alert>
+            <placeholder/>
+            <alert>Please choose a shape.</alert>
+            <placeholder/>
+        </measurements>
+    </measurementsSet>
+    <relationSet>
         <relation>
-            <label>Relation</label>
-            <hint/>
-            <help/>
-            <alert/>
-         </relation>
-      </relationSet>
-      <rightsSet>
+            <type>
+                <label>DE: Type</label>
+                <hint>Select the type of the material you are adding from the drop-down list.</hint>
+                <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/material</help>
+                <alert/>
+                <placeholder/>
+            </type>
+            <pref>
+                <label>DE: pref</label>
+                <hint>preferred</hint>
+                <help/>
+                <alert/>
+                <placeholder/> 
+            </pref>
+            <relids>
+                <label>DE: Relids</label>
+                <hint>Relids</hint>
+                <help/>
+                <alert/>
+                <placeholder/>
+            </relids>
+            <label>DE: Relation</label>
+            <hint>Search and choose a related item and specify the relation through the drop-down list.</hint>
+            <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/relation</help>
+            <alert></alert>
+            <placeholder/>
+        </relation>
+    </relationSet>
+    <rightsSet>
         <rights>
+            <pref>
+                <label>DE: pref</label>
+                <hint>preferred</hint>
+                <help/>
+                <alert/>
+                <placeholder/> 
+            </pref>
+            <!-- Added "type" here. -->
+            <type>
+                <label>DE: Type</label>
+                <hint>Please choose a copyright status from the drop-down list.</hint>
+                <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/rights</help>
+                <alert></alert>
+                <placeholder/>
+            </type>
             <rightsHolder>
-               <label>RightsHolder</label>
-               <hint/>
-               <help/>
-               <alert/>
+                <label>DE: RightsHolder</label>
+                <hint>Please enter the name of the rightsholder, e.g. a Museum, a person's name, here.</hint> <!-- Will this become a VIAF field?`-->
+                <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/rights</help>
+                <alert/>
+                <placeholder/>
             </rightsHolder>
             <text>
-               <label>Text</label>
-               <hint/>
-               <help/>
-               <alert/>
+                <label>DE: Text</label>
+                <hint>You may enter additional information about the copyright here.</hint>
+                <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/rights</help>
+                <alert/>
+                <placeholder/>
             </text>
         </rights>
-      </rightsSet>
-      <sourceSet>
+    </rightsSet>
+    <sourceSet>
         <source>
+            <pref>
+                <label>DE: pref</label>
+                <hint>preferred</hint>
+                <help/>
+                <alert/>
+                <placeholder/> 
+            </pref>
             <refid>
-               <label>Refid</label>
-               <hint/>
-               <help/>
-               <alert/>
+                <type>
+                    <label>DE: Type</label>
+                    <hint>Please choose a copyright status from the drop-down list.</hint>
+                    <help/>
+                    <alert/>
+                    <placeholder/>
+                </type>
+                <label>DE: Refid</label>
+                <hint>Choose a referential ID type from the drop-down list and enter the ID accordingly, e.g. an ISBN.</hint>
+                <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/source</help>
+                <alert>Please choose a type.</alert>
+                <placeholder/> <!-- If something has been added to the Refid field. -->
             </refid>
             <name>
-               <label>Name</label>
-               <hint/>
-               <help/>
-               <alert/>
+                <type>
+                    <label>DE: Type</label>
+                    <hint>Please choose a copyright status from the drop-down list.</hint>
+                    <help/>
+                    <alert/>
+                    <placeholder/>
+                </type>
+                <label>DE: Name</label>
+                <hint>Choose a source type from the drop-down list and enter the name or citation in the text field.</hint>
+                <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/source</help>
+                <alert>Please choose a type.</alert>
+                <placeholder/> <!-- If something has been added to the text field. -->
             </name>
         </source>
-      </sourceSet>
-      <stateEditionSet>
+    </sourceSet>
+    <stateEditionSet>
         <stateEdition>
-            <description>
-               <label>Description</label>
-               <hint/>
-               <help/>
-               <alert/>
-            </description>
+            <pref>
+                <label>DE: pref</label>
+                <hint>preferred</hint>
+                <help/>
+                <alert/>
+                <placeholder/> 
+            </pref>
+            <!-- Other fields added -->
+            <type>
+                <label>DE: Type</label>
+                <hint>Choose a state or edition type from the drop-down list.</hint>
+                <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/state-edition</help>
+                <alert>Please choose a state or edition type.</alert>
+                <placeholder/> <!-- If any of the other fields is used. -->
+            </type>
+            <!-- Switch number and count -->
+            <num>
+                <label>DE: Number</label>
+                <hint>Please enter the state or edition number here.</hint>
+                <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/state-edition</help>
+                <alert>Please add a number here.</alert>
+                <placeholder/> <!-- If a value has been added to <count> -->
+            </num>
+            <count>
+                <label>DE: Count</label>
+                <hint>Please enter the number of known states or editions here.</hint> <!-- 'Unknown' should be a possible value here -->
+                <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/state-edition</help>
+                <alert>Please add a count here.</alert>
+                <placeholder/> <!-- If a value has been added to <num> -->
+            </count>
+            <!-- The order of the fields should be changed, as description seems like the last field to me. -->
             <name>
-               <label>Name</label>
-               <hint/>
-               <help/>
-               <alert/>
+                <label>DE: Name</label>
+                <hint>Add the name of the state or edition here; e.g. 1st state or Edition of 1564.</hint>
+                <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/state-edition</help>
+                <alert/>
+                <placeholder/>
             </name>
+            <description>
+                <label>DE: Description</label>
+                <hint>Add aditional information on the state/edition of the artwork here that you could not enter elsewhere.</hint>
+                <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/state-edition</help>
+                <alert/>
+                <placeholder/>
+            </description>
         </stateEdition>
-      </stateEditionSet>
-      <stylePeriodSet>
+    </stateEditionSet>
+    <stylePeriodSet>
         <stylePeriod>
-            <label>StylePeriod</label>
-            <hint/>
-            <help/>
+            <pref>
+                <label>DE: pref</label>
+                <hint>preferred</hint>
+                <help/>
+                <alert/>
+                <placeholder/> 
+            </pref>
+            <label>DE: StylePeriod</label>
+            <hint>Start entering a style or period and select the right style or period from the suggestions or add a new entry.</hint>
+            <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/style-period</help>
             <alert/>
-         </stylePeriod>
-      </stylePeriodSet>
-      <subjectSet>
+            <placeholder/>
+        </stylePeriod>
+    </stylePeriodSet>
+    <subjectSet>
         <subject>
+            <pref>
+                <label>DE: pref</label>
+                <hint>preferred</hint>
+                <help/>
+                <alert/>
+                <placeholder/> 
+            </pref>
             <term>
-               <label>Term</label>
-               <hint/>
-               <help/>
-               <alert/>
+                <!-- Added "type" here. -->
+                <type>
+                    <label>DE: Type</label>
+                    <hint>Select the type of the subject you are adding from the drop-down list.</hint>
+                    <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/subject</help>
+                    <alert>Please select a subject type.</alert>
+                    <placeholder/> <!-- If value has been added to <term> -->
+                </type>
+                <label>DE: Term</label>
+                <hint>Start entering a subject term and select the right term from the suggestions or add a new entry.</hint>
+                <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/subject</help>
+                <alert/>
+                <placeholder/>
             </term>
         </subject>
-      </subjectSet>
-      <techniqueSet>
+    </subjectSet>
+    <techniqueSet>
         <technique>
-            <label>Technique</label>
-            <hint/>
-            <help/>
+            <pref>
+                <label>DE: pref</label>
+                <hint>preferred</hint>
+                <help/>
+                <alert/>
+                <placeholder/> 
+            </pref>
+            <type>
+                <label>DE: Type</label>
+                <hint>Type</hint>
+                <help/>
+                <alert/>
+                <placeholder/>
+            </type>
+            <label>DE: Technique</label>
+            <hint>Start entering a technique and select the right term from the suggestions or add a new entry.</hint>
+            <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/technique</help>
             <alert/>
-         </technique>
-      </techniqueSet>
-      <textrefSet>
+            <placeholder/>
+        </technique>
+    </techniqueSet>
+    <textrefSet>
         <textref>
+            <pref>
+                <label>DE: pref</label>
+                <hint>preferred</hint>
+                <help/>
+                <alert/>
+                <placeholder/> 
+            </pref>
             <name>
-               <label>Name</label>
-               <hint/>
-               <help/>
-               <alert/>
+                <label>DE: Name</label>
+                <hint>Choose a source type from the drop-down list and enter the name or citation in the text field.</hint>
+                <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/text-reference</help>
+                <alert>Please choose a type.</alert>
+                <placeholder/> <!-- If something has been added to the text field. -->
+                <type>
+                    <label>DE: Type</label>
+                    <hint>type</hint>
+                    <help/>
+                    <alert/>
+                    <placeholder/>
+                </type>
             </name>
             <refid>
-               <label>Refid</label>
-               <hint/>
-               <help/>
-               <alert/>
+                <label>DE: Refid</label>
+                <hint>Choose a referential ID type from the drop-down list and enter the ID accordingly, e.g. an ISBN.</hint>
+                <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/text-reference</help>
+                <alert>Please choose a type.</alert>
+                <placeholder/> <!-- If something has been added to the Refid field. -->
+                <type>
+                    <label>DE: Type</label>
+                    <hint>type</hint>
+                    <help/>
+                    <alert/>
+                    <placeholder/>
+                </type>
             </refid>
         </textref>
-      </textrefSet>
-      <titleSet>
+    </textrefSet>
+    <titleSet>
         <title>
-            <label>Title</label>
-            <hint/>
-            <help/>
+            <!-- Added "type" here. -->
+            <type>
+                <label>DE: Type</label>
+                <hint>Select what kind of title you are adding from the drop-down list.</hint>
+                <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/title</help>
+                <alert>Please choose a type.</alert>
+                <placeholder/> <!-- If a value has been entered to <title>. -->
+            </type>
+            <pref>
+                <label>DE: pref</label>
+                <hint>preferred</hint>
+                <help/>
+                <alert/>
+                <placeholder/> 
+            </pref>
+            <label>DE: Title</label>
+            <hint>Enter the title of the artwork here.</hint>
+            <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/title</help>
             <alert/>
-         </title>
-      </titleSet>
-      <worktypeSet>
+            <placeholder/>
+        </title>
+    </titleSet>
+    <worktypeSet>
         <worktype>
-            <label>Worktype</label>
-            <hint/>
-            <help/>
+            <pref>
+                <label>DE: pref</label>
+                <hint>preferred</hint>
+                <help/>
+                <alert/>
+                <placeholder/> 
+            </pref>
+            <label>DE: Worktype</label>
+            <hint>Start entering a worktype and select the right term from the suggestions or add a new entry.</hint>
+            <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/worktype</help>
             <alert/>
-         </worktype>
-      </worktypeSet>
-   </lang>
+            <placeholder/>
+        </worktype>
+    </worktypeSet>
 </language>
