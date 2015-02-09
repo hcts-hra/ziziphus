@@ -108,7 +108,10 @@
                         <!-- Earliest -->
                         <td>
                             <!-- Date -->
+                            <xsl:copy-of select="xf:input[@ref = 'vra:dates/vra:earliestDate']"/>
+                            <!--
                             <xsl:apply-templates mode="fixDatelabel" select="xf:input[@ref = 'vra:dates/vra:earliestDate']"/>
+                            -->
                         </td>
                         <td>
                             <!-- Circa -->
@@ -123,7 +126,10 @@
                         <!-- Latest -->
                         <td>
                             <!-- Date -->
+                            <xsl:copy-of select="xf:input[@ref = 'vra:dates/vra:latestDate']"/>
+                            <!--
                             <xsl:apply-templates mode="fixDatelabel" select="xf:input[@ref = 'vra:dates/vra:latestDate']"/>
+                            -->
                         </td>
                         <td>
                             <!-- Circa -->
@@ -450,7 +456,10 @@
                             <!-- Earliest -->
                             <td>
                                 <!-- Date -->
+                                <xsl:copy-of select="$latestDate/xf:input[@ref = 'vra:earliestDate/vra:date']"/>
+                                <!--
                                 <xsl:apply-templates mode="fixDatelabel" select="$earliestDate/xf:input[@ref = 'vra:earliestDate/vra:date']"/>
+                                -->
                             </td>
                             <td>
                                 <!-- Circa -->
@@ -495,7 +504,10 @@
                             <!-- Latest -->
                             <td>
                                 <!-- Date -->
-                                 <xsl:apply-templates mode="fixDatelabel" select="$latestDate/xf:input[@ref = 'vra:latestDate/vra:date']"/>
+                                <xsl:copy-of select="$latestDate/xf:input[@ref = 'vra:latestDate/vra:date']"/>
+                                <!-- 
+                                <xsl:apply-templates mode="fixDatelabel" select="$latestDate/xf:input[@ref = 'vra:latestDate/vra:date']"/>
+                                -->
                             </td>
                             <td>
                                 <!-- Circa -->

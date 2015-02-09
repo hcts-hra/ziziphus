@@ -1,10 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:html="http://www.w3.org/1999/xhtml"
+<?xml version="1.0" encoding="UTF-8"?><xsl:stylesheet xmlns:html="http://www.w3.org/1999/xhtml"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:vra="http://www.vraweb.org/vracore4.htm"
                 version="2.0">
-   <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes"
-               omit-xml-declaration="no"></xsl:output>
+   <xsl:output encoding="UTF-8" indent="yes" method="xhtml" omit-xml-declaration="no"
+               version="1.0"></xsl:output>
+   <xsl:strip-space elements="*"></xsl:strip-space>
    <xsl:preserve-space elements="vra:text"></xsl:preserve-space>
    <xsl:template match="vra:rightsSet">
       <xsl:param name="vraTableId"></xsl:param>
@@ -16,42 +17,46 @@
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(@type,'')) != 0">
-                              <div class="  keepWhitespace" data-bf-type="select1" data-bf-bind="@type"
+                              <div class="  keepWhitespace" data-bf-bind="@type" data-bf-type="select1"
                                    tabindex="0"
-                                   title="Type"
+                                   title=""
                                    id="b-d2e1173">
                                  <xsl:value-of select="@type"></xsl:value-of>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="nodata keepWhitespace" data-bf-type="select1" data-bf-bind="@type"
-                                   tabindex="0">(Type)</div>
+                              <div class="nodata keepWhitespace" data-bf-bind="@type" data-bf-type="select1"
+                                   tabindex="0">
+                                 <xsl:value-of select="normalize-space(concat('(', $language-files/language/rightsSet/rights/type/label, ')'))"></xsl:value-of>
+                              </div>
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:rightsHolder,'')) != 0">
-                              <div class="keepWhitespace" data-bf-type="input" data-bf-bind="vra:rightsHolder"
+                              <div class="keepWhitespace" data-bf-bind="vra:rightsHolder" data-bf-type="input"
                                    tabindex="0"
-                                   title="RightsHolder"
+                                   title=""
                                    id="b-d2e1117">
                                  <xsl:value-of select="vra:rightsHolder"></xsl:value-of>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="nodata keepWhitespace" data-bf-type="input"
-                                   data-bf-bind="vra:rightsHolder"
-                                   tabindex="0">(RightsHolder)</div>
+                              <div class="nodata keepWhitespace" data-bf-bind="vra:rightsHolder"
+                                   data-bf-type="input"
+                                   tabindex="0">
+                                 <xsl:value-of select="normalize-space(concat('(', $language-files/language/rightsSet/rights/rightsHolder/label, ')'))"></xsl:value-of>
+                              </div>
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:text,'')) != 0">
-                              <div class="textarea keepWhitespace" data-bf-type="textarea" data-bf-bind="vra:text"
+                              <div class="textarea keepWhitespace" data-bf-bind="vra:text" data-bf-type="textarea"
                                    tabindex="0"
-                                   title="Text"
+                                   title=""
                                    id="b-d2e1138">
                                  <xsl:if xmlns=""
                                          test="string-length() - string-length(translate(vra:text, '&#xA;', '')) &gt; 5">
@@ -75,14 +80,15 @@
                               </xsl:if>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="textarea nodata keepWhitespace" data-bf-type="textarea"
-                                   data-bf-bind="vra:text"
+                              <div class="textarea nodata keepWhitespace" data-bf-bind="vra:text"
+                                   data-bf-type="textarea"
                                    tabindex="0">
                                  <xsl:if xmlns=""
                                          test="string-length() - string-length(translate(vra:text, '&#xA;', '')) &gt; 5">
                                     <xsl:attribute name="data-expand">100%</xsl:attribute>
                                     <xsl:attribute name="data-collapse">75px</xsl:attribute>
-                                 </xsl:if>(Text)
+                                 </xsl:if>
+                                 <xsl:value-of select="normalize-space(concat('(', $language-files/language/rightsSet/rights/text/label, ')'))"></xsl:value-of>
                               </div>
                               <xsl:if xmlns=""
                                       test="string-length() - string-length(translate(vra:text, '&#xA;', '')) &gt; 5">

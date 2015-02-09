@@ -186,21 +186,40 @@
         .xfControl {
             float: left;
         }
-        .xfLabel {
-            float: left;
-            margin: 2px 10px;
-            width: 100px;
-            text-align: right;
-        }
-
-        .xfSelect1, .xfInput{
+        .xfOutput {
+            .xfLabel {
+                float: left;
+                margin: 2px 10px;
+                width: 100px;
+                text-align: right;
+            }
+            
             .xfValue{
                 height: 22px;
+                width: 250px;
+                margin-bottom: 5px;
             }
         }
         .xfSelect1,
-        .xfInput{
-            .xfValue {
+        .xfInput {
+            .xfLabel {
+                float: left;
+                .xfOutput {
+                    label {
+                        width: 0px;  
+                        float: left;
+                    }
+                    .xfValue {
+                        float: left;
+                        margin: 2px 10px;
+                        width: 100px;
+                        text-align: right;
+                    }
+                }
+            }
+            
+            .xfValue{
+                height: 22px;
                 width: 250px;
                 margin-bottom: 5px;
             }
@@ -406,3 +425,10 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
         width: 550px;
     }
 }
+
+.xfValue a.help {
+    padding: 0 4px;
+}
+
+
+

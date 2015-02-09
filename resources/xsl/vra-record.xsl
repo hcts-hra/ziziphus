@@ -3,6 +3,29 @@
     <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"/>
     <xsl:strip-space elements="*"/>
 
+    
+    <!-- 'work' or 'image' -->
+    <xsl:param name="recordType" select="'GIVEN BY CALLER'"/>
+    <!-- UUID of Record e.g w_****** -->
+    <xsl:param name="recordId" select="'GIVEN BY CALLER'"/>
+    <!-- URI to codetables  -->
+    <xsl:param name="codetables-uri" select="'GIVEN BY CALLER'"/>
+    <xsl:param name="resources-uri" select="'GIVEN BY CALLER'"/>
+    <xsl:param name="lang" select="'GIVEN BY CALLER'"/>
+    
+    <!--<xsl:variable name="root_id" select="if($type='work') then 'workrecord' else 'imagerecord'"/>-->
+    <xsl:variable name="title" select="if($recordType='work') then 'Work Record' else 'Image Record'"/>
+    <xsl:variable name="id_pref" select="if($recordType='work') then 'w_' else 'i_'"/>
+
+    
+    <!-- code-tables and legends -->
+    <xsl:variable name="role-codes-legend" select="document(concat($codetables-uri, 'legends/role-codes-legend.xml'))"/>
+    <xsl:variable name="language-3-type-codes" select="document(concat($codetables-uri, 'language-3-type-codes.xml'))"/>
+    <xsl:variable name="language-files" select="document(concat($resources-uri, 'lang_' , $lang, '.xml'))"/>
+
+    <!-- parameter is only used if a single section is rendered -->
+    <xsl:param name="setname" select="''"/>
+
     <!--
         VIEW GENERATION - includes embed actions for switching to forms
     -->
@@ -28,27 +51,10 @@
     <xsl:include href="../../view/TextrefSet.xsl"/>
     <xsl:include href="../../view/TitleSet.xsl"/>
     <xsl:include href="../../view/WorktypeSet.xsl"/>
-    <!-- 'work' or 'image' -->
-    <xsl:param name="recordType" select="'GIVEN BY CALLER'"/>
-    <!-- UUID of Record e.g w_****** -->
-    <xsl:param name="recordId" select="'GIVEN BY CALLER'"/>
-    <!-- URI to codetables  -->
-    <xsl:param name="codetables-uri" select="'GIVEN BY CALLER'"/>
-    <!--<xsl:variable name="root_id" select="if($type='work') then 'workrecord' else 'imagerecord'"/>-->
-    <xsl:variable name="title" select="if($recordType='work') then 'Work Record' else 'Image Record'"/>
-    <xsl:variable name="id_pref" select="if($recordType='work') then 'w_' else 'i_'"/>
-
     
-    <!-- code-tables and legends -->
-    <xsl:variable name="role-codes-legend" select="document(concat($codetables-uri, 'legends/role-codes-legend.xml'))"/>
-    <xsl:variable name="language-3-type-codes" select="document(concat($codetables-uri, 'language-3-type-codes.xml'))"/>
-
-    <!-- parameter is only used if a single section is rendered -->
-    <xsl:param name="setname" select="''"/>
-
     <!-- top level - entry template - handles a work or an image record -->
-    <xsl:include href="vraSectionTemplate.xsl"/>
-
+    <xsl:include href="vraSectionTemplate.xsl"/>    
+    
     <xsl:template match="vra:work/vra:image" mode="titlePane" priority="40"/>
 
     <!--
@@ -146,7 +152,7 @@
                 </xf:case>
                 <!-- ############ EDIT CASE ############### -->
                 <!-- ############ EDIT CASE ############### -->
-                <!-- ############ EDIT CASE ############### -->
+                <!-- ############ EDIT CASE #######vraSetName######## -->
                 <xf:case id="{$caseId}-edit" class="edit">
                     <xf:action ev:event="xforms-select">
                         <script type="text/javascript">scrollToPanel('<xsl:value-of select="$id"/>');</script>

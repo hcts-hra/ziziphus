@@ -87,6 +87,9 @@ ol.inline > li {
     }
 */
 }
+.bf #s-lang {
+  font-size: 14px;
+}
 .bf .imagePanel {
   background-size: contain;
   height: 97%;

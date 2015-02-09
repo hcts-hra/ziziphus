@@ -18,9 +18,12 @@ let $tmpName := substring-before(local-name($snippet),'Set')
 let $tmpNameUpperCase := concat(upper-case(substring($tmpName,1,1)), substring($tmpName,2))
 let $setType := substring($uuid,1,1)
 let $name := concat('table-',$setType,'_',$tmpNameUpperCase)
+let $lang := request:get-parameter('language', 'en')
 let $parameters :=  <parameters>
                         <param name="setname"  value="{$name}"/>
                         <param  name="codetables-uri" value="{$app:code-tables}"/>
+                        <param  name="resources-uri" value="{ $app:ziziphus-resources-dir || 'lang/'}"/>
+                        <param  name="lang" value="{$lang}"/>
                     </parameters>
 
 return

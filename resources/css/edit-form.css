@@ -130,7 +130,28 @@
 #attrDialog .attrDialogGroup .xfControl {
   float: left;
 }
-#attrDialog .attrDialogGroup .xfLabel {
+#attrDialog .attrDialogGroup .xfOutput .xfLabel {
+  float: left;
+  margin: 2px 10px;
+  width: 100px;
+  text-align: right;
+}
+#attrDialog .attrDialogGroup .xfOutput .xfValue {
+  height: 22px;
+  width: 250px;
+  margin-bottom: 5px;
+}
+#attrDialog .attrDialogGroup .xfSelect1 .xfLabel,
+#attrDialog .attrDialogGroup .xfInput .xfLabel {
+  float: left;
+}
+#attrDialog .attrDialogGroup .xfSelect1 .xfLabel .xfOutput label,
+#attrDialog .attrDialogGroup .xfInput .xfLabel .xfOutput label {
+  width: 0px;
+  float: left;
+}
+#attrDialog .attrDialogGroup .xfSelect1 .xfLabel .xfOutput .xfValue,
+#attrDialog .attrDialogGroup .xfInput .xfLabel .xfOutput .xfValue {
   float: left;
   margin: 2px 10px;
   width: 100px;
@@ -139,9 +160,6 @@
 #attrDialog .attrDialogGroup .xfSelect1 .xfValue,
 #attrDialog .attrDialogGroup .xfInput .xfValue {
   height: 22px;
-}
-#attrDialog .attrDialogGroup .xfSelect1 .xfValue,
-#attrDialog .attrDialogGroup .xfInput .xfValue {
   width: 250px;
   margin-bottom: 5px;
 }
@@ -325,5 +343,8 @@ input[type="color"],
 .xlInput input[type="color"],
 .xlInput .uneditable-input {
   width: 550px;
+}
+.xfValue a.help {
+  padding: 0 4px;
 }
 /*# sourceMappingURL=edit-form.css.map */

@@ -30,19 +30,22 @@ declare variable $local:userpass := security:get-user-credential-from-session()[
 declare variable $local:temp-db := "/db/data/temp/";
 
 declare %private function local:extract-uuids-and-workdir($uuid as xs:string ) {
-    let $files := doc($local:temp-db  || $uuid || ".xml")//option
-    let $remove-id-document := xmldb:remove($local:temp-db, $uuid || ".xml")
+    let $uuids-as-string := util:binary-to-string(util:binary-doc($local:temp-db  || $uuid || ".js"))
+    let $uuid-strings := tokenize(substring($uuids-as-string, 2, string-length($uuids-as-string) - 2), ",")
+    let $remove-id-document := xmldb:remove($local:temp-db, $uuid || ".js")
+    
     return
     <data>
         {
-            for $file in $files
-            let $collection := functx:substring-before-last($file/text(), '/')
-            let $workrecord-id := data(doc($file/text())//vra:work/@id)
+            for $uuid-string in $uuid-strings
+            let $uuid := replace(replace($uuid-string, "&quot;:1", ""), "&quot;", "")
+            let $document-uri := document-uri(root(collection(xmldb:encode('/db/data'))//vra:vra/vra:work[@id = $uuid]))
+            let $collection := substring-before($document-uri, "/" || $uuid)
             return
-                if(security:can-read-collection($collection) and exists($workrecord-id))
+                if(security:can-read-collection($collection))
                 then (
                     <record>
-                        <id>{$workrecord-id}</id>
+                        <id>{$uuid}</id>
                         <collection>{$collection}</collection>
                     </record>               
                 ) else ( () )
@@ -52,9 +55,9 @@ declare %private function local:extract-uuids-and-workdir($uuid as xs:string ) {
 
 declare %private function local:run($uuid as xs:string) {
       let $uuid-workdir := local:extract-uuids-and-workdir($uuid)
-      return 
+      return
           if( count( $uuid-workdir/record) > 0 )
-          then (
+          then ( 
             let $first-tupel := $uuid-workdir/record[1]
             return
                 <html>
@@ -92,7 +95,7 @@ declare %private function local:run($uuid as xs:string) {
                         <script type="text/javascript" src="/exist/apps/ziziphus/resources/script/group/group.js"/> 
                     </body>
                 </html>
-            ) else (
+            ) else ( 
                 local:error-page(<div>No readable records found. Only VRA records are supported within Ziziphus</div>)
             ) 
 };
@@ -109,7 +112,7 @@ declare function local:thumBar($uuid-workdir) {
 
 declare %private function local:groupeditor($uuid as xs:string) {
    
-        if(doc-available($local:temp-db  || $uuid || ".xml"))
+        if(util:binary-doc-available($local:temp-db  || $uuid || ".js"))
         then (
             system:as-user($local:user, $local:userpass, local:run($uuid))  
         ) else (

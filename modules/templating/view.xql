@@ -1,7 +1,7 @@
 xquery version "3.0";
 
 import module namespace config="http://exist-db.org/xquery/apps/config" at "config.xqm";
-import module namespace main="http://exist-db.org/xquery/apps/ziziphus" at "main.xqm";
+import module namespace main="http://exist-db.org/xquery/apps/ziziphus" at "../main.xqm";
 
 import module namespace templates="http://exist-db.org/xquery/templates";
 

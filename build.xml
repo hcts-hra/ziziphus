@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Ziziphus Image DB XAR Packager" id="ziziphusXAR" default="xar" basedir=".">
     <xmlproperty file="build.properties.xml" semanticAttributes="true" keepRoot="false"/>
+    
     <property name="target.dir" value="${basedir}/${build.dir}"/>
     <property name="target.ziziphus.dir" value="${target.dir}/ziziphus"/>
+    
     <property name="resource.dir" value="${basedir}/resources"/>
     <property name="resource.css.dir" value="${resource.dir}/css/"/>
     <property name="resource.less.dir" value="${resource.dir}/css/"/>
@@ -15,50 +17,17 @@
     <target name="clean">
         <delete dir="${target.dir}"/>
     </target>
-    <target name="-lesscss-check-layout" unless="lesscss.needs.update.layout">
-        <uptodate property="lesscss.needs.update.layout" srcfile="${resource.css.dir}/layout.css" targetfile="${resource.less.dir}/layout.less"/>
-    </target>
-    <target name="-lesscss-check-record" unless="lesscss.needs.update.record">
-        <uptodate property="lesscss.needs.update.record" srcfile="${resource.css.dir}/record.css" targetfile="${resource.less.dir}/record.less"/>
-    </target>
-    <target name="-lesscss-check-edit-form" unless="lesscss.needs.update.edit-form">
-        <uptodate property="lesscss.needs.update.edit-form" srcfile="${resource.css.dir}/edit-form.css" targetfile="${resource.less.dir}/edit-form.less"/>
-    </target>
-    <target name="lesscss-layout" depends="-lesscss-check-layout" if="${lesscss.needs.update.layout}">
-        <echo message="Executing lessc (layout.css)..."/>
-        <exec executable="lessc" logError="true" failonerror="true">
-            <arg value="--verbose"/>
-            <arg value="${resource.less.dir}/layout.less"/>
-            <arg value="${resource.css.dir}/layout.css"/>
-        </exec>
-    </target>
-    <target name="lesscss-record" depends="-lesscss-check-record" if="${lesscss.needs.update.record}">
-        <echo message="Executing lessc (record.css)..."/>
-        <exec executable="lessc" logError="true" failonerror="true">
-            <arg value="--verbose"/>
-            <arg value="${resource.less.dir}/record.less"/>
-            <arg value="${resource.css.dir}/record.css"/>
-        </exec>
-    </target>
-    <target name="lesscss-edit-form" depends="-lesscss-check-edit-form" if="${lesscss.needs.update.edit-form}">
-        <echo message="Executing lessc (edit-form.css)..."/>
-        <exec executable="lessc" logError="true" failonerror="true">
-            <arg value="--verbose"/>
-            <arg value="${resource.less.dir}/edit-form.less"/>
-            <arg value="${resource.css.dir}/edit-form.css"/>
-        </exec>
-    </target>
-    <target name="lesscss" depends="lesscss-layout, lesscss-record, lesscss-edit-form"/>
-
+    
     <!-- **************************************** GENERATE XAR **************************************** -->
     <!-- **************************************** GENERATE XAR **************************************** -->
     <!-- **************************************** GENERATE XAR **************************************** -->
+    
+    
     <target name="xar">
         <delete dir="${target.dir}"/>
         <mkdir dir="${target.dir}"/>
         <filter token="REDMINE_KEY" value="${issueTracker.key}"/>
         <copy file="resources/components/issue-tracker.tmp" tofile="resources/components/issue-tracker.html" filtering="true" overwrite="true"/>
-
 
         <copy todir="${target.ziziphus.dir}" file="${basedir}/icon.png"/>
         <copy todir="${target.ziziphus.dir}/modules">
@@ -67,9 +36,11 @@
         <copy todir="${target.ziziphus.dir}/resources">
             <fileset dir="${basedir}/resources"/>
         </copy>
+        <!--
         <copy todir="${target.ziziphus.dir}/data">
             <fileset dir="${basedir}/data"/>
         </copy>
+        -->
         <copy todir="${target.ziziphus.dir}/forms">
             <fileset dir="${basedir}/forms"/>
         </copy>

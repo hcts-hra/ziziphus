@@ -29,15 +29,29 @@
                         <imagepath/>
                         <uuid/>
                         <workrecord/>
+                        <imagerecord/>
                         <changed/>
                         <setname/>
                         <isDirty>false</isDirty>
+                        <language>en</language>
                     </data>
                 </xf:instance>
+                
+                
+                
                 <xf:setvalue ev:event="xforms-model-construct-done" ref="instance('i-control-center')/uuid" value="bf:appContext('id')"/>
                 <xf:setvalue ev:event="xforms-model-construct-done" ref="instance('i-control-center')/workrecord" value="bf:appContext('id')"/>
                 <xf:setvalue ev:event="xforms-model-construct-done" ref="instance('i-control-center')/workdir" value="bf:appContext('workdir')"/>
+                <xf:action ev:event="xforms-model-construct-done">
+                    <xf:setvalue ref="instance('i-control-center')/language" value="bf:appContext('language')"/>
+                    <xf:setvalue ref="instance('i-control-center')/language" value="'en'" if="instance('i-control-center')/language eq ''"/>
+                </xf:action>
                 <xf:setvalue ev:event="xforms-model-construct-done" ref="instance('i-control-center')/imagepath" value="substring-before(bf:appContext('imagepath'), '#')"/>
+                
+                <xf:submission id="s-get-imagerecord-id" method="get" replace="text" ref="instance('i-control-center')" targetref="imagerecord" serialization="none">
+                    <xf:resource value="concat('modules/records/image-record-id.xql?uuid=', instance('i-control-center')/uuid)"/>
+                </xf:submission>
+                
                 <xf:submission method="get" id="s-refresh" replace="embedHTML" resource="modules/refreshSection.xql" targetid="{concat(instance('i-control-center')/currentform,'_HtmlContent')}">
                     <xf:action ev:event="xforms-submit-done">
                         <!-- ##### reset 'changed' flag which is set whenever a section was updated in the db ###### -->
@@ -47,8 +61,9 @@
                         </script>
                     </xf:action>
                 </xf:submission>
+
                 <xf:submission id="s-delete" method="get" replace="none">
-                    <xf:resource value="concat('exist:/db/apps/ziziphus/modules/utils/record-utils.xqm?function=delete-work-record&amp;work-record-id=', instance('i-control-center')/uuid)"/>
+                    <xf:resource value="concat('modules/records/delete.xql?uuid=', instance('i-control-center')/uuid)"/>
                     <xf:message ev:event="xforms-submit-error">Could not delete workrecord</xf:message>
                     <xf:action ev:event="xforms-submit-done">
                         <xf:load show="replace">
@@ -56,33 +71,307 @@
                         </xf:load>
                     </xf:action>
                 </xf:submission>
+                
                 <xf:instance xmlns="" id="i-user">
                     <data/>
                 </xf:instance>
+                
                 <xf:bind nodeset="instance('i-user')">
                     <xf:bind nodeset="user">
                         <xf:bind nodeset="@edit" relevant="boolean-from-string(.)"/>
                     </xf:bind>
                 </xf:bind>
+                
                 <xf:submission id="s-load-user-data" method="post" replace="instance" instance="i-user">
                     <xf:resource value="IF(instance('i-control-center')/workdir eq '', 'modules/getUserData.xql', concat('modules/getUserData.xql?workdir=', encode-for-uri(instance('i-control-center')/workdir)))"/>
                     <xf:message ev:event="xforms-submit-error">Error receiving the current user</xf:message>
                 </xf:submission>
+                
                 <xf:instance id="i-meta">
                     <data xmlns=""/>
                 </xf:instance>
                 <xf:submission id="s-load-metadata" method="get" resource="expath-pkg.xml" replace="instance" ref="instance('i-meta')"/>
+                
+                
+                
                 <xf:action ev:event="xforms-ready">
                     <xf:send submission="s-load-user-data"/>
                     <xf:send submission="s-load-metadata"/>
+                    <xf:send submission="s-get-imagerecord-id"/>
                 </xf:action>
+                
+                <!-- i18n helper-->
+                <!-- i18n helper-->
+                <!-- i18n helper-->
+                
+                <xf:instance id="i-refresh">
+                    <data xmlns="">
+                        <uuid/>
+                        <setname/>
+                        <workdir/>
+                        <language>en</language>
+                        <currentform/>
+                    </data>
+                </xf:instance>
+                
+                <xf:submission method="get" id="s-refresh-view" replace="embedHTML" resource="modules/refreshSection.xql" instance="i-refresh" targetid="{concat(instance('i-refresh')/currentform,'_HtmlContent')}">
+                    <xf:message ev:event="xform-submit" level="emphemeral"><xf:output ref="instance(instance('i-refresh')/currentform)"/></xf:message>
+                </xf:submission>
+                
             </xf:model>
+            
+            
             <xf:model id="m-code-tables">
                 <xf:instance xmlns="" id="i-codes-lang" src="modules/code-tables.xql?table=lang"/>
                 <xf:instance xmlns="" id="i-codes-script" src="modules/code-tables.xql?table=script"/>
                 <xf:instance xmlns="" id="i-codes-transliteration" src="modules/code-tables.xql?table=transliteration"/>
                 <xf:instance xmlns="" id="i-codes-role" src="modules/code-tables.xql?table=role"/>
             </xf:model>
+            
+            
+            <!-- i18n -->
+            <!-- i18n -->
+            <!-- i18n -->
+            <xf:model id="m-lang">
+                <xf:instance xmlns="" id="i-lang" src="resources/lang/lang_en.xml"/>
+
+                <xf:submission id="s-load-lang" method="get" replace="instance" ref="instance('i-lang')" serialization="none">
+                    <xf:resource value="concat('resources/lang/lang_', bf:instanceOfModel('m-main', 'i-control-center')/language, '.xml')"/>
+                    <xf:action ev:event="xforms-submit">
+                        <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/language" value="bf:instanceOfModel('m-main', 'i-control-center')/language"/>
+                        <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/uuid" value="bf:instanceOfModel('m-main', 'i-control-center')/uuid"/>
+                        <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/workdir" value="bf:instanceOfModel('m-main', 'i-control-center')/workdir"/>
+                    </xf:action>
+                    <xf:action ev:event="xforms-submit-done">
+                        <xf:message level="ephemeral">Refreshing view</xf:message>
+                        
+                        
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/setname" value="'agentSet'"/>
+                            
+                            <!-- Workrecord -->
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/uuid" value="bf:instanceOfModel('m-main', 'i-control-center')/workrecord"/>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/currentform" value="'w_Agent'"/>
+                            <xf:send model="m-main" submission="s-refresh-view"/>
+                            <!-- Imagerecord -->
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/uuid" value="bf:instanceOfModel('m-main', 'i-control-center')/imagerecord"/>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/currentform" value="'i_Agent'"/>
+                            <xf:send model="m-main" submission="s-refresh-view"/>
+                        
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/setname" value="'DateSet'"/>
+                            
+                            <!-- Workrecord -->
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/uuid" value="bf:instanceOfModel('m-main', 'i-control-center')/workrecord"/>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/currentform" value="'w_Date'"/>
+                            <xf:send model="m-main" submission="s-refresh-view"/>
+                            <!-- Imagerecord -->
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/uuid" value="bf:instanceOfModel('m-main', 'i-control-center')/imagerecord"/>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/currentform" value="'i_Date'"/>
+                            <xf:send model="m-main" submission="s-refresh-view"/>
+                        
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/setname" value="'DescriptionSet'"/>
+                            
+                            <!-- Workrecord -->
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/uuid" value="bf:instanceOfModel('m-main', 'i-control-center')/workrecord"/>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/currentform" value="'w_Description'"/>
+                            <xf:send model="m-main" submission="s-refresh-view"/>
+                            <!-- Imagerecord -->
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/uuid" value="bf:instanceOfModel('m-main', 'i-control-center')/imagerecord"/>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/currentform" value="'i_Description'"/>
+                            <xf:send model="m-main" submission="s-refresh-view"/>
+                        
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/setname" value="'LocationSet'"/>
+                            
+                            <!-- Workrecord -->
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/uuid" value="bf:instanceOfModel('m-main', 'i-control-center')/workrecord"/>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/currentform" value="'w_Location'"/>
+                            <xf:send model="m-main" submission="s-refresh-view"/>
+                            
+                            <!-- Imagerecord -->
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/uuid" value="bf:instanceOfModel('m-main', 'i-control-center')/imagerecord"/>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/currentform" value="'i_Location'"/>
+                            <xf:send model="m-main" submission="s-refresh-view"/>
+                        
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/setname" value="'RightsSet'"/>
+                            
+                            <!-- Workrecord -->
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/uuid" value="bf:instanceOfModel('m-main', 'i-control-center')/workrecord"/>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/currentform" value="'w_Rights'"/>
+                            <xf:send model="m-main" submission="s-refresh-view"/>
+                            
+                            <!-- Imagerecord -->
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/uuid" value="bf:instanceOfModel('m-main', 'i-control-center')/imagerecord"/>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/currentform" value="'i_Rights'"/>
+                            <xf:send model="m-main" submission="s-refresh-view"/>
+                        
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/setname" value="'SubjectSet'"/>
+                            
+                            <!-- Workrecord -->
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/uuid" value="bf:instanceOfModel('m-main', 'i-control-center')/workrecord"/>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/currentform" value="'w_Subject'"/>
+                            <xf:send model="m-main" submission="s-refresh-view"/>
+                            
+                            <!-- Imagerecord -->
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/uuid" value="bf:instanceOfModel('m-main', 'i-control-center')/imagerecord"/>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/currentform" value="'i_Subject'"/>
+                            <xf:send model="m-main" submission="s-refresh-view"/>
+                        
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/setname" value="'TitleSet'"/>
+                            
+                            <!-- Workrecord -->
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/uuid" value="bf:instanceOfModel('m-main', 'i-control-center')/workrecord"/>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/currentform" value="'w_Title'"/>
+                            <xf:send model="m-main" submission="s-refresh-view"/>
+                            
+                            <!-- Imagerecord -->
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/uuid" value="bf:instanceOfModel('m-main', 'i-control-center')/imagerecord"/>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/currentform" value="'i_Title'"/>
+                            <xf:send model="m-main" submission="s-refresh-view"/>
+                        
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/setname" value="'CulturalContextSet'"/>
+                            
+                            <!-- Workrecord -->
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/uuid" value="bf:instanceOfModel('m-main', 'i-control-center')/workrecord"/>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/currentform" value="'w_CulturalContext'"/>
+                            <xf:send model="m-main" submission="s-refresh-view"/>
+                            
+                            <!-- Imagerecord -->
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/uuid" value="bf:instanceOfModel('m-main', 'i-control-center')/imagerecord"/>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/currentform" value="'i_CulturalContext'"/>
+                            <xf:send model="m-main" submission="s-refresh-view"/>
+                        
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/setname" value="'InscriptionSet'"/>
+                            
+                            <!-- Workrecord -->
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/uuid" value="bf:instanceOfModel('m-main', 'i-control-center')/workrecord"/>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/currentform" value="'w_Inscription'"/>
+                            <xf:send model="m-main" submission="s-refresh-view"/>
+                            
+                            <!-- Imagerecord -->
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/uuid" value="bf:instanceOfModel('m-main', 'i-control-center')/imagerecord"/>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/currentform" value="'i_Inscription'"/>
+                            <xf:send model="m-main" submission="s-refresh-view"/>
+                        
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/setname" value="'MaterialSet'"/>
+                            
+                            <!-- Workrecord -->
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/uuid" value="bf:instanceOfModel('m-main', 'i-control-center')/workrecord"/>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/currentform" value="'w_Material'"/>
+                            <xf:send model="m-main" submission="s-refresh-view"/>
+                            
+                            <!-- Imagerecord -->
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/uuid" value="bf:instanceOfModel('m-main', 'i-control-center')/imagerecord"/>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/currentform" value="'i_Material'"/>
+                            <xf:send model="m-main" submission="s-refresh-view"/>
+                        
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/setname" value="'MeasurementsSet'"/>
+                            
+                            <!-- Workrecord -->
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/uuid" value="bf:instanceOfModel('m-main', 'i-control-center')/workrecord"/>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/currentform" value="'w_Measurements'"/>
+                            <xf:send model="m-main" submission="s-refresh-view"/>
+                            
+                            <!-- Imagerecord -->
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/uuid" value="bf:instanceOfModel('m-main', 'i-control-center')/imagerecord"/>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/currentform" value="'i_Measurements'"/>
+                            <xf:send model="m-main" submission="s-refresh-view"/>
+                        
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/setname" value="'RelationSet'"/>
+                            
+                            <!-- Workrecord -->
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/uuid" value="bf:instanceOfModel('m-main', 'i-control-center')/workrecord"/>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/currentform" value="'w_Relation'"/>
+                            <xf:send model="m-main" submission="s-refresh-view"/>
+                            
+                            <!-- Imagerecord -->
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/uuid" value="bf:instanceOfModel('m-main', 'i-control-center')/imagerecord"/>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/currentform" value="'i_Relation'"/>
+                            <xf:send model="m-main" submission="s-refresh-view"/>
+                        
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/setname" value="'SourceSet'"/>
+                            
+                            <!-- Workrecord -->
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/uuid" value="bf:instanceOfModel('m-main', 'i-control-center')/workrecord"/>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/currentform" value="'w_Source'"/>
+                            <xf:send model="m-main" submission="s-refresh-view"/>
+                            
+                            <!-- Imagerecord -->
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/uuid" value="bf:instanceOfModel('m-main', 'i-control-center')/imagerecord"/>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/currentform" value="'i_Source'"/>
+                            <xf:send model="m-main" submission="s-refresh-view"/>
+                        
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/setname" value="'StateEditionSet'"/>
+                            
+                            <!-- Workrecord -->
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/uuid" value="bf:instanceOfModel('m-main', 'i-control-center')/workrecord"/>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/currentform" value="'w_StateEdition'"/>
+                            <xf:send model="m-main" submission="s-refresh-view"/>
+                            
+                            <!-- Imagerecord -->
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/uuid" value="bf:instanceOfModel('m-main', 'i-control-center')/imagerecord"/>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/currentform" value="'i_StateEdition'"/>
+                            <xf:send model="m-main" submission="s-refresh-view"/>
+                        
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/setname" value="'StylePeriodSet'"/>
+                            
+                            <!-- Workrecord -->
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/uuid" value="bf:instanceOfModel('m-main', 'i-control-center')/workrecord"/>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/currentform" value="'w_StylePeriod'"/>
+                            <xf:send model="m-main" submission="s-refresh-view"/>
+                            
+                            
+                            <!-- Imagerecord -->
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/uuid" value="bf:instanceOfModel('m-main', 'i-control-center')/imagerecord"/>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/currentform" value="'i_StylePeriod'"/>
+                            <xf:send model="m-main" submission="s-refresh-view"/>
+                        
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/setname" value="'TechniqueSet'"/>
+                            
+                            <!-- Workrecord -->
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/uuid" value="bf:instanceOfModel('m-main', 'i-control-center')/workrecord"/>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/currentform" value="'w_Technique'"/>
+                            <xf:send model="m-main" submission="s-refresh-view"/>
+                            
+                            <!-- Imagerecord -->
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/uuid" value="bf:instanceOfModel('m-main', 'i-control-center')/imagerecord"/>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/currentform" value="'i_Technique'"/>
+                            <xf:send model="m-main" submission="s-refresh-view"/>
+                        
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/setname" value="'TextrefSet'"/>
+                            
+                            <!-- Workrecord -->
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/uuid" value="bf:instanceOfModel('m-main', 'i-control-center')/workrecord"/>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/currentform" value="'w_Textref'"/>
+                            <xf:send model="m-main" submission="s-refresh-view"/>
+                            
+                            <!-- Imagerecord -->
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/uuid" value="bf:instanceOfModel('m-main', 'i-control-center')/imagerecord"/>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/currentform" value="'i_Textref'"/>
+                            <xf:send model="m-main" submission="s-refresh-view"/>
+                        
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/setname" value="'WorktypeSet'"/>
+                            
+                            <!-- Workrecord -->
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/uuid" value="bf:instanceOfModel('m-main', 'i-control-center')/workrecord"/>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/currentform" value="'w_Worktype'"/>
+                            <xf:send model="m-main" submission="s-refresh-view"/>
+                            
+                            <!-- Imagerecord -->
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/uuid" value="bf:instanceOfModel('m-main', 'i-control-center')/imagerecord"/>
+                            <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-refresh')/currentform" value="'i_Worktype'"/>
+                            <xf:send model="m-main" submission="s-refresh-view"/>
+                        
+                        <xf:setvalue ref="bf:instanceOfModel('m-main', 'i-control-center')/changed" value="'false'"/>
+                        <xf:action>
+                            <script>
+                                initTextExpand();
+                            </script>
+                        </xf:action>
+                    </xf:action>
+                </xf:submission>
+            </xf:model>
+            <xf:bind nodeset="instance('i-lang')" model="m-lang">
+                <xf:bind nodeset="help" type="anyURI"/>
+            </xf:bind>
             <xf:trigger>
                 <xf:label>Capture return</xf:label>
             </xf:trigger>
@@ -177,6 +466,24 @@
             <div class="headerMenu" style="position:absolute;display:block;right:40px;">
                 <ul class="inline" style="list-style:none outside none;margin-left:0;padding:0">
                     <li>
+                        <div class="btn-group">
+                            <xf:select1 id="s-lang" model="m-main" ref="instance('i-control-center')/language" incremental="true">
+                                <xf:label>Language</xf:label>
+                                <xf:action ev:event="xforms-value-changed">
+                                    <xf:send model="m-lang" submission="s-load-lang"/>
+                                </xf:action>
+                                <xf:item>
+                                    <xf:label>Deutsch</xf:label>
+                                    <xf:value>de</xf:value>
+                                </xf:item>
+                                <xf:item>
+                                    <xf:label>English</xf:label>
+                                    <xf:value>en</xf:value>
+                                </xf:item>
+                            </xf:select1>
+                        </div>
+                    </li>
+                    <li>
                         <xf:output id="user" ref="instance('i-user')/user/@name">
                             <xf:label>User:</xf:label>
                             <xf:help ref="instance('i-meta')/@version"/>
@@ -199,8 +506,8 @@
             </xf:output>
         </div>
         -->
-        <div class="ui-layout-west main:displayWorkRecord">Workrecord</div>
-        <div class="ui-layout-east main:displayImageRecord">Imagerecord</div>
+        <div id="workRecord" class="ui-layout-west main:displayWorkRecord">Workrecord</div>
+        <div id="imageRecord" class="ui-layout-east main:displayImageRecord">Imagerecord</div>
         <div class="ui-layout-center main:displayImageArea">ImageArea 2</div>
 
 
@@ -223,7 +530,10 @@
             <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/typeahead-init.js"/>
         -->
         <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/vendor/select2/select2.js"/>
-        <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/select2-init.js"/>
+        <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/select2/select2-init.js"/>
+        <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/select2/select2-multiple.js"/>
+        <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/select2/select2-names.js"/>
+        <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/select2/select2-subjects.js"/>
         <script type="text/javascript" src="resources/script/text-expand.js"/>
         <script type="text/javascript" src="resources/script/ziziphus.js"/>
     </body>

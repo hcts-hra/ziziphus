@@ -127,7 +127,7 @@ return
         else if ( ends-with($exist:resource, ".html") ) then
         <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
             <view>
-                <forward url="{$exist:controller}/modules/view.xql">
+                <forward url="{$exist:controller}/modules/templating/view.xql">
                     {local:set-user($username, $password)}
                     <set-attribute name="$exist:root" value="{$exist:root}"/>
                     <set-attribute name="$exist:prefix" value="{$exist:prefix}"/>
@@ -139,7 +139,7 @@ return
             </view>
             <error-handler>
                 <forward url="{$exist:controller}/error-page.html" method="get"/>
-                <forward url="{$exist:controller}/modules/view.xql"/>
+                <forward url="{$exist:controller}/modules/templating/view.xql"/>
             </error-handler>
         </dispatch>
         else

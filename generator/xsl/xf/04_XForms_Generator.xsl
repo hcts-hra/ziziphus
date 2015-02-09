@@ -32,7 +32,7 @@
 
     <!-- NOTE: change this to '../' to run the generated forms standalone -->
     <xsl:variable name="relativePath" select="''"/>
-
+    <xsl:variable name="apos" select='"&apos;"'/>
     <!-- No longer used -->
     <!-- xsl:variable name="useTextarea" select="'vra:description vra:text'"/ -->
 
@@ -208,8 +208,9 @@
                     <div class="toolbar">
                         <xf:trigger class="t-plus -toolbarbutton" model="m-child-model" id="{concat(generate-id(),'-add')}">
                             <xsl:attribute name="title">Add <xsl:value-of select="$vraArtifact"/></xsl:attribute>
-                            <xf:label>+</xf:label>
-                            <xf:hint>add an entry</xf:hint>
+                            <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/addEntry/label"/>
+                            <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/addEntry/hint"/>
+                            <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/addEntry/help"/>
                             <xf:insert model="m-child-model">
                                 <xsl:attribute name="nodeset">instance()/vra:<xsl:value-of select="$vraArtifactNode"/>[1]</xsl:attribute>
                                 <xsl:attribute name="origin">instance('i-templates')/vra:<xsl:value-of select="$vraArtifactNode"/></xsl:attribute>
@@ -217,13 +218,15 @@
                             </xf:insert>
                         </xf:trigger>
                         <xf:trigger id="{concat(generate-id(),'-save')}" class="t-save -toolbarbutton">
-                            <xf:label>Save</xf:label>
-                            <xf:hint>save changes to database</xf:hint>
+                            <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/save/label"/>
+                            <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/save/hint"/>
+                            <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/save/help"/>
                             <xf:send submission="s-update"/>
                         </xf:trigger>
                         <xf:trigger id="t-close" class="-toolbarbutton">
-                            <xf:label>&#215;</xf:label>
-                            <xf:hint>close editor</xf:hint>
+                            <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/closeEditor/label"/>
+                            <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/closeEditor/hint"/>
+                            <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/closeEditor/help"/>
                             <!-- #### in case the instance was modified (isDirty) a confirmation will come up ##### -->
                             <xf:action if="bf:instanceOfModel('m-main','i-control-center')/isDirty='true'">
 
@@ -254,70 +257,113 @@
                         <xf:group appearance="minimal" ref="instance('i-vraAttributes')/vra:vraElement">
                             <xf:group appearance="minimal" class="attrDialogGroup">
                                 <xf:input ref="@dataDate" id="first">
-                                    <xf:label>dataDate</xf:label>
+                                    <xf:label>
+                                        <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/dataDate/label">
+                                            <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/dataDate/hint"/>
+                                            <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/dataDate/help"/>
+                                        </xf:output>
+                                    </xf:label>
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/dataDate/placeholder"/>
                                 </xf:input>
                                 <xf:trigger class="deleteAttribute">
-                                    <xf:label>clear</xf:label>
+                                    <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/label"/>
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/hint"/>
+                                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/help"/>
                                     <xf:setvalue ref="@dataDate"/>
                                 </xf:trigger>
                             </xf:group>
                             <xf:group appearance="minimal" class="attrDialogGroup">
                                 <xf:input ref="@extent" id="{concat(generate-id(),'-extent')}">
-                                    <xf:label>extent</xf:label>
+                                    <xf:label>
+                                        <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/extent/label">
+                                            <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/extent/hint"/>
+                                            <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/extent/help"/>
+                                        </xf:output>
+                                    </xf:label>
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/extent/placeholder"/>
                                 </xf:input>
                                 <xf:trigger class="deleteAttribute">
-                                    <xf:label>clear</xf:label>
+                                    <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/label"/>
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/hint"/>
+                                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/help"/>
                                     <xf:setvalue ref="@extent"/>
                                 </xf:trigger>
                             </xf:group>
                             <xf:group appearance="minimal" class="attrDialogGroup">
                                 <xf:input ref="@href" id="{concat(generate-id(),'-href')}">
-                                    <xf:label>href</xf:label>
+                                    <xf:label>
+                                        <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/href/label">
+                                            <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/href/hint"/>
+                                            <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/href/help"/>
+                                        </xf:output>
+                                    </xf:label>
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/href/placeholder"/>
+                                    
                                 </xf:input>
                                 <xf:trigger class="deleteAttribute">
-                                    <xf:label>clear</xf:label>
+                                    <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/label"/>
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/hint"/>
+                                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/help"/>
                                     <xf:setvalue ref="@href"/>
                                 </xf:trigger>
                             </xf:group>
                             <xf:group appearance="minimal" class="attrDialogGroup">
-                                <xf:output ref="@refid" id="{concat(generate-id(),'-refid')}">
-                                    <xf:label>refid</xf:label>
+                                <xf:output ref="@vocab" id="{concat(generate-id(),'-vocab')}">
+                                    <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/vocab/label"/>
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/vocab/hint"/>
+                                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/vocab/help"/>
                                 </xf:output>
                             </xf:group>
+                            
+                            
                             <!--
                             <xf:group appearance="minimal" class="attrDialogGroup">
                                 <xf:input ref="@refid" id="{concat(generate-id(),'-refid')}">
                                     <xf:label>refid</xf:label>
                                 </xf:input>
                                 <xf:trigger class="deleteAttribute">
-                                    <xf:label>clear</xf:label>
+                                    <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/label"/>
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/hint"/>
+                                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/help"/>
                                     <xf:setvalue ref="@refid"/>
                                 </xf:trigger>
                             </xf:group>
                             -->
                             <xf:group appearance="minimal" class="attrDialogGroup">
                                 <xf:input ref="@rules" id="{concat(generate-id(),'-rules')}">
-                                    <xf:label>rules</xf:label>
+                                    <xf:label>
+                                        <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/rules/label">
+                                            <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/rules/hint"/>
+                                            <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/rules/help"/>
+                                        </xf:output>
+                                    </xf:label>
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/rules/placeholder"/>
                                 </xf:input>
                                 <xf:trigger class="deleteAttribute">
-                                    <xf:label>clear</xf:label>
+                                    <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/label"/>
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/hint"/>
+                                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/help"/>
                                     <xf:setvalue ref="@rules"/>
                                 </xf:trigger>
                             </xf:group>
                             <xf:group appearance="minimal" class="attrDialogGroup">
                                 <xf:input ref="@source" id="{concat(generate-id(),'-source')}">
-                                    <xf:label>source</xf:label>
+                                    <xf:label>
+                                        <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/source/label">
+                                            <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/source/hint"/>
+                                            <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/source/help"/>
+                                        </xf:output>
+                                    </xf:label>
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/source/placeholder"/>
                                 </xf:input>
                                 <xf:trigger class="deleteAttribute">
-                                    <xf:label>clear</xf:label>
+                                    <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/label"/>
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/hint"/>
+                                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/help"/>
                                     <xf:setvalue ref="@source"/>
                                 </xf:trigger>
                             </xf:group>
-                            <xf:group appearance="minimal" class="attrDialogGroup">
-                                <xf:output ref="@vocab" id="{concat(generate-id(),'-vocab')}">
-                                    <xf:label>vocab</xf:label>
-                                </xf:output>
-                            </xf:group>
+                           
                             <!--
                             <xf:group appearance="minimal" class="attrDialogGroup">
                                 <xf:select1 ref="@vocab" id="{concat(generate-id(),'-vocab')}">
@@ -340,55 +386,98 @@
                                     </xf:item>
                                 </xf:select1>
                                 <xf:trigger class="deleteAttribute">
-                                    <xf:label>clear</xf:label>
+                                    <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/label"/>
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/hint"/>
+                                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/help"/>
                                     <xf:setvalue ref="@vocab"/>
                                 </xf:trigger>
                             </xf:group>
                             -->
                             <xf:group appearance="minimal" class="attrDialogGroup">
                                 <xf:select1 ref="@lang"  id="{concat(generate-id(),'-lang')}">
-                                        <xf:label>Language</xf:label>
-                                        <xf:itemset nodeset="bf:instanceOfModel('m-code-tables', 'i-codes-lang')/items/item">
-                                            <xf:label ref="label"/>
-                                            <xf:value ref="value"/>
-                                        </xf:itemset>
+                                    <xf:label>
+                                        <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/lang/label">
+                                            <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/lang/hint"/>
+                                            <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/lang/help"/>
+                                        </xf:output>
+                                    </xf:label>
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/lang/placeholder"/>
+                                    <xf:itemset nodeset="bf:instanceOfModel('m-code-tables', 'i-codes-lang')/items/item">
+                                        <xf:label ref="label"/>
+                                        <xf:value ref="value"/>
+                                    </xf:itemset>
                                 </xf:select1>
                                 <xf:trigger class="deleteAttribute">
-                                    <xf:label>clear</xf:label>
+                                    <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/label"/>
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/hint"/>
+                                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/help"/>
                                     <xf:setvalue ref="@lang"/>
                                 </xf:trigger>
                             </xf:group>
                            
                             <xf:group appearance="minimal" class="attrDialogGroup">
                                 <xf:select1 ref="@script" id="{concat(generate-id(),'-script')}">
-                                    <xf:label>Script</xf:label>
+                                    <xf:label>
+                                        <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/script/label">
+                                            <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/script/hint"/>
+                                            <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/script/help"/>
+                                        </xf:output>
+                                    </xf:label>
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/script/placeholder"/>
                                     <xf:itemset nodeset="bf:instanceOfModel('m-code-tables', 'i-codes-script')/items/item">
                                         <xf:label ref="label"/>
                                         <xf:value ref="value"/>
                                     </xf:itemset>
                                 </xf:select1>
                                 <xf:trigger class="deleteAttribute">
-                                    <xf:label>clear</xf:label>
+                                    <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/label"/>
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/hint"/>
+                                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/help"/>
                                     <xf:setvalue ref="@script"/>
                                 </xf:trigger>
                             </xf:group>
                             <xf:group appearance="minimal" class="attrDialogGroup">
                                 <xf:select1 ref="@transliteration" id="{concat(generate-id(),'-transliteration')}">
-                                    <xf:label>Transliteration</xf:label>
+                                    <xf:label>
+                                        <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/transliteration/label">
+                                            <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/transliteration/hint"/>
+                                        </xf:output>
+                                        <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/transliteration/help"/>  
+                                    </xf:label>
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/transliteration/placeholder"/>
                                     <xf:itemset nodeset="bf:instanceOfModel('m-code-tables', 'i-codes-transliteration')/items/item">
                                         <xf:label ref="label"/>
                                         <xf:value ref="value"/>
                                     </xf:itemset>
                                 </xf:select1>
                                 <xf:trigger class="deleteAttribute">
-                                    <xf:label>clear</xf:label>
+                                    <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/label"/>
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/hint"/>
+                                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/help"/>
                                     <xf:setvalue ref="@transliteration"/>
                                 </xf:trigger>
                            </xf:group>
+                           
+                            <xf:group appearance="minimal" class="attrDialogGroup">
+                                <xf:output ref="@refid" id="{concat(generate-id(),'-refid')}">
+                                    <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/refid/label"/>
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/refid/hint"/>
+                                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/refid/help"/>
+                                </xf:output>
+                            </xf:group>
+                            <xf:group appearance="minimal" class="attrDialogGroup">
+                                <xf:output ref="@vocab" id="{concat(generate-id(),'-vocab')}">
+                                    <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/vocab/label"/>
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/vocab/hint"/>
+                                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/vocab/help"/>
+                                </xf:output>
+                            </xf:group>
 
                             <xf:group class="buttonBar">
                                 <xf:trigger class="-btn">
-                                    <xf:label>Ok</xf:label>
+                                    <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/ok/label"/>
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/ok/hint"/>
+                                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/ok/help"/>
                                     <!--
                                     updating of the common vra attributes:
                                     attributes are updated by first deleting all of the common vra attributes from the
@@ -427,7 +516,9 @@
                                     <bfc:hide dialog="attrDialog"></bfc:hide>
                                 </xf:trigger>
                                 <xf:trigger appearance="minimal">
-                                    <xf:label>Cancel</xf:label>
+                                    <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/cancel/label"/>
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/cancel/hint"/>
+                                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/cancel/help"/>
                                     <bfc:hide dialog="attrDialog"></bfc:hide>
                                 </xf:trigger>
                             </xf:group>
@@ -588,7 +679,11 @@
                                 <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                                 <xf:trigger class="vraAttributeTrigger">
                                     <xf:label/>
-                                    <xf:hint>Edit Attributes</xf:hint>
+                                    <!--
+                                        <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/editAttributes/label"/>
+                                    -->
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/editAttributes/hint"/>
+                                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/editAttributes/help"/>
                                     <xf:action>
                                         <xf:setvalue ref="instance('i-util')/currentElement">.</xf:setvalue>
                                         <xf:setvalue ref="instance('i-util')/currentPosition">-1</xf:setvalue>
@@ -609,17 +704,23 @@
             <xf:switch>
                 <xf:case id="c-hidden">
                     <xf:trigger class="notesDisplayTrigger">
-                        <xf:label>Show Notes</xf:label>
+                        <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/showNotes/label"/>
+                        <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/showNotes/hint"/>
+                        <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/showNotes/help"/>
                         <xf:toggle case="c-showNotes"/>
                     </xf:trigger>
                 </xf:case>
                 <xf:case id="c-showNotes">
                     <xf:trigger class="notesDisplayTrigger">
-                        <xf:label>Hide Notes</xf:label>
+                        <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/hideNotes/label"/>
+                        <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/hideNotes/hint"/>
+                        <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/hideNotes/help"/>
                         <xf:toggle case="c-hidden"/>
                     </xf:trigger>
                     <xf:textarea id="notes" ref="vra:notes" type="nodeValue" model="m-child-model" >
-                        <xf:label>Notes</xf:label>
+                        <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/notes/label"/>
+                        <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/notes/hint"/>
+                        <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/notes/help"/>
                     </xf:textarea>
                 </xf:case>
             </xf:switch>
@@ -638,12 +739,28 @@
             <xsl:message></xsl:message>
         </xsl:if>
 
+        <xsl:variable name="importPath">
+            <xsl:call-template name="xpathExpr"/>
+        </xsl:variable>
+        
         <tr>
             <td class="prefCol">
             	<xsl:if test="$prefPolicy != 'forbidden'">
 	                <xf:input ref="@pref" id="{concat(generate-id(),'-pref')}">
-	                    <xf:label>pref</xf:label>
-	                    <xf:hint>preferred</xf:hint>
+                            <xf:label>
+                                <xf:output>
+                                    <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $importPath, '/pref/label')"/>
+                                    <xf:hint>
+                                        <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $importPath, '/pref/hint')"/>
+                                    </xf:hint>
+                                    <xf:help>
+                                        <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $importPath, '/pref/help')"/>
+                                    </xf:help>
+                                </xf:output>
+                            </xf:label>
+                            <xf:hint>
+                                <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $importPath, '/pref/placeholder')"/>
+                            </xf:hint>
 	                    <!-- Action ensures that at most one 'preferred' is selected within a _Set. -->
 	                    <xsl:choose>
 	                   	<xsl:when test="$prefPolicy = 'optional'">
@@ -705,8 +822,9 @@
                                 </xf:group>
 
                                 <xf:trigger class="vraAttributeTrigger">
-                                    <xf:label>A</xf:label>
-                                    <xf:hint>Edit Attributes</xf:hint>
+                                    <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/editAttributes/label"/>
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/editAttributes/hint"/>
+                                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/editAttributes/help"/>
                                     <xf:action>
                                         <xf:setvalue ref="instance('i-util')/currentElement">
                                             <xsl:attribute name="value">'<xsl:value-of select="functx:remove-vra-prefix($vraNodeName)"/>'</xsl:attribute>
@@ -739,8 +857,9 @@
                 </xf:trigger>
 -->
                 <xf:trigger class="-btn -btn-trashcan">
-                    <xf:label/>
-                    <xf:hint>Delete this entry</xf:hint>
+                    <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/removeTrashcan/label"/>
+                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/removeTrashcan/hint"/>
+                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/removeTrashcan/help"/>
                     <script type="text/javascript">
                         removeEntry();
                     </script>
@@ -835,13 +954,17 @@
                 <xsl:variable name="repeat-id" select="substring-after($vraNodeName, 'vra:')"/>
                 <xf:group hideInView="true">
                     <xf:trigger>
-                        <xf:label>Add</xf:label>
+                        <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/add/label"/>
+                        <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/add/hint"/>
+                        <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/add/help"/>
                         <xf:action>
                             <xf:insert context="instance('i-{$vraSectionNode}')/{$parent}[index('r-vra{$vraArtifact}')]" nodeset="{$vraNodeName}" origin="instance('i-templates')/{$parent}/{$vraNodeName}"/>
                         </xf:action>
                     </xf:trigger>
                     <xf:trigger>
-                        <xf:label>Delete</xf:label>
+                        <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/remove/label"/>
+                        <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/remove/hint"/>
+                        <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/remove/help"/>
                         <xf:action>
                             <xf:delete nodeset="instance('i-{$vraSectionNode}')/{$parent}[index('r-vra{$vraArtifact}')]/{$vraNodeName}" at="index('r-{$repeat-id}')"/>
                         </xf:action>
@@ -885,8 +1008,9 @@
                         </xf:group>
 
                         <xf:trigger class="vraAttributeTrigger">
-                            <xf:label>A</xf:label>
-                            <xf:hint>Edit Attributes</xf:hint>
+                            <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/editAttributes/label"/>
+                            <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/editAttributes/hint"/>
+                            <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/editAttributes/help"/>
                             <xf:action>
                                 <xf:setvalue ref="instance('i-util')/currentElement">
                                     <xsl:attribute name="value">'<xsl:value-of select="functx:remove-vra-prefix($vraNodeName)"/>'</xsl:attribute>
@@ -928,7 +1052,12 @@
         </xsl:variable>
 
         <xsl:variable name="targetNode" select="@nodeset"/>
+        <xsl:variable name="importPath">
+            <xsl:call-template name="xpathExpr"/>
+        </xsl:variable>
+        
 
+       
         <xsl:if test="$debugEnabled">
             <xsl:message>UI-4: path : <xsl:value-of select="$path"/></xsl:message>
             <xsl:message>UI-4: currentPath : <xsl:value-of select="$currentPath"/></xsl:message>
@@ -946,13 +1075,17 @@
                 <xsl:variable name="repeat-id" select="substring-after($path, 'vra:')"/>
                 <xf:group>
                     <xf:trigger>
-                        <xf:label>Add</xf:label>
+                        <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/add/label"/>
+                        <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/add/hint"/>
+                        <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/add/help"/>
                         <xf:action>
                             <xf:insert context="instance('i-{$vraSectionNode}')/vra:date[index('r-vra{$vraArtifact}')]/{$path}" nodeset="{$vraNodeName}" origin="instance('i-templates')/vra:date/{$path}/{$vraNodeName}"/>
                         </xf:action>
                     </xf:trigger>
                     <xf:trigger>
-                        <xf:label>Delete</xf:label>
+                        <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/remove/label"/>
+                        <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/remove/hint"/>
+                        <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/remove/help"/>
                         <xf:action>
                             <xf:delete nodeset="instance('i-{$vraSectionNode}')/vra:date[index('r-vra{$vraArtifact}')]/{$path}/{$vraNodeName}" at="index('r-{$repeat-id}')"/>
                         </xf:action>
@@ -1041,10 +1174,22 @@
                                             <xf:setvalue ref="@type" value="event('termType')"/>
                                         </xf:action>
                                     </xf:action>
-                            
+                                    <!--
                                     <xf:label>
-                                        <xsl:value-of select="$label"/>
+                                        <xf:output>
+                                            <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $importPath, '/label')"/>
+                                            <xf:hint>
+                                                <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $importPath, '/hint')"/>
+                                            </xf:hint>
+                                            <xf:help>
+                                                <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $importPath, '/help')"/>
+                                            </xf:help>
+                                        </xf:output>
                                     </xf:label>
+                                    <xf:hint>
+                                        <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $importPath, '/placeholder')"/>
+                                    </xf:hint>
+                                    -->
                                 </xf:input>
                             </span>
                             <!-- OLD 
@@ -1071,7 +1216,15 @@
                                     </span>
                                 </span>
                                 <span data-name="autocomplete">
-                                    <label for="Term-autocomplete-input"><xsl:value-of select="$label"/></label>
+                                    <xf:output>
+                                        <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $importPath, '/label')"/>
+                                        <xf:hint>
+                                            <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $importPath, '/hint')"/>
+                                        </xf:hint>
+                                    </xf:output>
+                                    
+                                    <!-- TODO: Placholder -->
+                                    
                                     <input type="hidden" data-name="{$label}-autocomplete" name="{$label}-autocomplete-input"
                                        placeholder="Type to search ..."
                                        data-queryType="{$queryType}"
@@ -1080,7 +1233,15 @@
                                             <xsl:attribute name="class">elementName</xsl:attribute>
                                        </xsl:if>
                                     </input>
-                                    
+                                    <xsl:if test="$queryType eq 'names'">
+                                        <xf:output>
+                                            <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', '/actions/exact/label')"/>
+                                            <xf:hint>
+                                                <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', '/actions/exact/hint')"/>
+                                            </xf:hint>
+                                        </xf:output>
+                                        <input id="{$label}-exact" type="checkbox" title="Searchs the exact string, including any punctuation"/>
+                                    </xsl:if>
                                 </span>
                             </span>
                         </xsl:when>
@@ -1098,10 +1259,21 @@
                                 <xsl:if test="not($isArtifactNode) and ('vra:name'=$vraNodeName)">
                                     <xsl:attribute name="class">elementName</xsl:attribute>
                                 </xsl:if>
-                                <!--<xsl:if test="not($isArtifactNode)">-->
                                 <xf:label>
-                                    <xsl:value-of select="functx:capitalize-first($label)"/>
+                                    <xf:output>
+                                        <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $importPath, '/label')"/>
+                                        <xf:hint>
+                                            <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $importPath, '/hint')"/>
+                                        </xf:hint>
+                                        <xf:help>
+                                            <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $importPath, '/help')"/>
+                                        </xf:help>
+                                    </xf:output>
                                 </xf:label>
+                                <xf:hint>
+                                    <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $importPath, '/placeholder')"/>
+                                </xf:hint>
+                                
                                 <xf:itemset nodeset="bf:instanceOfModel('m-code-tables', '{$code-table-name}')/items/item">
                                     <xf:label ref="label"/>
                                     <xf:value ref="value"/>
@@ -1122,11 +1294,19 @@
                                 </xsl:if>
                                 <xsl:if test="not($isArtifactNode)">
                                     <xf:label>
-                                        <xsl:value-of select="functx:capitalize-first($label)"/>
+                                        <xf:output>
+                                            <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $importPath, '/label')"/>
+                                            <xf:hint>
+                                                <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $importPath, '/hint')"/>
+                                            </xf:hint>
+                                            <xf:help>
+                                                <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $importPath, '/help')"/>
+                                            </xf:help>
+                                        </xf:output>
                                     </xf:label>
                                 </xsl:if>
                                 <xf:hint>
-                                    <xsl:value-of select="functx:capitalize-first($vraNodeName)"/>
+                                    <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $importPath, '/placeholder')"/>
                                 </xf:hint>
                             </xf:textarea>
                         </xsl:when>
@@ -1152,24 +1332,32 @@
                                 </xsl:if>
                             </xsl:variable>
                             <xsl:if test="@larger">
-                                <xsl:message>Hyper Hyper!</xsl:message>
+                                <!-- TODO:IS @larger used ? If not remove this ...-->
                             </xsl:if>
+                            
                             <xf:input id="{$id}">
                                 <xsl:attribute name="ref">
                                     <xsl:value-of select="$currentPath"/>
                                 </xsl:attribute>
+                                
                                 <xsl:if test="string-length(normalize-space($class)) > 0">
                                     <xsl:attribute name="class"><xsl:value-of select="normalize-space($class)"/></xsl:attribute>
                                 </xsl:if>
                                 
-                                <!--<xsl:if test="not($isArtifactNode)">-->
                                 <xf:label>
-                                    <xsl:value-of select="functx:capitalize-first($label)"/>
+                                    <xf:output>
+                                        <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $importPath, '/label')"/>
+                                        <xf:hint>
+                                            <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $importPath, '/hint')"/>
+                                        </xf:hint>
+                                        <xf:help>
+                                            <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $importPath, '/help')"/>
+                                        </xf:help>
+                                    </xf:output>
                                 </xf:label>
                                 <xf:hint>
-                                    <xsl:value-of select="functx:capitalize-first($label)"/>
+                                    <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $importPath, '/placeholder')"/>
                                 </xf:hint>
-                                <!--</xsl:if>-->
                             </xf:input>
                         </xsl:otherwise>
                     </xsl:choose>
@@ -1197,6 +1385,11 @@
             <xsl:message>UI-5  vraAttrName: <xsl:value-of select="$vraAttrName"/></xsl:message>
             <xsl:message></xsl:message>
         </xsl:if>
+        
+         <xsl:variable name="importPath">
+            <xsl:call-template name="xpathExpr"/>
+        </xsl:variable>
+        <xsl:message>UI-5 importPath:<xsl:value-of select="$importPath"/></xsl:message>
 
         <xsl:apply-templates select="$vraTypes/*/xsd:simpleType[@name=$vraTypeName][1]/*" mode="ui">
             <xsl:with-param name="id">
@@ -1206,7 +1399,7 @@
                 <xsl:value-of select="functx:concat-xpath($path,concat('@',$vraAttrName))"/>
             </xsl:with-param>
             <xsl:with-param name="plabel">
-                <xsl:value-of select="functx:capitalize-first($vraAttrName)"/>
+                <xsl:value-of select="concat($importPath, $vraAttrName)"/>
             </xsl:with-param>
             <xsl:with-param name="detail" select="@detail"/>
         </xsl:apply-templates>
@@ -1218,13 +1411,15 @@
         <xsl:param name="plabel" select="''" />
         <xsl:param name="detail" select="'false'"/>
         <xsl:param name="vraNodeName"/>
-
+       
         <xsl:if test="$debugEnabled">
             <xsl:message>UI-6a (type): xsd:string restriction (select1)</xsl:message>
             <xsl:message>UI-6a detail:
                 <xsl:value-of select="$detail"/>
             </xsl:message>
         </xsl:if>
+        
+        <xsl:message>Select1: plabel<xsl:value-of select="$plabel"/></xsl:message>
         
         <xsl:variable name="class">
             <xsl:if test="$detail='true'">
@@ -1241,12 +1436,28 @@
             </xsl:attribute>
             
             <xf:label>
+                <xf:output>
+                    <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $plabel, '/label')"/>
+                    <xf:hint>
+                        <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $plabel, '/hint')"/>
+                    </xf:hint>
+                    <xf:help>
+                        <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $plabel, '/help')"/>
+                    </xf:help>
+                </xf:output>
+            </xf:label>
+            <xf:hint>
+                <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $plabel, '/placeholder')"/>
+            </xf:hint>
+            <!--
+            <xf:label>
                 <xsl:value-of select="$plabel"/>
             </xf:label>
             <xf:hint>
                 <xsl:value-of select="functx:capitalize-first($vraNodeName)"/>
             </xf:hint>
-
+            -->
+        
             <xsl:for-each select="xsd:enumeration|comment()">
                 <xsl:choose>
                     <xsl:when test="local-name(.) eq 'enumeration'">
@@ -1280,7 +1491,12 @@
 
         <xsl:if test="$debugEnabled">
             <xsl:message>UI-6b (type): xsd:string restriction (empty)</xsl:message>
+            <xsl:message>UI-6b (type): plabel: <xsl:value-of select="$plabel"/></xsl:message>
         </xsl:if>
+        
+        <xsl:variable name="importPath">
+            <xsl:call-template name="xpathExpr"/>
+        </xsl:variable>
 
         <xf:input id="{$id}">
             <xsl:attribute name="ref">
@@ -1291,11 +1507,27 @@
             </xsl:if>
 
             <xf:label>
+                <xf:output>
+                    <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $plabel, '/label')"/>
+                    <xf:hint>
+                        <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $plabel, '/hint')"/>
+                    </xf:hint>
+                    <xf:help>
+                        <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $plabel, '/help')"/>
+                    </xf:help>
+                </xf:output>
+            </xf:label>
+            <xf:hint>
+                <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $plabel, '/placeholder')"/>
+            </xf:hint>
+            <!--
+            <xf:label>
                 <xsl:value-of select="$plabel"/>
             </xf:label>
             <xf:hint>
                 <xsl:value-of select="functx:capitalize-first($vraNodeName)"/>
             </xf:hint>
+            -->
         </xf:input>
     </xsl:template>
 
@@ -1305,18 +1537,31 @@
         <xsl:variable name="vraNodeName" select="@nodeset"/>
         <xsl:variable name="currentPath" select="functx:concat-xpath($path,$vraNodeName)"></xsl:variable>
 
+        <xsl:variable name="importPath">
+            <xsl:call-template name="xpathExpr"/>
+        </xsl:variable>
+        
         <xsl:if test="$debugEnabled">
             <xsl:message>UI-7: path:<xsl:value-of select="$path"/></xsl:message>
             <xsl:message>UI-7: <xsl:value-of select="$currentPath"/></xsl:message>
+                <xsl:message>UI-7: importPath:<xsl:value-of select="$importPath"/></xsl:message>
             <xsl:message></xsl:message>
         </xsl:if>
 
         <xf:input ref="{$currentPath}">
             <xf:label>
-                <xsl:value-of select="substring-after($vraNodeName,'@')"/>
+                <xf:output>
+                    <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $importPath, substring-after($vraNodeName,'@'), '/label')"/>
+                    <xf:hint>
+                        <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $importPath, substring-after($vraNodeName,'@'), '/hint')"/>
+                    </xf:hint>
+                    <xf:help>
+                        <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $importPath, substring-after($vraNodeName,'@'), '/label')"/>
+                    </xf:help>
+                </xf:output>
             </xf:label>
             <xf:hint>
-                <xsl:value-of select="functx:capitalize-first($vraNodeName)"/>
+                <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $importPath, substring-after($vraNodeName,'@'), '/placeholder')"/>
             </xf:hint>
         </xf:input>
     </xsl:template>
@@ -1481,5 +1726,12 @@
             <xsl:otherwise>optional</xsl:otherwise>
         </xsl:choose>
     </xsl:function>
+    
+     <xsl:template name="xpathExpr">
+        <xsl:variable name="cnt" select="count(preceding-sibling::node())"/>
+        <xsl:for-each select="ancestor-or-self::node()">
+            <xsl:if test="position() > 3 and ./@nodeset != '.'">/<xsl:value-of select="substring-after(./@nodeset, 'vra:')"/></xsl:if>
+        </xsl:for-each>
+    </xsl:template>
 </xsl:stylesheet>
 

@@ -722,8 +722,10 @@
               force="true">
             <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath refid="transform.class.path"/>
-            <param name="setname" expression="DescriptionSet"/>
+            <param name="setname" expression="AgentSet"/>
             <param name="codetables-uri" expression="../../../cluster-shared/modules/edit/code-tables/"/>
+            <param name="resources-uri" expression="${basedir}/../resources/lang/"/>
+            <param name="lang" expression="de"/>
         </xslt>
     </target>
 </project>

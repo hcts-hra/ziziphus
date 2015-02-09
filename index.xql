@@ -9,10 +9,21 @@ import module namespace record-utils="http://www.betterform.de/projects/ziziphus
 
 (: Cluster-shared :)
 import module namespace app="http://www.betterform.de/projects/shared/config/app" at "/apps/cluster-shared/modules/ziziphus/config/app.xqm";
-import module namespace security="http://exist-db.org/mods/security" at "/apps/cluster-shared/modules/search/security.xqm";
-import module namespace csconfig="http://exist-db.org/mods/config" at "/apps/cluster-shared/modules/config.xqm";
+
 import module namespace image-link-generator="http://hra.uni-heidelberg.de/ns/tamboti/modules/display/image-link-generator" at "/apps/cluster-shared/modules/display/image-link-generator.xqm";
 
+(: TAMBOTI :)
+(: 
+import module namespace image-link-generator="http://hra.uni-heidelberg.de/ns/tamboti/modules/display/image-link-generator" at "/apps/tamboti/modules/display/image-link-generator.xqm";
+:) 
+
+
+
+(:  OUTDATED :)
+(:
+import module namespace security="http://exist-db.org/mods/security" at "/apps/tamboti/modules/search/security.xqm";
+import module namespace csconfig="http://exist-db.org/mods/config" at "/apps/tamboti/modules/config.xqm";
+:)
 declare option exist:serialize "method=html5 media-type=text/html";
 let $start := xs:integer(request:get-parameter("start", "1"))
 let $num := xs:integer(request:get-parameter("num", "20"))
@@ -75,16 +86,16 @@ return
             
             let $vraWorkRecord := $record
             let $imageRecordId  := if(exists($vraWorkRecord/vra:relationSet/vra:relation/@pref[.='true']))
-                                then $vraWorkRecord/vra:relationSet/vra:relation[@pref='true'][1]/@refid
-                                else $vraWorkRecord/vra:relationSet/vra:relation[1]/@refid
+                                then $vraWorkRecord/vra:relationSet/vra:relation[@pref='true'][1]/@relids
+                                else $vraWorkRecord/vra:relationSet/vra:relation[1]/@relids
             let $heidiconId := $vraWorkRecord//ext:heidicon/ext:item[@type='f_id_heidicon']/ext:value[2]
             
             let $counter := if($start gt ($num)) then $start+$count -1 else $count
             return
             <tr>
                 <td>{$counter}</td>
-                <td style="height:40px;width:40px;margin:4px;"><img src="{image-link-generator:generate-href($imageRecordId, 'tamboti-thumbnail')}" alt="" class="relatedImage"/></td>
-                <td><a href="{$context}/apps/ziziphus/record.html?id={$uuid}&amp;workdir={$app:ziziphus-default-record-dir}" target="_blank">{$uuid}</a></td>
+                <td style="height:40px;width:40px;margin:4px;"><img src="{image-link-generator:generate-href($imageRecordId, 'tamboti-thumbnail')}" alt="" class="relatedImage"/>{$imageRecordId}</td>
+                <td><a href="{$context}/apps/ziziphus/record.xql?id={$uuid}&amp;workdir={$app:ziziphus-default-record-dir}" target="_blank">{$uuid}</a></td>
                 <td><a href="{$context}/rest/{$app:ziziphus-default-record-dir || $uuid}.xml" target="_blank">work</a></td>
                 <td><a href="{$context}/rest/{record-utils:get-image-record-path-by-work-record-id($uuid, $app:ziziphus-default-record-dir)}" target="_blank">image</a></td>
                 <td>{$heidiconId}</td>

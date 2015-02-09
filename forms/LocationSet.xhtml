@@ -122,20 +122,23 @@
          <div class="toolbar">
             <xf:trigger class="t-plus -toolbarbutton" model="m-child-model" id="d3e1-add"
                         title="Add Location">
-               <xf:label>+</xf:label>
-               <xf:hint>add an entry</xf:hint>
+               <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/addEntry/label"></xf:label>
+               <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/addEntry/hint"></xf:hint>
+               <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/addEntry/help"></xf:help>
                <xf:insert model="m-child-model" nodeset="instance()/vra:location[1]"
                           origin="instance('i-templates')/vra:location"
                           position="before"></xf:insert>
             </xf:trigger>
             <xf:trigger id="d3e1-save" class="t-save -toolbarbutton">
-               <xf:label>Save</xf:label>
-               <xf:hint>save changes to database</xf:hint>
+               <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/save/label"></xf:label>
+               <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/save/hint"></xf:hint>
+               <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/save/help"></xf:help>
                <xf:send submission="s-update"></xf:send>
             </xf:trigger>
             <xf:trigger id="t-close" class="-toolbarbutton">
-               <xf:label>×</xf:label>
-               <xf:hint>close editor</xf:hint>
+               <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/closeEditor/label"></xf:label>
+               <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/closeEditor/hint"></xf:hint>
+               <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/closeEditor/help"></xf:help>
                <xf:action if="bf:instanceOfModel('m-main','i-control-center')/isDirty='true'"><script type="text/javascript">
                                     closeForm();
                                 </script></xf:action>
@@ -187,8 +190,13 @@
                   <tr>
                      <td class="prefCol">
                         <xf:input ref="@pref" id="d3e57-pref">
-                           <xf:label>pref</xf:label>
-                           <xf:hint>preferred</xf:hint>
+                           <xf:label>
+                              <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/pref/label">
+                                 <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/pref/hint"></xf:hint>
+                                 <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/pref/help"></xf:help>
+                              </xf:output>
+                           </xf:label>
+                           <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/pref/placeholder"></xf:hint>
                            <xf:action ev:event="xforms-value-changed" if=".=('true',1)"
                                       while="(../preceding-sibling::*|../following-sibling::*)/@pref=('true',1)">
                               <xf:setvalue ref="(../preceding-sibling::*|../following-sibling::*)[@pref=('true',1)][1]/@pref"
@@ -199,8 +207,13 @@
                      <td class="contentCol">
                         <xf:group appearance="minimal">
                            <xf:select1 id="b-d2e861" class=" " ref="@type">
-                              <xf:label>Type</xf:label>
-                              <xf:hint></xf:hint>
+                              <xf:label>
+                                 <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/type/label">
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/type/hint"></xf:hint>
+                                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/type/help"></xf:help>
+                                 </xf:output>
+                              </xf:label>
+                              <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/type/placeholder"></xf:hint>
                               <xf:item>
                                  <xf:label>Creation</xf:label>
                                  <xf:value>creation</xf:value>
@@ -261,12 +274,22 @@
                         </xf:group>
                         <xf:group appearance="minimal">
                            <xf:input id="b-d2e816" ref="vra:name">
-                              <xf:label>Name</xf:label>
-                              <xf:hint>Name</xf:hint>
+                              <xf:label>
+                                 <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/name/label">
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/name/hint"></xf:hint>
+                                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/name/help"></xf:help>
+                                 </xf:output>
+                              </xf:label>
+                              <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/name/placeholder"></xf:hint>
                            </xf:input>
                            <xf:select1 id="b-d2e823" class=" nameType" ref="vra:name/@type">
-                              <xf:label>Type</xf:label>
-                              <xf:hint></xf:hint>
+                              <xf:label>
+                                 <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/name/type/label">
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/name/type/hint"></xf:hint>
+                                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/name/type/help"></xf:help>
+                                 </xf:output>
+                              </xf:label>
+                              <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/name/type/placeholder"></xf:hint>
                               <xf:item>
                                  <xf:label>Corporate</xf:label>
                                  <xf:value>corporate</xf:value>
@@ -288,8 +311,9 @@
                               <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                            </xf:group>
                            <xf:trigger class="vraAttributeTrigger">
-                              <xf:label>A</xf:label>
-                              <xf:hint>Edit Attributes</xf:hint>
+                              <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/editAttributes/label"></xf:label>
+                              <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/editAttributes/hint"></xf:hint>
+                              <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/editAttributes/help"></xf:help>
                               <xf:action>
                                  <xf:setvalue ref="instance('i-util')/currentElement" value="'name'"></xf:setvalue>
                                  <xf:setvalue ref="instance('i-util')/currentPosition">-1</xf:setvalue>
@@ -300,12 +324,22 @@
                         </xf:group>
                         <xf:group appearance="minimal">
                            <xf:input id="b-d2e794" ref="vra:refid">
-                              <xf:label>Refid</xf:label>
-                              <xf:hint>Refid</xf:hint>
+                              <xf:label>
+                                 <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/refid/label">
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/refid/hint"></xf:hint>
+                                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/refid/help"></xf:help>
+                                 </xf:output>
+                              </xf:label>
+                              <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/refid/placeholder"></xf:hint>
                            </xf:input>
                            <xf:select1 id="b-d2e801" class=" refidType" ref="vra:refid/@type">
-                              <xf:label>Type</xf:label>
-                              <xf:hint></xf:hint>
+                              <xf:label>
+                                 <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/refid/type/label">
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/refid/type/hint"></xf:hint>
+                                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/refid/type/help"></xf:help>
+                                 </xf:output>
+                              </xf:label>
+                              <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/refid/type/placeholder"></xf:hint>
                               <xf:item>
                                  <xf:label>Accession</xf:label>
                                  <xf:value>accession</xf:value>
@@ -327,8 +361,9 @@
                               <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                            </xf:group>
                            <xf:trigger class="vraAttributeTrigger">
-                              <xf:label>A</xf:label>
-                              <xf:hint>Edit Attributes</xf:hint>
+                              <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/editAttributes/label"></xf:label>
+                              <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/editAttributes/hint"></xf:hint>
+                              <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/editAttributes/help"></xf:help>
                               <xf:action>
                                  <xf:setvalue ref="instance('i-util')/currentElement" value="'refid'"></xf:setvalue>
                                  <xf:setvalue ref="instance('i-util')/currentPosition">-1</xf:setvalue>
@@ -339,27 +374,48 @@
                         </xf:group>
                         <xf:group appearance="minimal">
                            <xf:input id="b-d2e838" ref="vra:point">
-                              <xf:label>Point</xf:label>
-                              <xf:hint>Point</xf:hint>
+                              <xf:label>
+                                 <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/point/label">
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/point/hint"></xf:hint>
+                                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/point/help"></xf:help>
+                                 </xf:output>
+                              </xf:label>
+                              <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/point/placeholder"></xf:hint>
                            </xf:input>
                            <xf:input ref="vra:point/@epsg">
-                              <xf:label>epsg</xf:label>
-                              <xf:hint>@epsg</xf:hint>
+                              <xf:label>
+                                 <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/point/epsg/label">
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/point/epsg/hint"></xf:hint>
+                                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/point/epsg/label"></xf:help>
+                                 </xf:output>
+                              </xf:label>
+                              <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/point/epsg/placeholder"></xf:hint>
                            </xf:input>
                            <xf:input id="b-d2e844" ref="vra:point/vra:lat">
-                              <xf:label>Lat</xf:label>
-                              <xf:hint>Lat</xf:hint>
+                              <xf:label>
+                                 <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/point/lat/label">
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/point/lat/hint"></xf:hint>
+                                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/point/lat/help"></xf:help>
+                                 </xf:output>
+                              </xf:label>
+                              <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/point/lat/placeholder"></xf:hint>
                            </xf:input>
                            <xf:input id="b-d2e845" ref="vra:point/vra:long">
-                              <xf:label>Long</xf:label>
-                              <xf:hint>Long</xf:hint>
+                              <xf:label>
+                                 <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/point/long/label">
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/point/long/hint"></xf:hint>
+                                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/point/long/help"></xf:help>
+                                 </xf:output>
+                              </xf:label>
+                              <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/point/long/placeholder"></xf:hint>
                            </xf:input>
                         </xf:group>
                      </td>
                      <td class="triggerCol">
                         <xf:trigger class="-btn -btn-trashcan">
-                           <xf:label></xf:label>
-                           <xf:hint>Delete this entry</xf:hint><script type="text/javascript">
+                           <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/removeTrashcan/label"></xf:label>
+                           <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/removeTrashcan/hint"></xf:hint>
+                           <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/removeTrashcan/help"></xf:help><script type="text/javascript">
                         removeEntry();
                     </script></xf:trigger>
                      </td>
@@ -370,7 +426,8 @@
                            <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
                            <xf:trigger class="vraAttributeTrigger">
                               <xf:label></xf:label>
-                              <xf:hint>Edit Attributes</xf:hint>
+                              <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/editAttributes/hint"></xf:hint>
+                              <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/editAttributes/help"></xf:help>
                               <xf:action>
                                  <xf:setvalue ref="instance('i-util')/currentElement">.</xf:setvalue>
                                  <xf:setvalue ref="instance('i-util')/currentPosition">-1</xf:setvalue>
@@ -389,17 +446,23 @@
             <xf:switch>
                <xf:case id="c-hidden">
                   <xf:trigger class="notesDisplayTrigger">
-                     <xf:label>Show Notes</xf:label>
+                     <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/showNotes/label"></xf:label>
+                     <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/showNotes/hint"></xf:hint>
+                     <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/showNotes/help"></xf:help>
                      <xf:toggle case="c-showNotes"></xf:toggle>
                   </xf:trigger>
                </xf:case>
                <xf:case id="c-showNotes">
                   <xf:trigger class="notesDisplayTrigger">
-                     <xf:label>Hide Notes</xf:label>
+                     <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/hideNotes/label"></xf:label>
+                     <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/hideNotes/hint"></xf:hint>
+                     <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/hideNotes/help"></xf:help>
                      <xf:toggle case="c-hidden"></xf:toggle>
                   </xf:trigger>
                   <xf:textarea id="notes" ref="vra:notes" type="nodeValue" model="m-child-model">
-                     <xf:label>Notes</xf:label>
+                     <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/notes/label"></xf:label>
+                     <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/notes/hint"></xf:hint>
+                     <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/notes/help"></xf:help>
                   </xf:textarea>
                </xf:case>
             </xf:switch>
@@ -409,101 +472,178 @@
             <xf:group appearance="minimal" ref="instance('i-vraAttributes')/vra:vraElement">
                <xf:group appearance="minimal" class="attrDialogGroup">
                   <xf:input ref="@dataDate" id="first">
-                     <xf:label>dataDate</xf:label>
+                     <xf:label>
+                        <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/dataDate/label">
+                           <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/dataDate/hint"></xf:hint>
+                           <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/dataDate/help"></xf:help>
+                        </xf:output>
+                     </xf:label>
+                     <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/dataDate/placeholder"></xf:hint>
                   </xf:input>
                   <xf:trigger class="deleteAttribute">
-                     <xf:label>clear</xf:label>
+                     <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/label"></xf:label>
+                     <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/hint"></xf:hint>
+                     <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/help"></xf:help>
                      <xf:setvalue ref="@dataDate"></xf:setvalue>
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">
                   <xf:input ref="@extent" id="d3e1-extent">
-                     <xf:label>extent</xf:label>
+                     <xf:label>
+                        <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/extent/label">
+                           <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/extent/hint"></xf:hint>
+                           <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/extent/help"></xf:help>
+                        </xf:output>
+                     </xf:label>
+                     <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/extent/placeholder"></xf:hint>
                   </xf:input>
                   <xf:trigger class="deleteAttribute">
-                     <xf:label>clear</xf:label>
+                     <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/label"></xf:label>
+                     <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/hint"></xf:hint>
+                     <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/help"></xf:help>
                      <xf:setvalue ref="@extent"></xf:setvalue>
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">
                   <xf:input ref="@href" id="d3e1-href">
-                     <xf:label>href</xf:label>
+                     <xf:label>
+                        <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/href/label">
+                           <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/href/hint"></xf:hint>
+                           <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/href/help"></xf:help>
+                        </xf:output>
+                     </xf:label>
+                     <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/href/placeholder"></xf:hint>
                   </xf:input>
                   <xf:trigger class="deleteAttribute">
-                     <xf:label>clear</xf:label>
+                     <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/label"></xf:label>
+                     <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/hint"></xf:hint>
+                     <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/help"></xf:help>
                      <xf:setvalue ref="@href"></xf:setvalue>
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:output ref="@refid" id="d3e1-refid">
-                     <xf:label>refid</xf:label>
+                  <xf:output ref="@vocab" id="d3e1-vocab">
+                     <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/vocab/label"></xf:label>
+                     <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/vocab/hint"></xf:hint>
+                     <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/vocab/help"></xf:help>
                   </xf:output>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">
                   <xf:input ref="@rules" id="d3e1-rules">
-                     <xf:label>rules</xf:label>
+                     <xf:label>
+                        <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/rules/label">
+                           <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/rules/hint"></xf:hint>
+                           <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/rules/help"></xf:help>
+                        </xf:output>
+                     </xf:label>
+                     <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/rules/placeholder"></xf:hint>
                   </xf:input>
                   <xf:trigger class="deleteAttribute">
-                     <xf:label>clear</xf:label>
+                     <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/label"></xf:label>
+                     <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/hint"></xf:hint>
+                     <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/help"></xf:help>
                      <xf:setvalue ref="@rules"></xf:setvalue>
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">
                   <xf:input ref="@source" id="d3e1-source">
-                     <xf:label>source</xf:label>
+                     <xf:label>
+                        <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/source/label">
+                           <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/source/hint"></xf:hint>
+                           <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/source/help"></xf:help>
+                        </xf:output>
+                     </xf:label>
+                     <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/source/placeholder"></xf:hint>
                   </xf:input>
                   <xf:trigger class="deleteAttribute">
-                     <xf:label>clear</xf:label>
+                     <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/label"></xf:label>
+                     <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/hint"></xf:hint>
+                     <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/help"></xf:help>
                      <xf:setvalue ref="@source"></xf:setvalue>
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">
-                  <xf:output ref="@vocab" id="d3e1-vocab">
-                     <xf:label>vocab</xf:label>
-                  </xf:output>
-               </xf:group>
-               <xf:group appearance="minimal" class="attrDialogGroup">
                   <xf:select1 ref="@lang" id="d3e1-lang">
-                     <xf:label>Language</xf:label>
+                     <xf:label>
+                        <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/lang/label">
+                           <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/lang/hint"></xf:hint>
+                           <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/lang/help"></xf:help>
+                        </xf:output>
+                     </xf:label>
+                     <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/lang/placeholder"></xf:hint>
                      <xf:itemset nodeset="bf:instanceOfModel('m-code-tables', 'i-codes-lang')/items/item">
                         <xf:label ref="label"></xf:label>
                         <xf:value ref="value"></xf:value>
                      </xf:itemset>
                   </xf:select1>
                   <xf:trigger class="deleteAttribute">
-                     <xf:label>clear</xf:label>
+                     <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/label"></xf:label>
+                     <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/hint"></xf:hint>
+                     <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/help"></xf:help>
                      <xf:setvalue ref="@lang"></xf:setvalue>
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">
                   <xf:select1 ref="@script" id="d3e1-script">
-                     <xf:label>Script</xf:label>
+                     <xf:label>
+                        <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/script/label">
+                           <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/script/hint"></xf:hint>
+                           <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/script/help"></xf:help>
+                        </xf:output>
+                     </xf:label>
+                     <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/script/placeholder"></xf:hint>
                      <xf:itemset nodeset="bf:instanceOfModel('m-code-tables', 'i-codes-script')/items/item">
                         <xf:label ref="label"></xf:label>
                         <xf:value ref="value"></xf:value>
                      </xf:itemset>
                   </xf:select1>
                   <xf:trigger class="deleteAttribute">
-                     <xf:label>clear</xf:label>
+                     <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/label"></xf:label>
+                     <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/hint"></xf:hint>
+                     <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/help"></xf:help>
                      <xf:setvalue ref="@script"></xf:setvalue>
                   </xf:trigger>
                </xf:group>
                <xf:group appearance="minimal" class="attrDialogGroup">
                   <xf:select1 ref="@transliteration" id="d3e1-transliteration">
-                     <xf:label>Transliteration</xf:label>
+                     <xf:label>
+                        <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/transliteration/label">
+                           <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/transliteration/hint"></xf:hint>
+                        </xf:output>
+                        <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/transliteration/help"></xf:help>
+                     </xf:label>
+                     <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/transliteration/placeholder"></xf:hint>
                      <xf:itemset nodeset="bf:instanceOfModel('m-code-tables', 'i-codes-transliteration')/items/item">
                         <xf:label ref="label"></xf:label>
                         <xf:value ref="value"></xf:value>
                      </xf:itemset>
                   </xf:select1>
                   <xf:trigger class="deleteAttribute">
-                     <xf:label>clear</xf:label>
+                     <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/label"></xf:label>
+                     <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/hint"></xf:hint>
+                     <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/help"></xf:help>
                      <xf:setvalue ref="@transliteration"></xf:setvalue>
                   </xf:trigger>
                </xf:group>
+               <xf:group appearance="minimal" class="attrDialogGroup">
+                  <xf:output ref="@refid" id="d3e1-refid">
+                     <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/refid/label"></xf:label>
+                     <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/refid/hint"></xf:hint>
+                     <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/refid/help"></xf:help>
+                  </xf:output>
+               </xf:group>
+               <xf:group appearance="minimal" class="attrDialogGroup">
+                  <xf:output ref="@vocab" id="d3e1-vocab">
+                     <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/vocab/label"></xf:label>
+                     <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/vocab/hint"></xf:hint>
+                     <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/vocab/help"></xf:help>
+                  </xf:output>
+               </xf:group>
                <xf:group class="buttonBar">
                   <xf:trigger class="-btn">
-                     <xf:label>Ok</xf:label>
+                     <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/ok/label"></xf:label>
+                     <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/ok/hint"></xf:hint>
+                     <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/ok/help"></xf:help>
                      <xf:action if="'.'=instance('i-util')/currentElement">
                         <xf:delete nodeset="instance('i-locationSet')/vra:location[index('r-vraLocation')]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]"></xf:delete>
                         <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@*[string-length(.) != 0]"
@@ -522,7 +662,9 @@
                      <bfc:hide dialog="attrDialog"></bfc:hide>
                   </xf:trigger>
                   <xf:trigger appearance="minimal">
-                     <xf:label>Cancel</xf:label>
+                     <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/cancel/label"></xf:label>
+                     <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/cancel/hint"></xf:hint>
+                     <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/cancel/help"></xf:help>
                      <bfc:hide dialog="attrDialog"></bfc:hide>
                   </xf:trigger>
                </xf:group>

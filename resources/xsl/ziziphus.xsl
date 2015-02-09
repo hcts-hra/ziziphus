@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bf="http://betterform.sourceforge.net/xforms" xmlns:xf="http://www.w3.org/2002/xforms" version="2.0" exclude-result-prefixes="xf bf" xpath-default-namespace="http://www.w3.org/1999/xhtml">
+<xsl:stylesheet xmlns="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:bf="http://betterform.sourceforge.net/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" version="2.0" exclude-result-prefixes="xf bf" xpath-default-namespace="http://www.w3.org/1999/xhtml">
     <xsl:import href="xhtml.xsl"/>
-
+    <xsl:variable name="widgetClass" select="'xfValue'"/>
+    
     <!-- overwritten to set parseOnload=true and async=false -->
     <xsl:template name="addDojoImport">
         <xsl:variable name="dojoConfig">
@@ -45,7 +45,7 @@
         </script>
         <xsl:text>
 </xsl:text>
-        <!--<script type="text/javascript" src="{concat($contextroot,$scriptPath,'bf/core.js')}"> </script><xsl:text>-->
+        <!--<script type="text/javascript" src="{concat($contextroot,$scriptPath,'bf/core.js')}"> </script><xsl:text>-->
         <script type="text/javascript" src="{concat($contextroot,$scriptPath,'bf/bfRelease.js')}">&#160;</script>
         <xsl:text>
 </xsl:text>
@@ -434,13 +434,13 @@
         </input>
     </xsl:template>
 -->
-
     <xsl:template name="input">
         <xsl:variable name="id" select="@id"/>
         <xsl:variable name="name" select="concat($data-prefix,$id)"/>
         <xsl:variable name="navindex" select="if (exists(@navindex)) then @navindex else '0'"/>
-        <xsl:variable name="type"><xsl:call-template name="getType"/></xsl:variable>
-
+        <xsl:variable name="type">
+            <xsl:call-template name="getType"/>
+        </xsl:variable>
         <xsl:variable name="authorClasses">
             <xsl:call-template name="get-control-classes"/>
         </xsl:variable>
@@ -453,12 +453,7 @@
         -->
         <xsl:choose>
             <xsl:when test="$type='boolean'">
-                <input  id="{$id}-value"
-                        name="{$name}"
-                        type="checkbox"
-                        class="{$widgetClasses}"
-                        tabindex="{$navindex}"
-                        title="{xf:hint/text()}">
+                <input id="{$id}-value" name="{$name}" type="checkbox" class="{$widgetClasses}" tabindex="{$navindex}" title="{xf:hint/text()}">
                     <xsl:if test="bf:data/@bf:readonly='true'">
                         <xsl:attribute name="disabled">disabled</xsl:attribute>
                     </xsl:if>
@@ -516,19 +511,12 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-
     <xsl:template name="InputDefault">
         <xsl:param name="id"/>
         <xsl:param name="name"/>
         <xsl:param name="navindex"/>
         <xsl:param name="classes"/>
-        <input id="{$id}-value"
-                name="{$name}"
-                type="text"
-                class="{$classes}"
-                tabindex="{$navindex}"
-                placeholder="{xf:hint}"
-                value="{bf:data/text()}">
+        <input id="{$id}-value" name="{$name}" type="text" class="{$classes}" tabindex="{$navindex}" placeholder="{xf:hint}" value="{bf:data/text()}">
             <xsl:if test="bf:data/@bf:readonly='true'">
                 <xsl:attribute name="disabled">disabled</xsl:attribute>
             </xsl:if>
@@ -537,7 +525,6 @@
             </xsl:for-each>
         </input>
     </xsl:template>
-
     <xsl:template match="span">
         <span>
             <xsl:if test="@class">
@@ -572,5 +559,103 @@
             </xsl:if>
             <xsl:apply-templates/>
         </span>
+    </xsl:template>
+    <xsl:template match="xf:output" priority="10">
+        <xsl:variable name="id" select="@id"/>
+        <xsl:variable name="control-classes">
+            <xsl:call-template name="assemble-control-classes"/>
+        </xsl:variable>
+        <xsl:variable name="label-classes">
+            <xsl:call-template name="assemble-label-classes"/>
+        </xsl:variable>
+        <span id="{$id}" class="{$control-classes}">
+            <label for="{$id}-value" id="{$id}-label" class="{$label-classes}">
+                <xsl:apply-templates select="xf:label"/>
+            </label>
+            <xsl:call-template name="z-output-buildControl"/>
+        </span>
+    </xsl:template>
+    <xsl:template name="z-output-buildControl">
+        <xsl:if test="local-name()='output'">
+            <xsl:call-template name="z-output"/>
+        </xsl:if>
+    </xsl:template>
+    <xsl:template name="z-output">
+        <xsl:variable name="id" select="@id"/>
+        <xsl:variable name="name" select="concat($data-prefix,$id)"/>
+        <xsl:variable name="navindex" select="if (exists(@navindex)) then @navindex else '0'"/>
+        <xsl:variable name="type">
+            <xsl:call-template name="getType"/>
+        </xsl:variable>
+        <xsl:variable name="authorClasses">
+            <xsl:call-template name="get-control-classes"/>
+        </xsl:variable>
+        <xsl:variable name="widgetClasses" select="normalize-space(concat($widgetClass,' ',$authorClasses))"/>
+        <xsl:choose>
+            <!--
+            >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+            IMAGE OUTPUT
+            <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+            -->
+            <xsl:when test="contains(@mediatype,'image/')">
+                <img id="{$id}-value" name="{$name}" src="{bf:data/text()}" alt="{xf:label}" class="{$widgetClasses}" title="{xf:hint/text()}">
+                    <!--
+                    >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                    the hint will be applied as html title attribute and additionally output
+                    as a span
+                    <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+                    -->
+                </img>
+            </xsl:when>
+            <!--
+            >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+            HTML OUTPUT
+            <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+            -->
+            <xsl:when test="contains(@mediatype,'text/html')">
+                <span id="{$id}-value" class="{$widgetClasses} mediatype-text-html">
+                    <xsl:value-of select="bf:data/text()" disable-output-escaping="yes"/>
+                </span>
+            </xsl:when>
+            <!--
+            >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+            if we got an URI but not an mediatype we handle it as link
+            <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+            -->
+            <xsl:when test="$type='anyURI' and (not(@mediatype))">
+                <a id="{$id}-value" href="{bf:data/text()}" class="{$widgetClasses}" tabindex="{$navindex}" title="{xf:hint/text()}">
+                    <xsl:value-of select="bf:data/text()"/>
+                </a>
+                <!--
+                >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                the hint will be applied as html title attribute and additionally output
+                as a span
+                The hint span will be put outside of the anchor
+                <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+                -->
+                <xsl:apply-templates select="xf:hint"/>
+            </xsl:when>
+            <!--
+            >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+            PLAIN OUTPUT AS SPAN
+            <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+            -->
+            <xsl:otherwise>
+                <span id="{$id}-value" class="{$widgetClasses}" title="{xf:hint/text()}">
+                    <xsl:if test="exists(@navindex)">
+                        <xsl:attribute name="tabindex" select="$navindex"/>
+                    </xsl:if>
+                    <xsl:value-of select="bf:data/text()"/>
+                    <!--
+                    <xsl:if test="string-length(xf:hint/text()) > 0">
+                        <i class='hint fa fa-info-circle' title='{xf:hint/text()}'></i>
+                    </xsl:if>
+                    -->
+                    <xsl:if test="string-length(xf:help/text()) > 0">
+                        <a class="help fa fa-external-link lg" href="{xf:help/text()}" target="_blank"/>
+                    </xsl:if>
+                </span>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
 </xsl:stylesheet>
