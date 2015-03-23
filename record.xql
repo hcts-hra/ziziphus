@@ -575,7 +575,7 @@ return
             { local:transformVraRecord($vraWorkRecord, $uuid, 'work', $language) }
         </div>
         <div class="ui-layout-east">
-            { local:transformVraRecord($vraImageRecord, $uuid, 'image', $language) }
+            { local:transformVraRecord($vraImageRecord, $imageRecordId, 'image', $language) }
         </div>
         <div class="ui-layout-center">
             {local:displayImageArea($vraWorkRecord)}
