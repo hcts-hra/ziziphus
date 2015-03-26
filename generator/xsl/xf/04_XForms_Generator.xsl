@@ -1149,12 +1149,15 @@
                                             <xf:setvalue ref="@vocab" value="event('authority')"/>
                                         </xf:action>
                                          <!-- If resource exists (local/ULAN ...) set source -->
+                                        <!-- Do no set source Ticket #275 -->
+                                        <!--
                                         <xf:action>
                                             <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@source" context=".">
                                                 <xsl:attribute name="if">not(exists(instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/@source))</xsl:attribute>
                                             </xf:insert>
                                             <xf:setvalue ref="@source" value="event('source')"/>
                                         </xf:action>
+                                        -->
                                         <xf:action if="event('termType') eq 'personal' and exists(../vra:dates/@type)">
                                             <xf:setvalue ref="../vra:dates/@type" value="'life'"/>
                                         </xf:action>

@@ -285,11 +285,6 @@
                                                   if="not(exists(instance('i-inscriptionSet')/vra:inscription[index('r-vraInscription')]/@vocab))"></xf:insert>
                                        <xf:setvalue ref="@vocab" value="event('authority')"></xf:setvalue>
                                     </xf:action>
-                                    <xf:action>
-                                       <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@source" context="."
-                                                  if="not(exists(instance('i-inscriptionSet')/vra:inscription[index('r-vraInscription')]/@source))"></xf:insert>
-                                       <xf:setvalue ref="@source" value="event('source')"></xf:setvalue>
-                                    </xf:action>
                                     <xf:action if="event('termType') eq 'personal' and exists(../vra:dates/@type)">
                                        <xf:setvalue ref="../vra:dates/@type" value="'life'"></xf:setvalue>
                                     </xf:action>

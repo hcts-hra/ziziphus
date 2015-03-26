@@ -456,7 +456,7 @@
                             <!-- Earliest -->
                             <td>
                                 <!-- Date -->
-                                <xsl:copy-of select="$latestDate/xf:input[@ref = 'vra:earliestDate/vra:date']"/>
+                                <xsl:copy-of select="$earliestDate/xf:input[@ref = 'vra:earliestDate/vra:date']"/>
                                 <!--
                                 <xsl:apply-templates mode="fixDatelabel" select="$earliestDate/xf:input[@ref = 'vra:earliestDate/vra:date']"/>
                                 -->
