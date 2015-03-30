@@ -15,6 +15,7 @@
             <alert/>
             <placeholder/>
         </addEntry>
+        <!-- Kann es sein, dass <deleteEntry> und <removeTrashcan> identisch sind? -->
         <deleteEntry>
             <label>remove</label>
             <hint/>
@@ -197,7 +198,7 @@
             <attribution>
                 <label>Attribution</label>
                 <hint>If a work is attributed to a certain artist or school, add information about this here; e.g. "School of".</hint>
-                <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agent</help>
+                <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agentset</help>
                 <alert>Please specify the attribution as you used the same role description more than once.</alert>
                 <placeholder/>
                 <!-- This is an if... then... alert. This alert is only needed, if the same role has been chosen more than once.-->
@@ -205,7 +206,7 @@
             <culture>
                 <label>Culture</label>
                 <hint>You may add information about the cultural background of the agent here.</hint>
-                <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agent</help>
+                <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agentset</help>
                 <alert>You entered 'unknown' in the agent's name field, so please give a cultural context for this agent.</alert>
                 <placeholder/>
                 <!-- Alert is needed, when agent name is "unknown." -->
@@ -221,7 +222,7 @@
                 <earliestDate>
                     <label>EarliestDate</label>
                     <hint>Add e.g. the birth year or start of activity here. Choose a date type and if necessary a specification from the drop-down list.</hint>
-                    <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agent</help>
+                    <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agentset</help>
                     <alert>Date format not valid.</alert>
                     <placeholder/>
                     <!-- Alert needed, if date values don't fit ISO 8601 or 'present' -->
@@ -243,7 +244,7 @@
                 <latestDate>
                     <label>LatestDate</label>
                     <hint>Add e.g. the year of death or the end of activity here. If necessary choose a specification from the drop-down list.</hint>
-                    <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agent</help>
+                    <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agentset</help>
                     <alert>Date format not valid.</alert>
                     <placeholder/>
                     <!-- Alert needed, if date values don't fit ISO 8601 or 'present' -->
@@ -266,7 +267,7 @@
             <name>
                 <label>Name</label>
                 <hint>Start entering the last name of a person and select the right person from the suggestions or add a new entry.</hint>
-                <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agent</help>
+                <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agentset</help>
                 <alert>Please enter a name and choose an agent from the upcoming suggestions. If you are dealing with an unknown artist, please use "unknwon" and specify the cultural background of the agent within the 'Culture' element. For the cultural context of the art work itself, please use the Cultural Context Set.</alert>
                 <placeholder/>
                 <!-- Since @type is also displayed in the interface, it should also be possible to explain it. This probably applies to all VRA core (expanded) attributes. We should add hint and help for all, just the alert will perhaps not be necessary. -->
@@ -281,7 +282,7 @@
             <role>
                 <label>Role</label>
                 <hint>Choose a role from the drop-down list.</hint>
-                <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agent</help>
+                <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agentset</help>
                 <alert>The role field is, please choose a role from the drop-down list.</alert>
                 <placeholder/>
             </role>
