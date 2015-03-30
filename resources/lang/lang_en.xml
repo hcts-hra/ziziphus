@@ -323,7 +323,7 @@
             </type>
             <earliestDate>
                 <date>
-                    <label>Date</label>
+                    <label>Dates</label>
                     <hint>Please use the YYYY-MM-DD format to add a date.</hint>
                     <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/date</help>
                     <alert>Date format not valid.</alert>
