@@ -354,7 +354,18 @@
                                        </xf:item>
                                     </xf:select1>
                                  </td>
-                                 <td></td>
+                                 <td>
+                                    <xf:trigger>
+                                       <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/add-alternativeNotation/label"></xf:label>
+                                       <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/add-alternativeNotation/hint"></xf:hint>
+                                       <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/add-alternativeNotation/help"></xf:help>
+                                       <xf:action>
+                                          <xf:insert context="instance('i-dateSet')/vra:date[index('r-vraDate')]/vra:earliestDate"
+                                                     nodeset="vra:alternativeNotation"
+                                                     origin="instance('i-templates')/vra:date/vra:earliestDate/vra:alternativeNotation"></xf:insert>
+                                       </xf:action>
+                                    </xf:trigger>
+                                 </td>
                                  <td></td>
                               </tr>
                               <tr class="altNotation">
@@ -395,6 +406,15 @@
                                              </xf:label>
                                              <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/dateSet/date/earliestDate/alternativeNotation/placeholder"></xf:hint>
                                           </xf:input>
+                                          <xf:trigger>
+                                             <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/remove-alternativeNotation/label"></xf:label>
+                                             <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/remove-alternativeNotation/hint"></xf:hint>
+                                             <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/remove-alternativeNotation/help"></xf:help>
+                                             <xf:action>
+                                                <xf:delete nodeset="instance('i-dateSet')/vra:date[index('r-vraDate')]/vra:earliestDate/vra:alternativeNotation"
+                                                           at="index('r-earliestDate')"></xf:delete>
+                                             </xf:action>
+                                          </xf:trigger>
                                        </div>
                                     </xf:repeat>
                                  </td>
@@ -453,7 +473,18 @@
                                        </xf:item>
                                     </xf:select1>
                                  </td>
-                                 <td></td>
+                                 <td>
+                                    <xf:trigger>
+                                       <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/add-alternativeNotation/label"></xf:label>
+                                       <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/add-alternativeNotation/hint"></xf:hint>
+                                       <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/add-alternativeNotation/help"></xf:help>
+                                       <xf:action>
+                                          <xf:insert context="instance('i-dateSet')/vra:date[index('r-vraDate')]/vra:latestDate"
+                                                     nodeset="vra:alternativeNotation"
+                                                     origin="instance('i-templates')/vra:date/vra:latestDate/vra:alternativeNotation"></xf:insert>
+                                       </xf:action>
+                                    </xf:trigger>
+                                 </td>
                                  <td></td>
                               </tr>
                               <tr class="altNotation">
@@ -495,12 +526,29 @@
                                              </xf:label>
                                              <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/dateSet/date/latestDate/alternativeNotation/placeholder"></xf:hint>
                                           </xf:input>
+                                          <xf:trigger>
+                                             <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/remove-alternativeNotation/label"></xf:label>
+                                             <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/remove-alternativeNotation/hint"></xf:hint>
+                                             <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/remove-alternativeNotation/help"></xf:help>
+                                             <xf:action>
+                                                <xf:delete nodeset="instance('i-dateSet')/vra:date[index('r-vraDate')]/vra:latestDate/vra:alternativeNotation"
+                                                           at="index('r-latestDate')"></xf:delete>
+                                             </xf:action>
+                                          </xf:trigger>
                                        </div>
                                     </xf:repeat>
                                  </td>
                               </tr>
                            </tbody>
                         </table>
+                     </td>
+                     <td class="triggerCol">
+                        <xf:trigger class="-btn -btn-trashcan">
+                           <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/removeTrashcan/label"></xf:label>
+                           <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/removeTrashcan/hint"></xf:hint>
+                           <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/removeTrashcan/help"></xf:help><script type="text/javascript">
+                        removeEntry();
+                    </script></xf:trigger>
                      </td>
                   </tr>
                   <tr>

@@ -471,7 +471,7 @@
                             </td>
                             <td>
                                 <!-- Button -->
-                                <xsl:apply-templates mode="fixDateTriggerlabel" select="$earliestDate/xf:group/xf:trigger[xf:label = 'Add']"/>
+                                <xsl:copy-of select="$earliestDate/xf:group[@class = 'alternativeNotation']/xf:trigger[1]"/>
                             </td>
                             <td>
                                 <!-- Attributes -->
@@ -495,7 +495,7 @@
                                         <xsl:copy-of select="$earliestDate/xf:repeat/xf:input"/> 
 
                                         <!-- Button -->
-                                        <xsl:apply-templates mode="fixDateTriggerlabel" select="$earliestDate/xf:group/xf:trigger[xf:label = 'Delete']"/>
+                                        <xsl:copy-of select="$earliestDate/xf:group[@class = 'alternativeNotation']/xf:trigger[2]"/>
                                     </div>
                                 </xf:repeat>
                             </td>
@@ -520,7 +520,7 @@
                             <td>
                                 <!-- Button -->
                                 <!-- TODO: Rename button -->
-                                <xsl:apply-templates mode="fixDateTriggerlabel" select="$latestDate/xf:group/xf:trigger[xf:label = 'Add']"/>
+                                <xsl:copy-of select="$latestDate/xf:group[@class = 'alternativeNotation']/xf:trigger[1]"/>
                             </td>
                             <td>
                                 <!-- Attributes -->
@@ -545,7 +545,7 @@
                                         <xsl:copy-of select="$latestDate/xf:repeat/xf:input"/> 
 
                                         <!-- Button -->
-                                        <xsl:apply-templates mode="fixDateTriggerlabel" select="$latestDate/xf:group/xf:trigger[xf:label = 'Delete']"/>
+                                        <xsl:copy-of select="$latestDate/xf:group[@class = 'alternativeNotation']/xf:trigger[2]"/>
                                     </div>
                                 </xf:repeat>
                             </td>
@@ -553,6 +553,7 @@
                     </tbody>
                 </table>
             </td>
+            <xsl:copy-of select="xhtml:td[@class = 'triggerCol']"/>
         </tr>
         
         <!--

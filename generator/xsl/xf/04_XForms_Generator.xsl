@@ -1073,19 +1073,19 @@
             <!-- Special case for cluster addition : vra:alternativeNotation -->
             <xsl:when test="$vraNodeName eq 'vra:alternativeNotation'">
                 <xsl:variable name="repeat-id" select="substring-after($path, 'vra:')"/>
-                <xf:group>
+                <xf:group class="alternativeNotation">
                     <xf:trigger>
-                        <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/add/label"/>
-                        <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/add/hint"/>
-                        <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/add/help"/>
+                        <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/add-alternativeNotation/label"/>
+                        <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/add-alternativeNotation/hint"/>
+                        <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/add-alternativeNotation/help"/>
                         <xf:action>
                             <xf:insert context="instance('i-{$vraSectionNode}')/vra:date[index('r-vra{$vraArtifact}')]/{$path}" nodeset="{$vraNodeName}" origin="instance('i-templates')/vra:date/{$path}/{$vraNodeName}"/>
                         </xf:action>
                     </xf:trigger>
                     <xf:trigger>
-                        <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/remove/label"/>
-                        <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/remove/hint"/>
-                        <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/remove/help"/>
+                        <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/remove-alternativeNotation/label"/>
+                        <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/remove-alternativeNotation/hint"/>
+                        <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/remove-alternativeNotation/help"/>
                         <xf:action>
                             <xf:delete nodeset="instance('i-{$vraSectionNode}')/vra:date[index('r-vra{$vraArtifact}')]/{$path}/{$vraNodeName}" at="index('r-{$repeat-id}')"/>
                         </xf:action>
