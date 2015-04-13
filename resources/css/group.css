@@ -21,7 +21,9 @@
 }
 .outer-south {
   margin: 6px !important;
-  height: 132px !important;
+  /*
+    height: 132px !important;
+    */
 }
 .ui-widget-header {
   background: #999999;
@@ -108,3 +110,4 @@
   background: url("slider-hover.png") 50% 50% repeat-x;
   border: 1px solid #999;
 }
+/*# sourceMappingURL=group.css.map */

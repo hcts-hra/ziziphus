@@ -1,10 +1,14 @@
 xquery version "3.0";
 
 import module namespace request = "http://exist-db.org/xquery/request";
-import module namespace config="http://exist-db.org/xquery/apps/config" at "modules/config.xqm";
+
 
 declare option exist:serialize "method=xhtml media-type=text/html";
 
+(: REMOVE ME:)
+(:
+    import module namespace config="http://exist-db.org/xquery/apps/config" at "modules/config.xqm";
+:)
 
 declare %private function local:buildRequestURL() {
     let $parameter-names := request:get-parameter-names()

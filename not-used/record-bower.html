@@ -1,0 +1,213 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:vra="http://www.vraweb.org/vracore4.htm" xmlns:bf="http://betterform.sourceforge.net/xforms" xmlns:bfc="http://betterform.sourceforge.net/xforms/controls" xmlns:exist="http://exist.sourceforge.net/NS/exist" xmlns:xf="http://www.w3.org/2002/xforms" xmlns:meta="http://expath.org/ns/pkg" bf:transform="/apps/ziziphus/resources/xsl/ziziphus.xsl">
+    <head>
+        <title>Ziziphus Image DB</title>
+        <!-- BOWER rosids-shared -->
+        <link rel="stylesheet" type="text/css" href="../rosids-shared/resources/script/vendor/select2/select2.css"/>
+        <link rel="stylesheet" type="text/css" href="../rosids-shared/resources/script/vendor/font-awesome/css/font-awesome.min.css"/>
+        <link rel="stylesheet" type="text/css" href="../rosids-shared/resources/script/vendor/bootstrap2.3.2/bootstrap/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="../rosids-shared/resources/script/vendor/jquery.layout/dist/layout-default-latest.css"/>
+        <link rel="stylesheet" type="text/css" href="../rosids-shared/resources/script/vendor/jquery-ui/themes/smoothness/jquery-ui.min.css"/>
+        <link rel="stylesheet" type="text/css" href="../rosids-shared/resources/script/vendor/animate.css/animate.min.css"/>
+        
+        
+        
+        <link rel="stylesheet" type="text/css" href="resources/script/mingos-uwindow/themes/ziziphus/style.css"/>
+        
+        <link rel="stylesheet" type="text/css" href="resources/css/layout.css"/>
+        <link rel="stylesheet" type="text/css" href="resources/css/record.css"/>
+        <link rel="stylesheet" type="text/css" href="/exist/apps/rosids-shared/resources/css/select2-cluster.css"/>
+    </head>
+    <body class="main:createVraRecord">
+        <div id="overlay" style="position:absolute;z-index:9999;width:100%;height:100%;background:#444444;">
+            <span style="font-weight:bold; font-size:200% !important;position:absolute;top:50%;width:100%;text-align:center;">... loading Ziziphus Image Database</span>
+        </div>
+        <div style="display:none">
+            <xf:model id="m-main">
+                <xf:instance id="i-control-center">
+                    <data xmlns="">
+                        <currentform/>
+                        <!-- Which record to save/load, used by subform -->
+                        <workdir/>
+                        <imagepath/>
+                        <uuid/>
+                        <workrecord/>
+                        <changed/>
+                        <setname/>
+                        <isDirty>false</isDirty>
+                    </data>
+                </xf:instance>
+                <xf:setvalue ev:event="xforms-model-construct-done" ref="instance('i-control-center')/uuid" value="bf:appContext('id')"/>
+                <xf:setvalue ev:event="xforms-model-construct-done" ref="instance('i-control-center')/workrecord" value="bf:appContext('id')"/>
+                <xf:setvalue ev:event="xforms-model-construct-done" ref="instance('i-control-center')/workdir" value="bf:appContext('workdir')"/>
+                <xf:setvalue ev:event="xforms-model-construct-done" ref="instance('i-control-center')/imagepath" value="bf:appContext('imagepath')"/>
+                <xf:submission method="get" id="s-refresh" replace="embedHTML" resource="modules/refreshSection.xql" targetid="{concat(instance('i-control-center')/currentform,'_HtmlContent')}">
+                    <xf:action ev:event="xforms-submit-done">
+                        <!-- ##### reset 'changed' flag which is set whenever a section was updated in the db ###### -->
+                        <xf:setvalue ref="instance('i-control-center')/changed" value="'false'"/>
+                    </xf:action>
+                </xf:submission>
+                <xf:submission id="s-delete" method="get" replace="none">
+                    <xf:resource value="concat('exist:/db/apps/ziziphus/modules/utils/record-utils.xqm?function=delete-work-record&amp;work-record-id=', instance('i-control-center')/uuid)"/>
+                    <xf:message ev:event="xforms-submit-error">Could not delete workrecord</xf:message>
+                    <xf:action ev:event="xforms-submit-done">
+                        <xf:load show="replace">
+                            <xf:resource value="bf:appContext('http-headers/referer')"/>
+                        </xf:load>
+                    </xf:action>
+                </xf:submission>
+                <xf:instance xmlns="" id="i-user">
+                    <data/>
+                </xf:instance>
+                <xf:bind nodeset="instance('i-user')">
+                    <xf:bind nodeset="user">
+                        <xf:bind nodeset="@edit" relevant="boolean-from-string(.)"/>
+                    </xf:bind>
+                </xf:bind>
+                <xf:submission id="s-load-user-data" method="post" replace="instance" instance="i-user">
+                    <xf:resource value="IF(instance('i-control-center')/workdir eq '', 'modules/getUserData.xql', concat('modules/getUserData.xql?workdir=', instance('i-control-center')/workdir))"/>
+                    <xf:message ev:event="xforms-submit-error">error receiving the current user</xf:message>
+                </xf:submission>
+                <xf:instance id="i-meta">
+                    <data xmlns=""/>
+                </xf:instance>
+                <xf:submission id="s-load-metadata" method="get" resource="expath-pkg.xml" replace="instance" ref="instance('i-meta')"/>
+                <xf:action ev:event="xforms-ready">
+                    <xf:send submission="s-load-user-data"/>
+                    <xf:send submission="s-load-metadata"/>
+                </xf:action>
+            </xf:model>
+            <xf:model id="m-code-tables">
+                <xf:instance xmlns="" id="i-codes-lang" src="modules/code-tables.xql?table=lang"/>
+                <xf:instance xmlns="" id="i-codes-script" src="modules/code-tables.xql?table=script"/>
+                <xf:instance xmlns="" id="i-codes-transliteration" src="modules/code-tables.xql?table=transliteration"/>
+                <xf:instance xmlns="" id="i-codes-role" src="modules/code-tables.xql?table=role"/>
+            </xf:model>
+            <xf:trigger>
+                <xf:label>Capture return</xf:label>
+            </xf:trigger>
+            <xf:submit id="t-delete-workrecord" submission="s-delete">
+                <xf:label/>
+            </xf:submit>
+            <xf:trigger id="t-load-xml">
+                <xf:load show="new">
+                    <!--xf:resource value="concat('/exist/rest/', instance('i-control-center')/workdir, '/' , instance('i-control-center')/uuid, '.xml')"/-->
+                    <xf:resource value="concat('modules/loadXML.xql?id=', instance('i-control-center')/workrecord)"/>
+                </xf:load>
+            </xf:trigger>
+            <xf:trigger id="t-load-xml-image">
+                <xf:load show="new">
+                    <xf:resource value="concat('modules/loadXML.xql?id=', instance('i-control-center')/workrecord, '&amp;type=image')"/>
+                </xf:load>
+            </xf:trigger>
+            <xf:group id="controlCenter" model="m-main">
+                <xf:action ev:event="unload-subform" model="m-main" if="string-length(instance('i-control-center')/currentform) &gt; 0">
+                    <xf:send submission="s-refresh" if="changed='true'"/>
+                    <xf:toggle>
+                        <xf:case value="concat('c-',instance('i-control-center')/currentform,'-view')"/>
+                    </xf:toggle>
+                    <xf:load show="none" targetid="{concat(instance('i-control-center')/currentform,'_MountPoint')}"/>
+                    <!-- ##### reset isDirty flag ##### -->
+                    <xf:setvalue ref="instance('i-control-center')/isDirty" value="'false'"/>
+                    <xf:setvalue ref="instance('i-control-center')/currentform"/>
+                </xf:action>
+                <xf:action ev:event="clear-currentform" model="m-main">
+                    <xf:setvalue ref="instance('i-control-center')/currentform" value="''"/>
+                </xf:action>
+            </xf:group>
+            <xf:input id="workdir" ref="instance('i-control-center')/workdir">
+                <xf:label>Hidden Control</xf:label>
+            </xf:input>
+        </div>
+        <div id="issue-window"/>
+        <!-- window for heidicon data -->
+        <div id="heidiconWindow" class="main:getid"/>
+
+        <!-- window for versions history -->
+        <div id="versionsWindow"/> <!--TODO: something to do with templates, like here: class="main:getid" -->
+
+        <!-- ######################## main content area ################# -->
+        <!-- ######################## main content area ################# -->
+        <!-- ######################## main content area ################# -->
+        <div class="ui-layout-north" style="overflow:hidden;">
+            <div id="headerTitle" style="float:left;display:block;">
+                <ul class="inline" style="list-style:none outside none;margin-left:0;padding:0">
+                    <li>
+                        <div class="btn-group">
+                            <button type="button" class="btn" id="report-issue">report an issue</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="btn-group">
+                            <button type="button" class="btn" id="heidicon">Heidicon Data</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="btn-group">
+                            <button id="workpicture" class="btn icon" type="button" onclick="leftCenter();" title="show Workrecord+Picture">W | P</button>
+                            <button id="workpictureimage" class="btn icon" type="button" onclick="allCols();" title="show Workrecord, Picture + Imagerecord">W | P | I</button>
+                            <button id="pictureimage" class="btn icon" type="button" onclick="centerRight();" title="show Picture + Imagerecord">P | I</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="btn-group">
+                            <!-- button id="showXML" class="btn icon" type="button" title="show raw XML" onclick="showWorkXML();">XML</button-->
+                        </div>
+                    </li>
+                    <li>
+                        <div class="btn-group">
+                            <button id="delete-workrecord" class="btn icon" type="button" onclick="deleteRecord();" title="Delete current workrecord and related imagerecords">Delete</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="headerMenu" style="position:absolute;display:block;right:40px;">
+                <ul class="inline" style="list-style:none outside none;margin-left:0;padding:0">
+                    <li>
+                        <xf:output id="user" ref="instance('i-user')/user/@name">
+                            <xf:label>User:</xf:label>
+                            <xf:help ref="instance('i-meta')/@version"/>
+                            <xf:hint ref="instance('i-meta')/@version"/>
+                        </xf:output>
+                    </li>
+                    <li>
+                        <xf:trigger class="btn-group -btn">
+                            <xf:label>Logout</xf:label>
+                            <xf:load resource="?logout=true" show="replace"/>
+                        </xf:trigger>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--
+        <div class="ui-layout-south">
+            <xf:output ref="instance('i-meta')/@version">
+                <xf:label>Version: </xf:label>
+            </xf:output>
+        </div>
+        -->
+        <div class="ui-layout-west main:displayWorkRecord">Workrecord</div>
+        <div class="ui-layout-east main:displayImageRecord">Imagerecord</div>
+        <div class="ui-layout-center main:displayImageArea">ImageArea 2</div>
+
+
+        <!-- ######################################### -->
+        <!-- ######################################### -->
+        <!-- ######################################### -->
+        <script type="text/javascript">
+            require(["dojo/parser",
+                "dijit/TitlePane"
+            ]);
+        </script>
+        
+        <!-- BOWER rosids-shared -->
+        <script type="text/javascript" src="../rosids-shared/resources/script/vendor/jquery/jquery.min.js"/>
+        <script type="text/javascript" src="../rosids-shared/resources/script/vendor/jquery-ui/jquery-ui.min.js"/>
+        <script type="text/javascript" src="../rosids-shared/resources/script/vendor/jquery.layout/dist/jquery.layout-latest.min.js"/>
+        <script type="text/javascript" src="../rosids-shared/resources/script/vendor/select2/select2.js"/>
+        <script type="text/javascript" src="../rosids-shared/resources/script/select2-init.js"/>
+        
+        <!-- Whats that, and who uses it? -->
+        <script type="text/javascript" src="resources/script/mingos-uwindow/jWindow.js"/>
+        <script type="text/javascript" src="resources/script/ziziphus.js"/>
+    </body>
+</html>

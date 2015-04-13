@@ -92,6 +92,21 @@
             <alert/>
             <placeholder/>
         </remove>
+        <!-- Special Cases -->
+        <add-alternativeNotation>
+            <label>DE: Add Alternative Notation</label>
+            <hint/>
+            <help/>
+            <alert/>
+            <placeholder/>
+        </add-alternativeNotation>
+        <remove-alternativeNotation>
+            <label>DE: Remove Alternative Notation</label>
+            <hint/>
+            <help/>
+            <alert/>
+            <placeholder/>
+        </remove-alternativeNotation>
     </actions>
     <!-- I am not sure if we need tool tips and help links for the global attributes. Which of the global attributes will be edited by the user? -->
     <!-- MA: HINT and HELP should be created for all global attributes. they are accessible in the attributes window. Use VRA definitions for a start. -->
@@ -219,7 +234,7 @@
                     <placeholder/> <!-- I think, we don't need an alert here. -->
                 </type>
                 <earliestDate>
-                    <label>DE: EarliestDate</label>
+                    <label>DE: Earliest Date</label>
                     <hint>Add e.g. the birth year or start of activity here. Choose a date type and if necessary a specification from the drop-down list.</hint>
                     <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agent</help>
                     <alert>Date format not valid.</alert>
@@ -322,7 +337,7 @@
             </type>
             <earliestDate>
                 <date>
-                    <label>DE: Date</label>
+                    <label>DE: Earliest Date</label>
                     <hint>Please use the YYYY-MM-DD format to add a date.</hint>
                     <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/date</help>
                     <alert>Date format not valid.</alert>
@@ -361,7 +376,7 @@
             </earliestDate>
             <latestDate>
                 <date>
-                    <label>DE: Date</label>
+                    <label>DE: Latest Date</label>
                     <hint>Please use the YYYY-MM-DD format to add a date. </hint>
                     <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/date</help>
                     <alert>Date format not valid.</alert>

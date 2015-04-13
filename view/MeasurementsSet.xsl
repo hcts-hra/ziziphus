@@ -1,10 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:html="http://www.w3.org/1999/xhtml"
+<?xml version="1.0" encoding="UTF-8"?><xsl:stylesheet xmlns:html="http://www.w3.org/1999/xhtml"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:vra="http://www.vraweb.org/vracore4.htm"
                 version="2.0">
-   <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes"
-               omit-xml-declaration="no"></xsl:output>
+   <xsl:output encoding="UTF-8" indent="yes" method="xhtml" omit-xml-declaration="no"
+               version="1.0"></xsl:output>
+   <xsl:strip-space elements="*"></xsl:strip-space>
    <xsl:preserve-space elements="vra:text"></xsl:preserve-space>
    <xsl:template match="vra:measurementsSet">
       <xsl:param name="vraTableId"></xsl:param>
@@ -16,48 +17,64 @@
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(@type,'')) != 0">
-                              <div data-bf-type="select1" data-bf-bind="@type" tabindex="0" title="Type"
-                                   id="b-d2e981"
-                                   class=" ">
+                              <div class="  d-inline-block" data-bf-bind="@type" data-bf-type="select1"
+                                   tabindex="0"
+                                   title=""
+                                   id="b-d2e981">
                                  <xsl:value-of select="@type"></xsl:value-of>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="nodata" data-bf-type="select1" data-bf-bind="@type" tabindex="0">(Type)</div>
+                              <div class="nodata d-inline-block" data-bf-bind="@type" data-bf-type="select1"
+                                   tabindex="0">
+                                 <xsl:value-of select="normalize-space(concat('(', $language-files/language/measurementsSet/measurements/type/label, ')'))"></xsl:value-of>
+                              </div>
                            </xsl:otherwise>
                         </xsl:choose>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(.,'')) != 0">
-                              <div data-bf-type="input" data-bf-bind="." tabindex="0" title="Measurements"
+                              <div class=" d-inline-block" data-bf-bind="." data-bf-type="input" tabindex="0"
+                                   title=""
                                    id="b-d2e974">
                                  <xsl:value-of select="."></xsl:value-of>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="nodata" data-bf-type="input" data-bf-bind="." tabindex="0">(Measurements)</div>
+                              <div class="nodata d-inline-block" data-bf-bind="." data-bf-type="input"
+                                   tabindex="0">
+                                 <xsl:value-of select="normalize-space(concat('(', $language-files/language/measurementsSet/measurements/label, ')'))"></xsl:value-of>
+                              </div>
                            </xsl:otherwise>
                         </xsl:choose>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(@unit,'')) != 0">
-                              <div data-bf-type="input" data-bf-bind="@unit" tabindex="0" title="Unit"
+                              <div class=" d-inline-block" data-bf-bind="@unit" data-bf-type="input" tabindex="0"
+                                   title=""
                                    id="b-d2e982">
                                  <xsl:value-of select="@unit"></xsl:value-of>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="nodata" data-bf-type="input" data-bf-bind="@unit" tabindex="0">(Unit)</div>
+                              <div class="nodata d-inline-block" data-bf-bind="@unit" data-bf-type="input"
+                                   tabindex="0">
+                                 <xsl:value-of select="normalize-space(concat('(', $language-files/language/measurementsSet/measurements/unit/label, ')'))"></xsl:value-of>
+                              </div>
                            </xsl:otherwise>
                         </xsl:choose>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(@shape,'')) != 0">
-                              <div data-bf-type="select1" data-bf-bind="@shape" tabindex="0" title="Shape"
-                                   id="b-d2e983"
-                                   class=" ">
+                              <div class="  d-inline-block" data-bf-bind="@shape" data-bf-type="select1"
+                                   tabindex="0"
+                                   title=""
+                                   id="b-d2e983">
                                  <xsl:value-of select="@shape"></xsl:value-of>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="nodata" data-bf-type="select1" data-bf-bind="@shape" tabindex="0">(Shape)</div>
+                              <div class="nodata d-inline-block" data-bf-bind="@shape" data-bf-type="select1"
+                                   tabindex="0">
+                                 <xsl:value-of select="normalize-space(concat('(', $language-files/language/measurementsSet/measurements/shape/label, ')'))"></xsl:value-of>
+                              </div>
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>
