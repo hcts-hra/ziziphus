@@ -2,7 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:merge="http://www.betterform.de/merge" version="2.0" exclude-result-prefixes="merge">
     <xsl:output exclude-result-prefixes="merge" indent="yes"/>
     <xsl:variable name="importData" select="/merge:data/merge:importInstance/*"/>
-    <xsl:variable name="debug" select="'true'"/>
+    <xsl:variable name="debug" select="'false'"/>
     <xsl:param name="targetNS" select="'http://www.vraweb.org/vracore4.htm'"/>
     <xsl:preserve-space elements="text"/>
     <!--

@@ -2,14 +2,14 @@ module namespace vra2html="http://exist-db.org/xquery/vra2html";
 
 import module namespace request="http://exist-db.org/xquery/request";
 import module namespace transform = "http://exist-db.org/xquery/transform";
-import module namespace app="http://www.betterform.de/projects/shared/config/app" at "/apps/cluster-shared/modules/ziziphus/config/app.xqm";
+import module namespace app="http://github.com/hra-team/rosids-shared/config/app" at "/apps/rosids-shared/modules/ziziphus/config/app.xqm";
 
 declare namespace vra = "http://www.vraweb.org/vracore4.htm";
 
 declare function vra2html:createVraRecords($uuid as xs:string) {
      let $vraWorkRecord  := collection('ziziphus/records')/vra:vra/vra:work[@id = concat('w_',$uuid)]
      let $imageRecordId  := if(exists($vraWorkRecord/vra:relationSet/vra:relation/@pref[.='true']))
-                                then $vraWorkRecord/vra:relationSet/vra:relation[@pref='true']/@relids
+                                then $vraWorkRecord/vra:relationSet/vra:relation[@pref='true'][1]/@relids
                                 else $vraWorkRecord/vra:relationSet/vra:relation[1]/@relids
      let $vraImageRecord := collection('ziziphus/records')/vra:vra/vra:image[@id = $imageRecordId]
      let $vraImageId    := $vraImageRecord/@refid

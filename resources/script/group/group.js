@@ -78,8 +78,8 @@ $(function() {
     });
 });
 
-function loadRecord(uuid) {
-    $("#iEditor").attr("src", "/exist/apps/ziziphus/record.html?id=" + uuid);
+function loadRecord(uuid, collection) {
+    $("#iEditor").attr("src", "/exist/apps/ziziphus/record.html?id=" + uuid + "&workdir=" + collection);
 }
 
 

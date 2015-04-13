@@ -1,10 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:html="http://www.w3.org/1999/xhtml"
+<?xml version="1.0" encoding="UTF-8"?><xsl:stylesheet xmlns:html="http://www.w3.org/1999/xhtml"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:vra="http://www.vraweb.org/vracore4.htm"
                 version="2.0">
-   <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes"
-               omit-xml-declaration="no"></xsl:output>
+   <xsl:output encoding="UTF-8" indent="yes" method="xhtml" omit-xml-declaration="no"
+               version="1.0"></xsl:output>
+   <xsl:strip-space elements="*"></xsl:strip-space>
    <xsl:preserve-space elements="vra:text"></xsl:preserve-space>
    <xsl:template match="vra:subjectSet">
       <xsl:param name="vraTableId"></xsl:param>

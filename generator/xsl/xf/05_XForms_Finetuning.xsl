@@ -108,7 +108,10 @@
                         <!-- Earliest -->
                         <td>
                             <!-- Date -->
+                            <xsl:copy-of select="xf:input[@ref = 'vra:dates/vra:earliestDate']"/>
+                            <!--
                             <xsl:apply-templates mode="fixDatelabel" select="xf:input[@ref = 'vra:dates/vra:earliestDate']"/>
+                            -->
                         </td>
                         <td>
                             <!-- Circa -->
@@ -123,7 +126,10 @@
                         <!-- Latest -->
                         <td>
                             <!-- Date -->
+                            <xsl:copy-of select="xf:input[@ref = 'vra:dates/vra:latestDate']"/>
+                            <!--
                             <xsl:apply-templates mode="fixDatelabel" select="xf:input[@ref = 'vra:dates/vra:latestDate']"/>
+                            -->
                         </td>
                         <td>
                             <!-- Circa -->
@@ -365,7 +371,7 @@
         </xf:instance>
         
         <xf:bind nodeset="instance('i-repositories')/custom" relevant="count(instance('i-repositories')//repository[not(@repotype eq 'global')]) &gt; 0"/>
-        <xf:submission id="s-load-repositories" validate="false" replace="instance" method="get" instance="i-repositories" resource="/exist/apps/cluster-shared/modules/repositories/repositories.xq"/>
+        <xf:submission id="s-load-repositories" validate="false" replace="instance" method="get" instance="i-repositories" resource="/exist/apps/rosids-shared/modules/repositories/repositories.xq"/>
             
         <xf:action ev:event="xforms-ready">
             <xf:send submission="s-load-repositories"/>
@@ -450,7 +456,10 @@
                             <!-- Earliest -->
                             <td>
                                 <!-- Date -->
+                                <xsl:copy-of select="$earliestDate/xf:input[@ref = 'vra:earliestDate/vra:date']"/>
+                                <!--
                                 <xsl:apply-templates mode="fixDatelabel" select="$earliestDate/xf:input[@ref = 'vra:earliestDate/vra:date']"/>
+                                -->
                             </td>
                             <td>
                                 <!-- Circa -->
@@ -462,7 +471,7 @@
                             </td>
                             <td>
                                 <!-- Button -->
-                                <xsl:apply-templates mode="fixDateTriggerlabel" select="$earliestDate/xf:group/xf:trigger[xf:label = 'Add']"/>
+                                <xsl:copy-of select="$earliestDate/xf:group[@class = 'alternativeNotation']/xf:trigger[1]"/>
                             </td>
                             <td>
                                 <!-- Attributes -->
@@ -486,7 +495,7 @@
                                         <xsl:copy-of select="$earliestDate/xf:repeat/xf:input"/> 
 
                                         <!-- Button -->
-                                        <xsl:apply-templates mode="fixDateTriggerlabel" select="$earliestDate/xf:group/xf:trigger[xf:label = 'Delete']"/>
+                                        <xsl:copy-of select="$earliestDate/xf:group[@class = 'alternativeNotation']/xf:trigger[2]"/>
                                     </div>
                                 </xf:repeat>
                             </td>
@@ -495,7 +504,10 @@
                             <!-- Latest -->
                             <td>
                                 <!-- Date -->
-                                 <xsl:apply-templates mode="fixDatelabel" select="$latestDate/xf:input[@ref = 'vra:latestDate/vra:date']"/>
+                                <xsl:copy-of select="$latestDate/xf:input[@ref = 'vra:latestDate/vra:date']"/>
+                                <!-- 
+                                <xsl:apply-templates mode="fixDatelabel" select="$latestDate/xf:input[@ref = 'vra:latestDate/vra:date']"/>
+                                -->
                             </td>
                             <td>
                                 <!-- Circa -->
@@ -508,7 +520,7 @@
                             <td>
                                 <!-- Button -->
                                 <!-- TODO: Rename button -->
-                                <xsl:apply-templates mode="fixDateTriggerlabel" select="$latestDate/xf:group/xf:trigger[xf:label = 'Add']"/>
+                                <xsl:copy-of select="$latestDate/xf:group[@class = 'alternativeNotation']/xf:trigger[1]"/>
                             </td>
                             <td>
                                 <!-- Attributes -->
@@ -533,7 +545,7 @@
                                         <xsl:copy-of select="$latestDate/xf:repeat/xf:input"/> 
 
                                         <!-- Button -->
-                                        <xsl:apply-templates mode="fixDateTriggerlabel" select="$latestDate/xf:group/xf:trigger[xf:label = 'Delete']"/>
+                                        <xsl:copy-of select="$latestDate/xf:group[@class = 'alternativeNotation']/xf:trigger[2]"/>
                                     </div>
                                 </xf:repeat>
                             </td>
@@ -541,6 +553,7 @@
                     </tbody>
                 </table>
             </td>
+            <xsl:copy-of select="xhtml:td[@class = 'triggerCol']"/>
         </tr>
         
         <!--

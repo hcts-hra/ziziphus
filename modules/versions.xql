@@ -10,7 +10,7 @@ declare namespace vra = "http://www.vraweb.org/vracore4.htm";
 declare namespace xs = "http://www.w3.org/2001/XMLSchema";
 
 import module namespace v = "http://exist-db.org/versioning";
-import module namespace app="http://www.betterform.de/projects/shared/config/app" at "/apps/cluster-shared/modules/ziziphus/config/app.xqm";
+import module namespace app="http://github.com/hra-team/rosids-shared/config/app" at "/apps/rosids-shared/modules/ziziphus/config/app.xqm";
 
 declare option exist:serialize "method=xhtml media-type=application/xhtml+xml";
 

@@ -13,7 +13,7 @@ let $imageDir as xs:string := record-utils:get-image-record-collection-by-work-r
 let $imagerecordIds := data($workrecord//vra:relationSet//vra:relation[@type = "imageIs"]//@relids)
 return
     for $imagerecordId in $imagerecordIds
-    let $imagerecord := util:document-name(collection($imageDir)//vra:vra/*[./@id=$imagerecordId])
+    let $imagerecord := util:document-name(collection(xmldb:encode($imageDir))//vra:vra/*[./@id=$imagerecordId])
     let $log := util:log("INFO", "imagerecordId: " || $imagerecordId || " imageDir: " || $imageDir)
     return
         xmldb:remove($imageDir, $imagerecord)

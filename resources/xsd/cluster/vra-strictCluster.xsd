@@ -63,6 +63,9 @@
                 <xsd:enumeration value="before"/>
                 <xsd:enumeration value="after"/>
                 <xsd:enumeration value="active"/>
+                <!-- >>> EXTENSION START >>> -->
+                <xsd:enumeration value="uncertain"/>
+                <!-- <<< EXTENSION END <<< -->
             </xsd:restriction>
         </xsd:simpleType>
 

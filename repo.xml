@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<repo:meta xmlns="http://exist-db.org/xquery/repo" xmlns:repo="http://exist-db.org/xquery/repo">
-    <repo:description>Ziziphus Image DB</repo:description>
-    <repo:author>betterFORM</repo:author>
-    <repo:website>http://www.betterform.de</repo:website>
-    <repo:status>alpha</repo:status>
-    <repo:license>GNU-LGPL</repo:license>
-    <repo:copyright>true</repo:copyright>
-    <repo:type>application</repo:type>
-    <repo:target>/ziziphus</repo:target>
-    <repo:prepare>pre-install.xql</repo:prepare>
-    <repo:permissions user="editor" password="editor" group="biblio.users" mode="0555"/>
-</repo:meta>
+<meta xmlns="http://exist-db.org/xquery/repo">
+    <description>Ziziphus VRA Editor</description>
+    <author>Matthias Arnold</author>
+    <author>Patryk Czarnik</author>
+    <author>Stanisław Findeisen</author>
+    <author>Simon Gruening</author>
+    <author>Tobi Krebs</author>
+    <author>Joern Turner</author>
+    <author>Lars Windauer</author>    
+    <website>http://github.com/hra-team/ziziphus/</website>
+    <status>alpha</status>
+    <license>GNU-LGPL</license>
+    <copyright>true</copyright>
+    <type>application</type>
+    <target>ziziphus</target>
+    <prepare>pre-install.xql</prepare>
+    <permissions user="editor" password="editor" group="biblio.users" mode="0555"/>
+</meta>

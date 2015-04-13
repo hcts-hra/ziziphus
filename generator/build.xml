@@ -83,7 +83,7 @@
 
     <target name="testDescriptionView">
         <antcall target="generate-section-view-transform">
-            <param name="subformName" value="DateSet"/>
+            <param name="subformName" value="DescriptionSet"/>
         </antcall>
     </target>
 
@@ -267,6 +267,7 @@
             <param name="subformName" value="DateSet"/>
         </antcall>
     </target>
+    
     <target name="generate-Description-form"  depends="prepare" description="generate the Description form">
         <antcall target="generate-subform">
             <param name="subformName" value="DescriptionSet"/>
@@ -279,7 +280,11 @@
         <antcall target="finetune-subform">
             <param name="subformName" value="DescriptionSet"/>
         </antcall>
+        <antcall target="finetune-view">
+            <param name="subformName" value="DescriptionSet"/>
+        </antcall>
     </target>
+    
     <target name="generate-Subject-form"  depends="prepare" description="generate the Description form">
         <antcall target="generate-subform">
             <param name="subformName" value="SubjectSet"/>
@@ -369,6 +374,7 @@
     
     <target name="finetune-view">
         <echo>finetune-view ${subformName}</echo>
+        <copy file="${basedir}/../view/${subformName}.xsl" tofile="${basedir}/../view/${subformName}.xsl.orig" overwrite="true" failonerror="true"/>
         
         <xslt style="${xsl.dir}/view/finetune-view.xsl"
               in="${basedir}/../view/${subformName}.xsl"
@@ -422,12 +428,13 @@
             <param name="subformName" value="DescriptionSet"/>
         </antcall>
         
-        <antcall target="generate-section-view-transform">
-            <param name="subformName" value="InscriptionSet"/>
-        </antcall>
+        
         <antcall target="finetune-subform">
             <param name="subformName" value="InscriptionSet"/>
         </antcall>        
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="InscriptionSet"/>
+        </antcall>
         <antcall target="finetune-view">
             <param name="subformName" value="InscriptionSet"/>
         </antcall>
@@ -441,6 +448,10 @@
         </antcall>
         
         <antcall target="generate-section-view-transform">
+            <param name="subformName" value="MeasurementsSet"/>
+        </antcall>
+        
+        <antcall target="finetune-view">
             <param name="subformName" value="MeasurementsSet"/>
         </antcall>
         
@@ -502,7 +513,7 @@
         <echo>generate-view ${subformName}</echo>
         <mkdir dir="${target.dir}/views"/>
         <xslt style="${basedir}/xsl/view/createView.xsl"
-              in="${basedir}/../forms/${subformName}.xhtml"
+              in="${form.dir}/${subformName}.xhtml"
               out="${basedir}/../view/${subformName}.xsl"
               force="true">
             <factory name="net.sf.saxon.TransformerFactoryImpl"/>
@@ -528,9 +539,6 @@
         </antcall>
         <antcall target="generate-section-diff-view-transform">
             <param name="subformName" value="DescriptionSet"/>
-        </antcall>
-        <antcall target="generate-section-diff-view-transform">
-            <param name="subformName" value="InscriptionSet"/>
         </antcall>
         <antcall target="generate-section-diff-view-transform">
             <param name="subformName" value="InscriptionSet"/>
@@ -677,10 +685,10 @@
         </xslt>
 
         <echo>
-            New UI definition file created: ${target.dir}/UIDefintion.xml
+            New UI definition file created: ${target.dir}/UIDefinition-Final.xml
         </echo>
         <echo>
-            ATTENTION: you have to manually move 'UIDefinition.xml' to directory 'profile' to take
+            ATTENTION: you have to manually move 'UIDefinition-Final.xml' to 'profile/UIDefinition.xml' to take
             effect in the generation process.
         </echo>
 
@@ -704,6 +712,20 @@
               force="true">
             <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath refid="transform.class.path"/>
+        </xslt>
+    </target>
+    
+    <target name="test-view">
+        <xslt style="${basedir}/../resources/xsl/vra-record.xsl"
+              in="${basedir}/view.xml"
+              out="${basedir}/view.html"
+              force="true">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath refid="transform.class.path"/>
+            <param name="setname" expression="AgentSet"/>
+            <param name="codetables-uri" expression="../../../rosids-shared/modules/edit/code-tables/"/>
+            <param name="resources-uri" expression="${basedir}/../resources/lang/"/>
+            <param name="lang" expression="de"/>
         </xslt>
     </target>
 </project>

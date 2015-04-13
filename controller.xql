@@ -2,9 +2,11 @@ xquery version "3.0";
 
 import module namespace session ="http://exist-db.org/xquery/session";
 
-import module namespace config="http://exist-db.org/mods/config" at "/apps/cluster-shared/modules/config.xqm";
-import module namespace theme="http://exist-db.org/xquery/biblio/theme" at "/apps/cluster-shared/modules/theme.xqm";
-import module namespace security="http://exist-db.org/mods/security" at "/apps/cluster-shared/modules/search/security.xqm";
+import module namespace config="http://exist-db.org/mods/config" at "/apps/rosids-shared/modules/config.xqm";
+import module namespace theme="http://exist-db.org/xquery/biblio/theme" at "/apps/rosids-shared/modules/theme.xqm";
+import module namespace security="http://exist-db.org/mods/security" at "/apps/rosids-shared/modules/search/security.xqm";
+
+import module namespace image-link-generator="http://hra.uni-heidelberg.de/ns/tamboti/modules/display/image-link-generator" at "/apps/rosids-shared/modules/display/image-link-generator.xqm";
 
 declare namespace exist = "http://exist.sourceforge.net/NS/exist";
 
@@ -102,9 +104,9 @@ return
         <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
             <forward url="/apps/shared-resources/{substring-after($exist:path, '/$shared/')}" absolute="yes"/>
         </dispatch>
-    else if (contains($exist:path, "/$cluster-shared/")) then
+    else if (contains($exist:path, "/$rosids-shared/")) then
         <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-            <forward url="/apps/cluster-shared/{substring-after($exist:path, '/$cluster-shared/')}" absolute="yes"/>
+            <forward url="/apps/rosids-shared/{substring-after($exist:path, '/$rosids-shared/')}" absolute="yes"/>
         </dispatch>
     else if (contains($exist:path, "/resources/")) then
         <ignore xmlns="http://exist.sourceforge.net/NS/exist">
@@ -114,7 +116,7 @@ return
         let $imagerecord := request:get-parameter('imagerecord', 'i_f55c3201-0454-5045-93b4-767e67536fc8')
         return
         <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-            <redirect url="{$config:image-service-url || '/' || $imagerecord|| '?width=32&amp;height=32'}"/>
+            <redirect url="{image-link-generator:generate-href($imagerecord, 'tamboti-thumbnail')}"/>
         </dispatch>
     else if ($login) then (
         if ($exist:path eq "/") then
@@ -125,7 +127,7 @@ return
         else if ( ends-with($exist:resource, ".html") ) then
         <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
             <view>
-                <forward url="{$exist:controller}/modules/view.xql">
+                <forward url="{$exist:controller}/modules/templating/view.xql">
                     {local:set-user($username, $password)}
                     <set-attribute name="$exist:root" value="{$exist:root}"/>
                     <set-attribute name="$exist:prefix" value="{$exist:prefix}"/>
@@ -137,7 +139,7 @@ return
             </view>
             <error-handler>
                 <forward url="{$exist:controller}/error-page.html" method="get"/>
-                <forward url="{$exist:controller}/modules/view.xql"/>
+                <forward url="{$exist:controller}/modules/templating/view.xql"/>
             </error-handler>
         </dispatch>
         else
