@@ -6,10 +6,10 @@ declare namespace bf="http://betterform.sourceforge.net/xforms";
 declare namespace bfc="http://betterform.sourceforge.net/xforms/controls";
 declare namespace xf="http://www.w3.org/2002/xforms"; 
 
-(:  CLUSTER-SHARED :)
-import module namespace app="http://www.betterform.de/projects/shared/config/app" at "/apps/cluster-shared/modules/ziziphus/config/app.xqm";
+(:  rosids-shared :)
+import module namespace app="http://github.com/hra-team/rosids-shared/config/app" at "/apps/rosids-shared/modules/ziziphus/config/app.xqm";
 
-import module namespace image-link-generator="http://hra.uni-heidelberg.de/ns/tamboti/modules/display/image-link-generator" at "/apps/cluster-shared/modules/display/image-link-generator.xqm";
+import module namespace image-link-generator="http://hra.uni-heidelberg.de/ns/tamboti/modules/display/image-link-generator" at "/apps/rosids-shared/modules/display/image-link-generator.xqm";
 
 (:  TAMBOTI :)
 (: 
@@ -66,8 +66,8 @@ return
 <html xmlns:exist="http://exist.sourceforge.net/NS/exist" xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:bf="http://betterform.sourceforge.net/xforms" xmlns:vra="http://www.vraweb.org/vracore4.htm" xmlns:meta="http://expath.org/ns/pkg" xmlns:bfc="http://betterform.sourceforge.net/xforms/controls" xmlns:xf="http://www.w3.org/2002/xforms" bf:transform="/apps/ziziphus/resources/xsl/ziziphus.xsl">
     <head>
         <title>Ziziphus VRA editor {substring-before(request:get-url(), '/apps') || $app:code-tables}</title>
-        <link href="/exist/apps/cluster-shared/resources/script/vendor/select2/select2.css" rel="stylesheet"/>
-        <link rel="stylesheet" href="/exist/apps/cluster-shared/resources/script/vendor/font-awesome/css/font-awesome.min.css"/>
+        <link href="/exist/apps/rosids-shared/resources/script/vendor/select2/select2.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="/exist/apps/rosids-shared/resources/script/vendor/font-awesome/css/font-awesome.min.css"/>
         <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css"/>
         <link rel="stylesheet" type="text/css" href="resources/css/layout.css"/>
         <link rel="stylesheet" type="text/css" href="resources/css/record.css"/>
@@ -75,8 +75,8 @@ return
         <link rel="stylesheet" type="text/css" href="resources/script/layout-default-latest.css"/>
         <link rel="stylesheet" type="text/css" href="resources/css/jquery-ui.css"/>
         <link rel="stylesheet" type="text/css" href="resources/css/animate.css"/>
-        <!-- <link rel="stylesheet" type="text/css" href="/exist/apps/cluster-shared/resources/css/autocomplete.css"/> -->
-        <link rel="stylesheet" type="text/css" href="/exist/apps/cluster-shared/resources/css/select2-cluster.css"/>
+        <!-- <link rel="stylesheet" type="text/css" href="/exist/apps/rosids-shared/resources/css/autocomplete.css"/> -->
+        <link rel="stylesheet" type="text/css" href="/exist/apps/rosids-shared/resources/css/select2-cluster.css"/>
         
         <!--<link rel="stylesheet" type="text/css" href="resources/css/ui-lightness/jquery-ui-1.10.2.custom.min.css"/>-->
     </head>
@@ -596,15 +596,15 @@ return
         <script type="text/javascript" src="resources/script/mingos-uwindow/jWindow.js"/>
         <script type="text/javascript" src="resources/script/jquery.layout-latest.min.js"/>
         <!--
-            <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/vendor/typeahead.js/hogan-2.0.0.js"/>
-            <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/vendor/typeahead.js/typeahead-0.9.3.js"/>
-            <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/typeahead-init.js"/>
+            <script type="text/javascript" src="/exist/apps/rosids-shared/resources/script/vendor/typeahead.js/hogan-2.0.0.js"/>
+            <script type="text/javascript" src="/exist/apps/rosids-shared/resources/script/vendor/typeahead.js/typeahead-0.9.3.js"/>
+            <script type="text/javascript" src="/exist/apps/rosids-shared/resources/script/typeahead-init.js"/>
         -->
-        <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/vendor/select2/select2.js"/>
-        <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/select2/select2-init.js"/>
-        <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/select2/select2-multiple.js"/>
-        <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/select2/select2-names.js"/>
-        <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/select2/select2-subjects.js"/>
+        <script type="text/javascript" src="/exist/apps/rosids-shared/resources/script/vendor/select2/select2.js"/>
+        <script type="text/javascript" src="/exist/apps/rosids-shared/resources/script/select2/select2-init.js"/>
+        <script type="text/javascript" src="/exist/apps/rosids-shared/resources/script/select2/select2-multiple.js"/>
+        <script type="text/javascript" src="/exist/apps/rosids-shared/resources/script/select2/select2-names.js"/>
+        <script type="text/javascript" src="/exist/apps/rosids-shared/resources/script/select2/select2-subjects.js"/>
         <script type="text/javascript" src="resources/script/text-expand.js"/>
         <script type="text/javascript" src="resources/script/ziziphus.js"/>
     </body>

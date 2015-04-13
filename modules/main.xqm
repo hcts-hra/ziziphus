@@ -10,14 +10,14 @@ declare namespace bf="http://betterform.sourceforge.net/xforms";
 declare namespace bfc="http://betterform.sourceforge.net/xforms/controls";
 declare namespace xf="http://www.w3.org/2002/xforms"; 
 
-import module namespace app="http://www.betterform.de/projects/shared/config/app" at "/apps/cluster-shared/modules/ziziphus/config/app.xqm";
+import module namespace app="http://github.com/hra-team/rosids-shared/config/app" at "/apps/rosids-shared/modules/ziziphus/config/app.xqm";
 import module namespace templates="http://exist-db.org/xquery/templates";
-import module namespace image-link-generator="http://hra.uni-heidelberg.de/ns/tamboti/modules/display/image-link-generator" at "/apps/cluster-shared/modules/display/image-link-generator.xqm";
+import module namespace image-link-generator="http://hra.uni-heidelberg.de/ns/tamboti/modules/display/image-link-generator" at "/apps/rosids-shared/modules/display/image-link-generator.xqm";
 
 (: REMOVE ME:)
 (:
     import module namespace config="http://exist-db.org/xquery/apps/config" at "config.xqm";
-    import module namespace csconfig="http://exist-db.org/mods/config" at "/apps/cluster-shared/modules/config.xqm";
+    import module namespace csconfig="http://exist-db.org/mods/config" at "/apps/rosids-shared/modules/config.xqm";
 :)
 
 

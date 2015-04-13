@@ -1,6 +1,6 @@
 xquery version "3.0";
 
-import module namespace app="http://www.betterform.de/projects/shared/config/app" at "/apps/cluster-shared/modules/ziziphus/config/app.xqm";
+import module namespace app="http://github.com/hra-team/rosids-shared/config/app" at "/apps/rosids-shared/modules/ziziphus/config/app.xqm";
 import module namespace image-link-generator="http://hra.uni-heidelberg.de/ns/tamboti/modules/display/image-link-generator" at "/apps/tamboti/modules/display/image-link-generator.xqm";
 import module namespace security="http://exist-db.org/mods/security" at "/apps/tamboti/modules/search/security.xqm";
 import module namespace console="http://exist-db.org/xquery/console";
@@ -69,7 +69,7 @@ declare %private function local:run($uuid as xs:string) {
                         <link rel="stylesheet" type="text/css" href="/exist/apps/ziziphus/resources/script/mingos-uwindow/themes/ziziphus/style.css"/>
                         <link rel="stylesheet" type="text/css" href="/exist/apps/ziziphus/resources/script/layout-default-latest.css"/>
                         <link rel="stylesheet" type="text/css" href="/exist/apps/ziziphus/resources/css/jquery-ui.css"/>
-                        <link rel="stylesheet" type="text/css" href="/exist/apps/cluster-shared/resources/css/autocomplete.css"/>
+                        <link rel="stylesheet" type="text/css" href="/exist/apps/rosids-shared/resources/css/autocomplete.css"/>
                         <link rel="stylesheet" type="text/css" href="/exist/apps/ziziphus/resources/css/group.css"/>
                     </head>
                     <body>

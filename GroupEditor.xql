@@ -1,7 +1,7 @@
 xquery version "3.0";
 
 declare namespace httpclient = "http://exist-db.org/xquery/httpclient";
-import module namespace security="http://exist-db.org/mods/security" at "/apps/cluster-shared/modules/search/security.xqm";
+import module namespace security="http://exist-db.org/mods/security" at "/apps/rosids-shared/modules/search/security.xqm";
 
 declare option exist:serialize "method=xhtml media-type=text/html omit-xml-declaration=yes indent=yes";
 

@@ -7,8 +7,8 @@
         <link rel="stylesheet" type="text/css" href="resources/script/mingos-uwindow/themes/ziziphus/style.css"/>
         <link rel="stylesheet" type="text/css" href="resources/script/layout-default-latest.css"/>
         <link rel="stylesheet" type="text/css" href="resources/css/jquery-ui.css"/>
-        <link rel="stylesheet" type="text/css" href="/exist/apps/cluster-shared/resources/css/autocomplete.css"/>
-        <link rel="stylesheet" href="/exist/apps/cluster-shared/resources/css/font-awesome-4.0.3/css/font-awesome.min.css"></link>
+        <link rel="stylesheet" type="text/css" href="/exist/apps/rosids-shared/resources/css/autocomplete.css"/>
+        <link rel="stylesheet" href="/exist/apps/rosids-shared/resources/css/font-awesome-4.0.3/css/font-awesome.min.css"></link>
         <!--<link rel="stylesheet" type="text/css" href="resources/css/ui-lightness/jquery-ui-1.10.2.custom.min.css"/>-->
     </head>
     <body class="main:createVraRecord">
@@ -190,10 +190,10 @@
         <script type="text/javascript" src="resources/script/jquery-ui-1.10.2.custom.min.js"/>
         <script type="text/javascript" src="resources/script/mingos-uwindow/jWindow.js"/>
         <script type="text/javascript" src="resources/script/jquery.layout-latest.min.js"/>
-        <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/vendor/typeahead.js/hogan-2.0.0.js"/>
-        <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/vendor/typeahead.js/typeahead-0.9.3.js"/>
-        <script type="text/javascript" src="/exist/apps/cluster-shared/resources/script/typeahead-init.js"/>
-        <script type="text/javascript" src="/exist/apps/cluster-shared/modules/session.js.xql"></script>
+        <script type="text/javascript" src="/exist/apps/rosids-shared/resources/script/vendor/typeahead.js/hogan-2.0.0.js"/>
+        <script type="text/javascript" src="/exist/apps/rosids-shared/resources/script/vendor/typeahead.js/typeahead-0.9.3.js"/>
+        <script type="text/javascript" src="/exist/apps/rosids-shared/resources/script/typeahead-init.js"/>
+        <script type="text/javascript" src="/exist/apps/rosids-shared/modules/session.js.xql"></script>
         <script type="text/javascript">
             $(document).ready(function() {
                 ziziphusLayout = $('body').layout({

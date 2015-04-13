@@ -2,11 +2,11 @@ xquery version "3.0";
 
 import module namespace session ="http://exist-db.org/xquery/session";
 
-import module namespace config="http://exist-db.org/mods/config" at "/apps/cluster-shared/modules/config.xqm";
-import module namespace theme="http://exist-db.org/xquery/biblio/theme" at "/apps/cluster-shared/modules/theme.xqm";
-import module namespace security="http://exist-db.org/mods/security" at "/apps/cluster-shared/modules/search/security.xqm";
+import module namespace config="http://exist-db.org/mods/config" at "/apps/rosids-shared/modules/config.xqm";
+import module namespace theme="http://exist-db.org/xquery/biblio/theme" at "/apps/rosids-shared/modules/theme.xqm";
+import module namespace security="http://exist-db.org/mods/security" at "/apps/rosids-shared/modules/search/security.xqm";
 
-import module namespace image-link-generator="http://hra.uni-heidelberg.de/ns/tamboti/modules/display/image-link-generator" at "/apps/cluster-shared/modules/display/image-link-generator.xqm";
+import module namespace image-link-generator="http://hra.uni-heidelberg.de/ns/tamboti/modules/display/image-link-generator" at "/apps/rosids-shared/modules/display/image-link-generator.xqm";
 
 declare namespace exist = "http://exist.sourceforge.net/NS/exist";
 
@@ -104,9 +104,9 @@ return
         <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
             <forward url="/apps/shared-resources/{substring-after($exist:path, '/$shared/')}" absolute="yes"/>
         </dispatch>
-    else if (contains($exist:path, "/$cluster-shared/")) then
+    else if (contains($exist:path, "/$rosids-shared/")) then
         <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-            <forward url="/apps/cluster-shared/{substring-after($exist:path, '/$cluster-shared/')}" absolute="yes"/>
+            <forward url="/apps/rosids-shared/{substring-after($exist:path, '/$rosids-shared/')}" absolute="yes"/>
         </dispatch>
     else if (contains($exist:path, "/resources/")) then
         <ignore xmlns="http://exist.sourceforge.net/NS/exist">

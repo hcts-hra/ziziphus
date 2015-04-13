@@ -4,7 +4,7 @@ declare namespace xmldb="http://exist-db.org/xquery/xmldb";
 declare namespace vra="http://www.vraweb.org/vracore4.htm";
 declare namespace hra="http://cluster-schemas.uni-hd.de";
 
-import module namespace app="http://www.betterform.de/projects/shared/config/app" at "/apps/cluster-shared/modules/ziziphus/config/app.xqm";
+import module namespace app="http://github.com/hra-team/rosids-shared/config/app" at "/apps/rosids-shared/modules/ziziphus/config/app.xqm";
 
 declare option exist:serialize "method=xhtml media-type=text/html";
 let $query-base := request:get-url()

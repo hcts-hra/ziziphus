@@ -371,7 +371,7 @@
         </xf:instance>
         
         <xf:bind nodeset="instance('i-repositories')/custom" relevant="count(instance('i-repositories')//repository[not(@repotype eq 'global')]) &gt; 0"/>
-        <xf:submission id="s-load-repositories" validate="false" replace="instance" method="get" instance="i-repositories" resource="/exist/apps/cluster-shared/modules/repositories/repositories.xq"/>
+        <xf:submission id="s-load-repositories" validate="false" replace="instance" method="get" instance="i-repositories" resource="/exist/apps/rosids-shared/modules/repositories/repositories.xq"/>
             
         <xf:action ev:event="xforms-ready">
             <xf:send submission="s-load-repositories"/>

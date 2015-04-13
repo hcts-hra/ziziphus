@@ -20,8 +20,12 @@
          <div style="display:none">
             <xf:model id="m-child-model" schema="resources/xsd/generator/vra-types.xsd">
                <xf:action ev:event="xforms-model-construct-done">
-                  <xf:send submission="s-loadSet"></xf:send>
-               </xf:action>
+                  <xf:send submission="s-loadSet"></xf:send><script>
+                                        clearAndInitAutocompletes();
+                                    </script></xf:action>
+               <xf:action ev:observer="i-locationSet" ev:event="xforms-insert"><script>
+                                        initAutocompletes();
+                                    </script></xf:action>
                <xf:submission id="s-loadSet"
                               resource="modules/loadData.xql?id={bf:instanceOfModel('m-main','i-control-center')/uuid}"
                               method="post"
@@ -184,6 +188,13 @@
                   <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/isDirty" value="'true'"></xf:setvalue>
                   <xf:delete nodeset="instance('i-locationSet')/vra:location[index('r-vraLocation')]"></xf:delete>
                </xf:action>
+               <xf:dispatch targetid="doRefresh" name="DOMActivate"></xf:dispatch>
+            </xf:trigger>
+            <xf:trigger id="doRefresh" class="hiddenControl">
+               <xf:label>refresh</xf:label>
+               <xf:action><script>
+                            clearAndInitAutocompletes();
+                        </script></xf:action>
             </xf:trigger>
             <table>
                <tbody model="m-child-model" id="r-vraLocation" xf:repeat-nodeset="vra:location">
@@ -272,17 +283,42 @@
                               </xf:item>
                            </xf:select1>
                         </xf:group>
-                        <xf:group appearance="minimal">
-                           <xf:input id="b-d2e816" ref="vra:name">
-                              <xf:label>
+                        <xf:group appearance="minimal"><span style="display:none">
+                              <xf:input id="b-d2e816" class="Name-autocomplete" ref="vra:name">
+                                 <xf:action ev:event="autocomplete-callback">
+                                    <xf:setvalue ref="." value="event('termValue')"></xf:setvalue>
+                                    <xf:action>
+                                       <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@refid" context="."
+                                                  if="not(exists(instance('i-locationSet')/vra:location[index('r-vraLocation')]/@refid))"></xf:insert>
+                                       <xf:setvalue ref="@refid" value="event('refid')"></xf:setvalue>
+                                    </xf:action>
+                                    <xf:action>
+                                       <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@vocab" context="."
+                                                  if="not(exists(instance('i-locationSet')/vra:location[index('r-vraLocation')]/@vocab))"></xf:insert>
+                                       <xf:setvalue ref="@vocab" value="event('authority')"></xf:setvalue>
+                                    </xf:action>
+                                    <xf:action if="event('termType') eq 'personal' and exists(../vra:dates/@type)">
+                                       <xf:setvalue ref="../vra:dates/@type" value="'life'"></xf:setvalue>
+                                    </xf:action>
+                                    <xf:action if="exists(../vra:dates/vra:earliestDate)">
+                                       <xf:setvalue ref="../vra:dates/vra:earliestDate" value="event('earliestDate')"></xf:setvalue>
+                                    </xf:action>
+                                    <xf:action if="exists(../vra:dates/vra:latestDate)">
+                                       <xf:setvalue ref="../vra:dates/vra:latestDate" value="event('latestDate')"></xf:setvalue>
+                                    </xf:action>
+                                    <xf:action>
+                                       <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@type" context="."
+                                                  if="not(exists(instance('i-locationSet')/vra:location[index('r-vraLocation')]/@type))"></xf:insert>
+                                       <xf:setvalue ref="@type" value="event('termType')"></xf:setvalue>
+                                    </xf:action>
+                                 </xf:action>
+                              </xf:input></span><span data-name="Name-autocomplete" data-collections="" data-multiple=""><span data-name="custom-selection"><span data-name="global" style="display:none"><label for="global">GLOBAL</label><input type="hidden" name="global-select" value="100" /></span><span data-name="custom" style="display:none"><label for="custom">CUSTOM</label><input type="hidden" name="custom-select" data-placeholder="No repos found." /></span></span><span data-name="autocomplete">
                                  <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/name/label">
                                     <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/name/hint"></xf:hint>
-                                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/name/help"></xf:help>
-                                 </xf:output>
-                              </xf:label>
-                              <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/name/placeholder"></xf:hint>
-                           </xf:input>
-                           <xf:select1 id="b-d2e823" class=" nameType" ref="vra:name/@type">
+                                 </xf:output><input type="hidden" data-name="Name-autocomplete" name="Name-autocomplete-input"
+                                        placeholder="Type to search ..."
+                                        data-queryType="locations"
+                                        autocomplete="off" /></span></span><xf:select1 id="b-d2e823" class=" nameType" ref="vra:name/@type">
                               <xf:label>
                                  <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/name/type/label">
                                     <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/name/type/hint"></xf:hint>

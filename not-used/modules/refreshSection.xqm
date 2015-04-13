@@ -1,7 +1,7 @@
 xquery version "3.0";
 declare namespace vra="http://www.vraweb.org/vracore4.htm";
 
-import module namespace app="http://www.betterform.de/projects/shared/config/app" at "/apps/cluster-shared/modules/ziziphus/config/app.xqm";
+import module namespace app="http://github.com/hra-team/rosids-shared/config/app" at "/apps/rosids-shared/modules/ziziphus/config/app.xqm";
 
 let $uuid := request:get-parameter('uuid', 'w_000197f8-4f11-5c63-9967-678e75fa6e41')
 let $setname := request:get-parameter('setname', 'agentSet')

@@ -1,7 +1,7 @@
 xquery version "3.0";
 
 module namespace record-utils="http://www.betterform.de/projects/ziziphus/xquery/record-utils";
-import module namespace app="http://www.betterform.de/projects/shared/config/app" at "/apps/cluster-shared/modules/ziziphus/config/app.xqm";
+import module namespace app="http://github.com/hra-team/rosids-shared/config/app" at "/apps/rosids-shared/modules/ziziphus/config/app.xqm";
 
 declare namespace vra="http://www.vraweb.org/vracore4.htm";
 
