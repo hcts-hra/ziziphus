@@ -1,0 +1,738 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Ziziphus xsd2xforms Generator cluster.xsd" id="ziziphus" default="generate-all" basedir=".">
+
+
+    <property name="generator.dir" value="${basedir}"/>
+
+    <xmlproperty file="../build.properties.xml" semanticAttributes="true" keepRoot="false"/>
+    <property name="target.dir" value="${basedir}/build/cluster/"/>
+    <property name="target.schema.dir" value="${target.dir}/xsd"/>
+    <!--<property name="target.forms.dir" value="${target.dir}/forms"/>-->
+    <!--<property name="target.resources.dir" value="${target.dir}/resources" description="directory holding dynamic resources used by the generator"/>-->
+
+    <!--<property name="resource.dir" value="${basedir}/resources"/>-->
+    <property name="cluster.schema.dir" value="${basedir}/../resources/xsd/cluster"/>
+    <property name="generator.schema.dir" value="${basedir}/../resources/xsd/generator"/>
+    <property name="form.dir" value="${basedir}/../forms/cluster"/>
+
+    <property name="debug" value="true"/>
+    <property name="xsl.dir" value="${basedir}/xsl"/>
+    <property name="xsl.xsd.dir" value="${xsl.dir}/inlineXSD"/>
+
+    <!-- **************************************** HOUSEKEEPING **************************************** -->
+    <!-- **************************************** HOUSEKEEPING **************************************** -->
+    <!-- **************************************** HOUSEKEEPING **************************************** -->
+    <target name="clean" description="clean up everything">
+        <delete dir="${target.dir}"/>
+    </target>
+
+    <!-- #####
+        Start: Targets for testing various stylesheets standalone.
+    ##### -->
+    <target name="testMerge">
+        <xslt style="${basedir}/../resources/xsl/mergeData.xsl"
+              in="${basedir}/template.xml"
+              out="${target.dir}/merged.xml"
+              force="yes">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath refid="transform.class.path"/>
+        </xslt>
+    </target>
+
+
+    <target name="testGenerateViewTransforms" description="testing target: used to test instance merging">
+        <xslt style="${basedir}/../resources/xsl/mergeData.xsl"
+              in="${basedir}/template.xml"
+              out="${target.dir}/merged.xml"
+              force="yes">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath refid="transform.class.path"/>
+        </xslt>
+    </target>
+
+    <target name="testCreateViewFragments" description="create html views from xforms">
+        <xslt style="${basedir}/xsl/view/createView.xsl"
+              in="${basedir}/../forms/cluster/AgentSet.xhtml"
+              out="${basedir}/../view/AgentSetView.xsl"
+              force="yes">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath refid="transform.class.path"/>
+        </xslt>
+    </target>
+
+    <target name="testMergeTitleSet">
+        <xslt style="${basedir}/../resources/xsl/mergeData.xsl"
+              in="${basedir}/templateTitleSet.xml"
+              out="${target.dir}/heidicon.html"
+              force="yes">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath refid="transform.class.path"/>
+        </xslt>
+    </target>
+
+    <target name="testHeidiconOutput">
+        <xslt style="${basedir}/../resources/xsl/heidicon.xsl"
+              in="${basedir}/../records/w_40ca74a3-3e6c-5749-b0a0-b42afbadff01.xml"
+              out="${target.dir}/heidicon.html"
+              force="yes">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath refid="transform.class.path"/>
+        </xslt>
+    </target>
+
+
+    <target name="testDescriptionView">
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="DescriptionSet"/>
+        </antcall>
+    </target>
+
+    <target name="testDiffView">
+        <antcall target="generate-section-diff-view-transform">
+            <param name="subformName" value="LocationSet"/>
+        </antcall>
+    </target>
+    <!-- #####
+        End: Targets for testing various stylesheets standalone.
+    ##### -->
+
+    <!-- ########################################################################################
+    Preparation targets
+    ######################################################################################## -->
+
+    <target name="prepare" depends="inline-schemas">
+        <echo>Building Level 1 artifacts: preparing intermediate resources for further generation steps</echo>
+        <echo>Create generator resource: single file holding all instance data structures</echo>
+        <!-- generate an XML instance of vra-bf.xsd -->
+        <xslt style="${xsl.dir}/xf/01_Instance_Generator.xsl"
+              in="${generator.schema.dir}/vra-bf.xsd"
+              out="${target.dir}/01_VRA_Instance.xml">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath refid="transform.class.path"/>
+            <param name="debug" expression="${debug}"/>
+        </xslt>
+
+        <echo>Create generator resource: single file containing all binding information</echo>
+        <!-- generate XForms Bindings of vra-bf.xsd -->
+        <xslt style="${xsl.dir}/xf/02_Bind_Generator.xsl"
+              in="${generator.schema.dir}/vra-bf.xsd"
+              out="${target.dir}/02_XF_Binds.xml">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath refid="transform.class.path"/>
+            <param name="debug" expression="${debug}"/>
+        </xslt>
+    </target>
+
+
+    <target name="applyUIDefinition" depends="prepare" description="reorders and filters 02_XF_Binds.xml according to 'UIDefinition.xml'">
+        <echo>Re-ordering and filtering bind list according to UIDefinition</echo>
+        <xslt style="${xsl.dir}/xf/03_applyUIDefinition.xsl"
+              in="${basedir}/profile/UIDefinition.xml"
+              out="${target.dir}/02_XF_Binds_redefined.xml">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath refid="transform.class.path"/>
+            <param name="debug" expression="${debug}"/>
+            <param name="vanillaBindings" expression="${target.dir}/02_XF_Binds.xml"/>
+        </xslt>
+    </target>
+
+    <target name="createVRASectionTemplate" description="generates template rule for vra-record.xsl that controls order and existence of VRA Sets">
+
+        <xslt style="${xsl.dir}/view/createVRASectionTemplate.xsl"
+              in="${basedir}/profile/UIDefinition.xml"
+              out="${basedir}/../resources/xsl/vraSectionTemplate.xsl">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath refid="transform.class.path"/>
+            <param name="debug" expression="${debug}"/>
+        </xslt>
+    </target>
+
+    <!-- ########################################################################################
+    Form generation targets
+    ######################################################################################## -->
+
+    <target name="generate-forms" depends="applyUIDefinition" description="generate XForms">
+        <echo>Generate first chunk of VRA forms</echo>
+        <!-- VRA Section agentSection -->
+        <antcall target="generate-subform">
+            <param name="subformName" value="AgentSet"/>
+        </antcall>
+
+        <!-- VRA Section culturalContextSet -->
+        <antcall target="generate-subform">
+            <param name="subformName" value="CulturalContextSet"/>
+        </antcall>
+
+        <!-- VRA Section dateSet -->
+        <antcall target="generate-subform">
+            <param name="subformName" value="DateSet"/>
+        </antcall>
+
+        <!-- VRA Section descriptionSet -->
+        <antcall target="generate-subform">
+            <param name="subformName" value="DescriptionSet"/>
+        </antcall>
+
+        <!-- VRA Section InscriptionSet -->
+        <antcall target="generate-subform">
+            <param name="subformName" value="InscriptionSet"/>
+        </antcall>
+
+        <!-- VRA Section locationSet -->
+        <antcall target="generate-subform">
+            <param name="subformName" value="LocationSet"/>
+        </antcall>
+
+        <antcall target="finetune-subform">
+            <param name="subformName" value="LocationSet"/>
+        </antcall>
+
+        <!-- VRA Section materialSet -->
+        <antcall target="generate-subform">
+            <param name="subformName" value="MaterialSet"/>
+        </antcall>
+
+        <!-- VRA Section measurementsSet -->
+        <antcall target="generate-subform">
+            <param name="subformName" value="MeasurementsSet"/>
+        </antcall>
+
+        <!-- VRA Section relationSet -->
+        <antcall target="generate-subform">
+            <param name="subformName" value="RelationSet"/>
+        </antcall>
+
+        <!-- VRA Section rightsSet -->
+        <antcall target="generate-subform">
+            <param name="subformName" value="RightsSet"/>
+        </antcall>
+        <!-- VRA Section sourceSet -->
+        <antcall target="generate-subform">
+            <param name="subformName" value="SourceSet"/>
+        </antcall>
+
+        <!-- VRA Section sourceSet -->
+        <antcall target="generate-subform">
+            <param name="subformName" value="StateEditionSet"/>
+        </antcall>
+
+        <!-- VRA Section stylePeriodSet -->
+        <antcall target="generate-subform">
+            <param name="subformName" value="StylePeriodSet"/>
+        </antcall>
+
+        <!-- VRA Section stylePeriodSet -->
+        <antcall target="generate-subform">
+            <param name="subformName" value="SubjectSet"/>
+        </antcall>
+
+        <!-- VRA Section techniqueSet -->
+        <antcall target="generate-subform">
+            <param name="subformName" value="TechniqueSet"/>
+        </antcall>
+
+        <!-- VRA Section textrefSet -->
+        <antcall target="generate-subform">
+            <param name="subformName" value="TextrefSet"/>
+        </antcall>
+
+        <!-- VRA Section titleSet -->
+        <antcall target="generate-subform">
+            <param name="subformName" value="TitleSet"/>
+        </antcall>
+
+        <!-- VRA Section worktypeSet -->
+        <antcall target="generate-subform">
+            <param name="subformName" value="WorktypeSet"/>
+        </antcall>
+
+    </target>
+
+    <target name="generate-Agentset-form" depends="prepare" description="generate the AgentSet form">
+        <antcall target="generate-subform">
+            <param name="subformName" value="AgentSet"/>
+            <param name="debug" value="true"/>
+        </antcall>
+
+        <antcall target="finetune-subform">
+            <param name="subformName" value="AgentSet"/>
+        </antcall>
+    </target>
+    <target name="generate-CulturalContextSet-form" depends="prepare" description="generate the CulturalContextSet form">
+        <antcall target="generate-subform">
+            <param name="subformName" value="CulturalContextSet"/>
+        </antcall>
+    </target>
+    <target name="generate-DateSet-form" depends="prepare" description="generate the DateSet form">
+        <antcall target="generate-subform">
+            <param name="subformName" value="DateSet"/>
+        </antcall>
+        <antcall target="finetune-subform">
+            <param name="subformName" value="DateSet"/>
+        </antcall>
+    </target>
+
+    <target name="generate-Description-form"  depends="prepare" description="generate the Description form">
+        <antcall target="generate-subform">
+            <param name="subformName" value="DescriptionSet"/>
+            <param name="debug" value="true"/>
+        </antcall>
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="DescriptionSet"/>
+        </antcall>
+        <copy file="${basedir}/../view/DescriptionSet.xsl" tofile="${basedir}/../view/DescriptionSet.xsl.orig" failonerror="true"/>
+        <antcall target="finetune-subform">
+            <param name="subformName" value="DescriptionSet"/>
+        </antcall>
+        <antcall target="finetune-view">
+            <param name="subformName" value="DescriptionSet"/>
+        </antcall>
+    </target>
+
+    <target name="generate-Subject-form"  depends="prepare" description="generate the Description form">
+        <antcall target="generate-subform">
+            <param name="subformName" value="SubjectSet"/>
+            <param name="debug" value="true"/>
+        </antcall>
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="SubjectSet"/>
+        </antcall>
+        <antcall target="finetune-subform">
+            <param name="subformName" value="SubjectSet"/>
+        </antcall>
+    </target>
+    <target name="generate-Inscription-form" depends="prepare" description="generate the Inscription form">
+        <antcall target="generate-subform">
+            <param name="subformName" value="InscriptionSet"/>
+            <param name="debug" value="true"/>
+        </antcall>
+    </target>
+    <target name="generate-LocationSet-form" depends="prepare" description="generate the LocationSet form">
+        <antcall target="generate-subform">
+            <param name="subformName" value="LocationSet"/>
+        </antcall>
+        <antcall target="finetune-subform">
+            <param name="subformName" value="LocationSet"/>
+        </antcall>
+    </target>
+    <target name="generate-MeasurementsSet-form" depends="prepare" description="generate the MeasurementsSet form">
+        <antcall target="generate-subform">
+            <param name="subformName" value="MeasurementsSet"/>
+        </antcall>
+    </target>
+    <target name="generate-RelationSet-form" depends="prepare" description="generate the RelationSet form">
+        <antcall target="generate-subform">
+            <param name="subformName" value="RelationSet"/>
+        </antcall>
+    </target>
+    <target name="generate-TitleSet-form" depends="prepare" description="generate the StateEditionSet form">
+        <antcall target="generate-subform">
+            <param name="subformName" value="TitleSet"/>
+            <param name="debug" value="true"/>
+        </antcall>
+    </target>
+
+    <target name="generate-StateEditionSet-form" depends="prepare" description="generate the StateEditionSet form">
+        <antcall target="generate-subform">
+            <param name="subformName" value="StateEditionSet"/>
+        </antcall>
+    </target>
+
+    <target name="generate-WorktypeSet-form" depends="prepare" description="generate the StateEditionSet form">
+        <antcall target="generate-subform">
+            <param name="subformName" value="WorktypeSet"/>
+            <param name="debug" value="true"/>
+        </antcall>
+    </target>
+
+    <target name="generate-subform">
+        <echo>generate-subform ${subformName}</echo>
+        <xslt style="${xsl.dir}/xf/04_XForms_Generator.xsl"
+              in="${target.dir}/02_XF_Binds_redefined.xml"
+              out="${target.dir}/${subformName}.xhtml"
+              force="true">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath refid="transform.class.path"/>
+            <param name="debug" expression="${debug}"/>
+            <param name="path_2_vra_types_schema" expression="${generator.schema.dir}/vra-types.xsd"/>
+            <param name="path_2_xf_instance" expression="${target.dir}/01_VRA_Instance.xml"/>
+            <param name="vraSection" expression="${subformName}"/>
+        </xslt>
+
+        <!--<copy file="${target.forms.dir}/data/${instanceName}.xml" tofile="${form.dir}/data/${instanceName}.xml"/>-->
+        <copy file="${target.dir}/${subformName}.xhtml" tofile="${form.dir}/${subformName}.xhtml"/>
+
+    </target>
+
+    <target name="finetune-subform">
+        <echo>finetune-subform ${subformName}</echo>
+
+        <xslt style="${xsl.dir}/xf/05_XForms_Finetuning.xsl"
+              in="${target.dir}/${subformName}.xhtml"
+              out="${target.dir}/${subformName}_finetuned.xhtml"
+              force="true">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath refid="transform.class.path"/>
+            <param name="debug" expression="${debug}"/>
+        </xslt>
+
+        <copy file="${target.dir}/${subformName}_finetuned.xhtml" tofile="${form.dir}/${subformName}.xhtml" overwrite="true"/>
+    </target>
+
+    <target name="finetune-view">
+        <echo>finetune-view ${subformName}</echo>
+        <copy file="${basedir}/../view/${subformName}.xsl" tofile="${basedir}/../view/${subformName}.xsl.orig" overwrite="true" failonerror="true"/>
+
+        <xslt style="${xsl.dir}/view/finetune-view.xsl"
+              in="${basedir}/../view/${subformName}.xsl"
+              out="${target.dir}/view/${subformName}_finetuned.xsl"
+              force="true">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath refid="transform.class.path"/>
+            <param name="debug" expression="${debug}"/>
+        </xslt>
+
+        <copy file="${target.dir}/view/${subformName}_finetuned.xsl" tofile="${basedir}/../view/${subformName}.xsl" overwrite="true" failonerror="true"/>
+    </target>
+
+    <!-- ########################################################################################
+    View generation targets
+    ######################################################################################## -->
+
+    <target name="generate-all" depends="generate-forms, createVRASectionTemplate" description="generates XSLT transforms for VRA Section Views. Uses generated XForms as input.">
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="AgentSet"/>
+        </antcall>
+        <antcall target="finetune-subform">
+            <param name="subformName" value="AgentSet"/>
+        </antcall>
+        <antcall target="finetune-view">
+            <param name="subformName" value="AgentSet"/>
+        </antcall>
+
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="CulturalContextSet"/>
+        </antcall>
+
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="DateSet"/>
+        </antcall>
+        <antcall target="finetune-subform">
+            <param name="subformName" value="DateSet"/>
+        </antcall>
+        <antcall target="finetune-view">
+            <param name="subformName" value="DateSet"/>
+        </antcall>
+
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="DescriptionSet"/>
+        </antcall>
+        <copy file="${basedir}/../view/DescriptionSet.xsl" tofile="${basedir}/../view/DescriptionSet.xsl.orig" failonerror="true"/>
+        <antcall target="finetune-subform">
+            <param name="subformName" value="DescriptionSet"/>
+        </antcall>
+        <antcall target="finetune-view">
+            <param name="subformName" value="DescriptionSet"/>
+        </antcall>
+
+
+        <antcall target="finetune-subform">
+            <param name="subformName" value="InscriptionSet"/>
+        </antcall>
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="InscriptionSet"/>
+        </antcall>
+        <antcall target="finetune-view">
+            <param name="subformName" value="InscriptionSet"/>
+        </antcall>
+
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="LocationSet"/>
+        </antcall>
+
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="MaterialSet"/>
+        </antcall>
+
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="MeasurementsSet"/>
+        </antcall>
+
+        <antcall target="finetune-view">
+            <param name="subformName" value="MeasurementsSet"/>
+        </antcall>
+
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="RelationSet"/>
+        </antcall>
+        <antcall target="finetune-view">
+            <param name="subformName" value="RelationSet"/>
+        </antcall>
+
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="RightsSet"/>
+        </antcall>
+        <antcall target="finetune-view">
+            <param name="subformName" value="RightsSet"/>
+        </antcall>
+
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="SourceSet"/>
+        </antcall>
+
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="StateEditionSet"/>
+        </antcall>
+
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="StylePeriodSet"/>
+        </antcall>
+
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="SubjectSet"/>
+        </antcall>
+
+        <antcall target="finetune-subform">
+            <param name="subformName" value="SubjectSet"/>
+        </antcall>
+        <antcall target="finetune-view">
+            <param name="subformName" value="SubjectSet"/>
+        </antcall>
+
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="TechniqueSet"/>
+        </antcall>
+
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="TextrefSet"/>
+        </antcall>
+
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="TitleSet"/>
+        </antcall>
+
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="WorktypeSet"/>
+        </antcall>
+    </target>
+
+    <target name="generate-section-view-transform" description="generates a XSLT transform for a single VRA section">
+        <echo>generate-view ${subformName}</echo>
+        <mkdir dir="${target.dir}/views"/>
+        <xslt style="${basedir}/xsl/view/createView.xsl"
+              in="${form.dir}/${subformName}.xhtml"
+              out="${basedir}/../view/${subformName}.xsl"
+              force="true">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath refid="transform.class.path"/>
+            <param name="debug" expression="${debug}"/>
+            <param name="vraSection" expression="${subformName}"/>
+        </xslt>
+    </target>
+
+    <!-- ########################################################################################
+    Diff presentation stylesheets generation targets
+    ######################################################################################## -->
+
+    <target name="generate-diff-view" depends="generate-forms, createVRASectionTemplate" description="generates XSLT transforms for VRA Section Views. Uses generated XForms as input.">
+        <antcall target="generate-section-diff-view-transform">
+            <param name="subformName" value="AgentSet"/>
+        </antcall>
+        <antcall target="generate-section-diff-view-transform">
+            <param name="subformName" value="CulturalContextSet"/>
+        </antcall>
+        <antcall target="generate-section-diff-view-transform">
+            <param name="subformName" value="DateSet"/>
+        </antcall>
+        <antcall target="generate-section-diff-view-transform">
+            <param name="subformName" value="DescriptionSet"/>
+        </antcall>
+        <antcall target="generate-section-diff-view-transform">
+            <param name="subformName" value="InscriptionSet"/>
+        </antcall>
+        <antcall target="generate-section-diff-view-transform">
+            <param name="subformName" value="LocationSet"/>
+        </antcall>
+        <antcall target="generate-section-diff-view-transform">
+            <param name="subformName" value="MaterialSet"/>
+        </antcall>
+        <antcall target="generate-section-diff-view-transform">
+            <param name="subformName" value="MeasurementsSet"/>
+        </antcall>
+        <antcall target="generate-section-diff-view-transform">
+            <param name="subformName" value="RelationSet"/>
+        </antcall>
+        <antcall target="generate-section-diff-view-transform">
+            <param name="subformName" value="RightsSet"/>
+        </antcall>
+        <antcall target="generate-section-diff-view-transform">
+            <param name="subformName" value="SourceSet"/>
+        </antcall>
+        <antcall target="generate-section-diff-view-transform">
+            <param name="subformName" value="StateEditionSet"/>
+        </antcall>
+        <antcall target="generate-section-diff-view-transform">
+            <param name="subformName" value="StylePeriodSet"/>
+        </antcall>
+        <antcall target="generate-section-diff-view-transform">
+            <param name="subformName" value="SubjectSet"/>
+        </antcall>
+        <antcall target="generate-section-diff-view-transform">
+            <param name="subformName" value="TechniqueSet"/>
+        </antcall>
+        <antcall target="generate-section-diff-view-transform">
+            <param name="subformName" value="TextrefSet"/>
+        </antcall>
+        <antcall target="generate-section-diff-view-transform">
+            <param name="subformName" value="TitleSet"/>
+        </antcall>
+        <antcall target="generate-section-diff-view-transform">
+            <param name="subformName" value="WorktypeSet"/>
+        </antcall>
+    </target>
+
+    <target name="generate-section-diff-view-transform" description="generates a XSLT transform for diff presentation of a single VRA section">
+        <echo>generate-subform ${subformName}</echo>
+        <mkdir dir="${target.dir}/views"/>
+        <xslt style="${basedir}/xsl/view/createDiffView.xsl"
+              in="${basedir}/../forms/cluster/${subformName}.xhtml"
+              out="${basedir}/../view-diff/${subformName}.xsl"
+              force="true">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath refid="transform.class.path"/>
+            <param name="debug" expression="${debug}"/>
+            <param name="vraSection" expression="${subformName}"/>
+        </xslt>
+    </target>
+
+    <target name="inline-schemas">
+        <echo>generate inline instance of vra xsd</echo>
+
+        <mkdir dir="${target.dir}/xsd"/>
+        <xslt style="${xsl.dir}/inlineXSD/01_XSD_Inline_Extension.xsl"
+              in="${cluster.schema.dir}/vraCluster.xsd"
+              out="${target.dir}/xsd/01_Inline_Extension.xml"
+              force="true">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath refid="transform.class.path"/>
+            <param name="debug" expression="${debug}"/>
+        </xslt>
+
+        <xslt style="${xsl.dir}/inlineXSD/02_InlineXSD.xsl"
+              in="${target.dir}/xsd/01_Inline_Extension.xml"
+              out="${target.dir}/xsd/02_InlineXSD.xml"
+              force="true">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath refid="transform.class.path"/>
+            <param name="debug" expression="${debug}"/>
+            <param name="path_2_vra_types_schema" expression="${generator.schema.dir}/vra-types.xsd"/>
+            <param name="path_2_xf_instance" expression="${target.dir}/01_VRA_Instance.xml"/>
+            <param name="vraSection" expression="${subformName}"/>
+        </xslt>
+        <xslt style="${xsl.dir}/inlineXSD/03_Apply_Schema_Redefintion.xsl"
+              in="${target.dir}/xsd/02_InlineXSD.xml"
+              out="${target.dir}/xsd/03_Apply_Schema_Redefintion.xml"
+              force="true">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath refid="transform.class.path"/>
+            <param name="debug" expression="${debug}"/>
+            <param name="path2schemaRedefinition" expression="${cluster.schema.dir}/vra-strictCluster.xsd"/>
+        </xslt>
+
+        <xslt style="${xsl.dir}/inlineXSD/04_Split_Schema.xsl"
+              in="${target.dir}/xsd/03_Apply_Schema_Redefintion.xml"
+              out="${target.dir}/xsd/vra-bf.xsd"
+              force="true">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath refid="transform.class.path"/>
+            <param name="debug" expression="${debug}"/>
+            <param name="vraTypeSchemaName" expression="vra-types.xsd"/>
+        </xslt>
+        <copy file="${target.dir}/xsd/vra-bf.xsd" tofile="${generator.schema.dir}/vra-bf.xsd" overwrite="true"/>
+        <copy file="${target.dir}/xsd/vra-types.xsd" tofile="${generator.schema.dir}/vra-types.xsd" overwrite="true"/>
+
+    </target>
+
+    <!-- this is just a helper transform to intially create the view definition file -->
+    <target name="generateInitialUIDefinition" description="Rebuild UiDefintion using current binds.">
+        <echo>
+            WARNING - Utility target - needs manual intervention:
+            this target (re)creates a UI definition file. The target can be run manually to generate a plain-vanilla
+            UI file for editing by someone who is responsible for maintaining the order and appearance of certain
+            vra fields.
+        </echo>
+
+        <xslt style="${xsl.dir}/helper/createInitialUIDefinition.xsl"
+              in="${target.dir}/02_XF_Binds.xml"
+              out="${target.dir}/UIDefinition.xml"
+              force="true">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath refid="transform.class.path"/>
+            <param name="debug" expression="${debug}"/>
+        </xslt>
+
+        <xslt style="${xsl.dir}/helper/sortUIDefinition.xsl"
+              in="${basedir}/profile/UIDefinition.xml"
+              out="${target.dir}/UIDefinition-Updated.xml"
+              force="true">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath refid="transform.class.path"/>
+            <param name="generatedUIDefinition" expression="${target.dir}/UIDefinition.xml"/>
+            <param name="debug" expression="${debug}"/>
+        </xslt>
+
+        <xslt style="${xsl.dir}/helper/mergeUIDefinition.xsl"
+              in="${target.dir}/UIDefinition-Updated.xml"
+              out="${target.dir}/UIDefinition-Final.xml"
+              force="true">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath refid="transform.class.path"/>
+            <param name="generatedUIDefinition" expression="${target.dir}/UIDefinition.xml"/>
+            <param name="debug" expression="${debug}"/>
+        </xslt>
+
+        <echo>
+            New UI definition file created: ${target.dir}/UIDefinition-Final.xml
+        </echo>
+        <echo>
+            ATTENTION: you have to manually move 'UIDefinition-Final.xml' to 'profile/UIDefinition.xml' to take
+            effect in the generation process.
+        </echo>
+
+    </target>
+
+    <target name="test">
+        <antcall target="generate-section-view-transform">
+            <param name="subformName" value="RelationSet"/>
+        </antcall>
+        <antcall target="finetune-view">
+            <param name="subformName" value="RelationSet"/>
+        </antcall>
+    </target>
+
+    <target name="generate-lang">
+        <mkdir dir="${target.dir}/lang/"/>
+
+        <xslt style="${xsl.dir}/lang/lang.xsl"
+              in="${xsl.dir}/lang/lang.xml"
+              out="${target.dir}/lang/lang.xml"
+              force="true">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath refid="transform.class.path"/>
+        </xslt>
+    </target>
+
+    <target name="test-view">
+        <xslt style="${basedir}/../resources/xsl/vra-record.xsl"
+              in="${basedir}/view.xml"
+              out="${basedir}/view.html"
+              force="true">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath refid="transform.class.path"/>
+            <param name="setname" expression="AgentSet"/>
+            <param name="codetables-uri" expression="../../../rosids-shared/modules/edit/code-tables/"/>
+            <param name="resources-uri" expression="${basedir}/../resources/lang/"/>
+            <param name="lang" expression="de"/>
+        </xslt>
+    </target>
+</project>

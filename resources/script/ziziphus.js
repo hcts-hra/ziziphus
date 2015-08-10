@@ -95,28 +95,31 @@ jQuery(document).ready(function () {
     });
 
     jQuery('#report-issue').on("click", function (e) {
-        console.log("fired 'report issue'",e);
+        console.log("fired 'report issue'", e);
         var uuid = getParameter("id");
-        console.log("uuid: ",uuid);
+        console.log("uuid: ", uuid);
 //        $('#issue-window').html("<iframe src='resources/components/issue-tracker.html?uuid=" + encodeURIComponent(uuid) + "' />");
         $("<iframe id='issues-frame'></iframe>")
-                            .attr("src","resources/components/issue-tracker.html?uuid=" + encodeURIComponent(uuid) + ")")
-                            .attr("style","position:fixed;top:0;width:100%;background:white;z-index:10")
-                            .addClass("animated")
-                            .addClass("slideInDown")
-                            .appendTo("#issue-window");
+                .attr("src", "resources/components/issue-tracker.html?uuid=" + encodeURIComponent(uuid) + ")")
+                .attr("style", "position:fixed;top:0;width:100%;background:white;z-index:10")
+                .addClass("animated")
+                .addClass("slideInDown")
+                .appendTo("#issue-window");
 
 
     });
-    
+
     initTextExpand();
+
+    //TAMBOTI
+    pingSession();
 }).tooltip({
-  items:'i[title]',
-  content: function() {
-      var element = $(this);
-      var tooltip = element.attr( "title" );
-      return tooltip;
-  }
+    items: 'i[title]',
+    content: function () {
+        var element = $(this);
+        var tooltip = element.attr("title");
+        return tooltip;
+    }
 });
 
 
@@ -232,7 +235,7 @@ function showImageXML() {
 function getParameter(paramName) {
     var searchString = window.location.search.substring(1),
             i, val, params = searchString.split("&amp;");
-    for(i in params){
+    for (i in params) {
         val = params[i].split("=");
         if (val[0] == paramName) {
             return unescape(val[1]);
@@ -241,5 +244,13 @@ function getParameter(paramName) {
     return null;
 }
 
-
+//TAMBOTI
+function pingSession() {
+    $.getJSON("/exist/apps/rosids-shared/modules/search/check-session.xql", function (result) {
+        if (result) {
+            setTimeout(pingSession, 120000);
+        } else {
+        }
+    });
+}
 

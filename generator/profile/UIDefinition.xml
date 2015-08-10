@@ -93,7 +93,7 @@
         <set name="vra:locationSet" idref="b-d2e743">
             <group name="vra:location" repeated="true" idref="b-d2e788">
                 <group name="vra:name" idref="b-d2e816">
-                    <textNode detail="false" control="autocomplete" queryType="locations" idref="b-d2e11"/>
+                    <textNode detail="false" control="autocomplete" queryType="geographic" idref="b-d2e11"/>
                     <node name="@type" detail="false" idref="b-d2e823"/>
                 </group>
                 <node name="@type" detail="false" idref="b-d2e861"/>
@@ -126,8 +126,8 @@
             </group>
             <node name="vra:notes" detail="false" idref="b-d2e1484"/>
         </set>
-        
-        
+
+
         <set name="vra:titleSet" idref="b-d2e1722">
             <group name="vra:title" repeated="true" idref="b-d2e1767">
                 <node name="@type" detail="false" idref="b-d2e1774"/>

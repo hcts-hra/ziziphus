@@ -6,16 +6,19 @@ handled by the *Set forms themselves. Same is true for xml:lang which is not use
 -->
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xf="http://www.w3.org/2002/xforms">
     <xf:output ref="@dataDate">
-        <xf:label>dataDate</xf:label>
-        <xf:hint>dataDate</xf:hint>
+        <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/dataDate/label"/>
+        <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/dataDate/hint"/>
+        <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/dataDate/help"/>
     </xf:output>
     <xf:output ref="@extent">
-        <xf:label>extent</xf:label>
-        <xf:hint>extent</xf:hint>
+        <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/extent/label"/>
+        <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/extent/hint"/>
+        <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/extent/help"/>
     </xf:output>
     <xf:output ref="@href">
-        <xf:label>href</xf:label>
-        <xf:hint>href</xf:hint>
+        <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/href/label"/>
+        <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/href/hint"/>
+        <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/href/help"/>
     </xf:output>
     <!--
     not used?
@@ -30,33 +33,40 @@ handled by the *Set forms themselves. Same is true for xml:lang which is not use
                     </xf:output>
     -->
     <xf:output ref="@refid" class="testme">
-        <xf:label>refid</xf:label>
-        <xf:hint>refid</xf:hint>
+        <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/refid/label"/>
+        <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/refid/hint"/>
+        <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/refid/help"/>
     </xf:output>
     <xf:output ref="@rules">
-        <xf:label>rules</xf:label>
-        <xf:hint>rules</xf:hint>
+        <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/rules/label"/>
+        <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/rules/hint"/>
+        <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/rules/help"/>
     </xf:output>
     <xf:output ref="@source">
-        <xf:label>source</xf:label>
-        <xf:hint>source</xf:hint>
+        <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/source/label"/>
+        <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/source/hint"/>
+        <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/source/help"/>
     </xf:output>
     <xf:output ref="@vocab">
-        <xf:label>vocab</xf:label>
-        <xf:hint>vocab</xf:hint>
+        <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/vocab/label"/>
+        <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/vocab/hint"/>
+        <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/vocab/help"/>
     </xf:output>
     <!-- todo: must probably be a select1 ? where do we get the list? -->
     <!-- Use "long" names for UI -->
     <xf:output ref="bf:instanceOfModel('m-code-tables', 'i-codes-lang')/items/item[value eq current()/@lang]/label">
-        <xf:label>Language Code</xf:label>
-        <xf:hint>Language Code</xf:hint>
+        <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/lang/label"/>
+        <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/lang/hint"/>
+        <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/lang/help"/>
     </xf:output>
     <xf:output ref="@script">
-        <xf:label>Script</xf:label>
-        <xf:hint>Script</xf:hint>
+        <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/script/label"/>
+        <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/script/hint"/>
+        <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/script/help"/>
     </xf:output>
     <xf:output ref="@transliteration">
-        <xf:label>transliteration</xf:label>
-        <xf:hint>transliteration</xf:hint>
+        <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/transliteration/label"/>
+        <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/transliteration/hint"/>
+        <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/transliteration/help"/>
     </xf:output>
 </div>

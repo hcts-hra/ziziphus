@@ -1,36 +1,14 @@
 <merge:data xmlns:merge="http://www.betterform.de/merge">
     <merge:templateInstance>
-       <titleSet>
-         <display dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid=""
-                  rules=""
-                  source=""
-                  vocab=""
-                  lang=""
-                  transliteration=""
-                  script=""
-                  lastAccessed=""/>
-         <notes dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false" refid=""
-                rules=""
-                source=""
-                vocab=""
-                lang=""
-                transliteration=""
-                script=""
-                lastAccessed=""/>
-         <title type="" dataDate="2012-01-01" extent="" href="" xml:lang="" pref="false"
-                refid=""
-                rules=""
-                source=""
-                vocab=""
-                lang=""
-                transliteration=""
-                script=""
-                lastAccessed=""/>
-      </titleSet> 
+        <techniqueSet xmlns="http://www.vraweb.org/vracore4.htm">
+            <display></display>
+            <notes></notes>
+            <technique pref="false"></technique>
+        </techniqueSet>
     </merge:templateInstance>
     <merge:importInstance>
-       <vra:titleSet xmlns:vra="http://www.vraweb.org/vracore4.htm">
-            <vra:title type="descriptive" pref="true" lang="hin" script="" source="Tamboti MODS record" href="uuid-ff237b64-c237-4ec1-ab01-f1092f8ef2f6">Sunday</vra:title>
-        </vra:titleSet> 
+        <techniqueSet>
+            <technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithographs</technique>
+        </techniqueSet>
     </merge:importInstance>
 </merge:data>

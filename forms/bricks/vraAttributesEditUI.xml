@@ -4,29 +4,43 @@
     <xf:label>Attributes</xf:label>
     <xf:group appearance="compact" ref="instance('i-vraAttributes')/vra:vraElement">
         <xf:label/>
-        <xf:input ref="@dataDate" id="first">
-            <xf:label>dataDate</xf:label>
-        </xf:input>
+        <xf:output ref="@dataDate" id="first">
+            <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/dataDate/label"/>
+            <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/dataDate/hint"/>
+            <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/dataDate/help"/>
+        </xf:output>
         <xf:input ref="@extent">
-            <xf:label>extent</xf:label>
+            <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/extent/label"/>
+            <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/extent/hint"/>
+            <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/extent/help"/>
         </xf:input>
         <xf:input ref="@href">
-            <xf:label>href</xf:label>
+            <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/href/label"/>
+            <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/href/hint"/>
+            <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/href/help"/>
         </xf:input>
         <!--
         <xf:input ref="@refid">
-            <xf:label>refid</xf:label>
+            <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/refid/label"/>
+            <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/refid/hint"/>
+            <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/refid/help"/>
         </xf:input>
         -->
         <xf:input ref="@rules">
-            <xf:label>rules</xf:label>
+            <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/rules/label"/>
+            <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/rules/hint"/>
+            <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/rules/help"/>
         </xf:input>
         <xf:input ref="@source">
-            <xf:label>source</xf:label>
+            <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/source/label"/>
+            <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/source/hint"/>
+            <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/source/help"/>
         </xf:input>
         <!--
         <xf:select1 ref="@vocab">
-            <xf:label>vocab</xf:label>
+            <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/vocab/label"/>
+            <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/vocab/hint"/>
+            <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/vocab/help"/>
             <xf:item>
                 <xf:label>ULAN</xf:label>
                 <xf:value>ULAN</xf:value>
@@ -42,13 +56,19 @@
         </xf:select1>
         -->
         <xf:input ref="@lang">
-            <xf:label>Language</xf:label>
+            <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/lang/label"/>
+            <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/lang/hint"/>
+            <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/lang/help"/>
         </xf:input>
         <xf:input ref="@script">
-            <xf:label>Script</xf:label>
+            <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/script/label"/>
+            <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/script/hint"/>
+            <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/script/help"/>
         </xf:input>
         <xf:input ref="@transliteration">
-            <xf:label>Transliteration</xf:label>
+            <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/transliteration/label"/>
+            <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/transliteration/hint"/>
+            <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/transliteration/help"/>
         </xf:input>
     </xf:group>
-</div><!--</div>-->
+</div>

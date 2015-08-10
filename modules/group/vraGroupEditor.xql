@@ -29,32 +29,46 @@ declare variable $local:user := security:get-user-credential-from-session()[1];
 declare variable $local:userpass := security:get-user-credential-from-session()[2];
 declare variable $local:temp-db := "/db/data/temp/";
 
-declare %private function local:extract-uuids-and-workdir($uuid as xs:string ) {
+declare %private function local:create-uuid-doc($uuid as xs:string) {
     let $uuids-as-string := util:binary-to-string(util:binary-doc($local:temp-db  || $uuid || ".js"))
     let $uuid-strings := tokenize(substring($uuids-as-string, 2, string-length($uuids-as-string) - 2), ",")
-    let $remove-id-document := xmldb:remove($local:temp-db, $uuid || ".js")
-    
-    return
-    <data>
-        {
-            for $uuid-string in $uuid-strings
-            let $uuid := replace(replace($uuid-string, "&quot;:1", ""), "&quot;", "")
-            let $document-uri := document-uri(root(collection(xmldb:encode('/db/data'))//vra:vra/vra:work[@id = $uuid]))
-            let $collection := substring-before($document-uri, "/" || $uuid)
-            return
-                if(security:can-read-collection($collection))
-                then (
-                    <record>
-                        <id>{$uuid}</id>
-                        <collection>{$collection}</collection>
-                    </record>               
-                ) else ( () )
-        }
-    </data>
+    let $uuid-document := 
+        <data>
+            {
+                for $uuid-string at $pos in $uuid-strings
+                let $uuid := replace(replace($uuid-string, "&quot;:1", ""), "&quot;", "")
+                let $document-uri := document-uri(root(collection(xmldb:encode('/db/data'))//vra:vra/vra:work[@id = $uuid]))
+                let $collection := substring-before($document-uri, "/" || $uuid)
+                return
+                    if(security:can-read-collection($collection))
+                    then (
+                        <record position="{$pos}">
+                            <id>{$uuid}</id>
+                            <collection>{$collection}</collection>
+                        </record>               
+                    ) else ( () )
+            }
+        </data>
+    let $store := xmldb:store($local:temp-db, $uuid-document || ".xml", $uuid-document)
+    (: let $remove-id-document := xmldb:remove($local:temp-db, $uuid || ".js") :)
+    return $uuid-document
 };
 
-declare %private function local:run($uuid as xs:string) {
-      let $uuid-workdir := local:extract-uuids-and-workdir($uuid)
+declare %private function local:get-uuids-doc($uuid as xs:string) {
+    let $uuid-doc := 
+        if(doc-available($local:temp-db  || $uuid || ".xml"))
+        then(doc($local:temp-db || $uuid || ".xml"))
+        else (local:create-uuid-doc($uuid))
+    return $uuid-doc
+};
+
+declare %private function local:extract-uuids-and-workdir($uuid as xs:string, $start, $page_limit) {
+    let $uuids := <data>{subsequence(local:get-uuids-doc($uuid)//record, $start, $page_limit)}</data>
+    return $uuids
+};
+
+declare %private function local:run($uuid as xs:string, $start, $page_limit) {
+      let $uuid-workdir := local:extract-uuids-and-workdir($uuid, $start, $page_limit)
       return
           if( count( $uuid-workdir/record) > 0 )
           then ( 
@@ -75,7 +89,7 @@ declare %private function local:run($uuid as xs:string) {
                     <body>
                         <div class="ui-layout-center outer-center">
                             <div class="full" style="height:100%">
-                                <iframe id="iEditor" src="/exist/apps/ziziphus/record.html?id={$first-tupel/id}&amp;workdir={$first-tupel/collection}"></iframe>
+                                <iframe id="iEditor" src="/exist/apps/ziziphus/record.xql?id={$first-tupel/id}&amp;workdir={$first-tupel/collection}"></iframe>
                             </div>
                         </div>
                         <div class="ui-layout-south outer-south">
@@ -110,11 +124,11 @@ declare function local:thumBar($uuid-workdir) {
         <li><img src="{image-link-generator:generate-href($imageRecordId, 'tamboti-thumbnail')}" alt="{$imageRecordId}" class="relatedImage" onclick="loadRecord('{$record/id}', '{$record/collection}')" title="{$imageRecordId}" /></li>
 };
 
-declare %private function local:groupeditor($uuid as xs:string) {
+declare %private function local:groupeditor($uuid as xs:string, $start, $page_limit) {
    
         if(util:binary-doc-available($local:temp-db  || $uuid || ".js"))
         then (
-            system:as-user($local:user, $local:userpass, local:run($uuid))  
+            system:as-user($local:user, $local:userpass, local:run($uuid, $start, $page_limit))  
         ) else (
             local:error-page('could not read id file')
         )
@@ -137,11 +151,14 @@ declare %private function local:error-page($error-text) {
 };
 
 let $uuid := request:get-parameter('id', '2014-12-04-15-17-56-299')
+let $start := request:get-parameter('start', '1')
+let $page_limit := request:get-parameter('page_limit', '10')
 return 
     if($uuid != '')
     then (
-        local:groupeditor($uuid)
+        local:groupeditor($uuid, $start, $page_limit)
     ) else (
         local:error-page('id parameter missing')
     )
   
+
