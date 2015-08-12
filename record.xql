@@ -46,14 +46,14 @@ let $uuid := request:get-parameter('id', '')
 let $workdir := request:get-parameter('workdir', '')
 let $workRecordDir as xs:string := if($workdir eq '') then ($app:ziziphus-default-record-dir) else ($workdir)
 let $imageDir as xs:string := $workRecordDir || $app:image-record-dir-name
-let $vraWorkRecord  := collection(xmldb:encode($workRecordDir))/vra:vra/vra:work[@id = $uuid]
+let $vraWorkRecord  := app:get-resource($uuid)
 let $imageRecordId  :=  if(exists($vraWorkRecord/vra:relationSet/vra:relation/@pref[.='true']))
                         then (
                             $vraWorkRecord/vra:relationSet/vra:relation[@pref='true'][1]/@relids
                         ) else (
                             $vraWorkRecord/vra:relationSet/vra:relation[1]/@relids
                         )
-let $vraImageRecord := collection(xmldb:encode($imageDir))/vra:vra/vra:image[@id = $imageRecordId]
+let $vraImageRecord := app:get-resource($imageRecordId)
 let $language := request:get-parameter('language', 'en')
 let $schema := request:get-parameter('schema', 'cluster')
 
