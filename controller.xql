@@ -6,8 +6,6 @@ import module namespace config="http://exist-db.org/mods/config" at "/apps/rosid
 import module namespace theme="http://exist-db.org/xquery/biblio/theme" at "/apps/rosids-shared/modules/theme.xqm";
 import module namespace security="http://exist-db.org/mods/security" at "/apps/rosids-shared/modules/search/security.xqm";
 
-import module namespace image-link-generator="http://hra.uni-heidelberg.de/ns/tamboti/modules/display/image-link-generator" at "/apps/rosids-shared/modules/display/image-link-generator.xqm";
-
 declare namespace exist = "http://exist.sourceforge.net/NS/exist";
 
 declare variable $exist:controller external;
@@ -19,21 +17,21 @@ declare variable $exist:resource external;
 declare variable $local:item-uri-regexp := "/item/([a-z0-9-_]*)";
 
 declare function local:get-item($controller as xs:string, $root as xs:string, $prefix as xs:string?, $path as xs:string, $resource as xs:string?, $username as xs:string?, $password as xs:string?) as element(exist:dispatch) {
-    
+
     let $item-id := fn:replace($path, $local:item-uri-regexp, "$1") return
-    
-        <dispatch xmlns="http://exist.sourceforge.net/NS/exist">        
+
+        <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
             <forward url="{theme:resolve-uri($prefix, $root, 'pages/index.html')}">
                 { local:set-user($username, $password) }
             </forward>
             <view>
                 <forward url="../modules/search/search.xql">
                     <set-attribute name="xquery.report-errors" value="yes"/>
-                    
+
                     <set-attribute name="exist:root" value="{$root}"/>
                     <set-attribute name="exist:path" value="{$path}"/>
                     <set-attribute name="exist:prefix" value="{$prefix}"/>
-                    
+
                     <add-parameter name="id" value="{$item-id}"/>
         		</forward>
         	</view>
@@ -113,10 +111,10 @@ return
             <cache-control cache="yes"/>
         </ignore>
     else if (contains($exist:path, "/imageService/")) then
-        let $imagerecord := request:get-parameter('imagerecord', 'i_f55c3201-0454-5045-93b4-767e67536fc8')
+        let $imagerecord := request:get-parameter('imagerecord', '')
         return
         <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-            <redirect url="{image-link-generator:generate-href($imagerecord, 'tamboti-thumbnail')}"/>
+            <redirect url="/exist/apps/tamboti/modules/display/image.xql?schema=IIIF&amp;call=/{$imagerecord}/full/!128,128/0/default.jpg"/>
         </dispatch>
     else if ($login) then (
         if ($exist:path eq "/") then
@@ -159,7 +157,7 @@ return
             </forward>
         </dispatch>
     )
-        
+
 (:
 
      else if ($exist:resource eq 'retrieve') then
@@ -182,14 +180,14 @@ return
                     <set-attribute name="theme-collection" value="{theme:get-path()}"/>
                 </forward>
             </dispatch>
-            
+
     else if (starts-with($exist:path, "/item/resources")) then
         let $real-resources-path := fn:concat($exist:controller, "/", substring-after($exist:path, "/item/")) return
             <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
                 <forward url="{$real-resources-path}">
                 </forward>
             </dispatch>
-    
+
     else if (starts-with($exist:path, "/item/images")) then
         let $real-resources-path := fn:concat("/", substring-after($exist:path, "/item/images"))
         let $log := util:log("ERROR", ("IMAGE: ", $real-resources-path))
@@ -198,7 +196,7 @@ return
                 <forward url="{$real-resources-path}">
                 </forward>
             </dispatch>
-            
+
     else if(fn:starts-with($exist:path, "/item/")) then
         local:get-item($exist:controller, $exist:root, $exist:prefix, $exist:path, $exist:resource, $username, $password)
 :)

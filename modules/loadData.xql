@@ -1,7 +1,7 @@
 xquery version "3.0";
 
 
-(: 
+(:
   Load one specific vra set from record given by id param and merge it with template instance.
   The template instance will be send as post data to this query. The rootnode of that instance
   will determine the vra set to be loaded.
@@ -15,7 +15,7 @@ declare namespace merge="http://www.betterform.de/merge";
 
 import module namespace app="http://github.com/hra-team/rosids-shared/config/app" at "/apps/rosids-shared/modules/ziziphus/config/app.xqm";
 import module namespace record-utils="http://www.betterform.de/projects/ziziphus/xquery/record-utils" at "utils/record-utils.xqm";
-import module namespace security="http://exist-db.org/mods/security" at "../../rosids-shared/modules/search/security.xqm";
+import module namespace security="http://exist-db.org/mods/security" at "/apps/rosids-shared/modules/search/security.xqm";
 
 declare option exist:serialize "method=xml media-type=text/xml indent=yes";
 
@@ -25,11 +25,11 @@ declare variable $userpass := security:get-user-credential-from-session()[2];
 
 declare function local:getSetData($id as xs:string,$setName as xs:string) as node() * {
     (: let $log := util:log("info", "LoadData getSetData") :)
-    let $record := system:as-user($user, $userpass, 
-        (   
-            let $temp := 
+    let $record := system:as-user($user, $userpass,
+        (
+            let $temp :=
                 try {
-                record-utils:get-record($id)    
+                record-utils:get-record($id)
                 } catch * {
                     let $log := util:log("info", "record-utils:get-record failed! <"|| $err:code ||'>:<'|| $err:description ||'>:<'|| $err:value || '>')
                     return <error>$err:description</error>
@@ -45,13 +45,13 @@ declare function local:getSetData($id as xs:string,$setName as xs:string) as nod
 
 declare function local:mergeVraRecord($root as node()) as node() {
     let $transform := "xmldb:exist:///db/apps/ziziphus/resources/xsl/mergeData.xsl"
-    
+
     return
         transform:transform($root, $transform, ())
 };
 
 declare function local:mergeXMLFragments($templateInstance as node(), $data as node()) as node() {
-(: 
+(:
     let $log := util:log("info", "LoadData mergeXMLFragments templateInstance: " || count($templateInstance))
     let $log := util:log("info", "LoadData mergeXMLFragments data: " || count($data))
     return
@@ -81,6 +81,5 @@ let $setName := local-name($templateInstance/*[1])
 let $data := local:getSetData($id, $setName)
 let $data := if($data) then $data else $templateInstance
 let $data2process := local:mergeXMLFragments($templateInstance, $data)
-return 
+return
     local:mergeVraRecord($data2process)
-    

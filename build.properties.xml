@@ -6,10 +6,11 @@
     </build>
     <app>
         <name>ziziphus</name>
-        <version>0.40.0</version>
+        <version>0.42.0</version>
     </app>
     <issueTracker>
-        <key></key>
+        <key>797dc72ff43a3a00fbff841636c3b15dc5d1673a</key>
+        <!-- <k>122dc4765ffafc3a72e3fd7bb059c4aa180e787b</k>-->
     </issueTracker>
     <transform>
         <classpath pathid="transform.class.path" description="classpath for saxon XPath and XSLT engine">

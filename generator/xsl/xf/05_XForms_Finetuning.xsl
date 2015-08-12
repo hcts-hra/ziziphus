@@ -12,21 +12,21 @@
                 xmlns:bf="http://betterform.sourceforge.net/xforms"
                 xmlns:bfc="http://betterform.sourceforge.net/xforms/controls"
                 exclude-result-prefixes="functx xhtml">
-    
+
     <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"/>
     <xsl:strip-space elements="*"/>
-    
+
     <xsl:template match="*|text()|comment()">
         <xsl:copy>
             <xsl:copy-of select ="@*|text()|comment()"/>
             <xsl:apply-templates select="*"/>
         </xsl:copy>
     </xsl:template>
-    
 
-    <!-- remove alternativeNotation -->
-    <!--xsl:template math="xf:instance[@id eq 'i-dateSet']//vra:alternativeNotation"></xsl:template-->    
-    
+
+
+
+
     <xsl:template match="xf:bind[@nodeset eq '@circa']">
         <xsl:variable name="quot">"</xsl:variable>
         <xsl:copy>
@@ -35,11 +35,11 @@
             <xsl:copy-of select="@*"/>
         </xsl:copy>
     </xsl:template>
-        
-    <!-- 
+
+    <!--
         ########## AgentSet ##########
     -->
-    
+
     <!-- vocab + type -->
 
     <!-- Autocomplete -->
@@ -70,9 +70,16 @@
                 <xf:setvalue ref="instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role/@type" value="''"  if="exists(instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role/@type)"/>
                 <xf:setvalue ref="instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role" value="''" if="exists(instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role)"/>
             </xf:action>
+            <xf:action>
+                <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@type" context="." if="not(exists(./@type))"/>
+                <xf:setvalue ref="@type" value="event('termType')"/>
+            </xf:action>
+            <xf:action if="event('termType') eq 'personal' and exists(../vra:dates/@type)">
+                <xf:setvalue ref="../vra:dates/@type" value="'life'"/>
+            </xf:action>
         </xsl:copy>
-    </xsl:template>    
-    
+    </xsl:template>
+
     <!-- Role Select -->
     <xsl:template match="xhtml:tbody[@xf:repeat-nodeset eq 'vra:agent']//xf:select1[@ref = 'vra:role']">
         <xsl:copy>
@@ -89,13 +96,13 @@
                     if="not(exists(instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role/@type))"></xf:insert>
                 <xf:setvalue ref="instance('i-agentSet')/vra:agent[index('r-vraAgent')]/vra:role/@type" value="'code'"/>
             </xf:action>
-           
+
         </xsl:copy>
     </xsl:template>
 
 
     <xsl:template match="xhtml:tbody[@xf:repeat-nodeset eq 'vra:agent']//xf:group[xf:select1[@ref = 'vra:dates/@type']]">
-       
+
         <xf:group appearance="minimal">
             <table  class="dateTable">
                 <tbody>
@@ -144,16 +151,16 @@
             </table>
         </xf:group>
     </xsl:template>
-    <!-- 
+    <!--
         ########## DescriptionSet ##########
     -->
-    
+
     <!--
     <xsl:template match="xf:bind[@nodeset eq 'instance()' and ../xf:instance[@id eq 'i-descriptionSet']]/xf:bind[@nodeset eq 'vra:description']/xf:bind[@nodeset eq '@type']" priority="50">
         <xf:bind nodeset="@type" calculate="if( boolean-from-string(instance('i-util')/states/stateOfPreservation[index('r-vraDescription')]) ) then ('stateOfPreservation') else (.)"/>
-    </xsl:template> 
-    
-    <xsl:template match="xf:instance[@id eq 'i-util' and ../xf:instance[@id eq 'i-descriptionSet']]">   
+    </xsl:template>
+
+    <xsl:template match="xf:instance[@id eq 'i-util' and ../xf:instance[@id eq 'i-descriptionSet']]">
         <xsl:copy>
             <xsl:copy-of select="@*"/>
             <xsl:apply-templates select="*" mode="descriptionSet-util"/>
@@ -167,7 +174,7 @@
             <xf:setvalue model="m-child-model" ref="instance('i-util')/counter" value="instance('i-util')/counter +1"/>
         </xf:action>
     </xsl:template>
-    
+
     <xsl:template match="*" mode="descriptionSet-util">
         <xsl:choose>
             <xsl:when test="name() eq 'currentElement'">
@@ -183,21 +190,21 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-    
-    
-    
+
+
+
     <xsl:template match='xf:insert[@origin eq "instance(&apos;i-templates&apos;)/vra:description"]'>
         <xsl:copy-of select="."/>
-        <xf:insert model="m-child-model" nodeset="stateOfPreservation" origin="instance('i-util')/stateOfPreservation" context="instance('i-util')/states" position="after"></xf:insert>    
+        <xf:insert model="m-child-model" nodeset="stateOfPreservation" origin="instance('i-util')/stateOfPreservation" context="instance('i-util')/states" position="after"></xf:insert>
     </xsl:template>
-    
+
     <xsl:template match='xf:delete[@nodeset eq "instance(&apos;i-descriptionSet&apos;)/vra:description[index(&apos;r-vraDescription&apos;)]"]'>
         <xsl:copy-of select="."/>
         <xf:delete nodeset="instance('i-util')/states/stateOfPreservation[index('r-vraDescription')]"></xf:delete>
     </xsl:template>
-    
-    
-    
+
+
+
     -->
     <xsl:template match="xhtml:tbody[@xf:repeat-nodeset eq 'vra:description']/xhtml:tr/xhtml:td[@class eq 'contentCol']/xf:group[@appearance eq 'minimal']/xf:input[@ref = '@type']">
         <xf:select1 ref="@type">
@@ -208,31 +215,31 @@
             </xf:item>
         </xf:select1>
     </xsl:template>
-    
-    
+
+
     <!-- State of preservation -->
-    
+
     <!-- i-descriptionSet -->
     <!--
     <xsl:template match="xf:bind[@nodeset eq 'instance()' and ../xf:instance[@id eq 'i-descriptionSet']]/xf:bind[@nodeset eq 'vra:description']/xf:bind[@nodeset eq '@type']">
         <xf:bind nodeset="@type" calculate="if( boolean-from-string(../@stateOfPreservation) ) then ('stateOfPreservation') else (.)"/>
         <xf:bind nodeset="@stateOfPreservation" type="xf:boolean"/>
-    </xsl:template> 
+    </xsl:template>
     -->
     <!-- save -->
     <!--
-    <xsl:template match="xf:submission[@id eq 's-update']/xf:action[@ev:event eq 'xforms-submit']"> 
+    <xsl:template match="xf:submission[@id eq 's-update']/xf:action[@ev:event eq 'xforms-submit']">
         <xsl:copy-of select="."/>
         <xf:action ev:event="xforms-submit">
             <xf:setvalue model="m-child-model" ref="instance('i-util')/counter" value="1"/>
             <xf:action while="instance('i-util')/counter &lt;= count(instance('i-descriptionSet')//vra:description)">
                 <xf:delete model="m-child-model" nodeset="instance('i-descriptionSet')/vra:description[instance('i-util')/counter]/@stateOfPreservation" if="exists(instance('i-descriptionSet')/vra:description[instance('i-util')/counter]/@stateOfPreservation)"></xf:delete>
                 <xf:setvalue model="m-child-model" ref="instance('i-util')/counter" value="instance('i-util')/counter +1"/>
-            </xf:action>    
+            </xf:action>
         </xf:action>
-    </xsl:template>  
-    
-    <xsl:template match="xf:submission[@id eq 's-update']/xf:action[@ev:event eq 'xforms-submit-done']"> 
+    </xsl:template>
+
+    <xsl:template match="xf:submission[@id eq 's-update']/xf:action[@ev:event eq 'xforms-submit-done']">
         <xsl:copy>
             <xsl:copy-of select="@*"/>
             <xsl:copy-of select="*"/>
@@ -241,11 +248,11 @@
                 <xf:insert model="m-child-model" origin="instance('i-util')/stateOfPreservation/@stateOfPreservation" context="instance('i-descriptionSet')/vra:description[instance('i-util')/counter]"/>
                 <xf:setvalue model="m-child-model" ref="instance('i-descriptionSet')/vra:description[instance('i-util')/counter]/@stateOfPreservation" value="if(instance('i-descriptionSet')/vra:description[instance('i-util')/counter]/@type eq 'stateOfPreservation') then (true()) else (false())"/>
                 <xf:setvalue model="m-child-model" ref="instance('i-util')/counter" value="instance('i-util')/counter +1"/>
-            </xf:action>    
+            </xf:action>
         </xsl:copy>
-    </xsl:template>  
-    
-    <xsl:template match="xf:submission[@id eq 's-update']/xf:action[@ev:event eq 'xforms-submit-error']"> 
+    </xsl:template>
+
+    <xsl:template match="xf:submission[@id eq 's-update']/xf:action[@ev:event eq 'xforms-submit-error']">
         <xsl:copy>
             <xsl:copy-of select="@*"/>
             <xsl:copy-of select="*"/>
@@ -254,14 +261,14 @@
                 <xf:insert model="m-child-model" origin="instance('i-util')/stateOfPreservation/@stateOfPreservation" context="instance('i-descriptionSet')/vra:description[instance('i-util')/counter]"/>
                 <xf:setvalue model="m-child-model" ref="instance('i-descriptionSet')/vra:description[instance('i-util')/counter]/@stateOfPreservation" value="if(instance('i-descriptionSet')/vra:description[instance('i-util')/counter]/@type eq 'stateOfPreservation') then (true()) else (false())"/>
                 <xf:setvalue model="m-child-model" ref="instance('i-util')/counter" value="instance('i-util')/counter +1"/>
-            </xf:action>    
+            </xf:action>
         </xsl:copy>
     </xsl:template>
     -->
-    
+
     <!-- i-util -->
     <!--
-    <xsl:template match="xf:instance[@id eq 'i-util' and ../xf:instance[@id eq 'i-descriptionSet']]">   
+    <xsl:template match="xf:instance[@id eq 'i-util' and ../xf:instance[@id eq 'i-descriptionSet']]">
         <xsl:copy>
             <xsl:copy-of select="@*"/>
             <xsl:apply-templates select="*" mode="descriptionSet-util"/>
@@ -272,7 +279,7 @@
             <xf:setvalue model="m-child-model" ref="instance('i-util')/counter" value="instance('i-util')/counter +1"/>
         </xf:action>
     </xsl:template>
-    
+
     <xsl:template match="*" mode="descriptionSet-util">
         <xsl:choose>
             <xsl:when test="name() eq 'currentElement'">
@@ -292,7 +299,7 @@
     <!--
     <xsl:template match='xf:insert[@origin eq "instance(&apos;i-templates&apos;)/vra:description"]'>
         <xsl:copy-of select="."/>
-        <xf:insert model="m-child-model" origin="instance('i-util')/stateOfPreservation/@stateOfPreservation" context="instance()/vra:description[1]" if="not(exists(instance()/vra:description[1]/@stateOfPreservation))"></xf:insert>    
+        <xf:insert model="m-child-model" origin="instance('i-util')/stateOfPreservation/@stateOfPreservation" context="instance()/vra:description[1]" if="not(exists(instance()/vra:description[1]/@stateOfPreservation))"></xf:insert>
     </xsl:template>
     -->
     <!-- UI -->
@@ -305,7 +312,7 @@
     </xsl:template>
     -->
     <!-- vocab + type -->
-    
+
     <!-- Autocomplete -->
     <xsl:template match="xf:repeat[@ref eq 'vra:author']//xf:action[@ev:event = 'autocomplete-callback']">
         <xsl:copy>
@@ -330,19 +337,23 @@
                 </xf:action>
             </xf:action>
             <xf:action if="event('termValue') eq ''">
-                
+
                 <xf:setvalue ref="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@vocab" value="''" if="exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@vocab)"/>
                 <xf:setvalue ref="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@type" value="''"  if="exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@type)"/>
                 <xf:setvalue ref="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role" value="''" if="exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role)"/>
             </xf:action>
+            <xf:action>
+                <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@type" context="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:name" if="not(exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:name/@type))"/>
+                <xf:setvalue ref="@type" value="event('termType')"/>
+            </xf:action>
         </xsl:copy>
     </xsl:template>
-    
+
     <xsl:template match="xf:repeat[@ref eq 'vra:author']//xf:select1[@ref = 'vra:role']">
         <xsl:copy>
             <xsl:copy-of select ="@*"/>
             <xsl:copy-of select ="*|text()"/>
-            
+
             <xf:action ev:event="xforms-value-changed" if="not(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role eq '')">
                 <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@vocab"
                     context="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role"
@@ -353,31 +364,31 @@
                     if="not(exists(instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@type))"></xf:insert>
                 <xf:setvalue ref="instance('i-descriptionSet')/vra:description[index('r-vraDescription')]/vra:author[index('r-author')]/vra:role/@type" value="'code'"/>
             </xf:action>
-            
+
         </xsl:copy>
     </xsl:template>
-        
-    <!-- 
+
+    <!--
         ########## SubjectSet ##########
     -->
-    
+
     <!-- circa (dates) -->
-    
+
 
     <xsl:template match="xf:instance[@id eq 'i-templates'][//vra:subject]">
         <xsl:copy-of select="."/>
         <xf:instance id="i-repositories" xmlns="">
             <data/>
         </xf:instance>
-        
+
         <xf:bind nodeset="instance('i-repositories')/custom" relevant="count(instance('i-repositories')//repository[not(@repotype eq 'global')]) &gt; 0"/>
         <xf:submission id="s-load-repositories" validate="false" replace="instance" method="get" instance="i-repositories" resource="/exist/apps/rosids-shared/modules/repositories/repositories.xq"/>
-            
+
         <xf:action ev:event="xforms-ready">
             <xf:send submission="s-load-repositories"/>
         </xf:action>
     </xsl:template>
-    
+
     <xsl:template match="xhtml:tbody[@xf:repeat-nodeset eq 'vra:subject']//xf:select1[@ref = 'vra:term/@type']">
         <xsl:copy>
             <xsl:copy-of select ="@*"/>
@@ -395,7 +406,7 @@
                 <xsl:copy-of select="xf:item[contains(xf:label, 'Name')]"/>
             </xf:choices>
         </xsl:copy>
-        <!-- TODO: UI for multiple repositories 
+        <!-- TODO: UI for multiple repositories
         <xf:select1 ref="@vocab">
             <xf:label>Vocab</xf:label>
             <xf:itemset nodeset="instance('i-repositories')//repository[@repotype eq 'global']">
@@ -403,7 +414,7 @@
                 <xf:value ref="@collection"/>
             </xf:itemset>
         </xf:select1>
-        
+
         <xf:select ref="instance('i-repositories')/custom" appearance="full">
             <xf:label>Other vocabs</xf:label>
             <xf:itemset nodeset="instance('i-repositories')//repository[not(@repotype eq 'global')]">
@@ -413,16 +424,16 @@
         </xf:select>
         -->
     </xsl:template>
-    
+
     <xsl:template match="xhtml:tbody[@xf:repeat-nodeset eq 'vra:subject']//xf:input[@ref = 'vra:term']//xf:insert[@context='.' and contains(@origin, '@type')]" priority="10"/>
-        
+
     <xsl:template match="xhtml:tbody[@xf:repeat-nodeset eq 'vra:subject']//xf:input[@ref = 'vra:term']//xf:insert[@context='.']">
         <xf:insert context="..">
             <xsl:copy-of select="@origin"/>
             <xsl:copy-of select="@if"/>
         </xf:insert>
     </xsl:template>
-    
+
     <xsl:template match="xhtml:tbody[@xf:repeat-nodeset eq 'vra:subject']//xf:input[@ref = 'vra:term']//xf:setvalue[starts-with(@ref, '@type')]" priority="10"/>
 
     <xsl:template match="xhtml:tbody[@xf:repeat-nodeset eq 'vra:subject']//xf:input[@ref = 'vra:term']//xf:setvalue[starts-with(@ref, '@')]">
@@ -433,15 +444,34 @@
             <xsl:copy-of select="@value"/>
         </xf:setvalue>
     </xsl:template>
-    
-    <!-- 
+
+    <!--
         ########## DateSet ##########
     -->
-    
+    <!-- remove alternativeNotation from dateSet-->
+
+    <xsl:template match="xf:instance[@id eq 'i-dateSet']//vra:alternativeNotation"/>
+
+    <xsl:template match="xf:instance[@id eq 'i-templates'][preceding-sibling::xf:instance[@id eq 'i-dateSet']]">
+        <xsl:copy>
+            <xsl:copy-of select="@*"/>
+            <xsl:apply-templates select="*"/>
+        </xsl:copy>
+
+        <xf:instance id="i-templates-alt" >
+            <data xmlns="http://www.vraweb.org/vracore4.htm">
+                <alternativeNotation type=""></alternativeNotation>
+            </data>
+        </xf:instance>
+    </xsl:template>
+
+
+    <xsl:template match="xf:instance[@id eq 'i-templates'][preceding-sibling::xf:instance[@id eq 'i-dateSet']]//vra:alternativeNotation"/>
+
     <xsl:template match="xhtml:tbody[@xf:repeat-nodeset eq 'vra:date']/xhtml:tr[xhtml:td[@class = 'prefCol']]">
         <xsl:variable name="earliestDate" select="xhtml:td[@class='contentCol']/xf:group[@appearance='minimal'][2]"/>
         <xsl:variable name="latestDate" select="xhtml:td[@class='contentCol']/xf:group[@appearance='minimal'][3]"/>
-        
+
         <tr>
             <xsl:copy-of select="xhtml:td[@class = 'prefCol']"/>
             <td class="contentCol">
@@ -471,7 +501,21 @@
                             </td>
                             <td>
                                 <!-- Button -->
+
+                                <!--
                                 <xsl:copy-of select="$earliestDate/xf:group[@class = 'alternativeNotation']/xf:trigger[1]"/>
+                                -->
+
+                                <xf:trigger>
+                                    <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/add-alternativeNotation/label"></xf:label>
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/add-alternativeNotation/hint"></xf:hint>
+                                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/add-alternativeNotation/help"></xf:help>
+                                    <xf:action>
+                                       <xf:insert context="instance('i-dateSet')/vra:date[index('r-vraDate')]/vra:earliestDate"
+                                                  nodeset="vra:alternativeNotation"
+                                                  origin="instance('i-templates-alt')/vra:alternativeNotation"></xf:insert>
+                                    </xf:action>
+                                </xf:trigger>
                             </td>
                             <td>
                                 <!-- Attributes -->
@@ -491,8 +535,8 @@
                                     </xsl:attribute>
 
                                     <div>
-                                        <xsl:copy-of select="$earliestDate/xf:repeat/xf:select1"/> 
-                                        <xsl:copy-of select="$earliestDate/xf:repeat/xf:input"/> 
+                                        <xsl:copy-of select="$earliestDate/xf:repeat/xf:select1"/>
+                                        <xsl:copy-of select="$earliestDate/xf:repeat/xf:input"/>
 
                                         <!-- Button -->
                                         <xsl:copy-of select="$earliestDate/xf:group[@class = 'alternativeNotation']/xf:trigger[2]"/>
@@ -505,7 +549,7 @@
                             <td>
                                 <!-- Date -->
                                 <xsl:copy-of select="$latestDate/xf:input[@ref = 'vra:latestDate/vra:date']"/>
-                                <!-- 
+                                <!--
                                 <xsl:apply-templates mode="fixDatelabel" select="$latestDate/xf:input[@ref = 'vra:latestDate/vra:date']"/>
                                 -->
                             </td>
@@ -520,7 +564,21 @@
                             <td>
                                 <!-- Button -->
                                 <!-- TODO: Rename button -->
+
+                                <!--
                                 <xsl:copy-of select="$latestDate/xf:group[@class = 'alternativeNotation']/xf:trigger[1]"/>
+                                -->
+
+                                <xf:trigger>
+                                    <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/add-alternativeNotation/label"></xf:label>
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/add-alternativeNotation/hint"></xf:hint>
+                                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/add-alternativeNotation/help"></xf:help>
+                                    <xf:action>
+                                       <xf:insert context="instance('i-dateSet')/vra:date[index('r-vraDate')]/vra:latestDate"
+                                                  nodeset="vra:alternativeNotation"
+                                                  origin="instance('i-templates-alt')/vra:alternativeNotation"></xf:insert>
+                                    </xf:action>
+                                </xf:trigger>
                             </td>
                             <td>
                                 <!-- Attributes -->
@@ -538,11 +596,11 @@
                                     <xsl:attribute name="nodeset">
                                         <xsl:value-of select="$latestDate/xf:repeat/@ref"/>
                                     </xsl:attribute>
-                                    
+
                                     <div>
                                         <xf:label/>
-                                        <xsl:copy-of select="$latestDate/xf:repeat/xf:select1"/> 
-                                        <xsl:copy-of select="$latestDate/xf:repeat/xf:input"/> 
+                                        <xsl:copy-of select="$latestDate/xf:repeat/xf:select1"/>
+                                        <xsl:copy-of select="$latestDate/xf:repeat/xf:input"/>
 
                                         <!-- Button -->
                                         <xsl:copy-of select="$latestDate/xf:group[@class = 'alternativeNotation']/xf:trigger[2]"/>
@@ -555,7 +613,7 @@
             </td>
             <xsl:copy-of select="xhtml:td[@class = 'triggerCol']"/>
         </tr>
-        
+
         <!--
         <xsl:copy-of select="xf:group[xf:select1[@ref eq '@type']]"/>
                 <tr>
@@ -564,18 +622,18 @@
                     </td>
                     <td class="earliestDate">
                         <xf:label>Earliest Date</xf:label>
-                        <xsl:apply-templates select="xf:group[xf:input[@ref eq 'vra:earliestDate/vra:date']]"/> 
+                        <xsl:apply-templates select="xf:group[xf:input[@ref eq 'vra:earliestDate/vra:date']]"/>
                     </td>
                 </tr>
                 <tr>
                     <td class="latestDate">
                         <xf:label>Latest Date</xf:label>
-                        <xsl:apply-templates select="xf:group[xf:input[@ref eq 'vra:latestDate/vra:date']]"/> 
+                        <xsl:apply-templates select="xf:group[xf:input[@ref eq 'vra:latestDate/vra:date']]"/>
                     </td>
                 </tr>
             </tbody>
         </table>
-        
+
         -->
     </xsl:template>
 
@@ -587,7 +645,7 @@
                 <xsl:otherwise>Date</xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
-        
+
         <xsl:copy>
             <xsl:copy-of select="@*"/>
             <xf:label>
@@ -597,9 +655,9 @@
                 <xsl:value-of select="$label"/>
             </xf:hint>
         </xsl:copy>
-    </xsl:template>    
-    
-    
+    </xsl:template>
+
+
     <xsl:template match="xf:trigger" mode="fixDateTriggerlabel">
         <xsl:variable name="label">
             <xsl:choose>
@@ -608,7 +666,7 @@
                 <xsl:otherwise>Unknown Action</xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
-        
+
         <xsl:copy>
             <xsl:copy-of select="@*"/>
             <xf:label>
@@ -617,11 +675,11 @@
             <xf:hint>
                 <xsl:value-of select="$label"/>
             </xf:hint>
-            <xsl:copy-of select="xf:action"/> 
+            <xsl:copy-of select="xf:action"/>
         </xsl:copy>
     </xsl:template>
-    
-    <!-- 
+
+    <!--
         ########## Inscription Set ##########
     -->
     <xsl:template match="xhtml:tbody[@xf:repeat-nodeset eq 'vra:inscription']//xhtml:td[@class eq 'contentCol']/xf:group[xf:select1[@ref eq 'vra:text/@type']]">
@@ -639,15 +697,15 @@
                     <xf:delete nodeset="instance('i-inscriptionSet')/vra:inscription[index('r-vraInscription')]/vra:text[index('r-inscriptionSet-text')]"></xf:delete>
                 </xf:trigger>
                 <xf:group class="vraAttributes" appearance="minimal" ref=".">
-                    <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
+                    <xi:include href="../bricks/vraAttributesViewUI.xml"></xi:include>
                 </xf:group>
                 <xf:trigger class="vraAttributeTrigger">
                     <xf:label>A</xf:label>
                     <xf:hint>Edit Attributes</xf:hint>
                     <xf:action>
-                       <xf:setvalue ref="instance('i-util')/currentElement" value="'text'"></xf:setvalue>
-                       <xf:setvalue ref="instance('i-util')/currentPosition" value="index('r-inscriptionSet-text')"/>
-                       <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
+                        <xf:setvalue ref="instance('i-util')/currentElement" value="'text'"></xf:setvalue>
+                        <xf:setvalue ref="instance('i-util')/currentPosition" value="index('r-inscriptionSet-text')"/>
+                        <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
                     </xf:action>
                     <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
                 </xf:trigger>
@@ -657,7 +715,16 @@
                 <xf:insert origin="instance('i-templates')/vra:inscription/vra:text" context="instance('i-inscriptionSet')/vra:inscription[index('r-vraInscription')]"/>
             </xf:trigger>
 
-            
+
         </xsl:copy>
     </xsl:template>
+
+    <!-- ##### Location Set ##### -->
+    <xsl:template match="xhtml:tbody[@xf:repeat-nodeset eq 'vra:location']//xf:input[@ref='vra:point']">
+        <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/point/label">
+            <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/point/hint"></xf:hint>
+            <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/locationSet/location/point/help"></xf:help>
+        </xf:output>
+    </xsl:template>
+
 </xsl:stylesheet>

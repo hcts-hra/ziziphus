@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language language="en">
-	<!-- version 2015-06-17_1742 ma-->
-	<!-- -->
+    <!-- version 2015-06-17_1742 ma-->
+    <!-- -->
     <actions>
         <exact>
             <label>Exact search</label>
@@ -27,7 +27,7 @@
         <!-- Kann es sein, dass <deleteEntry> und <removeTrashcan> identisch sind? -->
         <deleteEntry>
             <label>Remove</label>
-        	<hint>Remove</hint>
+            <hint>Remove</hint>
             <help/>
             <alert/>
             <placeholder/>
@@ -56,29 +56,29 @@
         </removeTrashcan>
         <showNotes>
             <label>Show Notes</label>
-        	<hint>Show Notes</hint>
+            <hint>Show Notes</hint>
             <help/>
             <alert/>
             <placeholder/>
         </showNotes>
         <hideNotes>
             <label>Hide Notes</label>
-        	<hint>Hide Notes</hint> 
-            <help/> 
+            <hint>Hide Notes</hint>
+            <help/>
             <alert/>
             <placeholder/>
         </hideNotes>
         <showDisplay>
             <label>Show Display</label>
-        	<hint>Show Display</hint>
+            <hint>Show Display</hint>
             <help/>
             <alert/>
             <placeholder/>
         </showDisplay>
         <hideDisplay>
             <label>Hide Display</label>
-        	<hint>Hide Display</hint>
-            <help/> 
+            <hint>Hide Display</hint>
+            <help/>
             <alert/>
             <placeholder/>
         </hideDisplay>
@@ -98,41 +98,41 @@
         </ok>
         <cancel>
             <label>Cancel</label>
-        	<hint>Cancel</hint>
+            <hint>Cancel</hint>
             <help/>
             <alert/>
             <placeholder/>
         </cancel>
         <add>
             <label>Add</label>
-        	<hint>Add</hint>
+            <hint>Add</hint>
             <help/>
             <alert/>
             <placeholder/>
         </add>
         <remove>
             <label>Remove</label>
-        	<hint>Remove</hint>
+            <hint>Remove</hint>
             <help/>
             <alert/>
             <placeholder/>
         </remove>
-    	<!-- Special Cases -->
-    	<add-alternativeNotation>
-    		<label>Add Alternative Notation</label>
-    		<hint/>
-    		<help/>
-    		<alert/>
-    		<placeholder/>
-    	</add-alternativeNotation>
-    	<remove-alternativeNotation>
-    		<label>Remove Alternative Notation</label>
-    		<hint/>
-    		<help/>
-    		<alert/>
-    		<placeholder/>
-    	</remove-alternativeNotation>
-   </actions>
+        <!-- Special Cases -->
+        <add-alternativeNotation>
+            <label>Add Alternative Notation</label>
+            <hint/>
+            <help/>
+            <alert/>
+            <placeholder/>
+        </add-alternativeNotation>
+        <remove-alternativeNotation>
+            <label>Remove Alternative Notation</label>
+            <hint/>
+            <help/>
+            <alert/>
+            <placeholder/>
+        </remove-alternativeNotation>
+    </actions>
     <!-- I am not sure if we need tool tips and help links for the global attributes. Which of the global attributes will be edited by the user? -->
     <!-- MA: HINT and HELP should be created for all global attributes. they are accessible in the attributes window. Use VRA definitions for a start. -->
     <!-- But I think we might need tool tips and help links for "work" and "image." -->
@@ -140,63 +140,63 @@
     <!-- MA: The element-specific attributes should also get help texts. -->
     <display>
         <label>Display</label>
-    	<hint>Enter Display values here.</hint>
+        <hint>Enter Display values here.</hint>
         <help/> <!-- link ergänzen -->
         <alert/>
         <placeholder/>
     </display>
     <notes>
         <label>Notes</label>
-    	<hint>Enter Notes here.</hint>
+        <hint>Enter Notes here.</hint>
         <help/> <!-- link ergänzen -->
         <alert/>
         <placeholder/>
     </notes>
     <dataDate>
         <label>Data Date</label>  <!-- label tooltip auf attribut-anzeige im edit fenster identisch mit label in attribute-fenster? -->
-    	<hint>Last modified</hint>  <!-- dataDate: date last modified -->
+        <hint>Last modified</hint>  <!-- dataDate: date last modified -->
         <help/>  <!-- link ergänzen -->
         <alert/>
         <placeholder/>
     </dataDate>
     <extent>
         <label>Extent</label>
-    	<hint>Extent</hint>
+        <hint>Extent</hint>
         <help/> <!-- link ergänzen -->
         <alert/>
         <placeholder/>
     </extent>
     <href>
         <label>Href</label>
-    	<hint>Href</hint>
+        <hint>Href</hint>
         <help/> <!-- link ergänzen -->
         <alert/>
         <placeholder/>
     </href>
     <refid>
         <label>RefID</label>
-    	<hint>RefID</hint>
+        <hint>RefID</hint>
         <help/> <!-- link ergänzen -->
         <alert/>
         <placeholder/>
     </refid>
     <rules>
         <label>Rules</label>
-    	<hint>Rules</hint>
+        <hint>Rules</hint>
         <help/> <!-- link ergänzen -->
         <alert/>
         <placeholder/>
     </rules>
     <source>
         <label>Source</label>
-    	<hint>Source</hint>
+        <hint>Source</hint>
         <help/> <!-- link ergänzen -->
         <alert/>
         <placeholder/>
     </source>
     <vocab>
         <label>Vocab</label>
-    	<hint>Vocab</hint>
+        <hint>Vocab</hint>
         <help/> <!-- link ergänzen -->
         <alert/>
         <placeholder/>
@@ -210,14 +210,14 @@
     </lang>
     <script>
         <label>Script</label>
-    	<hint>Script</hint>
+        <hint>Script</hint>
         <help/> <!-- link ergänzen -->
         <alert/>
         <placeholder/>
     </script>
     <transliteration>
         <label>Transliteration</label>
-    	<hint>Transliteration</hint>
+        <hint>Transliteration</hint>
         <help/> <!-- link ergänzen -->
         <alert/>
         <placeholder/>
@@ -248,7 +248,7 @@
             </attribution>
             <culture>
                 <label>Culture</label>
-            	<hint>Add the agent's cultural background here.</hint>
+                <hint>Add the agent's cultural background here.</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agentset#culture</help>
                 <alert/><!-- <alert>You entered 'unknown' in the agent's name field, so please give a cultural context for this agent.</alert>Alert is needed, when agent name is "unknown." -->
                 <placeholder>Example: Alsatian</placeholder>
@@ -256,14 +256,14 @@
             <dates>
                 <type>
                     <label>Type</label>
-                	<hint>If VIAF data available, value will be set automatically. If not, choose a date type.</hint>
+                    <hint>If VIAF data available, value will be set automatically. If not, choose a date type.</hint>
                     <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agentset#dates</help>
                     <alert/>
                     <placeholder/> <!-- I think, we don't need an alert here. -->
                 </type>
                 <earliestDate>
                     <label>Earliest Date</label>
-                	<hint>If VIAF data available, value will be set automatically. If not, add e.g. the birth year or start of activity here. Choose a date type and if necessary a specification from the drop-down list.</hint>
+                    <hint>If VIAF data available, value will be set automatically. If not, add e.g. the birth year or start of activity here. Choose a date type and if necessary a specification from the drop-down list.</hint>
                     <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agentset#earliestdate</help>
                     <alert>Date format not valid.</alert><!-- Alert needed, if date values don't fit ISO 8601 or 'present' -->
                     <placeholder>YYYY-MM-DD</placeholder>
@@ -279,12 +279,12 @@
                         <hint>circa</hint>
                         <help/>
                         <alert/>
-                        <placeholder/> 
+                        <placeholder/>
                     </circa>
                 </earliestDate>
                 <latestDate>
                     <label>Latest Date</label>
-                	<hint>If VIAF data available, value will be set automatically. If not, add e.g. the year of death or the end of activity here. If necessary choose a specification from the drop-down list.</hint>
+                    <hint>If VIAF data available, value will be set automatically. If not, add e.g. the year of death or the end of activity here. If necessary choose a specification from the drop-down list.</hint>
                     <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agentset#latestdate</help>
                     <alert>Date format not valid.</alert><!-- Alert needed, if date values don't fit ISO 8601 or 'present' -->
                     <placeholder>YYYY-MM-DD</placeholder>
@@ -313,18 +313,18 @@
                 <!-- Since @type is also displayed in the interface, it should also be possible to explain it. This probably applies to all VRA core (expanded) attributes. We should add hint and help for all, just the alert will perhaps not be necessary. -->
                 <type>
                     <label>Name Type</label>
-                	<hint>If VIAF data available, value will be set automatically. If not, choose a name type.</hint>
+                    <hint>If VIAF data available, value will be set automatically. If not, choose a name type.</hint>
                     <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agentset#name-type</help>
                     <alert/>
                     <placeholder/>
                 </type>
-				<exactSearch>
-					<label>Exact Search</label>
-					<hint>Searches for the exact name only, e.g. "gogh, vincent van" or "metropolitan museum of art".</hint>
-					<help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agentset#name</help>
-					<alert/>
-					<placeholder/>
-				</exactSearch>
+                <exactSearch>
+                    <label>Exact Search</label>
+                    <hint>Searches for the exact name only, e.g. "gogh, vincent van" or "metropolitan museum of art".</hint>
+                    <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agentset#name</help>
+                    <alert/>
+                    <placeholder/>
+                </exactSearch>
             </name>
             <role>
                 <label>Role</label>
@@ -353,11 +353,11 @@
                 <hint>preferred</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/cultural-contextset#preference</help>
                 <alert/>
-                <placeholder/> 
+                <placeholder/>
             </pref>
         </culturalContext>
     </culturalContextSet>
-    <dateSet> 
+    <dateSet>
         <label>Dates</label>
         <hint>Add any dates related to the artwork here, the creation date in particular.</hint>
         <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/dateset</help>
@@ -369,7 +369,7 @@
                 <hint>preferred</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/dateset#preference</help>
                 <alert/>
-                <placeholder/> 
+                <placeholder/>
             </pref>
             <type>
                 <label>Type</label>
@@ -459,7 +459,7 @@
     </dateSet>
     <descriptionSet>
         <label>Descriptions</label>
-    	<hint>Descriptions</hint>
+        <hint>Descriptions</hint>
         <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/descriptionset</help>
         <alert/>
         <placeholder/>
@@ -502,7 +502,7 @@
                 </name>
                 <role>
                     <label>Role</label>
-                	<hint>Choose a role from the drop-down list (MARC relator terms).</hint>
+                    <hint>Choose a role from the drop-down list (MARC relator terms).</hint>
                     <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/descriptionset#author-role</help>
                     <alert/>
                     <placeholder>Select a role.</placeholder>
@@ -512,7 +512,7 @@
     </descriptionSet>
     <inscriptionSet>
         <label>Inscriptions</label>
-    	<hint>Inscriptions</hint>
+        <hint>Inscriptions</hint>
         <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/inscriptionset</help>
         <alert/>
         <placeholder/>
@@ -586,7 +586,7 @@
             <refid>
                 <type>
                     <label>Type</label>
-                	<hint>Specify the RefID type.</hint>
+                    <hint>Specify the RefID type.</hint>
                     <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/locationset#refid-type</help>
                     <alert/> <!-- I think, we don't need an alert here. -->
                     <placeholder>Select a type.</placeholder>
@@ -600,13 +600,13 @@
             <name>
                 <type>
                     <label>Type</label>
-					<hint>Specify the name type.</hint>
+                    <hint>Specify the name type.</hint>
                     <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/locationset#name-type</help>
                     <alert/> <!-- I think, we don't need an alert here. -->
                     <placeholder>Select a type.</placeholder>
                 </type>
                 <label>Name</label>
-            	<hint>Start entering the name of the location and select the right term from the suggestions (TGN/VIAF) or add a new entry.</hint>
+                <hint>Start entering the name of the location and select the right term from the suggestions (TGN/VIAF) or add a new entry.</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/locationset#name</help>
                 <alert/>
                 <placeholder/>
@@ -620,7 +620,7 @@
                 <placeholder/>
                 <epsg>
                     <label>Epsg</label>
-                	<hint>Enter the EPSG code of the Coordinate Reference Systems here, e.g. 4326 for WGS 84 (Wikipedia), or 3857 for Google Mercator (Google Maps).</hint>
+                    <hint>Enter the EPSG code of the Coordinate Reference Systems here, e.g. 4326 for WGS 84 (Wikipedia), or 3857 for Google Mercator (Google Maps).</hint>
                     <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/locationset#epsg</help>
                     <alert/>
                     <placeholder/>
@@ -644,7 +644,7 @@
     </locationSet>
     <materialSet>
         <label>Materials</label>
-    	<hint>Materials</hint>
+        <hint>Materials</hint>
         <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/materialset</help>
         <alert/>
         <placeholder/>
@@ -668,7 +668,7 @@
             <hint>Start entering a material term and select the right term from the suggestions (AAT) or add a new entry.</hint>
             <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/materialset#term</help>
             <alert/>
-            <placeholder/> 
+            <placeholder/>
         </material>
     </materialSet>
     <measurementsSet>
@@ -685,7 +685,7 @@
             </pref>
             <type>
                 <label>Type</label>
-            	<hint>Select the type of the measurements you are adding from the drop-down list.</hint>
+                <hint>Select the type of the measurements you are adding from the drop-down list.</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/measurementsset#type</help>
                 <alert>Please choose a measurement type.</alert>
                 <placeholder>Select a type.</placeholder>
@@ -721,7 +721,7 @@
     </measurementsSet>
     <relationSet>
         <label>Relations</label>
-    	<hint>Relations</hint>
+        <hint>Relations</hint>
         <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/relationset</help>
         <alert/>
         <placeholder/>
@@ -756,7 +756,7 @@
     </relationSet>
     <rightsSet>
         <label>Rights</label>
-    	<hint>Rights</hint>
+        <hint>Rights</hint>
         <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/rightsset</help>
         <alert/>
         <placeholder/>
@@ -794,7 +794,7 @@
     </rightsSet>
     <sourceSet>
         <label>Sources</label>
-    	<hint>Sources</hint>
+        <hint>Sources</hint>
         <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/sourceset</help>
         <alert/>
         <placeholder/>
@@ -838,7 +838,7 @@
     </sourceSet>
     <stateEditionSet>
         <label>State/Edition</label>
-    	<hint>State/Edition</hint>
+        <hint>State/Edition</hint>
         <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/state-editionset</help>
         <alert/>
         <placeholder/>
@@ -892,7 +892,7 @@
     </stateEditionSet>
     <stylePeriodSet>
         <label>Styles/Periods</label>
-    	<hint>Styles/Periods</hint>
+        <hint>Styles/Periods</hint>
         <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/style-periodset</help>
         <alert/>
         <placeholder/>
@@ -913,7 +913,7 @@
     </stylePeriodSet>
     <subjectSet>
         <label>Subjects</label>
-    	<hint>Subjects</hint>
+        <hint>Subjects</hint>
         <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/subjectset</help>
         <alert/>
         <placeholder/>
@@ -944,7 +944,7 @@
     </subjectSet>
     <techniqueSet>
         <label>Techniques</label>
-    	<hint>Techniques</hint>
+        <hint>Techniques</hint>
         <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/techniqueset</help>
         <alert/>
         <placeholder/>
@@ -965,7 +965,7 @@
     </techniqueSet>
     <textrefSet>
         <label>Textual References</label>
-    	<hint>Textual References</hint>
+        <hint>Textual References</hint>
         <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/text-referencesetset</help>
         <alert/>
         <placeholder/>
@@ -985,7 +985,7 @@
                 <placeholder/> <!-- If something has been added to the text field. -->
                 <type>
                     <label>Type</label>
-                	<hint>Select what kind of textual reference you are adding from the drop-down list.</hint>
+                    <hint>Select what kind of textual reference you are adding from the drop-down list.</hint>
                     <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/text-referenceset#name-type</help>
                     <alert/>
                     <placeholder>Select a type.</placeholder>
@@ -1009,7 +1009,7 @@
     </textrefSet>
     <titleSet>
         <label>Titles</label>
-    	<hint>Titles</hint>
+        <hint>Titles</hint>
         <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/titleset</help>
         <alert/>
         <placeholder/>
@@ -1038,7 +1038,7 @@
     </titleSet>
     <worktypeSet>
         <label>Worktypes</label>
-    	<hint>Worktypes</hint>
+        <hint>Worktypes</hint>
         <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/worktypeset</help>
         <alert/>
         <placeholder/>

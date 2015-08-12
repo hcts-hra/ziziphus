@@ -22,7 +22,7 @@
                      <td xmlns="http://www.w3.org/1999/xhtml">
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(@type,'')) != 0">
-                              <div data-bf-bind="@type" data-bf-type="select1" tabindex="0" title="" id="b-d2e451"
+                              <div data-bf-bind="@type" data-bf-type="select1" tabindex="0" title="" id="b-d2e265"
                                    class=" ">
                                  <xsl:value-of select="@type"></xsl:value-of>
                               </div>
@@ -38,81 +38,24 @@
                         <table class="table viewDateTable">
                            <tbody>
                               <tr>
+                                 <td></td>
                                  <td>
                                     <xsl:choose xmlns="http://www.w3.org/1999/xhtml">
-                                       <xsl:when test="string-length(string-join(vra:earliestDate/vra:date/@type,'')) != 0">
-                                          <div data-bf-bind="vra:earliestDate/vra:date/@type" data-bf-type="select1"
-                                               tabindex="0"
-                                               title=""
-                                               id="b-d2e369"
-                                               class=" earliestDateType">
-                                             <xsl:value-of select="vra:earliestDate/vra:date/@type"></xsl:value-of>
+                                       <xsl:when test="string-length(string-join(vra:earliestDate,'')) != 0">
+                                          <div data-bf-bind="vra:earliestDate" data-bf-type="input" tabindex="0" title=""
+                                               id="b-d2e249">
+                                             <xsl:value-of select="vra:earliestDate"></xsl:value-of>
                                           </div>
                                        </xsl:when>
                                        <xsl:otherwise>
-                                          <div class="nodata" data-bf-bind="vra:earliestDate/vra:date/@type"
-                                               data-bf-type="select1"
+                                          <div class="nodata" data-bf-bind="vra:earliestDate" data-bf-type="input"
                                                tabindex="0">
-                                             <xsl:value-of select="normalize-space(concat('(', $language-files/language/dateSet/date/earliestDate/date/type/label, ')'))"></xsl:value-of>
-                                          </div>
-                                       </xsl:otherwise>
-                                    </xsl:choose>
-                                 </td>
-                                 <td>
-                                    <xsl:choose xmlns="http://www.w3.org/1999/xhtml">
-                                       <xsl:when test="string-length(string-join(vra:earliestDate/vra:date,'')) != 0">
-                                          <div data-bf-bind="vra:earliestDate/vra:date" data-bf-type="input" tabindex="0"
-                                               title=""
-                                               id="b-d2e361">
-                                             <xsl:value-of select="vra:earliestDate/vra:date"></xsl:value-of>
-                                          </div>
-                                       </xsl:when>
-                                       <xsl:otherwise>
-                                          <div class="nodata" data-bf-bind="vra:earliestDate/vra:date" data-bf-type="input"
-                                               tabindex="0">
-                                             <xsl:value-of select="normalize-space(concat('(', $language-files/language/dateSet/date/earliestDate/date/label, ')'))"></xsl:value-of>
+                                             <xsl:value-of select="normalize-space(concat('(', $language-files/language/dateSet/date/earliestDate/label, ')'))"></xsl:value-of>
                                           </div>
                                        </xsl:otherwise>
                                     </xsl:choose>
                                  </td>
                               </tr>
-                           </tbody>
-                        </table>
-                        <table xmlns="http://www.w3.org/1999/xhtml" class="vraSetInnerRepeatView table">
-                           <tbody>
-                              <xsl:for-each select="vra:earliestDate/vra:alternativeNotation">
-                                 <tr>
-                                    <td>
-                                       <xsl:choose>
-                                          <xsl:when test="string-length(string-join(@type,'')) != 0">
-                                             <div data-bf-bind="@type" data-bf-type="select1" tabindex="0" title="" id="b-d2e388"
-                                                  class=" ">
-                                                <xsl:value-of select="@type"></xsl:value-of>
-                                             </div>
-                                          </xsl:when>
-                                          <xsl:otherwise>
-                                             <div class="nodata" data-bf-bind="@type" data-bf-type="select1" tabindex="0">
-                                                <xsl:value-of select="normalize-space(concat('(', $language-files/language/dateSet/date/earliestDate/alternativeNotation/type/label, ')'))"></xsl:value-of>
-                                             </div>
-                                          </xsl:otherwise>
-                                       </xsl:choose>
-                                    </td>
-                                    <td>
-                                       <xsl:choose>
-                                          <xsl:when test="string-length(string-join(.,'')) != 0">
-                                             <div data-bf-bind="." data-bf-type="input" tabindex="0" title="" id="b-d2e384">
-                                                <xsl:value-of select="."></xsl:value-of>
-                                             </div>
-                                          </xsl:when>
-                                          <xsl:otherwise>
-                                             <div class="nodata" data-bf-bind="." data-bf-type="input" tabindex="0">
-                                                <xsl:value-of select="normalize-space(concat('(', $language-files/language/dateSet/date/earliestDate/alternativeNotation/label, ')'))"></xsl:value-of>
-                                             </div>
-                                          </xsl:otherwise>
-                                       </xsl:choose>
-                                    </td>
-                                 </tr>
-                              </xsl:for-each>
                            </tbody>
                         </table>
                      </td>
@@ -120,81 +63,23 @@
                         <table class="table viewDateTable">
                            <tbody>
                               <tr>
+                                 <td></td>
                                  <td>
                                     <xsl:choose xmlns="http://www.w3.org/1999/xhtml">
-                                       <xsl:when test="string-length(string-join(vra:latestDate/vra:date/@type,'')) != 0">
-                                          <div data-bf-bind="vra:latestDate/vra:date/@type" data-bf-type="select1"
-                                               tabindex="0"
-                                               title=""
-                                               id="b-d2e417"
-                                               class=" latestDateType">
-                                             <xsl:value-of select="vra:latestDate/vra:date/@type"></xsl:value-of>
+                                       <xsl:when test="string-length(string-join(vra:latestDate,'')) != 0">
+                                          <div data-bf-bind="vra:latestDate" data-bf-type="input" tabindex="0" title=""
+                                               id="b-d2e257">
+                                             <xsl:value-of select="vra:latestDate"></xsl:value-of>
                                           </div>
                                        </xsl:when>
                                        <xsl:otherwise>
-                                          <div class="nodata" data-bf-bind="vra:latestDate/vra:date/@type"
-                                               data-bf-type="select1"
-                                               tabindex="0">
-                                             <xsl:value-of select="normalize-space(concat('(', $language-files/language/dateSet/date/latestDate/date/type/label, ')'))"></xsl:value-of>
-                                          </div>
-                                       </xsl:otherwise>
-                                    </xsl:choose>
-                                 </td>
-                                 <td>
-                                    <xsl:choose xmlns="http://www.w3.org/1999/xhtml">
-                                       <xsl:when test="string-length(string-join(vra:latestDate/vra:date,'')) != 0">
-                                          <div data-bf-bind="vra:latestDate/vra:date" data-bf-type="input" tabindex="0"
-                                               title=""
-                                               id="b-d2e409">
-                                             <xsl:value-of select="vra:latestDate/vra:date"></xsl:value-of>
-                                          </div>
-                                       </xsl:when>
-                                       <xsl:otherwise>
-                                          <div class="nodata" data-bf-bind="vra:latestDate/vra:date" data-bf-type="input"
-                                               tabindex="0">
-                                             <xsl:value-of select="normalize-space(concat('(', $language-files/language/dateSet/date/latestDate/date/label, ')'))"></xsl:value-of>
+                                          <div class="nodata" data-bf-bind="vra:latestDate" data-bf-type="input" tabindex="0">
+                                             <xsl:value-of select="normalize-space(concat('(', $language-files/language/dateSet/date/latestDate/label, ')'))"></xsl:value-of>
                                           </div>
                                        </xsl:otherwise>
                                     </xsl:choose>
                                  </td>
                               </tr>
-                           </tbody>
-                        </table>
-                        <table xmlns="http://www.w3.org/1999/xhtml" class="vraSetInnerRepeatView table">
-                           <tbody>
-                              <xsl:for-each select="vra:latestDate/vra:alternativeNotation">
-                                 <tr>
-                                    <td>
-                                       <xsl:choose>
-                                          <xsl:when test="string-length(string-join(@type,'')) != 0">
-                                             <div data-bf-bind="@type" data-bf-type="select1" tabindex="0" title="" id="b-d2e436"
-                                                  class=" ">
-                                                <xsl:value-of select="@type"></xsl:value-of>
-                                             </div>
-                                          </xsl:when>
-                                          <xsl:otherwise>
-                                             <div class="nodata" data-bf-bind="@type" data-bf-type="select1" tabindex="0">
-                                                <xsl:value-of select="normalize-space(concat('(', $language-files/language/dateSet/date/latestDate/alternativeNotation/type/label, ')'))"></xsl:value-of>
-                                             </div>
-                                          </xsl:otherwise>
-                                       </xsl:choose>
-                                    </td>
-                                    <td>
-                                       <xsl:choose>
-                                          <xsl:when test="string-length(string-join(.,'')) != 0">
-                                             <div data-bf-bind="." data-bf-type="input" tabindex="0" title="" id="b-d2e432">
-                                                <xsl:value-of select="."></xsl:value-of>
-                                             </div>
-                                          </xsl:when>
-                                          <xsl:otherwise>
-                                             <div class="nodata" data-bf-bind="." data-bf-type="input" tabindex="0">
-                                                <xsl:value-of select="normalize-space(concat('(', $language-files/language/dateSet/date/latestDate/alternativeNotation/label, ')'))"></xsl:value-of>
-                                             </div>
-                                          </xsl:otherwise>
-                                       </xsl:choose>
-                                    </td>
-                                 </tr>
-                              </xsl:for-each>
                            </tbody>
                         </table>
                      </td>

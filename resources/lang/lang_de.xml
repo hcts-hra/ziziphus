@@ -57,6 +57,20 @@
             <alert/>
             <placeholder/>
         </hideNotes>
+        <showDisplay>
+            <label>DE: Show Display</label>
+            <hint/>
+            <help/>
+            <alert/>
+            <placeholder/>
+        </showDisplay>
+        <hideDisplay>
+            <label>DE: Hide Display</label>
+            <hint/>
+            <help/>
+            <alert/>
+            <placeholder/>
+        </hideDisplay>
         <clear>
             <label>DE: clear</label>
             <hint/>
@@ -207,7 +221,7 @@
                 <hint>preferred</hint>
                 <help/>
                 <alert/>
-                <placeholder/> 
+                <placeholder/>
             </pref>
             <attribution>
                 <label>DE: Attribution</label>
@@ -315,7 +329,7 @@
                 <hint>preferred</hint>
                 <help/>
                 <alert/>
-                <placeholder/> 
+                <placeholder/>
             </pref>
         </culturalContext>
     </culturalContextSet>
@@ -326,7 +340,7 @@
                 <hint>preferred</hint>
                 <help/>
                 <alert/>
-                <placeholder/> 
+                <placeholder/>
             </pref>
             <type>
                 <label>DE: Type</label>
@@ -422,7 +436,7 @@
                 <hint>preferred</hint>
                 <help/>
                 <alert/>
-                <placeholder/> 
+                <placeholder/>
             </pref>
             <text>
                 <label>DE: Text</label>
@@ -471,7 +485,7 @@
                 <hint>preferred</hint>
                 <help/>
                 <alert/>
-                <placeholder/> 
+                <placeholder/>
             </pref>
             <author>
                 <label>DE: Author</label>
@@ -531,7 +545,7 @@
                 <hint>preferred</hint>
                 <help/>
                 <alert/>
-                <placeholder/> 
+                <placeholder/>
             </pref>
             <refid>
                 <type>
@@ -600,7 +614,7 @@
                 <hint>preferred</hint>
                 <help/>
                 <alert/>
-                <placeholder/> 
+                <placeholder/>
             </pref>
             <label>DE: Material</label>
             <hint>Start entering a material term and select the right term from the suggestions or add a new entry.</hint>
@@ -644,7 +658,7 @@
                 <hint>preferred</hint>
                 <help/>
                 <alert/>
-                <placeholder/> 
+                <placeholder/>
             </pref>
             <label>DE: Measurements</label>
             <hint>Add the measurements of the artwork here. Use a new entry for every single measure you add, and choose its type and the shape of the artwork from the drop-down listes.</hint>
@@ -672,7 +686,7 @@
                 <hint>preferred</hint>
                 <help/>
                 <alert/>
-                <placeholder/> 
+                <placeholder/>
             </pref>
             <relids>
                 <label>DE: Relids</label>
@@ -695,7 +709,7 @@
                 <hint>preferred</hint>
                 <help/>
                 <alert/>
-                <placeholder/> 
+                <placeholder/>
             </pref>
             <!-- Added "type" here. -->
             <type>
@@ -728,7 +742,7 @@
                 <hint>preferred</hint>
                 <help/>
                 <alert/>
-                <placeholder/> 
+                <placeholder/>
             </pref>
             <refid>
                 <type>
@@ -767,7 +781,7 @@
                 <hint>preferred</hint>
                 <help/>
                 <alert/>
-                <placeholder/> 
+                <placeholder/>
             </pref>
             <!-- Other fields added -->
             <type>
@@ -816,7 +830,7 @@
                 <hint>preferred</hint>
                 <help/>
                 <alert/>
-                <placeholder/> 
+                <placeholder/>
             </pref>
             <label>DE: StylePeriod</label>
             <hint>Start entering a style or period and select the right style or period from the suggestions or add a new entry.</hint>
@@ -832,7 +846,7 @@
                 <hint>preferred</hint>
                 <help/>
                 <alert/>
-                <placeholder/> 
+                <placeholder/>
             </pref>
             <term>
                 <!-- Added "type" here. -->
@@ -858,7 +872,7 @@
                 <hint>preferred</hint>
                 <help/>
                 <alert/>
-                <placeholder/> 
+                <placeholder/>
             </pref>
             <type>
                 <label>DE: Type</label>
@@ -881,7 +895,7 @@
                 <hint>preferred</hint>
                 <help/>
                 <alert/>
-                <placeholder/> 
+                <placeholder/>
             </pref>
             <name>
                 <label>DE: Name</label>
@@ -928,7 +942,7 @@
                 <hint>preferred</hint>
                 <help/>
                 <alert/>
-                <placeholder/> 
+                <placeholder/>
             </pref>
             <label>DE: Title</label>
             <hint>Enter the title of the artwork here.</hint>
@@ -944,7 +958,7 @@
                 <hint>preferred</hint>
                 <help/>
                 <alert/>
-                <placeholder/> 
+                <placeholder/>
             </pref>
             <label>DE: Worktype</label>
             <hint>Start entering a worktype and select the right term from the suggestions or add a new entry.</hint>

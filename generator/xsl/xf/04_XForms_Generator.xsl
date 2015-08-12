@@ -107,16 +107,16 @@
                                         clearAndInitAutocompletes();
                                     </script>
                                 </xsl:if>
-                            </xf:action>   
-                            
+                            </xf:action>
+
                             <xsl:if test="//xf:bind[@nodeset=concat('vra:',$vraSectionNode)]//@control[. eq 'autocomplete']">
                                 <xf:action ev:observer="i-{$vraSectionNode}" ev:event="xforms-insert">
                                     <script>
                                         initAutocompletes();
                                     </script>
                                 </xf:action>
-                            </xsl:if>                        
-                            
+                            </xsl:if>
+
                             <xf:submission id="s-loadSet"
                                     resource="{$relativePath}modules/loadData.xql?id={{bf:instanceOfModel('m-main','i-control-center')/uuid}}"
                                     method="post" replace="instance" validate="false">
@@ -135,12 +135,12 @@
                                         <xsl:attribute name="if">not(exists(instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/@dataDate))</xsl:attribute>
                                     </xf:insert>
                                     <xf:setvalue value="now()">
-                                        <xsl:attribute name="ref">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/@dataDate</xsl:attribute>    
+                                        <xsl:attribute name="ref">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/@dataDate</xsl:attribute>
                                     </xf:setvalue>
                                     <xf:recalculate/>
                                         <!-- strip unwanted chars from timestamp -->
                                         <xf:setvalue value="concat(substring(.,1,10),'-',substring(.,12,2), '-', substring(.,15,2), '-', substring(.,18,2))">
-                                            <xsl:attribute name="ref">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/@dataDate</xsl:attribute>    
+                                            <xsl:attribute name="ref">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/@dataDate</xsl:attribute>
                                         </xf:setvalue>
                                 </xf:action>
                                 <xf:action ev:event="xforms-submit-done">
@@ -182,7 +182,7 @@
                                 </templates>
                             </xf:instance>
 
-                            <xi:include href="bricks/vraAttributesInstance.xml"/>
+                            <xi:include href="../bricks/vraAttributesInstance.xml"/>
 
                             <xf:instance id="i-util">
                                 <data xmlns="">
@@ -256,15 +256,11 @@
                         <xf:label>Attributes</xf:label>
                         <xf:group appearance="minimal" ref="instance('i-vraAttributes')/vra:vraElement">
                             <xf:group appearance="minimal" class="attrDialogGroup">
-                                <xf:input ref="@dataDate" id="first">
-                                    <xf:label>
-                                        <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/dataDate/label">
-                                            <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/dataDate/hint"/>
-                                            <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/dataDate/help"/>
-                                        </xf:output>
-                                    </xf:label>
-                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/dataDate/placeholder"/>
-                                </xf:input>
+                                <xf:output ref="@dataDate" id="first">
+                                    <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/dataDate/label"/>
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/dataDate/hint"/>
+                                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/dataDate/help"/>
+                                </xf:output>
                                 <xf:trigger class="deleteAttribute">
                                     <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/label"/>
                                     <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/hint"/>
@@ -298,7 +294,7 @@
                                         </xf:output>
                                     </xf:label>
                                     <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/href/placeholder"/>
-                                    
+
                                 </xf:input>
                                 <xf:trigger class="deleteAttribute">
                                     <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/clear/label"/>
@@ -314,8 +310,15 @@
                                     <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/vocab/help"/>
                                 </xf:output>
                             </xf:group>
-                            
-                            
+                            <xf:group appearance="minimal" class="attrDialogGroup">
+                                <xf:output ref="@refid" id="{concat(generate-id(),'-refid')}">
+                                    <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/refid/label"/>
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/refid/hint"/>
+                                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/refid/help"/>
+                                </xf:output>
+                            </xf:group>
+
+
                             <!--
                             <xf:group appearance="minimal" class="attrDialogGroup">
                                 <xf:input ref="@refid" id="{concat(generate-id(),'-refid')}">
@@ -363,7 +366,7 @@
                                     <xf:setvalue ref="@source"/>
                                 </xf:trigger>
                             </xf:group>
-                           
+
                             <!--
                             <xf:group appearance="minimal" class="attrDialogGroup">
                                 <xf:select1 ref="@vocab" id="{concat(generate-id(),'-vocab')}">
@@ -414,7 +417,7 @@
                                     <xf:setvalue ref="@lang"/>
                                 </xf:trigger>
                             </xf:group>
-                           
+
                             <xf:group appearance="minimal" class="attrDialogGroup">
                                 <xf:select1 ref="@script" id="{concat(generate-id(),'-script')}">
                                     <xf:label>
@@ -442,7 +445,7 @@
                                         <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/transliteration/label">
                                             <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/transliteration/hint"/>
                                         </xf:output>
-                                        <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/transliteration/help"/>  
+                                        <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/transliteration/help"/>
                                     </xf:label>
                                     <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/transliteration/placeholder"/>
                                     <xf:itemset nodeset="bf:instanceOfModel('m-code-tables', 'i-codes-transliteration')/items/item">
@@ -457,21 +460,9 @@
                                     <xf:setvalue ref="@transliteration"/>
                                 </xf:trigger>
                            </xf:group>
-                           
-                            <xf:group appearance="minimal" class="attrDialogGroup">
-                                <xf:output ref="@refid" id="{concat(generate-id(),'-refid')}">
-                                    <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/refid/label"/>
-                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/refid/hint"/>
-                                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/refid/help"/>
-                                </xf:output>
-                            </xf:group>
-                            <xf:group appearance="minimal" class="attrDialogGroup">
-                                <xf:output ref="@vocab" id="{concat(generate-id(),'-vocab')}">
-                                    <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/vocab/label"/>
-                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/vocab/hint"/>
-                                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/vocab/help"/>
-                                </xf:output>
-                            </xf:group>
+
+
+
 
                             <xf:group class="buttonBar">
                                 <xf:trigger class="-btn">
@@ -494,7 +485,7 @@
                                         </xf:insert>
                                     </xf:action>
                                     <xf:action if="not('.'=instance('i-util')/currentElement) and instance('i-util')/currentPosition = -1">
-                                        
+
                                         <xf:delete>
                                             <xsl:attribute name="nodeset">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/*[local-name()=instance('i-util')/currentElement]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]</xsl:attribute>
                                         </xf:delete>
@@ -504,7 +495,7 @@
                                         </xf:insert>
                                     </xf:action>
                                     <xf:action if="not('.'=instance('i-util')/currentElement) and instance('i-util')/currentPosition != -1">
-                                        
+
                                         <xf:delete>
                                             <xsl:attribute name="nodeset">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]//*[local-name()=instance('i-util')/currentElement][position() = instance('i-util')/currentPosition]/@*[local-name(.)=('dataDate','extent','href','refid','rules','source','vocab','lang','transliteration','script')]</xsl:attribute>
                                         </xf:delete>
@@ -515,7 +506,7 @@
                                     </xf:action>
                                     <bfc:hide dialog="attrDialog"></bfc:hide>
                                 </xf:trigger>
-                                <xf:trigger appearance="minimal">
+                                <xf:trigger class="-btn">
                                     <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/cancel/label"/>
                                     <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/cancel/hint"/>
                                     <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/cancel/help"/>
@@ -608,7 +599,7 @@
 
         <xf:group id="outerGroup" appearance="minimal" model="m-child-model">
             <xsl:attribute name="ref">instance('i-<xsl:value-of select="$vraSectionNode"/>')</xsl:attribute>
-            
+
             <xsl:if test="$debugEnabled">
                 <xsl:message>UI-1 - matched bind for:<xsl:value-of select="$vraNodeName"/></xsl:message>
                 <xsl:message></xsl:message>
@@ -676,7 +667,7 @@
                     <tr>
                         <td colspan="3" class="globalAttrs">
                             <xf:group class="vraAttributes" appearance="minimal" ref=".">
-                                <xi:include href="bricks/vraAttributesViewUI.xml"></xi:include>
+                                <xi:include href="../bricks/vraAttributesViewUI.xml"></xi:include>
                                 <xf:trigger class="vraAttributeTrigger">
                                     <xf:label/>
                                     <!--
@@ -724,6 +715,29 @@
                     </xf:textarea>
                 </xf:case>
             </xf:switch>
+            <xf:switch>
+                <xf:case id="c-hiddenDisplay">
+                    <xf:trigger class="notesDisplayTrigger">
+                        <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/showDisplay/label"/>
+                        <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/showDisplay/hint"/>
+                        <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/showDisplay/help"/>
+                        <xf:toggle case="c-showDisplay"/>
+                    </xf:trigger>
+                </xf:case>
+                <xf:case id="c-showDisplay">
+                    <xf:trigger class="notesDisplayTrigger">
+                        <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/hideDisplay/label"/>
+                        <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/hideDisplay/hint"/>
+                        <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/hideDisplay/help"/>
+                        <xf:toggle case="c-hiddenDisplay"/>
+                    </xf:trigger>
+                    <xf:textarea id="display" ref="vra:display" type="nodeValue" model="m-child-model" >
+                        <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/display/label"/>
+                        <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/display/hint"/>
+                        <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/display/help"/>
+                    </xf:textarea>
+                </xf:case>
+            </xf:switch>
         </xf:group>
     </xsl:template>
 
@@ -742,7 +756,7 @@
         <xsl:variable name="importPath">
             <xsl:call-template name="xpathExpr"/>
         </xsl:variable>
-        
+
         <tr>
             <td class="prefCol">
             	<xsl:if test="$prefPolicy != 'forbidden'">
@@ -818,7 +832,7 @@
                             <xsl:if test="./bind[@nodeset='.'] and not(@nodeset eq 'vra:title' or @nodeset eq 'vra:material' or @nodeset eq 'vra:measurements' or @nodeset eq 'vra:relation')">
                                 <xf:group class="vraAttributes" appearance="minimal">
                                     <xsl:attribute name="ref" select="'.'"/>
-                                    <xi:include href="bricks/vraAttributesViewUI.xml"/>
+                                    <xi:include href="../bricks/vraAttributesViewUI.xml"/>
                                 </xf:group>
 
                                 <xf:trigger class="vraAttributeTrigger">
@@ -904,7 +918,7 @@
             <xsl:if test="$path = ''">
                 <xf:group class="vraAttributes" appearance="minimal">
                     <xsl:attribute name="ref" select="$vraNodeName"/>
-                    <xi:include href="bricks/vraAttributesViewUI.xml"/>
+                    <xi:include href="../bricks/vraAttributesViewUI.xml"/>
                 </xf:group>
 
                     <xf:trigger class="vraAttributeTrigger">
@@ -978,7 +992,7 @@
                     <!-- Maybe to do ...
                    <xf:group class="vraAttributes" appearance="minimal">
                        <xsl:attribute name="ref" select="'.'"/>
-                       <xi:include href="bricks/vraAttributesViewUI.xml"/>
+                       <xi:include href="../bricks/vraAttributesViewUI.xml"/>
                    </xf:group>
 
                     <xf:trigger class="vraAttributeTrigger">
@@ -1004,7 +1018,7 @@
                     <xsl:if test="./bind[@nodeset='.'] and not(@nodeset eq 'vra:term')">
                         <xf:group class="vraAttributes" appearance="minimal">
                             <xsl:attribute name="ref" select="$vraNodeName"/>
-                            <xi:include href="bricks/vraAttributesViewUI.xml"/>
+                            <xi:include href="../bricks/vraAttributesViewUI.xml"/>
                         </xf:group>
 
                         <xf:trigger class="vraAttributeTrigger">
@@ -1023,8 +1037,8 @@
                         </xf:trigger>
                     </xsl:if>
                 </xf:group>
-            </xsl:otherwise> 
-        </xsl:choose>        
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
 
     <!-- priority=15 because ignores have 20 -->
@@ -1055,9 +1069,9 @@
         <xsl:variable name="importPath">
             <xsl:call-template name="xpathExpr"/>
         </xsl:variable>
-        
 
-       
+
+
         <xsl:if test="$debugEnabled">
             <xsl:message>UI-4: path : <xsl:value-of select="$path"/></xsl:message>
             <xsl:message>UI-4: currentPath : <xsl:value-of select="$currentPath"/></xsl:message>
@@ -1119,7 +1133,7 @@
                             </xsl:if>
                             <xsl:variable name="queryType" select="@queryType"/>
                             <xsl:variable name="multiple" select="@multiple"/>
-                            
+
 
                             <span style="display:none">
                                 <xf:input id="{$id}" class="{$label}-autocomplete">
@@ -1129,18 +1143,18 @@
                                     <xsl:if test="not($isArtifactNode) and ('vra:name'=$vraNodeName)">
                                         <xsl:attribute name="class">elementName</xsl:attribute>
                                     </xsl:if>
-                                    
+
                                     <!--replace JavaScript-Magic with XForms -->
                                     <xf:action ev:event="autocomplete-callback">
                                         <xf:setvalue ref="." value="event('termValue')"/>
-                               
+
                                         <!-- If uuid exists set refid to uuid -->
                                         <xf:action>
                                             <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@refid" context=".">
                                                 <xsl:attribute name="if">not(exists(instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/@refid))</xsl:attribute>
                                             </xf:insert>
                                             <xf:setvalue ref="@refid" value="event('refid')"/>
-                                        </xf:action> 
+                                        </xf:action>
                                         <!-- If resource exists (local/ULAN ...) set source -->
                                         <xf:action>
                                             <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@vocab" context=".">
@@ -1148,7 +1162,7 @@
                                             </xf:insert>
                                             <xf:setvalue ref="@vocab" value="event('authority')"/>
                                         </xf:action>
-                                         <!-- If resource exists (local/ULAN ...) set source -->
+                                        <!-- If resource exists (local/ULAN ...) set source -->
                                         <!-- Do no set source Ticket #275 -->
                                         <!--
                                         <xf:action>
@@ -1158,9 +1172,11 @@
                                             <xf:setvalue ref="@source" value="event('source')"/>
                                         </xf:action>
                                         -->
+                                        <!-- Moved to 05_xforms_Finetuning ....
                                         <xf:action if="event('termType') eq 'personal' and exists(../vra:dates/@type)">
                                             <xf:setvalue ref="../vra:dates/@type" value="'life'"/>
                                         </xf:action>
+                                        -->
                                         <!-- If earliestDate exists and "Set" has a dates element set it -->
                                         <xf:action if="exists(../vra:dates/vra:earliestDate)">
                                             <xf:setvalue ref="../vra:dates/vra:earliestDate" value="event('earliestDate')"/>
@@ -1169,13 +1185,15 @@
                                         <xf:action if="exists(../vra:dates/vra:latestDate)">
                                             <xf:setvalue ref="../vra:dates/vra:latestDate" value="event('latestDate')"/>
                                         </xf:action>
-                                        <!-- If type exists and set it -->
+                                        <!-- If type exists, set it -->
+                                        <!-- Moved to 05_xforms_Finetuning ....
                                         <xf:action>
                                             <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@type" context=".">
                                                 <xsl:attribute name="if">not(exists(instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/@type))</xsl:attribute>
                                             </xf:insert>
                                             <xf:setvalue ref="@type" value="event('termType')"/>
                                         </xf:action>
+                                        -->
                                     </xf:action>
                                     <!--
                                     <xf:label>
@@ -1195,7 +1213,7 @@
                                     -->
                                 </xf:input>
                             </span>
-                            <!-- OLD 
+                            <!-- OLD
                             <label for="{$label}-autocomplete">
                                 <xsl:value-of select="$label"/>
                             </label>
@@ -1225,25 +1243,28 @@
                                             <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $importPath, '/hint')"/>
                                         </xf:hint>
                                     </xf:output>
-                                    
+
                                     <!-- TODO: Placholder -->
-                                    
+
                                     <input type="hidden" data-name="{$label}-autocomplete" name="{$label}-autocomplete-input"
-                                       placeholder="Type to search ..."
-                                       data-queryType="{$queryType}"
-                                       autocomplete="off">
-                                       <xsl:if test="not($isArtifactNode) and ('vra:name'=$vraNodeName)">
+                                           placeholder="Type to search ..."
+                                           data-queryType="{$queryType}"
+                                           autocomplete="off">
+                                        <xsl:if test="not($isArtifactNode) and ('vra:name'=$vraNodeName)">
                                             <xsl:attribute name="class">elementName</xsl:attribute>
-                                       </xsl:if>
+                                        </xsl:if>
                                     </input>
                                     <xsl:if test="$queryType eq 'names'">
                                         <xf:output>
-                                            <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', '/actions/exact/label')"/>
+                                            <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $importPath, '/exactSearch/label')"/>
                                             <xf:hint>
-                                                <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', '/actions/exact/hint')"/>
+                                                <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $importPath, '/exactSearch/hint')"/>
                                             </xf:hint>
+                                            <xf:help>
+                                                <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $importPath, '/exactSearch/help')"/>
+                                            </xf:help>
                                         </xf:output>
-                                        <input id="{$label}-exact" type="checkbox" title="Searchs the exact string, including any punctuation"/>
+                                        <input id="{$label}-exact" type="checkbox" title="See label for hint"/>
                                     </xsl:if>
                                 </span>
                             </span>
@@ -1276,7 +1297,7 @@
                                 <xf:hint>
                                     <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $importPath, '/placeholder')"/>
                                 </xf:hint>
-                                
+
                                 <xf:itemset nodeset="bf:instanceOfModel('m-code-tables', '{$code-table-name}')/items/item">
                                     <xf:label ref="label"/>
                                     <xf:value ref="value"/>
@@ -1328,7 +1349,7 @@
                             <!--<xf:input id="{concat(generate-id(),'-', functx:capitalize-first($vraNodeName))}">-->
                             <xsl:variable name="class">
                                 <xsl:if test="not($isArtifactNode) and ('vra:name'=$vraNodeName)">
-                                    elementName 
+                                    elementName
                                 </xsl:if>
                                 <xsl:if test="@large">
                                     xlInput
@@ -1337,16 +1358,18 @@
                             <xsl:if test="@larger">
                                 <!-- TODO:IS @larger used ? If not remove this ...-->
                             </xsl:if>
-                            
+
                             <xf:input id="{$id}">
                                 <xsl:attribute name="ref">
                                     <xsl:value-of select="$currentPath"/>
                                 </xsl:attribute>
-                                
+
                                 <xsl:if test="string-length(normalize-space($class)) > 0">
-                                    <xsl:attribute name="class"><xsl:value-of select="normalize-space($class)"/></xsl:attribute>
+                                    <xsl:attribute name="class">
+                                        <xsl:value-of select="normalize-space($class)"/>
+                                    </xsl:attribute>
                                 </xsl:if>
-                                
+
                                 <xf:label>
                                     <xf:output>
                                         <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $importPath, '/label')"/>
@@ -1372,7 +1395,7 @@
                 </xsl:apply-templates>
             </xsl:otherwise>
         </xsl:choose>
-        
+
     </xsl:template>
 
     <!-- attribute VRA type -->
@@ -1388,8 +1411,8 @@
             <xsl:message>UI-5  vraAttrName: <xsl:value-of select="$vraAttrName"/></xsl:message>
             <xsl:message></xsl:message>
         </xsl:if>
-        
-         <xsl:variable name="importPath">
+
+        <xsl:variable name="importPath">
             <xsl:call-template name="xpathExpr"/>
         </xsl:variable>
         <xsl:message>UI-5 importPath:<xsl:value-of select="$importPath"/></xsl:message>
@@ -1414,16 +1437,16 @@
         <xsl:param name="plabel" select="''" />
         <xsl:param name="detail" select="'false'"/>
         <xsl:param name="vraNodeName"/>
-       
+
         <xsl:if test="$debugEnabled">
             <xsl:message>UI-6a (type): xsd:string restriction (select1)</xsl:message>
             <xsl:message>UI-6a detail:
                 <xsl:value-of select="$detail"/>
             </xsl:message>
         </xsl:if>
-        
+
         <xsl:message>Select1: plabel<xsl:value-of select="$plabel"/></xsl:message>
-        
+
         <xsl:variable name="class">
             <xsl:if test="$detail='true'">
                 <xsl:value-of select="'detail'"/>
@@ -1432,12 +1455,12 @@
                 <xsl:value-of select="concat(' ', substring-before(substring-after($pref, 'vra:'), '/'), functx:capitalize-first(substring-after($pref, '/@')) )"/>
             </xsl:if>
         </xsl:variable>
-    
+
         <xf:select1 id="{$id}" class="{$class}">
             <xsl:attribute name="ref">
                 <xsl:value-of select="$pref"/>
             </xsl:attribute>
-            
+
             <xf:label>
                 <xf:output>
                     <xsl:attribute name="ref" select="concat('bf:instanceOfModel(', $apos, 'm-lang', $apos, ',' , $apos, 'i-lang' , $apos, ')', $plabel, '/label')"/>
@@ -1460,7 +1483,7 @@
                 <xsl:value-of select="functx:capitalize-first($vraNodeName)"/>
             </xf:hint>
             -->
-        
+
             <xsl:for-each select="xsd:enumeration|comment()">
                 <xsl:choose>
                     <xsl:when test="local-name(.) eq 'enumeration'">
@@ -1474,12 +1497,14 @@
                         </xf:item>
                     </xsl:when>
                     <xsl:when test="contains(., 'HEADER:')">
-                        <optgroup><xsl:value-of select="substring-after(.,'HEADER:' )"/></optgroup>
+                        <optgroup>
+                            <xsl:value-of select="substring-after(.,'HEADER:' )"/>
+                        </optgroup>
                     </xsl:when>
                     <xsl:otherwise>
-                        
+
                     </xsl:otherwise>
-                
+
                 </xsl:choose>
             </xsl:for-each>
         </xf:select1>
@@ -1496,7 +1521,7 @@
             <xsl:message>UI-6b (type): xsd:string restriction (empty)</xsl:message>
             <xsl:message>UI-6b (type): plabel: <xsl:value-of select="$plabel"/></xsl:message>
         </xsl:if>
-        
+
         <xsl:variable name="importPath">
             <xsl:call-template name="xpathExpr"/>
         </xsl:variable>
@@ -1543,11 +1568,11 @@
         <xsl:variable name="importPath">
             <xsl:call-template name="xpathExpr"/>
         </xsl:variable>
-        
+
         <xsl:if test="$debugEnabled">
             <xsl:message>UI-7: path:<xsl:value-of select="$path"/></xsl:message>
             <xsl:message>UI-7: <xsl:value-of select="$currentPath"/></xsl:message>
-                <xsl:message>UI-7: importPath:<xsl:value-of select="$importPath"/></xsl:message>
+            <xsl:message>UI-7: importPath:<xsl:value-of select="$importPath"/></xsl:message>
             <xsl:message></xsl:message>
         </xsl:if>
 
@@ -1724,13 +1749,15 @@
         <xsl:param name="sectionNode" as="xsd:string?"/>
         <xsl:choose>
             <xsl:when test="$sectionNode = 'agentSet'">role-required</xsl:when>
-            <xsl:when test="$sectionNode = 'subjectSet'">forbidden</xsl:when>
-            <xsl:when test="$sectionNode = 'techniqueSet'">forbidden</xsl:when>
+            <!-- https://github.com/exc-asia-and-europe/ziziphus/issues/49 -->
+            <!-- https://github.com/exc-asia-and-europe/ziziphus/issues/286 -->
+            <!-- xsl:when test="$sectionNode = 'subjectSet'">forbidden</xsl:when -->
+            <!-- xsl:when test="$sectionNode = 'techniqueSet'">forbidden</xsl:when -->
             <xsl:otherwise>optional</xsl:otherwise>
         </xsl:choose>
     </xsl:function>
-    
-     <xsl:template name="xpathExpr">
+
+    <xsl:template name="xpathExpr">
         <xsl:variable name="cnt" select="count(preceding-sibling::node())"/>
         <xsl:for-each select="ancestor-or-self::node()">
             <xsl:if test="position() > 3 and ./@nodeset != '.'">/<xsl:value-of select="substring-after(./@nodeset, 'vra:')"/></xsl:if>

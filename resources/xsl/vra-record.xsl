@@ -1,9 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:vra="http://www.vraweb.org/vracore4.htm" xmlns:bfc="http://betterform.sourceforge.net/xforms/controls" xmlns:xf="http://www.w3.org/2002/xforms" xmlns:bfn="http://www.betterform.de/XSL/Functions" version="2.0" xpath-default-namespace="http://www.w3.org/2002/xforms" exclude-result-prefixes="bfn">
-    <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"/>
+<xsl:stylesheet exclude-result-prefixes="bfn" version="2.0"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:bfc="http://betterform.sourceforge.net/xforms/controls"
+    xmlns:bfn="http://www.betterform.de/XSL/Functions"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:vra="http://www.vraweb.org/vracore4.htm"
+    xmlns:xf="http://www.w3.org/2002/xforms"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xpath-default-namespace="http://www.w3.org/2002/xforms">
+    <xsl:output encoding="UTF-8" indent="yes" method="xhtml"
+        omit-xml-declaration="no" version="1.0"/>
     <xsl:strip-space elements="*"/>
-
-    
     <!-- 'work' or 'image' -->
     <xsl:param name="recordType" select="'GIVEN BY CALLER'"/>
     <!-- UUID of Record e.g w_****** -->
@@ -12,26 +18,21 @@
     <xsl:param name="codetables-uri" select="'GIVEN BY CALLER'"/>
     <xsl:param name="resources-uri" select="'GIVEN BY CALLER'"/>
     <xsl:param name="lang" select="'GIVEN BY CALLER'"/>
-    
+    <!-- cluster || vra -->
+    <xsl:param name="schema" select="'GIVEN BY CALLER'"/>
     <!--<xsl:variable name="root_id" select="if($type='work') then 'workrecord' else 'imagerecord'"/>-->
     <xsl:variable name="title" select="if($recordType='work') then 'Work Record' else 'Image Record'"/>
     <xsl:variable name="id_pref" select="if($recordType='work') then 'w_' else 'i_'"/>
-
-    
     <!-- code-tables and legends -->
     <xsl:variable name="role-codes-legend" select="document(concat($codetables-uri, 'legends/role-codes-legend.xml'))"/>
     <xsl:variable name="language-3-type-codes" select="document(concat($codetables-uri, 'language-3-type-codes.xml'))"/>
     <xsl:variable name="language-files" select="document(concat($resources-uri, 'lang_' , $lang, '.xml'))"/>
-
     <!-- parameter is only used if a single section is rendered -->
     <xsl:param name="setname" select="''"/>
-
     <!--
         VIEW GENERATION - includes embed actions for switching to forms
     -->
-
     <!--<xsl:variable name="rootPath" select="'vraSets'"/>-->
-
     <!-- include transforms for sections in VRA dataset -->
     <xsl:include href="../../view/AgentSet.xsl"/>
     <xsl:include href="../../view/CulturalContextSet.xsl"/>
@@ -51,24 +52,23 @@
     <xsl:include href="../../view/TextrefSet.xsl"/>
     <xsl:include href="../../view/TitleSet.xsl"/>
     <xsl:include href="../../view/WorktypeSet.xsl"/>
-    
     <!-- top level - entry template - handles a work or an image record -->
-    <xsl:include href="vraSectionTemplate.xsl"/>    
-    
+    <xsl:include href="vraSectionTemplate.xsl"/>
     <xsl:template match="vra:work/vra:image" mode="titlePane" priority="40"/>
-
     <!--
         single section - expandable section in view. Uses a XForms switch to toggle between VIEW and EDIT mode
     -->
     <xsl:template name="titlePane">
         <xsl:param name="vraSetName"/>
-        <xsl:param name="vraSetNode" as="node()?"/>
+        <xsl:param as="node()?" name="vraSetNode"/>
         <xsl:param name="visible"/>
+        <!--<xsl:variable name="schema" select="'cluster'"/>-->
         <xsl:variable name="title" select="bfn:sectionTitle($vraSetName)"/>
         <xsl:variable name="id" select="concat($id_pref,$title)"/>
         <!--<xsl:variable name="formName" select="$vraSetName"/>-->
         <xsl:variable name="sectionWithData" select="if(string-length(string-join($vraSetNode//*/text(),'')) != 0) then 'true' else 'false'"/>
-        <div id="{$id}" data-dojo-type="dijit.TitlePane" data-dojo-props="title: '{$title}',open:{$sectionWithData}">
+        <div data-dojo-props="title: '{$title}',open:{$sectionWithData}"
+            data-dojo-type="dijit.TitlePane" id="{$id}">
             <xsl:if test="$visible='false'">
                 <xsl:attribute name="class">hidden</xsl:attribute>
             </xsl:if>
@@ -79,14 +79,17 @@
                 <xf:group id="handler-{$id}" style="display: none;">
                     <xf:action ev:event="load-form">
                         <xf:dispatch name="unload-subform" targetid="controlCenter"/>
-                        <xf:setvalue model="m-main" ref="instance('i-control-center')/currentform" value="'{$id}'"/>
-                        <xf:setvalue model="m-main" ref="instance('i-control-center')/uuid" value="'{$recordId}'"/>
+                        <xf:setvalue model="m-main"
+                            ref="instance('i-control-center')/currentform" value="'{$id}'"/>
+                        <xf:setvalue model="m-main"
+                            ref="instance('i-control-center')/uuid" value="'{$recordId}'"/>
                         <!--<xf:setvalue model="m-main" ref="instance('i-control-center')/recordType" value="'{$recordType}'"/>-->
                         <xf:load show="embed" targetid="{$mountPoint}">
-                            <xf:resource value="'forms/{$vraSetName}.xhtml#xforms'"/>
+                            <xf:resource value="'forms/{$schema}/{$vraSetName}.xhtml#xforms'"/>
                             <!-- new extension for load to be added -> if returnUI="false" this means that the subform is embedded and initialized on the server
                             but no UI transformation takes place and therefore no UI is returned via the embed event. -->
-                            <xf:extension includeCSS="true" includeScript="false" returnUI="false"/>
+                            <xf:extension includeCSS="true"
+                                includeScript="false" returnUI="false"/>
                         </xf:load>
                         <!--
                         This is not used for the time being. It was a test to use xquery to generate the
@@ -96,13 +99,14 @@
                         performance.
 
                          <xf:load show="embed" targetid="{$mountPoint}">
-                            <xf:resource value="'modules/forms/{$vraSetName}.xql#xforms?recordId={$recordId}'"/>
+                            <xf:resource value="'modules/forms/{$schema}/{$vraSetName}.xql#xforms?recordId={$recordId}'"/>
                             <xf:extension includeCSS="false" includeScript="false"/>
                         </xf:load>
                         -->
-                        <script type="text/javascript">
+                        <script
+                            type="text/javascript">
                             $('.editHighlight').removeClass('editHighlight');
-                            $('#'+ '<xsl:value-of select="$id"/>' + ' > .dijitTitlePaneTitle').addClass('editHighlight');</script>
+                            $('#'+ '<xsl:value-of select="$id"/>' + ' &gt; .dijitTitlePaneTitle').addClass('editHighlight');</script>
                         <xf:toggle case="{$caseId}-edit"/>
                     </xf:action>
                 </xf:group>
@@ -115,33 +119,37 @@
                     </xf:action>
                     <!-- this fires when one subform has been changed and another is requested for editing -->
                     <xf:action if="instance('i-control-center')/currentform != '{$id}' and instance('i-control-center')/isDirty='true'">
-                        <script type="text/javascript">editOtherForm('handler-<xsl:value-of select="$id"/>');</script>
+                        <script
+                            type="text/javascript">editOtherForm('handler-<xsl:value-of select="$id"/>');</script>
                     </xf:action>
                 </xf:trigger>
                 <span>
                     <!--<button type="button" onclick="toggleDetail(this, '{$tableId}');" class="icon icon-zoom-in"/>-->
-                    <button type="button" title="view details" onclick="toggleDetail(this, '{concat($id,'_HtmlContent')}');" class="toolbarbutton button-zoom-in"/>
+                    <button class="toolbarbutton button-zoom-in"
+                            onclick="toggleDetail(this, '{concat($id,'_HtmlContent')}');"
+                            title="view details" type="button"/>
                 </span>
             </div>
             <xf:switch>
                 <!-- ############ VIEW CASE ######### -->
                 <!-- ############ VIEW CASE ######### -->
                 <!-- ############ VIEW CASE ######### -->
-                <xf:case id="{$caseId}-view" selected="true" class="view">
+                <xf:case class="view" id="{$caseId}-view" selected="true">
                     <xf:action ev:event="xforms-select">
                         <script type="text/javascript">
                             $('.editHighlight').removeClass('editHighlight');
 
                         </script>
                     </xf:action>
-                    <div class="vraSection simple" id="{concat($id,'_HtmlContent')}" data-bf-form="/db/apps/ziziphus/forms/{$vraSetName}.xhtml">
+                    <div class="vraSection simple"
+                         data-bf-form="/db/apps/ziziphus/forms/{$schema}/{$vraSetName}.xhtml" id="{concat($id,'_HtmlContent')}">
                         <!-- all markup within this div must be generated by the specific Subforms stylesheets, e.q. AgentSet.xsl -->
                         <xsl:choose>
                             <xsl:when test="exists($vraSetNode/vra:display/text())">
                                 <xsl:apply-templates select="$vraSetNode/vra:display"/>
                             </xsl:when>
                             <xsl:otherwise>
-                                    <!-- drill down into single stylesheets (the ones include at top of this file.-->
+                                <!-- drill down into single stylesheets (the ones include at top of this file.-->
                                 <xsl:apply-templates select="$vraSetNode">
                                     <xsl:with-param name="vraTableId" select="$tableId"/>
                                 </xsl:apply-templates>
@@ -153,16 +161,16 @@
                 <!-- ############ EDIT CASE ############### -->
                 <!-- ############ EDIT CASE ############### -->
                 <!-- ############ EDIT CASE #######vraSetName######## -->
-                <xf:case id="{$caseId}-edit" class="edit">
+                <xf:case class="edit" id="{$caseId}-edit">
                     <xf:action ev:event="xforms-select">
-                        <script type="text/javascript">scrollToPanel('<xsl:value-of select="$id"/>');</script>
+                        <script
+                            type="text/javascript">scrollToPanel('<xsl:value-of select="$id"/>');</script>
                     </xf:action>
                     <div id="{$mountPoint}"/>
                 </xf:case>
             </xf:switch>
         </div>
     </xsl:template>
-
     <!--    <xsl:template match="*[exists(*)]"  priority="20">
             <xsl:variable name="nodeName" select="local-name(.)"/>
             <div class="{$nodeName}">
@@ -209,12 +217,12 @@
     <xsl:template match="*"/>
     <xsl:template match="@*|text()" priority="5"/>
     <xsl:template match="comment()" priority="5"/>
-    <xsl:function name="bfn:sectionTitle" as="xsd:string?">
-        <xsl:param name="arg" as="xsd:string?"/>
+    <xsl:function as="xsd:string?" name="bfn:sectionTitle">
+        <xsl:param as="xsd:string?" name="arg"/>
         <xsl:sequence select="substring-before(bfn:upperCase($arg),'Set')"/>
     </xsl:function>
-    <xsl:function name="bfn:upperCase" as="xsd:string?">
-        <xsl:param name="arg" as="xsd:string?"/>
+    <xsl:function as="xsd:string?" name="bfn:upperCase">
+        <xsl:param as="xsd:string?" name="arg"/>
         <xsl:sequence select="concat(upper-case(substring($arg,1,1)),substring($arg,2))"/>
     </xsl:function>
     <xsl:template name="renderVraAttr">
