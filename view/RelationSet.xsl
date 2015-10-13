@@ -30,12 +30,19 @@
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(@relids,'')) != 0">
                               <div data-bf-bind="@relids" data-bf-type="input" tabindex="0" title="">
-                                 <img xmlns="">
-                                    <xsl:attribute name="src"
-                                                   select="concat('/exist/apps/ziziphus/imageService/?imagerecord=', @relids)"></xsl:attribute>
-                                    <xsl:attribute name="alt" select="@relids"></xsl:attribute>
-                                    <xsl:attribute name="class" select="relationSetImage"></xsl:attribute>
-                                 </img>
+                                 <xsl:choose xmlns="">
+                                    <xsl:when test="@type eq 'imageIs'">
+                                       <img>
+                                          <xsl:attribute name="src"
+                                                         select="concat('/exist/apps/ziziphus/imageService/?imagerecord=', @relids)"></xsl:attribute>
+                                          <xsl:attribute name="alt" select="@relids"></xsl:attribute>
+                                          <xsl:attribute name="class" select="relationSetImage"></xsl:attribute>
+                                       </img>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                       <xsl:value-of xmlns="http://www.w3.org/1999/xhtml" select="@relids"></xsl:value-of>
+                                    </xsl:otherwise>
+                                 </xsl:choose>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>

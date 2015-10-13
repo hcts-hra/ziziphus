@@ -1,0 +1,46 @@
+<!--
+<save:data xmlns:save="http://www.betterform.de/save">
+    <save:originalInstance>
+        <techniqueSet xmlns="http://www.vraweb.org/vracore4.htm">
+            <display dataDate="2015-09-09T11:20:39.769+02:00">Some text</display>
+            <notes dataDate="2015-09-09T11:20:39.769+02:00">More Text</notes>
+            <technique pref="false"></technique>
+        </techniqueSet>
+    </save:originalInstance>
+    <save:newInstance>
+        <techniqueSet>
+            <display dataDate="2015-09-09T11:20:39.769+02:00">Some text</display>
+            <notes dataDate="2015-09-09T11:20:39.769+02:00">More Texts</notes>
+            <technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df" pref="true">chromolithographs</technique>
+            <technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithograph</technique>
+            <technique vocab="LOCAL" refid="05e81717-b5c1-552f-bafc-950a0f1ad2df">chromolithograp</technique>
+        </techniqueSet>
+    </save:newInstance>
+</save:data>
+-->
+<save:data xmlns:save="http://www.betterform.de/save">
+    <save:originalInstance>
+        <agentSet xmlns="http://www.vraweb.org/vracore4.htm">
+            <agent>
+                <name vocab="local" type="personal" refid="uuid-2d9170ef-2e41-537c-8a78-28b7be563ae7">Paul, Priya</name>
+                <role vocab="marcrelator" type="code">col</role>
+            </agent>
+        </agentSet>
+    </save:originalInstance>
+    <save:newInstance>
+        <agentSet xmlns="http://www.vraweb.org/vracore4.htm">
+            <display/>
+            <notes/>
+            <agent dataDate="2015-10-13-10-59-37" pref="false">
+                <attribution>school of rock</attribution>
+                <culture>europe</culture>
+                <dates type="life">
+                    <earliestDate circa="true" type="after">91010</earliestDate>
+                    <latestDate circa="true" type="active">dfsdf</latestDate>
+                </dates>
+                <name refid="uuid-2d9170ef-2e41-537c-8a78-28b7be563ae7" type="personal" vocab="local">Paul, Priya</name>
+                <role type="code" vocab="marcrelator">cols</role>
+            </agent>
+        </agentSet>
+    </save:newInstance>
+</save:data>

@@ -1180,9 +1180,12 @@
                                         <!-- If earliestDate exists and "Set" has a dates element set it -->
                                         <xf:action if="exists(../vra:dates/vra:earliestDate)">
                                             <xf:setvalue ref="../vra:dates/vra:earliestDate" value="event('earliestDate')"/>
+                                            <xf:action if="exists(../vra:dates/vra:latestDate)">
+                                                <xf:setvalue ref="../vra:dates/vra:latestDate" value="event('earliestDate')"></xf:setvalue>
+                                            </xf:action>
                                         </xf:action>
                                         <!-- If latestDate exists and "Set" has a dates element set it -->
-                                        <xf:action if="exists(../vra:dates/vra:latestDate)">
+                                        <xf:action if="exists(../vra:dates/vra:latestDate) and event('latestDate') != ''">
                                             <xf:setvalue ref="../vra:dates/vra:latestDate" value="event('latestDate')"/>
                                         </xf:action>
                                         <!-- If type exists, set it -->

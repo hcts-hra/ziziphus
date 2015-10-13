@@ -120,10 +120,13 @@
                             <xsl:apply-templates mode="fixDatelabel" select="xf:input[@ref = 'vra:dates/vra:earliestDate']"/>
                             -->
                         </td>
+                        <!--
                         <td>
-                            <!-- Circa -->
+                            < ! - - Circa - - >
+
                             <xsl:copy-of select="xf:input[@ref = 'vra:dates/vra:earliestDate/@circa']"/>
                         </td>
+                        -->
                         <td>
                             <!-- Type -->
                             <xsl:copy-of select="xf:select1[@ref = 'vra:dates/vra:earliestDate/@type']"/>
@@ -138,10 +141,12 @@
                             <xsl:apply-templates mode="fixDatelabel" select="xf:input[@ref = 'vra:dates/vra:latestDate']"/>
                             -->
                         </td>
+                        <!--
                         <td>
-                            <!-- Circa -->
+                            < ! - - Circa - - >
                             <xsl:copy-of select="xf:input[@ref = 'vra:dates/vra:latestDate/@circa']"/>
                         </td>
+                        -->
                         <td>
                             <!-- Type -->
                             <xsl:copy-of select="xf:select1[@ref = 'vra:dates/vra:latestDate/@type']"/>
@@ -727,4 +732,12 @@
         </xf:output>
     </xsl:template>
 
+    <!-- ##### Source Set ##### -->
+    <xsl:template match="xhtml:tbody[@xf:repeat-nodeset eq 'vra:source']/xhtml:tr/xhtml:td[@class='contentCol']">
+        <xsl:copy>
+            <xsl:copy-of select="@*"/>
+            <xsl:copy-of select="xf:group[xf:select1[@ref = 'vra:name/@type']]"/>
+            <xsl:copy-of select="xf:group[xf:select1[@ref = 'vra:refid/@type']]"/>
+        </xsl:copy>
+    </xsl:template>
 </xsl:stylesheet>

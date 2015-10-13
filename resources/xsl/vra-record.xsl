@@ -117,7 +117,7 @@
                     <xf:action if="instance('i-control-center')/currentform != '{$id}' and instance('i-control-center')/isDirty='false'">
                         <xf:dispatch name="load-form" targetid="handler-{$id}"/>
                     </xf:action>
-                    <!-- this fires when one subform has been changed and another is requested for editing -->
+                    <!-- this fires whe,open:{$sectionWithData}n one subform has been changed and another is requested for editing -->
                     <xf:action if="instance('i-control-center')/currentform != '{$id}' and instance('i-control-center')/isDirty='true'">
                         <script
                             type="text/javascript">editOtherForm('handler-<xsl:value-of select="$id"/>');</script>
