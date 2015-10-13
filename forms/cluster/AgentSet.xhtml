@@ -275,8 +275,11 @@
                                     </xf:action>
                                     <xf:action if="exists(../vra:dates/vra:earliestDate)">
                                        <xf:setvalue ref="../vra:dates/vra:earliestDate" value="event('earliestDate')"></xf:setvalue>
+                                       <xf:action if="exists(../vra:dates/vra:latestDate)">
+                                          <xf:setvalue ref="../vra:dates/vra:latestDate" value="event('earliestDate')"></xf:setvalue>
+                                       </xf:action>
                                     </xf:action>
-                                    <xf:action if="exists(../vra:dates/vra:latestDate)">
+                                    <xf:action if="exists(../vra:dates/vra:latestDate) and event('latestDate') != ''">
                                        <xf:setvalue ref="../vra:dates/vra:latestDate" value="event('latestDate')"></xf:setvalue>
                                     </xf:action>
                                     <xf:action if="not(event('termValue') eq '')">
@@ -447,17 +450,6 @@
                                        </xf:input>
                                     </td>
                                     <td>
-                                       <xf:input ref="vra:dates/vra:earliestDate/@circa">
-                                          <xf:label>
-                                             <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/agentSet/agent/dates/earliestDate/circa/label">
-                                                <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/agentSet/agent/dates/earliestDate/circa/hint"></xf:hint>
-                                                <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/agentSet/agent/dates/earliestDate/circa/label"></xf:help>
-                                             </xf:output>
-                                          </xf:label>
-                                          <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/agentSet/agent/dates/earliestDate/circa/placeholder"></xf:hint>
-                                       </xf:input>
-                                    </td>
-                                    <td>
                                        <xf:select1 id="b-d2e127" class=" datesType" ref="vra:dates/vra:earliestDate/@type">
                                           <xf:label>
                                              <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/agentSet/agent/dates/earliestDate/type/label">
@@ -499,17 +491,6 @@
                                              </xf:output>
                                           </xf:label>
                                           <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/agentSet/agent/dates/latestDate/placeholder"></xf:hint>
-                                       </xf:input>
-                                    </td>
-                                    <td>
-                                       <xf:input ref="vra:dates/vra:latestDate/@circa">
-                                          <xf:label>
-                                             <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/agentSet/agent/dates/latestDate/circa/label">
-                                                <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/agentSet/agent/dates/latestDate/circa/hint"></xf:hint>
-                                                <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/agentSet/agent/dates/latestDate/circa/label"></xf:help>
-                                             </xf:output>
-                                          </xf:label>
-                                          <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/agentSet/agent/dates/latestDate/circa/placeholder"></xf:hint>
                                        </xf:input>
                                     </td>
                                     <td>

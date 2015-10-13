@@ -17,6 +17,9 @@
          <!-- ###################### MODEL ##########################'-',######## -->
          <!-- ###################### MODEL ################################## -->
          <!-- ###################### MODEL ################################## -->
+         <!-- ####################################### VISIBLE UI ####################################### -->
+         <!-- ####################################### VISIBLE UI ####################################### -->
+         <!-- ####################################### VISIBLE UI ####################################### -->
          <div style="display:none">
             <xf:model id="m-child-model" schema="resources/xsd/generator/vra-types.xsd">
                <xf:action ev:event="xforms-model-construct-done">
@@ -94,16 +97,13 @@
                <xf:instance id="i-util">
                   <data xmlns="">
                      <!--used to store the current element being used in attribute editing-->
-                     <currentElement></currentElement>
                      <!--used to store the current element position being used in attribute editing-->
+                     <currentElement></currentElement>
                      <currentPosition></currentPosition>
                   </data>
                </xf:instance>
             </xf:model>
          </div>
-         <!-- ####################################### VISIBLE UI ####################################### -->
-         <!-- ####################################### VISIBLE UI ####################################### -->
-         <!-- ####################################### VISIBLE UI ####################################### -->
          <div class="toolbar">
             <xf:trigger class="t-plus -toolbarbutton" model="m-child-model" id="d3e1-add"
                         title="Add Source">
@@ -138,6 +138,9 @@
          </div>
          <xf:group id="outerGroup" appearance="minimal" model="m-child-model"
                    ref="instance('i-sourceSet')">
+            <!-- ############################## NOTES ####################################### -->
+            <!-- ############################## NOTES ####################################### -->
+            <!-- ############################## NOTES ####################################### -->
             <xf:label></xf:label>
             <xf:action ev:event="xforms-value-changed" ev:phase="capture">
                <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/isDirty" value="'true'"></xf:setvalue>
@@ -190,6 +193,64 @@
                         </xf:input>
                      </td>
                      <td class="contentCol">
+                        <xf:group appearance="minimal">
+                           <xf:select1 id="b-d2e1254" class=" nameType" ref="vra:name/@type">
+                              <xf:label>
+                                 <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/sourceSet/source/name/type/label">
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/sourceSet/source/name/type/hint"></xf:hint>
+                                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/sourceSet/source/name/type/help"></xf:help>
+                                 </xf:output>
+                              </xf:label>
+                              <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/sourceSet/source/name/type/placeholder"></xf:hint>
+                              <xf:item>
+                                 <xf:label>Book</xf:label>
+                                 <xf:value>book</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Donor</xf:label>
+                                 <xf:value>donor</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Electronic</xf:label>
+                                 <xf:value>electronic</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Serial</xf:label>
+                                 <xf:value>serial</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Vendor</xf:label>
+                                 <xf:value>vendor</xf:value>
+                              </xf:item>
+                              <xf:item>
+                                 <xf:label>Other</xf:label>
+                                 <xf:value>other</xf:value>
+                              </xf:item>
+                           </xf:select1>
+                           <xf:input id="b-d2e1247" ref="vra:name">
+                              <xf:label>
+                                 <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/sourceSet/source/name/label">
+                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/sourceSet/source/name/hint"></xf:hint>
+                                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/sourceSet/source/name/help"></xf:help>
+                                 </xf:output>
+                              </xf:label>
+                              <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/sourceSet/source/name/placeholder"></xf:hint>
+                           </xf:input>
+                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:name">
+                              <xi:include href="../bricks/vraAttributesViewUI.xml"></xi:include>
+                           </xf:group>
+                           <xf:trigger class="vraAttributeTrigger">
+                              <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/editAttributes/label"></xf:label>
+                              <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/editAttributes/hint"></xf:hint>
+                              <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/editAttributes/help"></xf:help>
+                              <xf:action>
+                                 <xf:setvalue ref="instance('i-util')/currentElement" value="'name'"></xf:setvalue>
+                                 <xf:setvalue ref="instance('i-util')/currentPosition">-1</xf:setvalue>
+                                 <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
+                              </xf:action>
+                              <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
+                           </xf:trigger>
+                        </xf:group>
                         <xf:group appearance="minimal">
                            <xf:select1 id="b-d2e1232" class=" refidType" ref="vra:refid/@type">
                               <xf:label>
@@ -252,64 +313,6 @@
                               <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
                            </xf:trigger>
                         </xf:group>
-                        <xf:group appearance="minimal">
-                           <xf:select1 id="b-d2e1254" class=" nameType" ref="vra:name/@type">
-                              <xf:label>
-                                 <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/sourceSet/source/name/type/label">
-                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/sourceSet/source/name/type/hint"></xf:hint>
-                                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/sourceSet/source/name/type/help"></xf:help>
-                                 </xf:output>
-                              </xf:label>
-                              <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/sourceSet/source/name/type/placeholder"></xf:hint>
-                              <xf:item>
-                                 <xf:label>Book</xf:label>
-                                 <xf:value>book</xf:value>
-                              </xf:item>
-                              <xf:item>
-                                 <xf:label>Donor</xf:label>
-                                 <xf:value>donor</xf:value>
-                              </xf:item>
-                              <xf:item>
-                                 <xf:label>Electronic</xf:label>
-                                 <xf:value>electronic</xf:value>
-                              </xf:item>
-                              <xf:item>
-                                 <xf:label>Serial</xf:label>
-                                 <xf:value>serial</xf:value>
-                              </xf:item>
-                              <xf:item>
-                                 <xf:label>Vendor</xf:label>
-                                 <xf:value>vendor</xf:value>
-                              </xf:item>
-                              <xf:item>
-                                 <xf:label>Other</xf:label>
-                                 <xf:value>other</xf:value>
-                              </xf:item>
-                           </xf:select1>
-                           <xf:input id="b-d2e1247" ref="vra:name">
-                              <xf:label>
-                                 <xf:output ref="bf:instanceOfModel('m-lang','i-lang')/sourceSet/source/name/label">
-                                    <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/sourceSet/source/name/hint"></xf:hint>
-                                    <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/sourceSet/source/name/help"></xf:help>
-                                 </xf:output>
-                              </xf:label>
-                              <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/sourceSet/source/name/placeholder"></xf:hint>
-                           </xf:input>
-                           <xf:group class="vraAttributes" appearance="minimal" ref="vra:name">
-                              <xi:include href="../bricks/vraAttributesViewUI.xml"></xi:include>
-                           </xf:group>
-                           <xf:trigger class="vraAttributeTrigger">
-                              <xf:label ref="bf:instanceOfModel('m-lang','i-lang')/actions/editAttributes/label"></xf:label>
-                              <xf:hint ref="bf:instanceOfModel('m-lang','i-lang')/actions/editAttributes/hint"></xf:hint>
-                              <xf:help ref="bf:instanceOfModel('m-lang','i-lang')/actions/editAttributes/help"></xf:help>
-                              <xf:action>
-                                 <xf:setvalue ref="instance('i-util')/currentElement" value="'name'"></xf:setvalue>
-                                 <xf:setvalue ref="instance('i-util')/currentPosition">-1</xf:setvalue>
-                                 <xf:dispatch name="init-dialog" targetid="outerGroup"></xf:dispatch>
-                              </xf:action>
-                              <bfc:show dialog="attrDialog" ev:event="DOMActivate"></bfc:show>
-                           </xf:trigger>
-                        </xf:group>
                      </td>
                      <td class="triggerCol">
                         <xf:trigger class="-btn -btn-trashcan">
@@ -340,9 +343,6 @@
                   </tr>
                </tbody>
             </table>
-            <!-- ############################## NOTES ####################################### -->
-            <!-- ############################## NOTES ####################################### -->
-            <!-- ############################## NOTES ####################################### -->
             <xf:switch>
                <xf:case id="c-hidden">
                   <xf:trigger class="notesDisplayTrigger">

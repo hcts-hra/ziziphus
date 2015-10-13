@@ -206,8 +206,11 @@
                                     </xf:action>
                                     <xf:action if="exists(../vra:dates/vra:earliestDate)">
                                        <xf:setvalue ref="../vra:dates/vra:earliestDate" value="event('earliestDate')"></xf:setvalue>
+                                       <xf:action if="exists(../vra:dates/vra:latestDate)">
+                                          <xf:setvalue ref="../vra:dates/vra:latestDate" value="event('earliestDate')"></xf:setvalue>
+                                       </xf:action>
                                     </xf:action>
-                                    <xf:action if="exists(../vra:dates/vra:latestDate)">
+                                    <xf:action if="exists(../vra:dates/vra:latestDate) and event('latestDate') != ''">
                                        <xf:setvalue ref="../vra:dates/vra:latestDate" value="event('latestDate')"></xf:setvalue>
                                     </xf:action>
                                  </xf:action>

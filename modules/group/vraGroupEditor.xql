@@ -1,7 +1,6 @@
 xquery version "3.0";
 
 import module namespace app="http://github.com/hra-team/rosids-shared/config/app" at "/apps/rosids-shared/modules/ziziphus/config/app.xqm";
-import module namespace image-link-generator="http://hra.uni-heidelberg.de/ns/tamboti/modules/display/image-link-generator" at "/apps/tamboti/modules/display/image-link-generator.xqm";
 import module namespace security="http://exist-db.org/mods/security" at "/apps/tamboti/modules/search/security.xqm";
 import module namespace console="http://exist-db.org/xquery/console";
 
@@ -32,12 +31,12 @@ declare variable $local:temp-db := "/db/data/temp/";
 declare %private function local:create-uuid-doc($uuid as xs:string) {
     let $uuids-as-string := util:binary-to-string(util:binary-doc($local:temp-db  || $uuid || ".js"))
     let $uuid-strings := tokenize(substring($uuids-as-string, 2, string-length($uuids-as-string) - 2), ",")
-    let $uuid-document := 
+    let $uuid-document :=
         <data>
             {
                 for $uuid-string at $pos in $uuid-strings
                 let $uuid := replace(replace($uuid-string, "&quot;:1", ""), "&quot;", "")
-                let $document-uri := document-uri(root(collection(xmldb:encode('/db/data'))//vra:vra/vra:work[@id = $uuid]))
+                let $document-uri := document-uri(root(app:get-resource($uuid)))
                 let $collection := substring-before($document-uri, "/" || $uuid)
                 return
                     if(security:can-read-collection($collection))
@@ -45,7 +44,7 @@ declare %private function local:create-uuid-doc($uuid as xs:string) {
                         <record position="{$pos}">
                             <id>{$uuid}</id>
                             <collection>{$collection}</collection>
-                        </record>               
+                        </record>
                     ) else ( () )
             }
         </data>
@@ -55,7 +54,7 @@ declare %private function local:create-uuid-doc($uuid as xs:string) {
 };
 
 declare %private function local:get-uuids-doc($uuid as xs:string) {
-    let $uuid-doc := 
+    let $uuid-doc :=
         if(doc-available($local:temp-db  || $uuid || ".xml"))
         then(doc($local:temp-db || $uuid || ".xml"))
         else (local:create-uuid-doc($uuid))
@@ -71,7 +70,7 @@ declare %private function local:run($uuid as xs:string, $start, $page_limit) {
       let $uuid-workdir := local:extract-uuids-and-workdir($uuid, $start, $page_limit)
       return
           if( count( $uuid-workdir/record) > 0 )
-          then ( 
+          then (
             let $first-tupel := $uuid-workdir/record[1]
             return
                 <html>
@@ -102,33 +101,33 @@ declare %private function local:run($uuid as xs:string, $start, $page_limit) {
                                 <div class="scroll-bar"></div>
                             </div>
                         </div>
-                    
+
                         <script type="text/javascript" src="/exist/apps/ziziphus/resources/script/jquery-1.9.1.js"/>
                         <script type="text/javascript" src="/exist/apps/ziziphus/resources/script/jquery-ui-1.10.2.custom.min.js"/>
                         <script type="text/javascript" src="/exist/apps/ziziphus/resources/script/jquery.layout-latest.min.js"/>
-                        <script type="text/javascript" src="/exist/apps/ziziphus/resources/script/group/group.js"/> 
+                        <script type="text/javascript" src="/exist/apps/ziziphus/resources/script/group/group.js"/>
                     </body>
                 </html>
-            ) else ( 
+            ) else (
                 local:error-page(<div>No readable records found. Only VRA records are supported within Ziziphus</div>)
-            ) 
+            )
 };
 
-declare function local:thumBar($uuid-workdir) { 
+declare function local:thumBar($uuid-workdir) {
     for $record in $uuid-workdir/record
-    let $vraWorkRecord  := collection(xmldb:encode('/db/data'))//vra:vra/vra:work[@id = $record/id]
+    let $vraWorkRecord  := app:get-resource($record/id)
     let $imageRecordId  := if(exists($vraWorkRecord/vra:relationSet/vra:relation/@pref[.='true']))
                                 then $vraWorkRecord/vra:relationSet/vra:relation[@pref='true'][1]/@relids
                                 else $vraWorkRecord/vra:relationSet/vra:relation[1]/@relids
     return
-        <li><img src="{image-link-generator:generate-href($imageRecordId, 'tamboti-thumbnail')}" alt="{$imageRecordId}" class="relatedImage" onclick="loadRecord('{$record/id}', '{$record/collection}')" title="{$imageRecordId}" /></li>
+        <li><img src="/exist/apps/tamboti/modules/display/image.xql?schema=IIIF&amp;call=/{$imageRecordId}/full/150,150/0/default.jpg" alt="{$imageRecordId}" class="relatedImage" onclick="loadRecord('{$record/id}', '{$record/collection}')" title="{$imageRecordId}" /></li>
 };
 
 declare %private function local:groupeditor($uuid as xs:string, $start, $page_limit) {
-   
+
         if(util:binary-doc-available($local:temp-db  || $uuid || ".js"))
         then (
-            system:as-user($local:user, $local:userpass, local:run($uuid, $start, $page_limit))  
+            system:as-user($local:user, $local:userpass, local:run($uuid, $start, $page_limit))
         ) else (
             local:error-page('could not read id file')
         )
@@ -153,12 +152,12 @@ declare %private function local:error-page($error-text) {
 let $uuid := request:get-parameter('id', '2014-12-04-15-17-56-299')
 let $start := request:get-parameter('start', '1')
 let $page_limit := request:get-parameter('page_limit', '10')
-return 
+return
     if($uuid != '')
     then (
         local:groupeditor($uuid, $start, $page_limit)
     ) else (
         local:error-page('id parameter missing')
     )
-  
+
 

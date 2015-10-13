@@ -29,20 +29,20 @@ declare function local:createVraRecords($uuid as xs:string?) {
                             let $imageId := substring($image/vra:relation/@relids,3)
                             return
                                 <img src="https://kjc-fs1.kjc.uni-heidelberg.de/ImageService/api/get/priya_paul/{$imageId}.jpg" alt="" class="relatedImage"/>
-                            
+
                         }
-                        
+
 <!--                        <div class="currentImage" style="width:200px;height:200px;background:#dddddd;">
 
-                            <a href="records/{concat($vraImageId,'-big.jpg')}" target="_blank">             
+                            <a href="records/{concat($vraImageId,'-big.jpg')}" target="_blank">
                                 <img id="vraImage" src="https://kjc-fs1.kjc.uni-heidelberg.de/ImageService/api/get/priya_paul/{$id}.jpg" alt="{$imageTitle}" />
                             </a>
 
                         </div>        -->
                     </td>
-                    {local:transformVraRecord($vraImageRecord, $imageRecordId, 'image')}                    
+                    {local:transformVraRecord($vraImageRecord, $imageRecordId, 'image')}
                 </tr>
-         </table>        
+         </table>
 };
 
 declare function local:transformVraRecord($root as node(), $id as xs:string, $vraRecordType as xs:string) {
@@ -56,7 +56,12 @@ declare function local:transformVraRecord($root as node(), $id as xs:string, $vr
             transform:transform($root, doc("/db/apps/ziziphus/resources/xsl/vra-record.xsl"), $parameters)
 };
 
+declare function local:heidicon($uuid as xs:string?) {
+    let $collection := util:collection-name(collection(xmldb:encode($app:ziziphus-default-record-dir))/vra:vra/vra:work[@id = $uuid])
+    return
+        if(contains($collection, $app:ziziphus-collection-name)) then ( <button type="button" id="heidicon">Heidicon Data</button> ) else ()
 
+};
 
 let $contextPath := request:get-context-path()
 
@@ -65,7 +70,7 @@ let $uuid := request:get-parameter("id", "w_0a0b6027-1b3d-56ce-a3b1-14e2baac93dc
 
 return
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:vra="http://www.vraweb.org/vracore4.htm" 
+      xmlns:vra="http://www.vraweb.org/vracore4.htm"
       xmlns:exist="http://exist.sourceforge.net/NS/exist"
       xmlns:ev="http://www.w3.org/2001/xml-events"
       xmlns:xf="http://www.w3.org/2002/xforms"
@@ -125,13 +130,14 @@ return
                 </div>
             </div>
             <!-- <div dojoType="dijit.MenuBarItem" label="Heidicon Data"></div> -->
-            <button type="button" id="heidicon">Heidicon Data</button>
+            {local:heidicon($uuid)}
+
         </div>
         <!-- window for heidicon data -->
-        <div id="heidiconWindow"></div>     
-        
+        <div id="heidiconWindow"></div>
+
         {local:createVraRecords($uuid)}
-        
+
 <!--
         <bfc:dialog id="editDialog" style="width:600px;">
             <div id="mountPoint"/>
@@ -173,22 +179,22 @@ return
                         $("#"+m).toggleClass("full");
 
                     }}
-                    
-                    
+
+
                     jQuery(document).ready(function() {{
                         var w = $.jWindow({{
                             parentElement: '#heidiconWindow',
-                            id: 'heidiconData', 
+                            id: 'heidiconData',
                             title: 'Heidicon Data',
-                            posx: 200, 
-                            posy: 100, 
+                            posx: 200,
+                            posy: 100,
                             width: 600,
-                            height: 500, 
+                            height: 500,
                             type:'ajax',
                             url:'modules/showHeidicon.xql?id={$uuid}',
                             refreshButton: false }});
-    					
-                        
+
+
                         jQuery('#heidicon').on({{
     			        	click: function() {{
 						        w.show();
@@ -196,13 +202,13 @@ return
                                 return false;
 					        }}
 				        }});
-				
+
                     }});
-                    
+
                     function showWindow(){{
                         w.show();
                     }}
-                    
+
         </script>
 </body>
 </html>

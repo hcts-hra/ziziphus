@@ -175,8 +175,8 @@ return
                     </data>
                 </xf:instance>
 
-                <xf:submission method="get" id="s-refresh-view" replace="embedHTML" resource="modules/refreshSection.xql" instance="i-refresh" targetid="{{concat(instance('i-refresh')/currentform,'_HtmlContent')}}">
-                    <xf:message ev:event="xform-submit" level="emphemeral"><xf:output ref="instance(instance('i-refresh')/currentform)"/></xf:message>
+                <xf:submission method="get" id="s-refresh-view" replace="embedHTML" instance="i-refresh" targetid="{{concat(instance('i-refresh')/currentform,'_HtmlContent')}}">
+                    <xf:resource value="concat('modules/refreshSection.xql?setname=', bf:instanceOfModel('m-main', 'i-refresh')/setname, '&amp;uuid=', bf:instanceOfModel('m-main', 'i-refresh')/uuid,'&amp;workdir=', bf:instanceOfModel('m-main', 'i-refresh')/workdir, '&amp;language=', bf:instanceOfModel('m-main', 'i-refresh')/language)"/>
                 </xf:submission>
 
             </xf:model>
