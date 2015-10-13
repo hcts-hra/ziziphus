@@ -2,11 +2,14 @@ xquery version "3.0";
 
 import module namespace session ="http://exist-db.org/xquery/session";
 
+(:  rosids-shared :)
+import module namespace app="http://github.com/hra-team/rosids-shared/config/app" at "/apps/rosids-shared/modules/ziziphus/config/app.xqm";
 import module namespace config="http://exist-db.org/mods/config" at "/apps/rosids-shared/modules/config.xqm";
 import module namespace theme="http://exist-db.org/xquery/biblio/theme" at "/apps/rosids-shared/modules/theme.xqm";
 import module namespace security="http://exist-db.org/mods/security" at "/apps/rosids-shared/modules/search/security.xqm";
 
 declare namespace exist = "http://exist.sourceforge.net/NS/exist";
+declare namespace vra="http://www.vraweb.org/vracore4.htm";
 
 declare variable $exist:controller external;
 declare variable $exist:root external;
@@ -112,10 +115,29 @@ return
         </ignore>
     else if (contains($exist:path, "/imageService/")) then
         let $imagerecord := request:get-parameter('imagerecord', '')
+        let $id := if(starts-with($imagerecord, 'i'))
+                    then (
+                        $imagerecord
+                    ) else (
+                        let $work := app:get-resource($imagerecord)
+                        return
+                            if(exists($work/vra:relationSet/vra:relation[@pref ='true'][@type='imageIs']))
+                            then (
+                                $work/vra:relationSet/vra:relation[@pref ='true'][@type='imageIs'][1]/@relids
+                            ) else (
+                                if (exists($work/vra:relationSet/vra:relation[@type='imageIs']))
+                                then (
+                                    $work/vra:relationSet/vra:relation[@type='imageIs'][1]/@relids
+                                ) else ()
+                            )
+                    )
         return
-        <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-            <redirect url="/exist/apps/tamboti/modules/display/image.xql?schema=IIIF&amp;call=/{$imagerecord}/full/!128,128/0/default.jpg"/>
-        </dispatch>
+            if($id)
+            then (
+                <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+                    <redirect url="/exist/apps/tamboti/modules/display/image.xql?schema=IIIF&amp;call=/{$id}/full/!128,128/0/default.jpg"/>
+                </dispatch>
+            ) else ()
     else if ($login) then (
         if ($exist:path eq "/") then
         <dispatch xmlns="http://exist.sourceforge.net/NS/exist">

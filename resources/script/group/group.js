@@ -1,11 +1,11 @@
-$(function() {
-    
-    
+$(function () {
+
+
     var scrollPane = $(".scroll-pane");
     var scrollContent = $(".scroll-content");
 
     var scrollbar = $(".scroll-bar").slider({
-        slide: function(event, ui) {
+        slide: function (event, ui) {
             if (scrollContent.width() > scrollPane.width()) {
                 scrollContent.css("margin-left", Math.round(
                         ui.value / 100 * (scrollPane.width() - scrollContent.width())
@@ -17,10 +17,10 @@ $(function() {
     });
 
     var handleHelper = scrollbar.find(".ui-slider-handle")
-            .mousedown(function() {
+            .mousedown(function () {
                 scrollbar.width(handleHelper.width());
             })
-            .mouseup(function() {
+            .mouseup(function () {
                 scrollbar.width("100%");
             })
             .append("<span class='ui-icon ui-icon-grip-dotted-vertical'></span>")
@@ -54,15 +54,15 @@ $(function() {
         }
     }
 
-    $(window).resize(function() {
+    $(window).resize(function () {
         resetValue();
         sizeScrollbar();
         reflowContent();
     });
 
     setTimeout(sizeScrollbar, 10);//safari wants a timeout
-    
-    
+
+
     $("body").layout({
         defaults: {
             applyDefaultStyles: true,
@@ -79,7 +79,16 @@ $(function() {
 });
 
 function loadRecord(uuid, collection) {
-    $("#iEditor").attr("src", "/exist/apps/ziziphus/record.html?id=" + uuid + "&workdir=" + collection);
+    $("#iEditor").attr("src", "/exist/apps/ziziphus/record.xql?id=" + uuid + "&workdir=" + collection);
 }
 
+//TAMBOTI
+function pingSession() {
+    $.getJSON("/exist/apps/rosids-shared/modules/search/check-session.xql", function (result) {
+        if (result) {
+            setTimeout(pingSession, 120000);
+        } else {
+        }
+}
+);
 

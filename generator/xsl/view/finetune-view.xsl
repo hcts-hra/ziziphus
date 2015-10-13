@@ -16,7 +16,7 @@
     <xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"/>
     <xsl:strip-space elements="*"/>
     <xsl:namespace-alias stylesheet-prefix="transform" result-prefix="xsl"/>
-    
+
     <xsl:template match="*|text()|comment()">
         <xsl:copy>
             <xsl:copy-of select ="@*|text()|comment()"/>
@@ -27,17 +27,25 @@
     <xsl:template match="//xsl:when[contains(@test, 'string-length(string-join(@relids')]/html:div">
         <xsl:copy>
             <xsl:copy-of select ="@*"/>
-            <img>
-                <transform:attribute name="src" select="concat('/exist/apps/ziziphus/imageService/?imagerecord=', @relids)"/>
-                <transform:attribute name="alt" select="@relids"/>
-                <transform:attribute name="class" select="relationSetImage"/>
-                <!-- TODO: load work via Image record -->
-                <!-- transform:attribute name="onclick" select="concat('loadRecord(', @relids, ')')"/-->
-            </img>
+            <transform:choose>
+                <transform:when test="@type eq 'imageIs'">
+                    <img>
+                        <transform:attribute name="src" select="concat('/exist/apps/ziziphus/imageService/?imagerecord=', @relids)"/>
+                        <transform:attribute name="alt" select="@relids"/>
+                        <transform:attribute name="class" select="relationSetImage"/>
+                        <!-- TODO: load work via Image record -->
+                        <!-- transform:attribute name="onclick" select="concat('loadRecord(', @relids, ')')"/-->
+                    </img>
+                </transform:when>
+                <transform:otherwise>
+                    <xsl:copy-of select ="*"/>
+                </transform:otherwise>
+            </transform:choose>
+
         </xsl:copy>
     </xsl:template>
-    
-    
+
+
     <xsl:template match="//xsl:template[@match = 'vra:agentSet']//html:table[contains(@class, 'vraSetView')]//html:tr">
         <xsl:copy>
             <xsl:copy-of select="@*"/>
@@ -66,11 +74,11 @@
                         </td>
                     </tr>
                 </table>
-                
+
             </td>
         </xsl:copy>
     </xsl:template>
-    
+
     <xsl:template match="//xsl:template[@match = 'vra:dateSet']//html:table[contains(@class, 'vraSetView')]">
         <xsl:copy>
             <xsl:copy-of select="@*"/>
@@ -131,8 +139,8 @@
             </tbody>
         </xsl:copy>
     </xsl:template>
-     
-     
+
+
     <xsl:template match="//xsl:template[@match = 'vra:subjectSet']//html:table[contains(@class, 'vraSetView')]">
         <xsl:copy>
             <xsl:copy-of select="@*"/>
@@ -148,17 +156,20 @@
                                         <transform:variable name="term" select="vra:term"/>
                                         <transform:variable name="type">
                                             <transform:choose>
-                                                <transform:when test="string-length(string-join($term/@type,'')) != 0"><transform:value-of select="concat(' [', normalize-space($term/@type),']')"/></transform:when>
+                                                <transform:when test="string-length(string-join($term/@type,'')) != 0">
+                                                    <transform:value-of select="concat(' [', normalize-space($term/@type),']')"/>
+                                                </transform:when>
                                                 <transform:otherwise/>
                                             </transform:choose>
                                         </transform:variable>
                                         <div data-bf-type="input" data-bf-bind="vra:term" tabindex="0" title="Term">
-                                            <transform:value-of select="$term"/> <transform:value-of select="$type"/>
+                                            <transform:value-of select="$term"/>
+                                            <transform:value-of select="$type"/>
                                         </div>
                                     </transform:when>
                                     <transform:otherwise>
                                         <div class="nodata" data-bf-type="input" data-bf-bind="vra:term"
-                                            tabindex="0">(Term)</div>
+                                             tabindex="0">(Term)</div>
                                     </transform:otherwise>
                                 </transform:choose>
                             </td>
@@ -168,7 +179,7 @@
             </tbody>
         </xsl:copy>
     </xsl:template>
-    
+
     <xsl:template match="//xsl:template[@match = 'vra:descriptionSet']//html:table[contains(@class, 'vraSetView')]">
         <xsl:copy>
             <xsl:copy-of select="@*"/>
@@ -198,20 +209,24 @@
                                         </div>
                                         <transform:if test="string-length() - string-length(translate(., '&#xA;', '')) &gt; 5">
                                             <div class="expand">
-                                                <span class="fa fa-arrow-down"/><span>Click to Read More</span><span class="fa fa-arrow-down"/> 
+                                                <span class="fa fa-arrow-down"/>
+                                                <span>Click to Read More</span>
+                                                <span class="fa fa-arrow-down"/>
                                             </div>
                                             <div class="contract hide">
-                                                <span class="fa fa-arrow-up"/><span>Click to Hide</span><span class="fa fa-arrow-up"/>
-                                            </div>  
+                                                <span class="fa fa-arrow-up"/>
+                                                <span>Click to Hide</span>
+                                                <span class="fa fa-arrow-up"/>
+                                            </div>
                                         </transform:if>
                                     </transform:when>
                                     <transform:otherwise>
-                                       <div class="nodata" data-bf-type="textarea" data-bf-bind="vra:text" tabindex="0">(Text)</div>
+                                        <div class="nodata" data-bf-type="textarea" data-bf-bind="vra:text" tabindex="0">(Text)</div>
                                     </transform:otherwise>
                                 </transform:choose>
                             </td>
                         </tr>
-                        
+
                     </transform:for-each>
                     <transform:for-each select="vra:author">
                         <transform:if test="string-length(string-join(vra:name,'')) != 0 or string-length(string-join(vra:name/@type,'')) != 0 or string-length(string-join(vra:role,'')) != 0">
@@ -267,7 +282,7 @@
             <xsl:apply-templates select="*" mode="inscriptionSet"/>
         </xsl:copy>
     </xsl:template>
-    
+
     <xsl:template match="//html:div[contains(@class, 'textType')]" mode="inscriptionSet" priority="10">
         <div>
             <xsl:attribute name="class">
@@ -277,11 +292,11 @@
             <xsl:apply-templates/>
         </div>
     </xsl:template>
-    
+
     <xsl:template match="//html:div[@data-bf-type eq 'textarea']" mode="inscriptionSet" priority="10">
         <xsl:call-template name="add-whitespace-pre-line-to-divs"/>
     </xsl:template>
-    
+
     <xsl:template match="*|text()|comment()" mode="inscriptionSet">
         <xsl:copy>
             <xsl:copy-of select ="@*|text()|comment()"/>
@@ -298,21 +313,25 @@
     <xsl:template match="//xsl:template[@match = 'vra:rightsSet']//html:table[//html:div[@data-bf-type eq 'textarea']]//html:div[@data-bf-type]">
         <xsl:call-template name="add-whitespace-pre-line-to-divs"/>
     </xsl:template>
-    
+
     <xsl:template name="add-whitespace-pre-line-to-divs">
         <xsl:variable name="class">
             <xsl:if test="@data-bf-type eq 'textarea'">textarea </xsl:if>
             <xsl:choose>
-                <xsl:when test="@class"><xsl:value-of select="concat(@class, ' keepWhitespace')"/></xsl:when>
+                <xsl:when test="@class">
+                    <xsl:value-of select="concat(@class, ' keepWhitespace')"/>
+                </xsl:when>
                 <xsl:otherwise>keepWhitespace</xsl:otherwise>
-            </xsl:choose>    
+            </xsl:choose>
         </xsl:variable>
         <xsl:copy>
-            <xsl:attribute name="class"><xsl:value-of select="$class"/></xsl:attribute>
+            <xsl:attribute name="class">
+                <xsl:value-of select="$class"/>
+            </xsl:attribute>
             <xsl:copy-of select="@*[local-name() ne 'class']"/>
             <!-- expand/collapse-->
             <!-- TODO: get value of xsl:value-of="" and test string-length -->
-            
+
             <xsl:if test="@data-bf-type eq 'textarea'">
                 <transform:if>
                     <xsl:attribute name="test">string-length() - string-length(translate(<xsl:value-of select="@data-bf-bind"/>, '&#xA;', '')) &gt; 5</xsl:attribute>
@@ -324,23 +343,27 @@
         </xsl:copy>
         <!-- expand/collapse-->
         <!-- TODO: get value of xsl:value-of="" and test string-length -->
-        
+
         <xsl:if test="@data-bf-type eq 'textarea'">
             <transform:if>
                 <xsl:attribute name="test">string-length() - string-length(translate(<xsl:value-of select="@data-bf-bind"/>, '&#xA;', '')) &gt; 5</xsl:attribute>
                 <div class="expand">
-                    <span class="fa fa-arrow-down"/><span>Click to Read More</span><span class="fa fa-arrow-down"/> 
+                    <span class="fa fa-arrow-down"/>
+                    <span>Click to Read More</span>
+                    <span class="fa fa-arrow-down"/>
                 </div>
                 <div class="contract hide">
-                    <span class="fa fa-arrow-up"/><span>Click to Hide</span><span class="fa fa-arrow-up"/>
-                </div>  
+                    <span class="fa fa-arrow-up"/>
+                    <span>Click to Hide</span>
+                    <span class="fa fa-arrow-up"/>
+                </div>
             </transform:if>
         </xsl:if>
     </xsl:template>
-    
+
     <xsl:template match="//xsl:template[@match = 'vra:measurementsSet']//xsl:for-each[@select = 'vra:measurements']//html:tr/html:td//html:div">
         <xsl:copy>
-            <xsl:attribute name="class" select="concat(@class , ' d-inline-block')"/> 
+            <xsl:attribute name="class" select="concat(@class , ' d-inline-block')"/>
             <xsl:copy-of select="@*[local-name() ne 'class']"/>
             <xsl:apply-templates select="*"/>
         </xsl:copy>

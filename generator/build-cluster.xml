@@ -39,6 +39,25 @@
         </xslt>
     </target>
 
+    <target name="testSave">
+        <xslt style="${basedir}/../resources/xsl/save-dataDate.xsl"
+              in="${basedir}/save.xml"
+              out="${target.dir}/saved.xml"
+              force="yes">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath refid="transform.class.path"/>
+        </xslt>
+        <!--
+                <xslt style="${basedir}/../resources/xsl/save-cleanup.xsl"
+                      in="${target.dir}/saved.xml"
+                      out="${target.dir}/saved-clean.xml"
+                      force="yes">
+                    <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+                    <classpath refid="transform.class.path"/>
+                </xslt>
+        -->
+    </target>
+
 
     <target name="testGenerateViewTransforms" description="testing target: used to test instance merging">
         <xslt style="${basedir}/../resources/xsl/mergeData.xsl"
@@ -465,6 +484,7 @@
         <antcall target="generate-section-view-transform">
             <param name="subformName" value="RelationSet"/>
         </antcall>
+
         <antcall target="finetune-view">
             <param name="subformName" value="RelationSet"/>
         </antcall>
@@ -477,6 +497,9 @@
         </antcall>
 
         <antcall target="generate-section-view-transform">
+            <param name="subformName" value="SourceSet"/>
+        </antcall>
+        <antcall target="finetune-subform">
             <param name="subformName" value="SourceSet"/>
         </antcall>
 
