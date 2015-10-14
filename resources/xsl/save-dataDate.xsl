@@ -61,6 +61,7 @@
         <xsl:message>Current element: <xsl:value-of select="local-name(.)"/></xsl:message>
 
         <xsl:element name="{local-name(.)}" namespace="{$targetNS}">
+            <xsl:attribute name="dataDate" select="current-dateTime()"/>
             <!-- [(local-name(.) ne 'notes') and (local-name(.) ne 'display')] -->
             <xsl:for-each-group select="*" group-by="local-name()">
                 <xsl:for-each select="current-group()">
@@ -183,12 +184,14 @@
                             <xsl:apply-templates select="./@*[local-name(.) != 'dataDate']" mode="content"/>
                             <xsl:choose>
                                 <xsl:when test="*">
-                                    <xsl:for-each select="*">
-                                        <xsl:apply-templates select="." mode="content">
-                                            <xsl:with-param name="old-data" select="$old-data//*[local-name(.)=$local-name][$position]"/>
-                                            <xsl:with-param name="position" select="position()"/>
-                                        </xsl:apply-templates>
-                                    </xsl:for-each>
+                                     <xsl:for-each-group select="*" group-by="local-name()">
+                                        <xsl:for-each select="current-group()">
+                                            <xsl:apply-templates select="." mode="content">
+                                                <xsl:with-param name="old-data" select="$old-data//*[local-name(.)=$local-name][$position]"/>
+                                                <xsl:with-param name="position" select="position()"/>
+                                            </xsl:apply-templates>
+                                        </xsl:for-each>
+                                     </xsl:for-each-group>
                                 </xsl:when>
                                 <xsl:otherwise>
                                     <xsl:value-of select="./text()"/>

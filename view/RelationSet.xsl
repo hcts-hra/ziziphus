@@ -16,8 +16,22 @@
                   <tr>
                      <td>
                         <xsl:choose>
+                           <xsl:when test="string-length(string-join(@type,'')) != 0">
+                              <div data-bf-bind="@type" data-bf-type="select1" tabindex="0" title=""
+                                   id="b-d2e1051"
+                                   class=" ">
+                                 <xsl:value-of select="@type"></xsl:value-of>
+                              </div>
+                           </xsl:when>
+                           <xsl:otherwise>
+                              <div class="nodata" data-bf-bind="@type" data-bf-type="select1" tabindex="0">
+                                 <xsl:value-of select="normalize-space(concat('(', $language-files/language/relationSet/relation/type/label, ')'))"></xsl:value-of>
+                              </div>
+                           </xsl:otherwise>
+                        </xsl:choose>
+                        <xsl:choose>
                            <xsl:when test="string-length(string-join(.,'')) != 0">
-                              <div data-bf-bind="." data-bf-type="input" tabindex="0" title="" id="b-d2e652">
+                              <div data-bf-bind="." data-bf-type="input" tabindex="0" title="" id="b-d2e1043">
                                  <xsl:value-of select="."></xsl:value-of>
                               </div>
                            </xsl:when>
@@ -48,19 +62,6 @@
                            <xsl:otherwise>
                               <div class="nodata" data-bf-bind="@relids" data-bf-type="input" tabindex="0">
                                  <xsl:value-of select="normalize-space(concat('(', $language-files/language/relationSet/relation/relids/label, ')'))"></xsl:value-of>
-                              </div>
-                           </xsl:otherwise>
-                        </xsl:choose>
-                        <xsl:choose>
-                           <xsl:when test="string-length(string-join(@type,'')) != 0">
-                              <div data-bf-bind="@type" data-bf-type="select1" tabindex="0" title="" id="b-d2e660"
-                                   class=" ">
-                                 <xsl:value-of select="@type"></xsl:value-of>
-                              </div>
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <div class="nodata" data-bf-bind="@type" data-bf-type="select1" tabindex="0">
-                                 <xsl:value-of select="normalize-space(concat('(', $language-files/language/relationSet/relation/type/label, ')'))"></xsl:value-of>
                               </div>
                            </xsl:otherwise>
                         </xsl:choose>
