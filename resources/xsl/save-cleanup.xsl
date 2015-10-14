@@ -1,68 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"  xmlns:vra="http://www.vraweb.org/vracore4.htm" version="2.0">
-    <xsl:strip-space elements="*" />
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:save="http://www.betterform.de/save"
+                xmlns:functx="http://www.functx.com"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                version="2.0"
+                exclude-result-prefixes="save">
+
+    <xsl:output exclude-result-prefixes="save" indent="yes"/>
     <xsl:output method="xml" indent="yes"/>
+
+
+    <xsl:strip-space elements="*" />
+
+    <!-- PARAMS -->
     <xsl:variable name="debug" select="'true'"/>
+    <xsl:param name="targetNS" select="'http://www.vraweb.org/vracore4.htm'"/>
 
-    <xsl:template match="*">
-        <xsl:message>
-            <xsl:value-of select="local-name(.)"/>
-        </xsl:message>
-        <xsl:variable name="child-content">
-            <xsl:apply-templates/>
-        </xsl:variable>
+    <!-- ROOT MATCHER -->
+    <xsl:template match="/">
+        <xsl:apply-templates/>
+    </xsl:template>
 
-        <xsl:if test="normalize-space() != '' or (normalize-space(@*[1]) != '' and local-name() != 'measurements')">
-            <xsl:element name="{local-name()}" namespace="http://www.vraweb.org/vracore4.htm">
-                <xsl:copy-of select="@*[not(. eq '')]"/>
-                <xsl:copy-of select="$child-content"/>
-            </xsl:element>
+    <!-- attributes -->
+    <xsl:template match="@*">
+        <xsl:if test="string-length(normailze-space(.)) gt 1">
+            <xsl:copy/>
         </xsl:if>
     </xsl:template>
 
-    <xsl:template match="vra:*[contains(local-name(), 'Set')]">
-        <xsl:variable name="display">
-            <xsl:apply-templates select="vra:display"/>
-        </xsl:variable>
-        <xsl:variable name="notes">
-            <xsl:apply-templates select="vra:notes"/>
-        </xsl:variable>
 
-        <xsl:variable name="child-name">
-            <xsl:value-of select="substring-before(local-name(), 'Set')"/>
-        </xsl:variable>
-
-        <xsl:variable name="child-content">
-            <xsl:apply-templates select="*[not(local-name() eq 'display' or local-name() eq 'notes')]"/>
-        </xsl:variable>
-
-        <xsl:if test="$debug = 'true'">
-            <xsl:message>DISPLAY: <xsl:value-of select="$display"/></xsl:message>
-            <xsl:message>NOTES: <xsl:value-of select="$notes"/></xsl:message>
-        </xsl:if>
-
+    <!-- latesDate -->
+    <xsl:template match="vra:latestDate">
         <xsl:choose>
-            <xsl:when test="$child-content//text()">
-                <xsl:element name="{local-name()}" namespace="http://www.vraweb.org/vracore4.htm">
-                    <xsl:copy-of select="@*[not(. eq '')]"/>
-                    <xsl:copy-of select="$display"/>
-                    <xsl:copy-of select="$notes"/>
-                    <xsl:copy-of select="$child-content"/>
+            <xsl:when test="string-length(normailze-space(.)) lt 1">
+                <xsl:element name="latestDate" namespace="{$targetNS}">
+                    <xsl:apply-templates select="@*"/>
+                    <xsl:value-of select="./preceding::vra:earliestDate/text()"/>
                 </xsl:element>
             </xsl:when>
-            <xsl:when test="($display and $display != '') or ($notes and $notes != '')">
-                <xsl:element name="{local-name()}" namespace="http://www.vraweb.org/vracore4.htm">
-                    <xsl:copy-of select="@*[not(. eq '')]"/>
-                    <xsl:copy-of select="$display"/>
-                    <xsl:copy-of select="$notes"/>
-                    <xsl:element name="{$child-name}" namespace="http://www.vraweb.org/vracore4.htm">
-                        <xsl:if test="$child-name eq 'inscription'">
-                            <xsl:element name="text" namespace="http://www.vraweb.org/vracore4.htm"/>
-                        </xsl:if>
-                    </xsl:element>
-                </xsl:element>
-            </xsl:when>
+            <xsl:otherwise>
+                <xsl:copy/>
+            </xsl:otherwise>
         </xsl:choose>
+    </xsl:template>
+
+
+    <xsl:template match="*">
+        
     </xsl:template>
 
 </xsl:stylesheet>

@@ -15,36 +15,6 @@
                <xsl:for-each select="vra:inscription">
                   <tr>
                      <td>
-                        <xsl:choose>
-                           <xsl:when test="string-length(string-join(vra:author,'')) != 0">
-                              <div data-bf-bind="vra:author" data-bf-type="input" tabindex="0" title=""
-                                   id="b-d2e368">
-                                 <xsl:value-of select="vra:author"></xsl:value-of>
-                              </div>
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <div class="nodata" data-bf-bind="vra:author" data-bf-type="input" tabindex="0">
-                                 <xsl:value-of select="normalize-space(concat('(', $language-files/language/inscriptionSet/inscription/author/label, ')'))"></xsl:value-of>
-                              </div>
-                           </xsl:otherwise>
-                        </xsl:choose>
-                     </td>
-                     <td>
-                        <xsl:choose>
-                           <xsl:when test="string-length(string-join(vra:position,'')) != 0">
-                              <div data-bf-bind="vra:position" data-bf-type="input" tabindex="0" title=""
-                                   id="b-d2e384">
-                                 <xsl:value-of select="vra:position"></xsl:value-of>
-                              </div>
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <div class="nodata" data-bf-bind="vra:position" data-bf-type="input" tabindex="0">
-                                 <xsl:value-of select="normalize-space(concat('(', $language-files/language/inscriptionSet/inscription/position/label, ')'))"></xsl:value-of>
-                              </div>
-                           </xsl:otherwise>
-                        </xsl:choose>
-                     </td>
-                     <td>
                         <table class="vraSetInnerRepeatView table">
                            <tbody>
                               <xsl:for-each select="vra:text">
@@ -118,6 +88,37 @@
                               </xsl:for-each>
                            </tbody>
                         </table>
+                     </td>
+                     <td>
+                        <xsl:choose>
+                           <xsl:when test="string-length(string-join(vra:author,'')) != 0">
+                              <div data-bf-bind="vra:author" data-bf-type="input" tabindex="0" title=""
+                                   id="b-d2e665"
+                                   class="Author-autocomplete">
+                                 <xsl:value-of select="vra:author"></xsl:value-of>
+                              </div>
+                           </xsl:when>
+                           <xsl:otherwise>
+                              <div class="nodata" data-bf-bind="vra:author" data-bf-type="input" tabindex="0">
+                                 <xsl:value-of select="normalize-space(concat('(', $language-files/language, ')'))"></xsl:value-of>
+                              </div>
+                           </xsl:otherwise>
+                        </xsl:choose>
+                     </td>
+                     <td>
+                        <xsl:choose>
+                           <xsl:when test="string-length(string-join(vra:position,'')) != 0">
+                              <div data-bf-bind="vra:position" data-bf-type="input" tabindex="0" title=""
+                                   id="b-d2e686">
+                                 <xsl:value-of select="vra:position"></xsl:value-of>
+                              </div>
+                           </xsl:when>
+                           <xsl:otherwise>
+                              <div class="nodata" data-bf-bind="vra:position" data-bf-type="input" tabindex="0">
+                                 <xsl:value-of select="normalize-space(concat('(', $language-files/language/inscriptionSet/inscription/position/label, ')'))"></xsl:value-of>
+                              </div>
+                           </xsl:otherwise>
+                        </xsl:choose>
                      </td>
                   </tr>
                </xsl:for-each>

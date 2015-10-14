@@ -5,7 +5,6 @@ declare namespace vra = "http://www.vraweb.org/vracore4.htm";
 import module namespace request="http://exist-db.org/xquery/request";
 import module namespace app="http://github.com/hra-team/rosids-shared/config/app" at "/apps/rosids-shared/modules/ziziphus/config/app.xqm";
 import module namespace security="http://exist-db.org/mods/security" at "/apps/rosids-shared/modules/search/security.xqm";
-import module namespace app="http://github.com/hra-team/rosids-shared/config/app" at "/apps/rosids-shared/modules/ziziphus/config/app.xqm";
 
 declare variable $user := security:get-user-credential-from-session()[1];
 declare variable $userpass := security:get-user-credential-from-session()[2];
@@ -13,13 +12,13 @@ declare variable $userpass := security:get-user-credential-from-session()[2];
 declare %private function local:dataDate($record) {
     let $transform := "xmldb:exist:///db/apps/ziziphus/resources/xsl/save-dataDate.xsl"
     return
-        transform:transform($root, $transform, ())
+        transform:transform($record, $transform, ())
 };
 
 declare %private function local:cleanupData($record) {
     let $transform := "xmldb:exist:///db/apps/ziziphus/resources/xsl/save-cleanup.xsl"
     return
-        transform:transform($root, $transform, ())
+        transform:transform($record, $transform, ())
 };
 
 let $id := request:get-parameter('id','')
@@ -31,7 +30,7 @@ let $log1 := util:log('info',concat('id=',$id,' vraSet=',$vraSet))
 
 (: get the new data from the form :)
 let $newData := request:get-data()
-let $oldData := app:get-resource($uuid)//*[local-name() eq $vraSet]
+let $oldData := app:get-resource($id)//*[local-name() eq $vraSet]
 let $toSave :=
 <save:data xmlns:save="http://www.betterform.de/save">
     <save:originalInstance>
@@ -41,12 +40,14 @@ let $toSave :=
         {$newData}
     </save:newInstance>
 </save:data>
-let $newData := function local:dataDate($toSave)
+let $log := xmldb:store('/db', 'dump.xml', $toSave)
+let $newData := local:dataDate($toSave)
+let $log := xmldb:store('/db', 'new.xml', $newData)
 
 let $security := system:as-user($user, $userpass,
     (
         (: fetch original record from database :)
-        let $record := collection($workdir)//vra:vra/*[./@id=$id]
+        let $record := app:get-resource($id)
         let $log2 := util:log('info', "RECORD ID: " || data($record/@id))
         let $log3 := util:log('info', "WORKDIR: " || $workdir)
         let $log4 := util:log("info", "xmldb:get-current-user before: " || xmldb:get-current-user())
@@ -58,12 +59,12 @@ let $security := system:as-user($user, $userpass,
         let $log13 := util:log("info", "sm:get-permissions Collection: " ||  sm:get-permissions(xs:anyURI($workdir))/sm:permission/@mode)
         let $log14 := util:log("info", "sm:get-permissions File: " ||  sm:get-permissions(xs:anyURI(util:collection-name($record) || "/" || util:document-name($record)))/sm:permission/@mode)
         return
-            if($canWrite)
+            if($record and $canWrite)
             then (
                 let $update :=
                     if(exists($record/*[local-name() eq $vraSet]))
                     then (
-                        if(count($newData/*[local-name() eq $vraSet]/*) = 0)
+                        if(count($newData[local-name() eq $vraSet]) = 0)
                         then (
                             let $log21 := util:log("info", "Update delete!")
                             return

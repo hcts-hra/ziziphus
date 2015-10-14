@@ -23,14 +23,14 @@
         <agentSet xmlns="http://www.vraweb.org/vracore4.htm">
             <agent>
                 <name vocab="local" type="personal" refid="uuid-2d9170ef-2e41-537c-8a78-28b7be563ae7">Paul, Priya</name>
-                <role vocab="marcrelator" type="code">col</role>
+                <role dataDate="2015-10-13T14:11:46.714+02:00" vocab="marcrelator" type="code">col</role>
             </agent>
         </agentSet>
     </save:originalInstance>
     <save:newInstance>
         <agentSet xmlns="http://www.vraweb.org/vracore4.htm">
-            <display/>
-            <notes/>
+            <display>Some Text</display>
+            <notes>More Text</notes>
             <agent dataDate="2015-10-13-10-59-37" pref="false">
                 <attribution>school of rock</attribution>
                 <culture>europe</culture>
@@ -39,7 +39,17 @@
                     <latestDate circa="true" type="active">dfsdf</latestDate>
                 </dates>
                 <name refid="uuid-2d9170ef-2e41-537c-8a78-28b7be563ae7" type="personal" vocab="local">Paul, Priya</name>
-                <role type="code" vocab="marcrelator">cols</role>
+                <role dataDate="2015-10-13T14:11:46.714+02:00" type="code" vocab="marcrelator">cols</role>
+            </agent>
+            <agent pref="false">
+                <attribution>school of rock</attribution>
+                <culture>europe</culture>
+                <dates type="life">
+                    <earliestDate circa="true" type="after">91010</earliestDate>
+                    <latestDate circa="true" type="active">dfsdf</latestDate>
+                </dates>
+                <name refid="uuid-2d9170ef-2e41-537c-8a78-28b7be563ae7" type="personal" vocab="local">Paul, Priya</name>
+                <role type="" vocab=""/>
             </agent>
         </agentSet>
     </save:newInstance>

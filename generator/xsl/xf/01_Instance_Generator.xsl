@@ -122,7 +122,7 @@
                         <xsl:attribute name="{@name}">false</xsl:attribute>
                     </xsl:when>
                     <xsl:when test="@name eq 'dataDate'">
-                        <xsl:attribute name="dataDate">2012-01-01</xsl:attribute>
+                        <xsl:attribute name="dataDate"></xsl:attribute>
                     </xsl:when>
                     <xsl:when test="@name eq 'id'">
                         <xsl:attribute name="id" select="generate-id(.)"/>

@@ -129,20 +129,26 @@
                                 	<xsl:with-param name="artifactNode" select="$vraArtifactNode"/>
                                 </xsl:call-template>
                                 <xf:message ev:event="xforms-submit-error">Sorry, updating of this record failed</xf:message>
+                                <!--
                                 <xf:action ev:event="xforms-submit" if="exists(vra:{$vraArtifactNode}/*)">
+
                                     <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@dataDate">
                                         <xsl:attribute name="context">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]</xsl:attribute>
                                         <xsl:attribute name="if">not(exists(instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/@dataDate))</xsl:attribute>
                                     </xf:insert>
+
+
                                     <xf:setvalue value="now()">
                                         <xsl:attribute name="ref">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/@dataDate</xsl:attribute>
                                     </xf:setvalue>
+
                                     <xf:recalculate/>
-                                        <!-- strip unwanted chars from timestamp -->
+                                        < ! - - strip unwanted chars from timestamp - - >
                                         <xf:setvalue value="concat(substring(.,1,10),'-',substring(.,12,2), '-', substring(.,15,2), '-', substring(.,18,2))">
                                             <xsl:attribute name="ref">instance('i-<xsl:value-of select="$vraSectionNode"/>')/vra:<xsl:value-of select="$vraArtifactNode"/>[index('r-vra<xsl:value-of select="$vraArtifact"/>')]/@dataDate</xsl:attribute>
                                         </xf:setvalue>
                                 </xf:action>
+                                -->
                                 <xf:action ev:event="xforms-submit-done">
                                     <xf:message level="ephemeral">Data have been stored.</xf:message>
                                     <!-- ##### use to signal that the UI needs re-generation by calling respective xsl e.g. AgentSet.xsl ##### -->
