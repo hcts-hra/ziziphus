@@ -20,24 +20,19 @@
     <xsl:template match="text() | comment() | processing-instruction()">
         <xsl:copy/>
     </xsl:template>
-    <xsl:template match="@*">
-        <xsl:copy/>
-    </xsl:template>
 
-    <!-- attributes -->
-<!--    <xsl:template match="@*">
+    <!-- remove empty attributes -->
+    <xsl:template match="@*">
         <xsl:if test="string-length(normalize-space(.)) ge 1">
             <xsl:copy/>
         </xsl:if>
     </xsl:template>
--->
-
 
     <!-- latesDate -->
     <xsl:template match="vra:latestDate[string-length(normalize-space(.)) lt 1]">
         <vra:latestDate>
             <xsl:apply-templates select="@*"/>
-            <xsl:copy-of select="preceding-sibling::vra:earliestDate/*"/>
+            <xsl:copy-of select="preceding-sibling::vra:earliestDate/node()"/>
         </vra:latestDate>
     </xsl:template>
 </xsl:stylesheet>
