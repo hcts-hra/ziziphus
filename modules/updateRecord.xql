@@ -30,6 +30,7 @@ let $log1 := util:log('info',concat('id=',$id,' vraSet=',$vraSet))
 
 (: get the new data from the form :)
 let $newData := request:get-data()
+let $newData := local:cleanupData($newData)
 let $oldData := app:get-resource($id)//*[local-name() eq $vraSet]
 let $toSave :=
 <save:data xmlns:save="http://www.betterform.de/save">
