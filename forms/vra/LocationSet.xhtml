@@ -40,16 +40,6 @@
                      <xf:message>Warning: At most one preferred location can be selected.</xf:message>
                   </xf:action>
                   <xf:message ev:event="xforms-submit-error">Sorry, updating of this record failed</xf:message>
-                  <xf:action ev:event="xforms-submit" if="exists(vra:location/*)">
-                     <xf:insert origin="instance('i-vraAttributes')/vra:vraElement[1]/@dataDate"
-                                context="instance('i-locationSet')/vra:location[index('r-vraLocation')]"
-                                if="not(exists(instance('i-locationSet')/vra:location[index('r-vraLocation')]/@dataDate))"></xf:insert>
-                     <xf:setvalue value="now()"
-                                  ref="instance('i-locationSet')/vra:location[index('r-vraLocation')]/@dataDate"></xf:setvalue>
-                     <xf:recalculate></xf:recalculate>
-                     <xf:setvalue value="concat(substring(.,1,10),'-',substring(.,12,2), '-', substring(.,15,2), '-', substring(.,18,2))"
-                                  ref="instance('i-locationSet')/vra:location[index('r-vraLocation')]/@dataDate"></xf:setvalue>
-                  </xf:action>
                   <xf:action ev:event="xforms-submit-done">
                      <xf:message level="ephemeral">Data have been stored.</xf:message>
                      <xf:setvalue ref="bf:instanceOfModel('m-main','i-control-center')/changed" value="'true'"></xf:setvalue>
