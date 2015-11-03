@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language language="en">
-	<!-- version 2015-08-18 ma-->
-	<!-- überarbeitet bis incl. inscriptionSet #535 -->
+	<!-- version 2015-09-17 sg-->
+	<!-- vollständig überarbeitet -->
 	<!-- -->
     <actions>
         <save>
@@ -41,14 +41,14 @@
         </removeTrashcan>
         <showNotes>
             <label>Show Notes</label>
-        	<hint>Show contents of the &lt;notes&gt; element</hint>
+        	<hint>Show content of the &lt;notes&gt; element</hint>
             <help/>
             <alert/>
             <placeholder/>
         </showNotes>
         <hideNotes>
             <label>Hide Notes</label>
-        	<hint>Hide contents of the &lt;notes&gt; element</hint> 
+        	<hint>Hide content of the &lt;notes&gt; element.</hint> 
             <help/> 
             <alert/>
             <placeholder/>
@@ -69,7 +69,7 @@
         </hideDisplay>
         <clear>
             <label>Clear</label>
-            <hint/>
+            <hint>Clears input field</hint>
             <help/>
             <alert/>
             <placeholder/>
@@ -83,7 +83,7 @@
         </ok>
         <cancel>
             <label>Cancel</label>
-        	<hint>Cancel</hint>
+        	<hint>Close without saving</hint>
             <help/>
             <alert/>
             <placeholder/>
@@ -128,97 +128,96 @@
     	<hint>Enter Display values here.</hint>
         <help/> <!-- link ergänzen -->
         <alert/>
-        <placeholder/>
+        <placeholder>Add text that should be displayed here...</placeholder>
     </display>
     <notes>
         <label>Notes</label>
     	<hint>Enter Notes here.</hint>
         <help/> <!-- link ergänzen -->
         <alert/>
-        <placeholder/>
+        <placeholder>You may add notes here.</placeholder>
     </notes>
     <dataDate>
-    	<label>Data Date</label>  <!-- label tooltip auf attribut-anzeige im edit fenster identisch mit label in attribute-fenster? -->
-    	<hint>Last modified</hint>  <!-- dataDate: date last modified -->
-        <help/>  <!-- link ergänzen -->
+    	<label>Last modified</label>
+    	<hint>Last modified</hint> 
+        <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/global_attributes#datadate</help>
         <alert/>
         <placeholder/>
     </dataDate>
     <extent>
         <label>Extent</label>
-    	<hint>The part being described here</hint>
-        <help/> <!-- link ergänzen -->
+    	<hint>Specify to which part of the work/image this entry refers to.</hint>
+        <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/global_attributes#extent</help>
         <alert/>
         <placeholder/>
     </extent>
     <href>
         <label>Href</label>
-    	<hint>Hypertext reference that provides a link to another electronic resource</hint>
-        <help/> <!-- link ergänzen -->
+    	<hint>Hypertext reference that provides a link to another electronic resource.</hint>
+        <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/global_attributes#href</help>
         <alert/>
-        <placeholder/>
+        <placeholder>Add a link...</placeholder>
     </href>
     <refid>
         <label>RefID</label>
-    	<hint>ID numbers or codes coming from the local institution or resource named in the source or vocab attributes</hint>
-        <help/> <!-- link ergänzen -->
+    	<hint>ID numbers or codes coming from the local institution or resource named in the source or vocab attributes.</hint>
+        <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/global_attributes#refid</help>
         <alert/>
-        <placeholder/>
+        <placeholder>Add a reference number...</placeholder>
     </refid>
     <rules>
         <label>Rules</label>
-    	<hint>Any data content standards used to construct the value recorded in the element</hint>
-        <help/> <!-- link ergänzen -->
+    	<hint>Any data content standards used to construct the value recorded in the element.</hint>
+        <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/global_attributes#rules</help>
         <alert/>
         <placeholder/>
     </rules>
     <source>
         <label>Source</label>
-    	<hint>The local, print, or electronic source from which information is derived for the specific element</hint>
-        <help/> <!-- link ergänzen -->
+    	<hint>The local, print, or electronic source from which the information given in this element derived.</hint>
+        <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/global_attributes#source</help>
         <alert/>
-        <placeholder/>
+        <placeholder>Add a source...</placeholder>
     </source>
     <vocab>
         <label>Vocab</label>
-    	<hint>The controlled vocabulary source from which the term or phrase is recorded</hint>
-        <help/> <!-- link ergänzen -->
+    	<hint>The controlled vocabulary source from which the term or phrase is recorded.</hint>
+        <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/global_attributes#vocab</help>
         <alert/>
         <placeholder/>
     </vocab>
     <lang>
         <label>Lang</label>
-    	<hint>The language used within the element</hint>
-        <help/> <!-- link ergänzen -->
+    	<hint>The language used within the element.</hint>
+        <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/global_attributes#lang</help>
         <alert/>
-        <placeholder/>
+        <placeholder>Choose a language...</placeholder>
     </lang>
     <script>
         <label>Script</label>
-    	<hint>The script used within the element</hint>
-        <help/> <!-- link ergänzen -->
+    	<hint>The script used within the element.</hint>
+        <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/global_attributes#script</help>
         <alert/>
-        <placeholder/>
+        <placeholder>Choose a script...</placeholder>
     </script>
     <transliteration>
         <label>Transliteration</label>
-    	<hint>The transliteration technique used within the element</hint>
-        <help/> <!-- link ergänzen -->
+    	<hint>The transliteration scheme used within the element.</hint>
+        <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/global_attributes#transliteration</help>
         <alert/>
-        <placeholder/>
+        <placeholder>Choose a transliteration scheme...</placeholder>
     </transliteration>
-    <!-- How to insert line breaks? -->
     <!-- MA: Some hints are specific for WORK context. Should the help texts distinguish between contents for COLLECTION, WORK, and IMAGE? Or should the texts be more generic? -->
     <agentSet>
         <label>Agents</label>
-        <hint>Add any actors related to the artwork here.</hint>
+        <hint>Add any agents related to the artwork here.</hint>
     	<help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agentset</help>
         <alert/>
         <placeholder/>
         <agent>
             <pref>
                 <label>pref</label>
-                <hint>preferred</hint>
+                <hint>preferred entry</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agentset#preference</help>
                 <alert/>
                 <placeholder/>
@@ -228,32 +227,32 @@
                 <hint>Add, if a work is attributed to a certain artist or school; e.g. "School of".</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agentset#attribution</help>
                 <alert/>
-                <placeholder>Example: school of</placeholder>
+                <placeholder>e.g.: School of,...</placeholder>
             </attribution>
             <culture>
                 <label>Culture</label>
             	<hint>Add the agent's cultural background here.</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agentset#culture</help>
                 <alert/>
-                <placeholder>Example: Alsatian</placeholder>
+                <placeholder>e.g.: Alsatian,...</placeholder>
             </culture>
             <dates>
                 <type>
                     <label>Type</label>
-                	<hint>If VIAF data available, value will be set automatically. If not, choose a date type.</hint>
+                	<hint>If VIAF data is available, value will be set automatically. Otherwise choose a date type.</hint>
                     <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agentset#dates</help>
                     <alert/>
                     <placeholder/> 
                 </type>
                 <earliestDate>
                     <label>Earliest Date</label>
-                	<hint>If VIAF data available, value will be set automatically. If not, add e.g. the birth year or start of activity here. </hint>
+                	<hint>If VIAF data is available, value will be set automatically. If not, add e.g. the year of birth or start of activity here.</hint>
                     <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agentset#earliestdate</help>
                     <alert>Date format not valid.</alert><!-- Alert needed, if date values don't fit ISO 8601 or 'present' -->
                     <placeholder>YYYY-MM-DD</placeholder>
                     <type>
-                        <label>Uncertainty</label>
-                        <hint>Use terms from the dropdown, if the Earliest Date is not certain.</hint>
+                        <label>Uncertain</label>
+                        <hint>Use terms from the drop-down list, if the Earliest Date is not verified.</hint>
                         <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agentset#earliestdate-type</help>
                         <alert/>
                         <placeholder/> 
@@ -268,13 +267,13 @@
                 </earliestDate>
                 <latestDate>
                     <label>Latest Date</label>
-                	<hint>If VIAF data available, value will be set automatically. If not, add e.g. the year of death or the end of activity here.</hint>
+                	<hint>If VIAF data is available, value will be set automatically. If not, add e.g. the year of death or the end of activity here.</hint>
                     <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agentset#latestdate</help>
                     <alert>Date format not valid.</alert><!-- Alert needed, if date values don't fit ISO 8601 or 'present' -->
                     <placeholder>YYYY-MM-DD</placeholder>
                     <type>
-                        <label>Uncertainty</label>
-                        <hint>Use terms from the dropdown, if the Latest Date is not certain.</hint>
+                        <label>Uncertain</label>
+                        <hint>Use terms from the drop-down list, if the latest date is not verified.</hint>
                         <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agentset#latestdate-type</help>
                         <alert/>
                         <placeholder/> 
@@ -293,17 +292,17 @@
                 <hint>Start entering the last name of a person and select the right agent from the suggestions (VIAF).</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agentset#name</help>
                 <alert/>
-                <placeholder>Start typing to search.</placeholder>
+                <placeholder>Type to search...</placeholder>
                 <type>
                     <label>Name Type</label>
-                	<hint>If VIAF data available, value will be set automatically. If not, choose a name type from the drop-down.</hint>
+                	<hint>If VIAF data available, value will be set automatically. If not, choose a name type from the drop-down list.</hint>
                     <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agentset#name-type</help>
                     <alert/>
                     <placeholder/>
                 </type>
 				<exactSearch>
 					<label>Exact Search</label>
-					<hint>Searches for the exact name only, e.g. "gogh, vincent van" or "metropolitan museum of art".</hint>
+					<hint>Searches for the precise name only, e.g. "gogh, vincent van" or "metropolitan museum of art".</hint>
 					<help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agentset#name</help>
 					<alert/>
 					<placeholder/>
@@ -314,13 +313,13 @@
                 <hint>Choose a role from the drop-down list (MARC relator terms).</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/agentset#role</help>
                 <alert/>
-                <placeholder>Select this agent's role.</placeholder>
+                <placeholder>Select this agent's role...</placeholder>
             </role>
         </agent>
     </agentSet>
     <culturalContextSet>
         <label>Cultural Context(s)</label>
-        <hint>Enter the cultural context for the artwork here.</hint>
+        <hint>Enter the cultural context of the artwork here.</hint>
         <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/cultural-contextset</help>
         <alert/>
         <placeholder/>
@@ -329,10 +328,10 @@
             <hint>Add the culture from which the artwork originates here.</hint>
             <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/cultural-contextset</help>
             <alert/>
-            <placeholder>Enter artwork's cultural background here.</placeholder>
+            <placeholder>Enter artwork's cultural background here...</placeholder>
             <pref>
                 <label>pref</label>
-                <hint>preferred</hint>
+                <hint>preferred entry</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/cultural-contextset#preference</help>
                 <alert/>
                 <placeholder/> 
@@ -348,17 +347,17 @@
         <date>
             <pref>
                 <label>pref</label>
-                <hint>preferred</hint>
+                <hint>preferred entry</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/dateset#preference</help>
                 <alert/>
                 <placeholder/> 
             </pref>
             <type>
                 <label>Type</label>
-                <hint>Use terms from the dropdown do describe the type of date.</hint>
+                <hint>Use terms from the drop-down list to describe the type of date.</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/dateset#type</help>
                 <alert/>
-                <placeholder>Select a type.</placeholder>
+                <placeholder>Select a type...</placeholder>
             </type>
             <earliestDate>
                 <date>
@@ -368,8 +367,8 @@
                     <alert/><!-- Alert needed, if date values don't fit ISO 8601 -->
                 	<placeholder>YYYY-MM-DD</placeholder>
                     <type>
-                    	<label>Uncertainty</label>
-                    	<hint>Use terms from the dropdown, if the Earliest Date is not certain.</hint>
+                    	<label>Uncertain</label>
+                    	<hint>Use terms from the drop-down list, if the Earliest Date is not certain.</hint>
                         <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/dateset#earliestdate-type</help>
                         <alert/>
                         <placeholder/>
@@ -384,13 +383,13 @@
                 </date>
                 <alternativeNotation>
                     <label>Alternative Notation</label>
-                    <hint>Can be used to add different written forms of the date other than western format, e.g. using the notation of Chinese reigns, or the Islamic calendar.</hint>
+                    <hint>Can be used to add date formats other than the western, e.g. using the notation of Chinese reigns or the Islamic calendar.</hint>
                     <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/dateset#earliestdate-alternativenotation</help>
                     <alert/> 
                     <placeholder/>
                     <type>
                         <label>Type</label>
-                        <hint>Use terms from the dropdown, if the date is not verified.</hint>
+                        <hint>Use terms from the drop-down list, if the date is not verified.</hint>
                         <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/dateset#earliestdate-alternativenotation</help>
                         <alert/>
                         <placeholder/>
@@ -400,15 +399,15 @@
             <latestDate>
                 <date>
                     <label>Latest Date</label>
-                    <hint>Please use the YYYY-MM-DD format to add a date. </hint>
+                    <hint>Please use the YYYY-MM-DD format to add a date.</hint>
                     <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/dateset#latestdate</help>
                     <alert>Date format not valid.</alert><!-- Alert needed, if date values don't fit ISO 8601 -->
-                    <placeholder/>
+                    <placeholder>YYYY-MM-DD</placeholder>
                     <type>
-                        <label>Uncertainty</label>
-                        <hint>Use terms from the dropdown, if the date is not verified.</hint>
+                        <label>Uncertain</label>
+                        <hint>Use terms from the drop-down list, if the date is not verified.</hint>
                         <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/dateset#latestdate-type</help>
-                        <alert/> <!-- I think, we don't need an alert here. -->
+                        <alert/>
                         <placeholder/>
                     </type>
                     <circa>
@@ -421,13 +420,13 @@
                 </date>
                 <alternativeNotation>
                     <label>AlternativeNotation</label>
-                    <hint>Can be used to add different written forms of the date, e.g. using the notation of Chinese reigns, or the Islamic calendar.</hint>
+                    <hint>Can be used to add date formats other than the western, e.g. using the notation of Chinese reigns or the Islamic calendar.</hint>
                     <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/dateset#latestdate-alternativenotation</help>
                     <alert/>
                     <placeholder/>
                     <type>
                         <label>Uncertain</label>
-                        <hint>Use terms from the dropdown, if the date is not verified.</hint>
+                        <hint>Use terms from the drop-down list, if the date is not verified.</hint>
                         <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/dateset#latestdate-alternativenotation</help>
                         <alert/>
                         <placeholder/>
@@ -445,46 +444,46 @@
         <description>
             <pref>
                 <label>pref</label>
-                <hint>preferred</hint>
+                <hint>preferred entry</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/descriptionset#preference</help>
                 <alert/>
                 <placeholder/>
             </pref>
             <type>
                 <label>Type</label>
-                <hint>You may mark this description as special type "State of Preservation" here.</hint>
+                <hint>You may mark this description with the special type "State of Preservation" here.</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/descriptionset#type</help>
                 <alert/>
-                <placeholder>Change to State of Preservation</placeholder>
+                <placeholder>Change to State of Preservation...</placeholder>
             </type>
             <text>
                 <label>Text</label>
                 <hint>Include a description of the work or image here.</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/descriptionset#text</help>
                 <alert/> 
-                <placeholder>Enter a description here.</placeholder>
+                <placeholder>Enter a description here...</placeholder>
             </text>
             <author>
                 <name>
                     <type>
                         <label>Name Type</label>
-                    	<hint>If VIAF data available, value will be set automatically. If not, choose a name type from the drop-down.</hint>
+                    	<hint>If VIAF data available, value will be set automatically. If not, choose a name type from the drop-down list.</hint>
                         <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/descriptionset#author</help>
                         <alert/>
-                        <placeholder>Select a type.</placeholder>
+                        <placeholder>Select a type...</placeholder>
                     </type>
                     <label>Name</label>
                     <hint>Start entering the last name of the person who wrote the description (VIAF).</hint>
                     <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/descriptionset#author</help>
                     <alert/>
-                    <placeholder/>
+                    <placeholder>Type to search...</placeholder>
                 </name>
                 <role>
                     <label>Role</label>
                 	<hint>Choose a role from the drop-down list (MARC relator terms).</hint>
                     <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/descriptionset#author-role</help>
                     <alert/>
-                    <placeholder>Select a role.</placeholder>
+                    <placeholder>Select a role...</placeholder>
                 </role>
             </author>
         </description>
@@ -498,7 +497,7 @@
         <inscription>
             <pref>
                 <label>pref</label>
-                <hint>preferred</hint>
+                <hint>preferred entry</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/inscriptionset#preference</help>
                 <alert/>
                 <placeholder/>
@@ -508,28 +507,28 @@
                 <hint>Start entering the last name of the person who inscribed the artwork and select the right person from the suggestions (VIAF) - or add a new entry.</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/inscriptionset#author</help>
                 <alert/>
-                <placeholder/>
+                <placeholder>Type to search...</placeholder>
             </author>
             <position>
                 <label>Position</label>
-                <hint>Specify the position of the inscription on the artwork here.</hint>
+                <hint>Specify the position of the inscription on the artwork.</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/inscriptionset#position</help>
                 <alert/>
-                <placeholder/>
+                <placeholder>Add text...</placeholder>
             </position>
             <type>
                 <label>Type</label>
-                <hint>Use terms from the dropdown to specify what kind of inscription you are adding.</hint>
+                <hint>Use terms from the drop-down list to specify what kind of inscription you are adding.</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/inscriptionset#type</help>
                 <alert/>
-                <placeholder>Select a type.</placeholder>
+                <placeholder>Select a type...</placeholder>
             </type>
             <text>
                 <label>Text</label>
                 <hint>Add the text of the inscription here.</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/inscriptionset#text</help>
                 <alert/>
-                <placeholder/>
+                <placeholder>Add the text of the inscription here...</placeholder>
             </text>
         </inscription>
     </inscriptionSet>
@@ -542,25 +541,25 @@
         <location>
             <pref>
                 <label>pref</label>
-                <hint>preferred</hint>
+                <hint>preferred entry</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/locationset#preference</help>
                 <alert/>
                 <placeholder/>
             </pref>
             <type>
                 <label>Type</label>
-                <hint>Specify the type of the location.</hint>
+                <hint>Choose a location type from the drop-down list.</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/locationset#type</help>
-                <alert/> <!-- I think, we don't need an alert here. -->
-                <placeholder>Select a type.</placeholder>
+                <alert/>
+                <placeholder>Select a type...</placeholder>
             </type>
             <refid>
                 <type>
                     <label>Type</label>
                 	<hint>Specify the RefID type.</hint>
                     <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/locationset#refid-type</help>
-                    <alert/> <!-- I think, we don't need an alert here. -->
-                    <placeholder>Select a type.</placeholder>
+                    <alert/>
+                    <placeholder>Select a type...</placeholder>
                 </type>
                 <label>Refid</label>
                 <hint>Use this field to add the accession or catalogue number when you are adding a (former) repository or exhibition.</hint>
@@ -573,14 +572,14 @@
                     <label>Type</label>
 					<hint>Specify the name type.</hint>
                     <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/locationset#name-type</help>
-                    <alert/> <!-- I think, we don't need an alert here. -->
-                    <placeholder>Select a type.</placeholder>
+                    <alert/>
+                    <placeholder>Select a type...</placeholder>
                 </type>
                 <label>Name</label>
             	<hint>Start entering the name of the location and select the right term from the suggestions (TGN/VIAF) or add a new entry.</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/locationset#name</help>
                 <alert/>
-                <placeholder/>
+                <placeholder>Add location...</placeholder>
             </name>
             <point>
                 <!-- Is this rigt in the UI?? TODO check -->
@@ -590,25 +589,25 @@
                 <alert/>
                 <placeholder/>
                 <epsg>
-                    <label>Epsg</label>
-                	<hint>Enter the EPSG code of the Coordinate Reference Systems here, e.g. 4326 for WGS 84 (Wikipedia), or 3857 for Google Mercator (Google Maps).</hint>
+                    <label>EPSG</label>
+                	<hint>Enter the EPSG code of the Coordinate Reference Systems here, e.g. 4326 for WGS 84 (Wikipedia) or 3857 for Google Mercator (Google Maps).</hint>
                     <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/locationset#epsg</help>
                     <alert/>
-                    <placeholder/>
+                    <placeholder>Add EPSG-Code...</placeholder>
                 </epsg>
                 <lat>
                     <label>Lat</label>
                     <hint>You may also add geographical coordinates to specify the location.</hint>
                     <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/locationset#lat</help>
-                    <alert>Please also add a longitude for this location.</alert>
-                    <placeholder/>
+                    <alert/>
+                    <placeholder>Enter a latitude value here...</placeholder>
                 </lat>
                 <long>
                     <label>Long</label>
                     <hint>You may also add geographical coordinates to specify the location.</hint>
                     <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/locationset#long</help>
-                    <alert>Please also add a latitude for this location.</alert>
-                    <placeholder/>
+                    <alert/>
+                    <placeholder>Enter a longitude value here...</placeholder>
                 </long>
             </point>
         </location>
@@ -620,10 +619,9 @@
         <alert/>
         <placeholder/>
         <material>
-            <!-- Added "type" here. -->
             <pref>
                 <label>pref</label>
-                <hint>preferred</hint>
+                <hint>preferred entry</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/materialset#preference</help>
                 <alert/>
                 <placeholder/>
@@ -633,23 +631,23 @@
                 <hint>Select the type of the material you are adding from the drop-down list.</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/materialset#type</help>
                 <alert/>
-                <placeholder>Select a type.</placeholder>
+                <placeholder>Select a type...</placeholder>
             </type>
             <label>Material</label>
             <hint>Start entering a material term and select the right term from the suggestions (AAT) or add a new entry.</hint>
             <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/materialset#term</help>
             <alert/>
-            <placeholder/> 
+            <placeholder>Type to search...</placeholder>
         </material>
     </materialSet>
     <measurementsSet>
         <label>Measurements</label>
-        <hint>Add the measurements of the artwork here. Use a new entry for every single measure you add, and choose its type and the shape of the artwork from the drop-down listes.</hint>
+        <hint>Add the measurements of the artwork here. Use a new entry for every single measure you add, and choose its type and the shape of the artwork from the drop-down lists.</hint>
         <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/measurementsset</help>
         <measurements>
             <pref>
                 <label>pref</label>
-                <hint>preferred</hint>
+                <hint>preferred entry</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/measurementsset#preference</help>
                 <alert/>
                 <placeholder/>
@@ -658,36 +656,28 @@
                 <label>Type</label>
             	<hint>Select the type of the measurements you are adding from the drop-down list.</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/measurementsset#type</help>
-                <alert>Please choose a measurement type.</alert>
-                <placeholder>Select a type.</placeholder>
+                <alert/>
+                <placeholder>Select a type...</placeholder>
             </type>
             <unit>
                 <label>Unit</label>
                 <hint>Unit</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/measurementsset#unit</help>
-                <alert>Please add units</alert>
-                <placeholder/>
-                <type>
-                    <label>Type</label>
-                    <hint>type</hint>
-                    <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/measurementsset#unit-type</help>
-                    <alert/>
-                    <placeholder/>
-                </type>
+                <alert/>
+                <placeholder>e.g. mm, cm,...</placeholder>
             </unit>
             <shape>
                 <label>Shape</label>
                 <hint>Shape</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/measurementsset#shape</help>
-                <alert>Please choose a shape.</alert>
-                <placeholder>Select a shape.</placeholder>
+                <alert/>
+                <placeholder>Select a shape...</placeholder>
             </shape>
             <label>Measurement</label>
-            <hint>Add the measurements of the artwork here. Use a new entry for every single measure you add, and choose its type and the shape of the artwork from the drop-down listes.</hint>
-            <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/measurements</help>
-            <!-- We might need several alerts here or work with more than one hint. -->
+            <hint>Add the measurement value here. Use a new entry for every single measure you add, and choose its type and the shape of the artwork from the drop-down lists.</hint>
+            <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/measurementsset</help>
             <alert/>
-            <placeholder/>
+            <placeholder>Add a single measure here...</placeholder>
         </measurements>
     </measurementsSet>
     <relationSet>
@@ -699,17 +689,17 @@
         <relation>
             <pref>
                 <label>pref</label>
-                <hint>preferred</hint>
+                <hint>preferred entry</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/relationset#preference</help>
                 <alert/>
                 <placeholder/>
             </pref>
             <type>
                 <label>Type</label>
-                <hint>Select the type of the relation you are adding from the drop-down list.</hint>
+                <hint>Select the type of the relation from the drop-down list.</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/relationset#type</help>
                 <alert/>
-                <placeholder>Select a type.</placeholder>
+                <placeholder>Select a type...</placeholder>
             </type>
             <relids>
                 <label>Relids</label>
@@ -719,10 +709,10 @@
                 <placeholder/>
             </relids>
             <label>Relation</label>
-            <hint>Search and choose a related item and specify the relation through the drop-down list.</hint>
+            <hint>Specify the relation.</hint>
             <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/relationset#relation</help>
-            <alert></alert>
-            <placeholder/>
+            <alert/>
+            <placeholder>Short description...</placeholder>
         </relation>
     </relationSet>
     <rightsSet>
@@ -734,32 +724,31 @@
         <rights>
             <pref>
                 <label>pref</label>
-                <hint>preferred</hint>
+                <hint>preferred entry</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/rightsset#preference</help>
                 <alert/>
                 <placeholder/>
             </pref>
-            <!-- Added "type" here. -->
             <type>
                 <label>Type</label>
                 <hint>Please choose a copyright status from the drop-down list.</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/rightsset#type</help>
-                <alert></alert>
-                <placeholder>Select a type.</placeholder>
+                <alert/>
+                <placeholder>Select a type...</placeholder>
             </type>
             <rightsHolder>
                 <label>RightsHolder</label>
-                <hint>Please enter the name of the rightsholder, e.g. a Museum, a person's name, here.</hint> <!-- Will this become a VIAF field?`-->
+                <hint>Please enter the name of the rightsholder, e.g. a Museum, a person's name, here.</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/rightsset#holder</help>
                 <alert/>
-                <placeholder/>
+                <placeholder>Enter name of the rightsholder...</placeholder>
             </rightsHolder>
             <text>
                 <label>Text</label>
-                <hint>You may enter additional information about the copyright here.</hint>
+                <hint>Enter the credit line here.</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/rightsset#text</help>
                 <alert/>
-                <placeholder/>
+                <placeholder>Add credit line here...</placeholder>
             </text>
         </rights>
     </rightsSet>
@@ -772,7 +761,7 @@
         <source>
             <pref>
                 <label>pref</label>
-                <hint>preferred</hint>
+                <hint>preferred entry</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/sourceset#preference</help>
                 <alert/>
                 <placeholder/>
@@ -783,13 +772,13 @@
                     <hint>Please choose a RefID type from the drop-down list.</hint>
                     <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/sourceset#refid-type</help>
                     <alert/>
-                    <placeholder>Select a type.</placeholder>
+                    <placeholder>Select a type...</placeholder>
                 </type>
                 <label>Refid</label>
                 <hint>Choose a referential ID type from the drop-down list and enter the ID accordingly, e.g. an ISBN.</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/sourceset#refid</help>
-                <alert>Please choose a type.</alert>
-                <placeholder/> <!-- If something has been added to the Refid field. -->
+                <alert/>
+                <placeholder>Add Ref-ID...</placeholder>
             </refid>
             <name>
                 <type>
@@ -797,13 +786,13 @@
                     <hint>Please choose a source type from the drop-down list.</hint>
                     <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/sourceset#name-type</help>
                     <alert/>
-                    <placeholder>Select a type.</placeholder>
+                    <placeholder>Select a type...</placeholder>
                 </type>
                 <label>Name</label>
                 <hint>Enter the name of the source in the text field.</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/sourceset#name</help>
                 <alert/>
-                <placeholder/> <!-- If something has been added to the text field. -->
+                <placeholder>Add the source's name...</placeholder>
             </name>
         </source>
     </sourceSet>
@@ -816,48 +805,45 @@
         <stateEdition>
             <pref>
                 <label>pref</label>
-                <hint>preferred</hint>
+                <hint>preferred entry</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/state-editionset#preference</help>
                 <alert/>
                 <placeholder/>
             </pref>
-            <!-- Other fields added -->
             <type>
                 <label>Type</label>
                 <hint>Choose a state or edition type from the drop-down list.</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/state-editionset#type</help>
-                <alert/> <!-- If any of the other fields is used. -->
-                <placeholder>Select a type.</placeholder>
+                <alert/>
+                <placeholder>Select a type...</placeholder>
             </type>
-            <!-- Switch number and count -->
             <num>
                 <label>Number</label>
                 <hint>Please enter the state or edition number here.</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/state-editionset#number</help>
                 <alert/>
-                <placeholder/> <!-- If a value has been added to <count> -->
+                <placeholder>Add number...</placeholder>
             </num>
             <count>
                 <label>Count</label>
-                <hint>Please enter the number of known states or editions here.</hint> <!-- 'Unknown' should be a possible value here -->
+                <hint>Please enter the number of known states or editions here.</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/state-editionset#count</help>
                 <alert/>
-                <placeholder/> <!-- If a value has been added to <num> -->
+                <placeholder>Add count...</placeholder>
             </count>
-            <!-- The order of the fields should be changed, as description seems like the last field to me. -->
             <name>
                 <label>Name</label>
-                <hint>Add the name of the state or edition here; e.g. 1st state or Edition of 1564.</hint> <!-- CHECK -->
+                <hint>Add a descriptive name of the state or edition here; e.g. 1st state or Edition of 1564.</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/state-editionset#name</help>
                 <alert/>
-                <placeholder/>
+                <placeholder>e.g. Edition of 1564</placeholder>
             </name>
             <description>
                 <label>Description</label>
                 <hint>Add aditional information on the state/edition of the artwork here that you could not enter elsewhere.</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/state-editionset#description</help>
                 <alert/>
-                <placeholder/>
+                <placeholder>Add description...</placeholder>
             </description>
         </stateEdition>
     </stateEditionSet>
@@ -870,7 +856,7 @@
         <stylePeriod>
             <pref>
                 <label>pref</label>
-                <hint>preferred</hint>
+                <hint>preferred entry</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/style-periodset#preference</help>
                 <alert/>
                 <placeholder/>
@@ -879,7 +865,7 @@
             <hint>Start entering a style or period and select the right style or period from the suggestions (AAT) or add a new entry.</hint>
             <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/style-periodset</help>
             <alert/>
-            <placeholder/>
+            <placeholder>Type to search...</placeholder>
         </stylePeriod>
     </stylePeriodSet>
     <subjectSet>
@@ -891,25 +877,24 @@
         <subject>
             <pref>
                 <label>pref</label>
-                <hint>preferred</hint>
+                <hint>preferred entry</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/subjectset#preference</help>
                 <alert/>
                 <placeholder/>
             </pref>
             <term>
-                <!-- Added "type" here. -->
                 <type>
                     <label>Type</label>
                     <hint>Select the type of the subject you are adding from the drop-down list.</hint>
                     <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/subjectset#term-type</help>
-                    <alert>Please select a subject type.</alert> <!-- If value has been added to <term> -->
-                    <placeholder>Select a type.</placeholder>
+                    <alert/>
+                    <placeholder>Select a type...</placeholder>
                 </type>
                 <label>Term</label>
                 <hint>Start entering a subject term and select the right term from the suggestions (AAT) or add a new entry.</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/subjectset#term</help>
                 <alert/>
-                <placeholder/>
+                <placeholder>Type to search...</placeholder>
             </term>
         </subject>
     </subjectSet>
@@ -922,7 +907,7 @@
         <technique>
             <pref>
                 <label>pref</label>
-                <hint>preferred</hint>
+                <hint>preferred entry</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/techniqueset#preference</help>
                 <alert/>
                 <placeholder/>
@@ -931,7 +916,7 @@
             <hint>Start entering a technique and select the right term from the suggestions (AAT) or add a new entry.</hint>
             <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/techniqueset</help>
             <alert/>
-            <placeholder/>
+            <placeholder>Type to search...</placeholder>
         </technique>
     </techniqueSet>
     <textrefSet>
@@ -943,7 +928,7 @@
         <textref>
             <pref>
                 <label>pref</label>
-                <hint>preferred</hint>
+                <hint>preferred entry</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/text-referenceset#preference</help>
                 <alert/>
                 <placeholder/>
@@ -953,13 +938,13 @@
                 <hint>Enter the name of the textual reference here.</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/text-referenceset#name</help>
                 <alert/>
-                <placeholder/> <!-- If something has been added to the text field. -->
+                <placeholder>Add reference...</placeholder>
                 <type>
                     <label>Type</label>
                 	<hint>Select what kind of textual reference you are adding from the drop-down list.</hint>
                     <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/text-referenceset#name-type</help>
                     <alert/>
-                    <placeholder>Select a type.</placeholder>
+                    <placeholder>Select a type...</placeholder>
                 </type>
             </name>
             <refid>
@@ -967,13 +952,13 @@
                 <hint>Choose a referential ID type from the drop-down list and enter the ID accordingly, e.g. an ISBN.</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/text-referenceset#refid</help>
                 <alert/>
-                <placeholder/> <!-- If something has been added to the Refid field. -->
+                <placeholder>Add Ref-ID...</placeholder>
                 <type>
                     <label>Type</label>
                     <hint>type</hint>
                     <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/text-referenceset#refid-type</help>
                     <alert/>
-                    <placeholder>Select a type.</placeholder>
+                    <placeholder>Select a type...</placeholder>
                 </type>
             </refid>
         </textref>
@@ -987,24 +972,23 @@
         <title>
             <pref>
                 <label>pref</label>
-                <hint>preferred</hint>
+                <hint>preferred entry</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/titleset#preference</help>
                 <alert/>
                 <placeholder/>
             </pref>
-            <!-- Added "type" here. -->
             <type>
                 <label>Type</label>
                 <hint>Select what kind of title you are adding from the drop-down list.</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/titleset#type</help>
-                <alert/> <!-- If a value has been entered to <title>. -->
-                <placeholder>Select a type.</placeholder>
+                <alert/>
+                <placeholder>Select a type...</placeholder>
             </type>
             <label>Title</label>
             <hint>Enter the title of the artwork here.</hint>
             <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/titleset#title</help>
             <alert/>
-            <placeholder/>
+            <placeholder>Add title...</placeholder>
         </title>
     </titleSet>
     <worktypeSet>
@@ -1016,7 +1000,7 @@
         <worktype>
             <pref>
                 <label>pref</label>
-                <hint>preferred</hint>
+                <hint>preferred entry</hint>
                 <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/worktypeset#preference</help>
                 <alert/>
                 <placeholder/>
@@ -1025,7 +1009,7 @@
             <hint>Start entering a worktype and select the right term from the suggestions (AAT) or add a new entry.</hint>
             <help>http://kjc-sv016.kjc.uni-heidelberg.de:8080/exist/apps/wiki/ziziphus-help/vra_core4/worktypeset#worktype</help>
             <alert/>
-            <placeholder/>
+            <placeholder>Type to search...</placeholder>
         </worktype>
     </worktypeSet>
 </language>
