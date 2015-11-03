@@ -47,15 +47,15 @@
             <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath refid="transform.class.path"/>
         </xslt>
-
-        <xslt style="${basedir}/../resources/xsl/save-cleanup.xsl"
-              in="${target.dir}/saved.xml"
-              out="${target.dir}/saved-clean.xml"
-              force="yes">
-            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
-            <classpath refid="transform.class.path"/>
-        </xslt>
-
+        <!--
+                <xslt style="${basedir}/../resources/xsl/save-cleanup.xsl"
+                      in="${target.dir}/saved.xml"
+                      out="${target.dir}/saved-clean.xml"
+                      force="yes">
+                    <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+                    <classpath refid="transform.class.path"/>
+                </xslt>
+        -->
     </target>
 
 

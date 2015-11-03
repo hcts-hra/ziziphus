@@ -17,16 +17,13 @@
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(@type,'')) != 0">
-                              <div class="  keepWhitespace" data-bf-bind="@type" data-bf-type="select1"
-                                   tabindex="0"
-                                   title=""
-                                   id="b-d2e1173">
+                              <div data-bf-bind="@type" data-bf-type="select1" tabindex="0" title="" id="b-d2e753"
+                                   class=" ">
                                  <xsl:value-of select="@type"></xsl:value-of>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="nodata keepWhitespace" data-bf-bind="@type" data-bf-type="select1"
-                                   tabindex="0">
+                              <div class="nodata" data-bf-bind="@type" data-bf-type="select1" tabindex="0">
                                  <xsl:value-of select="normalize-space(concat('(', $language-files/language/rightsSet/rights/type/label, ')'))"></xsl:value-of>
                               </div>
                            </xsl:otherwise>
@@ -35,16 +32,13 @@
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:rightsHolder,'')) != 0">
-                              <div class="keepWhitespace" data-bf-bind="vra:rightsHolder" data-bf-type="input"
-                                   tabindex="0"
-                                   title=""
-                                   id="b-d2e1117">
+                              <div data-bf-bind="vra:rightsHolder" data-bf-type="input" tabindex="0" title=""
+                                   id="b-d2e711">
                                  <xsl:value-of select="vra:rightsHolder"></xsl:value-of>
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="nodata keepWhitespace" data-bf-bind="vra:rightsHolder"
-                                   data-bf-type="input"
+                              <div class="nodata" data-bf-bind="vra:rightsHolder" data-bf-type="input"
                                    tabindex="0">
                                  <xsl:value-of select="normalize-space(concat('(', $language-files/language/rightsSet/rights/rightsHolder/label, ')'))"></xsl:value-of>
                               </div>
@@ -54,55 +48,15 @@
                      <td>
                         <xsl:choose>
                            <xsl:when test="string-length(string-join(vra:text,'')) != 0">
-                              <div class="textarea keepWhitespace" data-bf-bind="vra:text" data-bf-type="textarea"
-                                   tabindex="0"
-                                   title=""
-                                   id="b-d2e1138">
-                                 <xsl:if xmlns=""
-                                         test="string-length() - string-length(translate(vra:text, '&#xA;', '')) &gt; 5">
-                                    <xsl:attribute name="data-expand">100%</xsl:attribute>
-                                    <xsl:attribute name="data-collapse">75px</xsl:attribute>
-                                 </xsl:if>
+                              <div data-bf-bind="vra:text" data-bf-type="input" tabindex="0" title=""
+                                   id="b-d2e727">
                                  <xsl:value-of select="vra:text"></xsl:value-of>
                               </div>
-                              <xsl:if xmlns=""
-                                      test="string-length() - string-length(translate(vra:text, '&#xA;', '')) &gt; 5">
-                                 <div class="expand">
-                                    <span class="fa fa-arrow-down"></span>
-                                    <span>Click to Read More</span>
-                                    <span class="fa fa-arrow-down"></span>
-                                 </div>
-                                 <div class="contract hide">
-                                    <span class="fa fa-arrow-up"></span>
-                                    <span>Click to Hide</span>
-                                    <span class="fa fa-arrow-up"></span>
-                                 </div>
-                              </xsl:if>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="textarea nodata keepWhitespace" data-bf-bind="vra:text"
-                                   data-bf-type="textarea"
-                                   tabindex="0">
-                                 <xsl:if xmlns=""
-                                         test="string-length() - string-length(translate(vra:text, '&#xA;', '')) &gt; 5">
-                                    <xsl:attribute name="data-expand">100%</xsl:attribute>
-                                    <xsl:attribute name="data-collapse">75px</xsl:attribute>
-                                 </xsl:if>
+                              <div class="nodata" data-bf-bind="vra:text" data-bf-type="input" tabindex="0">
                                  <xsl:value-of select="normalize-space(concat('(', $language-files/language/rightsSet/rights/text/label, ')'))"></xsl:value-of>
                               </div>
-                              <xsl:if xmlns=""
-                                      test="string-length() - string-length(translate(vra:text, '&#xA;', '')) &gt; 5">
-                                 <div class="expand">
-                                    <span class="fa fa-arrow-down"></span>
-                                    <span>Click to Read More</span>
-                                    <span class="fa fa-arrow-down"></span>
-                                 </div>
-                                 <div class="contract hide">
-                                    <span class="fa fa-arrow-up"></span>
-                                    <span>Click to Hide</span>
-                                    <span class="fa fa-arrow-up"></span>
-                                 </div>
-                              </xsl:if>
                            </xsl:otherwise>
                         </xsl:choose>
                      </td>

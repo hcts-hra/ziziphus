@@ -6,7 +6,7 @@
     </build>
     <app>
         <name>ziziphus</name>
-        <version>0.42.0</version>
+        <version>0.50.0</version>
     </app>
     <issueTracker>
         <key>797dc72ff43a3a00fbff841636c3b15dc5d1673a</key>
